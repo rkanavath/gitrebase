@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Orfeo Toolbox
-Upstream-Contact: OTB Team <contact@orfeo-toolbox.org>
+Upstream-Contact: OTB developers <otb-developers@googlegroups.com>
 Source: http://sourceforge.net/projects/orfeo-toolbox/files/OTB/
         hg clone -r <version> http://hg.orfeo-toolbox.org/OTB
 
