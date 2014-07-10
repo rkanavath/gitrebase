@@ -6,6 +6,7 @@ otb (4.0.0-1) UNRELEASED; urgency=medium
   * cme fix dpkg-control
   * add VCS fields
   * add watch file
+  * DEP5 compatible copyright file
 
  -- Andreas Tille <tille@debian.org>  Thu, 10 Jul 2014 10:07:30 +0200
 
