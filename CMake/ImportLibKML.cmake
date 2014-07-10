@@ -1,0 +1,11 @@
+message(STATUS "Importing LibKML...")
+find_package(LibKML)
+
+if(LIBKML_FOUND)
+  option(OTB_USE_EXTERNAL_LIBKML "Use external LibKML library." ON)
+else()
+  option(OTB_USE_EXTERNAL_LIBKML "Use external LibKML library." OFF)
+  set(LIBKML_LIBRARIES otbkml)
+  message(STATUS "Using LibKML internal version")
+endif()
+mark_as_advanced(OTB_USE_EXTERNAL_LIBKML)
