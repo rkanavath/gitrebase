@@ -31,6 +31,8 @@ Build-Depends: debhelper (>= 9),
                libossim-dev,
                libfftw3-dev
 Standards-Version: 3.9.5
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-grass/otb.git
+Vcs-Git: git://anonscm.debian.org/pkg-grass/otb.git
 Homepage: http://www.orfeo-toolbox.org/
 
 Package: libotb
