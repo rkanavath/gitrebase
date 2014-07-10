@@ -3,6 +3,7 @@ otb (4.0.0-1) UNRELEASED; urgency=medium
   * Initial upload by Debian GIS team
   * Add Debian GIS team as maintainer
   * debian/control: Priority from extra to optional
+  * cme fix dpkg-control
 
  -- Andreas Tille <tille@debian.org>  Thu, 10 Jul 2014 10:07:30 +0200
 

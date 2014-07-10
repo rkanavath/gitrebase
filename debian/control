@@ -1,49 +1,50 @@
 Source: otb
-Priority: optional
 Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
 Uploaders: Andreas Tille <tille@debian.org>
-Build-Depends:
- debhelper (>= 9),
- dpkg-dev (>= 1.16.1~),
- cmake (>= 2.8.3),
- libc6-dev (>= 2.4),
- libgcc1 (>= 1:4.1),
- libstdc++6 (>= 4.4),
- libinsighttoolkit4-dev (>= 4.5.0),
- libgdal-dev (>= 1.10.0),
- libgeotiff-dev,
- libpng-dev,
- libproj-dev,
- libexpat1-dev,
- libtool,
- libcurl4-gnutls-dev,
- libopenthreads-dev,
- libboost-graph-dev,
- libqt4-dev,
- libqtcore4,
- libqtgui4,
- swig,
- python-dev,
- libkml-dev,
- libmuparser-dev,
- libopencv-dev,
- libossim-dev,
- libfftw3-dev
-Standards-Version: 3.9.4
 Section: contrib/science
+XS-Autobuild: no
+Priority: optional
+Build-Depends: debhelper (>= 9),
+               dpkg-dev (>= 1.16.1~),
+               cmake (>= 2.8.3),
+               libc6-dev,
+               libgcc1,
+               libstdc++6,
+               libinsighttoolkit4-dev,
+               libgdal-dev (>= 1.10.0),
+               libgeotiff-dev,
+               libpng-dev,
+               libproj-dev,
+               libexpat1-dev,
+               libtool,
+               libcurl4-gnutls-dev,
+               libopenthreads-dev,
+               libboost-graph-dev,
+               libqt4-dev,
+               libqtcore4,
+               libqtgui4,
+               swig,
+               python-dev,
+               libkml-dev,
+               libmuparser-dev,
+               libopencv-dev,
+               libossim-dev,
+               libfftw3-dev
+Standards-Version: 3.9.5
 Homepage: http://www.orfeo-toolbox.org/
 
 Package: libotb
-Section: contrib/libs
 Architecture: any
-Provides: libotb
-Conflicts: libotb3.16, libotb3.18, libotb3.20
-Depends:
- libinsighttoolkit4.5,
- libgdal1h (>= 1.10.0),
- ${shlibs:Depends},
- ${misc:Depends}
+Section: contrib/libs
+Depends: libinsighttoolkit4.5,
+         libgdal1h,
+         ${shlibs:Depends},
+         ${misc:Depends}
 Suggests: libotb-dev
+Conflicts: libotb3.16,
+           libotb3.18,
+           libotb3.20
+Provides: libotb
 Description: Free library of image processing algorithms - runtime
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -56,28 +57,27 @@ Description: Free library of image processing algorithms - runtime
  Monteverdi2 and the OTB applications.
 
 Package: libotb-dev
-Section: contrib/libdevel
 Architecture: any
-Provides: libotb-dev
+Section: contrib/libdevel
+Depends: libotb (= ${binary:Version}),
+         cmake (>= 2.8.3),
+         libc6-dev,
+         libgcc1,
+         libstdc++6,
+         libinsighttoolkit4-dev,
+         libgdal-dev (>= 1.10.0),
+         libgeotiff-dev,
+         libexpat1-dev,
+         libopenthreads-dev,
+         libboost-graph-dev,
+         libkml-dev,
+         libmuparser-dev,
+         libopencv-dev,
+         libossim-dev,
+         libfftw3-dev,
+         ${misc:Depends}
 Conflicts: libotb3-dev
-Depends:
- libotb (= ${binary:Version}),
- cmake (>= 2.8.3),
- libc6-dev (>= 2.4),
- libgcc1 (>= 1:4.1),
- libstdc++6 (>= 4.4),
- libinsighttoolkit4-dev (>= 4.5.0),
- libgdal-dev (>= 1.10.0),
- libgeotiff-dev,
- libexpat1-dev,
- libopenthreads-dev,
- libboost-graph-dev,
- libkml-dev,
- libmuparser-dev,
- libopencv-dev,
- libossim-dev,
- libfftw3-dev,
- ${misc:Depends}
+Provides: libotb-dev
 Description: Free library of image processing algorithms - development
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -90,12 +90,11 @@ Description: Free library of image processing algorithms - development
  applications.
 
 Package: otb-bin-common
-Section: contrib/science
 Architecture: any
-Depends:
- libotb (= ${binary:Version}),
- ${shlibs:Depends},
- ${misc:Depends}
+Section: contrib/science
+Depends: libotb (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
 Description: Plugins for ORFEO Toolbox applications
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -107,12 +106,11 @@ Description: Plugins for ORFEO Toolbox applications
  This package contains the application plugins used by otb-bin and otb-bin-qt
 
 Package: otb-bin
-Section: contrib/science
 Architecture: any
-Depends:
- otb-bin-common (= ${binary:Version}),
- ${shlibs:Depends},
- ${misc:Depends}
+Section: contrib/science
+Depends: otb-bin-common (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
 Description: ORFEO Toolbox command line applications
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -125,14 +123,13 @@ Description: ORFEO Toolbox command line applications
  plugins provided by otb-bin-common package).
 
 Package: otb-bin-qt
-Section: contrib/science
 Architecture: any
-Depends:
- otb-bin-common (= ${binary:Version}),
- ${shlibs:Depends},
- ${misc:Depends},
- libqtcore4,
- libqtgui4
+Section: contrib/science
+Depends: otb-bin-common (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends},
+         libqtcore4,
+         libqtgui4
 Description: ORFEO Toolbox graphical user interface applications
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -145,15 +142,14 @@ Description: ORFEO Toolbox graphical user interface applications
  provided by otb-bin-common package).
 
 Package: python-otb
-Section: contrib/python
 Architecture: any
-Depends:
- libotb (= ${binary:Version}),
- ${shlibs:Depends},
- ${misc:Depends},
- otb-bin-common,
- python (>= 2.6),
- python-central (>= 0.6.11)
+Section: contrib/python
+Depends: libotb (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends},
+         otb-bin-common,
+         python,
+         python-central
 Description: ORFEO Toolbox Python API for applications
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
