@@ -1,5 +1,5 @@
 Source: otb
-Priority: extra
+Priority: optional
 Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
 Uploaders: Andreas Tille <tille@debian.org>
 Build-Depends:
