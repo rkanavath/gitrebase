@@ -1,8 +1,7 @@
 Source: otb
 Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
 Uploaders: Andreas Tille <tille@debian.org>
-Section: contrib/science
-XS-Autobuild: no
+Section: science
 Priority: optional
 Build-Depends: debhelper (>= 9),
                dpkg-dev (>= 1.16.1~),
@@ -37,7 +36,7 @@ Homepage: http://www.orfeo-toolbox.org/
 
 Package: libotb
 Architecture: any
-Section: contrib/libs
+Section: libs
 Depends: libinsighttoolkit4.5,
          libgdal1h,
          ${shlibs:Depends},
@@ -60,7 +59,7 @@ Description: Free library of image processing algorithms - runtime
 
 Package: libotb-dev
 Architecture: any
-Section: contrib/libdevel
+Section: libdevel
 Depends: libotb (= ${binary:Version}),
          cmake (>= 2.8.3),
          libc6-dev,
@@ -93,7 +92,7 @@ Description: Free library of image processing algorithms - development
 
 Package: otb-bin-common
 Architecture: any
-Section: contrib/science
+Section: science
 Depends: libotb (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
@@ -109,7 +108,6 @@ Description: Plugins for ORFEO Toolbox applications
 
 Package: otb-bin
 Architecture: any
-Section: contrib/science
 Depends: otb-bin-common (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
@@ -126,7 +124,6 @@ Description: ORFEO Toolbox command line applications
 
 Package: otb-bin-qt
 Architecture: any
-Section: contrib/science
 Depends: otb-bin-common (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends},
@@ -145,7 +142,7 @@ Description: ORFEO Toolbox graphical user interface applications
 
 Package: python-otb
 Architecture: any
-Section: contrib/python
+Section: python
 Depends: libotb (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends},
