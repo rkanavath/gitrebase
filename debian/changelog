@@ -1,3 +1,10 @@
+otb (4.0.0-1) UNRELEASED; urgency=medium
+
+  * Initial upload by Debian GIS team
+  * Add Debian GIS team as maintainer
+
+ -- Andreas Tille <tille@debian.org>  Thu, 10 Jul 2014 10:07:30 +0200
+
 otb (4.0.0-1otb1~trusty2) trusty; urgency=low
 
   * Switch to ITK 4.5.2
