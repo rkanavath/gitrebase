@@ -1,0 +1,3 @@
+version=3
+
+http://sf.net/orfeo-toolbox/OTB-(\d[\d\.]+)\.(?:tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))
