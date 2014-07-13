@@ -58,15 +58,3 @@ override_dh_auto_configure:
 override_dh_shlibdeps:
 	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):$(OTB_LIB_DIRS) dh_shlibdeps
 
-control-file:
-	sed -e "s/@OTB_VERSION_MAJOR@/$(OTB_VERSION_MAJOR)/g" \
-	    -e "s/@OTB_VERSION_MINOR@/$(OTB_VERSION_MINOR)/g" \
-	    -e "s/@OTB_VERSION_PATCH@/$(OTB_VERSION_PATCH)/g" \
-	    -e "s/@OTB_VERSION_SONAME@/$(OTB_VERSION_SONAME)/g" \
-	    -e "s/@OTB_VERSION_FULL@/$(OTB_VERSION_FULL)/g" \
-	    < debian/control.in > debian/control
-
-changelog-file:
-	sed -e "s/@DIST@/$(DIST)/g" \
-	    -e "s/@PKGVERSION@/$(PKGVERSION)/g" \
-	    < debian/changelog.in > debian/changelog
