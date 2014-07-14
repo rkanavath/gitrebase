@@ -47,6 +47,11 @@ CMAKE_FLAGS = \
 	-DOTB_WRAP_QT:BOOL=ON \
 	-DOTB_WRAP_PYTHON:BOOL=ON
 
+pkgcli:=otb-bin
+pkggui:=otb-bin-qt
+mancli:=$(CURDIR)/debian/$(pkgcli)/usr/share/man/man1
+mangui:=$(CURDIR)/debian/$(pkggui)/usr/share/man/man1
+
 OTB_LIB_DIRS = /usr/lib/otb
 
 %:
@@ -58,3 +63,11 @@ override_dh_auto_configure:
 override_dh_shlibdeps:
 	LD_LIBRARY_PATH=$(LD_LIBRARY_PATH):$(OTB_LIB_DIRS) dh_shlibdeps
 
+override_dh_installman:
+	mkdir -p $(mancli)
+	cp -a debian/otbcli.1 $(mancli)
+	for bin in `ls $(CURDIR)/debian/$(pkgcli)/usr/bin/otbcli_*` ; do \
+	    echo '.IP' >> $(mancli)/otbcli.1 ; \
+	    basename $${bin} | sed 's/otbcli_//' >> $(mancli)/otbcli.1 ; \
+	    ln -sf otbcli.1 $(mancli)/`basename $${bin}`.1 ; \
+	done
