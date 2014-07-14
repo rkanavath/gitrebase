@@ -71,3 +71,10 @@ override_dh_installman:
 	    basename $${bin} | sed 's/otbcli_//' >> $(mancli)/otbcli.1 ; \
 	    ln -sf otbcli.1 $(mancli)/`basename $${bin}`.1 ; \
 	done
+	mkdir -p $(mangui)
+	cp -a debian/otbgui.1 $(mangui)
+	for bin in `ls $(CURDIR)/debian/$(pkggui)/usr/bin/otbgui_*` ; do \
+	    echo '.IP' >> $(mangui)/otbgui.1 ; \
+	    basename $${bin} | sed 's/otbgui_//' >> $(mangui)/otbgui.1 ; \
+	    ln -sf otbgui.1 $(mangui)/`basename $${bin}`.1 ; \
+	done
