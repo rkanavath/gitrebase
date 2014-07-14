@@ -82,7 +82,6 @@ Description: Free library of image processing algorithms - development
 
 Package: otb-bin-common
 Architecture: any
-Section: science
 Depends: libotb (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
