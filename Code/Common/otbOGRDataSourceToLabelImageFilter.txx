@@ -22,6 +22,7 @@
 #include "otbMacro.h"
 
 #include "gdal_alg.h"
+#include "stdint.h" //needed for uintptr_t
 
 namespace otb
 {
@@ -184,7 +185,7 @@ OGRDataSourceToLabelImageFilter<TOutputImage>::GenerateData()
 
   std::ostringstream stream;
   stream << "MEM:::"
-         <<  "DATAPOINTER=" << (unsigned long)(this->GetOutput()->GetBufferPointer()) << ","
+         <<  "DATAPOINTER=" << (uintptr_t)(this->GetOutput()->GetBufferPointer()) << ","
          <<  "PIXELS=" << bufferedRegion.GetSize()[0] << ","
          <<  "LINES=" << bufferedRegion.GetSize()[1]<< ","
          <<  "BANDS=" << nbBands << ","
@@ -213,8 +214,8 @@ OGRDataSourceToLabelImageFilter<TOutputImage>::GenerateData()
   OutputIndexType  bufferIndexOrigin = bufferedRegion.GetIndex();
   OutputOriginType bufferOrigin;
   this->GetOutput()->TransformIndexToPhysicalPoint(bufferIndexOrigin, bufferOrigin);
-  geoTransform[0] = bufferOrigin[0];
-  geoTransform[3] = bufferOrigin[1];
+  geoTransform[0] = bufferOrigin[0] - 0.5 * this->GetOutput()->GetSpacing()[0];
+  geoTransform[3] = bufferOrigin[1] - 0.5 * this->GetOutput()->GetSpacing()[1];
   geoTransform[1] = this->GetOutput()->GetSpacing()[0];
   geoTransform[5] = this->GetOutput()->GetSpacing()[1];
 
@@ -256,4 +257,3 @@ OGRDataSourceToLabelImageFilter<TOutputImage>
 }
 
 } // end namespace otb
-

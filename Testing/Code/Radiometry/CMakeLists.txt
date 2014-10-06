@@ -95,7 +95,7 @@ add_test(raTvImageToLuminanceImageFilterAutoSpot5 ${RADIOMETRY_TESTS2}
         ${TEMP}/raTvImageToLuminanceImageFilterAutoSpot5.tif
          )
 
-add_test(raTvImageToLuminanceImageFilterAutoIkonos ${RADIOMETRY_TESTS2}
+add_test(raTvImageToLuminanceImageFilterAutoIkonos ${RADIOMETRY_TESTS2} 
   --compare-image ${EPSILON_12}  ${BASELINE}/raTvImageToLuminanceImageFilterAutoIkonos.tif
                           ${TEMP}/raTvImageToLuminanceImageFilterAutoIkonos.tif
         otbImageToLuminanceImageFilterAuto
@@ -340,6 +340,407 @@ add_test(raTuImageToReflectanceImageFilterAutoFORMOSAT2 ${RADIOMETRY_TESTS2}
 
 endif()
 
+
+# -------            otb::LuminanceToImageImageFilter   ------------------------------ 
+add_test(raTuLuminanceToImageImageFilterNew ${RADIOMETRY_TESTS2}
+        otbLuminanceToImageImageFilterNew
+)
+
+add_test(raTvLuminanceToImageImageFilter ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${INPUTDATA}/verySmallFSATSW.tif
+                          ${TEMP}/raTvverySmallFSATSWImageFilter.tif
+        otbLuminanceToImageImageFilter
+        ${BASELINE}/raTvImageToLuminanceImageFilter.tif
+        ${TEMP}/raTvverySmallFSATSWImageFilter.tif
+        10   #channel 1 alpha
+        20   #channel 2 alpha
+        30   #channel 3 alpha
+        40   #channel 4 alpha
+        1    #channel 1 beta
+        2    #channel 2 beta
+        3    #channel 3 beta
+        4    #channel 4 beta
+         )
+
+if(OTB_DATA_USE_LARGEINPUT)
+
+set(TEHERANSPOT5DIR ${TEMP}/OpticalCalibLumToImSPOT5)
+file(MAKE_DIRECTORY ${TEHERANSPOT5DIR})
+file(GLOB MTDATA ${LARGEINPUT}/SPOT5/TEHERAN/*.DIM)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${TEHERANSPOT5DIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvImageToLuminanceImageFilterAutoSpot5.tif ${TEHERANSPOT5DIR}/IMAGERY.TIF COPYONLY)
+add_test(raTvLuminanceToImageImageFilterAutoSpot5 ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${TEHERANSPOT5DIR}/raTvSMALLTEHERANLuminanceToImageImageFilterAutoSpot5.tif
+                          ${TEHERANSPOT5DIR}/raTvLuminanceToImageImageFilterAutoSpot5.tif
+        otbLuminanceToImageImageFilterAuto
+        ${TEHERANSPOT5DIR}/IMAGERY.TIF 
+	${LARGEINPUT}/SPOT5/TEHERAN/IMAGERY.TIF
+        ${TEHERANSPOT5DIR}/raTvLuminanceToImageImageFilterAutoSpot5.tif
+	${TEHERANSPOT5DIR}/raTvSMALLTEHERANLuminanceToImageImageFilterAutoSpot5.tif
+         )
+
+set(BLOSSEVILLEIKONOSDIR ${TEMP}/OpticalCalibLumToImIkonos)
+file(MAKE_DIRECTORY ${BLOSSEVILLEIKONOSDIR})
+file(GLOB MTDATA ${LARGEINPUT}/IKONOS/BLOSSEVILLE/*metadata.txt ${LARGEINPUT}/IKONOS/BLOSSEVILLE/*pan*)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${BLOSSEVILLEIKONOSDIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvImageToLuminanceImageFilterAutoIkonos.tif ${BLOSSEVILLEIKONOSDIR}/po_2619900_pan_0000000.tif COPYONLY)
+add_test(raTvLuminanceToImageImageFilterAutoIkonos ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${BLOSSEVILLEIKONOSDIR}/raTvSMALLBLOSSEVILLELuminanceToImageImageFilterAutoIkonos.tif
+                          ${BLOSSEVILLEIKONOSDIR}/raTvLuminanceToImageImageFilterAutoIkonos.tif
+        otbLuminanceToImageImageFilterAuto
+	${BLOSSEVILLEIKONOSDIR}/po_2619900_pan_0000000.tif
+        ${LARGEINPUT}/IKONOS/BLOSSEVILLE/po_2619900_pan_0000000.tif
+        ${BLOSSEVILLEIKONOSDIR}/raTvLuminanceToImageImageFilterAutoIkonos.tif
+	${BLOSSEVILLEIKONOSDIR}/raTvSMALLBLOSSEVILLELuminanceToImageImageFilterAutoIkonos.tif
+         )
+
+set(ROMEWV2DIR ${TEMP}/OpticalCalibLumToImWv2PAN)
+file(MAKE_DIRECTORY ${ROMEWV2DIR})
+set(MTDATADIR ${LARGEINPUT}/WORLDVIEW2/ROME/WV-2_standard_8band_bundle_16bit/052298844010_01_P001_PAN)
+file(GLOB MTDATA ${MTDATADIR}/*TIL ${MTDATADIR}/*RPB ${MTDATADIR}/*XML ${MTDATADIR}/*IMD)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${ROMEWV2DIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvImageToLuminanceImageFilterAutoWV2PAN.tif ${ROMEWV2DIR}/09DEC10103019-P2AS-052298844010_01_P001.TIF COPYONLY)
+add_test(raTvLuminanceToImageImageFilterAutoWV2PAN ${RADIOMETRY_TESTS2}
+   --compare-image ${EPSILON_12}  ${ROMEWV2DIR}/raTvSMALLROMELuminanceToImageImageFilterAutoWV2PAN.tif
+                       ${ROMEWV2DIR}/raTvLuminanceToImageImageFilterAutoWV2PAN.tif
+        otbLuminanceToImageImageFilterAuto
+	${ROMEWV2DIR}/09DEC10103019-P2AS-052298844010_01_P001.TIF
+        ${LARGEINPUT}/WORLDVIEW2/ROME/WV-2_standard_8band_bundle_16bit/052298844010_01_P001_PAN/09DEC10103019-P2AS-052298844010_01_P001.TIF
+        ${ROMEWV2DIR}/raTvLuminanceToImageImageFilterAutoWV2PAN.tif
+	${ROMEWV2DIR}/raTvSMALLROMELuminanceToImageImageFilterAutoWV2PAN.tif
+         )
+
+set(ROMEWV2DIR ${TEMP}/OpticalCalibLumToImWv2MULTI)
+file(MAKE_DIRECTORY ${ROMEWV2DIR})
+set(MTDATADIR ${LARGEINPUT}/WORLDVIEW2/ROME/WV-2_standard_8band_bundle_16bit/052298844010_01_P001_MUL)
+file(GLOB MTDATA ${MTDATADIR}/*TIL ${MTDATADIR}/*RPB ${MTDATADIR}/*XML ${MTDATADIR}/*IMD)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${ROMEWV2DIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvImageToLuminanceImageFilterAutoWV2Multi.tif ${ROMEWV2DIR}/09DEC10103019-M2AS-052298844010_01_P001.TIF COPYONLY)
+add_test(raTvLuminanceToImageImageFilterAutoWV2MULTI ${RADIOMETRY_TESTS2}
+   --compare-image ${EPSILON_12}  ${ROMEWV2DIR}/raTvSMALLROMELuminanceToImageImageFilterAutoWV2Multi.tif
+                       ${ROMEWV2DIR}/raTvLuminanceToImageImageFilterAutoWV2Multi.tif
+        otbLuminanceToImageImageFilterAuto
+	${ROMEWV2DIR}/09DEC10103019-M2AS-052298844010_01_P001.TIF
+        ${LARGEINPUT}/WORLDVIEW2/ROME/WV-2_standard_8band_bundle_16bit/052298844010_01_P001_MUL/09DEC10103019-M2AS-052298844010_01_P001.TIF
+	${ROMEWV2DIR}/raTvLuminanceToImageImageFilterAutoWV2Multi.tif
+        ${ROMEWV2DIR}/raTvSMALLROMELuminanceToImageImageFilterAutoWV2Multi.tif
+         )
+
+set(TOULOUSEQBDIR ${TEMP}/OpticalCalibLumToImQBPAN)
+file(MAKE_DIRECTORY ${TOULOUSEQBDIR})
+set(MTDATADIR ${LARGEINPUT}/QUICKBIRD/TOULOUSE/000000128955_01_P001_PAN)
+file(GLOB MTDATA ${MTDATADIR}/*TIL ${MTDATADIR}/*RPB ${MTDATADIR}/*XML ${MTDATADIR}/*IMD)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${TOULOUSEQBDIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvImageToLuminanceImageFilterAutoQuickbirdPAN.tif ${TOULOUSEQBDIR}/02APR01105228-P1BS-000000128955_01_P001.TIF COPYONLY)
+add_test(raTvLuminanceToImageImageFilterAutoQuickbirdPAN ${RADIOMETRY_TESTS2}
+   --compare-image ${EPSILON_12}  ${TOULOUSEQBDIR}/raTvSMALLTOULOUSELuminanceToImageImageFilterAutoQuickbirdPAN.tif
+                       ${TOULOUSEQBDIR}/raTvLuminanceToImageImageFilterAutoQuickbirdPAN.tif
+        otbLuminanceToImageImageFilterAuto
+	${TOULOUSEQBDIR}/02APR01105228-P1BS-000000128955_01_P001.TIF
+        ${LARGEINPUT}/QUICKBIRD/TOULOUSE/000000128955_01_P001_PAN/02APR01105228-P1BS-000000128955_01_P001.TIF
+        ${TOULOUSEQBDIR}/raTvLuminanceToImageImageFilterAutoQuickbirdPAN.tif
+	${TOULOUSEQBDIR}/raTvSMALLTOULOUSELuminanceToImageImageFilterAutoQuickbirdPAN.tif
+         )
+
+set(TOULOUSEQBDIR ${TEMP}/OpticalCalibLumToImQBXS)
+file(MAKE_DIRECTORY ${TOULOUSEQBDIR})
+set(MTDATADIR ${LARGEINPUT}/QUICKBIRD/TOULOUSE/000000128955_01_P001_MUL)
+file(GLOB MTDATA ${MTDATADIR}/*TIL ${MTDATADIR}/*RPB ${MTDATADIR}/*XML ${MTDATADIR}/*IMD)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${TOULOUSEQBDIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvImageToLuminanceImageFilterAutoQuickbirdXS.tif ${TOULOUSEQBDIR}/02APR01105228-M1BS-000000128955_01_P001.TIF COPYONLY)
+add_test(raTvLuminanceToImageImageFilterAutoQuickbirdXS ${RADIOMETRY_TESTS2}
+   --compare-image ${EPSILON_12}  ${TOULOUSEQBDIR}/raTvSMALLTOULOUSELuminanceToImageImageFilterAutoQuickbirdXS.tif
+                       ${TOULOUSEQBDIR}/raTvLuminanceToImageImageFilterAutoQuickbirdXS.tif
+        otbLuminanceToImageImageFilterAuto
+	${TOULOUSEQBDIR}/02APR01105228-M1BS-000000128955_01_P001.TIF
+        ${LARGEINPUT}/QUICKBIRD/TOULOUSE/000000128955_01_P001_MUL/02APR01105228-M1BS-000000128955_01_P001.TIF
+        ${TOULOUSEQBDIR}/raTvLuminanceToImageImageFilterAutoQuickbirdXS.tif
+	${TOULOUSEQBDIR}/raTvSMALLTOULOUSELuminanceToImageImageFilterAutoQuickbirdXS.tif
+         )
+
+set(SUDOUESTFORMOSATDIR ${TEMP}/OpticalCalibLumToImFormosat)
+file(MAKE_DIRECTORY ${SUDOUESTFORMOSATDIR})
+set(MTDATADIR ${LARGEINPUT}/FORMOSAT/Sudouest_20071013_MS_fmsat)
+file(GLOB MTDATA ${MTDATADIR}/*.DIM)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${SUDOUESTFORMOSATDIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvImageToLuminanceImageFilterAutoFormosat.tif ${SUDOUESTFORMOSATDIR}/IMAGERY.TIF COPYONLY)
+add_test(raTvLuminanceToImageImageFilterAutoFORMOSAT ${RADIOMETRY_TESTS2}
+   --compare-image ${EPSILON_12}  ${SUDOUESTFORMOSATDIR}/raTvSMALLSOLuminanceToImageImageFilterAutoFormosat.tif
+                       ${SUDOUESTFORMOSATDIR}/raTvLuminanceToImageImageFilterAutoFormosat.tif
+        otbLuminanceToImageImageFilterAuto
+	${SUDOUESTFORMOSATDIR}/IMAGERY.TIF
+        ${LARGEINPUT}/FORMOSAT/Sudouest_20071013_MS_fmsat/IMAGERY.TIF
+        ${SUDOUESTFORMOSATDIR}/raTvLuminanceToImageImageFilterAutoFormosat.tif
+	${SUDOUESTFORMOSATDIR}/raTvSMALLSOLuminanceToImageImageFilterAutoFormosat.tif
+         )
+
+endif()
+
+
+# -------            otb::ReflectanceToLuminanceImageFilter   ------------------------------
+add_test(raTuReflectanceToLuminanceImageFilterNew ${RADIOMETRY_TESTS2}
+        otbReflectanceToLuminanceImageFilterNew
+)
+
+add_test(raTvReflectanceToLuminanceImageFilter ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${INPUTDATA}/verySmallFSATSW.tif
+                          ${TEMP}/raTvverySmallFSATSWImageFilterDsol.tif
+        otbReflectanceToLuminanceImageFilter
+        ${BASELINE}/raTvLuminanceToReflectanceImageFilterDsol.tif
+        ${TEMP}/raTvverySmallFSATSWImageFilterDsol.tif
+        0.2 #radius
+        10  #channel 1 illumination
+        20  #channel 2 illumination
+        30  #channel 3 illumination
+        40  #channel 4 illumination
+        0.9923885328
+)
+
+add_test(raTvReflectanceToLuminanceImageFilterDayMonth ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${INPUTDATA}/verySmallFSATSW.tif
+                          ${TEMP}/raTvverySmallFSATSWImageFilterDayMounth.tif
+        otbReflectanceToLuminanceImageFilter
+        ${BASELINE}/raTvLuminanceToReflectanceImageFilter.tif
+        ${TEMP}/raTvverySmallFSATSWImageFilterDayMounth.tif
+        0.2 #radius
+        10  #channel 1 illumination
+        20  #channel 2 illumination
+        30  #channel 3 illumination
+        40  #channel 4 illumination
+        3   #day
+        5   #mounth
+        )
+
+if(OTB_DATA_USE_LARGEINPUT)
+
+set(TEHERANSPOT5DIR ${TEMP}/OpticalCalibRefToLumSPOT5)
+file(MAKE_DIRECTORY ${TEHERANSPOT5DIR})
+file(GLOB MTDATA ${LARGEINPUT}/SPOT5/TEHERAN/*.DIM)
+foreach(f ${MTDATA})  
+	configure_file(${f} ${TEHERANSPOT5DIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvLuminanceToReflectanceImageFilterAutoSpot5.tif ${TEHERANSPOT5DIR}/IMAGERY.TIF COPYONLY)
+add_test(raTvReflectanceToLuminanceImageFilterAutoSpot5 ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${BASELINE}/raTvImageToLuminanceImageFilterAutoSpot5.tif
+                          ${TEHERANSPOT5DIR}/raTvReflectanceToLuminanceImageFilterAutoSpot5.tif
+        otbReflectanceToLuminanceImageFilterAuto
+        ${TEHERANSPOT5DIR}/IMAGERY.TIF 
+        ${TEHERANSPOT5DIR}/raTvReflectanceToLuminanceImageFilterAutoSpot5.tif
+         )
+
+set(BLOSSEVILLEIKONOSDIR ${TEMP}/OpticalCalibRefToLumIkonos)
+file(MAKE_DIRECTORY ${BLOSSEVILLEIKONOSDIR})
+file(GLOB MTDATA ${LARGEINPUT}/IKONOS/BLOSSEVILLE/*metadata.txt ${LARGEINPUT}/IKONOS/BLOSSEVILLE/*pan*)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${BLOSSEVILLEIKONOSDIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvLuminanceToReflectanceImageFilterAutoIkonos.tif ${BLOSSEVILLEIKONOSDIR}/po_2619900_pan_0000000.tif COPYONLY)
+add_test(raTvReflectanceToLuminanceImageFilterAutoIkonos ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${BASELINE}/raTvImageToLuminanceImageFilterAutoIkonos.tif
+                          ${BLOSSEVILLEIKONOSDIR}/raTvReflectanceToLuminanceImageFilterAutoIkonos.tif
+        otbReflectanceToLuminanceImageFilterAuto
+	${BLOSSEVILLEIKONOSDIR}/po_2619900_pan_0000000.tif
+        ${BLOSSEVILLEIKONOSDIR}/raTvReflectanceToLuminanceImageFilterAutoIkonos.tif
+         )
+
+set(ROMEWV2DIR ${TEMP}/OpticalCalibRefToLumWv2PAN)
+file(MAKE_DIRECTORY ${ROMEWV2DIR})
+set(MTDATADIR ${LARGEINPUT}/WORLDVIEW2/ROME/WV-2_standard_8band_bundle_16bit/052298844010_01_P001_PAN)
+file(GLOB MTDATA ${MTDATADIR}/*TIL ${MTDATADIR}/*RPB ${MTDATADIR}/*XML ${MTDATADIR}/*IMD)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${ROMEWV2DIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvLuminanceToReflectanceImageFilterAutoWV2PAN.tif ${ROMEWV2DIR}/09DEC10103019-P2AS-052298844010_01_P001.TIF COPYONLY)
+add_test(raTvReflectanceToLuminanceImageFilterAutoWV2PAN ${RADIOMETRY_TESTS2}
+   --compare-image ${EPSILON_12}  ${BASELINE}/raTvImageToLuminanceImageFilterAutoWV2PAN.tif
+                       ${ROMEWV2DIR}/raTvReflectanceToLuminanceImageFilterAutoWV2PAN.tif
+        otbReflectanceToLuminanceImageFilterAuto
+	${ROMEWV2DIR}/09DEC10103019-P2AS-052298844010_01_P001.TIF
+        ${ROMEWV2DIR}/raTvReflectanceToLuminanceImageFilterAutoWV2PAN.tif
+         )
+
+set(ROMEWV2DIR ${TEMP}/OpticalCalibRefToLumWv2MULTI)
+file(MAKE_DIRECTORY ${ROMEWV2DIR})
+set(MTDATADIR ${LARGEINPUT}/WORLDVIEW2/ROME/WV-2_standard_8band_bundle_16bit/052298844010_01_P001_MUL)
+file(GLOB MTDATA ${MTDATADIR}/*TIL ${MTDATADIR}/*RPB ${MTDATADIR}/*XML ${MTDATADIR}/*IMD)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${ROMEWV2DIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvLuminanceToReflectanceImageFilterAutoWV2Multi.tif ${ROMEWV2DIR}/09DEC10103019-M2AS-052298844010_01_P001.TIF COPYONLY)
+add_test(raTvReflectanceToLuminanceImageFilterAutoWV2MULTI ${RADIOMETRY_TESTS2}
+   --compare-image ${EPSILON_12}  ${BASELINE}/raTvImageToLuminanceImageFilterAutoWV2Multi.tif
+                       ${ROMEWV2DIR}/raTvReflectanceToLuminanceImageFilterAutoWV2Multi.tif
+        otbReflectanceToLuminanceImageFilterAuto
+	${ROMEWV2DIR}/09DEC10103019-M2AS-052298844010_01_P001.TIF
+	${ROMEWV2DIR}/raTvReflectanceToLuminanceImageFilterAutoWV2Multi.tif
+         )
+
+set(TOULOUSEQBDIR ${TEMP}/OpticalCalibRefToLumQBPAN)
+file(MAKE_DIRECTORY ${TOULOUSEQBDIR})
+set(MTDATADIR ${LARGEINPUT}/QUICKBIRD/TOULOUSE/000000128955_01_P001_PAN)
+file(GLOB MTDATA ${MTDATADIR}/*TIL ${MTDATADIR}/*RPB ${MTDATADIR}/*XML ${MTDATADIR}/*IMD)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${TOULOUSEQBDIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvLuminanceToReflectanceImageFilterAutoQuickbirdPAN.tif ${TOULOUSEQBDIR}/02APR01105228-P1BS-000000128955_01_P001.TIF COPYONLY)
+add_test(raTvReflectanceToLuminanceImageFilterAutoQuickbirdPAN ${RADIOMETRY_TESTS2}
+   --compare-image ${EPSILON_12}  ${BASELINE}/raTvImageToLuminanceImageFilterAutoQuickbirdPAN.tif
+                       ${TOULOUSEQBDIR}/raTvReflectanceToLuminanceImageFilterAutoQuickbirdPAN.tif
+        otbReflectanceToLuminanceImageFilterAuto
+	${TOULOUSEQBDIR}/02APR01105228-P1BS-000000128955_01_P001.TIF
+        ${TOULOUSEQBDIR}/raTvReflectanceToLuminanceImageFilterAutoQuickbirdPAN.tif
+         )
+
+set(TOULOUSEQBDIR ${TEMP}/OpticalCalibRefToLumQBXS)
+file(MAKE_DIRECTORY ${TOULOUSEQBDIR})
+set(MTDATADIR ${LARGEINPUT}/QUICKBIRD/TOULOUSE/000000128955_01_P001_MUL)
+file(GLOB MTDATA ${MTDATADIR}/*TIL ${MTDATADIR}/*RPB ${MTDATADIR}/*XML ${MTDATADIR}/*IMD)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${TOULOUSEQBDIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvLuminanceToReflectanceImageFilterAutoQuickbirdXS.tif ${TOULOUSEQBDIR}/02APR01105228-M1BS-000000128955_01_P001.TIF COPYONLY)
+add_test(raTvReflectanceToLuminanceImageFilterAutoQuickbirdXS ${RADIOMETRY_TESTS2}
+   --compare-image ${EPSILON_12}  ${BASELINE}/raTvImageToLuminanceImageFilterAutoQuickbirdXS.tif
+                       ${TOULOUSEQBDIR}/raTvReflectanceToLuminanceImageFilterAutoQuickbirdXS.tif
+        otbReflectanceToLuminanceImageFilterAuto
+	${TOULOUSEQBDIR}/02APR01105228-M1BS-000000128955_01_P001.TIF
+        ${TOULOUSEQBDIR}/raTvReflectanceToLuminanceImageFilterAutoQuickbirdXS.tif
+         )
+
+# ${BASELINE}/raTvLuminanceToReflectanceImageFilterAutoFormosat.tif : this image seems to be corrupted
+#set(SUDOUESTFORMOSATDIR ${TEMP}/OpticalCalibRefToLumFormosat)
+#file(MAKE_DIRECTORY ${SUDOUESTFORMOSATDIR})
+#set(MTDATADIR ${LARGEINPUT}/FORMOSAT/Sudouest_20071013_MS_fmsat)
+#file(GLOB MTDATA ${MTDATADIR}/*.DIM)
+#foreach(f ${MTDATA}) 
+#	configure_file(${f} ${SUDOUESTFORMOSATDIR} COPYONLY)  
+#endforeach(f)
+#configure_file(${BASELINE}/raTvLuminanceToReflectanceImageFilterAutoFormosat.tif ${SUDOUESTFORMOSATDIR}/IMAGERY.TIF COPYONLY)
+#add_test(raTvReflectanceToLuminanceImageFilterAutoFORMOSAT ${RADIOMETRY_TESTS2}
+#   --compare-image ${EPSILON_12} ${BASELINE}/raTvImageToLuminanceImageFilterAutoFormosat.tif
+#                       ${SUDOUESTFORMOSATDIR}/raTvReflectanceToLuminanceImageFilterAutoFormosat.tif
+#        otbReflectanceToLuminanceImageFilterAuto
+#	${SUDOUESTFORMOSATDIR}/IMAGERY.TIF
+#        ${SUDOUESTFORMOSATDIR}/raTvReflectanceToLuminanceImageFilterAutoFormosat.tif
+#         )
+
+endif()
+
+# -------            otb::ReflectanceToImageImageFilter   ------------------------------
+add_test(raTuReflectanceToImageImageFilterNew ${RADIOMETRY_TESTS2}
+        otbReflectanceToImageImageFilterNew
+)
+
+add_test(raTvReflectanceToImageImageFilter ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${INPUTDATA}/verySmallFSATSW.tif
+                          ${TEMP}/raTvReflectanceToImageImageFilterDsol.tif
+        otbReflectanceToImageImageFilter
+	${BASELINE}/raTvImageToReflectanceImageFilterDsol.tif
+        ${TEMP}/raTvReflectanceToImageImageFilterDsol.tif
+        0.2 #radius
+        1   #channel 1 alpha
+        2   #channel 2 alpha
+        3   #channel 3 alpha
+        4   #channel 4 alpha
+        10  #channel 1 beta
+        11  #channel 2 beta
+        12  #channel 3 beta
+        13  #channel 4 beta
+        10  #channel 1 illumination
+        20  #channel 2 illumination
+        30  #channel 3 illumination
+        40  #channel 4 illumination
+        0.9923885328 #d/d0 corresponding to the date 03/05
+         )
+
+add_test(raTvRomaniaReflectanceToImage ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}
+                  ${INPUTDATA}/Romania_Extract.tif
+                  ${TEMP}/raTvRomaniaImage.tif
+        otbReflectanceToImageImageFilter  
+	${BASELINE}/raTvRomania_Reflectance.tif
+        ${TEMP}/raTvRomaniaImage.tif
+        27.3                 # = 90-62.70 : elevation et azimuth solaire
+        1.981247824          #channel 1 alpha = 0.881338*2.24800
+        4.332207085          #channel 2 alpha = 0.858713*5.04500
+        2.32064768           #channel 3 alpha = 0.685568*3.38500
+        9.3177861            #channel 4 alpha = 6.19122*1.50500
+        0                    #channel 1 beta
+        0                    #channel 2 beta
+        0                    #channel 3 beta
+        0                    #channel 4 beta
+        1057.56              #channel 1 illumination
+        1570.23              #channel 2 illumination
+        1842.94              #channel 3 illumination
+        232.820              #channel 4 illumination
+        0.9889145564708814   #= sqrt(0.977952) d/d0 corresponding to the date 03/05
+        )
+
+add_test(raTvReflectanceToImageImageFilterDayMounth ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${INPUTDATA}/verySmallFSATSW.tif
+                          ${TEMP}/raTvReflectanceToImageImageFilterDayMounth.tif
+        otbReflectanceToImageImageFilter
+	${BASELINE}/raTvImageToReflectanceImageFilter.tif
+        ${TEMP}/raTvReflectanceToImageImageFilterDayMounth.tif
+        0.2 #radius
+        1   #channel 1 alpha
+        2   #channel 2 alpha
+        3   #channel 3 alpha
+        4   #channel 4 alpha
+        10  #channel 1 beta
+        11  #channel 2 beta
+        12  #channel 3 beta
+        13  #channel 4 beta
+        10  #channel 1 illumination
+        20  #channel 2 illumination
+        30  #channel 3 illumination
+        40  #channel 4 illumination
+        3   #day
+        5   #mounth
+       )
+
+if(OTB_DATA_USE_LARGEINPUT)
+
+set(TEHERANSPOT5DIR ${TEMP}/OpticalCalibRefToImSPOT5)
+file(MAKE_DIRECTORY ${TEHERANSPOT5DIR})
+file(GLOB MTDATA ${LARGEINPUT}/SPOT5/TEHERAN/*.DIM)
+foreach(f ${MTDATA}) 
+	configure_file(${f} ${TEHERANSPOT5DIR} COPYONLY)  
+endforeach(f)
+configure_file(${BASELINE}/raTvImageToReflectanceImageFilterAuto.tif ${TEHERANSPOT5DIR}/IMAGERY.TIF COPYONLY)
+add_test(raTvReflectanceToImageImageFilterAutoSpot5 ${RADIOMETRY_TESTS2}
+  --compare-image ${EPSILON_12}  ${TEHERANSPOT5DIR}/raTvSMALLTEHERANReflectanceToImageImageFilterAutoSpot5.tif
+                          ${TEHERANSPOT5DIR}/raTvReflectanceToImageImageFilterAutoSpot5.tif
+        otbReflectanceToImageImageFilterAuto
+        ${TEHERANSPOT5DIR}/IMAGERY.TIF 
+	${LARGEINPUT}/SPOT5/TEHERAN/IMAGERY.TIF
+        ${TEHERANSPOT5DIR}/raTvReflectanceToImageImageFilterAutoSpot5.tif
+	${TEHERANSPOT5DIR}/raTvSMALLTEHERANReflectanceToImageImageFilterAutoSpot5.tif
+         )
+
+
+add_test(raTuReflectanceToImageImageFilterAutoFORMOSAT2 ${RADIOMETRY_TESTS2}
+        otbReflectanceToImageImageFilterAuto
+                ${LARGEINPUT}/FORMOSAT/Sudouest_20071013_MS_fmsat/IMAGERY.TIF
+		${LARGEINPUT}/FORMOSAT/Sudouest_20071013_MS_fmsat/IMAGERY.TIF	
+                ${TEMP}/raTvReflectanceToImageImageFilterAutoFORMOSAT2.tif
+		${TEMP}/raTvSMALLReflectanceToImageImageFilterAutoFORMOSAT2.tif
+         )
+endif()
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ otbRADIOMETRY_TESTS3 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -377,6 +778,11 @@ add_test(raTvDEMCaracteristicsExtractor ${RADIOMETRY_TESTS3}
 # launch the FilterFunctionValues unitary test too.
 add_test(raTuAtmosphericCorrectionParametersNew ${RADIOMETRY_TESTS3}
         otbAtmosphericCorrectionParametersNew
+)
+
+# -------            otb::ImageMetadataCorrectionParameters   ------------------------------
+add_test(raTuImageMetadataCorrectionParametersNew ${RADIOMETRY_TESTS3}
+        otbImageMetadataCorrectionParametersNew
 )
 
 ##########           otb::FilterFunctionValues -------------------
@@ -464,6 +870,24 @@ add_test(raTvAtmosphericRadiativeTermsTest ${RADIOMETRY_TESTS3}
 )
 
 # -------            otb::ReflectanceToSurfaceReflectanceImageFilter   ------------------------------
+#add_test(raTuReflectanceToSurfaceReflectanceImageFilterNew ${RADIOMETRY_TESTS3}
+#        otbReflectanceToSurfaceReflectanceImageFilterNew
+#)
+#add_test(raTvReflectanceToSurfaceReflectanceImageFilter ${RADIOMETRY_TESTS3}
+#  --compare-image ${EPSILON_12}  ${BASELINE}/raTvReflectanceToSurfaceReflectanceImageFilter.tif
+#                              ${TEMP}/raTvReflectanceToSurfaceReflectanceImageFilter.tif
+#        otbReflectanceToSurfaceReflectanceImageFilterTest
+#        ${INPUTDATA}/verySmallFSATSW.tif
+#        ${TEMP}/raTvReflectanceToSurfaceReflectanceImageFilter.tif
+#        # SAME VALUE FOR EACH CHANNEL
+#        1 1 1 1 # intrinsic atmospheric reflectance
+#        2 2 2 2 # spherical albedo of the atmosphere
+#        3 3 3 3 # total transmission
+#        2 2 2 2 # downward transmittance
+#        3 3 3 3 # upward transmittance
+#       )
+
+# -------            otb::ReflectanceToSurfaceReflectanceImageFilter   ------------------------------
 add_test(raTuReflectanceToSurfaceReflectanceImageFilterNew ${RADIOMETRY_TESTS3}
         otbReflectanceToSurfaceReflectanceImageFilterNew
 )
@@ -481,10 +905,24 @@ add_test(raTvReflectanceToSurfaceReflectanceImageFilter ${RADIOMETRY_TESTS3}
         3 3 3 3 # upward transmittance
        )
 
+add_test(raTvReflectanceToSurfaceReflectanceImageFilter2 ${RADIOMETRY_TESTS3}
+  --compare-image ${EPSILON_12}  ${BASELINE}/raTvReflectanceToSurfaceReflectanceImageFilter2.tif
+                              ${TEMP}/raTvReflectanceToSurfaceReflectanceImageFilter2.tif
+        otbReflectanceToSurfaceReflectanceImageFilterTest2
+        ${INPUTDATA}/ToulouseExtract_WithGeom.tif
+        ${TEMP}/raTvReflectanceToSurfaceReflectanceImageFilter2.tif
+        1013
+        1.424
+        0.344
+        1
+        0.1
+       )
+
+
 if(OTB_DATA_USE_LARGEINPUT)
 #this test was comment after the refactoring of astmospheric correction classes
 #//TODO Need to rewrite tests with baselines generated directly with 6S.
-#add_test(raTvReflectanceToSurfaceReflectanceImageFilter2 ${RADIOMETRY_TESTS3}
+#add_test(raTvReflectanceToSurfaceReflectanceImageFilter3 ${RADIOMETRY_TESTS3}
 #  --compare-ascii ${EPSILON_12}  ${BASELINE_FILES}/raTvReflectanceToSurfaceReflectanceImageFilter2.txt
 #                              ${TEMP}/raTvReflectanceToSurfaceReflectanceImageFilter2.txt
 #        otbReflectanceToSurfaceReflectanceImageFilterTest2
@@ -507,17 +945,17 @@ add_test(raTvRomaniaReflectanceToRomaniaSurfaceReflectanceImageFilter ${RADIOMET
                 ${INPUTDATA}/RADIO_WAVELENGHT_SPECTRAL_BAND_SPOT4_1_MIR.txt  # wavelengths, channel 4
       )
 
-# -------            otb::SurfaceAdjacencyEffect6SCorrectionSchemeFilter   ------------------------------
-add_test(raTuSurfaceAdjacencyEffect6SCorrectionSchemeFilterNew ${RADIOMETRY_TESTS3}
-        otbSurfaceAdjacencyEffect6SCorrectionSchemeFilterNew
+# -------            otb::SurfaceAdjacencyEffectCorrectionSchemeFilter   ------------------------------
+add_test(raTuSurfaceAdjacencyEffectCorrectionSchemeFilterNew ${RADIOMETRY_TESTS3}
+        otbSurfaceAdjacencyEffectCorrectionSchemeFilterNew
 )
 
-add_test(raTvSurfaceAdjacencyEffect6SCorrectionSchemeFilter ${RADIOMETRY_TESTS3}
+add_test(raTvSurfaceAdjacencyEffectCorrectionSchemeFilter ${RADIOMETRY_TESTS3}
  --compare-image ${EPSILON_12}  ${BASELINE}/raTvSurfaceAdjacencyEffect6SCorrectionSchemeFilter.tif
                              ${TEMP}/raTvSurfaceAdjacencyEffect6SCorrectionSchemeFilter.tif
 # --compare-ascii ${EPSILON_6} ${BASELINE_FILES}/raTvSurfaceAdjacencyEffect6SCorrectionSchemeFilterOutput6SVallues.txt
 #                           ${TEMP}/raTvSurfaceAdjacencyEffect6SCorrectionSchemeFilterOutput6SVallues.txt
-        otbSurfaceAdjacencyEffect6SCorrectionSchemeFilter
+        otbSurfaceAdjacencyEffectCorrectionSchemeFilter
         ${BASELINE}/raTvRomania_Correction.tif
         ${TEMP}/raTvSurfaceAdjacencyEffect6SCorrectionSchemeFilter.tif
         2                                                            # Radius;
@@ -534,15 +972,25 @@ add_test(raTvSurfaceAdjacencyEffect6SCorrectionSchemeFilter ${RADIOMETRY_TESTS3}
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ otbRADIOMETRY_TESTS4 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# -------            otb::AtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms   ------------------------------
-add_test(raTuAtmosphericCorrectionParametersTo6SAtmosphericRadiativeTermsNew ${RADIOMETRY_TESTS4}
-        otbAtmosphericCorrectionParametersTo6SAtmosphericRadiativeTermsNew)
+# -------            otb::RadiometryCorrectionParametersToAtmosphericRadiativeTerms   ------------------------------
+add_test(raTuRadiometryCorrectionParametersToAtmosphericRadiativeTermsNew ${RADIOMETRY_TESTS4}
+        otbRadiometryCorrectionParametersToAtmosphericRadiativeTermsNew)
 
-add_test(raTvAtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms ${RADIOMETRY_TESTS4}
+add_test(raTvRadiometryCorrectionParametersToAtmosphericRadiativeTerms ${RADIOMETRY_TESTS4}
 --compare-ascii ${EPSILON_4}
                 ${BASELINE_FILES}/raTvSIXSTraitsComputeAtmosphericParametersTest.txt
                 ${TEMP}/raTvCorrectionTo6SRadiative.txt
-        otbAtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms
+        otbRadiometryCorrectionParametersToAtmosphericRadiativeTerms
+                ${INPUTDATA}/in6S_otb
+                ${TEMP}/raTvCorrectionTo6SRadiative.txt
+)
+
+# New test
+add_test(raTvRadiometryCorrectionParametersToAtmosphericRadiativeTerms ${RADIOMETRY_TESTS4}
+--compare-ascii ${EPSILON_4}
+                ${BASELINE_FILES}/raTvSIXSTraitsComputeAtmosphericParametersTest.txt
+                ${TEMP}/raTvCorrectionTo6SRadiative.txt
+        otbRadiometryCorrectionParametersToAtmosphericRadiativeTerms
                 ${INPUTDATA}/in6S_otb
                 ${TEMP}/raTvCorrectionTo6SRadiative.txt
 )
@@ -1693,25 +2141,35 @@ otbLuminanceToReflectanceImageFilterAuto.cxx
 otbImageToReflectanceImageFilterNew.cxx
 otbImageToReflectanceImageFilter.cxx
 otbImageToReflectanceImageFilterAuto.cxx
+otbLuminanceToImageImageFilterNew.cxx
+otbLuminanceToImageImageFilter.cxx
+otbLuminanceToImageImageFilterAuto.cxx
+otbReflectanceToLuminanceImageFilterNew.cxx
+otbReflectanceToLuminanceImageFilter.cxx
+otbReflectanceToLuminanceImageFilterAuto.cxx
+otbReflectanceToImageImageFilterNew.cxx
+otbReflectanceToImageImageFilter.cxx
+otbReflectanceToImageImageFilterAuto.cxx
 )
 set(Radiometry_SRCS3
 otbRadiometryTests3.cxx
 otbDEMCaracteristicsExtractorNew.cxx
 otbDEMCaracteristicsExtractor.cxx
 otbAtmosphericCorrectionParametersNew.cxx
+otbImageMetadataCorrectionParametersNew.cxx
 otbFilterFunctionValues.cxx
 otbSIXSTraitsTest.cxx
 otbSIXSTraitsComputeAtmosphericParameters.cxx
 otbAtmosphericRadiativeTermsTest.cxx
 otbReflectanceToSurfaceReflectanceImageFilterTest.cxx
-otbSurfaceAdjacencyEffect6SCorrectionSchemeFilterNew.cxx
-otbSurfaceAdjacencyEffect6SCorrectionSchemeFilter.cxx
+otbSurfaceAdjacencyEffectCorrectionSchemeFilterNew.cxx
+otbSurfaceAdjacencyEffectCorrectionSchemeFilter.cxx
 otbRomaniaReflectanceToRomaniaSurfaceReflectanceImageFilter.cxx
 )
 set(Radiometry_SRCS4
 otbRadiometryTests4.cxx
-otbAtmosphericCorrectionParametersTo6SAtmosphericRadiativeTermsNew.cxx
-otbAtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms.cxx
+otbRadiometryCorrectionParametersToAtmosphericRadiativeTermsNew.cxx
+otbRadiometryCorrectionParametersToAtmosphericRadiativeTerms.cxx
 otbAtmosphericCorrectionSequencement.cxx
 otbEVIRAndBAndNIRVegetationIndexImageFilter.cxx
 otbEVIMultiChannelRAndBAndNIRVegetationIndexImageFilter.cxx

@@ -62,14 +62,14 @@ int otbScalarImageToAdvancedTexturesFilter(int argc, char * argv[])
   offset[1] = offsety;
 
   filter->SetInput(reader->GetOutput());
-  filter->SetNumberOfBinsPerAxis(nbBins);
   filter->SetRadius(sradius);
   filter->SetOffset(offset);
 
   otb::StandardFilterWatcher watcher(filter, "Textures filter");
 
+  filter->SetNumberOfBinsPerAxis(nbBins);
   filter->SetInputImageMinimum(0);
-  filter->SetInputImageMaximum(256);
+  filter->SetInputImageMaximum(255);
 
   // Write outputs
   std::ostringstream oss;
@@ -85,6 +85,12 @@ int otbScalarImageToAdvancedTexturesFilter(int argc, char * argv[])
   oss.str("");
   oss << outprefix << "Mean.tif";
   writer->SetInput(filter->GetMeanOutput());
+  writer->SetFileName(oss.str());
+  writer->Update();
+
+  oss.str("");
+  oss << outprefix << "Dissimilarity.tif";
+  writer->SetInput(filter->GetDissimilarityOutput());
   writer->SetFileName(oss.str());
   writer->Update();
 

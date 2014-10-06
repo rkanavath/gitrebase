@@ -23,7 +23,7 @@
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
 
-int otbEdgeDensityImageFilter(int argc, char* argv[])
+int otbEdgeDensityImageFilter(int itkNotUsed(argc), char* argv[])
 {
 
   const char *       infname       = argv[1];
@@ -41,7 +41,6 @@ int otbEdgeDensityImageFilter(int argc, char* argv[])
   typedef float PixelType;
 
   typedef otb::Image<PixelType, Dimension> ImageType;
-  typedef ImageType::IndexType             IndexType;
   typedef otb::ImageFileReader<ImageType>  ReaderType;
   typedef otb::ImageFileWriter<ImageType>  WriterType;
 

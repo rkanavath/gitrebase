@@ -24,7 +24,7 @@
 #include "itkDataObject.h"
 #include "otbDataNode.h"
 
-int otbVectorDataFileReader(int argc, char * argv[])
+int otbVectorDataFileReader(int itkNotUsed(argc), char * argv[])
 {
   typedef otb::VectorData<>                         VectorDataType;
   typedef otb::VectorDataFileReader<VectorDataType> VectorDataFileReaderType;
@@ -34,7 +34,6 @@ int otbVectorDataFileReader(int argc, char * argv[])
   typedef DataNodeType::Pointer                   DataNodePointerType;
   typedef itk::TreeContainer<DataNodePointerType> DataTreeType;
 
-  typedef itk::DataObject dataobjectType;
   itk::Indent indent;
 
   reader->SetFileName(argv[1]);

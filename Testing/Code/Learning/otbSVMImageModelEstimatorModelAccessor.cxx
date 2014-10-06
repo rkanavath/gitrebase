@@ -31,7 +31,7 @@
 
 #include "otbImageFileReader.h"
 
-int otbSVMImageModelEstimatorModelAccessor(int argc, char* argv[])
+int otbSVMImageModelEstimatorModelAccessor(int itkNotUsed(argc), char* argv[])
 {
   const char* inputImageFileName = argv[1];
   const char* trainingImageFileName = argv[2];
@@ -68,7 +68,6 @@ int otbSVMImageModelEstimatorModelAccessor(int argc, char* argv[])
   svmEstimator->Update();
 
   typedef EstimatorType::SVMModelPointer SVMModelPointer;
-  typedef EstimatorType::SVMModelType    SVMModelType;
   SVMModelPointer ptrModel = svmEstimator->GetModel();
 
   std::ofstream f;

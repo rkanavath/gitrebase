@@ -1,25 +1,124 @@
-OTB-v.4.0 - Changes since version 3.20 (2013/02/21)
+OTB-v.4.2.1 - Changes since version 4.2.0 (2014/09/19)
+--------------------------------------------------------
+
+* Bug fixed:
+  * OTB-lib:
+    * 0000973: Include directories in the wrong order
+    * 0000764: otbcli_ComputeImagesStatistics doesn't error check output file location
+    * other minor fix
+
+
+OTB-v.4.2.0 - Changes since version 4.0 (2014/09/04)
 --------------------------------------------------------
 
 * Library:
 
   * Core:
-    * Change OTB API to support ITK with version 4.5 (More information is available in the migration guide at http://wiki.orfeo-toolbox.org/index.php/Migration_guide_OTBv4)
-    * Refactoring otbAttributesMapOpeningLabelMapFilter to be compatible with ITKv4.5.0
-    * Remove Visualization part from OTB: all these projects are now in Monteverdi
+    * Major compliance upgrade with index coordinates convention between OTB,
+      GDAL and OSSIM. OTB uses pixel centered convention, whereas GDAL and
+      OSSIM use corner pixel convention. More details on JIRA #647 and Mantis
+      #942
+    * Major performance improvment of Haralick Texture computation (6 to 10 times
+      faster)
+    * Add new texture feature (dissimilarity) in ScalarImageToAdvancedTexturesFilter
+    * Improvments of Simulation code in order to be able to use the solar
+      irradiance information when working with spectral responses for simulations.
+    * Support Jpeg2000 images through GDAL drivers (can use OpenJpeg, Kakadu, ECW)
+    * Reading/Writing RPC coefficients in GeoTIFF tags
+    * Cleaning of ITK pending patches
+    * Update internal ITK to 4.6.0
+    * Support SPOT6 metadata
+    * Integrate improvements from Monteverdi2
+    * Support clang 3.5.1
+    * Support MinGW compiler
+    * API change on the TOC calibration filters, previous classes were not
+      fully functional. Now supports any correction parameters set by user.
+      See Examples/Radiometry/AtmosphericCorrectionSequencement.cxx for
+      details on the migration.
+    * Better support of atmospheric corrections for Pleiades images. Proper
+      computation of satellite zenital angle using incidence angles and
+      satellite orientation angle convention
+
+* Applications:
+  * Updated applications :
+    * Superimpose and BundleToPerfectSensor : Add a specific reprojection mode for PHR bundle
+    * OpticalCalibration : parameters more flexible, allow users to overwrite metadata values
+
+* Bugs fixed:
+
+* Monteverdi2
+    * 0000915: In mvd2 applications wrappers InputImageList parameters, only the first item of the list is dropable
+    * 0000960: Drop from file explorer doest not work.
+    * 0000928: Output results of applications are not selected in the dataset manager
+    * 0000908: Vector-image model settings serialization persistence (gamma)
+    * 0000919: Inconsistent no-data checks in StreamingVectorImageFilter<> and StreamingHistogramVectorImageFilter<>.
+    * 0000918: Image-view shift on click
+    * 0000907: Serialization/persistence of viewport settings
+    * 0000906: Quantiles editing on mono-bands images.
+    * 0000909: Color-setup on PANCHRO images.
+    * 0000905: Calculation of zoom-extent in Quicklook-view.
+    * 0000964: Wrong update of Gamme cursor position
+    * 0000929: Drag and Drop in otb application a dataset leads to the disappearance of the dataset into the widget
+    * 0000921: Application freezes at the end of image import.
+    * 0000947: Droping dataset to the last subgroup of the data tree crash the application
+    * 0000933: Drag a dataset from temporary in the dataset manager outside the tree leads to a crash
+    * 0000903: Removing mvd2 directory content leads to a core dumped as startup
+    * 0000920: Wide unzoom aborts application
+    * 0000917: Applying same quantiles to all channels crash the application
+    * 0000962: Monteverdi2 cannot be run on OSX (image file not found).
+    * 0000924: Monteverdi2 does not start after the check of OpenGL was added
+    * 0000923: Monteverdi2 does not start after the check of OpenGL was added
+
+  * Documentation
+    * 0000948: Softwareguide OTB 4-0 : section 14.2.2 SIFT Detector (from chapter 14 Feature Extraction) is empty.
+
+  * OTB-lib
+    * 0000955: Wrong computation of SFS Textures
+    * 0000940: Some output states are not correctly manage into Qt Application
+    * 0000939: crash with a GIF/BMP image with ColorInterp=Palette when we request overviews via GDAL
+    * 0000966: VectorDataExtractROIApplication does a strange reprojection
+    * 0000932: Error in LSMS
+    * 0000936: Sub-pixel disparity filter is not compatible with disparity maps over subsampled grids
+    * 0000914: MeanShiftSmoothing application foutpos parameters is always mandatory
+    * 0000943: TrainImagesClassifier and ListSampleGenerator problem
+    * 0000954: GeometriesChangeSpatialReference does not work
+    * 0000949: BundleToPerfectSensor application: in PHR mode, the ourpur geom file is the XS one, not the PAN one
+    * 0000926: OTB does not compile with clang 5.1
+    * 0000968: CommandLineLauncher needs 2 passes to load parameters
+    * 0000951: BundleToPerfectSensor application does not work in default mode with external ITK (internal ITK is fine)
+    * 0000944: OTB does not compile with ITK4.6 git version
+
+  * Monteverdi
+    * 0000957: Unable to display input and output of ExtractRoadExample in transparency mode in Monteverdi
+
+
+OTB-v.4.0.0 - Changes since version 3.20 (2014/03/13)
+--------------------------------------------------------
+
+* Library:
+
+  * Core:
+    * [Breaking change !] Change OTB implementation and API to support ITK version 4.5
+      * More information at http://wiki.orfeo-toolbox.org/index.php/Migration_guide_OTBv4
+    * Refactor otbAttributesMapOpeningLabelMapFilter to be compatible with ITK 4.5
+    * Remove FLTK based Visualization part from OTB: all these projects are now in Monteverdi
     * Rename EuclideanDistance as EuclideanDistanceMetric
     * Remove otbMaskedScalarImageToGreyLevelCoocurenceMatrixGenerator
     * Use local masks in otbHaralickTexturesImageFunction
     * Remove methods of otbSystem.h which can be replaced by similar ones in itksys/SystemTools.hxx
-    * Move classes about Amplitude and Phase functors from visualzation to basic filter
+    * Move classes about Amplitude and Phase functors from visualization to basic filter
     * otbImageToLabelMapWithAttributesFilter inherits from itkImageToImageFilter instead of itkLabelMapFilter
     * Overload GenerateInputRequestedRegion in otbImageToLabelMapWithAttributesFilter
     * Override VerifyInputInformation in otbImportGeoInformationImageFilter
     * Adding a gamma parameter in VectorRescaleIntensityImageFilter to allow for gamma correction
+    * Clean up JoinHistogramMI code
+    * Fix race condition in BinaryFunctorNeighborhoodJoinHistogramImageFilter
     * Remove unused OTB_USE_SYSTEM_VXL and OTB_VXL_DIR from OTBConfig and UseOTB
-    * Improve support of VS2013
-    * Improve support of large files
-    * Support of MacOSX 10.9
+    * Improve detection of Large Files Support by not unconditionnally defining LFS related macros
+    * Support for Visual Studio 2012
+    * Support for Visual Studio 2013
+    * Support compilation in MacOSX 10.9 with latest XCode
+    * Support for clang 3.5
 
   * Testing:
     * Correct multibaseline support
@@ -41,8 +140,11 @@ OTB-v.4.0 - Changes since version 3.20 (2013/02/21)
 * Applications:
 
   * Updated applications:
-    * Remove dependency of Colormapping to Visualization class
-    * Adding gamma correction method the convert application 
+    * ColorMapping : Remove dependency of ColorMapping to Visualization class
+    * Convert : Adding gamma correction method the convert application
+    * HomologousPointsExtraction : add mode.geobins.binsizey and mode.geobins.binstepy to allow for anisotropic geobins mode
+    * HomologousPointsExtraction : new mode.geobins.margin parameter to only search inside image center.
+    
   * Core framework:
     * Improve the support of XML parameters input/output file
     * Improve the input VectorData/Image/Filename parameter to give access to m_Input attribute

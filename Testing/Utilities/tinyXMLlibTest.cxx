@@ -73,7 +73,7 @@ bool XmlTest( FILE* ptrfile, const char* testString, int expected, int found, bo
 // and show how to add and remove nodes.
 //
 
-int tinyXMLlibTest(int argc, char *argv[] )
+int tinyXMLlibTest(int itkNotUsed(argc), char *argv[] )
 {
         const char * inputUtf8TestFilename = argv[1];
         const char * inputUtf8TestVerifyFilename = argv[2];
@@ -910,8 +910,8 @@ int tinyXMLlibTest(int argc, char *argv[] )
 	// Long filenames crashing STL version
 	{
 		TiXmlDocument doc( "midsummerNightsDreamWithAVeryLongFilenameToConfuseTheStringHandlingRoutines.xml" );
-		bool loadOkay = doc.LoadFile();
-		loadOkay = true;	// get rid of compiler warning.
+//		bool loadOkay = doc.LoadFile();
+//		loadOkay = true;	// get rid of compiler warning.
 		// Won't pass on non-dev systems. Just a "no crash" check.
 		//XmlTest(file, "Long filename. ", true, loadOkay );
 	}
@@ -1316,5 +1316,3 @@ int tinyXMLlibTest(int argc, char *argv[] )
         if( gFail == 0 ) return EXIT_SUCCESS;
         else return EXIT_FAILURE;
 }
-
-

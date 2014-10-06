@@ -146,16 +146,32 @@ private:
     SetParameterDescription("mode.full","Extract and match all keypoints, loading both images entirely into memory");
 
     AddChoice("mode.geobins","Search keypoints in small spatial bins regularly spread accross first image");
-    SetParameterDescription("mode.geobins","This method allows to retrieve a set of tie points regulary spread accross image 1. Corresponding bins in image 2 are retrieved using sensor and geographical information if available.");
+    SetParameterDescription("mode.geobins","This method allows to retrieve a set of tie points regulary spread accross image 1. Corresponding bins in image 2 are retrieved using sensor and geographical information if available. The first bin position takes into account the margin parameter. Bins are cropped to the largest image region shrinked by the margin parameter for both in1 and in2 images.");
+    
     AddParameter(ParameterType_Int,"mode.geobins.binsize","Size of bin");
     SetParameterDescription("mode.geobins.binsize","Radius of the spatial bin in pixels");
     SetDefaultParameterInt("mode.geobins.binsize",256);
     SetMinimumParameterIntValue("mode.geobins.binsize",1);
 
+    AddParameter(ParameterType_Int,"mode.geobins.binsizey","Size of bin (y direction)");
+    SetParameterDescription("mode.geobins.binsizey","Radius of the spatial bin in pixels (y direction). If not set, the mode.geobins.binsize value is used.");
+    SetMinimumParameterIntValue("mode.geobins.binsizey",1);
+    MandatoryOff("mode.geobins.binsizey");
+    
     AddParameter(ParameterType_Int,"mode.geobins.binstep","Steps between bins");
     SetParameterDescription("mode.geobins.binstep","Steps between bins in pixels");
     SetDefaultParameterInt("mode.geobins.binstep",256);
     SetMinimumParameterIntValue("mode.geobins.binstep",1);
+
+    AddParameter(ParameterType_Int,"mode.geobins.binstepy","Steps between bins (y direction)");
+    SetParameterDescription("mode.geobins.binstepy","Steps between bins in pixels (y direction). If not set, the mode.geobins.binstep value is used.");
+    SetMinimumParameterIntValue("mode.geobins.binstepy",1);
+    MandatoryOff("mode.geobins.binstepy");
+
+    AddParameter(ParameterType_Int,"mode.geobins.margin","Margin from image border to start/end bins (in pixels)");
+    SetParameterDescription("mode.geobins.margin","Margin from image border to start/end bins (in pixels)");
+    SetMinimumParameterIntValue("mode.geobins.margin",0);
+    SetDefaultParameterInt("mode.geobins.margin",10);
 
     AddParameter(ParameterType_Float,"precision","Estimated precision of the colocalisation function (in pixels).");
     SetParameterDescription("precision","Estimated precision of the colocalisation function in pixels");
@@ -360,10 +376,26 @@ private:
       {
       // Compute binning on first image
       FloatImageType::SizeType size = this->GetParameterImage("in1")->GetLargestPossibleRegion().GetSize();
-      unsigned int bin_size = GetParameterInt("mode.geobins.binsize");
-      unsigned int bin_step = GetParameterInt("mode.geobins.binstep");
-      unsigned int nb_bins_x = size[0]/(bin_size + bin_step);
-      unsigned int nb_bins_y = size[1]/(bin_size + bin_step);
+      unsigned int bin_size_x = GetParameterInt("mode.geobins.binsize");
+      unsigned int bin_size_y = bin_size_x;
+
+      unsigned int image_border_margin = GetParameterInt("mode.geobins.margin");
+
+      if(IsParameterEnabled("mode.geobins.binsizey"))
+        {
+        bin_size_y = GetParameterInt("mode.geobins.binsizey");
+        }
+      
+      unsigned int bin_step_x = GetParameterInt("mode.geobins.binstep");
+      unsigned int bin_step_y = bin_step_x;
+
+      if(IsParameterEnabled("mode.geobins.binstepy"))
+        {
+        bin_step_y = GetParameterInt("mode.geobins.binstepy");
+        }
+      
+      unsigned int nb_bins_x = static_cast<unsigned int>(vcl_ceil(static_cast<float>(size[0]-2*image_border_margin)/(bin_size_x + bin_step_x)));
+      unsigned int nb_bins_y = static_cast<unsigned int>(vcl_ceil(static_cast<float>(size[1]-2*image_border_margin)/(bin_size_y + bin_step_y)));
 
       FloatImageType::SpacingType spacing1 = this->GetParameterImage("in1")->GetSpacing();
       FloatImageType::PointType origin1 = this->GetParameterImage("in1")->GetOrigin();
@@ -374,8 +406,8 @@ private:
         {
         for(unsigned int j = 0; j<nb_bins_y; ++j)
           {
-          unsigned int startx = bin_step/2 + i*(bin_size + bin_step);
-          unsigned int starty = bin_step/2 + j*(bin_size + bin_step);
+          unsigned int startx = image_border_margin + i*(bin_size_x + bin_step_x);
+          unsigned int starty = image_border_margin + j*(bin_size_y + bin_step_y);
 
 
           FloatImageType::SizeType size1;
@@ -384,13 +416,16 @@ private:
 
           index1[0]=startx;
           index1[1]=starty;
-          size1[0] = bin_size;
-          size1[1] = bin_size;
+          size1[0] = bin_size_x;
+          size1[1] = bin_size_y;
 
           region1.SetIndex(index1);
           region1.SetSize(size1);
 
-          region1.Crop(this->GetParameterImage("in1")->GetLargestPossibleRegion());
+          FloatImageType::RegionType largestRegion = this->GetParameterImage("in1")->GetLargestPossibleRegion();
+
+          largestRegion.ShrinkByRadius(image_border_margin);
+          region1.Crop(largestRegion);
 
           otbAppLogINFO("("<<i+1<<"/"<<nb_bins_x<<", "<<j+1<<"/"<<nb_bins_y<<") Considering region1 : "<<region1.GetIndex()<<", "<<region1.GetSize());
 
@@ -405,14 +440,14 @@ private:
           ul1[0] = origin1[0] + startx * spacing1[0];
           ul1[1] = origin1[1] + starty * spacing1[1];
 
-          ur1[0] = origin1[0] + (startx+bin_size) * spacing1[0];
+          ur1[0] = origin1[0] + (startx+bin_size_x) * spacing1[0];
           ur1[1] = origin1[1] + starty * spacing1[1];
 
-          lr1[0] = origin1[0] + (startx+bin_size) * spacing1[0];
-          lr1[1] = origin1[1] + (starty+bin_size) * spacing1[1];
+          lr1[0] = origin1[0] + (startx+bin_size_x) * spacing1[0];
+          lr1[1] = origin1[1] + (starty+bin_size_y) * spacing1[1];
 
           ll1[0] = origin1[0] + (startx) * spacing1[0];
-          ll1[1] = origin1[1] + (starty+bin_size) * spacing1[1];
+          ll1[1] = origin1[1] + (starty+bin_size_y) * spacing1[1];
 
           p1 = rsTransform->TransformPoint(ul1);
           p2 = rsTransform->TransformPoint(ur1);
@@ -444,7 +479,10 @@ private:
           region2.SetSize(size2);
           region2.PadByRadius(static_cast<unsigned int>(GetParameterInt("precision")));
 
-          if(region2.Crop(this->GetParameterImage("in2")->GetLargestPossibleRegion()))
+          FloatImageType::RegionType largestRegion2 = this->GetParameterImage("in2")->GetLargestPossibleRegion();
+          largestRegion2.ShrinkByRadius(image_border_margin);
+
+          if(region2.Crop(largestRegion2))
             {
             otbAppLogINFO("Corresponding region2 is "<<region2.GetIndex()<<", "<<region2.GetSize());
 

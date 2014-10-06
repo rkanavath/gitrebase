@@ -24,7 +24,7 @@
 #include "itkListSample.h"
 #include "otbVectorImage.h"
 
-int otbSOMClassifierNew(int argc, char* argv[])
+int otbSOMClassifierNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   typedef double InputPixelType;
   typedef int    LabelPixelType;
@@ -33,7 +33,6 @@ int otbSOMClassifierNew(int argc, char* argv[])
   typedef itk::VariableLengthVector<InputPixelType>                  PixelType;
   typedef itk::Statistics::EuclideanDistanceMetric<PixelType>              DistanceType;
   typedef otb::SOMMap<PixelType, DistanceType, Dimension>            SOMMapType;
-  typedef otb::VectorImage<InputPixelType, Dimension>                InputImageType;
   typedef itk::Statistics::ListSample<PixelType>                     SampleType;
   typedef otb::SOMClassifier<SampleType, SOMMapType, LabelPixelType> ClassifierType;
 

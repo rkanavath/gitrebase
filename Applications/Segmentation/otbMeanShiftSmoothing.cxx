@@ -49,7 +49,7 @@ private:
     SetDescription("Perform mean shift filtering");
 
     // Documentation
-    SetDocName("Mean Shift filtering (can be used as Exact Large-Scale Mean-Shift segmentation, step 1)");
+    SetDocName("Exact Large-Scale Mean-Shift segmentation, step 1 (smoothing)");
     SetDocLongDescription("This application performs mean shift fitlering (multi-threaded).");
     SetDocLimitations("With mode search option, the result will slightly depend on thread number.");
     SetDocAuthors("OTB-Team");
@@ -66,6 +66,7 @@ private:
 
     AddParameter(ParameterType_OutputImage,  "foutpos",    "Spatial image");
     SetParameterDescription( "foutpos", " The spatial image output. Spatial image output is a displacement map (pixel position after convergence).");
+    MandatoryOff("foutpos");
 
     AddParameter(ParameterType_Int, "spatialr", "Spatial radius");
     SetParameterDescription("spatialr", "Spatial radius of the neighborhood.");
@@ -99,12 +100,12 @@ private:
     AddParameter(ParameterType_Empty, "modesearch", "Mode search.");
     SetParameterDescription("modesearch", "If activated pixel iterative convergence is stopped if the path . Be careful, with this option, the result will slightly depend on thread number");
     EnableParameter("modesearch");
-    MandatoryOff("modesearch");
 
 
     // Doc example parameter settings
     SetDocExampleParameterValue("in", "maur_rgb.png");
     SetDocExampleParameterValue("fout", "MeanShift_FilterOutput.tif");
+    SetDocExampleParameterValue("foutpos", "MeanShift_SpatialOutput.tif");
     SetDocExampleParameterValue("spatialr", "16");
     SetDocExampleParameterValue("ranger", "16");
     SetDocExampleParameterValue("thres", "0.1");
@@ -114,7 +115,16 @@ private:
 
   void DoUpdateParameters()
   {
-    // Nothing to do here : all parameters are independent
+    if(IsParameterEnabled("modesearch"))
+      {
+      MandatoryOn("foutpos");
+      EnableParameter("foutpos");
+      }
+    else
+      {
+      MandatoryOff("foutpos");
+      DisableParameter("foutpos");
+      }
   }
 
   void DoExecute()
@@ -130,6 +140,18 @@ private:
     m_Filter->SetThreshold(GetParameterFloat("thres"));
     m_Filter->SetMaxIterationNumber(GetParameterInt("maxiter"));
     m_Filter->SetRangeBandwidthRamp(GetParameterFloat("rangeramp"));
+
+    //Compute the margin used to ensure exact results (tile wise smoothing)
+    //This margin is valid for the default uniform kernel used by the
+    //MeanShiftSmoothing filter (bandwidth equal to radius in this case)
+    const unsigned int margin = (m_Filter->GetMaxIterationNumber() * m_Filter->GetSpatialBandwidth()) + 1;
+    
+    otbAppLogINFO(<<"Margin of " << margin << " pixels applied to each tile to stabilized mean shift filtering." << std::endl);
+
+    if ( margin > std::min(input->GetLargestPossibleRegion().GetSize()[0],input->GetLargestPossibleRegion().GetSize()[1]) )
+      {
+      otbAppLogWARNING(<<"Margin value exceed the input image size." << std::endl);
+      }
 
     SetParameterOutputImage("fout", m_Filter->GetOutput());
     SetParameterOutputImage("foutpos", m_Filter->GetSpatialOutput());

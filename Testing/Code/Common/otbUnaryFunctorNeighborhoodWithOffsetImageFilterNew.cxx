@@ -63,15 +63,12 @@ private:
 };
 }
 
-int otbUnaryFunctorNeighborhoodWithOffsetImageFilterNew(int argc, char * argv[])
+int otbUnaryFunctorNeighborhoodWithOffsetImageFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   typedef double InputPixelType;
   const int Dimension = 2;
   typedef otb::VectorImage<InputPixelType,
       Dimension>               ImageType;
-  typedef ImageType::PixelType
-  PixelType;
-  typedef itk::ConstNeighborhoodIterator<ImageType> IterType;
   typedef Functor::UnaryFunctorNeighborhoodWithOffsetImageFilterFunctorNewTest<InputPixelType,
       InputPixelType> FunctorType;
   typedef otb::UnaryFunctorNeighborhoodWithOffsetImageFilter<ImageType, ImageType,

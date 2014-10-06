@@ -38,26 +38,22 @@
 
 #include <stdio.h>
 
-int otbAlignImageToPath(int argc, char * argv[])
+int otbAlignImageToPath(int itkNotUsed(argc), char * argv[])
 {
   const char * inputFilename  = argv[1];
   const char * outputFilename = argv[2];
 
   typedef double InputPixelType;
   typedef double OutputPixelType;
-  typedef double RealPixelType;
   const unsigned int Dimension = 2;
 
   typedef otb::Image<InputPixelType,  Dimension> InputImageType;
-  typedef otb::Image<RealPixelType,  Dimension>  RealImageType;
 
   typedef itk::PolyLineParametricPath<Dimension> PathType;
 
-  typedef PathType::Pointer PathTypePointer;
   PathType::Pointer ltoto = PathType::New();
 
   typedef otb::Image<OutputPixelType, Dimension> OutputImageType;
-
 
   typedef otb::ImageFileReader<InputImageType> ReaderType;
 

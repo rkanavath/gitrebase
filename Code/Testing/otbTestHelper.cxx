@@ -594,8 +594,6 @@ int TestHelper::RegressionTestImage(int cpt, const char *testImageFilename, cons
   // Use the factory mechanism to read the test and baseline files and convert them to double
 
   typedef otb::VectorImage<double, 2>        ImageType;
-  typedef otb::VectorImage<unsigned char, 2> OutputType;
-  typedef otb::VectorImage<unsigned char, 2> DiffOutputType;
   typedef otb::ImageFileReader<ImageType>    ReaderType;
 
   // Read the baseline file
@@ -662,7 +660,6 @@ int TestHelper::RegressionTestImage(int cpt, const char *testImageFilename, cons
   if (status.GetSquaredNorm() > 0 && m_ReportErrors)
     {
     typedef otb::PrintableImageFilter<ImageType>               RescaleType;
-    typedef RescaleType::OutputImageType                       OutputType;
     typedef otb::ImageFileWriter<RescaleType::OutputImageType> WriterType;
 
     RescaleType::Pointer rescale = RescaleType::New();
@@ -1536,6 +1533,8 @@ void TestHelper::AddWhiteSpace(const std::string& strIn, std::string &strOut) co
   keys.push_back("=");
   keys.push_back(":");
   keys.push_back(";");
+  keys.push_back("</");
+  keys.push_back(">");
 
   std::vector<std::string> keysOut;
   keysOut.push_back("[ ");
@@ -1546,6 +1545,9 @@ void TestHelper::AddWhiteSpace(const std::string& strIn, std::string &strOut) co
   keysOut.push_back(" = ");
   keysOut.push_back(" : ");
   keysOut.push_back(" , ");
+  keysOut.push_back(" </");
+  keysOut.push_back("> ");
+
 
   for (unsigned int it = 0; it < keys.size(); ++it)
     {
@@ -1604,7 +1606,6 @@ bool TestHelper::CompareLines(const std::string& strfileref,
     buffstreamTest >> strTest;
     //otbMsgDevMacro(<< "sub comparison of the line, strRef: " << strRef << " || strTest: " << strTest);
 
-    bool        chgt = false;
     std::string charTmpRef = "";
     std::string charTmpTest = "";
 
@@ -1683,7 +1684,6 @@ bool TestHelper::CompareLines(const std::string& strfileref,
             strCharTest = "";
             strNumRef = charTmpRef;
             strNumTest = charTmpTest;
-            chgt = true;
             }
           // Case where there's a character after numbers.
           else if ((etatCour == ETAT_CHAR) && (etatPrec == ETAT_NUM))
@@ -1706,7 +1706,6 @@ bool TestHelper::CompareLines(const std::string& strfileref,
             strNumTest = "";
             strCharRef = charTmpRef;
             strCharTest = charTmpTest;
-            chgt = true;
             }
           else if (etatCour == etatPrec)
             {
@@ -1726,36 +1725,32 @@ bool TestHelper::CompareLines(const std::string& strfileref,
           ++i;
           }
 
-        // Simpliest case : string characters or numeric value between 2 separators
-        if (!chgt)
+        // test last part
+        if (etatCour == ETAT_CHAR)
           {
-          if (isNumeric(strRef))
+          if (strCharRef != strCharTest)
             {
-
-            if ((strRef != strTest) && (vcl_abs(atof(strRef.c_str())) > m_EpsilonBoundaryChecking)
-                && (vcl_abs(atof(strRef.c_str()) - atof(strTest.c_str()))
-                    > epsilon * vcl_abs(atof(strRef.c_str()))))    //epsilon as relative error
+            if (m_ReportErrors)
               {
-              if (m_ReportErrors)
-                {
-                fluxfilediff << "Diff at line " << numLine << " : vcl_abs( (" << strRef << ") - (" << strTest
-                             << ") ) > " << epsilon << std::endl;
-                differenceFoundInCurrentLine = true;
-                }
-              nbdiff++;
+              fluxfilediff << "Diff at line " << numLine << " : " << strCharRef << " != " << strCharTest << std::endl;
+              differenceFoundInCurrentLine = true;
               }
+            nbdiff++;
             }
-          else
+          }
+        else
+          {
+          if ((strNumRef != strNumTest) && (vcl_abs(atof(strNumRef.c_str())) > m_EpsilonBoundaryChecking)
+              && (vcl_abs(atof(strNumRef.c_str()) - atof(strNumTest.c_str()))
+                  > epsilon * vcl_abs(atof(strNumRef.c_str()))))    //epsilon as relative error
             {
-            if (strRef != strTest)
+            if (m_ReportErrors)
               {
-              if (m_ReportErrors)
-                {
-                fluxfilediff << "Diff at line " << numLine << " : " << strRef << " != " << strTest << std::endl;
-                differenceFoundInCurrentLine = true;
-                }
-              nbdiff++;
+              fluxfilediff << "Diff at line " << numLine << " : vcl_abs( (" << strNumRef << ") - (" << strNumTest
+                            << ") ) > " << epsilon << std::endl;
+              differenceFoundInCurrentLine = true;
               }
+            nbdiff++;
             }
           }
         } // else

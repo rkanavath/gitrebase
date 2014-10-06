@@ -31,7 +31,7 @@ namespace Wrapper
 /** \class
  * \brief
  */
-class QtWidgetInputImageListParameter : public QtWidgetParameterBase
+class ITK_ABI_EXPORT QtWidgetInputImageListParameter : public QtWidgetParameterBase
 {
   Q_OBJECT
 public:
@@ -41,6 +41,7 @@ public:
 
 signals:
   void Change();
+  void FileSelectionWidgetAdded( QWidget * );
 
 protected slots:
   //void SetFileName( const QString& value );

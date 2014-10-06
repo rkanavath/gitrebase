@@ -43,15 +43,43 @@ GDALDatasetWrapper::GetDataSet() const
   return m_Dataset;
 }
 
+// IsJPEG2000
+bool
+GDALDatasetWrapper::IsJPEG2000() const
+{
+  if (m_Dataset == NULL)
+    {
+    return false;
+    }
+  std::string driverName(m_Dataset->GetDriver()->GetDescription());
+  if (driverName.compare("JP2OpenJPEG") == 0 ||
+      driverName.compare("JP2KAK") == 0 ||
+      driverName.compare("JP2ECW") == 0)
+    {
+    return true;
+    }
+  return false;
+}
+
 // GDALDriverManagerWrapper method implementation
 
 GDALDriverManagerWrapper::GDALDriverManagerWrapper()
 {
     GDALAllRegister();
 
+    // Ignore incompatible Jpeg2000 drivers (Jasper)
+    /*
+    driver = GetGDALDriverManager()->GetDriverByName( "JPEG2000" );
+    if (driver)
+      GetGDALDriverManager()->DeregisterDriver( driver );
+    */
+
 #ifndef CHECK_HDF4OPEN_SYMBOL
+
+    GDALDriver* driver = 0;
+
     // Get rid of the HDF4 driver when it is buggy
-    GDALDriver* driver = GetGDALDriverManager()->GetDriverByName( "hdf4" );
+    driver = GetGDALDriverManager()->GetDriverByName( "hdf4" );
     if (driver)
       GetGDALDriverManager()->DeregisterDriver( driver );
 #endif
@@ -67,6 +95,26 @@ GDALDatasetWrapper::Pointer
 GDALDriverManagerWrapper::Open( std::string filename ) const
 {
   GDALDatasetWrapper::Pointer datasetWrapper;
+
+  // first : test if a driver can identify the dataset
+  GDALDriverH identifyDriverH = GDALIdentifyDriver(filename.c_str(), NULL);
+  if(identifyDriverH == NULL)
+    {
+    // don't try to open it and exit
+    return datasetWrapper;
+    }
+
+  GDALDriver *identifyDriver = static_cast<GDALDriver*>(identifyDriverH);
+
+  // check if Jasper will be used
+  if (strcmp(identifyDriver->GetDescription(),"JPEG2000") == 0)
+    {
+    itkGenericExceptionMacro(<< "Error : tried to open the file "
+      << filename.c_str() << " with GDAL driver Jasper "
+      "(which fails on OTB). Try setting the environment variable GDAL_SKIP"
+      " in order to avoid this driver.");
+    }
+
   GDALDatasetH dataset = GDALOpen(filename.c_str(), GA_ReadOnly);
 
   if (dataset != NULL)
@@ -164,7 +212,7 @@ void GDALOverviewsBuilder::GetGDALResamplingMethod(std::string &resamplingMethod
 extern "C"
 {
   static int CPL_STDCALL otb_UpdateGDALProgress(double dfComplete,
-                                                const char *pszMessage,
+                                                const char *itkNotUsed(pszMessage),
                                                 void * pProgressArg)
   {
     otb::GDALOverviewsBuilder* _this = (otb::GDALOverviewsBuilder*)pProgressArg;
@@ -225,4 +273,3 @@ void GDALOverviewsBuilder::Update()
 }
 
 } // end namespace otb
-

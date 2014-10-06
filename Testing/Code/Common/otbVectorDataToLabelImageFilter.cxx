@@ -38,13 +38,13 @@ typedef otb::ImageFileWriter<ImageType>              WriterType;
 typedef otb::VectorDataToLabelImageFilter<VectorDataType,
                                           ImageType>          RasterizationFilterType;
 
-int otbVectorDataToLabelImageFilterNew(int argc, char* argv[])
+int otbVectorDataToLabelImageFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   RasterizationFilterType::Pointer  rasterization = RasterizationFilterType::New();
   return EXIT_SUCCESS;
 }
 
-int otbVectorDataToLabelImageFilter(int argc, char* argv[])
+int otbVectorDataToLabelImageFilter(int itkNotUsed(argc), char * argv[])
 {
 
   ReaderType::Pointer reader = ReaderType::New();
@@ -66,9 +66,6 @@ int otbVectorDataToLabelImageFilter(int argc, char* argv[])
   rasterization->AddVectorData(vdproj->GetOutput());
   rasterization->SetOutputParametersFromImage(reader->GetOutput());
   rasterization->SetBurnAttribute("DN");
-
-  otb::StandardOneLineFilterWatcher * watch = new otb::StandardOneLineFilterWatcher(rasterization.GetPointer(),
-                                                                          "rasterization");
 
   WriterType::Pointer writer  = WriterType::New();
   writer->SetFileName(argv[3]);

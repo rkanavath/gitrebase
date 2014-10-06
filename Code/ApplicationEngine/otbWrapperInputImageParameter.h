@@ -30,7 +30,7 @@ namespace Wrapper
  *  \brief This class represents a InputImage parameter
  */
 
-class ITK_EXPORT InputImageParameter : public Parameter
+class ITK_ABI_EXPORT InputImageParameter : public Parameter
 {
 public:
   /** Standard class typedef */
@@ -80,7 +80,6 @@ public:
   template <class TImageType>
     TImageType* GetImage();
 
-
   /** Set a FloatVectorImageType image.*/
   void SetImage(FloatVectorImageType* image);
 
@@ -89,13 +88,10 @@ public:
     void SetImage(TImageType* image);
 
 
-    /** Generic cast method that will be specified for each image type. */
+  /** Generic cast method that will be specified for each image type. */
   template <class TInputImage, class TOutputImage>
-    TOutputImage* CastImage()
-  {
-    itkExceptionMacro("Cast from "<<typeid(TInputImage).name()<<" to "<<typeid(TInputImage).name()<<" not authorized.");
-  }
-
+  ITK_ABI_EXPORT TOutputImage*  CastImage();
+    
   /** Cast an image to an image of the same type
   * Image to Image, VectorImage to VectorImage, RGBAImage to RGBAImage. */
   template <class TInputImage, class TOutputImage>
@@ -159,7 +155,68 @@ private:
 
 }; // End class InputImage Parameter
 
+
+// template specializations of CastImage<> should be declared in header
+// so that the linker knows they exist when building OTB Applications
+
+#define otbDeclareCastImageMacro(InputImageType, OutputImageType)   \
+  template<> OutputImageType *                                          \
+  InputImageParameter::CastImage<InputImageType , OutputImageType>();    \
+
+#define otbGenericDeclareCastImageMacro(InputImageType, prefix)     \
+  otbDeclareCastImageMacro(InputImageType, UInt8##prefix##ImageType) \
+  otbDeclareCastImageMacro(InputImageType, UInt16##prefix##ImageType) \
+  otbDeclareCastImageMacro(InputImageType, Int16##prefix##ImageType) \
+  otbDeclareCastImageMacro(InputImageType, UInt32##prefix##ImageType) \
+  otbDeclareCastImageMacro(InputImageType, Int32##prefix##ImageType) \
+  otbDeclareCastImageMacro(InputImageType, Float##prefix##ImageType) \
+  otbDeclareCastImageMacro(InputImageType, Double##prefix##ImageType)
+
+  
+/*********************************************************************
+********************** Image -> Image
+**********************************************************************/
+otbGenericDeclareCastImageMacro(UInt8ImageType, )
+otbGenericDeclareCastImageMacro(Int16ImageType, )
+otbGenericDeclareCastImageMacro(UInt16ImageType, )
+otbGenericDeclareCastImageMacro(Int32ImageType, )
+otbGenericDeclareCastImageMacro(UInt32ImageType, )
+otbGenericDeclareCastImageMacro(FloatImageType, )
+otbGenericDeclareCastImageMacro(DoubleImageType, )
+
+
+/*********************************************************************
+********************** VectorImage -> VectorImage
+**********************************************************************/
+otbGenericDeclareCastImageMacro(UInt8VectorImageType, Vector)
+otbGenericDeclareCastImageMacro(Int16VectorImageType, Vector)
+otbGenericDeclareCastImageMacro(UInt16VectorImageType, Vector)
+otbGenericDeclareCastImageMacro(Int32VectorImageType, Vector)
+otbGenericDeclareCastImageMacro(UInt32VectorImageType, Vector)
+otbGenericDeclareCastImageMacro(FloatVectorImageType, Vector)
+otbGenericDeclareCastImageMacro(DoubleVectorImageType, Vector)
+
+
+/*********************************************************************
+********************** Image -> VectorImage
+**********************************************************************/
+otbGenericDeclareCastImageMacro(UInt8ImageType, Vector)
+otbGenericDeclareCastImageMacro(Int16ImageType, Vector)
+otbGenericDeclareCastImageMacro(UInt16ImageType, Vector)
+otbGenericDeclareCastImageMacro(Int32ImageType, Vector)
+otbGenericDeclareCastImageMacro(UInt32ImageType, Vector)
+otbGenericDeclareCastImageMacro(FloatImageType, Vector)
+otbGenericDeclareCastImageMacro(DoubleImageType, Vector)
+
+#undef otbDeclareCastImageMacro
+#undef otbGenericDeclareCastImageMacro
+
+
 } // End namespace Wrapper
 } // End namespace otb
+
+#ifndef OTB_MANUAL_INSTANTIATION
+#include "otbWrapperInputImageParameter.txx"
+#endif
 
 #endif

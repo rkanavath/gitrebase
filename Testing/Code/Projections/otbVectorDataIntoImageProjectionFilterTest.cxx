@@ -37,7 +37,7 @@
 * prTvVectorDataIntoImageProjectionFilterTest_4 failed because of the bug http://bugs.orfeo-toolbox.org/view.php?id=333.
 */
 
-int otbVectorDataIntoImageProjectionFilterTest(int argc, char * argv[])
+int otbVectorDataIntoImageProjectionFilterTest(int itkNotUsed(argc), char * argv[])
 {
   typedef float                                           PixelType;
   typedef otb::VectorImage<PixelType, 2>                  VectorImageType;
@@ -99,7 +99,7 @@ int otbVectorDataIntoImageProjectionFilterTest(int argc, char * argv[])
 
 
 
-int otbVectorDataIntoImageProjectionFilterCompareImplTest(int argc, char * argv[])
+int otbVectorDataIntoImageProjectionFilterCompareImplTest(int itkNotUsed(argc), char * argv[])
 {
   typedef float                                           PixelType;
   typedef otb::VectorImage<PixelType, 2>                  VectorImageType;
@@ -119,8 +119,6 @@ int otbVectorDataIntoImageProjectionFilterCompareImplTest(int argc, char * argv[
   <VectorDataType, VectorDataType>                        VectorDataProjectionFilterType;
   typedef otb::VectorDataExtractROI<VectorDataType>       VectorDataExtractROIType;
   typedef VectorDataExtractROIType::RegionType            RemoteSensingRegionType;
-
-  typedef itk::PreOrderTreeIterator<VectorDataType::DataTreeType> TreeIteratorType;
 
   std::string imageInputFilename = argv[1];
   std::string vectorDataInputFilename = argv[2];

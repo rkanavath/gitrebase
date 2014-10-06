@@ -25,6 +25,8 @@
 #include "itksys/SystemTools.hxx"
 #include "otbImage.h"
 #include "itkVariableLengthVector.h"
+#include "otbTinyXML.h"
+#include "otbImageKeywordlist.h"
 
 #include "itkMetaDataObject.h"
 #include "otbMetaDataKey.h"
@@ -41,6 +43,8 @@
 
 #include <boost/algorithm/string/predicate.hpp>
 #include "otbOGRHelpers.h"
+
+#include "stdint.h" //needed for uintptr_t
 
 inline unsigned int uint_ceildivpow2(unsigned int a, unsigned int b) {
   return (a + (1 << b) - 1) >> b;
@@ -134,9 +138,9 @@ GDALImageIO::GDALImageIO()
   // Set default spacing to one
   m_Spacing[0] = 1.0;
   m_Spacing[1] = 1.0;
-  // Set default origin to zero
-  m_Origin[0] = 0.0;
-  m_Origin[1] = 0.0;
+  // Set default origin to half a pixel (centered pixel convention)
+  m_Origin[0] = 0.5;
+  m_Origin[1] = 0.5;
 
   m_IsIndexed   = false;
   m_DatasetNumber = 0;
@@ -331,8 +335,8 @@ void GDALImageIO::Read(void* buffer)
     // TODO: This is a very special case and seems to be working only
     // for unsigned char pixels. There might be a gdal method to do
     // the work in a cleaner way
-    std::streamoff lNbPixels = (static_cast<std::streamoff>(lNbColumns))
-                             * (static_cast<std::streamoff>(lNbLines));
+    std::streamoff lNbPixels = (static_cast<std::streamoff>(lNbColumnsRegion))
+                             * (static_cast<std::streamoff>(lNbLinesRegion));
     std::streamoff lBufferSize = static_cast<std::streamoff>(m_BytePerPixel) * lNbPixels;
     itk::VariableLengthVector<unsigned char> value(lBufferSize);
 
@@ -352,7 +356,8 @@ void GDALImageIO::Read(void* buffer)
                                      0);
     if (lCrGdal == CE_Failure)
       {
-      itkExceptionMacro(<< "Error while reading image (GDAL format) " << m_FileName.c_str() << ".");
+      itkExceptionMacro(<< "Error while reading image (GDAL format) '"
+        << m_FileName.c_str() << "' : " << CPLGetLastErrorMsg());
       }
     // Interpret index as color
     std::streamoff cpt(0);
@@ -422,7 +427,8 @@ void GDALImageIO::Read(void* buffer)
     // Check if gdal call succeed
     if (lCrGdal == CE_Failure)
       {
-      itkExceptionMacro(<< "Error while reading image (GDAL format) " << m_FileName.c_str() << ".");
+      itkExceptionMacro(<< "Error while reading image (GDAL format) '"
+        << m_FileName.c_str() << "' : " << CPLGetLastErrorMsg());
       return;
       }
     //printDataBuffer(p, m_PxType->pixType, m_NbBands, lNbColumnsRegion*lNbLinesRegion);
@@ -485,6 +491,22 @@ bool GDALImageIO::GetAvailableResolutions(std::vector<unsigned int>& res)
 {
   GDALDataset* dataset = m_Dataset->GetDataSet();
 
+  if (m_Dataset->IsJPEG2000())
+    {
+    // JPEG2000 case : use the number of overviews actually in the dataset
+    // Original resolution
+    res.push_back(0);
+
+    // available overviews
+    for (unsigned int k=0; k<m_NumberOfOverviews; ++k)
+      {
+      res.push_back(k+1);
+      }
+
+    return true;
+    }
+
+  // default case : compute overviews until one of the dimensions is 1
   bool flagStop = false;
   unsigned int resFactor = 0;
   while (!flagStop)
@@ -515,6 +537,24 @@ bool GDALImageIO::GetResolutionInfo(std::vector<unsigned int>& res, std::vector<
   unsigned int originalWidth = m_OriginalDimensions[0];
   unsigned int originalHeight = m_OriginalDimensions[1];
 
+  bool computeBlockSize = false;
+  int blockSizeX = 0;
+  int blockSizeY = 0;
+  // For Jpeg2000 files, retrieve the tile size.
+  // TODO : the image and tile sizes at different resolution should be
+  // read in the GDAL dataset, when available
+  GDALDataset* dataset = m_Dataset->GetDataSet();
+  if (m_Dataset->IsJPEG2000())
+    {
+    computeBlockSize = true;
+    dataset->GetRasterBand(1)->GetBlockSize(&blockSizeX, &blockSizeY);
+    if (blockSizeX==0 || blockSizeY==0)
+      {
+      computeBlockSize = false;
+      }
+    }
+
+
   for (std::vector<unsigned int>::iterator itRes = res.begin(); itRes < res.end(); itRes++)
     {
     // For each resolution we will compute the tile dim and image dim
@@ -523,7 +563,17 @@ bool GDALImageIO::GetResolutionInfo(std::vector<unsigned int>& res, std::vector<
     unsigned int w = uint_ceildivpow2( originalWidth, *itRes);
     unsigned int h = uint_ceildivpow2( originalHeight, *itRes);
 
-    oss << "Resolution: " << *itRes << " (Image [w x h]: " << w << "x" << h << ", Tile [w x h]: " <<  "not defined x not defined" << ")";
+    oss << "Resolution: " << *itRes << " (Image [w x h]: " << w << "x" << h << ", Tile [w x h]: ";
+    if (computeBlockSize)
+      {
+      unsigned int tw = uint_ceildivpow2( static_cast<unsigned int>(blockSizeX), *itRes);
+      unsigned int th = uint_ceildivpow2( static_cast<unsigned int>(blockSizeY), *itRes);
+      oss << tw << "x" << th << ")";
+      }
+    else
+      {
+      oss <<  "not defined x not defined" << ")";
+      }
 
     desc.push_back(oss.str());
     }
@@ -805,9 +855,17 @@ void GDALImageIO::InternalReadImageInformation()
       {
       otbMsgDevMacro(<< "Original blockSize: "<< blockSizeX << " x " << blockSizeY );
 
-      // Try to keep the GDAL block memory constant
       blockSizeX = uint_ceildivpow2(blockSizeX,m_ResolutionFactor);
-      blockSizeY = blockSizeY * (1 << m_ResolutionFactor);
+      if (m_Dataset->IsJPEG2000())
+        {
+        // Jpeg2000 case : use the real block size Y
+        blockSizeY = uint_ceildivpow2(blockSizeY,m_ResolutionFactor);
+        }
+      else
+        {
+        // Try to keep the GDAL block memory constant
+        blockSizeY = blockSizeY * (1 << m_ResolutionFactor);
+        }
 
       otbMsgDevMacro(<< "Decimated blockSize: "<< blockSizeX << " x " << blockSizeY );
 
@@ -824,6 +882,13 @@ void GDALImageIO::InternalReadImageInformation()
   // Default Spacing
   m_Spacing[0] = 1;
   m_Spacing[1] = 1;
+
+  // Reset origin to GDAL convention default
+  m_Origin[0] = 0.0;
+  m_Origin[1] = 0.0;
+
+  // flag to detect images in sensor geometry
+  bool isSensor = false;
 
   if (m_NumberOfDimensions == 3) m_Spacing[2] = 1;
 
@@ -842,6 +907,12 @@ void GDALImageIO::InternalReadImageInformation()
 
   itk::EncapsulateMetaData<std::string>(dict, MetaDataKey::DriverShortNameKey, driverShortName);
   itk::EncapsulateMetaData<std::string>(dict, MetaDataKey::DriverLongNameKey,  driverLongName);
+
+  if (m_Dataset->IsJPEG2000())
+    {
+    // store the cache size used for Jpeg2000 files
+    itk::EncapsulateMetaData<unsigned int>(dict, MetaDataKey::CacheSizeInBytes , GDALGetCacheMax64());
+    }
 
   /* -------------------------------------------------------------------- */
   /* Get the projection coordinate system of the image : ProjectionRef  */
@@ -873,6 +944,15 @@ void GDALImageIO::InternalReadImageInformation()
       {
       OSRRelease(pSR);
       pSR = NULL;
+      }
+    }
+  else
+    {
+    otbMsgDevMacro( << "No projection => sensor model" );
+    // Special case for Jpeg2000 files : try to read the origin in the GML box
+    if (m_Dataset->IsJPEG2000())
+      {
+      isSensor = GetOriginFromGMLBox(m_Origin);
       }
     }
 
@@ -937,13 +1017,42 @@ void GDALImageIO::InternalReadImageInformation()
 
     itk::EncapsulateMetaData<MetaDataKey::VectorType>(dict, MetaDataKey::GeoTransformKey, VadfGeoTransform);
 
-    /// retrieve origin and spacing from the geo transform
-    m_Origin[0] = VadfGeoTransform[0];
-    m_Origin[1] = VadfGeoTransform[3];
-    m_Spacing[0] = VadfGeoTransform[1];
-    m_Spacing[1] = VadfGeoTransform[5];
+    if (!isSensor)
+      {
+      /// retrieve origin and spacing from the geo transform
+      m_Spacing[0] = VadfGeoTransform[1];
+      m_Spacing[1] = VadfGeoTransform[5];
 
+      if ( m_Spacing[0]== 0 || m_Spacing[1] == 0)
+        {
+        // Manage case where axis are not standard
+        if (VadfGeoTransform[2] != 0  && VadfGeoTransform[4] != 0 )
+          {
+          m_Spacing[0] = VadfGeoTransform[2];
+          m_Spacing[1] = VadfGeoTransform[4];
+          }
+        else
+          {
+          otbWarningMacro(<< "Incorrect geotransform  (spacing = 0)!");
+          m_Spacing[0] = 1;
+          m_Spacing[1] = 1;
+          }
+        }
+      // Geotransforms with a non-null rotation are not supported
+      // Beware : GDAL origin is at the corner of the top-left pixel
+      // whereas OTB/ITK origin is at the centre of the top-left pixel
+      // The origin computed here is in GDAL convention for now
+      m_Origin[0] = VadfGeoTransform[0];
+      m_Origin[1] = VadfGeoTransform[3];
+      }
     }
+
+  // Compute final spacing with the resolution factor
+  m_Spacing[0] *= vcl_pow(2.0, static_cast<double>(m_ResolutionFactor));
+  m_Spacing[1] *= vcl_pow(2.0, static_cast<double>(m_ResolutionFactor));
+  // Now that the spacing is known, apply the half-pixel shift
+  m_Origin[0] += 0.5*m_Spacing[0];
+  m_Origin[1] += 0.5*m_Spacing[1];
 
   // Dataset info
   otbMsgDevMacro(<< "**** ReadImageInformation() DATASET INFO: ****" );
@@ -981,6 +1090,34 @@ void GDALImageIO::InternalReadImageInformation()
                                             static_cast<std::string>(papszMetadata[cpt]));
       }
     }
+
+  /* Special case for JPEG2000, also look in the GML boxes */
+  if (m_Dataset->IsJPEG2000())
+    {
+    char **gmlMetadata = NULL;
+    GDALJP2Metadata jp2Metadata;
+    if (jp2Metadata.ReadAndParse(m_FileName.c_str()))
+      {
+      gmlMetadata = jp2Metadata.papszGMLMetadata;
+      }
+
+    if (CSLCount(gmlMetadata) > 0)
+      {
+      std::string key;
+      int cptOffset = CSLCount(papszMetadata);
+
+      for (int cpt = 0; gmlMetadata[cpt] != NULL; ++cpt)
+        {
+        std::ostringstream lStream;
+        lStream << MetaDataKey::MetadataKey << (cpt+cptOffset);
+        key = lStream.str();
+
+        itk::EncapsulateMetaData<std::string>(dict, key,
+                                              static_cast<std::string>(gmlMetadata[cpt]));
+        }
+      }
+    }
+
 
   /* -------------------------------------------------------------------- */
   /*      Report subdatasets.                                             */
@@ -1087,9 +1224,6 @@ void GDALImageIO::InternalReadImageInformation()
     this->SetPixelType(VECTOR);
     }
 
-  // Adapt the spacing to the resolution read
-  m_Spacing[0] *= vcl_pow(2.0, static_cast<double>(m_ResolutionFactor));
-  m_Spacing[1] *= vcl_pow(2.0, static_cast<double>(m_ResolutionFactor));
 }
 
 bool GDALImageIO::CanWriteFile(const char* name)
@@ -1140,7 +1274,6 @@ bool GDALImageIO::CanStreamWrite()
     {
     m_CanStreamWrite = false;
     }
-
   return m_CanStreamWrite;
 }
 
@@ -1223,13 +1356,14 @@ void GDALImageIO::Write(const void* buffer)
     // Check if writing succeed
     if (lCrGdal == CE_Failure)
       {
-      itkExceptionMacro(<< "Error while writing image (GDAL format) " << m_FileName.c_str() << ".");
+      itkExceptionMacro(<< "Error while writing image (GDAL format) '"
+        << m_FileName.c_str() << "' : " << CPLGetLastErrorMsg());
       }
     // Flush dataset cache
     m_Dataset->GetDataSet()->FlushCache();
     }
   else
-    {
+  {
     // We only wrote data to the memory dataset
     // Now write it to the real file with CreateCopy()
     std::string gdalDriverShortName = FilenameToGdalDriverShortName(m_FileName);
@@ -1245,8 +1379,16 @@ void GDALImageIO::Write(const void* buffer)
     GDALDataset* hOutputDS = driver->CreateCopy( realFileName.c_str(), m_Dataset->GetDataSet(), FALSE,
                                                  otb::ogr::StringListConverter(creationOptions).to_ogr(),
                                                  NULL, NULL );
-    GDALClose(hOutputDS);
+    if(!hOutputDS)
+    {
+      itkExceptionMacro(<< "Error while writing image (GDAL format) '"
+        << m_FileName.c_str() << "' : " << CPLGetLastErrorMsg());
     }
+    else
+    {
+      GDALClose(hOutputDS);
+    }
+  }
 
 
   if (lFirstLine + lNbLines == m_Dimensions[1]
@@ -1445,9 +1587,11 @@ void GDALImageIO::InternalWriteImageInformation(const void* buffer)
     // doesn't begin with 0x, the address in not interpreted as
     // hexadecimal but alpha numeric value, then the conversion to
     // integer make us pointing to an non allowed memory block => Crash.
+    //use intptr_t to cast void* to unsigned long. included stdint.h for
+    // uintptr_t typedef.
     std::ostringstream stream;
     stream << "MEM:::"
-           <<  "DATAPOINTER=" << (unsigned long)(buffer) << ","
+           <<  "DATAPOINTER=" << (uintptr_t)(buffer) << ","
            <<  "PIXELS=" << m_Dimensions[0] << ","
            <<  "LINES=" << m_Dimensions[1] << ","
            <<  "BANDS=" << m_NbBands << ","
@@ -1462,7 +1606,8 @@ void GDALImageIO::InternalWriteImageInformation(const void* buffer)
   if (m_Dataset.IsNull())
     {
     itkExceptionMacro(
-      << "GDAL Writing failed : Impossible to create the image file name '" << m_FileName << "'.");
+      << "GDAL Writing failed : Impossible to create the image file name '"
+      << m_FileName << "' : " << CPLGetLastErrorMsg() );
     }
 
   /*----------------------------------------------------------------------*/
@@ -1482,10 +1627,10 @@ void GDALImageIO::InternalWriteImageInformation(const void* buffer)
   /* -------------------------------------------------------------------- */
   const double Epsilon = 1E-10;
   if (projectionRef.empty()
-      &&  (vcl_abs(m_Origin[0]) > Epsilon
-           || vcl_abs(m_Origin[1]) > Epsilon
-           || vcl_abs(m_Spacing[0] - 1) > Epsilon
-           || vcl_abs(m_Spacing[1] - 1) > Epsilon) )
+      &&  (vcl_abs(m_Origin[0] - 0.5) > Epsilon
+           || vcl_abs(m_Origin[1] - 0.5) > Epsilon
+           || vcl_abs(m_Spacing[0] - 1.0) > Epsilon
+           || vcl_abs(m_Spacing[1] - 1.0) > Epsilon) )
     {
     // See issue #303 :
     // If there is no ProjectionRef, and the GeoTransform is not the identity,
@@ -1544,8 +1689,10 @@ void GDALImageIO::InternalWriteImageInformation(const void* buffer)
   /* -------------------------------------------------------------------- */
   itk::VariableLengthVector<double> geoTransform(6);
   /// Reporting origin and spacing
-  geoTransform[0] = m_Origin[0];
-  geoTransform[3] = m_Origin[1];
+  // Beware : GDAL origin is at the corner of the top-left pixel
+  // whereas OTB/ITK origin is at the centre of the top-left pixel
+  geoTransform[0] = m_Origin[0] - 0.5*m_Spacing[0];
+  geoTransform[3] = m_Origin[1] - 0.5*m_Spacing[1];
   geoTransform[1] = m_Spacing[0];
   geoTransform[5] = m_Spacing[1];
 
@@ -1575,6 +1722,25 @@ void GDALImageIO::InternalWriteImageInformation(const void* buffer)
       dataset->SetMetadataItem(tag.c_str(), value.c_str(), NULL);
       }
     }
+
+#if GDAL_VERSION_NUM >= 1100000
+  // Report any RPC coefficients (feature available since GDAL 1.10.0)
+  ImageKeywordlist otb_kwl;
+  itk::ExposeMetaData<ImageKeywordlist>(dict,
+                                        MetaDataKey::OSSIMKeywordlistKey,
+                                        otb_kwl);
+  if( otb_kwl.GetSize() != 0 )
+    {
+    GDALRPCInfo gdalRpcStruct;
+    if ( otb_kwl.convertToGDALRPC(gdalRpcStruct) )
+      {
+      char **rpcMetadata = RPCInfoToMD(&gdalRpcStruct);
+      dataset->SetMetadata(rpcMetadata, "RPC");
+      CSLDestroy( rpcMetadata );
+      }
+    }
+#endif
+
   // END
 
   // Dataset info
@@ -1621,10 +1787,101 @@ std::string GDALImageIO::FilenameToGdalDriverShortName(const std::string& name) 
     gdalDriverShortName="PCIDSK";
   else if ( extension == ".lbl" || extension == ".pds" )
     gdalDriverShortName="ISIS2";
+  else if ( extension == ".j2k" || extension == ".jp2" || extension == ".jpx")
+  {
+    // Try different JPEG2000 drivers
+    GDALDriver *driver = NULL;
+    driver = GDALDriverManagerWrapper::GetInstance().GetDriverByName("JP2OpenJPEG");
+    if (driver)
+      {
+      gdalDriverShortName = "JP2OpenJPEG";
+      }
+
+    if (!driver)
+      {
+      driver = GDALDriverManagerWrapper::GetInstance().GetDriverByName("JP2KAK");
+      if (driver)
+        {
+        gdalDriverShortName = "JP2KAK";
+        }
+      }
+
+    if (!driver)
+      {
+      driver = GDALDriverManagerWrapper::GetInstance().GetDriverByName("JP2ECW");
+      if (driver)
+        {
+        gdalDriverShortName = "JP2ECW";
+        }
+      }
+
+    if (!driver)
+      {
+      gdalDriverShortName = "NOT-FOUND";
+      }
+  }
+
   else
     gdalDriverShortName = "NOT-FOUND";
 
   return gdalDriverShortName;
+}
+
+bool GDALImageIO::GetOriginFromGMLBox(std::vector<double> &origin)
+{
+  GDALJP2Metadata jp2Metadata;
+  if (!jp2Metadata.ReadAndParse(m_FileName.c_str()))
+    {
+    return false;
+    }
+
+  if (!jp2Metadata.papszGMLMetadata)
+    {
+    return false;
+    }
+
+  std::string gmlString = static_cast<std::string>(jp2Metadata.papszGMLMetadata[0]);
+  gmlString.erase(0,18); // We need to remove first part to create a true xml stream
+  otbMsgDevMacro( << "XML extract from GML box: " << gmlString );
+
+  TiXmlDocument doc;
+  doc.Parse(gmlString.c_str()); // Create xml doc from a string
+
+  TiXmlHandle docHandle( &doc );
+  TiXmlElement* originTag = docHandle.FirstChild( "gml:FeatureCollection" )
+                                     .FirstChild( "gml:featureMember" )
+                                     .FirstChild( "gml:FeatureCollection" )
+                                     .FirstChild( "gml:featureMember" )
+                                     .FirstChild( "gml:GridCoverage" )
+                                     .FirstChild( "gml:gridDomain")
+                                     .FirstChild( "gml:Grid" )
+                                     .FirstChild( "gml:limits" )
+                                     .FirstChild( "gml:GridEnvelope" )
+                                     .FirstChild( "gml:low").ToElement();
+  if(originTag)
+    {
+    otbMsgDevMacro( << "\t Origin (" <<  originTag->Value() <<" tag)= "<<  originTag->GetText());
+    }
+  else
+    {
+    otbMsgDevMacro( << "Didn't find the GML element which indicate the origin!" );
+    return false;
+    }
+
+  std::vector<itksys::String> originValues;
+  originValues = itksys::SystemTools::SplitString(originTag->GetText(),' ', false);
+
+  // Compute origin in GDAL convention (the half-pixel shift is applied later)
+  std::istringstream ss0 (originValues[0]);
+  std::istringstream ss1 (originValues[1]);
+  ss0 >> origin[1];
+  ss1 >> origin[0];
+  origin[0] += -1.0;
+  origin[1] += -1.0;
+
+  otbMsgDevMacro( << "\t Origin from GML box: " <<  origin[0] << ", " << origin[1] );
+
+  return true;
 }
 
 std::string GDALImageIO::GetGdalWriteImageFileName(const std::string& gdalDriverShortName, const std::string& filename) const

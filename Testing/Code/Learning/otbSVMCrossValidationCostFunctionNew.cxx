@@ -25,13 +25,11 @@
 #include "otbSVMModel.h"
 #include "otbSVMCrossValidationCostFunction.h"
 
-int otbSVMCrossValidationCostFunctionNew(int argc, char* argv[])
+int otbSVMCrossValidationCostFunctionNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   typedef unsigned char InputPixelType;
   typedef unsigned char LabelPixelType;
-  const unsigned int Dimension = 2;
 
-  typedef otb::Image<InputPixelType,  Dimension>         InputImageType;
   typedef otb::SVMModel<InputPixelType, LabelPixelType>  ModelType;
   typedef otb::SVMCrossValidationCostFunction<ModelType> FunctionType;
 

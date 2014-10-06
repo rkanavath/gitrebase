@@ -26,6 +26,8 @@
 
 // Elevation handler
 #include "otbWrapperElevationParametersHandler.h"
+#include "otbStreamingResampleImageFilter.h"
+#include "otbPleiadesPToXSAffineTransformCalculator.h"
 
 namespace otb
 {
@@ -68,6 +70,12 @@ public:
   typedef otb::GenericRSResampleImageFilter<FloatVectorImageType,
                                             FloatVectorImageType>  ResamplerType;
 
+  typedef itk::ScalableAffineTransform<double, 2>                 TransformType;
+  
+  typedef otb::StreamingResampleImageFilter
+    <FloatVectorImageType,
+     FloatVectorImageType>                                        BasicResamplerType;
+  
 private:
   void DoInit()
   {
@@ -100,6 +108,20 @@ private:
     AddParameter(ParameterType_OutputImage,  "out",   "Output image");
     SetParameterDescription("out","Output reprojected image.");
 
+    // Superposition mode
+    AddParameter(ParameterType_Choice,"mode", "Mode");
+    SetParameterDescription("mode", "Superimposition mode");
+    
+    AddChoice("mode.default", "Default mode");
+    SetParameterDescription("mode.default", "Default superimposition mode : "
+      "uses any projection reference or sensor model found in the images");
+    
+    AddChoice("mode.phr", "Pleiades mode");
+    SetParameterDescription("mode.phr", "Pleiades superimposition mode, "
+      "designed for the case of a P+XS bundle in SENSOR geometry. It uses"
+      " a simple transform on the XS image : a scaling and a residual "
+      "translation.");
+    
     // Interpolators
     AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
     SetParameterDescription("interpolator","This group of parameters allows to define how the input image will be interpolated during resampling.");
@@ -116,8 +138,7 @@ private:
 
     AddChoice("interpolator.linear", "Linear interpolation");
     SetParameterDescription("interpolator.linear","Linear interpolation leads to average image quality but is quite fast");
-
-
+    
     AddRAMParameter();
 
     // Doc example parameter settings
@@ -128,7 +149,11 @@ private:
 
   void DoUpdateParameters()
   {
-    // Nothing to do here : all parameters are independent
+    if(HasValue("inr") && HasValue("inm") && otb::PleiadesPToXSAffineTransformCalculator::CanCompute(GetParameterImage("inr"),GetParameterImage("inm")))
+      {
+      otbAppLogWARNING("Forcing PHR mode with PHR data. You need to add \"-mode default\" to force the default mode with PHR images.");
+      SetParameterString("mode","phr");
+      }
   }
 
 
@@ -140,6 +165,8 @@ private:
 
     // Resample filter
     m_Resampler = ResamplerType::New();
+    
+    m_BasicResampler = BasicResamplerType::New();
 
     // Get Interpolator
     switch ( GetParameterInt("interpolator") )
@@ -148,12 +175,14 @@ private:
       {
       LinInterpolatorType::Pointer interpolator = LinInterpolatorType::New();
       m_Resampler->SetInterpolator(interpolator);
+      m_BasicResampler->SetInterpolator(interpolator);
       }
       break;
       case Interpolator_NNeighbor:
       {
       NNInterpolatorType::Pointer interpolator = NNInterpolatorType::New();
       m_Resampler->SetInterpolator(interpolator);
+      m_BasicResampler->SetInterpolator(interpolator);
       }
       break;
       case Interpolator_BCO:
@@ -161,6 +190,7 @@ private:
       BCOInterpolatorType::Pointer interpolator = BCOInterpolatorType::New();
       interpolator->SetRadius(GetParameterInt("interpolator.bco.radius"));
       m_Resampler->SetInterpolator(interpolator);
+      m_BasicResampler->SetInterpolator(interpolator);
       }
       break;
       }
@@ -174,41 +204,79 @@ private:
     FloatVectorImageType::IndexType   start   = refImage->GetLargestPossibleRegion().GetIndex();
     FloatVectorImageType::SizeType    size    = refImage->GetLargestPossibleRegion().GetSize();
     FloatVectorImageType::PointType   origin  = refImage->GetOrigin();
-
-    if(IsParameterEnabled("lms"))
-      {
-      float defScalarSpacing = vcl_abs(GetParameterFloat("lms"));
-      otbAppLogDEBUG("Generating coarse deformation field (spacing="<<defScalarSpacing<<")");
-      FloatVectorImageType::SpacingType defSpacing;
-
-      defSpacing[0] = defScalarSpacing;
-      defSpacing[1] = defScalarSpacing;
-
-      if (spacing[0]<0.0) defSpacing[0] *= -1.0;
-      if (spacing[1]<0.0) defSpacing[1] *= -1.0;
-
-      m_Resampler->SetDisplacementFieldSpacing(defSpacing);
-      }
-
+    
     FloatVectorImageType::PixelType defaultValue;
     itk::NumericTraits<FloatVectorImageType::PixelType>::SetLength(defaultValue, movingImage->GetNumberOfComponentsPerPixel());
 
-    m_Resampler->SetInput(movingImage);
-    m_Resampler->SetInputKeywordList(movingImage->GetImageKeywordlist());
-    m_Resampler->SetInputProjectionRef(movingImage->GetProjectionRef());
-    m_Resampler->SetOutputOrigin(origin);
-    m_Resampler->SetOutputSpacing(spacing);
-    m_Resampler->SetOutputSize(size);
-    m_Resampler->SetOutputStartIndex(start);
-    m_Resampler->SetOutputKeywordList(refImage->GetImageKeywordlist());
-    m_Resampler->SetOutputProjectionRef(refImage->GetProjectionRef());
-    m_Resampler->SetEdgePaddingValue(defaultValue);
+    
+    if(GetParameterString("mode")=="default")
+      {
+      if(IsParameterEnabled("lms"))
+        {
+        float defScalarSpacing = vcl_abs(GetParameterFloat("lms"));
+        otbAppLogDEBUG("Generating coarse deformation field (spacing="<<defScalarSpacing<<")");
+        FloatVectorImageType::SpacingType defSpacing;
 
-    // Set the output image
-    SetParameterOutputImage("out", m_Resampler->GetOutput());
+        defSpacing[0] = defScalarSpacing;
+        defSpacing[1] = defScalarSpacing;
+
+        if (spacing[0]<0.0) defSpacing[0] *= -1.0;
+        if (spacing[1]<0.0) defSpacing[1] *= -1.0;
+
+        m_Resampler->SetDisplacementFieldSpacing(defSpacing);
+        }
+      
+      // Setup transform through projRef and Keywordlist
+      m_Resampler->SetInputKeywordList(movingImage->GetImageKeywordlist());
+      m_Resampler->SetInputProjectionRef(movingImage->GetProjectionRef());
+      
+      m_Resampler->SetOutputKeywordList(refImage->GetImageKeywordlist());
+      m_Resampler->SetOutputProjectionRef(refImage->GetProjectionRef());
+      
+      m_Resampler->SetInput(movingImage);
+      
+      m_Resampler->SetOutputOrigin(origin);
+      m_Resampler->SetOutputSpacing(spacing);
+      m_Resampler->SetOutputSize(size);
+      m_Resampler->SetOutputStartIndex(start);
+      
+      m_Resampler->SetEdgePaddingValue(defaultValue);
+
+      // Set the output image
+      SetParameterOutputImage("out", m_Resampler->GetOutput());
+      }
+    else if(GetParameterString("mode")=="phr")
+      {
+      otbAppLogINFO("Using the PHR mode");
+      
+      otb::PleiadesPToXSAffineTransformCalculator::TransformType::Pointer transform
+        = otb::PleiadesPToXSAffineTransformCalculator::Compute(GetParameterImage("inr"),
+                                                               GetParameterImage("inm"));
+
+      m_BasicResampler->SetTransform(transform);
+      
+      m_BasicResampler->SetInput(movingImage);
+      
+      m_BasicResampler->SetOutputOrigin(origin);
+      m_BasicResampler->SetOutputSpacing(spacing);
+      m_BasicResampler->SetOutputSize(size);
+      m_BasicResampler->SetOutputStartIndex(start);
+      
+      m_BasicResampler->SetEdgePaddingValue(defaultValue);
+
+      // Set the output image
+      SetParameterOutputImage("out", m_BasicResampler->GetOutput());
+      }
+    else
+      {
+      otbAppLogWARNING("Unknown mode");
+      }
   }
-
+   
   ResamplerType::Pointer           m_Resampler;
+  
+  BasicResamplerType::Pointer      m_BasicResampler;
+  
 };
 
 } // end namespace Wrapper

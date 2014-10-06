@@ -1,7 +1,17 @@
 message(STATUS "Importing Jpeg2000...")
 # Use the openjpeg library.
-option(OTB_USE_JPEG2000 "Use to support jpeg2000 image file format." ON)
+if(GDAL_HAS_J2K)
+ set(USE_JPEG2000_DEFAULT OFF)
+else()
+ set(USE_JPEG2000_DEFAULT ON)
+endif()
+
+option(OTB_USE_JPEG2000 "Enable internal support for jpeg2000 image file format." ${USE_JPEG2000_DEFAULT})
 mark_as_advanced(OTB_USE_JPEG2000)
+
+cmake_dependent_option(OTB_USE_JPEG2000_TESTING "Use jpeg2000 images in tests." OFF
+                       "NOT OTB_USE_JPEG2000;NOT GDAL_HAS_J2K" ON)
+mark_as_advanced(OTB_USE_JPEG2000_TESTING)
 
 if(OTB_USE_JPEG2000)
  message(STATUS "  Enabling Jpeg2000 support")

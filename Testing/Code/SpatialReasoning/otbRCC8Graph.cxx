@@ -25,18 +25,15 @@
 #include "otbMacro.h"
 #include "otbPolygon.h"
 
-int otbRCC8Graph(int argc, char* argv[])
+int otbRCC8Graph(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   const unsigned int nbVertices = 2;
   typedef otb::Polygon<>                          PathType;
   typedef PathType::VertexType                    PointType;
   typedef otb::RCC8VertexBase<PathType>           VertexType;
   typedef otb::RCC8Graph<VertexType>              RCC8GraphType;
-  typedef RCC8GraphType::EdgeType                 EdgeType;
   typedef otb::RCC8VertexIterator<RCC8GraphType>  VertexIteratorType;
   typedef otb::RCC8EdgeIterator<RCC8GraphType>    EdgeIteratorType;
-  typedef otb::RCC8InEdgeIterator<RCC8GraphType>  InEdgeIteratorType;
-  typedef otb::RCC8OutEdgeIterator<RCC8GraphType> OutEdgeIteratorType;
 
   // Instantiation
   RCC8GraphType::Pointer rcc8Graph = RCC8GraphType::New();

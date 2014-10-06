@@ -242,15 +242,23 @@ DisparityTranslateFilter<TDisparityImage,TGridImage,TSensorImage,TMaskImage>
   GridRegionType gridLargest = leftGrid->GetLargestPossibleRegion();
 
   IndexType minIndex,maxIndex;
+  // -Wmaybe-uninitialized
+  typedef typename IndexType::IndexValueType IndexValueType;
+  minIndex.Fill(itk::NumericTraits<IndexValueType>::Zero);
+  maxIndex.Fill(itk::NumericTraits<IndexValueType>::Zero);
+
   IndexType corners[4];
+  for(int i = 0; i < 4; i++)
+    corners[i].Fill(itk::NumericTraits<IndexValueType>::Zero);
+
   corners[0] = requested.GetIndex();
   corners[1] = requested.GetIndex();
-  corners[1][0] += requested.GetSize()[0];
+  corners[1][0] += static_cast<IndexValueType>(requested.GetSize()[0]) - 1;
   corners[2] = requested.GetIndex();
-  corners[2][1] += requested.GetSize()[1];
+  corners[2][1] += static_cast<IndexValueType>(requested.GetSize()[1]) - 1;
   corners[3] = requested.GetIndex();
-  corners[3][0] += requested.GetSize()[0];
-  corners[3][1] += requested.GetSize()[1];
+  corners[3][0] += static_cast<IndexValueType>(requested.GetSize()[0]) - 1;
+  corners[3][1] += static_cast<IndexValueType>(requested.GetSize()[1]) - 1;
   for (unsigned int k=0; k<4; ++k)
     {
     PointType pointSensor;
@@ -260,10 +268,12 @@ DisparityTranslateFilter<TDisparityImage,TGridImage,TSensorImage,TMaskImage>
     IndexType ul;
     ul[0] = static_cast<long>(vcl_floor(indexGrid[0]));
     ul[1] = static_cast<long>(vcl_floor(indexGrid[1]));
-    if (ul[0]<gridLargest.GetIndex()[0]) ul[0]=gridLargest.GetIndex()[0];
-    if (ul[1]<gridLargest.GetIndex()[1]) ul[1]=gridLargest.GetIndex()[1];
-    if (ul[0]>(unsigned int)(gridLargest.GetIndex()[0]+gridLargest.GetSize()[0]-2)) ul[0]=(gridLargest.GetIndex()[0]+gridLargest.GetSize()[0]-2);
-    if (ul[1]>(unsigned int)(gridLargest.GetIndex()[1]+gridLargest.GetSize()[1]-2)) ul[1]=(gridLargest.GetIndex()[1]+gridLargest.GetSize()[1]-2);
+    if (ul[0] < gridLargest.GetIndex()[0]) ul[0] = gridLargest.GetIndex()[0];
+    if (ul[1] < gridLargest.GetIndex()[1]) ul[1] = gridLargest.GetIndex()[1];
+    if (ul[0] > static_cast<IndexValueType>(gridLargest.GetIndex()[0] + gridLargest.GetSize()[0]-2))
+      ul[0] = (gridLargest.GetIndex()[0] + gridLargest.GetSize()[0]-2);
+    if (ul[1] > static_cast<IndexValueType>(gridLargest.GetIndex()[1] + gridLargest.GetSize()[1]-2))
+      ul[1] = (gridLargest.GetIndex()[1] + gridLargest.GetSize()[1]-2);
 
     IndexType ur = ul;
     ur[0] += 1;
@@ -319,7 +329,7 @@ DisparityTranslateFilter<TDisparityImage,TGridImage,TSensorImage,TMaskImage>
 template <class TDisparityImage, class TGridImage, class TSensorImage, class TMaskImage>
 void
 DisparityTranslateFilter<TDisparityImage,TGridImage,TSensorImage,TMaskImage>
-::ThreadedGenerateData(const RegionType & outputRegionForThread, itk::ThreadIdType threadId)
+::ThreadedGenerateData(const RegionType & outputRegionForThread, itk::ThreadIdType itkNotUsed(threadId))
 {
   const TGridImage * leftGrid = this->GetInverseEpipolarLeftGrid();
   const TGridImage * rightGrid = this->GetDirectEpipolarRightGrid();
@@ -357,15 +367,16 @@ DisparityTranslateFilter<TDisparityImage,TGridImage,TSensorImage,TMaskImage>
       leftGrid->TransformPhysicalPointToContinuousIndex(pointSensor, indexGrid);
 
       // Interpolate in left grid
+      typedef typename IndexType::IndexValueType IndexValueType;
       IndexType ul;
       ul[0] = static_cast<long> (vcl_floor(indexGrid[0]));
       ul[1] = static_cast<long> (vcl_floor(indexGrid[1]));
       if (ul[0] < leftLargest.GetIndex()[0]) ul[0] = leftLargest.GetIndex()[0];
       if (ul[1] < leftLargest.GetIndex()[1]) ul[1] = leftLargest.GetIndex()[1];
-      if (ul[0] > (unsigned int) (leftLargest.GetIndex()[0] + leftLargest.GetSize()[0] - 2)) ul[0] = (
-          leftLargest.GetIndex()[0] + leftLargest.GetSize()[0] - 2);
-      if (ul[1] > (unsigned int) (leftLargest.GetIndex()[1] + leftLargest.GetSize()[1] - 2)) ul[1] = (
-          leftLargest.GetIndex()[1] + leftLargest.GetSize()[1] - 2);
+      if (ul[0] > static_cast<IndexValueType>(leftLargest.GetIndex()[0] + leftLargest.GetSize()[0] - 2))
+        ul[0] = (leftLargest.GetIndex()[0] + leftLargest.GetSize()[0] - 2);
+      if (ul[1] > static_cast<IndexValueType>(leftLargest.GetIndex()[1] + leftLargest.GetSize()[1] - 2))
+        ul[1] = (leftLargest.GetIndex()[1] + leftLargest.GetSize()[1] - 2);
 
       IndexType ur = ul;
       ur[0] += 1;
@@ -392,10 +403,10 @@ DisparityTranslateFilter<TDisparityImage,TGridImage,TSensorImage,TMaskImage>
       ul[1] = static_cast<long> (vcl_floor(indexEpi[1]));
       if (ul[0] < buffered.GetIndex()[0]) ul[0] = buffered.GetIndex()[0];
       if (ul[1] < buffered.GetIndex()[1]) ul[1] = buffered.GetIndex()[1];
-      if (ul[0] > (unsigned int) (buffered.GetIndex()[0] + buffered.GetSize()[0] - 2)) ul[0] = (buffered.GetIndex()[0]
-          + buffered.GetSize()[0] - 2);
-      if (ul[1] > (unsigned int) (buffered.GetIndex()[1] + buffered.GetSize()[1] - 2)) ul[1] = (buffered.GetIndex()[1]
-          + buffered.GetSize()[1] - 2);
+      if (ul[0] > static_cast<IndexValueType>(buffered.GetIndex()[0] + buffered.GetSize()[0] - 2))
+        ul[0] = (buffered.GetIndex()[0] + buffered.GetSize()[0] - 2);
+      if (ul[1] > static_cast<IndexValueType>(buffered.GetIndex()[1] + buffered.GetSize()[1] - 2))
+        ul[1] = (buffered.GetIndex()[1] + buffered.GetSize()[1] - 2);
 
       ur = ul;
       ur[0] += 1;
@@ -433,10 +444,10 @@ DisparityTranslateFilter<TDisparityImage,TGridImage,TSensorImage,TMaskImage>
         ul[1] = static_cast<long> (vcl_floor(indexGridRight[1]));
         if (ul[0] < rightLargest.GetIndex()[0]) ul[0] = rightLargest.GetIndex()[0];
         if (ul[1] < rightLargest.GetIndex()[1]) ul[1] = rightLargest.GetIndex()[1];
-        if (ul[0] > (unsigned int) (rightLargest.GetIndex()[0] + rightLargest.GetSize()[0] - 2)) ul[0] = (
-            rightLargest.GetIndex()[0] + rightLargest.GetSize()[0] - 2);
-        if (ul[1] > (unsigned int) (rightLargest.GetIndex()[1] + rightLargest.GetSize()[1] - 2)) ul[1] = (
-            rightLargest.GetIndex()[1] + rightLargest.GetSize()[1] - 2);
+        if (ul[0] > static_cast<IndexValueType>(rightLargest.GetIndex()[0] + rightLargest.GetSize()[0] - 2))
+          ul[0] = (rightLargest.GetIndex()[0] + rightLargest.GetSize()[0] - 2);
+        if (ul[1] > static_cast<IndexValueType>(rightLargest.GetIndex()[1] + rightLargest.GetSize()[1] - 2))
+          ul[1] = (rightLargest.GetIndex()[1] + rightLargest.GetSize()[1] - 2);
 
         ur = ul;
         ur[0] += 1;

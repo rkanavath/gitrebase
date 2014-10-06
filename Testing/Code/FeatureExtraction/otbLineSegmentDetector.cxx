@@ -23,7 +23,7 @@
 #include "otbVectorDataFileWriter.h"
 #include "otbImageFileWriter.h"
 
-int otbLineSegmentDetectorNew(int argc, char * argv[])
+int otbLineSegmentDetectorNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
 
   typedef float InputPixelType;
@@ -98,7 +98,7 @@ int otbLineSegmentDetector(int argc, char * argv[])
   return EXIT_SUCCESS;
 }
 
-int otbLineSegmentDetector_8b_16b_compare(int argc, char * argv[])
+int otbLineSegmentDetector_8b_16b_compare(int itkNotUsed(argc), char * argv[])
 {
   const char * infname8    = argv[1];
   const char * infname16   = argv[2];
@@ -110,13 +110,11 @@ int otbLineSegmentDetector_8b_16b_compare(int argc, char * argv[])
   typedef otb::Image<PixelType8>                                      ImageType8;
   typedef otb::ImageFileReader<ImageType8>                            ReaderType8;
   typedef otb::LineSegmentDetector<ImageType8, double>                LSDFilterType8;
-  typedef otb::ImageFileWriter<ImageType8>                            WriterType8;
 
   typedef unsigned short                                              PixelType16;
   typedef otb::Image<PixelType16>                                     ImageType16;
   typedef otb::ImageFileReader<ImageType16>                           ReaderType16;
   typedef otb::LineSegmentDetector<ImageType16, double>               LSDFilterType16;
-  typedef otb::ImageFileWriter<ImageType16>                           WriterType16;
 
   typedef LSDFilterType8::VectorDataType                              VectorDataType;
   typedef otb::VectorDataFileWriter<VectorDataType>                   VectorDataWriterType;

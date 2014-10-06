@@ -403,7 +403,7 @@ ImageFileReader<TOutputImage, ConvertPixelTraits>
       // spacing, origin and direction for the final (degenerate) dimensions.
       dimSize[i] = 1;
       spacing[i] = 1.0;
-      origin[i] = 0.0;
+      origin[i] = 0.5;
       for (unsigned j = 0; j < TOutputImage::ImageDimension; ++j)
         {
         if (i == j)
@@ -422,7 +422,6 @@ ImageFileReader<TOutputImage, ConvertPixelTraits>
     {
     for (unsigned int i = 0; i < TOutputImage::ImageDimension; ++i)
       {
-      origin[i] = 0.0;
       if ( m_FilenameHelper->GetResolutionFactor() != 0 )
         {
         spacing[i] = 1.0*vcl_pow((double)2, (double)m_FilenameHelper->GetResolutionFactor());
@@ -431,6 +430,7 @@ ImageFileReader<TOutputImage, ConvertPixelTraits>
         {
         spacing[i] = 1.0;
         }
+      origin[i] = 0.5*spacing[i];
       }
     }
 
@@ -442,7 +442,7 @@ ImageFileReader<TOutputImage, ConvertPixelTraits>
   ImageKeywordlist otb_kwl;
   if (!m_FilenameHelper->ExtGEOMFileNameIsSet())
     {
-    otb_kwl = ReadGeometryFromImage(lFileNameOssimKeywordlist);
+    otb_kwl = ReadGeometryFromImage(lFileNameOssimKeywordlist,!m_FilenameHelper->GetSkipRpcTag());
     otbMsgDevMacro(<< "Loading internal kwl");
     }
   else
@@ -478,12 +478,21 @@ ImageFileReader<TOutputImage, ConvertPixelTraits>
     std::string projRef;
     itk::ExposeMetaData(dict, MetaDataKey::ProjectionRefKey, projRef);
 
+    // Compute spacing for an identity geotransform at current resolution
+    unsigned int resolution;
+    itk::ExposeMetaData<unsigned int>(dict,
+                                      MetaDataKey::ResolutionFactor,
+                                      resolution);
+    double idSpacing = 1.0;
+    if (resolution != 0)
+      idSpacing = 1.0 * vcl_pow((double)2.0, (double)resolution);
+
     const double Epsilon = 1.0E-12;
     if ( projRef.empty()
-         && vcl_abs(origin[0]) > Epsilon
-         && vcl_abs(origin[1]) > Epsilon
-         && vcl_abs(spacing[0] - 1) > Epsilon
-         && vcl_abs(spacing[1] - 1) > Epsilon)
+         && vcl_abs(origin[0] - 0.5 * spacing[0]) > Epsilon
+         && vcl_abs(origin[1] - 0.5 * spacing[1]) > Epsilon
+         && vcl_abs(spacing[0] - idSpacing) > Epsilon
+         && vcl_abs(spacing[1] - idSpacing) > Epsilon)
       {
       std::string wgs84ProjRef =
               "GEOGCS[\"GCS_WGS_1984\", DATUM[\"D_WGS_1984\", SPHEROID[\"WGS_1984\", 6378137, 298.257223563]],"
@@ -671,9 +680,12 @@ void
 ImageFileReader<TOutputImage, ConvertPixelTraits>
 ::SetFileName(const char* extendedFileName)
 {
-  this->m_FilenameHelper->SetExtendedFileName(extendedFileName);
-  this->m_FileName = this->m_FilenameHelper->GetSimpleFileName();
-  this->Modified();
+  if (extendedFileName)
+    {
+    this->m_FilenameHelper->SetExtendedFileName(extendedFileName);
+    this->m_FileName = this->m_FilenameHelper->GetSimpleFileName();
+    this->Modified();
+    }
 }
 
 template <class TOutputImage, class ConvertPixelTraits>

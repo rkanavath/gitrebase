@@ -24,9 +24,7 @@
 #include "otbImageFileWriter.h"
 #include "otbImage.h"
 
-#include "itkMacro.h"
-
-int otbMorphologicalPyramidAnalysisFilter(int argc, char * argv[])
+int otbMorphologicalPyramidAnalysisFilter(int itkNotUsed(argc), char * argv[])
 {
   const char *       inputFilename = argv[1];
   const char *       outputFilenamePrefix = argv[2];
@@ -101,7 +99,7 @@ int otbMorphologicalPyramidAnalysisFilter(int argc, char * argv[])
     writer->SetInput(itInfDeci.Get());
     writer->SetFileName(oss.str().c_str());
     writer->Update();
-    std::cout << "File " << oss << " written" << std::endl;
+    std::cout << "File " << oss.str() << " written" << std::endl;
     oss.str("");
     oss << outputFilenamePrefix << "_sd_" << i << "." << outputFilenameSuffix;
     writer->SetInput(itSupDeci.Get());

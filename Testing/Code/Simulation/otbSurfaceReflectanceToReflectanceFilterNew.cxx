@@ -24,7 +24,7 @@
 #include "otbSurfaceReflectanceToReflectanceFilter.h"
 #include "otbAtmosphericRadiativeTerms.h"
 
-int otbSurfaceReflectanceToReflectanceFilterNew(int argc, char * argv[])
+int otbSurfaceReflectanceToReflectanceFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv)[])
 {
   const unsigned int                            Dimension = 2;
   typedef double                                PixelType;
@@ -51,7 +51,7 @@ int otbSurfaceReflectanceToReflectanceFilterTest(int argc, char * argv[])
   typedef double                                PixelType;
   typedef otb::VectorImage<PixelType, Dimension> ImageType;
 
-  typedef itk::ImageRegionIterator< ImageType > IteratorType;
+//  typedef itk::ImageRegionIterator< ImageType > IteratorType;
   //typedef ResponseType::PairType    PairType;
   //typedef otb::ObjectList< PairType > PairListType;
   //   PairListType::Pointer pairList = PairListType::New();

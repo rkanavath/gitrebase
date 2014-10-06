@@ -28,7 +28,7 @@
 #include "otbDrawPathListFilter.h"
 #include "otbImageFileWriter.h"
 
-int otbDrawPathAlign(int argc, char * argv[])
+int otbDrawPathAlign(int itkNotUsed(argc), char * argv[])
 {
   const char * inputFilename  = argv[1];
   const char * outputFilename = argv[2];
@@ -41,7 +41,6 @@ int otbDrawPathAlign(int argc, char * argv[])
   typedef otb::Image<OutputPixelType, Dimension> OutputImageType;
 
   typedef itk::PolyLineParametricPath<Dimension> PathType;
-  typedef PathType::Pointer                      PathPointerType;
 
   typedef otb::ImageFileReader<InputImageType>  ReaderType;
   typedef otb::ImageFileWriter<OutputImageType> WriterType;

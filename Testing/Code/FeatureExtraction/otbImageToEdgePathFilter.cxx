@@ -23,7 +23,7 @@
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
 
-int otbImageToEdgePathFilter(int argc, char * argv[])
+int otbImageToEdgePathFilter(int itkNotUsed(argc), char * argv[])
 {
   const char *       inputFilename  = argv[1];
   const char *       outputFilename = argv[2];
@@ -57,7 +57,6 @@ int otbImageToEdgePathFilter(int argc, char * argv[])
 
   typedef PathType::VertexType                    VertexType;
   typedef PathType::VertexListType                VertexListType;
-  typedef PathType::VertexListType::ConstIterator VertexListConstIterator;
   typedef VertexListType::ConstPointer            VertexListTypePointer;
 
   VertexListTypePointer vertexList;

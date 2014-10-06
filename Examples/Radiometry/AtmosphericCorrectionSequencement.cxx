@@ -43,7 +43,17 @@
 // \end{itemize}
 //
 // The manipulation of each class used for the different steps and the
-// link with the 6S radiometry library will be explained.
+// link with the 6S radiometry library will be explained. In particular,
+// the API modifications that have been made in version 4.2 will be
+// detailed. There was several reasons behind these modifications :
+// \begin{itemize}
+// \item fix design issues in the framework that were causing trouble
+// when setting the atmospheric parameters
+// \item allow the computation of the radiative terms by other libraries
+// than 6S (such as SMAC method).
+// \item allow the users of the OpticalCalibration application to set
+// and override each correction parameter.
+// \end{itemize}
 //
 // Let's look at the minimal code required to use this
 // algorithm. First, the following header defining the
@@ -58,21 +68,40 @@
 #include "otbImageToLuminanceImageFilter.h"
 #include "otbLuminanceToReflectanceImageFilter.h"
 #include "otbReflectanceToSurfaceReflectanceImageFilter.h"
-#include "otbSurfaceAdjacencyEffect6SCorrectionSchemeFilter.h"
+#include "otbSurfaceAdjacencyEffectCorrectionSchemeFilter.h"
 // Software Guide : EndCodeSnippet
 
 // Software Guide : BeginLatex
+// In version 4.2, the class \code{SurfaceAdjacencyEffect6SCorrectionSchemeFilter}
+// has been renamed into \doxygen{otb}{SurfaceAdjacencyEffectCorrectionSchemeFilter},
+// but it still does the same thing.
+//
 // This chain uses the 6S radiative
-// transfer code to compute radiometric parameters. To manipulate 6S
-// data, three classes are needed (the first one to store the metadata,
-// the second one that calls 6S class and generates the information
-// which will be stored in the last one).
+// transfer code to compute radiative terms (for instance upward and
+// downward transmittance). The inputs needed are separated into
+// two categories :
+// \begin{itemize}
+// \item The atmospheric correction parameters : physical parameters of the
+// atmosphere when the image was taken (for instance : atmospheric pressure,
+// water vapour amount, aerosol data, ...). They are stored in the class
+// \footnote{Before version 4.2, this class was storing all correction
+// parameters} \doxygen{otb}{AtmosphericCorrectionParameters}.
+// \item The acquisition correction parameters : sensor related information
+// about the way the image was taken, usualy available with the image
+// metadata (for instance : solar angles, spectral
+// sensitivity, ...). They are stored in the class
+// \doxygen{otb}{ImageMetadataCorrectionParameters}.
+// \end{itemize}
+//
+// The class \doxygen{otb}{RadiometryCorrectionParametersToAtmisphericRadiativeTerms}
+// computes the radiative terms using these two types of parameters. It
+// contains a single static method that calls the 6S library. The header
+// also includes the classes to manipulate correction parameters and radiative
+// terms.
 // Software Guide : EndLatex
 
 // Software Guide : BeginCodeSnippet
-#include "otbAtmosphericCorrectionParameters.h"
-#include "otbAtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms.h"
-#include "otbAtmosphericRadiativeTerms.h"
+#include "otbRadiometryCorrectionParametersToAtmosphericRadiativeTerms.h"
 // Software Guide : EndCodeSnippet
 
 #include "otbVectorImage.h"
@@ -220,7 +249,7 @@ int main(int argc, char *argv[])
   // $d_{0}$ from the Earth;
   // \item $d/d_{0}$ is the ratio between the Earth-Sun distance at
   // the acquisition date and the mean Earth-Sun distance. The ratio can be directly
-  // given to the class or computed using a 6S routine.
+  // given to the class or computed using a 6S routine. TODO
   // In the last case (that is the one of this example), the user has to precise
   // the month and the day of the acquisition.
   // \end{itemize}
@@ -266,28 +295,34 @@ int main(int argc, char *argv[])
 //-------------------------------
 // Software Guide : BeginLatex
 //
-// At this step of the chain, radiometric informations are nedeed. Those informations
-// will be computed from different parameters stored in a
-// \doxygen{otb}{AtmosphericCorrectionParameters} class intance.
-// This {\em container} will be given to an
-// \doxygen{otb}{AtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms}
-// class instance which will call a 6S routine that will compute the needed
+// At this step of the chain, radiative information are nedeed to compute
+// the contribution of the atmosphere (such as atmosphere transmittance
+// and reflectance). Those information will be computed from different
+// correction parameters stored in \doxygen{otb}{AtmosphericCorrectionParameters}
+// and \doxygen{otb}{ImageMetadataCorrectionParameters} instances.
+// These {\em containers} will be given to the static function \texttt{Compute}
+// from \doxygen{otb}{RadiometryCorrectionParametersToAtmosphericRadiativeTerms}
+// class, which will call a 6S routine that will compute the needed
 // radiometric informations and store them in a
 // \doxygen{otb}{AtmosphericRadiativeTerms} class instance.
 // For this,
-// \doxygen{otb}{AtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms}
-// \doxygen{otb}{AtmosphericCorrectionParameters} and
+// \doxygen{otb}{RadiometryCorrectionParametersToAtmosphericRadiativeTerms},
+// \doxygen{otb}{AtmosphericCorrectionParameters},
+// \doxygen{otb}{ImageMetadataCorrectionParameters} and
 // \doxygen{otb}{AtmosphericRadiativeTerms}
 // types are defined and instancied.
 //
 // Software Guide : EndLatex
 
   // Software Guide : BeginCodeSnippet
-  typedef otb::AtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms
-  AtmosphericCorrectionParametersTo6SRadiativeTermsType;
+  typedef otb::RadiometryCorrectionParametersToAtmosphericRadiativeTerms
+  RadiometryCorrectionParametersToRadiativeTermsType;
 
   typedef otb::AtmosphericCorrectionParameters
   AtmosphericCorrectionParametersType;
+
+  typedef otb::ImageMetadataCorrectionParameters
+  AcquisitionCorrectionParametersType;
 
   typedef otb::AtmosphericRadiativeTerms
   AtmosphericRadiativeTermsType;
@@ -302,6 +337,9 @@ int main(int argc, char *argv[])
   AtmosphericCorrectionParametersType::Pointer
     dataAtmosphericCorrectionParameters =
     AtmosphericCorrectionParametersType::New();
+  AcquisitionCorrectionParametersType::Pointer
+    dataAcquisitionCorrectionParameters =
+    AcquisitionCorrectionParametersType::New();
   AtmosphericRadiativeTermsType::Pointer dataAtmosphericRadiativeTerms =
     AtmosphericRadiativeTermsType::New();
 
@@ -336,7 +374,7 @@ int main(int argc, char *argv[])
     functionValues->SetMinSpectralValue(minSpectralValue);
     functionValues->SetMaxSpectralValue(maxSpectralValue);
     functionValues->SetUserStep(userStep);
-    dataAtmosphericCorrectionParameters->SetWavelengthSpectralBandWithIndex(
+    dataAcquisitionCorrectionParameters->SetWavelengthSpectralBandWithIndex(
       i,
       functionValues);
     }
@@ -345,13 +383,51 @@ int main(int argc, char *argv[])
 
   // Software Guide : BeginLatex
   //
-  // The \doxygen{otb}{AtmosphericCorrectionParameters} class needs several parameters :
-  //  \begin{itemize}
+  // The \doxygen{otb}{ImageMetadataCorrectionParameters} class stores
+  // several parameters that are generaly present in the image metadata :
+  // \begin{itemize}
   // \item The zenithal and azimutal solar angles that describe the solar incidence
   // configuration (in degrees);
   // \item The zenithal and azimuthal viewing angles that describe the viewing
   // direction (in degrees);
   // \item The month and the day of the acquisition;
+  // \item The filter function that is the values of the filter function for one
+  // spectral band, from $\lambda_{inf}$ to $\lambda_{sup}$ by step of 2.5 nm.
+  // One filter function by channel is required.
+  // This last parameter are read in text files, the other one are directly given to the class.
+  // \end{itemize}
+  //
+  // When this container is not set in the ReflectanceToSurfaceReflectance
+  // filter, it is automatically filled using the image metadata. The
+  // following lines show that it is also possible to set the values manually.
+  //
+  // Software Guide : EndLatex
+
+  // Set parameters
+  // Software Guide : BeginCodeSnippet
+  dataAcquisitionCorrectionParameters->SetSolarZenithalAngle(
+    static_cast<double>(atof(argv[6])));
+
+  dataAcquisitionCorrectionParameters->SetSolarAzimutalAngle(
+    static_cast<double>(atof(argv[9])));
+
+  dataAcquisitionCorrectionParameters->SetViewingZenithalAngle(
+    static_cast<double>(atof(argv[10])));
+
+  dataAcquisitionCorrectionParameters->SetViewingAzimutalAngle(
+    static_cast<double>(atof(argv[11])));
+
+  dataAcquisitionCorrectionParameters->SetMonth(atoi(argv[8]));
+
+  dataAcquisitionCorrectionParameters->SetDay(atoi(argv[7]));
+  // Software Guide : EndCodeSnippet
+
+  // Software Guide : BeginLatex
+  //
+  // The \doxygen{otb}{AtmosphericCorrectionParameters} class stores
+  // physical parameters of the atmosphere that are not impacted
+  // by the viewing angles of the image :
+  // \begin{itemize}
   // \item The atmospheric pressure;
   // \item The water vapor amount, that is, the total water vapor content over vertical
   // atmospheric column;
@@ -360,32 +436,11 @@ int main(int argc, char *argv[])
   // maritime, urban, desertic);
   // \item The aerosol optical thickness at 550 nm that is the is the Radiative impact
   //  of aerosol for the reference wavelength 550 nm;
-  // \item The filter function that is the values of the filter function for one
-  // spectral band, from $\lambda_{inf}$ to $\lambda_{sup}$ by step of 2.5 nm.
-  // One filter function by channel is required.
-  // This last parameter are read in text files, the other one are directly given to the class.
   // \end{itemize}
   //
   // Software Guide : EndLatex
 
-  // Set parameters
   // Software Guide : BeginCodeSnippet
-  dataAtmosphericCorrectionParameters->SetSolarZenithalAngle(
-    static_cast<double>(atof(argv[6])));
-
-  dataAtmosphericCorrectionParameters->SetSolarAzimutalAngle(
-    static_cast<double>(atof(argv[9])));
-
-  dataAtmosphericCorrectionParameters->SetViewingZenithalAngle(
-    static_cast<double>(atof(argv[10])));
-
-  dataAtmosphericCorrectionParameters->SetViewingAzimutalAngle(
-    static_cast<double>(atof(argv[11])));
-
-  dataAtmosphericCorrectionParameters->SetMonth(atoi(argv[8]));
-
-  dataAtmosphericCorrectionParameters->SetDay(atoi(argv[7]));
-
   dataAtmosphericCorrectionParameters->SetAtmosphericPressure(
     static_cast<double>(atof(argv[12])));
 
@@ -406,27 +461,26 @@ int main(int argc, char *argv[])
 
   // Software Guide : BeginLatex
   //
-  // Once those parameters are loaded and stored in the AtmosphericCorrectionParameters
-  // instance class, it is given in input of an instance of
-  // AtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms that will compute
-  // the needed radiometric informations.
+  // Once those parameters are loaded, they are used by the 6S library
+  // to compute the needed radiometric informations. The
+  // RadiometryCorrectionParametersToAtmosphericRadiativeTerms class
+  // provides a static function to perform this step\footnote{Before version
+  // 4.2, it was done with the filter
+  // AtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms}.
   //
   // Software Guide : EndLatex
 
 // Software Guide : BeginCodeSnippet
-  AtmosphericCorrectionParametersTo6SRadiativeTermsType::Pointer
-    filterAtmosphericCorrectionParametersTo6SRadiativeTerms =
-    AtmosphericCorrectionParametersTo6SRadiativeTermsType::New();
-
-  filterAtmosphericCorrectionParametersTo6SRadiativeTerms->SetInput(
-    dataAtmosphericCorrectionParameters);
-
-  filterAtmosphericCorrectionParametersTo6SRadiativeTerms->Update();
+  AtmosphericRadiativeTermsType::Pointer atmosphericRadiativeTerms =
+    RadiometryCorrectionParametersToRadiativeTermsType::Compute(
+      dataAtmosphericCorrectionParameters,
+      dataAcquisitionCorrectionParameters);
   // Software Guide : EndCodeSnippet
 
   // Software Guide : BeginLatex
   //
-  // The output of this class will be an instance of the AtmosphericRadiativeTerms class.
+  // The output is stored inside an instance of the
+  // \doxygen{otb}{AtmosphericRadiativeTerms} class.
   // This class contains (for each channel of the image)
   // \begin{itemize}
   // \item The Intrinsic atmospheric reflectance that takes into account for the molecular scattering
@@ -481,25 +535,24 @@ int main(int argc, char *argv[])
   // \item $T(\mu_{S})$ is the downward transmittance;
   // \item $T(\mu_{V})$ is the upward transmittance.
   // \end{itemize}
-  // All those parameters are contained in the AtmosphericCorrectionParametersTo6SRadiativeTerms
-  // output.
+  // All those parameters are contained in the AtmosphericRadiativeTerms
+  // container.
   // Software Guide : EndLatex
 
   // Software Guide : BeginCodeSnippet
   filterReflectanceToSurfaceReflectanceImageFilter->
-  SetAtmosphericRadiativeTerms(
-    filterAtmosphericCorrectionParametersTo6SRadiativeTerms->GetOutput());
+    SetAtmosphericRadiativeTerms(atmosphericRadiativeTerms);
   // Software Guide : EndCodeSnippet
 
 //-------------------------------
 // Software Guide : BeginLatex
 // Next (and last step) is the neighborhood correction.
-// For this, the SurfaceAdjacencyEffect6SCorrectionSchemeFilter class is used.
+// For this, the SurfaceAdjacencyEffectCorrectionSchemeFilter class is used.
 // The previous surface reflectance inversion is performed under the assumption of a
 // homogeneous ground environment. The following step allows to correct the adjacency
 // effect on the radiometry of pixels. The method is based on the decomposition of
-// the observed signal as the summation of the own  contribution of the target pixel and
-// of the contribution of neighbored pixels moderated by their distance to the target pixel.
+// the observed signal as the summation of the own contribution of the target pixel and
+// of the contributions of neighbored pixels moderated by their distance to the target pixel.
 // A simplified relation may be :
 // \begin{equation}
 // \rho{S} = \frac{ \rho_{S}^{unif}.T(\mu_{V}) - <\rho{S}>.t_{d}(\mu_{V}) }{ exp(-\delta/\mu_{V}) }
@@ -525,37 +578,46 @@ int main(int argc, char *argv[])
 // \end{itemize}
 // \end{itemize}
 // The neighborhood consideration window size is given by the window radius.
-// An instance of \doxygen{otb}{SurfaceAdjacencyEffect6SCorrectionSchemeFilter} is created.
+//
+// An instance of \doxygen{otb}{SurfaceAdjacencyEffectCorrectionSchemeFilter}
+// is created. This class has an interface quite similar to
+// \doxygen{otb}{ReflectanceToSurfaceReflectance}. They both need radiative terms
+// (\doxygen{otb}{AtmosphericRadiativeTerms}), so it is possible to compute
+// them outside the filter and set them directly in the filter. The other
+// solution is to give as input the two parameters containers ("atmospheric"
+// and "acquisition" parameters), then the filter will compute the radiative
+// terms internally. If the "acquisition" correction parameters are not
+// present, the filter will try to get them from the image metadata.
+//
 // Software Guide : EndLatex
 
   //  Software Guide : BeginCodeSnippet
-  typedef otb::SurfaceAdjacencyEffect6SCorrectionSchemeFilter<ImageType,
+  typedef otb::SurfaceAdjacencyEffectCorrectionSchemeFilter<ImageType,
       ImageType>
-  SurfaceAdjacencyEffect6SCorrectionSchemeFilterType;
-  SurfaceAdjacencyEffect6SCorrectionSchemeFilterType::Pointer
-    filterSurfaceAdjacencyEffect6SCorrectionSchemeFilter
-    = SurfaceAdjacencyEffect6SCorrectionSchemeFilterType::New();
+  SurfaceAdjacencyEffectCorrectionSchemeFilterType;
+  SurfaceAdjacencyEffectCorrectionSchemeFilterType::Pointer
+    filterSurfaceAdjacencyEffectCorrectionSchemeFilter
+    = SurfaceAdjacencyEffectCorrectionSchemeFilterType::New();
   //  Software Guide : EndCodeSnippet
 
   // Software Guide : BeginLatex
   //
-  // The needs four input informations:
+  // Four inputs are needed to compute the neighborhood contribution:
   // \begin{itemize}
-  // \item Radiometric informations (the output of the AtmosphericCorrectionParametersTo6SRadiativeTerms filter);
+  // \item The radiative terms (stored in the AtmosphericRadiativeTerms container);
   // \item The zenithal viewing angle;
   // \item The neighborhood window radius;
   // \item The pixel spacing in kilometers.
   // \end{itemize}
   //
   // Software Guide : EndLatex
-  filterSurfaceAdjacencyEffect6SCorrectionSchemeFilter->
-  SetAtmosphericRadiativeTerms(
-    filterAtmosphericCorrectionParametersTo6SRadiativeTerms->GetOutput());
-  filterSurfaceAdjacencyEffect6SCorrectionSchemeFilter->SetZenithalViewingAngle(
-    dataAtmosphericCorrectionParameters->GetViewingZenithalAngle());
-  filterSurfaceAdjacencyEffect6SCorrectionSchemeFilter->SetWindowRadius(atoi(argv
+  filterSurfaceAdjacencyEffectCorrectionSchemeFilter->
+    SetAtmosphericRadiativeTerms(atmosphericRadiativeTerms);
+  filterSurfaceAdjacencyEffectCorrectionSchemeFilter->SetZenithalViewingAngle(
+    dataAcquisitionCorrectionParameters->GetViewingZenithalAngle());
+  filterSurfaceAdjacencyEffectCorrectionSchemeFilter->SetWindowRadius(atoi(argv
                                                                              [17]));
-  filterSurfaceAdjacencyEffect6SCorrectionSchemeFilter->
+  filterSurfaceAdjacencyEffectCorrectionSchemeFilter->
   SetPixelSpacingInKilometers(static_cast<double>(atof(argv[18])));
 
 //-------------------------------
@@ -563,8 +625,8 @@ int main(int argc, char *argv[])
 //  Software Guide : BeginLatex
 //
 // At this step, each filter of the chain is instancied and every one has its
-// input paramters set. A name can be given to the output image and each filter
-//  can linked to other to create the final processing chain.
+// input paramters set. A name can be given to the output image, each filter
+//  can be linked to the next one and create the final processing chain.
 //
 //  Software Guide : EndLatex
 
@@ -575,11 +637,11 @@ int main(int argc, char *argv[])
   filterLuminanceToReflectance->SetInput(filterImageToLuminance->GetOutput());
   filterReflectanceToSurfaceReflectanceImageFilter->SetInput(
     filterLuminanceToReflectance->GetOutput());
-  filterSurfaceAdjacencyEffect6SCorrectionSchemeFilter->SetInput(
+  filterSurfaceAdjacencyEffectCorrectionSchemeFilter->SetInput(
     filterReflectanceToSurfaceReflectanceImageFilter->GetOutput());
 
   writer->SetInput(
-    filterSurfaceAdjacencyEffect6SCorrectionSchemeFilter->GetOutput());
+    filterSurfaceAdjacencyEffectCorrectionSchemeFilter->GetOutput());
 // Software Guide : EndCodeSnippet
 
 //  Software Guide : BeginLatex

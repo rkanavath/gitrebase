@@ -27,7 +27,7 @@
 
 #include "otbImageFileReader.h"
 
-int otbSVMImageModelEstimatorTrainOneClass(int argc, char* argv[])
+int otbSVMImageModelEstimatorTrainOneClass(int itkNotUsed(argc), char* argv[])
 {
   const char* inputImageFileName = argv[1];
   const char* trainingImageFileName = argv[2];
@@ -37,7 +37,6 @@ int otbSVMImageModelEstimatorTrainOneClass(int argc, char* argv[])
   const unsigned int Dimension = 2;
   typedef otb::VectorImage<InputPixelType,  Dimension> InputImageType;
   typedef otb::Image<int,  Dimension>                  TrainingImageType;
-  typedef std::vector<double>                          VectorType;
   typedef otb::SVMImageModelEstimator<InputImageType,
       TrainingImageType> EstimatorType;
   typedef otb::ImageFileReader<InputImageType>    InputReaderType;

@@ -27,6 +27,7 @@ void RegisterTests()
   REGISTER_TEST(otbDEMCaracteristicsExtractorNew);
   REGISTER_TEST(otbDEMCaracteristicsExtractor);
   REGISTER_TEST(otbAtmosphericCorrectionParametersNew);
+  REGISTER_TEST(otbImageMetadataCorrectionParametersNew);
   REGISTER_TEST(otbFilterFunctionValuesTest);
   REGISTER_TEST(otbFilterFunctionValuesSpectralResponseTest);
   REGISTER_TEST(otbFilterFunctionValuesDigitalGlobeTest);
@@ -38,7 +39,7 @@ void RegisterTests()
   REGISTER_TEST(otbReflectanceToSurfaceReflectanceImageFilterNew);
   REGISTER_TEST(otbReflectanceToSurfaceReflectanceImageFilterTest);
   REGISTER_TEST(otbReflectanceToSurfaceReflectanceImageFilterTest2);
-  REGISTER_TEST(otbSurfaceAdjacencyEffect6SCorrectionSchemeFilterNew);
-  REGISTER_TEST(otbSurfaceAdjacencyEffect6SCorrectionSchemeFilter);
+  REGISTER_TEST(otbSurfaceAdjacencyEffectCorrectionSchemeFilterNew);
+  REGISTER_TEST(otbSurfaceAdjacencyEffectCorrectionSchemeFilter);
   REGISTER_TEST(otbRomaniaReflectanceToRomaniaSurfaceReflectanceImageFilter);
 }

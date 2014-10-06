@@ -28,7 +28,7 @@ namespace otb
 namespace Wrapper
 {
 
-class AppliThread : public QThread
+class ITK_ABI_EXPORT AppliThread : public QThread
 {
  Q_OBJECT
 
@@ -76,7 +76,7 @@ private:
 /** \class
  * \brief
  */
-class QtWidgetModel : public QObject
+class ITK_ABI_EXPORT QtWidgetModel : public QObject
 {
   Q_OBJECT
 public:

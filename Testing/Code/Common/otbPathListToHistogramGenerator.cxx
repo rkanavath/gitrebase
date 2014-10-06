@@ -25,14 +25,13 @@
 #include "otbMath.h"
 #include "otbObjectList.h"
 
-int otbPathListToHistogramGenerator(int argc, char* argv[])
+int otbPathListToHistogramGenerator(int itkNotUsed(argc), char * argv[])
 {
   unsigned int       NbOfBins((unsigned int) ::atoi(argv[1]));
   unsigned int       NbOfPointsPerHistogram((unsigned int) ::atoi(argv[2]));
   const unsigned int Dimension = 2;
   typedef itk::PolyLineParametricPath<Dimension> PathType;
   typedef PathType::Pointer                      PathPointer;
-  typedef PathType::ConstPointer                 PathConstPointerType;
   typedef otb::ObjectList<PathType>              PathListType;
 
   typedef otb::OrientationPathFunction<PathType> FunctionType;

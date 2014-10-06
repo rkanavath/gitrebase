@@ -22,14 +22,13 @@
 #include "otbForwardFourierMellinTransformImageFilter.h"
 #include "itkLinearInterpolateImageFunction.h"
 
-int otbFourierMellinImageFilterNew(int argc, char* argv[])
+int otbFourierMellinImageFilterNew(int itkNotUsed(argc), char* itkNotUsed(argv) [])
 {
 
   typedef double PixelType;
   const unsigned int Dimension = 2;
 
   typedef otb::Image<PixelType, Dimension> InputImageType;
-  typedef otb::Image<PixelType, Dimension> OutputImageType;
 
   typedef itk::LinearInterpolateImageFunction<InputImageType, double> InterpolatorType;
   typedef otb::ForwardFourierMellinTransformImageFilter<PixelType,

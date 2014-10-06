@@ -23,7 +23,7 @@
 #include "itkImageRegionIterator.h"
 #include <iostream>
 
-int otbROIdataConversion(int argc, char* argv[])
+int otbROIdataConversion(int itkNotUsed(argc), char* argv[])
 {
   typedef double PixelType;
   const unsigned int Dimension = 2;
@@ -34,7 +34,6 @@ int otbROIdataConversion(int argc, char* argv[])
 
   typedef otb::ImageFileReader<InputImageType>  ReaderType;
   typedef otb::ImageFileReader<ROIImageType>    ROIReaderType;
-  typedef otb::ImageFileWriter<OutputImageType> WriterType;
 
   ConvertorType::Pointer convertor = ConvertorType::New();
   ReaderType::Pointer    readerIm = ReaderType::New();

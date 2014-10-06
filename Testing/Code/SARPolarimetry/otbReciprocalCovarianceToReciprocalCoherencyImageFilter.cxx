@@ -25,17 +25,14 @@
 #include "otbReciprocalCovarianceToReciprocalCoherencyImageFilter.h"
 
 
-int otbReciprocalCovarianceToReciprocalCoherencyImageFilter(int argc, char * argv[])
+int otbReciprocalCovarianceToReciprocalCoherencyImageFilter(int itkNotUsed(argc), char * argv[])
 {
   const char * inputFilename  = argv[1];
   const char * outputFilename = argv[2];
 
   typedef double                   PixelType;
   typedef std::complex<PixelType>  InputPixelType;
-
-  typedef otb::VectorImage<PixelType>      RealImageType;
   typedef otb::VectorImage<InputPixelType> ImageType;
-
   typedef otb::ReciprocalCovarianceToReciprocalCoherencyImageFilter<ImageType, ImageType> FilterType;
 
   typedef otb::ImageFileReader<ImageType>  ReaderType;

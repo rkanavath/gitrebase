@@ -278,6 +278,7 @@ ImageToSIFTKeyPointSetFilter<TInputImage, TOutputPointSet>
     while ((lIterDoG + 1) != m_DoGList->End())
       {
       otbGenericMsgDebugMacro(<< "ImageToSIFTKeyPointSetFilter:: octave: " << octave << " scale: " << lScale);
+      otbUnusedMacro(octave);
       // Compute max of DoG
       MinimumMaximumCalculatorPointerType lMaximumCalculator = MinimumMaximumCalculatorType::New();
       lMaximumCalculator->SetImage(lIterDoG.Get());
@@ -561,7 +562,7 @@ std::vector<typename ImageToSIFTKeyPointSetFilter<TInputImage, TOutputPointSet>:
 ImageToSIFTKeyPointSetFilter<TInputImage, TOutputPointSet>
 ::ComputeKeyPointOrientations(const NeighborhoodIteratorType& currentScale,
                               const unsigned int scale,
-                              const PixelType translation)
+                              const PixelType itkNotUsed(translation))
 {
   // radius of the neighborhood
   unsigned int radius = 4;
@@ -892,8 +893,7 @@ void
 ImageToSIFTKeyPointSetFilter<TInputImage, TOutputPointSet>
 ::PrintSelf(std::ostream& os, itk::Indent indent) const
 {
-  typedef typename TOutputPointSet::PointsContainerConstIterator PointsIteratorType;
-  typedef typename TOutputPointSet::PointDataContainerIterator   PointsDataIteratorType;
+
   typedef itk::ProcessObject                                     ProcessObjectType;
   const OutputPointSetType* output = dynamic_cast<const OutputPointSetType*>(this->ProcessObjectType::GetOutput(0));
 

@@ -146,6 +146,8 @@ namespace ossimplugins
        theIncidenceAngle(),
        theViewingAngle(),
        theAzimuthAngle(),
+       theAlongTrackIncidenceAngle(),
+       theAcrossTrackIncidenceAngle(),                                          
 
        theImageSize(0, 0),
        theTileSize(0, 0),
@@ -185,6 +187,12 @@ namespace ossimplugins
        theLineDenCoeff(),
        theSampNumCoeff(),
        theSampDenCoeff(),
+       
+       theTimeRangeStart(),
+       theTimeRangeEnd(),
+       theLinePeriod(0.0),
+       theSwathFirstCol(0),
+       theSwathLastCol(0),
 
        theRefGroundPoint(0.0, 0.0, 0.0),
        theRefImagePoint(0.0, 0.0)
@@ -219,6 +227,9 @@ namespace ossimplugins
       theViewingAngle.clear();
       theAzimuthAngle.clear();
 
+      theAlongTrackIncidenceAngle.clear();
+      theAcrossTrackIncidenceAngle.clear();
+
       theImageSize.makeNan();
       theTileSize.makeNan();
       theNumberOfMegaTilesInRow = 0;
@@ -252,8 +263,8 @@ namespace ossimplugins
       theErrBiasX = 0.0;
       theErrBiasY = 0.0;
       theErrRand = 0.0;
-      theLineOffset = 0;
-      theSampOffset = 0;
+      theLineOffset = 0.0;
+      theSampOffset = 0.0;
       theLatOffset = 0.0;
       theLonOffset = 0.0;
       theHeightOffset = 0.0;
@@ -267,6 +278,12 @@ namespace ossimplugins
       theSampNumCoeff.clear();
       theSampDenCoeff.clear();
       theSpecId = "";
+      
+      theTimeRangeStart = "";
+      theTimeRangeEnd = "";
+      theLinePeriod = 0.0;
+      theSwathFirstCol = 0;
+      theSwathLastCol = 0;
    }
 
    void ossimPleiadesDimapSupportData::printInfo(ostream& os) const
@@ -294,6 +311,8 @@ namespace ossimplugins
          << "\n  Incidence Angle (TopCenter, Center, BottomCenter):   " << getVectorFloat64AsString(theIncidenceAngle)
          << "\n  Viewing Angle (TopCenter, Center, BottomCenter):     " << getVectorFloat64AsString(theViewingAngle)
          << "\n  Azimuth Angle (TopCenter, Center, BottomCenter):     " << getVectorFloat64AsString(theAzimuthAngle)
+         << "\n  Along track incidence angle (TopCenter, Center, BottomCenter):     " << getVectorFloat64AsString(theAlongTrackIncidenceAngle)
+         << "\n  Across track incidence angle (TopCenter, Center, BottomCenter):     " << getVectorFloat64AsString(theAcrossTrackIncidenceAngle)
          << "\n  Sun Azimuth (TopCenter, Center, BottomCenter):       " << getVectorFloat64AsString(theSunAzimuth)
          << "\n  Sun Elevation (TopCenter, Center, BottomCenter):     " << getVectorFloat64AsString(theSunElevation)
 
@@ -331,6 +350,14 @@ namespace ossimplugins
          << "\n     theErrBiasX: " << theErrBiasX
          << "\n     theErrBiasY: " << theErrBiasY
          << "\n     theErrRand: " << theErrRand
+         << "\n"
+         
+         << "\n  Acquisition time parameters (only valid for SENSOR product):"
+         << "\n     TimeRangeStart: "<< theTimeRangeStart
+         << "\n     TimeRangeEnd: "<< theTimeRangeEnd
+         << "\n     LinePeriod: "<< theLinePeriod
+         << "\n     SwathFirstCol: "<< theSwathFirstCol
+         << "\n     SwathLastCol: "<< theSwathLastCol
          << "\n"
          << "\n---------------------------------------------------------"
          << "\n  " << std::endl;
@@ -635,6 +662,17 @@ namespace ossimplugins
       va = theViewingAngle;
    }
 
+  void ossimPleiadesDimapSupportData::getAcrossTrackIncidenceAngle(std::vector<ossim_float64>& act) const
+   {
+      act = theAcrossTrackIncidenceAngle;
+   }
+
+  void ossimPleiadesDimapSupportData::getAlongTrackIncidenceAngle(std::vector<ossim_float64>& alt) const
+   {
+      alt = theAlongTrackIncidenceAngle;
+   }
+
+
    void ossimPleiadesDimapSupportData::getRefGroundPoint(ossimGpt& gp) const
    {
       gp = theRefGroundPoint;
@@ -833,6 +871,38 @@ namespace ossimplugins
               static_cast<ossim_uint32>(theAzimuthAngle.size()),
               true);
 
+
+      tempString = "";
+      for(idx = 0; idx <  theAlongTrackIncidenceAngle.size(); ++idx)
+      {
+         tempString += (ossimString::toString(theAlongTrackIncidenceAngle[idx]) + " ");
+      }
+      kwl.add(prefix,
+              "along_track_incidence_angle",
+              tempString,
+              true);
+
+       kwl.add(prefix,
+              "number_of_along_track_incidence_angle",
+              static_cast<ossim_uint32>(theAlongTrackIncidenceAngle.size()),
+              true);
+
+
+      tempString = "";
+      for(idx = 0; idx <  theAcrossTrackIncidenceAngle.size(); ++idx)
+      {
+         tempString += (ossimString::toString(theAcrossTrackIncidenceAngle[idx]) + " ");
+      }
+      kwl.add(prefix,
+              "across_track_incidence_angle",
+              tempString,
+              true);
+
+       kwl.add(prefix,
+              "number_of_across_track_incidence_angle",
+              static_cast<ossim_uint32>(theAcrossTrackIncidenceAngle.size()),
+              true);
+
       kwl.add(prefix,
               "ul_ground_point",
               ossimString::toString(theUlCorner.latd()) + " " +
@@ -901,7 +971,35 @@ namespace ossimplugins
               "solar_irradiance",
               tempString,
               true);
+      
+      // Some geometric parameters exist only in the case of a SENSOR image
+      if (theProcessingLevelString == "SENSOR")
+      {
+        kwl.add(prefix,
+                "time_range_start",
+                theTimeRangeStart,
+                true);
 
+        kwl.add(prefix,
+                "time_range_end",
+                theTimeRangeEnd,
+                true);
+        
+        kwl.add(prefix,
+                "line_period",
+                ossimString::toString(theLinePeriod),
+                true);
+        
+        kwl.add(prefix,
+                "swath_first_col",
+                theSwathFirstCol,
+                true);
+        kwl.add(prefix,
+                "swath_last_col",
+                theSwathLastCol,
+                true);
+      }
+      
       return true;
    }
 
@@ -1019,6 +1117,33 @@ namespace ossimplugins
          }
       }
 
+      total =  ossimString(kwl.find(prefix,"number_of_along_track_incidence_angle")).toUInt32();
+      theAlongTrackIncidenceAngle.resize(total);
+      tempString = kwl.find(prefix,"along_track_incidence_angle");
+      if(tempString != "")
+      {
+         std::istringstream in(tempString.string());
+         ossimString tempValue;
+         for(idx = 0; idx < theAlongTrackIncidenceAngle.size();++idx)
+         {
+            in >> tempValue.string();
+            theAlongTrackIncidenceAngle[idx] = tempValue.toDouble();
+         }
+      }
+
+      total =  ossimString(kwl.find(prefix,"number_of_across_track_incidence_angle")).toUInt32();
+      theAcrossTrackIncidenceAngle.resize(total);
+      tempString = kwl.find(prefix,"across_track_incidence_angle");
+      if(tempString != "")
+      {
+         std::istringstream in(tempString.string());
+         ossimString tempValue;
+         for(idx = 0; idx < theAcrossTrackIncidenceAngle.size();++idx)
+         {
+            in >> tempValue.string();
+            theAcrossTrackIncidenceAngle[idx] = tempValue.toDouble();
+         }
+      }
 
       theUlCorner =createGround( kwl.find(prefix, "ul_ground_point"));
       theUrCorner =createGround( kwl.find(prefix, "ur_ground_point"));
@@ -1066,6 +1191,16 @@ namespace ossimplugins
             in >> tempValue.string();
             theSolarIrradiance[idx] = tempValue.toDouble();
          }
+      }
+      
+      // Some geometric parameters exist only in the case of a SENSOR image
+      if (theProcessingLevelString == "SENSOR")
+      {
+        theTimeRangeStart = ossimString(kwl.find(prefix,"time_range_start"));
+        theTimeRangeEnd   = ossimString(kwl.find(prefix,"time_range_end"));
+        theLinePeriod     = ossimString(kwl.find(prefix,"line_period")).toDouble();
+        theSwathFirstCol  = ossimString(kwl.find(prefix,"swath_first_col")).toInt32();
+        theSwathLastCol   = ossimString(kwl.find(prefix,"swath_last_col")).toInt32();
       }
 
       return true;
@@ -1739,7 +1874,10 @@ namespace ossimplugins
       {
          return false;
       }
-      theSampOffset = nodeValue.toInt32();
+      // Pleiades metadata assume that the coordinate of the center of
+      // the upper-left pixel is (1,1), so we remove 1 to get back to
+      // OSSIM convention.
+      theSampOffset = nodeValue.toDouble()-1;
 
       if (theDIMAPVersion == OSSIM_PLEIADES_DIMAPv1)
       {
@@ -1769,7 +1907,10 @@ namespace ossimplugins
       {
          return false;
       }
-      theLineOffset = nodeValue.toInt32();
+      // Pleiades metadata assume that the coordinate of the center of
+      // the upper-left pixel is (1,1), so we remove 1 to get back to
+      // OSSIM convention.
+      theLineOffset = nodeValue.toDouble()-1;
 
       return true;
    }
@@ -2328,7 +2469,7 @@ namespace ossimplugins
 
    bool  ossimPleiadesDimapSupportData::parseGeometricData(ossimRefPtr<ossimXmlDocument> xmlDocument)
    {
-      ossimString xpath;
+      ossimString xpath, nodeValue;
       vector<ossimRefPtr<ossimXmlNode> > xml_nodes;
 
       xml_nodes.clear();
@@ -2463,9 +2604,149 @@ namespace ossimplugins
          }
          theAzimuthAngle.push_back(sub_nodes[0]->getText().toDouble());
 
+         //---
+         // Fetch the along track incidence angle :
+         //---
+         sub_nodes.clear();
+         if (theDIMAPVersion == OSSIM_PLEIADES_DIMAPv1)
+         {
+            xpath = "Incidences/ALONG_TRACK_INCIDENCE";
+         }
+         else
+         {
+            xpath = "Acquisition_Angles/INCIDENCE_ANGLE_ALONG_TRACK";
+         }
+         (*node)->findChildNodes(xpath, sub_nodes);
+         if (sub_nodes.size() == 0)
+         {
+            setErrorStatus();
+            if(traceDebug())
+            {
+               ossimNotify(ossimNotifyLevel_DEBUG) << "DEBUG:\nCould not find: " << xpath << std::endl;
+            }
+            return false;
+         }
+         theAlongTrackIncidenceAngle.push_back(sub_nodes[0]->getText().toDouble());
+
+         //---
+         // Fetch the across track incidence angle :
+         //---
+         sub_nodes.clear();
+         if (theDIMAPVersion == OSSIM_PLEIADES_DIMAPv1)
+         {
+            xpath = "Incidences/ORTHO_TRACK_INCIDENCE";
+         }
+         else
+         {
+            xpath = "Acquisition_Angles/INCIDENCE_ANGLE_ACROSS_TRACK";
+         }
+         (*node)->findChildNodes(xpath, sub_nodes);
+         if (sub_nodes.size() == 0)
+         {
+            setErrorStatus();
+            if(traceDebug())
+            {
+               ossimNotify(ossimNotifyLevel_DEBUG) << "DEBUG:\nCould not find: " << xpath << std::endl;
+            }
+            return false;
+         }
+         theAcrossTrackIncidenceAngle.push_back(sub_nodes[0]->getText().toDouble());
+
          ++node;
       }
-
+      
+      if (theProcessingLevelString == "SENSOR")
+      {
+        // check that this product is SENSOR (some tags are not present in ORTHO)
+        //---
+        // Fetch the time stamp of the first line:
+        //---
+        if (theDIMAPVersion == OSSIM_PLEIADES_DIMAPv1)
+        {
+          xpath = "/Geometric_Data/Sensor_Model_Characteristics/UTC_Sensor_Model_Range/START";
+        }
+        else
+        {
+          xpath = "/Geometric_Data/Refined_Model/Time/Time_Range/START";
+        }
+        xpath = theXmlDocumentRoot + xpath;
+        if (!readOneXmlNode(xmlDocument, xpath, theTimeRangeStart))
+        {
+            return false;
+        }
+        
+        //---
+        // Fetch the time stamp of the last line:
+        //---
+        if (theDIMAPVersion == OSSIM_PLEIADES_DIMAPv1)
+        {
+          xpath = "/Geometric_Data/Sensor_Model_Characteristics/UTC_Sensor_Model_Range/END";
+        }
+        else
+        {
+          xpath = "/Geometric_Data/Refined_Model/Time/Time_Range/END";
+        }
+        xpath = theXmlDocumentRoot + xpath;
+        if (!readOneXmlNode(xmlDocument, xpath, theTimeRangeEnd))
+        {
+            return false;
+        }
+        
+        //---
+        // Fetch the line period:
+        //---
+        if (theDIMAPVersion == OSSIM_PLEIADES_DIMAPv1)
+        {
+          xpath = "/Geometric_Data/Sensor_Model_Characteristics/SENSOR_LINE_PERIOD";
+        }
+        else
+        {
+          xpath = "/Geometric_Data/Refined_Model/Time/Time_Stamp/LINE_PERIOD";
+        }
+        xpath = theXmlDocumentRoot + xpath;
+        if (!readOneXmlNode(xmlDocument, xpath, nodeValue))
+        {
+            return false;
+        }
+        theLinePeriod = nodeValue.toDouble();
+        
+        //---
+        // Fetch the swath first col:
+        //---
+        if (theDIMAPVersion == OSSIM_PLEIADES_DIMAPv1)
+        {
+          xpath = "/Geometric_Data/Sensor_Model_Characteristics/Sensor_Viewing_Model/Position_In_Retina/FIRST_COL";
+        }
+        else
+        {
+          xpath = "/Geometric_Data/Refined_Model/Geometric_Calibration/Instrument_Calibration/Swath_Range/FIRST_COL";
+        }
+        xpath = theXmlDocumentRoot + xpath;
+        if (!readOneXmlNode(xmlDocument, xpath, nodeValue))
+        {
+            return false;
+        }
+        theSwathFirstCol = nodeValue.toInt32();
+        
+        //---
+        // Fetch the swath last col:
+        //---
+        if (theDIMAPVersion == OSSIM_PLEIADES_DIMAPv1)
+        {
+          xpath = "/Geometric_Data/Sensor_Model_Characteristics/Sensor_Viewing_Model/Position_In_Retina/LAST_COL";
+        }
+        else
+        {
+          xpath = "/Geometric_Data/Refined_Model/Geometric_Calibration/Instrument_Calibration/Swath_Range/LAST_COL";
+        }
+        xpath = theXmlDocumentRoot + xpath;
+        if (!readOneXmlNode(xmlDocument, xpath, nodeValue))
+        {
+            return false;
+        }
+        theSwathLastCol = nodeValue.toInt32();
+      }
+      
       return true;
    }
 
@@ -2585,6 +2866,9 @@ namespace ossimplugins
         {
            return false;
         }
+        
+        // TODO : fetch (if any in v1) the other acquisition time parameters
+        
       }
       else
       {
@@ -2611,6 +2895,7 @@ namespace ossimplugins
         }
 
         theAcquisitionDate = firstLineImagingDate + "T" + firstLineImagingTime;
+        
       }
 
       return true;

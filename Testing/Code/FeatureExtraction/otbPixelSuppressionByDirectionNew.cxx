@@ -26,7 +26,7 @@
 #include "otbImageFileWriter.h"
 #include "otbPixelSuppressionByDirectionImageFilter.h"
 
-int otbPixelSuppressionByDirectionNew(int argc, char* argv[])
+int otbPixelSuppressionByDirectionNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   typedef double InputPixelType;
   typedef double OutputPixelType;
@@ -34,10 +34,6 @@ int otbPixelSuppressionByDirectionNew(int argc, char* argv[])
 
   typedef otb::Image<InputPixelType,  Dimension> InputImageType;
   typedef otb::Image<OutputPixelType, Dimension> OutputImageType;
-
-  typedef otb::ImageFileReader<InputImageType>  ReaderType1;
-  typedef otb::ImageFileReader<InputImageType>  ReaderType2;
-  typedef otb::ImageFileWriter<OutputImageType> WriterType;
 
   typedef otb::PixelSuppressionByDirectionImageFilter<InputImageType, OutputImageType> FilterType;
 

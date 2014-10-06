@@ -675,7 +675,7 @@ add_test(feTvVectorizationPathListFilterAsciiOutput ${FEATUREEXTRACTION_TESTS7}
        ${INPUTDATA}/InputForRoadDetection_NonMaxRem.hdr
        ${INPUTDATA}/InputForRoadDetectionScalarProductDir.hdr
        ${TEMP}/feTvVectorizationPathListOutput.txt
-       ${TEMP}/feTvVectorizationPathListOutput.png
+       ${TEMP}/feTvVectorizationPathListOutputIgnored.png
        0.0005
         )
 
@@ -686,7 +686,7 @@ add_test(feTvVectorizationPathListFilterImageOutput ${FEATUREEXTRACTION_TESTS7}
         otbVectorizationPathListFilter
        ${INPUTDATA}/InputForRoadDetection_NonMaxRem.hdr
        ${INPUTDATA}/InputForRoadDetectionScalarProductDir.hdr
-       ${TEMP}/feTvVectorizationPathListOutput.txt
+       ${TEMP}/feTvVectorizationPathListOutputIgnored.txt
        ${TEMP}/feTvVectorizationPathListOutput.png
        0.0001
         )
@@ -1324,7 +1324,7 @@ add_test(feTuScalarImageToTexturesFilterNew ${FEATUREEXTRACTION_TESTS15}
 )
 
 add_test(feTvScalarImageToTexturesFilter ${FEATUREEXTRACTION_TESTS15}
-        --compare-n-images ${NOTOL} 8
+        --compare-n-images ${EPSILON_10} 8
             ${BASELINE}/feTvScalarImageToTexturesFilterOutputEnergy.tif
             ${TEMP}/feTvScalarImageToTexturesFilterOutputEnergy.tif
             ${BASELINE}/feTvScalarImageToTexturesFilterOutputEntropy.tif
@@ -1346,6 +1346,14 @@ add_test(feTvScalarImageToTexturesFilter ${FEATUREEXTRACTION_TESTS15}
             ${TEMP}/feTvScalarImageToTexturesFilterOutput
             8 3 2 2)
 
+add_test(feTuGreyLevelCooccurrenceIndexedListNew ${FEATUREEXTRACTION_TESTS15}
+         otbGreyLevelCooccurrenceIndexedListNew
+)
+
+add_test(feTvGreyLevelCooccurrenceIndexedList ${FEATUREEXTRACTION_TESTS15}
+         otbGreyLevelCooccurrenceIndexedList
+)
+
 add_test(feTuotbGreyLevelCooccurrenceMatrixAdvancedTextureCoefficientsCalculatorNew ${FEATUREEXTRACTION_TESTS15}
          otbGreyLevelCooccurrenceMatrixAdvancedTextureCoefficientsCalculatorNew
 )
@@ -1359,11 +1367,13 @@ add_test(feTuScalarImageToAdvancedTexturesFilterNew ${FEATUREEXTRACTION_TESTS15}
 )
 
 add_test(feTvScalarImageToAdvancedTexturesFilter ${FEATUREEXTRACTION_TESTS15}
-        --compare-n-images ${NOTOL} 9
+        --compare-n-images ${NOTOL} 10
             ${BASELINE}/feTvScalarImageToAdvancedTexturesFilterOutputVariance.tif
             ${TEMP}/feTvScalarImageToAdvancedTexturesFilterOutputVariance.tif
             ${BASELINE}/feTvScalarImageToAdvancedTexturesFilterOutputMean.tif
             ${TEMP}/feTvScalarImageToAdvancedTexturesFilterOutputMean.tif
+            ${BASELINE}/feTvScalarImageToAdvancedTexturesFilterOutputDissimilarity.tif
+            ${TEMP}/feTvScalarImageToAdvancedTexturesFilterOutputDissimilarity.tif
             ${BASELINE}/feTvScalarImageToAdvancedTexturesFilterOutputSumAverage.tif
             ${TEMP}/feTvScalarImageToAdvancedTexturesFilterOutputSumAverage.tif
             ${BASELINE}/feTvScalarImageToAdvancedTexturesFilterOutputSumVariance.tif
@@ -1707,6 +1717,8 @@ otbStreamingLineSegmentDetector.cxx
 otbSqrtSpectralAngleImageFilter.cxx
 otbScalarImageToTexturesFilterNew.cxx
 otbScalarImageToTexturesFilter.cxx
+otbGreyLevelCooccurrenceIndexedListNew.cxx
+otbGreyLevelCooccurrenceIndexedList.cxx
 otbGreyLevelCooccurrenceMatrixAdvancedTextureCoefficientsCalculatorNew.cxx
 otbGreyLevelCooccurrenceMatrixAdvancedTextureCoefficientsCalculator.cxx
 otbScalarImageToAdvancedTexturesFilterNew.cxx

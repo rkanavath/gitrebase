@@ -64,9 +64,9 @@ int main(int argc, char * argv[])
     std::cerr <<
     " inputFileName outputFileName firstPixelComponent secondPixelComponent ";
     std::cerr <<
-    "thirdPixelComponent fourthPixelComponent amplitudeThrehsold tolerance ";
+    "thirdPixelComponent fourthPixelComponent alpha amplitudeThrehsold tolerance ";
     std::cerr <<
-    "angularThreshold firstMeanDistanceThreshold secondMeanDistanceThreshold ";
+    "angularThreshold-maxAngle firstMeanDistanceThreshold secondMeanDistanceThreshold ";
     std::cerr << "distanceThreshold" << std::endl;
     return EXIT_FAILURE;
     }
@@ -286,7 +286,8 @@ int main(int argc, char * argv[])
   // Software Guide : BeginCodeSnippet
   reader->GenerateOutputInformation();
   InputImageType::Pointer blackBackground = InputImageType::New();
-  blackBackground->SetRegions(reader->GetOutput()->GetLargestPossibleRegion());
+  blackBackground->CopyInformation(reader->GetOutput());
+  blackBackground->SetRegions(blackBackground->GetLargestPossibleRegion());
   blackBackground->Allocate();
   blackBackground->FillBuffer(0);
   // Software Guide : EndCodeSnippet

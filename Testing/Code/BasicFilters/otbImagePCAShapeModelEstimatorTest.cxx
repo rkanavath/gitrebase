@@ -52,7 +52,7 @@ public:
   itk::LightProcessObject::Pointer m_Process;
 };
 
-int otbImagePCAShapeModelEstimatorTest(int argc, char* argv[])
+int otbImagePCAShapeModelEstimatorTest(int itkNotUsed(argc), char* argv[])
 {
   /*    const unsigned int numberOfPrincipalComponentsRequired(atoi(argv[1]));
       const unsigned int numberOfTrainingImages(atoi(argv[2]));
@@ -77,11 +77,6 @@ int otbImagePCAShapeModelEstimatorTest(int argc, char* argv[])
   //------------------------------------------------------
   typedef otb::Image<double, NDIMENSION> InputImageType;
   typedef otb::Image<double, NDIMENSION> OutputImageType;
-  typedef
-  itk::ImageRegionIterator<InputImageType> InputImageIterator;
-
-  typedef
-  itk::ImageRegionIterator<OutputImageType> OutputImageIterator;
 
   typedef otb::ImageFileReader<InputImageType>  ReaderType;
   typedef otb::ImageFileWriter<OutputImageType> WriterType;

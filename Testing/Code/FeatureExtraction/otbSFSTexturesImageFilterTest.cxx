@@ -22,7 +22,7 @@
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
 
-int otbSFSTexturesImageFilterTest(int argc, char * argv[])
+int otbSFSTexturesImageFilterTest(int itkNotUsed(argc), char * argv[])
 {
   typedef double PixelType;
   const unsigned int Dimension = 2;
@@ -40,7 +40,6 @@ int otbSFSTexturesImageFilterTest(int argc, char * argv[])
   double       alpha                  = atof(argv[11]);
 
   typedef otb::Image<PixelType, Dimension>                  ImageType;
-  typedef ImageType::PixelType                              InputPixelType;
   typedef otb::ImageFileReader<ImageType>                   ReaderType;
   typedef otb::ImageFileWriter<ImageType>                   WriterType;
   typedef otb::SFSTexturesImageFilter<ImageType, ImageType> FilterType;
