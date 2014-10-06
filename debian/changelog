@@ -1,5 +1,6 @@
-otb (4.0.0-2) UNRELEASED; urgency=medium
+otb (4.2.1-1) UNRELEASED; urgency=medium
 
+  [ Andreas Tille ]
   * Initial upload by Debian GIS team
   * Add Debian GIS team as maintainer
   * debian/control: Priority from extra to optional
@@ -10,7 +11,10 @@ otb (4.0.0-2) UNRELEASED; urgency=medium
   * debian/control: There is no point to have the package in contrib
   * delete unused post{inst,rm} files
 
- -- Andreas Tille <tille@debian.org>  Thu, 10 Jul 2014 10:07:30 +0200
+  [ root ]
+  * New upstream release.
+
+ -- root <root@paguma>  Mon, 06 Oct 2014 12:24:04 +0000
 
 otb (4.0.0-1otb1~trusty2) trusty; urgency=low
 

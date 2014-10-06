@@ -1,6 +1,6 @@
 Source: otb
 Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
-Uploaders: Andreas Tille <tille@debian.org>
+Uploaders: Andreas Tille <tille@debian.org>, Paolo Cavallini <cavallini@faunalia.it>
 Section: science
 Priority: optional
 Build-Depends: debhelper (>= 9),
