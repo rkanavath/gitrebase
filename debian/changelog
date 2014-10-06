@@ -14,7 +14,7 @@ otb (4.2.1-1) UNRELEASED; urgency=medium
   [ root ]
   * New upstream release.
 
- -- root <root@paguma>  Mon, 06 Oct 2014 12:24:04 +0000
+ -- Paolo Cavallini <cavallini@faunalia.it>  Mon, 06 Oct 2014 12:24:04 +0000
 
 otb (4.0.0-1otb1~trusty2) trusty; urgency=low
 
