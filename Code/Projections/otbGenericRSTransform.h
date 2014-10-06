@@ -60,6 +60,7 @@ public:
   //@}
 
   typedef typename Superclass::ScalarType           ScalarType;
+  typedef typename Superclass::JacobianType         JacobianType;
   typedef itk::Point<ScalarType, NInputDimensions>  InputPointType;
   typedef itk::Point<ScalarType, NOutputDimensions> OutputPointType;
 
@@ -173,8 +174,10 @@ public:
   virtual InverseTransformBasePointer GetInverseTransform() const;
 
   // Dummy set parameter method
-  virtual void SetParameters(const typename Superclass::ParametersType &)
-  {}
+  virtual void SetParameters(const typename Superclass::ParametersType &)  {}
+
+  // Dummy ComputeJacobianWithRespectToParameters method
+  virtual void ComputeJacobianWithRespectToParameters(const InputPointType  &, JacobianType& ) const {}
 
 protected:
   GenericRSTransform();

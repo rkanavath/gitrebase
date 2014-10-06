@@ -127,11 +127,6 @@ int main(int argc, char* argv[])
   typedef std::vector<MatchType>          MatchVectorType;
   typedef EuclideanDistanceMetricMatchingFilterType::LandmarkListType
   LandmarkListType;
-
-  typedef PointSetType::PointsContainer    PointsContainerType;
-  typedef PointsContainerType::Iterator    PointsIteratorType;
-  typedef PointSetType::PointDataContainer PointDataContainerType;
-  typedef PointDataContainerType::Iterator PointDataIteratorType;
   // Software Guide : EndCodeSnippet
 
   // Software Guide : BeginLatex
@@ -318,8 +313,6 @@ int main(int argc, char* argv[])
   //
   // Software Guide : EndLatex
   // Software Guide : BeginCodeSnippet
-  typedef DisplacementSourceType::LandmarkContainerPointer
-  LandmarkContainerPointer;
   typedef DisplacementSourceType::LandmarkContainer
   LandmarkContainerType;
   typedef DisplacementSourceType::LandmarkPointType LandmarkPointType;

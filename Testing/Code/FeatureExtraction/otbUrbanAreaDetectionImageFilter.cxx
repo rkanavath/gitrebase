@@ -22,14 +22,12 @@
 #include "otbImageFileWriter.h"
 #include "otbUrbanAreaDetectionImageFilter.h"
 
-int otbUrbanAreaDetectionImageFilter(int argc, char * argv[])
+int otbUrbanAreaDetectionImageFilter(int itkNotUsed(argc), char * argv[])
 {
   const unsigned int Dimension = 2;
   typedef double                                 PixelType;
   typedef otb::VectorImage<PixelType, Dimension> InputVectorImageType;
   typedef otb::Image<unsigned char, Dimension>   OutputImageType;
-
-  typedef otb::Image<double, Dimension> SingleImageType;
 
   typedef otb::ImageFileReader<InputVectorImageType> ReaderType;
 

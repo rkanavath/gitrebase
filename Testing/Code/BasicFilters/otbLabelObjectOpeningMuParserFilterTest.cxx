@@ -31,7 +31,7 @@
 #include "itkLabelMapToLabelImageFilter.h"
 #include "otbBandsStatisticsAttributesLabelMapFilter.h"
 
-int otbLabelObjectOpeningMuParserFilterTest(int argc, char * argv[])
+int otbLabelObjectOpeningMuParserFilterTest(int itkNotUsed(argc), char * argv[])
 {
 
   const char * imageInputFilename  = argv[1];
@@ -45,7 +45,6 @@ int otbLabelObjectOpeningMuParserFilterTest(int argc, char * argv[])
   typedef unsigned int LabelType;
   typedef otb::Image<LabelType, Dimension>              LabelImageType;
   typedef otb::VectorImage<InputPixelType,  Dimension>  InputVectorImageType;
-  typedef otb::ImageFileReader<InputVectorImageType>    ReaderType;
 
   typedef otb::ImageFileReader<InputVectorImageType>  ImageReaderType;
   typedef otb::ImageFileReader<LabelImageType>        LabelImageReaderType;

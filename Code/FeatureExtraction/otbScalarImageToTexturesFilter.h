@@ -1,37 +1,46 @@
 /*=========================================================================
 
- Program:   ORFEO Toolbox
- Language:  C++
- Date:      $Date$
- Version:   $Revision$
+Program:   ORFEO Toolbox
+Language:  C++
+Date:      $Date$
+Version:   $Revision$
 
 
- Copyright (c) Centre National d'Etudes Spatiales. All rights reserved.
- See OTBCopyright.txt for details.
+Copyright (c) Centre National d'Etudes Spatiales. All rights reserved.
+See OTBCopyright.txt for details.
 
 
- This software is distributed WITHOUT ANY WARRANTY; without even
- the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
- PURPOSE.  See the above copyright notices for more information.
+This software is distributed WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.  See the above copyright notices for more information.
 
- =========================================================================*/
+=========================================================================*/
+
 #ifndef __otbScalarImageToTexturesFilter_h
 #define __otbScalarImageToTexturesFilter_h
 
+#include "otbGreyLevelCooccurrenceIndexedList.h"
 #include "itkImageToImageFilter.h"
-
-#include "itkScalarImageToCooccurrenceMatrixFilter.h"
-#include "itkHistogramToTextureFeaturesFilter.h"
 
 namespace otb
 {
-/** \class ScalarImageToTexturesFilter
- *  \brief This class compute 8 local Haralick textures features.
+/**
+ * \class ScalarImageToTexturesFilter
+ * \brief This class compute 8 local Haralick textures features. The 8 output
+ * image channels are: Energy, Entropy, Correlation, Inverse Difference Moment,
+ * Inertia, Cluster Shade, Cluster Prominence and Haralick Correlation. They
+ * are provided in this exact order in the output image. Thus, this application
+ * computes the following Haralick textures over a neighborhood with user
+ * defined radius.
  *
- *  This filter computes the following Haralick textures over a sliding windows with
- *  user defined radius:
- *  (where \f$ g(i, j) \f$ is the element in
- * cell i, j of a normalized GLCM):
+ * To improve the speed of computation, a variant of Grey Level Co-occurrence
+ * Matrix(GLCM) called Grey Level Co-occurrence Indexed List (GLCIL) is
+ * used. Given below is the mathematical explanation on the computation of each
+ * textures. Here $ g(i, j) $ is the frequency of element in the GLCIL whose
+ * index is i, j. GLCIL stores a pair of frequency of two pixels from the given
+ * offset and the cell index (i, j) of the pixel in the neighborhood
+ * window. :(where each element in GLCIL is a pair of pixel index and it's
+ * frequency, $ g(i, j) $ is the frequency value of the pair having index is i, j).
  *
  * "Energy" \f$ = f_1 = \sum_{i, j}g(i, j)^2 \f$
  *
@@ -57,11 +66,30 @@ namespace otb
  * \f$ \sigma =  \f$ (weighted pixel variance) \f$ = \sum_{i, j}(i - \mu)^2 \cdot g(i, j) =
  * \sum_{i, j}(j - \mu)^2 \cdot g(i, j)  \f$  (due to matrix summetry)
  *
+
+ * Print references:
+ *
+ * Haralick, R.M., K. Shanmugam and I. Dinstein. 1973.  Textural Features for
+ * Image Classification. IEEE Transactions on Systems, Man and Cybernetics.
+ * SMC-3(6):610-620.
+ *
+ * David A. Clausi and Yongping Zhao. 2002. Rapid extraction of image texture by
+ * co-occurrence using a hybrid data structure. Comput. Geosci. 28, 6 (July
+ * 2002), 763-774. DOI=10.1016/S0098-3004(01)00108-X
+ * http://dx.doi.org/10.1016/S0098-3004(01)00108-X
+ *
+ * de O.Bastos, L.; Liatsis, P.; Conci, A., Automatic texture segmentation based
+ * on k-means clustering and efficient calculation of co-occurrence
+ * features. Systems, Signals and Image Processing, 2008. IWSSIP 2008. 15th
+ * International Conference on , vol., no., pp.141,144, 25-28 June 2008
+ * doi: 10.1109/IWSSIP.2008.4604387
+ *
  * Neighborhood size can be set using the SetRadius() method. Offset for co-occurence estimation
  * is set using the SetOffset() method.
  *
- * \sa otb::MaskedScalarImageToGreyLevelCooccurrenceMatrixGenerator
- * \sa itk::GreyLevelCooccurrenceMatrixTextureCoefficientsCalculator
+ * \sa otb::GreyLevelCooccurrenceIndexedList
+ * \sa otb::ScalarImageToAdvancedTexturesFiler
+ * \sa otb::ScalarImageToHigherOrderTexturesFilter
  *
  * \ingroup Streamed
  * \ingroup Threaded
@@ -90,18 +118,22 @@ public:
   typedef typename InputImageType::PixelType   InputPixelType;
   typedef typename InputImageType::RegionType  InputRegionType;
   typedef typename InputRegionType::SizeType   SizeType;
+  typedef typename InputImageType::OffsetType   OffsetType;
+
   typedef TOutputImage                         OutputImageType;
   typedef typename OutputImageType::Pointer    OutputImagePointerType;
   typedef typename OutputImageType::RegionType OutputRegionType;
 
-  /** Co-occurence matrix and textures calculator */
-  typedef itk::Statistics::ScalarImageToCooccurrenceMatrixFilter<InputImageType> CoocurrenceMatrixGeneratorType;
-  typedef typename CoocurrenceMatrixGeneratorType::Pointer       CoocurrenceMatrixGeneratorPointerType;
-  typedef typename CoocurrenceMatrixGeneratorType::OffsetType    OffsetType;
-  typedef typename CoocurrenceMatrixGeneratorType::HistogramType HistogramType;
-  typedef itk::Statistics::HistogramToTextureFeaturesFilter
-  <HistogramType>                                                TextureCoefficientsCalculatorType;
-  typedef typename TextureCoefficientsCalculatorType::Pointer TextureCoefficientsCalculatorPointerType;
+  typedef GreyLevelCooccurrenceIndexedList< InputPixelType >   CooccurrenceIndexedListType;
+  typedef typename CooccurrenceIndexedListType::Pointer       CooccurrenceIndexedListPointerType;
+  typedef typename CooccurrenceIndexedListType::ConstPointer  CooccurrenceIndexedListConstPointerType;
+  typedef typename CooccurrenceIndexedListType::IndexType              CooccurrenceIndexType;
+  typedef typename CooccurrenceIndexedListType::PixelValueType         PixelValueType;
+  typedef typename CooccurrenceIndexedListType::RelativeFrequencyType  RelativeFrequencyType;
+  typedef typename CooccurrenceIndexedListType::VectorType             VectorType;
+
+  typedef typename VectorType::iterator                    VectorIteratorType;
+  typedef typename VectorType::const_iterator              VectorConstIteratorType;
 
   /** Set the radius of the window on which textures will be computed */
   itkSetMacro(Radius, SizeType);
@@ -114,10 +146,10 @@ public:
   /** Get the offset for co-occurence computation */
   itkGetMacro(Offset, OffsetType);
 
-  /** Set the number of bin per axis for histogram generation */
+  /** Set the number of bin per axis */
   itkSetMacro(NumberOfBinsPerAxis, unsigned int);
 
-  /** Get the number of bin per axis for histogram generation */
+  /** Get the number of bin per axis */
   itkGetMacro(NumberOfBinsPerAxis, unsigned int);
 
   /** Set the input image minimum */
@@ -163,6 +195,8 @@ protected:
   ~ScalarImageToTexturesFilter();
   /** Generate the input requested region */
   virtual void GenerateInputRequestedRegion();
+  /** Before Parallel textures extraction */
+  virtual void BeforeThreadedGenerateData();
   /** Parallel textures extraction */
   virtual void ThreadedGenerateData(const OutputRegionType& outputRegion, itk::ThreadIdType threadId);
 
@@ -179,7 +213,10 @@ private:
   /** Offset for co-occurence */
   OffsetType m_Offset;
 
-  /** Number of bins per axis for histogram generation */
+  /** Radius of the neighborhood iterator which is minumum of m_Radius */
+  SizeType m_NeighborhoodRadius;
+
+  /** Number of bins per axis */
   unsigned int m_NumberOfBinsPerAxis;
 
   /** Input image minimum */
@@ -187,6 +224,10 @@ private:
 
   /** Input image maximum */
   InputPixelType m_InputImageMaximum;
+
+  //TODO: should we use constexpr? only c++11 and problem for msvc
+  inline double GetPixelValueTolerance() const {return 0.0001; }
+
 };
 } // End namespace otb
 

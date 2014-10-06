@@ -22,7 +22,7 @@
 #include "otbImageFileReader.h"
 #include "otbStreamingMatrixTransposeMatrixImageFilter.h"
 
-int otbMatrixTransposeMatrixImageFilter(int argc, char * argv[])
+int otbMatrixTransposeMatrixImageFilter(int itkNotUsed(argc), char * argv[])
 {
   const char * infname1 = argv[1];
   const char * infname2 = argv[2];
@@ -32,7 +32,6 @@ int otbMatrixTransposeMatrixImageFilter(int argc, char * argv[])
   //typedef double InputPixelType;
   //typedef double OutputPixelType;
   typedef unsigned char InputPixelType;
-  typedef unsigned char OutputPixelType;
 
   typedef otb::VectorImage<InputPixelType, Dimension> InputImage1Type;
   typedef otb::VectorImage<InputPixelType, Dimension> InputImage2Type;

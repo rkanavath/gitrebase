@@ -35,14 +35,13 @@
  * Write Image<scalar> with an ImageFileWriter<scalar>
  ***********/
 template<class InternalType>
-int otbImageScalarStreamingFileWriterTestWithoutInputGeneric(int argc, char* argv[])
+int otbImageScalarStreamingFileWriterTestWithoutInputGeneric(int itkNotUsed(argc), char* argv[])
 {
   // Verify the number of parameters in the command line
   const char * outputFilename = argv[1];
 
   typedef InternalType                                  PixelType;
   typedef otb::Image<PixelType, 2>                      ImageType;
-  typedef typename ImageType::PixelType                 ImagePixelType;
   typedef typename ImageType::RegionType                RegionType;
   typedef typename ImageType::SizeType                  SizeType;
   typedef typename ImageType::IndexType                 IndexType;
@@ -59,6 +58,15 @@ int otbImageScalarStreamingFileWriterTestWithoutInputGeneric(int argc, char* arg
   RegionType region;
   region.SetSize(size);
   region.SetIndex(orig);
+
+  typedef typename ImageType::PointType        PointType;
+  typedef typename ImageType::SpacingType      SpacingType;
+  PointType origin;
+  origin.Fill(0.5);
+  SpacingType spacing;
+  spacing.Fill(1.0);
+  image->SetOrigin(origin);
+  image->SetSpacing(spacing);
 
   image->SetRegions(region);
   image->Allocate();
@@ -106,14 +114,13 @@ int otbImageScalarStreamingFileWriterTestWithoutInputDouble(int argc, char * arg
  * Write Image<scalar> with an ImageFileWriter<scalar>
  ***********/
 template<class InternalType>
-int otbImageComplexStreamingFileWriterTestWithoutInputGeneric(int argc, char* argv[])
+int otbImageComplexStreamingFileWriterTestWithoutInputGeneric(int itkNotUsed(argc), char* argv[])
 {
   // Verify the number of parameters in the command line
   const char * outputFilename = argv[1];
 
   typedef std::complex<InternalType>                    PixelType;
   typedef otb::Image<PixelType, 2>                      ImageType;
-  typedef typename ImageType::PixelType                 ImagePixelType;
   typedef typename ImageType::RegionType                RegionType;
   typedef typename ImageType::SizeType                  SizeType;
   typedef typename ImageType::IndexType                 IndexType;
@@ -130,6 +137,15 @@ int otbImageComplexStreamingFileWriterTestWithoutInputGeneric(int argc, char* ar
   RegionType region;
   region.SetSize(size);
   region.SetIndex(orig);
+
+  typedef typename ImageType::PointType        PointType;
+  typedef typename ImageType::SpacingType      SpacingType;
+  PointType origin;
+  origin.Fill(0.5);
+  SpacingType spacing;
+  spacing.Fill(1.0);
+  image->SetOrigin(origin);
+  image->SetSpacing(spacing);
 
   image->SetRegions(region);
   image->Allocate();

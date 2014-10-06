@@ -18,9 +18,12 @@
 
 #include "otbWrapperCommandLineLauncher.h"
 #include "otbTinyXML.h"
+#include <vector>
 
 const std::string GetChildNodeTextOf(TiXmlElement *parentElement, std::string key);
 std::string PrepareExpressionFromXML(std::string filename);
+std::vector<std::string> PrepareVectorExpressionFromXML(std::string filename);
+std::string CleanWord(const std::string & word);
 
 
 std::string PrepareExpressionFromXML(std::string filename)
@@ -39,13 +42,17 @@ std::string PrepareExpressionFromXML(std::string filename)
   // Open the xml file
   TiXmlDocument doc;
 
-  FILE* fp = fopen( filename.c_str (), "rb" ); //must be changed TiXmlFileOpen
-                                               //from tinyxml.cpp
+  //Use itksys::SystemTools::FOpen() and close it below because
+  //TiXmlDocument::TiXmlFileOpen( ) is not exposed from tinyXML library. Even
+  //though its available in the TiXmlDocument::SaveFile().
+  FILE* fp =  itksys::SystemTools::Fopen(filename.c_str(), "rb");
 
   if (!doc.LoadFile(fp , TIXML_ENCODING_UTF8))
     {
     std::cerr << "Can't open file " << filename << std::endl;
+    fclose(fp);
     exit(1);
+
     }
 
   TiXmlHandle handle(&doc);
@@ -57,6 +64,7 @@ std::string PrepareExpressionFromXML(std::string filename)
   {
     std::string info = "Input XML file " + filename + " is invalid.";
     std::cerr << info  << std::endl;
+    fclose(fp);
     exit(1);
   }
 
@@ -134,7 +142,110 @@ std::string PrepareExpressionFromXML(std::string filename)
         }
       }
     }
+
+  fclose(fp);
+
   return expression;
+}
+
+std::vector<std::string> PrepareVectorExpressionFromXML(std::string filename)
+{
+  std::vector<std::string> expression;
+
+  if(filename.empty())
+    {
+    std::cerr <<"Input XML Filename is empty" << std::endl;
+    return expression;
+    }
+  std::string ext = filename.substr(filename.size()-4,filename.size());
+  if(ext != ".xml" )
+    std::cerr << ext  << " is a wrong extension: Expected .xml " << __FILE__ << std::endl;
+
+  // Open the xml file
+  TiXmlDocument doc;
+
+  //Use itksys::SystemTools::FOpen() and close it below because
+  //TiXmlDocument::TiXmlFileOpen( ) is not exposed from tinyXML library. Even
+  //though its available in the TiXmlDocument::SaveFile().
+  FILE* fp =  itksys::SystemTools::Fopen(filename.c_str(), "rb");
+
+  if (!doc.LoadFile(fp , TIXML_ENCODING_UTF8))
+    {
+    std::cerr << "Can't open file " << filename << std::endl;
+    fclose(fp);
+    exit(1);
+
+    }
+
+  TiXmlHandle handle(&doc);
+
+  TiXmlElement *n_OTB;
+  n_OTB = handle.FirstChild("OTB").Element();
+
+  if(!n_OTB)
+  {
+    std::string info = "Input XML file " + filename + " is invalid.";
+    std::cerr << info  << std::endl;
+    fclose(fp);
+    exit(1);
+  }
+
+  TiXmlElement *n_AppNode   = n_OTB->FirstChildElement("application");
+
+  std::string moduleName;
+  moduleName = GetChildNodeTextOf(n_AppNode, "name");
+
+  expression.push_back(CleanWord(moduleName));
+
+  for( TiXmlElement* n_Parameter = n_AppNode->FirstChildElement("parameter"); n_Parameter != NULL;
+       n_Parameter = n_Parameter->NextSiblingElement() )
+    {
+    std::string key="-";
+    key.append(GetChildNodeTextOf(n_Parameter, "key"));
+    expression.push_back(CleanWord(key));
+
+    TiXmlElement* n_Values = NULL;
+    n_Values = n_Parameter->FirstChildElement("values");
+    if(n_Values)
+      {
+      std::string values;
+      for(TiXmlElement* n_Value = n_Values->FirstChildElement("value"); n_Value != NULL;
+          n_Value = n_Value->NextSiblingElement())
+        {
+        expression.push_back(CleanWord(n_Value->GetText()));
+        }
+      }
+    else
+      {
+      std::string value;
+      value = GetChildNodeTextOf(n_Parameter, "value");
+      expression.push_back(CleanWord(value));
+
+      std::string type = GetChildNodeTextOf(n_Parameter, "type");
+      if (type == "OutputImage")
+        {
+        std::string type = GetChildNodeTextOf(n_Parameter, "pixtype");
+        expression.push_back(CleanWord(type));
+        }
+      }
+    }
+
+  fclose(fp);
+
+  return expression;
+}
+
+std::string CleanWord(const std::string & word)
+{
+  std::string res("");
+  // Suppress whitespace characters at the beginning and ending of the string
+  std::string::size_type cleanStart = word.find_first_not_of(" \t");
+  std::string::size_type cleanEnd = word.find_last_not_of(" \t\f\v\n\r");
+  if (cleanEnd != std::string::npos)
+    {
+    res = word.substr(cleanStart,cleanEnd+1);
+    }
+  return res;
 }
 
 int main(int argc, char* argv[])
@@ -145,17 +256,20 @@ int main(int argc, char* argv[])
     return EXIT_FAILURE;
     }
 
+  std::vector<std::string> vexp;
+    
   std::string exp;
   if (strcmp(argv[1], "-inxml") == 0)
     {
-    exp = PrepareExpressionFromXML(argv[2]);
+    //exp = PrepareExpressionFromXML(argv[2]);
+    vexp = PrepareVectorExpressionFromXML(argv[2]);
     }
   else
     {
     // Construct the string expression
     for (int i = 1; i < argc; i++)
       {
-      if (i != argc - 1)
+      /*if (i != argc - 1)
         {
         exp.append(argv[i]);
         exp.append(" ");
@@ -163,16 +277,24 @@ int main(int argc, char* argv[])
       else
         {
         exp.append(argv[i]);
+        }*/
+      std::string strarg(argv[i]);
+      std::string cleanArg = CleanWord(strarg);
+      if (cleanArg.empty())
+        {
+        // Empty argument !
+        continue;
         }
+      vexp.push_back(cleanArg);
       }
-
     }
   //  std::cerr << exp << ":\n";
 
   typedef otb::Wrapper::CommandLineLauncher LauncherType;
   LauncherType::Pointer launcher = LauncherType::New();
 
-  if (launcher->Load(exp) == true)
+  //if (launcher->Load(exp) == true)
+    if (launcher->Load(vexp) == true)
     {
     if (launcher->ExecuteAndWriteOutput() == false)
       {

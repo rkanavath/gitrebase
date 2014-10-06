@@ -27,7 +27,7 @@ namespace otb
 
 template <class TSpectralResponse , class TRSR>
 ReduceSpectralResponse <TSpectralResponse , TRSR>
-::ReduceSpectralResponse()
+::ReduceSpectralResponse() : m_ReflectanceMode(false)
 {
     m_ReduceResponse = InputSpectralResponseType::New();
 }
@@ -40,6 +40,28 @@ ReduceSpectralResponse<TSpectralResponse , TRSR>
    return ( m_InputSatRSR->Clear() & m_InputSpectralResponse->Clear() );
 }
 
+template <typename T>
+inline
+T trapezoid_area(T x1, T x2, T y1, T y2)
+{
+        /* We compute the area of the trapezoid
+            by computing the lower square and the
+            upper triangle.
+                         /- |y2
+                       /-   |
+                     /-     |
+                   /-       |
+            y1   +----------+
+                 |          |
+                 |          |
+                 |          |
+                 +----------+
+                x1          x2
+
+          (x2-x1)*min(y1,y2) + (x2-x1)*abs(y2-y1)/2
+        */
+  return (x2-x1)*std::min(y1,y2) + (x2-x1)*fabs(y2-y1)*0.5;
+}
 
 template <class TSpectralResponse , class TRSR>
 inline typename ReduceSpectralResponse<TSpectralResponse , TRSR>::ValuePrecisionType
@@ -48,166 +70,65 @@ ReduceSpectralResponse<TSpectralResponse , TRSR>
 {
   if (numBand >= m_InputSatRSR->GetNbBands())
     {
-    itkExceptionMacro(<< "There is no band num " << numBand << " in the RSR vector!(Size of the current RSR vector is " << m_InputSatRSR->GetNbBands() << ")" );
+    itkExceptionMacro(<< "There is no band num " << numBand
+                      << " in the RSR vector!(Size of the current RSR vector is "
+                      << m_InputSatRSR->GetNbBands() << ")" );
     }
   else
     {
     ValuePrecisionType res = itk::NumericTraits<ValuePrecisionType>::ZeroValue();
-    ValuePrecisionType response1;
-    ValuePrecisionType response2;
-    ValuePrecisionType inputSatRSR1;
-    ValuePrecisionType inputSatRSR2;
+    typename InputRSRType::SpectralResponseType* solarIrradiance;
 
-    ValuePrecisionType inputRSR1;
-    ValuePrecisionType inputRSR2;
-    PrecisionType lambda1;
-    PrecisionType lambda2;
-
-
+    if(m_ReflectanceMode)
+      {
+      solarIrradiance = this->m_InputSatRSR->GetSolarIrradiance();
+      if (solarIrradiance == 0)
+        {
+        itkExceptionMacro(<<"Error occurs getting solar irradiance. Solar irradiance is mandatory using the reflectance mode.");
+        }
+      }
     typename VectorPairType::const_iterator it;
     VectorPairType pairs = (m_InputSatRSR->GetRSR())[numBand]->GetResponse();
     it = pairs.begin();
-
-    PrecisionType lambdaMin=(this->m_InputSatRSR->GetRSR())[numBand]->GetInterval().first;
-    PrecisionType lambdaMax=(this->m_InputSatRSR->GetRSR())[numBand]->GetInterval().second;
-
-    ValuePrecisionType totalArea = static_cast<ValuePrecisionType> (0);
-    totalArea =lambdaMax - lambdaMin;
-    if (totalArea == 0) return static_cast<ValuePrecisionType> (0.0);
-
-
-    while (it != pairs.end() - 1)
+    ValuePrecisionType totalArea(0);
+    //start with the second value for the numerical integration
+    ++it;
+    while (it != pairs.end())
       {
+      PrecisionType lambda1 = (*(it-1)).first;
+      PrecisionType lambda2 = (*it).first;
+//      PrecisionType deltaLambda = lambda2-lambda1;
+      ValuePrecisionType rsr1 = (*(it-1)).second;
+      ValuePrecisionType rsr2 = (*it).second;
+      ValuePrecisionType spectrum1 = (*m_InputSpectralResponse)(lambda1);
+      ValuePrecisionType spectrum2 = (*m_InputSpectralResponse)(lambda2);
+      /*
+        In order to simplify the computation for the reflectance mode,
+        we introduce the solar irradiance in the general formula with
+        a value of 1.0 for the luminance case.
 
-      lambda1 = (*it).first;
-      lambda2 = (*(it + 1)).first;
-      if((lambda1<lambdaMax) && (lambda2>lambdaMin))
+        In this way the formula is the same if we weight the RSR by
+        the solar irradiance before the integration.
+      */
+      ValuePrecisionType solarIrradiance1(1.0);
+      ValuePrecisionType solarIrradiance2(1.0);
+      if(m_ReflectanceMode)
         {
-        inputSatRSR1 = (*it).second;
-        inputSatRSR2 = (*(it + 1)).second;
-
-        inputRSR1 = (*m_InputSpectralResponse)(lambda1);
-        inputRSR2 = (*m_InputSpectralResponse)(lambda2);
-
-
-        // lambda1 need to be resampled
-        /*
-
-                                /------+ inputRSR2
-                            /---       |
-                           /           |
-                          |            |
-                          |            |
-                          |            |
-                          |            |
-         inputRSR1=0+------------------+
-         lambda1            lambda2
-                          ^
-                          |
-         first non zero val in inputRSR
-
-         - after resampling
-
-                          /------+ inputRSR2
-                      /---       |
-                     /           |
-         inputRSR1  +            |
-                    |            |
-                    |            |
-                    |            |
-                    +------------+
-                 lambda1      lambda2
-         */
-        if ((inputRSR1 == 0) && (inputRSR2 != 0))
-          {
-          PrecisionType lambdaRSRmin = m_InputSpectralResponse->GetInterval().first;
-          if ((lambdaRSRmin > lambda2) || (lambdaRSRmin < lambda1))
-            {
-            itkExceptionMacro(<<"Spectral response problem");
-            }
-
-          PrecisionType lambdaDist = lambdaRSRmin - lambda1;
-          PrecisionType ratio = lambdaDist / (lambda2 - lambda1);
-          lambda1 = lambdaRSRmin;
-          inputSatRSR1 = ratio * inputSatRSR1 + (1 - ratio) * inputSatRSR2;
-
-          inputRSR1=(*m_InputSpectralResponse)(lambda1);
-
-          }
-
-        // lambda2 need to be resampled
-        /*
-
-         inputRSR1  +---\
-                    |    \
-                    |     ------\
-                    |            |
-                    |            |
-                    |            |
-                    +----------------------------+ inputRSR2=0
-                 lambda1                       lambda2
-                                 ^
-                                 |
-         first non zero val in inputRSR
-
-         - after resampling
-
-
-         inputRSR1  +---\
-                    |    \
-                    |     ------\
-                    |            +inputRSR2
-                    |            |
-                    |            |
-                    +------------+
-                 lambda1        lambda2
-
-         */
-        if ((inputRSR1 != 0) && (inputRSR2 == 0))
-          {
-          PrecisionType lambdaRSRmax = m_InputSpectralResponse->GetInterval().second;
-          if ((lambdaRSRmax > lambda2) || (lambdaRSRmax < lambda1))
-            {
-            itkExceptionMacro(<<"Spectral response problem");
-            }
-          PrecisionType lambdaDist = lambdaRSRmax - lambda1;
-          PrecisionType ratio = lambdaDist / (lambda2 - lambda1);
-          lambda2 = lambdaRSRmax;
-          inputSatRSR2 = ratio * inputSatRSR1 + (1 - ratio) * inputSatRSR2;
-
-          inputRSR2=(*m_InputSpectralResponse)(lambda2);
-
-          }
-
-        response1 = inputRSR1 * inputSatRSR1;
-        response2 = inputRSR2 * inputSatRSR2;
-
-        ValuePrecisionType rmin = std::min(response1, response2);
-        ValuePrecisionType rmax = std::max(response1, response2);
-
-        /*
-          rmax +\
-            | ---\
-            |     --| rmin
-            |       |
-            |       |
-            |       |
-            |       |
-            |-------+
-           lambda1   lambda2
-         */
-
-        //Compute the surface of the trapezoid
-
-        ValuePrecisionType area = (lambda2 - lambda1) * (rmax + rmin) / 2.0;
-        res += area;
+        solarIrradiance1 = (*solarIrradiance)(lambda1);
+        solarIrradiance2 = (*solarIrradiance)(lambda2);
         }
+      rsr1 *= solarIrradiance1;
+      rsr2 *= solarIrradiance2;
+      res += trapezoid_area(lambda1, lambda2,
+                            rsr1*spectrum1,
+                            rsr2*spectrum2);
+      totalArea += trapezoid_area(lambda1, lambda2,
+                                  rsr1,
+                                  rsr2);
       ++it;
       }
-
     return res / totalArea;
     }
-
 }
 
 template <class TSpectralResponse , class TRSR>
@@ -261,14 +182,25 @@ ReduceSpectralResponse<TSpectralResponse , TRSR>
    os<<std::endl;
    os << "spectre " << m_InputSpectralResponse <<std::endl;
    os << "Sat RSR " << m_InputSatRSR <<std::endl;
-
    os<<std::endl;
-   os <<indent << "[Center Wavelength (micrometers), Reflectance (percent)]" << std::endl;
+
+   if(m_ReflectanceMode)
+     {
+     os << "Solar irradiance " << std::endl;
+     this->m_InputSatRSR->GetSolarIrradiance()->PrintSelf(os, indent);
+     os<<std::endl;
+     os <<indent << "[Center Wavelength (micrometers), Reflectance (percent)]" << std::endl;
+     }
+   else{
+   os <<indent << "[Center Wavelength (micrometers), Luminance (percent)]" << std::endl;
+   }
+
    for(typename VectorPairType::const_iterator it = m_ReduceResponse->GetResponse().begin(); it != m_ReduceResponse->GetResponse().end(); ++it)
    {
      os <<indent << "Band Nb : "<< it - m_ReduceResponse->GetResponse().begin() << ": [" << (*it).first << ","<< (*it).second << "]" << std::endl;
    }
 }
+
 
 } // end namespace otb
 

@@ -121,7 +121,7 @@ add_test(prTvSensorModelPleiades-PRE-TIFF ${PROJECTIONS_TESTS1}
 )
 
 add_test(prTvSensorModelPleiades-JP2 ${PROJECTIONS_TESTS1}
-  --ignore-order --compare-ascii ${NOTOL}
+  --ignore-order --compare-ascii ${EPSILON_9}
          ${BASELINE_FILES}/prTvSensorModelPleiades.txt
          ${TEMP}/prTvSensorModelPleiades_OUT.txt
          --ignore-lines-with 2 meters_per_pixel_x meters_per_pixel_y
@@ -386,7 +386,7 @@ add_test(prTvOrthoRectificationSPOT5 ${PROJECTIONS_TESTS2}
         -5
         39
         N
-        5
+        50
         )
 
  add_test(prTvOrthoRectificationMonoThreadSPOT5 ${PROJECTIONS_TESTS2}
@@ -403,7 +403,7 @@ add_test(prTvOrthoRectificationSPOT5 ${PROJECTIONS_TESTS2}
         -5
         39
         N
-        5
+        50
         )
 endif()
 
@@ -1376,7 +1376,7 @@ add_test(prTvGeometriesProjectionFilterFromMapToSensor ${PROJECTIONS_TESTS3}
 endif()
 
 add_test(prTvVectorDataProjectionFilterFromMapToGeo ${PROJECTIONS_TESTS3}
-        --compare-ascii ${NOTOL}
+        --compare-ogr ${NOTOL}
         ${BASELINE_FILES}/prTvVectorDataProjectionFilterFromMapToGeo.kml
         ${TEMP}/prTvVectorDataProjectionFilterFromMapToGeo.kml
         otbVectorDataProjectionFilterFromMapToGeo
@@ -1385,7 +1385,7 @@ add_test(prTvVectorDataProjectionFilterFromMapToGeo ${PROJECTIONS_TESTS3}
 )
 
 add_test(prTvGeometriesProjectionFilterFromMapToGeo ${PROJECTIONS_TESTS3}
-        --compare-ascii ${NOTOL}
+        --compare-ogr ${NOTOL}
         ${BASELINE_FILES}/prTvVectorDataProjectionFilterFromMapToGeo.kml
         ${TEMP}/prTvGeometriesProjectionFilterFromMapToGeo.kml
         otbGeometriesProjectionFilterFromMapToGeo
@@ -1682,7 +1682,7 @@ otbImageToEnvelopeVectorDataFilterNew)
 
 if(OTB_DATA_USE_LARGEINPUT)
 add_test(prTvImageToEnvelopeVectorDataFilter ${PROJECTIONS_TESTS4}
---compare-ascii ${EPSILON_6}
+--compare-ogr ${EPSILON_6}
   ${BASELINE_FILES}/prTvImageToEnvelopeVectorDataFilterOutput.kml
   ${TEMP}/prTvImageToEnvelopeVectorDataFilterOutput.kml
   otbImageToEnvelopeVectorDataFilter

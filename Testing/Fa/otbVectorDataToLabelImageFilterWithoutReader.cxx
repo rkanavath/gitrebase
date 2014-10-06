@@ -40,7 +40,7 @@ typedef DataNodeType::LineType                    LineType;
 typedef DataNodeType::PolygonType                 PolygonType;
 typedef LineType::VertexType                      VertexType;
 
-int main(int argc, char* argv[])
+int main(int itkNotUsed(argc), char* argv[])
 {
 
   //OGRRegisterAll();
@@ -144,13 +144,9 @@ int main(int argc, char* argv[])
   spacing[0]=1;
   spacing[1]=1;
 
-
   rasterization->SetOutputSize(size);
   rasterization->SetOutputOrigin(origin);
   rasterization->SetOutputSpacing(spacing);
-
-  otb::StandardOneLineFilterWatcher * watch = new otb::StandardOneLineFilterWatcher(rasterization.GetPointer(),
-                                                                          "rasterization");
 
   WriterType::Pointer writer  = WriterType::New();
   writer->SetFileName(argv[1]);

@@ -30,8 +30,8 @@ include(SourceStatus)
 #-----------------------------------------------------------------------------
 # OTB version number.  An even minor number corresponds to releases.
 set(OTB_VERSION_MAJOR "4")
-set(OTB_VERSION_MINOR "0")
-set(OTB_VERSION_PATCH "0")
+set(OTB_VERSION_MINOR "2")
+set(OTB_VERSION_PATCH "1")
 
 # Version string should not include patch level.  The major.minor is
 # enough to distinguish available features of the toolkit.
@@ -272,6 +272,13 @@ include_directories(${ITK_INCLUDE_DIRS})
 # Add these paths to OTB_INCLUDE_DIRS_BUILD_TREE since it is used to
 # generate OTBConfig.cmake
 list(APPEND OTB_INCLUDE_DIRS_BUILD_TREE ${ITK_INCLUDE_DIRS})
+
+if(OTB_COMPILE_WITH_FULL_WARNING)
+  if(CMAKE_COMPILER_IS_GNUCXX)
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OTB_FULL_WARNING_LIST_PARAMETERS}")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OTB_FULL_WARNING_LIST_PARAMETERS}")
+  endif()
+endif()
 
 add_subdirectory(Code)
 

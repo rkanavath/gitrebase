@@ -21,6 +21,8 @@
 #include <iostream>
 #include <map>
 
+#include "gdal.h"
+
 #include "itkObject.h"
 #include "itkObjectFactory.h"
 
@@ -29,6 +31,34 @@ class ossimKeywordlist;
 
 namespace otb
 {
+
+namespace internal
+{
+  /**
+   * Converts index coordinates from OTB into OSSIM. It is intended for sensor
+   * images where the centre of the top-left pixel is expected to be :
+   *   [0.5,0.5] in OTB physical space
+   *   [ 0 , 0 ] in OSSIM
+   * \param[in] val  coordinate value to modify (along X or Y)
+   */
+  inline double ConvertToOSSIMFrame(double val)
+    {
+    return (val - 0.5);
+    }
+
+  /**
+   * Converts index coordinates from OSSIM into OTB. It is intended for sensor
+   * images where the centre of the top-left pixel is expected to be :
+   *   [0.5,0.5] in OTB physical space
+   *   [ 0 , 0 ] in OSSIM
+    * \param[in] val  coordinate value to modify (along X or Y)
+   */
+  inline double ConvertFromOSSIMFrame(double val)
+    {
+    return (val + 0.5);
+    }
+
+} // namespace internal
 
 /** \class ImageKeywordlist
  * \brief Storage and conversion for OSSIM metadata
@@ -83,6 +113,10 @@ public:
   virtual void AddKey(const std::string& key, const std::string& value);
 
   virtual void convertToOSSIMKeywordlist(ossimKeywordlist& kwl) const;
+  
+  /** try to convert the image keywordlist into a GDALRpcInfo structure
+   *  return true if successful, false otherwise */
+  virtual bool convertToGDALRPC(GDALRPCInfo &rpc) const;
 
   virtual void Print(std::ostream& os, itk::Indent indent = 0) const;
 
@@ -112,8 +146,9 @@ private:
 std::ostream & operator <<(std::ostream& os, const ImageKeywordlist& kwl);
 
 // Free function to handle the keywordlist <-> files
-ImageKeywordlist ReadGeometryFromImage(const std::string& filename);
+ImageKeywordlist ReadGeometryFromImage(const std::string& filename, bool checkRpcTag=true);
 ImageKeywordlist ReadGeometryFromGEOMFile(const std::string& filename);
+ImageKeywordlist ReadGeometryFromRPCTag(const std::string& filename);
 void WriteGeometry(const ImageKeywordlist& otb_kwl, const std::string& filename);
 
 } //namespace otb

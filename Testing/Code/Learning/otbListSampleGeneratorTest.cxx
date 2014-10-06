@@ -24,7 +24,7 @@
 
 #include "otbListSampleGenerator.h"
 
-int otbListSampleGeneratorNew(int argc, char* argv[])
+int otbListSampleGeneratorNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   typedef otb::VectorImage<float, 2>                          ImageType;
   typedef otb::VectorData<double, 2>                          VectorDataType;
@@ -58,7 +58,6 @@ int otbListSampleGenerator(int argc, char* argv[])
   std::string classKey = "Class";
 
   typedef double                          PixelType;
-  typedef int                             LabeledPixelType;
   typedef otb::VectorImage<PixelType, 2>  ImageType;
   typedef otb::ImageFileReader<ImageType> ReaderType;
 

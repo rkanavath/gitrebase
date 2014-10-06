@@ -20,14 +20,12 @@
 #include <iostream>
 #include <fstream>
 
-int otbRectangle(int argc, char * argv[])
+int otbRectangle(int itkNotUsed(argc), char * argv[])
 {
   const char * outfname = argv[1];
 
   typedef otb::Rectangle<>                   RectangleType;
   typedef RectangleType::ContinuousIndexType ContinuousIndexType;
-  typedef RectangleType::VertexListType      VertexListType;
-  typedef VertexListType::ConstIterator      IteratorType;
 
   // Instantiating object
   RectangleType::Pointer rectangle1 = RectangleType::New();

@@ -30,7 +30,7 @@
 #include "otbHaralickTexturesImageFunction.h"
 
 
-int otbStandardMetaImageFunctionBuilderNew(int argc, char* argv[])
+int otbStandardMetaImageFunctionBuilderNew(int itkNotUsed(argc), char* itkNotUsed(argv)[])
 {
   typedef double                                                PrecisionType;
   typedef otb::StandardMetaImageFunctionBuilder<PrecisionType>  BuilderType;
@@ -43,7 +43,7 @@ int otbStandardMetaImageFunctionBuilderNew(int argc, char* argv[])
   return EXIT_SUCCESS;
 }
 
-int otbStandardMetaImageFunctionBuilder(int argc, char* argv[])
+int otbStandardMetaImageFunctionBuilder(int itkNotUsed(argc), char* argv[])
 {
   const char * inputFilename  = argv[1];
 
@@ -67,15 +67,8 @@ int otbStandardMetaImageFunctionBuilder(int argc, char* argv[])
 
   typedef otb::RadiometricMomentsImageFunction<ImageType, CoordRepType>  RadiometricMomentsIF;
   typedef otb::ImageFunctionAdaptor<RadiometricMomentsIF, PrecisionType>                AdaptedRadiometricMomentsIF;
-
   typedef otb::FourierMellinDescriptorsImageFunction<ImageType, CoordRepType>  FourierMellinDescriptorsIF;
   typedef otb::ImageFunctionAdaptor<FourierMellinDescriptorsIF, PrecisionType> AdaptedFourierMellinDescriptorsIF;
-
-  typedef otb::FlusserMomentsImageFunction<ImageType, CoordRepType>  LocalHistogramIF;
-  typedef otb::ImageFunctionAdaptor<LocalHistogramIF, PrecisionType>   AdaptedLocalHistogramIF;
-
-  typedef otb::HaralickTexturesImageFunction<ImageType, CoordRepType>  HaralickTexturesIF;
-  typedef otb::ImageFunctionAdaptor<HaralickTexturesIF, PrecisionType> AdaptedHaralickTexturesIF;
 
   p1.push_back(7);
   p1.push_back(128);

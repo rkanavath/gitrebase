@@ -28,7 +28,7 @@
 #include "itkRGBPixel.h"
 #include "itkImageRegionIterator.h"
 
-int otbImageToSIFTKeyPointSetFilterOutputInterestPointAscii(int argc, char * argv[])
+int otbImageToSIFTKeyPointSetFilterOutputInterestPointAscii(int itkNotUsed(argc), char * argv[])
 {
   const char * infname = argv[1];
   const char * outfname = argv[2];
@@ -49,8 +49,6 @@ int otbImageToSIFTKeyPointSetFilterOutputInterestPointAscii(int argc, char * arg
 
   typedef PointSetType::PointsContainer    PointsContainerType;
   typedef PointsContainerType::Iterator    PointsIteratorType;
-  typedef PointSetType::PointDataContainer PointDataContainerType;
-  typedef PointDataContainerType::Iterator PointDataIteratorType;
 
   // Instantiating object
   ReaderType::Pointer                       reader = ReaderType::New();

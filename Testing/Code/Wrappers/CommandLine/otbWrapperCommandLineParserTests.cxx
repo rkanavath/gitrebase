@@ -23,7 +23,7 @@
 
 typedef otb::Wrapper::CommandLineParser ParserType;
 
-int otbWrapperCommandLineParserNew(int argc, char* argv[])
+int otbWrapperCommandLineParserNew(int itkNotUsed(argc), char* itkNotUsed(argv)[])
 {
   ParserType::Pointer parser = ParserType::New();
 
@@ -72,8 +72,13 @@ int CheckReturn(ParserType::ParseResultType res)
 int otbWrapperCommandLineParserTest1(int argc, char* argv[])
 {
   ParserType::Pointer parser = ParserType::New();
+  std::vector<std::string> cmdVector;
+  for (int i=2; i<argc; ++i)
+    {
+    cmdVector.push_back(std::string(argv[i]));
+    }
 
-  std::vector<std::string> res = parser->GetAttribut( argv[1], argv[2] );
+  std::vector<std::string> res = parser->GetAttribut( argv[1], cmdVector );
 
   if( res.size() == 0 )
     {
@@ -89,18 +94,17 @@ int otbWrapperCommandLineParserTest2(int argc, char* argv[])
 
   std::cout << "Search for paths..." << std::endl;
 
-  std::ostringstream input;
+  std::vector<std::string> cmdVector;
   if (argc > 2)
     {
-    input << argv[1];
-    for (int i = 2; i < argc; i++)
+    for (int i=1; i<argc; ++i)
       {
-      input << " " << argv[i];
+      cmdVector.push_back(std::string(argv[i]));
       }
     }
 
   std::vector<std::string> paths;
-  ParserType::ParseResultType res = parser->GetPaths(paths, input.str());
+  ParserType::ParseResultType res = parser->GetPaths(paths, cmdVector);
   if (CheckReturn(res) != ParserType::OK)
     {
     std::cout << "Can't find paths." << std::endl;
@@ -111,7 +115,7 @@ int otbWrapperCommandLineParserTest2(int argc, char* argv[])
   std::cout << "Search for module name..." << std::endl;
 
   std::string name;
-  res = parser->GetModuleName(name, argv[1]);
+  res = parser->GetModuleName(name, cmdVector);
 
   if (CheckReturn(res) != ParserType::OK)
     {
@@ -126,8 +130,16 @@ int otbWrapperCommandLineParserTest2(int argc, char* argv[])
 int otbWrapperCommandLineParserTest3(int argc, char* argv[])
 {
   ParserType::Pointer parser = ParserType::New();
+  std::vector<std::string> cmdVector;
+  if (argc > 2)
+    {
+    for (int i=2; i<argc; ++i)
+      {
+      cmdVector.push_back(std::string(argv[i]));
+      }
+    }
 
-  if (parser->IsAttributExists(argv[1], argv[2]))
+  if (parser->IsAttributExists(argv[1], cmdVector))
     {
     return EXIT_FAILURE;
     }
@@ -138,11 +150,18 @@ int otbWrapperCommandLineParserTest3(int argc, char* argv[])
 int otbWrapperCommandLineParserTest4(int argc, char* argv[])
 {
   ParserType::Pointer parser = ParserType::New();
+  std::vector<std::string> cmdVector;
+  if (argc > 2)
+    {
+    for (int i=2; i<argc; ++i)
+      {
+      cmdVector.push_back(std::string(argv[i]));
+      }
+    }
 
-  if (parser->IsAttributExists(argv[1], argv[2]))
+  if (parser->IsAttributExists(argv[1], cmdVector))
     {
     return EXIT_SUCCESS;
     }
   return EXIT_FAILURE;
 }
-

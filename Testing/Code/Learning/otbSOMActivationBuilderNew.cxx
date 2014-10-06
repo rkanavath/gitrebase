@@ -25,7 +25,7 @@
 #include "otbImage.h"
 #include "otbVectorImage.h"
 
-int otbSOMActivationBuilderNew(int argc, char* argv[])
+int otbSOMActivationBuilderNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   const unsigned int Dimension = 2;
   typedef float                                         ComponentType;
@@ -34,7 +34,7 @@ int otbSOMActivationBuilderNew(int argc, char* argv[])
   typedef itk::Statistics::EuclideanDistanceMetric<PixelType> DistanceType;
 
   typedef otb::SOMMap<PixelType, DistanceType, Dimension>                     MapType;
-  typedef otb::VectorImage<ComponentType, Dimension>                          InputImageType;
+
   typedef itk::Statistics::ListSample<PixelType>                              ListSampleType;
   typedef otb::Image<OutputPixelType, Dimension>                              OutputImageType;
   typedef otb::SOMActivationBuilder<ListSampleType, MapType, OutputImageType> SOMActivationBuilderType;

@@ -48,6 +48,14 @@ OTB_TEST_APPLICATION(NAME  apTvUtReadImageInfoTest
                              ${BASELINE_FILES}/apTvUtReadImageInfoTest.txt
                 	     ${TEMP}/apTvUtReadImageInfoTest.txt)
 
+OTB_TEST_APPLICATION(NAME  apTvUtReadImageInfoRpcTag
+                     APP  ReadImageInfo
+                     OPTIONS -in ${INPUTDATA}/QB_TOULOUSE_RpcTag_100_100.tif
+                             -outkwl ${TEMP}/apTvUtReadImageInfoRpcTag.geom
+                     VALID   --compare-ascii ${EPSILON_7}
+                             ${BASELINE_FILES}/apTvUtReadImageInfoRpcTag.geom
+                       ${TEMP}/apTvUtReadImageInfoRpcTag.geom)
+
 if(OTB_DATA_USE_LARGEINPUT)
 
 OTB_TEST_APPLICATION(NAME  apTvUtReadImageInfoSpot5
@@ -229,9 +237,9 @@ OTB_TEST_APPLICATION(NAME apTvUtVectorDataTransform_Translation_Rotation
                              ${OTBAPP_BASELINE_FILES}/utTvVectorDataTransformFilter_Translation_rotation.shp
                              ${TEMP}/apTvUtVectorDataTransform_Translation_rotation.shp)
 
-#--- VectorDataExtractROIApplication ---
-OTB_TEST_APPLICATION(NAME apTvUtVectorDataExtractROIApplication
-                     APP VectorDataExtractROIApplication
+#--- VectorDataExtractROI ---
+OTB_TEST_APPLICATION(NAME apTvUtVectorDataExtractROI
+                     APP VectorDataExtractROI
                      OPTIONS -io.in ${INPUTDATA}/QB_Toulouse_Ortho_XS.tif
                              -io.vd ${OTB_DATA_LARGEINPUT_ROOT}/VECTOR/MidiPyrenees/roads.shp
                              -io.out ${TEMP}/apTvUtVectorDataExtractROIApplicationTest.shp

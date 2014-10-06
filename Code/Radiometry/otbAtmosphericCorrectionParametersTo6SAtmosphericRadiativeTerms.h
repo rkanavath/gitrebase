@@ -37,6 +37,9 @@ namespace otb
  * \sa ReflectanceToSurfaceReflectanceImageFilter
  * \ingroup DataSources
  * \ingroup Radiometry
+ * \deprecated This class has been replaced by
+ *  otb::RadiometryCorrectionParametersToAtmosphericRadiativeTerms,
+ *  which only contains a static function that computes the radiative terms.
  */
 class ITK_EXPORT AtmosphericCorrectionParametersTo6SAtmosphericRadiativeTerms
   : public itk::ProcessObject

@@ -25,7 +25,7 @@
 #include "otbImageFileWriter.h"
 #include "otbMultiChannelExtractROI.h"
 
-int otbImageFileWriterWithExtendedOptionBox(int argc, char* argv[])
+int otbImageFileWriterWithExtendedOptionBox(int itkNotUsed(argc), char* argv[])
 {
   // Verify the number of parameters in the command line
   const std::string inputFilename = argv[1];
@@ -39,19 +39,13 @@ int otbImageFileWriterWithExtendedOptionBox(int argc, char* argv[])
   const std::string separator = ":";
 
   typedef float InputPixelType;
-  typedef float OutputPixelType;
-
   typedef otb::VectorImage<InputPixelType, 2> InputImageType;
-
-  typedef InputImageType::PixelType   PixelType;
-
   typedef otb::MultiChannelExtractROI<InputImageType::InternalPixelType,
                                       InputImageType::InternalPixelType> ExtractROIFilterType;
 
   typedef otb::ImageFileReader<InputImageType> ReaderType;
   typedef otb::ImageFileWriter<InputImageType> WriterType;
 
-  typedef itk::ImageRegionIterator< InputImageType >       IteratorType;
   typedef itk::ImageRegionConstIterator< InputImageType >  ConstIteratorType;
 
   ReaderType::Pointer reader = ReaderType::New();

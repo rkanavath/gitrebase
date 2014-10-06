@@ -114,6 +114,10 @@ namespace ossimplugins
          void          getIncidenceAngle(std::vector<ossim_float64>& ia)     const;
          void          getViewingAngle(std::vector<ossim_float64>& va)       const;
 
+         //Along and across track incidence angle
+         void getAcrossTrackIncidenceAngle(std::vector<ossim_float64>& act) const;
+         void getAlongTrackIncidenceAngle(std::vector<ossim_float64>& alt) const;
+
          //---
          // Corner points:
          //---
@@ -152,7 +156,13 @@ namespace ossimplugins
          double getLatScale()        const {return theLatScale;};
          double getLonScale()        const {return theLonScale;};
          double getHeightScale()     const {return theHeightScale;};
-
+         
+         
+         ossimString    getTimeRangeStart() const {return theTimeRangeStart;};
+         ossimString    getTimeRangeEnd()   const {return theTimeRangeEnd;};
+         ossim_float64  getLinePeriod()     const {return theLinePeriod;};
+         ossim_int32    getSwathFirstCol()  const {return theSwathFirstCol;};
+         ossim_int32    getSwathLastCol()   const {return theSwathLastCol;}; 
 
 
       private:
@@ -176,6 +186,9 @@ namespace ossimplugins
          std::vector<ossim_float64>  theIncidenceAngle;
          std::vector<ossim_float64>  theViewingAngle;
          std::vector<ossim_float64>  theAzimuthAngle;
+
+         std::vector<ossim_float64> theAlongTrackIncidenceAngle;
+         std::vector<ossim_float64> theAcrossTrackIncidenceAngle;
    
          ossimIpt                    theImageSize;
          ossimIpt                    theTileSize;
@@ -206,8 +219,8 @@ namespace ossimplugins
          double    theErrBiasX;
          double    theErrBiasY;
          double    theErrRand;
-         ossim_int32 theLineOffset;
-         ossim_int32 theSampOffset;
+         double    theLineOffset;
+         double    theSampOffset;
          double    theLatOffset;
          double    theLonOffset;
          double    theHeightOffset;
@@ -221,6 +234,14 @@ namespace ossimplugins
          std::vector<double> theLineDenCoeff;
          std::vector<double> theSampNumCoeff;
          std::vector<double> theSampDenCoeff;
+         
+         // Additional metadata used to enhance pansharpening
+         ossimString    theTimeRangeStart;
+         ossimString    theTimeRangeEnd;
+         ossim_float64  theLinePeriod;
+         ossim_int32    theSwathFirstCol;
+         ossim_int32    theSwathLastCol;
+         
 
 
          //--- TODO MSD Check if it is necessary to keep that

@@ -25,7 +25,7 @@
 
 #include "otbSVMImageModelEstimator.h"
 
-int otbSVMImageModelEstimatorNew(int argc, char* argv[])
+int otbSVMImageModelEstimatorNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   typedef double InputPixelType;
   const unsigned int Dimension = 2;
@@ -33,8 +33,6 @@ int otbSVMImageModelEstimatorNew(int argc, char* argv[])
   typedef otb::VectorImage<InputPixelType,  Dimension> InputImageType;
 
   typedef otb::Image<InputPixelType,  Dimension> TrainingImageType;
-
-  typedef std::vector<double> VectorType;
 
   typedef otb::SVMImageModelEstimator<InputImageType,
       TrainingImageType>   EstimatorType;

@@ -36,13 +36,13 @@ typedef otb::MachineLearningModelFactory<ValueType, LabelType> MachineLearningMo
 typedef otb::ImageFileReader<ImageType> ReaderType;
 typedef otb::ImageFileWriter<LabeledImageType> WriterType;
 
-int otbImageClassificationFilterNew(int argc, char * argv[])
+int otbImageClassificationFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   ClassificationFilterType::Pointer filter = ClassificationFilterType::New();
   return EXIT_SUCCESS;
 }
 
-int otbImageClassificationFilter(int argc, char * argv[])
+int otbImageClassificationFilter(int itkNotUsed(argc), char * argv[])
 {
   const char * infname = argv[1];
   const char * modelfname = argv[2];

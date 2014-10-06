@@ -222,4 +222,6 @@ namespace otb
       } \
     }
 
+#  define otbUnusedMacro(x) do { (void)sizeof(x); } while(0)
+
 #endif //end of otbMacro.h

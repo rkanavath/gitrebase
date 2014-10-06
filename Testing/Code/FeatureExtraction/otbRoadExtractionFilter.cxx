@@ -27,7 +27,7 @@
 #include "otbPolyLineParametricPathWithValue.h"
 #include "otbMath.h"
 
-int otbRoadExtractionFilter(int argc, char * argv[])
+int otbRoadExtractionFilter(int itkNotUsed(argc), char * argv[])
 {
   const unsigned int Dimension = 2;
   typedef otb::VectorImage<double, Dimension>                     InputImageType;
@@ -37,7 +37,6 @@ int otbRoadExtractionFilter(int argc, char * argv[])
   typedef otb::ImageFileReader<InputImageType>                                ReaderType;
   typedef otb::ImageFileWriter<OutputImageType>                               WriterType;
   typedef otb::RoadExtractionFilter<InputImageType, PathType>                 RoadExtractionFilterType;
-  typedef RoadExtractionFilterType::OutputPathListType                        OutputPathListType;
   typedef RoadExtractionFilterType::InputPixelType                            InputPixelType;
   typedef otb::DrawPathListFilter<OutputImageType, PathType, OutputImageType> DrawPathFilterType;
 
@@ -81,7 +80,8 @@ int otbRoadExtractionFilter(int argc, char * argv[])
 
   reader->GenerateOutputInformation();
   OutputImageType::Pointer image = OutputImageType::New();
-  image->SetRegions(reader->GetOutput()->GetLargestPossibleRegion());
+  image->CopyInformation(reader->GetOutput());
+  image->SetRegions(image->GetLargestPossibleRegion());
   image->Allocate();
   image->FillBuffer(0);
 

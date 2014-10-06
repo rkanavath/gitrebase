@@ -22,7 +22,7 @@
 #include "otbVectorImageToMatrixImageFilter.h"
 #include "otbStandardWriterWatcher.h"
 
-int otbMDMDNMFImageFilterNewTest(int argc, char * argv[])
+int otbMDMDNMFImageFilterNewTest(int itkNotUsed(argc), char * itkNotUsed(argv)[])
 {
   typedef double                                                    PixelType;
   typedef otb::VectorImage<PixelType, 2>                            VectorImageType;
@@ -32,14 +32,13 @@ int otbMDMDNMFImageFilterNewTest(int argc, char * argv[])
   return EXIT_SUCCESS;
 }
 
-int otbMDMDNMFImageFilterTest(int argc, char * argv[])
+int otbMDMDNMFImageFilterTest(int itkNotUsed(argc), char * argv[])
 {
   typedef double                                         PixelType;
   typedef otb::VectorImage<PixelType, 2>                 ImageType;
   typedef otb::MDMDNMFImageFilter<ImageType, ImageType>  MDMDNMFImageFilterType;
   typedef otb::ImageFileReader<ImageType>                ReaderType;
   typedef otb::ImageFileWriter<ImageType>       WriterType;
-  typedef otb::VectorImageToMatrixImageFilter<ImageType> VectorImageToMatrixImageFilterType;
 
   const char * inputImage = argv[1];
   const char * outputImage = argv[2];
@@ -73,7 +72,7 @@ int otbMDMDNMFImageFilterTest(int argc, char * argv[])
   return EXIT_SUCCESS;
 }
 
-int otbMDMDNMFImageFilterTest2(int argc, char * argv[])
+int otbMDMDNMFImageFilterTest2(int itkNotUsed(argc), char * argv[])
 {
   typedef double                                         PixelType;
   typedef otb::VectorImage<PixelType, 2>                 ImageType;

@@ -26,7 +26,7 @@
 #include "otbImageFileWriter.h"
 #include "otbMultiChannelsPolarimetricSynthesisFilter.h"
 
-int otbVectorMultiChannelsPolarimetricSynthesisFilter(int argc, char * argv[])
+int otbVectorMultiChannelsPolarimetricSynthesisFilter(int itkNotUsed(argc), char * argv[])
 {
   const char * inputFilename  = argv[1];
   const char * outputFilename = argv[2];
@@ -43,7 +43,6 @@ int otbVectorMultiChannelsPolarimetricSynthesisFilter(int argc, char * argv[])
   typedef otb::Image<OutputPixelType, Dimension>                                         OutputImageType;
   typedef otb::ImageFileReader<InputImageType>                                           ReaderType;
   typedef otb::ImageFileWriter<OutputImageType>                                          WriterType;
-  typedef itk::FixedArray<int, 4>                                                        IndexArrayType;
   typedef otb::MultiChannelsPolarimetricSynthesisFilter<InputImageType, OutputImageType> FilterType;
 
   FilterType::Pointer polarimetricSynthesis = FilterType::New();

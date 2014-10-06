@@ -105,14 +105,20 @@ StatisticsXMLFileWriter<TMeasurementVector>
     }
 
   // Finally, write the file
-  doc.SaveFile( m_FileName.c_str() );
+  if (! doc.SaveFile( m_FileName.c_str() ) )
+    {
+    itkExceptionMacro(<<"Unable to write the XML file in "
+                      << itksys::SystemTools::GetFilenamePath(m_FileName)
+                      << " (permission issue? Directory does not exist?)." );
+    }
+
 }
 
 
 template < class TMeasurementVector >
 void
 StatisticsXMLFileWriter<TMeasurementVector>
-::PrintSelf(std::ostream& os, itk::Indent indent) const
+::PrintSelf(std::ostream& itkNotUsed(os), itk::Indent itkNotUsed(indent)) const
 {
   // Call superclass implementation
   //Superclass::PrintSelf(os, indent);

@@ -24,7 +24,7 @@
 
 #include "otbBayesianFusionFilter.h"
 
-int otbBayesianFusionFilterNew(int argc, char * argv[])
+int otbBayesianFusionFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv)[])
 {
   const unsigned int Dimension = 2;
   typedef double PixelType;
@@ -35,10 +35,6 @@ int otbBayesianFusionFilterNew(int argc, char * argv[])
   typedef otb::Image<PixelType,
       Dimension>
   PanchroImageType;
-  typedef otb::ImageFileReader<VectorImageType>
-  VectorReaderType;
-  typedef otb::ImageFileReader<PanchroImageType>
-  ImageReaderType;
   typedef otb::BayesianFusionFilter<VectorImageType, VectorImageType, PanchroImageType, VectorImageType> FilterType;
 
   FilterType::Pointer filter = FilterType::New();

@@ -21,18 +21,16 @@
 #include "otbLabelImageToOGRDataSourceFilter.h"
 #include "otbGdalDataTypeBridge.h"
 
-
 //gdal libraries
 #include "gdal.h"
 #include "gdal_priv.h"
 #include "cpl_conv.h"
 #include "gdal_alg.h"
 
+#include "stdint.h" //needed for uintptr_t
 
 namespace otb
 {
-
-
 template <class TInputImage>
 LabelImageToOGRDataSourceFilter<TInputImage>
 ::LabelImageToOGRDataSourceFilter() : m_FieldName("DN"), m_Use8Connected(false)
@@ -163,7 +161,7 @@ LabelImageToOGRDataSourceFilter<TInputImage>
     // integer make us pointing to an non allowed memory block => Crash.
     std::ostringstream stream;
     stream << "MEM:::"
-           <<  "DATAPOINTER=" << (unsigned long)(this->GetInput()->GetBufferPointer()) << ","
+           <<  "DATAPOINTER=" << (uintptr_t)(this->GetInput()->GetBufferPointer()) << ","
            <<  "PIXELS=" << size[0] << ","
            <<  "LINES=" << size[1] << ","
            <<  "BANDS=" << nbBands << ","
@@ -186,8 +184,8 @@ LabelImageToOGRDataSourceFilter<TInputImage>
     IndexType  bufferIndexOrigin = this->GetInput()->GetBufferedRegion().GetIndex();
     OriginType  bufferOrigin;
     this->GetInput()->TransformIndexToPhysicalPoint(bufferIndexOrigin, bufferOrigin);
-    geoTransform[0] = bufferOrigin[0];
-    geoTransform[3] = bufferOrigin[1];
+    geoTransform[0] = bufferOrigin[0] - 0.5 * this->GetInput()->GetSpacing()[0];
+    geoTransform[3] = bufferOrigin[1] - 0.5 * this->GetInput()->GetSpacing()[1];
     geoTransform[1] = this->GetInput()->GetSpacing()[0];
     geoTransform[5] = this->GetInput()->GetSpacing()[1];
     // FIXME: Here component 1 and 4 should be replaced by the orientation parameters
@@ -235,7 +233,7 @@ LabelImageToOGRDataSourceFilter<TInputImage>
       // integer make us pointing to an non allowed memory block => Crash.
       std::ostringstream maskstream;
       maskstream << "MEM:::"
-            <<  "DATAPOINTER=" << (unsigned long)(this->GetInputMask()->GetBufferPointer()) << ","
+            <<  "DATAPOINTER=" << (uintptr_t)(this->GetInputMask()->GetBufferPointer()) << ","
             <<  "PIXELS=" << size[0] << ","
             <<  "LINES=" << size[1] << ","
             <<  "BANDS=" << nbBands << ","
@@ -256,8 +254,8 @@ LabelImageToOGRDataSourceFilter<TInputImage>
       // the spacing is unchanged, the origin is relative to the buffered region
       bufferIndexOrigin = this->GetInputMask()->GetBufferedRegion().GetIndex();
       this->GetInputMask()->TransformIndexToPhysicalPoint(bufferIndexOrigin, bufferOrigin);
-      geoTransform[0] = bufferOrigin[0];
-      geoTransform[3] = bufferOrigin[1];
+      geoTransform[0] = bufferOrigin[0] - 0.5 * this->GetInputMask()->GetSpacing()[0];
+      geoTransform[3] = bufferOrigin[1] - 0.5 * this->GetInputMask()->GetSpacing()[1];
       geoTransform[1] = this->GetInputMask()->GetSpacing()[0];
       geoTransform[5] = this->GetInputMask()->GetSpacing()[1];
       // FIXME: Here component 1 and 4 should be replaced by the orientation parameters

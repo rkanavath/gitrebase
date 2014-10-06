@@ -39,13 +39,13 @@ typedef otb::RasterizeVectorDataFilter<VectorDataType,
                                        ImageType,
                                        ImageType>             RasterizationFilterType;
 
-int otbVectorDataRasterizeFilterNew(int argc, char* argv[])
+int otbVectorDataRasterizeFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   RasterizationFilterType::Pointer  rasterization = RasterizationFilterType::New();
   return EXIT_SUCCESS;
 }
 
-int otbVectorDataRasterizeFilter(int argc, char* argv[])
+int otbVectorDataRasterizeFilter(int itkNotUsed(argc), char * argv[])
 {
 
   ReaderType::Pointer reader = ReaderType::New();
@@ -75,9 +75,6 @@ int otbVectorDataRasterizeFilter(int argc, char* argv[])
   outputcolor[2] = 255.;
   outputcolor[3] = 0.;
   rasterization->AddColor(outputcolor);
-
-  otb::StandardOneLineFilterWatcher * watch = new otb::StandardOneLineFilterWatcher(rasterization.GetPointer(),
-                                                                          "rasterization");
 
   WriterType::Pointer writer  = WriterType::New();
   writer->SetFileName(argv[3]);

@@ -55,14 +55,11 @@ private:
   OffsetType m_Offset;
 };
 
-int otbFunctionWithNeighborhoodToImageFilterNew(int argc, char * argv[])
+int otbFunctionWithNeighborhoodToImageFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   const unsigned int Dimension = 2;
   typedef double                                    PixelType;
   typedef otb::Image<PixelType, Dimension>          ImageType;
-  typedef itk::VariableLengthVector<double>         VectorType;
-  typedef itk::ConstNeighborhoodIterator<ImageType> IteratorType;
-
   typedef TextureFunctorTest<PixelType, PixelType>                                       FunctorType;
   typedef otb::TextureImageFunction<ImageType, FunctorType>                              FunctionType;
   typedef otb::FunctionWithNeighborhoodToImageFilter<ImageType, ImageType, FunctionType> FilterType;

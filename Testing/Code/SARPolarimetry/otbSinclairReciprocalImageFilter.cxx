@@ -31,7 +31,7 @@
 #include "otbMultiChannelExtractROI.h"
 
 
-int otbSinclairReciprocalImageFilterNew(int argc, char * argv[])
+int otbSinclairReciprocalImageFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv)[])
 {
   typedef std::complex<float>        ComplexType;
   typedef otb::Image<ComplexType, 2> CplxImageType;
@@ -48,7 +48,7 @@ int otbSinclairReciprocalImageFilterNew(int argc, char * argv[])
 
 
 template<class TInputPixel, class TOutputPixel, class TFunction>
-int generic_SinclairReciprocalImageFilter(int argc, char * argv[])
+int generic_SinclairReciprocalImageFilter(int itkNotUsed(argc), char * argv[])
 {
   const char * inputFilename1 = argv[1];
   const char * inputFilename2 = argv[2];
@@ -98,11 +98,9 @@ int otbSinclairReciprocalImageFilter(int argc, char * argv[])
   const unsigned int Dimension = 2;
   typedef std::complex <double> InputPixelType;
   typedef std::complex <double> OutputPixelType;
-  typedef double                OutputRealPixelType;
 
   typedef otb::Image<InputPixelType,  Dimension>       InputImageType;
   typedef otb::VectorImage<OutputPixelType, Dimension> OutputImageType;
-  typedef otb::VectorImage<OutputRealPixelType, Dimension> OutputRealImageType;
 
   std::string strArgv(argv[1]);
   argc--;

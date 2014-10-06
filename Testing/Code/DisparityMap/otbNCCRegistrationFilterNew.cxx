@@ -18,14 +18,12 @@
 #include "otbNCCRegistrationFilter.h"
 #include "otbImage.h"
 
-int otbNCCRegistrationFilterNew(int argc, char* argv[])
+int otbNCCRegistrationFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   const unsigned int ImageDimension = 2;
 
   typedef double                              PixelType;
   typedef itk::Vector<double, ImageDimension> DisplacementPixelType;
-
-  typedef double CoordinateRepresentationType;
 
   //Allocate Images
   typedef otb::Image<PixelType, ImageDimension> MovingImageType;

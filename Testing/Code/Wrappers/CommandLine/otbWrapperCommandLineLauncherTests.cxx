@@ -22,7 +22,7 @@
 #include "otbWrapperCommandLineLauncher.h"
 
 
-int otbWrapperCommandLineLauncherNew(int argc, char* argv[])
+int otbWrapperCommandLineLauncherNew(int itkNotUsed(argc), char* itkNotUsed(argv)[])
 {
   typedef otb::Wrapper::CommandLineLauncher LauncherType;
   LauncherType::Pointer launcher = LauncherType::New();
@@ -38,17 +38,16 @@ int otbWrapperCommandLineLauncherTest(int argc, char* argv[])
   typedef otb::Wrapper::CommandLineLauncher LauncherType;
   LauncherType::Pointer launcher = LauncherType::New();
 
-  std::ostringstream input;
+  std::vector<std::string> cmdVector;
   if (argc > 2)
     {
-    input << argv[1];
-    for (int i = 2; i < argc; i++)
+    for (int i = 1; i < argc; i++)
       {
-      input << " " << argv[i];
+      cmdVector.push_back(std::string(argv[i]));
       }
     }
 
-  if (launcher->Load(input.str()) == true)
+  if (launcher->Load(cmdVector) == true)
     {
     if (launcher->ExecuteAndWriteOutput() == false)
       {
@@ -62,5 +61,3 @@ int otbWrapperCommandLineLauncherTest(int argc, char* argv[])
 
   return EXIT_SUCCESS;
 }
-
-

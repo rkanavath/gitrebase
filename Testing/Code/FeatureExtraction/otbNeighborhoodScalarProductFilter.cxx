@@ -23,7 +23,7 @@
 #include "otbImageFileWriter.h"
 #include "itkGradientRecursiveGaussianImageFilter.h"
 
-int otbNeighborhoodScalarProductFilter(int argc, char * argv[])
+int otbNeighborhoodScalarProductFilter(int itkNotUsed(argc), char * argv[])
 {
 
   const char * infname = argv[1];
@@ -39,7 +39,6 @@ int otbNeighborhoodScalarProductFilter(int argc, char * argv[])
   typedef otb::NeighborhoodScalarProductFilter<VectorImageType, ImageType, ImageType> FilterType;
   typedef otb::ImageFileReader<ImageType>                                             ReaderType;
   typedef otb::ImageFileWriter<ImageType>                                             WriterType;
-  typedef otb::ImageFileWriter<VectorImageType>                                       TempWriter;
   typedef itk::GradientRecursiveGaussianImageFilter<ImageType, VectorImageType>       GradientFilterType;
 
   // Instantiating object

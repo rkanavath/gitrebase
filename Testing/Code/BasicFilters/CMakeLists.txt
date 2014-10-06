@@ -2494,7 +2494,6 @@ add_test(bfTvNAPCAImageFilter4
 
 
 ### MNF ###
-
 # Test input->MNF->inverse MNF
 add_test(bfTvMNFImageFilter1
          ${BASICFILTERS_TESTS13}
@@ -2530,7 +2529,6 @@ add_test(bfTvMNFImageFilter3
          -out ${TEMP}/bfTvMNFImageFilter3.tif
          -inv ${TEMP}/bfTvMNFImageFilter3Inv.tif
          -norm)
-
 
 # Test the direct transform, reducing dimensionnality
 add_test(bfTvMNFImageFilter4
@@ -2897,6 +2895,11 @@ add_test(bfTvTileImageFilter ${BASICFILTERS_TESTS15}
 )
 
 
+#-------- StreamingHistogramVectorImageFilter.cxx ----
+add_test(bfTuStreamingHistogramVIFilterNew ${BASICFILTERS_TESTS15}
+  otbStreamingHistogramVectorImageFilterNew
+)
+
 # A enrichir
 set(BasicFilters_SRCS1
 otbBasicFiltersTests1.cxx
@@ -3192,6 +3195,7 @@ otbThresholdVectorImageFilter.cxx
 otbClampVectorImageFilter.cxx
 otbClampImageFilter.cxx
 otbTileImageFilter.cxx
+otbStreamingHistogramVectorImageFilter.cxx
 )
 
 OTB_ADD_EXECUTABLE(otbBasicFiltersTests1 "${BasicFilters_SRCS1}" "OTBBasicFilters;OTBIO;OTBTesting")

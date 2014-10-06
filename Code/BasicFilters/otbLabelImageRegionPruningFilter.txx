@@ -151,7 +151,7 @@ LabelImageRegionPruningFilter<TInputLabelImage, TInputSpectralImage, TOutputLabe
 template <class TInputLabelImage, class TInputSpectralImage, class TOutputLabelImage, class TOutputClusteredImage>
 void
 LabelImageRegionPruningFilter<TInputLabelImage, TInputSpectralImage, TOutputLabelImage, TOutputClusteredImage>
-::EnlargeOutputRequestedRegion( itk::DataObject *output )
+::EnlargeOutputRequestedRegion( itk::DataObject *itkNotUsed(output) )
  {
   // This filter requires all of the output images in the buffer.
   for ( unsigned int j = 0; j < this->GetNumberOfOutputs(); j++ )
@@ -402,12 +402,12 @@ LabelImageRegionPruningFilter<TInputLabelImage, TInputSpectralImage, TOutputLabe
 
       LabelType l = outputIt.Get();
       LabelType canLabel;
-      assert(m_CanonicalLabels[l] <= oldRegionCount);
+      itkAssertOrThrowMacro(m_CanonicalLabels[l] <= oldRegionCount,"Found a label greater than region count")
       canLabel = newLabels[m_CanonicalLabels[l]];
       outputIt.Set( canLabel );
-
       ++outputIt;
       }
+
 
     finishedPruning =  !minRegionCount ||  regionCount == 1 ||  pruneIterations>=10;
 

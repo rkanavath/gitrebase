@@ -20,14 +20,15 @@
 #include "otbVectorImage.h"
 #include "otbNearestPointDisplacementFieldGenerator.h"
 
-int otbNearestPointDisplacementFieldGeneratorNew(int argc, char * argv[])
+int otbNearestPointDisplacementFieldGeneratorNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   const unsigned int Dimension = 2;
-  typedef double                                                              PixelType;
-  typedef otb::VectorImage<PixelType, Dimension>                              ImageType;
-  typedef ImageType::PointType                                                PointType;
-  typedef itk::PointSet<PointType, Dimension>                                 PointSetType;
-  typedef otb::NearestPointDisplacementFieldGenerator<PointSetType, ImageType> FilterType;
+  typedef double                                           PixelType;
+  typedef otb::VectorImage<PixelType, Dimension>           ImageType;
+  typedef itk::FixedArray<double,3>                        PointDataType;
+  typedef itk::PointSet<PointDataType, Dimension>          PointSetType;
+  typedef otb::NearestPointDisplacementFieldGenerator
+    <PointSetType, ImageType>                              FilterType;
 
   // Instantiating object
   FilterType::Pointer filter = FilterType::New();

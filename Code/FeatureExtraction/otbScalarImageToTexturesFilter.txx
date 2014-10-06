@@ -1,37 +1,44 @@
 /*=========================================================================
 
-  Program:   ORFEO Toolbox
-  Language:  C++
-  Date:      $Date$
-  Version:   $Revision$
+Program:   ORFEO Toolbox
+Language:  C++
+Date:      $Date$
+Version:   $Revision$
 
 
-  Copyright (c) Centre National d'Etudes Spatiales. All rights reserved.
-  See OTBCopyright.txt for details.
+Copyright (c) Centre National d'Etudes Spatiales. All rights reserved.
+See OTBCopyright.txt for details.
 
 
-     This software is distributed WITHOUT ANY WARRANTY; without even
-     the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
-     PURPOSE.  See the above copyright notices for more information.
+This software is distributed WITHOUT ANY WARRANTY; without even
+the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+PURPOSE.  See the above copyright notices for more information.
 
 =========================================================================*/
+
 #ifndef __otbScalarImageToTexturesFilter_txx
 #define __otbScalarImageToTexturesFilter_txx
 
 #include "otbScalarImageToTexturesFilter.h"
 #include "itkImageRegionIteratorWithIndex.h"
+#include "itkConstNeighborhoodIterator.h"
 #include "itkImageRegionIterator.h"
 #include "itkProgressReporter.h"
+#include "itkNumericTraits.h"
+#include <vector>
+#include <cmath>
 
 namespace otb
 {
 template <class TInputImage, class TOutputImage>
 ScalarImageToTexturesFilter<TInputImage, TOutputImage>
-::ScalarImageToTexturesFilter() : m_Radius(),
-  m_Offset(),
-  m_NumberOfBinsPerAxis(8),
-  m_InputImageMinimum(0),
-  m_InputImageMaximum(256)
+::ScalarImageToTexturesFilter()
+: m_Radius()
+, m_Offset()
+, m_NeighborhoodRadius()
+, m_NumberOfBinsPerAxis(8)
+, m_InputImageMinimum(0)
+, m_InputImageMaximum(255)
 {
   // There are 8 outputs corresponding to the 8 textures indices
   this->SetNumberOfRequiredOutputs(8);
@@ -219,6 +226,23 @@ ScalarImageToTexturesFilter<TInputImage, TOutputImage>
 template <class TInputImage, class TOutputImage>
 void
 ScalarImageToTexturesFilter<TInputImage, TOutputImage>
+::BeforeThreadedGenerateData()
+{
+  unsigned int minRadius = 0;
+  for ( unsigned int i = 0; i < m_Offset.GetOffsetDimension(); i++ )
+    {
+    unsigned int distance = vcl_abs(m_Offset[i]);
+    if ( distance > minRadius )
+      {
+      minRadius = distance;
+      }
+    }
+  m_NeighborhoodRadius.Fill(minRadius);
+}
+
+template <class TInputImage, class TOutputImage>
+void
+ScalarImageToTexturesFilter<TInputImage, TOutputImage>
 ::ThreadedGenerateData(const OutputRegionType& outputRegionForThread, itk::ThreadIdType threadId)
 {
   // Retrieve the input and output pointers
@@ -252,15 +276,7 @@ ScalarImageToTexturesFilter<TInputImage, TOutputImage>
   clusterProminenceIt.GoToBegin();
   haralickCorIt.GoToBegin();
 
-
-  // Build the co-occurence matrix generator
-  CoocurrenceMatrixGeneratorPointerType coOccurenceMatrixGenerator = CoocurrenceMatrixGeneratorType::New();
-  coOccurenceMatrixGenerator->SetOffset(m_Offset);
-  coOccurenceMatrixGenerator->SetNumberOfBinsPerAxis(m_NumberOfBinsPerAxis);
-  coOccurenceMatrixGenerator->SetPixelValueMinMax(m_InputImageMinimum, m_InputImageMaximum);
-
-  // Build the texture calculator
-  TextureCoefficientsCalculatorPointerType texturesCalculator = TextureCoefficientsCalculatorType::New();
+  const double log2 = vcl_log(2.0);
 
   // Set-up progress reporting
   itk::ProgressReporter progress(this, threadId, outputRegionForThread.GetNumberOfPixels());
@@ -276,20 +292,15 @@ ScalarImageToTexturesFilter<TInputImage, TOutputImage>
          && !haralickCorIt.IsAtEnd())
     {
     // Compute the region on which co-occurence will be estimated
-    typename InputRegionType::IndexType inputIndex, inputIndexWithTwiceOffset;
-    typename InputRegionType::SizeType inputSize, inputSizeWithTwiceOffset;
+    typename InputRegionType::IndexType inputIndex;
+    typename InputRegionType::SizeType inputSize;
 
-    // First, apply offset
+    // First, create an window for neighborhood iterator based on m_Radius
+    // For example, if xradius and yradius is 2. window size is 5x5 (2 * radius + 1).
     for (unsigned int dim = 0; dim < InputImageType::ImageDimension; ++dim)
       {
-      inputIndex[dim] = std::min(
-                                static_cast<int>(energyIt.GetIndex()[dim] - m_Radius[dim]),
-                                static_cast<int>(energyIt.GetIndex()[dim] - m_Radius[dim] + m_Offset[dim])
-                                );
-      inputSize[dim] = 2 * m_Radius[dim] + 1 + std::abs(m_Offset[dim]);
-
-      inputIndexWithTwiceOffset[dim] = static_cast<int>(energyIt.GetIndex()[dim] - m_Radius[dim] - std::abs(m_Offset[dim]));
-      inputSizeWithTwiceOffset[dim] = inputSize[dim] + std::abs(m_Offset[dim]);
+      inputIndex[dim] = energyIt.GetIndex()[dim] - m_Radius[dim];
+      inputSize[dim] = 2 * m_Radius[dim] + 1;
       }
 
     // Build the input  region
@@ -298,55 +309,132 @@ ScalarImageToTexturesFilter<TInputImage, TOutputImage>
     inputRegion.SetSize(inputSize);
     inputRegion.Crop(inputPtr->GetRequestedRegion());
 
-    InputRegionType inputRegionWithTwiceOffset;
-    inputRegionWithTwiceOffset.SetIndex(inputIndexWithTwiceOffset);
-    inputRegionWithTwiceOffset.SetSize(inputSizeWithTwiceOffset);
-    inputRegionWithTwiceOffset.Crop(inputPtr->GetRequestedRegion());
+    CooccurrenceIndexedListPointerType GLCIList = CooccurrenceIndexedListType::New();
+    GLCIList->Initialize(m_NumberOfBinsPerAxis, m_InputImageMinimum, m_InputImageMaximum);
 
-    /*********************************************************************************/
-    //Local copy of the input image around the processed pixel *outputIt
-    InputImagePointerType localInputImage = InputImageType::New();
-    localInputImage->SetRegions(inputRegionWithTwiceOffset);
-    localInputImage->Allocate();
-    typedef itk::ImageRegionIteratorWithIndex<InputImageType> ImageRegionIteratorType;
-    ImageRegionIteratorType itInputPtr(inputPtr, inputRegionWithTwiceOffset);
-    ImageRegionIteratorType itLocalInputImage(localInputImage, inputRegionWithTwiceOffset);
-    for (itInputPtr.GoToBegin(), itLocalInputImage.GoToBegin(); !itInputPtr.IsAtEnd(); ++itInputPtr, ++itLocalInputImage)
+    typedef itk::ConstNeighborhoodIterator< InputImageType > NeighborhoodIteratorType;
+    NeighborhoodIteratorType neighborIt;
+    neighborIt = NeighborhoodIteratorType(m_NeighborhoodRadius, inputPtr, inputRegion);
+    for ( neighborIt.GoToBegin(); !neighborIt.IsAtEnd(); ++neighborIt )
       {
-      itLocalInputImage.Set(itInputPtr.Get());
-      }
-    /*********************************************************************************/
-
-    InputImagePointerType maskImage = InputImageType::New();
-    maskImage->SetRegions(inputRegionWithTwiceOffset);
-    maskImage->Allocate();
-    maskImage->FillBuffer(0);
-
-    ImageRegionIteratorType itMask(maskImage, inputRegion);
-    for (itMask.GoToBegin(); !itMask.IsAtEnd(); ++itMask)
-      {
-      itMask.Set(1);
+      const InputPixelType centerPixelIntensity = neighborIt.GetCenterPixel();
+      bool pixelInBounds;
+      const InputPixelType pixelIntensity =  neighborIt.GetPixel(m_Offset, pixelInBounds);
+      if ( !pixelInBounds )
+        {
+        continue; // don't put a pixel in the co-occurrence list if the value is
+                  // out of bounds
+        }
+      GLCIList->AddPixelPair(centerPixelIntensity, pixelIntensity);
       }
 
-    // Compute the co-occurence matrix
-    coOccurenceMatrixGenerator->SetInput(localInputImage);
-    coOccurenceMatrixGenerator->SetMaskImage(maskImage);
-    coOccurenceMatrixGenerator->SetInsidePixelValue(1);
-    coOccurenceMatrixGenerator->Update();
+    double pixelMean = 0.;
+    double marginalMean;
+    double marginalDevSquared = 0.;
+    double pixelVariance = 0.;
 
-    // Compute textures indices
-    texturesCalculator->SetInput(coOccurenceMatrixGenerator->GetOutput());
-    texturesCalculator->Update();
+    //Create and Intialize marginalSums
+    std::vector<double> marginalSums(m_NumberOfBinsPerAxis, 0);
+
+    //get co-occurrence vector and totalfrequency
+    VectorType glcVector = GLCIList->GetVector();
+    double totalFrequency = static_cast<double> (GLCIList->GetTotalFrequency());
+
+    //Normalize the co-occurrence indexed list and compute mean, marginalSum
+    typename VectorType::iterator it = glcVector.begin();
+    while( it != glcVector.end())
+      {
+      double frequency = (*it).second / totalFrequency;
+      CooccurrenceIndexType index = (*it).first;
+      pixelMean += index[0] * frequency;
+      marginalSums[index[0]] += frequency;
+      ++it;
+      }
+
+    /* Now get the mean and deviaton of the marginal sums.
+       Compute incremental mean and SD, a la Knuth, "The  Art of Computer
+       Programming, Volume 2: Seminumerical Algorithms",  section 4.2.2.
+       Compute mean and standard deviation using the recurrence relation:
+       M(1) = x(1), M(k) = M(k-1) + (x(k) - M(k-1) ) / k
+       S(1) = 0, S(k) = S(k-1) + (x(k) - M(k-1)) * (x(k) - M(k))
+       for 2 <= k <= n, then
+       sigma = vcl_sqrt(S(n) / n) (or divide by n-1 for sample SD instead of
+       population SD).
+     */
+    std::vector<double>::const_iterator msIt = marginalSums.begin();
+    marginalMean = *msIt;
+    //Increment iterator to start with index 1
+    ++msIt;
+    for(int k= 2; msIt != marginalSums.end(); ++k, ++msIt)
+      {
+      double M_k_minus_1 = marginalMean;
+      double S_k_minus_1 = marginalDevSquared;
+      double x_k = *msIt;
+      double M_k = M_k_minus_1 + ( x_k - M_k_minus_1 ) / k;
+      double S_k = S_k_minus_1 + ( x_k - M_k_minus_1 ) * ( x_k - M_k );
+      marginalMean = M_k;
+      marginalDevSquared = S_k;
+      }
+    marginalDevSquared = marginalDevSquared / m_NumberOfBinsPerAxis;
+
+    VectorConstIteratorType constVectorIt;
+    constVectorIt = glcVector.begin();
+    while( constVectorIt != glcVector.end())
+    {
+    RelativeFrequencyType frequency = (*constVectorIt).second / totalFrequency;
+    CooccurrenceIndexType        index = (*constVectorIt).first;
+    pixelVariance += ( index[0] - pixelMean ) * ( index[0] - pixelMean ) * frequency;
+    ++constVectorIt;
+    }
+
+    double pixelVarianceSquared = pixelVariance * pixelVariance;
+    // Variance is only used in correlation. If variance is 0, then (index[0] - pixelMean) * (index[1] - pixelMean)
+    // should be zero as well. In this case, set the variance to 1. in order to
+    // avoid NaN correlation.
+    if(pixelVarianceSquared < GetPixelValueTolerance())
+      {
+      pixelVarianceSquared = 1.;
+      }
+
+    //Initalize texture variables;
+    PixelValueType energy      = itk::NumericTraits< PixelValueType >::Zero;
+    PixelValueType entropy     = itk::NumericTraits< PixelValueType >::Zero;
+    PixelValueType correlation = itk::NumericTraits< PixelValueType >::Zero;
+    PixelValueType inverseDifferenceMoment      = itk::NumericTraits< PixelValueType >::Zero;
+    PixelValueType inertia             = itk::NumericTraits< PixelValueType >::Zero;
+    PixelValueType clusterShade        = itk::NumericTraits< PixelValueType >::Zero;
+    PixelValueType clusterProminence   = itk::NumericTraits< PixelValueType >::Zero;
+    PixelValueType haralickCorrelation = itk::NumericTraits< PixelValueType >::Zero;
+
+    //Compute textures
+    constVectorIt = glcVector.begin();
+    while( constVectorIt != glcVector.end())
+      {
+      CooccurrenceIndexType index = (*constVectorIt).first;
+      RelativeFrequencyType frequency = (*constVectorIt).second / totalFrequency;
+      energy += frequency * frequency;
+      entropy -= ( frequency > GetPixelValueTolerance() ) ? frequency *vcl_log(frequency) / log2 : 0;
+      correlation += ( ( index[0] - pixelMean ) * ( index[1] - pixelMean ) * frequency ) / pixelVarianceSquared;
+      inverseDifferenceMoment += frequency / ( 1.0 + ( index[0] - index[1] ) * ( index[0] - index[1] ) );
+      inertia += ( index[0] - index[1] ) * ( index[0] - index[1] ) * frequency;
+      clusterShade += vcl_pow( ( index[0] - pixelMean ) + ( index[1] - pixelMean ), 3 ) * frequency;
+      clusterProminence += vcl_pow( ( index[0] - pixelMean ) + ( index[1] - pixelMean ), 4 ) * frequency;
+      haralickCorrelation += index[0] * index[1] * frequency;
+      ++constVectorIt;
+      }
+
+    haralickCorrelation = (fabs(marginalDevSquared) > 1E-8) ?
+      ( haralickCorrelation - marginalMean * marginalMean )  / marginalDevSquared : 0;
 
     // Fill outputs
-    energyIt.Set(texturesCalculator->GetEnergy());
-    entropyIt.Set(texturesCalculator->GetEntropy());
-    correlationIt.Set(texturesCalculator->GetCorrelation());
-    invDiffMomentIt.Set(texturesCalculator->GetInverseDifferenceMoment());
-    inertiaIt.Set(texturesCalculator->GetInertia());
-    clusterShadeIt.Set(texturesCalculator->GetClusterShade());
-    clusterProminenceIt.Set(texturesCalculator->GetClusterProminence());
-    haralickCorIt.Set(texturesCalculator->GetHaralickCorrelation());
+    energyIt.Set(energy);
+    entropyIt.Set(entropy);
+    correlationIt.Set(correlation);
+    invDiffMomentIt.Set(inverseDifferenceMoment);
+    inertiaIt.Set(inertia);
+    clusterShadeIt.Set(clusterShade);
+    clusterProminenceIt.Set(clusterProminence);
+    haralickCorIt.Set(haralickCorrelation);
 
     // Update progress
     progress.CompletedPixel();
@@ -361,7 +449,6 @@ ScalarImageToTexturesFilter<TInputImage, TOutputImage>
     ++clusterProminenceIt;
     ++haralickCorIt;
     }
-
 }
 
 } // End namespace otb

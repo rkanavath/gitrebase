@@ -21,11 +21,10 @@
 #include "otbVectorImage.h"
 #include "otbStreamingMatrixTransposeMatrixImageFilter.h"
 
-int otbMatrixTransposeMatrixImageFilterNew(int argc, char * argv[])
+int otbMatrixTransposeMatrixImageFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv) [])
 {
   const unsigned int Dimension = 2;
   typedef unsigned char InputPixelType;
-  typedef unsigned char OutputPixelType;
 
   typedef otb::VectorImage<InputPixelType, Dimension> InputImage1Type;
   typedef otb::VectorImage<InputPixelType, Dimension> InputImage2Type;

@@ -24,15 +24,13 @@
 
 #include "otbSimpleRcsPanSharpeningFusionImageFilter.h"
 
-int otbSimpleRcsPanSharpeningFusionImageFilterNew(int argc, char * argv[])
+int otbSimpleRcsPanSharpeningFusionImageFilterNew(int itkNotUsed(argc), char * itkNotUsed(argv)[])
 {
   const unsigned int Dimension = 2;
   typedef double PixelType;
 
   typedef otb::VectorImage<PixelType, Dimension> VectorImageType;
   typedef otb::Image<PixelType, Dimension>       PanchroImageType;
-  typedef otb::ImageFileReader<VectorImageType>  VectorReaderType;
-  typedef otb::ImageFileReader<PanchroImageType> ImageReaderType;
   typedef otb::SimpleRcsPanSharpeningFusionImageFilter
   <PanchroImageType, VectorImageType, VectorImageType> FilterType;
 

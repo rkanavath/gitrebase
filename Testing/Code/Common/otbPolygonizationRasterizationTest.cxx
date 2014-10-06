@@ -30,14 +30,13 @@
 #include "itkNumericTraits.h"
 #include "itkImageRegionConstIteratorWithIndex.h"
 
-int otbPolygonizationRasterizationTest(int argc, char* argv[])
+int otbPolygonizationRasterizationTest(int itkNotUsed(argc), char * argv[])
 {
   typedef unsigned int                                          PixelType;
   typedef otb::Image<PixelType, 2>                              ImageType;
   typedef otb::ImageFileReader<ImageType>                       ReaderType;
 
   typedef otb::VectorData<>                                     VectorDataType;
-  typedef otb::VectorDataFileReader<VectorDataType>             VDReaderType;
 
   typedef otb::LabelImageToVectorDataFilter<ImageType>          LabelImageToVDFilterType;
   typedef otb::VectorDataToLabelImageFilter<VectorDataType,

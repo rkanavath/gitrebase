@@ -18,15 +18,81 @@
 #ifndef __otbScalarImageToAdvancedTexturesFilter_h
 #define __otbScalarImageToAdvancedTexturesFilter_h
 
+#include "otbGreyLevelCooccurrenceIndexedList.h"
 #include "itkImageToImageFilter.h"
-#include "itkScalarImageToCooccurrenceMatrixFilter.h"
-#include "otbGreyLevelCooccurrenceMatrixAdvancedTextureCoefficientsCalculator.h"
 
 namespace otb
 {
 /**
  * \class ScalarImageToAdvancedTexturesFilter
- * \brief TODO
+ * \brief In this case, 10 advanced texture features will be processed. The 10
+ * output image channels are: Mean, Variance, Dissimilarity, Sum Average, Sum
+ * Variance, Sum Entropy, Difference of Entropies, Difference of Variances, IC1
+ * and IC2. They are provided in this exact order in the output image. The
+ * textures are computed over a sliding window with user defined radius.
+ *
+ * To improve the speed of computation, a variant of Grey Level Co-occurrence
+ * Matrix(GLCM) called Grey Level Co-occurrence Indexed List (GLCIL) is
+ * used. Given below is the mathematical explanation on the computation of each
+ * textures. Here $ g(i, j) $ is the frequency of element in the GLCIL whose
+ * index is i, j. GLCIL stores a pair of frequency of two pixels from the given
+ * offset and the cell index (i, j) of the pixel in the neighborhood
+ * window. :(where each element in GLCIL is a pair of pixel index and it's
+ * frequency, $ g(i, j) $ is the frequency value of the pair having index is i, j).
+ *
+ * "Mean" \f$ = \sum_{i, j}i g(i, j) \f$
+ *
+ * "Sum of squares: Variance" \f$ = f_4 = \sum_{i, j}(i - \mu)^2 g(i, j) \f$
+ *
+ * "Dissimilarity" \f$ = f_5 = \sum_{i, j}(i - j) g(i, j)^2 \f$
+ *
+ * "Sum average" \f$ = f_6 = -\sum_{i}i g_{x+y}(i) \f$
+ *
+ * "Sum Variance" \f$ = f_7 = \sum_{i}(i - f_8)^2 g_{x+y}(i) \f$
+ *
+ * "Sum Entropy" \f$= f_8 = -\sum_{i}g_{x+y}(i) log (g_{x+y}(i)) \f$
+ *
+ * "Difference variance" \f$ = f_10 = variance of g_{x-y}(i) \f$
+ *
+ * "Difference entropy" \f$ = f_11 = -\sum_{i}g_{x-y}(i) log (g_{x-y}(i)) \f$
+ *
+ * "Information Measures of Correlation IC1" \f$ = f_12 = \frac{f_9 - HXY1}{H} \f$
+ *
+ * "Information Measures of Correlation IC2" \f$ = f_13 = \sqrt{1 - \exp{-2}|HXY2 - f_9|} \f$
+ *
+ * Above, \f$ \mu =  \f$ (weighted pixel average) \f$ = \sum_{i, j}i \cdot g(i, j) =
+ * \sum_{i, j}j \cdot g(i, j) \f$ (due to matrix summetry), and
+ *
+ * \f$ \g_{x+y}(k) =  \sum_{i}\sum_{j}g(i)\f$ where \f$ i+j=k \f$ and \f$ k = 2, 3, .., 2N_[g}  \f$ and
+ *
+ * \f$ \g_{x-y}(k) =  \sum_{i}\sum_{j}g(i)\f$ where \f$ i-j=k \f$ and \f$ k = 0, 1, .., N_[g}-1  \f$
+ *
+ * Print references:
+ *
+ * Haralick, R.M., K. Shanmugam and I. Dinstein. 1973.  Textural Features for
+ * Image Classification. IEEE Transactions on Systems, Man and Cybernetics.
+ * SMC-3(6):610-620.
+ *
+ * David A. Clausi and Yongping Zhao. 2002. Rapid extraction of image texture by
+ * co-occurrence using a hybrid data structure. Comput. Geosci. 28, 6 (July
+ * 2002), 763-774. DOI=10.1016/S0098-3004(01)00108-X
+ * http://dx.doi.org/10.1016/S0098-3004(01)00108-X
+ *
+ * de O.Bastos, L.; Liatsis, P.; Conci, A., Automatic texture segmentation based
+ * on k-means clustering and efficient calculation of co-occurrence
+ * features. Systems, Signals and Image Processing, 2008. IWSSIP 2008. 15th
+ * International Conference on , vol., no., pp.141,144, 25-28 June 2008
+ * doi: 10.1109/IWSSIP.2008.4604387
+ *
+ * Neighborhood size can be set using the SetRadius() method. Offset for co-occurence estimation
+ * is set using the SetOffset() method.
+ *
+ * \sa otb::ScalarImageToCooccurrenceIndexedList
+ * \sa otb::ScalarImageToTexturesFiler
+ * \sa otb::ScalarImageToHigherOrderTexturesFilter
+ * \ingroup Streamed
+ * \ingroup Threaded
+ *
  */
 template<class TInpuImage, class TOutputImage>
 class ScalarImageToAdvancedTexturesFilter : public itk::ImageToImageFilter
@@ -50,19 +116,22 @@ public:
   typedef typename InputImageType::Pointer     InputImagePointerType;
   typedef typename InputImageType::PixelType   InputPixelType;
   typedef typename InputImageType::RegionType  InputRegionType;
+  typedef typename InputImageType::OffsetType  OffsetType;
   typedef typename InputRegionType::SizeType   SizeType;
   typedef TOutputImage                         OutputImageType;
   typedef typename OutputImageType::Pointer    OutputImagePointerType;
   typedef typename OutputImageType::RegionType OutputRegionType;
 
-  /** Co-occurence matrix and textures calculator */
-  typedef itk::Statistics::ScalarImageToCooccurrenceMatrixFilter<InputImageType> CoocurrenceMatrixGeneratorType;
-  typedef typename CoocurrenceMatrixGeneratorType::Pointer       CoocurrenceMatrixGeneratorPointerType;
-  typedef typename CoocurrenceMatrixGeneratorType::OffsetType    OffsetType;
-  typedef typename CoocurrenceMatrixGeneratorType::HistogramType HistogramType;
-  typedef GreyLevelCooccurrenceMatrixAdvancedTextureCoefficientsCalculator
-  <HistogramType>                                                TextureCoefficientsCalculatorType;
-  typedef typename TextureCoefficientsCalculatorType::Pointer TextureCoefficientsCalculatorPointerType;
+  typedef GreyLevelCooccurrenceIndexedList< InputPixelType >   CooccurrenceIndexedListType;
+  typedef typename CooccurrenceIndexedListType::Pointer       CooccurrenceIndexedListPointerType;
+  typedef typename CooccurrenceIndexedListType::ConstPointer  CooccurrenceIndexedListConstPointerType;
+  typedef typename CooccurrenceIndexedListType::IndexType              CooccurrenceIndexType;
+  typedef typename CooccurrenceIndexedListType::PixelValueType         PixelValueType;
+  typedef typename CooccurrenceIndexedListType::RelativeFrequencyType  RelativeFrequencyType;
+  typedef typename CooccurrenceIndexedListType::VectorType             VectorType;
+
+  typedef typename VectorType::iterator                    VectorIteratorType;
+  typedef typename VectorType::const_iterator              VectorConstIteratorType;
 
   /** Set the radius of the window on which textures will be computed */
   itkSetMacro(Radius, SizeType);
@@ -75,10 +144,10 @@ public:
   /** Get the offset for co-occurence computation */
   itkGetMacro(Offset, OffsetType);
 
-  /** Set the number of bin per axis for histogram generation */
+  /** Set the number of bin per axis */
   itkSetMacro(NumberOfBinsPerAxis, unsigned int);
 
-  /** Get the number of bin per axis for histogram generation */
+  /** Get the number of bin per axis*/
   itkGetMacro(NumberOfBinsPerAxis, unsigned int);
 
   /** Set the input image minimum */
@@ -98,6 +167,9 @@ public:
 
   /** Get the variance output image */
   OutputImageType * GetVarianceOutput();
+
+  /** Get the dissimilarity output image */
+  OutputImageType * GetDissimilarityOutput();
 
   /** Get the sum average output image */
   OutputImageType * GetSumAverageOutput();
@@ -127,6 +199,8 @@ protected:
   ~ScalarImageToAdvancedTexturesFilter();
   /** Generate the input requested region */
   virtual void GenerateInputRequestedRegion();
+  /** Before Parallel textures extraction */
+  virtual void BeforeThreadedGenerateData();
   /** Parallel textures extraction */
   virtual void ThreadedGenerateData(const OutputRegionType& outputRegion, itk::ThreadIdType threadId);
 
@@ -143,7 +217,10 @@ private:
   /** Offset for co-occurence */
   OffsetType m_Offset;
 
-  /** Number of bins per axis for histogram generation */
+  /** Radius of the neighborhood iterator which is minumum of m_Radius */
+  SizeType m_NeighborhoodRadius;
+
+  /** Number of bins per axis */
   unsigned int m_NumberOfBinsPerAxis;
 
   /** Input image minimum */
@@ -151,6 +228,7 @@ private:
 
   /** Input image maximum */
   InputPixelType m_InputImageMaximum;
+
 };
 } // End namespace otb
 

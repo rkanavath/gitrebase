@@ -28,8 +28,11 @@ void RegisterTests()
   REGISTER_TEST(otbSpectralResponse);
   REGISTER_TEST(otbSatelliteRSRNew);
   REGISTER_TEST(otbSatelliteRSR);
+  REGISTER_TEST(otbSatelliteRSRCheckValue);
+  REGISTER_TEST(otbSatelliteRSRSolarIrradianceCheckValue);
   REGISTER_TEST(otbReduceSpectralResponseNew);
   REGISTER_TEST(otbReduceSpectralResponse);
+  REGISTER_TEST(otbReduceSpectralResponseSimpleValues);
   REGISTER_TEST(otbReduceSpectralResponseClassifierRAndNIR);
   REGISTER_TEST(otbAtmosphericEffects);
   REGISTER_TEST(otbSpatialisationTestNew);

@@ -18,8 +18,8 @@
 #ifndef __otbScalarImageToPanTexTextureFilter_h
 #define __otbScalarImageToPanTexTextureFilter_h
 
+#include "otbGreyLevelCooccurrenceIndexedList.h"
 #include "itkImageToImageFilter.h"
-#include "itkScalarImageToCooccurrenceMatrixFilter.h"
 
 namespace otb
 {
@@ -37,9 +37,7 @@ namespace otb
  * Vol1, NO3.
  *
  *
- * \sa ScalarImageToGreyLevelCooccurrenceMatrixGenerator
- * \sa GreyLevelCooccurrenceMatrixTextureCoefficientsCalculator
- * \sa ScalarImageTextureCalculator
+ * \sa otb::GreyLevelCooccurrenceIndexedList
  *
  */
 
@@ -66,19 +64,23 @@ public:
   typedef typename InputImageType::PixelType   InputPixelType;
   typedef typename InputImageType::RegionType  InputRegionType;
   typedef typename InputRegionType::SizeType   SizeType;
+  typedef typename InputImageType::OffsetType   OffsetType;
+  typedef typename std::vector< OffsetType>  OffsetListType;
   typedef TOutputImage                         OutputImageType;
   typedef typename OutputImageType::Pointer    OutputImagePointerType;
   typedef typename OutputImageType::RegionType OutputRegionType;
 
-  /** Co-occurence matrix and textures calculator */
-  typedef itk::Statistics::ScalarImageToCooccurrenceMatrixFilter<InputImageType> CoocurrenceMatrixGeneratorType;
-  typedef typename CoocurrenceMatrixGeneratorType::Pointer       CoocurrenceMatrixGeneratorPointerType;
-  typedef typename CoocurrenceMatrixGeneratorType::OffsetType    OffsetType;
-  typedef typename std::vector<OffsetType>                       OffsetListType;
-  typedef typename CoocurrenceMatrixGeneratorType::HistogramType HistogramType;
-  typedef typename HistogramType::AbsoluteFrequencyType                  FrequencyType; //FIXME stat framework
-  typedef typename HistogramType::MeasurementType                MeasurementType;
-  typedef typename HistogramType::Iterator                       HistogramIterator;
+  typedef GreyLevelCooccurrenceIndexedList< InputPixelType >   CooccurrenceIndexedListType;
+  typedef typename CooccurrenceIndexedListType::Pointer       CooccurrenceIndexedListPointerType;
+  typedef typename CooccurrenceIndexedListType::ConstPointer  CooccurrenceIndexedListConstPointerType;
+  typedef typename CooccurrenceIndexedListType::IndexType              CooccurrenceIndexType;
+  typedef typename CooccurrenceIndexedListType::PixelValueType         PixelValueType;
+  typedef typename CooccurrenceIndexedListType::RelativeFrequencyType  RelativeFrequencyType;
+  typedef typename CooccurrenceIndexedListType::VectorType             VectorType;
+
+  typedef typename VectorType::iterator                    VectorIteratorType;
+  typedef typename VectorType::const_iterator              VectorConstIteratorType;
+
 
   /** Set the radius of the window on which textures will be computed */
   itkSetMacro(Radius, SizeType);
@@ -134,6 +136,7 @@ private:
 
   /** Input image maximum */
   InputPixelType m_InputImageMaximum;
+
 };
 } // End namespace otb
 

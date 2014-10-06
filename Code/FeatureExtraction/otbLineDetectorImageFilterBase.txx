@@ -155,8 +155,6 @@ LineDetectorImageFilterBase<TInputImage, TOutputImage, TOutputImageDirection, In
   typename itk::ConstNeighborhoodIterator<InputImageType>::OffsetType off;
   itk::ImageRegionIterator<OutputImageType>                           it;
   itk::ImageRegionIterator<OutputImageType>                           itdir;
-  typedef  itk::ImageRegionIterator<InputImageType>     InputIteratorType;
-  typedef itk::ImageRegionConstIterator<InputImageType> ConstInputIteratorType;
 
   // Allocate output
   typename OutputImageType::Pointer output = this->GetOutput();
@@ -394,7 +392,7 @@ LineDetectorImageFilterBase<TInputImage, TOutputImage, TOutputImageDirection, In
 template <class TInputImage, class TOutputImage, class TOutputImageDirection, class InterpolatorType>
 double
 LineDetectorImageFilterBase<TInputImage, TOutputImage, TOutputImageDirection, InterpolatorType>
-::ComputeMeasure(std::vector<double>* m1, std::vector<double>* m2, std::vector<double>* m3)
+::ComputeMeasure(std::vector<double>* itkNotUsed(m1), std::vector<double>* itkNotUsed(m2), std::vector<double>* itkNotUsed(m3))
 {
   return 0;
 }

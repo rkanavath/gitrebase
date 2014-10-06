@@ -63,7 +63,7 @@ private:
 };
 }
 
-int otbUnaryFunctorNeighborhoodWithOffsetImageFilter(int argc, char * argv[])
+int otbUnaryFunctorNeighborhoodWithOffsetImageFilter(int itkNotUsed(argc), char * argv[])
 {
   const char * inputFileName  = argv[1];
   const char * outputFileName = argv[2];
@@ -72,10 +72,8 @@ int otbUnaryFunctorNeighborhoodWithOffsetImageFilter(int argc, char * argv[])
   const int Dimension = 2;
   typedef otb::VectorImage<InputPixelType, Dimension>                                               ImageType;
   typedef ImageType::OffsetType                                                                     OffsetType;
-  typedef ImageType::PixelType                                                                      PixelType;
   typedef otb::ImageFileReader<ImageType>                                                           ReaderType;
   typedef otb::ImageFileWriter<ImageType>                                                           WriterType;
-  typedef itk::ConstNeighborhoodIterator<ImageType>                                                 IterType;
   typedef Functor::UnaryFunctorNeighborhoodWithOffseImageFilterTest<InputPixelType, InputPixelType> FunctorType;
   typedef otb::UnaryFunctorNeighborhoodWithOffsetImageFilter<ImageType, ImageType,
       FunctorType>     UnaryFunctorNeighborhoodImageFilterType;

@@ -27,7 +27,7 @@
 
 #include "otbImageFileReader.h"
 
-int otbSVMImageModelEstimatorTrain(int argc, char* argv[])
+int otbSVMImageModelEstimatorTrain(int itkNotUsed(argc), char* argv[])
 {
   // Force the pseudo-random number generator to always output
   // the same sequence of random numbers
@@ -43,7 +43,6 @@ int otbSVMImageModelEstimatorTrain(int argc, char* argv[])
   const unsigned int Dimension = 2;
   typedef otb::VectorImage<InputPixelType,  Dimension> InputImageType;
   typedef otb::Image<int,  Dimension>                  TrainingImageType;
-  typedef std::vector<double>                          VectorType;
   typedef otb::SVMImageModelEstimator<InputImageType,
       TrainingImageType> EstimatorType;
   typedef otb::ImageFileReader<InputImageType>    InputReaderType;

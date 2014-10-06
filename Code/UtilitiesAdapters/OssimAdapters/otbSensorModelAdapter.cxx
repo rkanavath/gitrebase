@@ -88,7 +88,8 @@ void SensorModelAdapter::ForwardTransformPoint(double x, double y, double z,
     itkExceptionMacro(<< "ForwardTransformPoint(): Invalid sensor model (m_SensorModel pointer is null)");
     }
 
-  ossimDpt ossimPoint(x, y);
+  ossimDpt ossimPoint( internal::ConvertToOSSIMFrame(x),
+                       internal::ConvertToOSSIMFrame(y));
   ossimGpt ossimGPoint;
 
   this->m_SensorModel->lineSampleHeightToWorld(ossimPoint,z, ossimGPoint);
@@ -106,7 +107,8 @@ void SensorModelAdapter::ForwardTransformPoint(double x, double y,
     itkExceptionMacro(<< "ForwardTransformPoint(): Invalid sensor model (m_SensorModel pointer is null)");
     }
 
-  ossimDpt ossimPoint(x, y);
+  ossimDpt ossimPoint( internal::ConvertToOSSIMFrame(x),
+                       internal::ConvertToOSSIMFrame(y));
   ossimGpt ossimGPoint;
 
   this->m_SensorModel->lineSampleToWorld(ossimPoint, ossimGPoint);
@@ -130,8 +132,8 @@ void SensorModelAdapter::InverseTransformPoint(double lon, double lat, double h,
 
   this->m_SensorModel->worldToLineSample(ossimGPoint, ossimDPoint);
 
-  x = ossimDPoint.x;
-  y = ossimDPoint.y;
+  x = internal::ConvertFromOSSIMFrame(ossimDPoint.x);
+  y = internal::ConvertFromOSSIMFrame(ossimDPoint.y);
   z = ossimGPoint.height();
 }
 
@@ -153,15 +155,16 @@ void SensorModelAdapter::InverseTransformPoint(double lon, double lat,
 
   this->m_SensorModel->worldToLineSample(ossimGPoint, ossimDPoint);
 
-  x = ossimDPoint.x;
-  y = ossimDPoint.y;
+  x = internal::ConvertFromOSSIMFrame(ossimDPoint.x);
+  y = internal::ConvertFromOSSIMFrame(ossimDPoint.y);
   z = ossimGPoint.height();
 }
 
 void SensorModelAdapter::AddTiePoint(double x, double y, double z, double lon, double lat)
 {
   // Create the tie point
-  ossimDpt imagePoint(x,y);
+  ossimDpt imagePoint( internal::ConvertToOSSIMFrame(x),
+                       internal::ConvertToOSSIMFrame(y));
   ossimGpt ossimGPoint(lat, lon, z);
 
   // Add the tie point to the container
@@ -171,7 +174,8 @@ void SensorModelAdapter::AddTiePoint(double x, double y, double z, double lon, d
 void SensorModelAdapter::AddTiePoint(double x, double y, double lon, double lat)
 {
   // Create the tie point
-  ossimDpt imagePoint(x,y);
+  ossimDpt imagePoint( internal::ConvertToOSSIMFrame(x),
+                       internal::ConvertToOSSIMFrame(y));
 
   // Get elevation from DEMHandler
   double z = m_DEMHandler->GetHeightAboveEllipsoid(lon,lat);

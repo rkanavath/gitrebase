@@ -24,6 +24,8 @@
 #include "otbImageKeywordlist.h"
 #include <boost/lexical_cast.hpp>
 
+//uyseful constants
+#include <otbMath.h>
 
 namespace otb
 {
@@ -78,7 +80,6 @@ PleiadesImageMetadataInterface::GetInstrumentIndex() const
     {
     itkExceptionMacro(<< "Invalid Metadata, no Pleiades Image");
     }
-
   ImageKeywordlistType imageKeywordlist;
 
   if (dict.HasKey(MetaDataKey::OSSIMKeywordlistKey))
@@ -678,9 +679,20 @@ PleiadesImageMetadataInterface::GetSatElevation() const
     return 0;
     }
 
-  // MSD: for the moment take only topCenter value
   std::string valueString = imageKeywordlist.GetMetadataByKey("support_data.incident_angle");
-  double value = atof(valueString.c_str());
+
+  std::istringstream is(valueString);
+  std::vector<double> vecValues = std::vector<double>(std::istream_iterator<double>(is), std::istream_iterator<double>());
+
+  //Take the second value (Center value)
+  double value = vecValues[1];
+
+  //Convention use in input of atmospheric correction parameters computation is
+  //"90 - satOrientation". Pleiades does not seem to follow this convention so
+  //inverse the formula here to be able to take the angle read in the metadata
+  //as input for 6S
+  value = 90. - value;
+
   return value;
 }
 
@@ -704,12 +716,56 @@ PleiadesImageMetadataInterface::GetSatAzimuth() const
     {
     return 0;
     }
+  else if (!imageKeywordlist.HasKey("support_data.along_track_incidence_angle") || !imageKeywordlist.HasKey("support_data.across_track_incidence_angle"))
+    {
+    std::string valueString = imageKeywordlist.GetMetadataByKey("support_data.scene_orientation");
 
-  // MSD: for the moment take only topCenter value
-  std::string valueString = imageKeywordlist.GetMetadataByKey("support_data.scene_orientation");
-  double satAz = atof(valueString.c_str());
+    std::istringstream is(valueString);
+    std::vector<double> vecCap = std::vector<double>(std::istream_iterator<double>(is), std::istream_iterator<double>());
 
-  return satAz;
+    //Take the second value (Center value)
+    double cap = vecCap[1];
+
+    //return only orientation if across/along track incidence are not available
+    return cap;
+    }
+  else
+    {
+    //Got orientation and incidences angle which allow to compute satellite
+    // azimuthal angle
+
+    // MSD: for the moment take only topCenter value
+    std::string valueString = imageKeywordlist.GetMetadataByKey("support_data.scene_orientation");
+
+    std::istringstream is(valueString);
+    std::vector<double> vecCap = std::vector<double>(std::istream_iterator<double>(is), std::istream_iterator<double>());
+
+    //Take the second value (Center value)
+    double cap = vecCap[1];
+
+    valueString = imageKeywordlist.GetMetadataByKey("support_data.along_track_incidence_angle");
+    std::istringstream isAlong(valueString);
+    std::vector<double> vecAlong = std::vector<double>(std::istream_iterator<double>(isAlong), std::istream_iterator<double>());
+
+    //Take the second value (Center value)
+    double along = vecAlong[1];
+
+    valueString = imageKeywordlist.GetMetadataByKey("support_data.across_track_incidence_angle");
+    std::istringstream isAcross(valueString);
+    std::vector<double> vecAcross = std::vector<double>(std::istream_iterator<double>(isAcross), std::istream_iterator<double>());
+
+    //Take the second value (Center value)
+    double ortho = vecAcross[1];
+
+    //Compute Satellite azimuthal angle using the azimuthal angle and the along
+    //and across track incidence angle
+
+    double satAz = (cap - vcl_atan2(vcl_tan(ortho * CONST_PI_180),vcl_tan(along * CONST_PI_180)) * CONST_180_PI);
+
+    satAz = fmod(satAz,360);
+
+    return satAz;
+    }
 }
 
 PleiadesImageMetadataInterface::VariableLengthVectorType
@@ -810,7 +866,7 @@ PleiadesImageMetadataInterface
     }
   else
     {
-    otbMsgDevMacro(<< "Pleiades detected: band 0 and 2 inverted");
+    otbMsgDevMacro(<< "Pleiades detected: first file component is red band and third component is blue one");
     if (i == 0) return 2;
     if (i == 2) return 0;
     }
@@ -886,45 +942,12 @@ PleiadesImageMetadataInterface
     itk::ExposeMetaData<ImageKeywordlistType>(dict, MetaDataKey::OSSIMKeywordlistKey, imageKeywordlist);
     }
 
-  int nbBands = this->GetNumberOfBands();
 
-  std::string key = "support_data.band_name_list";
   std::vector<unsigned int> rgb(3);
 
-  // TODO MSD remove this limitation when we get a real pleiades image
-  // Band order in PHR products seems to be always the same : RGB => keep the flag off
-  bool realProduct = false;
-  if (realProduct)
-    {
-    if (imageKeywordlist.HasKey(key) && (nbBands > 1))
-      {
-      std::string keywordStringBandNameList = imageKeywordlist.GetMetadataByKey(key);
-      std::vector<std::string> bandNameList;
-      boost::trim(keywordStringBandNameList);
-      boost::split(bandNameList, keywordStringBandNameList, boost::is_any_of(" "));
-
-      for (int i = 0; i < nbBands && i < 3; i++)
-        {
-        size_t found;
-        found = bandNameList[i].find_first_not_of("B");
-        rgb[i] = lexical_cast<int> (bandNameList[i].at(found));
-        }
-      }
-    else
-      {
-      // Default values
-      rgb[0] = 2;
-      rgb[1] = 1;
-      rgb[2] = 0;
-      }
-    }
-  else
-    {
-    // Default values for simulation product
-    rgb[0] = 0;
-    rgb[1] = 1;
-    rgb[2] = 2;
-    }
+  rgb[0] = 0;
+  rgb[1] = 1;
+  rgb[2] = 2;
 
   return rgb;
 }

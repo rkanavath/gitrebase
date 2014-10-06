@@ -24,17 +24,14 @@
 #include "otbImageFileReader.h"
 #include "otbAttributesMapLabelObjectWithClassLabel.h"
 
-int otbImageToLabelMapWithAttributesFilter(int argc, char* argv[])
+int otbImageToLabelMapWithAttributesFilter(int itkNotUsed(argc), char* argv[])
 {
   const char * infname = argv[1];
   const char * lfname  = argv[2];
 
   // Convenient typedefs
   typedef otb::VectorImage<double, 2>                           ImageType;
-  typedef ImageType::IndexType         IndexType;
-
   typedef otb::Image<unsigned int, 2>                           LabeledImageType;
-
   typedef otb::AttributesMapLabelObjectWithClassLabel<double, 2, double, double> LabelObjectType;
 
   typedef otb::ImageToLabelMapWithAttributesFilter<ImageType,
