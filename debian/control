@@ -1,6 +1,7 @@
 Source: otb
 Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
-Uploaders: Andreas Tille <tille@debian.org>, Paolo Cavallini <cavallini@faunalia.it>
+Uploaders: Andreas Tille <tille@debian.org>,
+           Paolo Cavallini <cavallini@faunalia.it>
 Section: science
 Priority: optional
 Build-Depends: debhelper (>= 9),
@@ -26,8 +27,8 @@ Build-Depends: debhelper (>= 9),
                libopencv-dev,
                libossim-dev,
                libfftw3-dev
-Standards-Version: 3.9.5
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-grass/otb.git
+Standards-Version: 3.9.6
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-grass/otb.git
 Vcs-Git: git://anonscm.debian.org/pkg-grass/otb.git
 Homepage: http://www.orfeo-toolbox.org/
 
