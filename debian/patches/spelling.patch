@@ -5,9 +5,9 @@ Description: Fix some spelling errors to silence lintian enabling
  .
  Feel free to take over this s/allows to/allows one to/.
 
---- otb.orig/Applications/Classification/otbTrainImagesClassifier.cxx
-+++ otb/Applications/Classification/otbTrainImagesClassifier.cxx
-@@ -35,7 +35,7 @@
+--- a/Applications/Classification/otbTrainImagesClassifier.cxx
++++ b/Applications/Classification/otbTrainImagesClassifier.cxx
+@@ -35,7 +35,7 @@ void TrainImagesClassifier::DoInit()
      "Samples are composed of pixel values in each band optionally centered and reduced using an XML statistics file produced by "
      "the ComputeImagesStatistics application.\n The training vector data must contain polygons with a positive integer field "
      "representing the class label. The name of this field can be set using the \"Class label field\" parameter. Training and validation "
@@ -16,7 +16,7 @@ Description: Fix some spelling errors to silence lintian enabling
      "between the number of samples in training and validation sets. Two parameters allow to manage the size of the training and "
      "validation sets per class and per image.\n Several classifier parameters can be set depending on the chosen classifier. In the "
      "validation process, the confusion matrix is organized the following way: rows = reference labels, columns = produced labels. "
-@@ -50,7 +50,7 @@
+@@ -50,7 +50,7 @@ void TrainImagesClassifier::DoInit()
  
    //Group IO
    AddParameter(ParameterType_Group, "io", "Input and output data");
@@ -25,7 +25,7 @@ Description: Fix some spelling errors to silence lintian enabling
    AddParameter(ParameterType_InputImageList, "io.il", "Input Image List");
    SetParameterDescription("io.il", "A list of input images.");
    AddParameter(ParameterType_InputVectorDataList, "io.vd", "Input Vector Data List");
-@@ -71,7 +71,7 @@
+@@ -71,7 +71,7 @@ void TrainImagesClassifier::DoInit()
    //Group Sample list
    AddParameter(ParameterType_Group, "sample", "Training and validation samples parameters");
    SetParameterDescription("sample",
@@ -34,9 +34,9 @@ Description: Fix some spelling errors to silence lintian enabling
  
    AddParameter(ParameterType_Int, "sample.mt", "Maximum training sample size per class");
    //MandatoryOff("mt");
---- otb.orig/Applications/Classification/otbTrainKNN.cxx
-+++ otb/Applications/Classification/otbTrainKNN.cxx
-@@ -25,7 +25,7 @@
+--- a/Applications/Classification/otbTrainKNN.cxx
++++ b/Applications/Classification/otbTrainKNN.cxx
+@@ -25,7 +25,7 @@ namespace Wrapper
    void TrainImagesClassifier::InitKNNParams()
    {
      AddChoice("classifier.knn", "KNN classifier");
@@ -45,9 +45,9 @@ Description: Fix some spelling errors to silence lintian enabling
          "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/k_nearest_neighbors.html}.");
  
      //K parameter
---- otb.orig/Applications/Classification/otbTrainNeuralNetwork.cxx
-+++ otb/Applications/Classification/otbTrainNeuralNetwork.cxx
-@@ -26,7 +26,7 @@
+--- a/Applications/Classification/otbTrainNeuralNetwork.cxx
++++ b/Applications/Classification/otbTrainNeuralNetwork.cxx
+@@ -26,7 +26,7 @@ void TrainImagesClassifier::InitNeuralNe
  {
    AddChoice("classifier.ann", "Artificial Neural Network classifier");
    SetParameterDescription("classifier.ann",
@@ -56,9 +56,9 @@ Description: Fix some spelling errors to silence lintian enabling
                            "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/neural_networks.html}.");
  
    //TrainMethod
---- otb.orig/Applications/Classification/otbTrainBoost.cxx
-+++ otb/Applications/Classification/otbTrainBoost.cxx
-@@ -25,7 +25,7 @@
+--- a/Applications/Classification/otbTrainBoost.cxx
++++ b/Applications/Classification/otbTrainBoost.cxx
+@@ -25,7 +25,7 @@ namespace Wrapper
    void TrainImagesClassifier::InitBoostParams()
    {
      AddChoice("classifier.boost", "Boost classifier");
@@ -67,9 +67,9 @@ Description: Fix some spelling errors to silence lintian enabling
          "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/boosting.html}.");
      //BoostType
      AddParameter(ParameterType_Choice, "classifier.boost.t", "Boost Type");
---- otb.orig/Applications/Classification/otbTrainSVM.cxx
-+++ otb/Applications/Classification/otbTrainSVM.cxx
-@@ -25,7 +25,7 @@
+--- a/Applications/Classification/otbTrainSVM.cxx
++++ b/Applications/Classification/otbTrainSVM.cxx
+@@ -25,7 +25,7 @@ namespace Wrapper
    void TrainImagesClassifier::InitSVMParams()
    {
      AddChoice("classifier.svm", "SVM classifier (OpenCV)");
@@ -78,9 +78,9 @@ Description: Fix some spelling errors to silence lintian enabling
          "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/support_vector_machines.html}.");
      AddParameter(ParameterType_Choice, "classifier.svm.m", "SVM Model Type");
      AddChoice("classifier.svm.m.csvc", "C support vector classification");
---- otb.orig/Applications/Classification/otbClassificationMapRegularization.cxx
-+++ otb/Applications/Classification/otbClassificationMapRegularization.cxx
-@@ -71,7 +71,7 @@
+--- a/Applications/Classification/otbClassificationMapRegularization.cxx
++++ b/Applications/Classification/otbClassificationMapRegularization.cxx
+@@ -71,7 +71,7 @@ private:
  
      /** GROUP IO CLASSIFICATION */
      AddParameter(ParameterType_Group,"io","Input and output images");
@@ -89,7 +89,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_InputImage, "io.in",  "Input classification image");
      SetParameterDescription( "io.in", "The input labeled image to regularize.");
-@@ -82,7 +82,7 @@
+@@ -82,7 +82,7 @@ private:
  
  
      AddParameter(ParameterType_Group,"ip","Regularization parameters");
@@ -98,9 +98,9 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_Int, "ip.radius", "Structuring element radius (in pixels)");
      SetParameterDescription("ip.radius", "The radius of the ball shaped structuring element (expressed in pixels). By default, 'ip.radius = 1 pixel'.");
---- otb.orig/Applications/Classification/otbFusionOfClassifications.cxx
-+++ otb/Applications/Classification/otbFusionOfClassifications.cxx
-@@ -97,7 +97,7 @@
+--- a/Applications/Classification/otbFusionOfClassifications.cxx
++++ b/Applications/Classification/otbFusionOfClassifications.cxx
+@@ -97,7 +97,7 @@ private:
      SetName("FusionOfClassifications");
      SetDescription("Fuses several classifications maps of the same image on the basis of class labels.");
      SetDocName("Fusion of Classifications");
@@ -109,9 +109,9 @@ Description: Fix some spelling errors to silence lintian enabling
          "Fusion is done either by mean of Majority Voting, or with the Dempster Shafer combination method on class labels.\n "
          "-MAJORITY VOTING: for each pixel, the class with the highest number of votes is selected.\n "
          "-DEMPSTER SHAFER: for each pixel, the class label for which the Belief Function is maximal is selected. This Belief Function is calculated "
---- otb.orig/Applications/Classification/otbTrainDecisionTree.cxx
-+++ otb/Applications/Classification/otbTrainDecisionTree.cxx
-@@ -25,7 +25,7 @@
+--- a/Applications/Classification/otbTrainDecisionTree.cxx
++++ b/Applications/Classification/otbTrainDecisionTree.cxx
+@@ -25,7 +25,7 @@ void TrainImagesClassifier::InitDecision
  {
    AddChoice("classifier.dt", "Decision Tree classifier");
    SetParameterDescription("classifier.dt",
@@ -120,9 +120,9 @@ Description: Fix some spelling errors to silence lintian enabling
                            "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/decision_trees.html}.");
    //MaxDepth
    AddParameter(ParameterType_Int, "classifier.dt.max", "Maximum depth of the tree");
---- otb.orig/Applications/Classification/otbTrainGradientBoostedTree.cxx
-+++ otb/Applications/Classification/otbTrainGradientBoostedTree.cxx
-@@ -26,7 +26,7 @@
+--- a/Applications/Classification/otbTrainGradientBoostedTree.cxx
++++ b/Applications/Classification/otbTrainGradientBoostedTree.cxx
+@@ -26,7 +26,7 @@ void TrainImagesClassifier::InitGradient
    AddChoice("classifier.gbt", "Gradient Boosted Tree classifier");
    SetParameterDescription(
        "classifier.gbt",
@@ -131,9 +131,9 @@ Description: Fix some spelling errors to silence lintian enabling
        "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/gradient_boosted_trees.html}.");
    //LossFunctionType : not exposed, as only one type is used for Classification,
    // the other three are used for regression.
---- otb.orig/Applications/Rasterization/otbRasterization.cxx
-+++ otb/Applications/Rasterization/otbRasterization.cxx
-@@ -64,7 +64,7 @@
+--- a/Applications/Rasterization/otbRasterization.cxx
++++ b/Applications/Rasterization/otbRasterization.cxx
+@@ -64,7 +64,7 @@ private:
      SetDescription("Rasterize a vector dataset.");
  
      SetDocName("Rasterization");
@@ -142,9 +142,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso("For now, support of input dataset with multiple layers having different projection reference system is limited.");
---- otb.orig/Applications/Classification/otbImageClassifier.cxx
-+++ otb/Applications/Classification/otbImageClassifier.cxx
-@@ -81,7 +81,7 @@
+--- a/Applications/Classification/otbImageClassifier.cxx
++++ b/Applications/Classification/otbImageClassifier.cxx
+@@ -81,7 +81,7 @@ private:
      SetParameterDescription( "in", "The input image to classify.");
  
      AddParameter(ParameterType_InputImage,  "mask",   "Input Mask");
@@ -153,9 +153,9 @@ Description: Fix some spelling errors to silence lintian enabling
      MandatoryOff("mask");
  
      AddParameter(ParameterType_InputFilename, "model", "Model file");
---- otb.orig/Applications/Classification/otbTrainLibSVM.cxx
-+++ otb/Applications/Classification/otbTrainLibSVM.cxx
-@@ -25,7 +25,7 @@
+--- a/Applications/Classification/otbTrainLibSVM.cxx
++++ b/Applications/Classification/otbTrainLibSVM.cxx
+@@ -25,7 +25,7 @@ namespace Wrapper
    void TrainImagesClassifier::InitLibSVMParams()
    {
      AddChoice("classifier.libsvm", "LibSVM classifier");
@@ -164,9 +164,9 @@ Description: Fix some spelling errors to silence lintian enabling
      AddParameter(ParameterType_Choice, "classifier.libsvm.k", "SVM Kernel Type");
      AddChoice("classifier.libsvm.k.linear", "Linear");
      AddChoice("classifier.libsvm.k.rbf", "Gaussian radial basis function");
---- otb.orig/Applications/Classification/otbTrainRandomForests.cxx
-+++ otb/Applications/Classification/otbTrainRandomForests.cxx
-@@ -25,7 +25,7 @@
+--- a/Applications/Classification/otbTrainRandomForests.cxx
++++ b/Applications/Classification/otbTrainRandomForests.cxx
+@@ -25,7 +25,7 @@ void TrainImagesClassifier::InitRandomFo
  {
    AddChoice("classifier.rf", "Random forests classifier");
    SetParameterDescription("classifier.rf",
@@ -175,9 +175,9 @@ Description: Fix some spelling errors to silence lintian enabling
                            "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/random_trees.html}.");
    //MaxDepth
    AddParameter(ParameterType_Int, "classifier.rf.max", "Maximum depth of the tree");
---- otb.orig/Applications/DisparityMap/otbBlockMatching.cxx
-+++ otb/Applications/DisparityMap/otbBlockMatching.cxx
-@@ -128,11 +128,11 @@
+--- a/Applications/DisparityMap/otbBlockMatching.cxx
++++ b/Applications/DisparityMap/otbBlockMatching.cxx
+@@ -128,11 +128,11 @@ private:
      SetDescription("Performs block-matching to estimate pixel-wise disparities between two images");
  
      SetDocName("Pixel-wise Block-Matching");
@@ -192,7 +192,7 @@ Description: Fix some spelling errors to silence lintian enabling
        "investigate disparities that will not be reliable anyway. For efficiency reasons, if the optimal metric values"
        " image is desired, it will be concatenated to the output image (which will then have three bands : horizontal "
        "disparity, vertical disparity and metric value). One can split these images afterward.");
-@@ -143,7 +143,7 @@
+@@ -143,7 +143,7 @@ private:
      AddDocTag(Tags::Stereo);
  
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -201,7 +201,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_InputImage,"io.inleft","Left input image");
      SetParameterDescription("io.inleft","The left input image (reference)");
-@@ -163,24 +163,24 @@
+@@ -163,24 +163,24 @@ private:
      SetParameterDescription("io.outmetric","If used, the output image will have a second component with metric optimal values");
  
      AddParameter(ParameterType_Group,"mask","Image masking parameters");
@@ -231,9 +231,9 @@ Description: Fix some spelling errors to silence lintian enabling
      MandatoryOff("mask.variancet");
      SetDefaultParameterFloat("mask.variancet",100.);
      DisableParameter("mask.variancet");
---- otb.orig/Applications/DisparityMap/otbDisparityMapToElevationMap.cxx
-+++ otb/Applications/DisparityMap/otbDisparityMapToElevationMap.cxx
-@@ -77,7 +77,7 @@
+--- a/Applications/DisparityMap/otbDisparityMapToElevationMap.cxx
++++ b/Applications/DisparityMap/otbDisparityMapToElevationMap.cxx
+@@ -77,7 +77,7 @@ private:
      AddDocTag(Tags::Stereo);
  
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -242,9 +242,9 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_InputImage,"io.in","Input disparity map");
      SetParameterDescription("io.in","The input disparity map (horizontal disparity in first band, vertical in second)");
---- otb.orig/Applications/DisparityMap/otbStereoFramework.cxx
-+++ otb/Applications/DisparityMap/otbStereoFramework.cxx
-@@ -340,7 +340,7 @@
+--- a/Applications/DisparityMap/otbStereoFramework.cxx
++++ b/Applications/DisparityMap/otbStereoFramework.cxx
+@@ -340,7 +340,7 @@ private:
  
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "input", "Input parameters");
@@ -253,7 +253,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_InputImageList,  "input.il",   "Input images list");
      SetParameterDescription("input.il", "The list of images.");
-@@ -361,7 +361,7 @@
+@@ -361,7 +361,7 @@ private:
  
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "output", "Output parameters");
@@ -262,7 +262,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      // // Build the Output Map Projection
      // for custom map projection
-@@ -379,7 +379,7 @@
+@@ -379,7 +379,7 @@ private:
  
      // UserDefined values
      AddParameter(ParameterType_Choice, "output.fusionmethod", "Method to fuse measures in each DSM cell");
@@ -271,7 +271,7 @@ Description: Fix some spelling errors to silence lintian enabling
      AddChoice("output.fusionmethod.max", "The cell is filled with the maximum measured elevation values");
      AddChoice("output.fusionmethod.min", "The cell is filled with the minimum measured elevation values");
      AddChoice("output.fusionmethod.mean","The cell is filled with the mean of measured elevation values");
-@@ -418,7 +418,7 @@
+@@ -418,7 +418,7 @@ private:
  
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "stereorect", "Stereorectification Grid parameters");
@@ -280,7 +280,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_Int,"stereorect.fwdgridstep","Step of the displacement grid (in pixels)");
      SetParameterDescription("stereorect.fwdgridstep","Stereo-rectification displacement grid only varies slowly. Therefore, it is recommended to use a coarser grid (higher step value) in case of large images");
-@@ -426,7 +426,7 @@
+@@ -426,7 +426,7 @@ private:
      MandatoryOff("stereorect.fwdgridstep");
  
      AddParameter(ParameterType_Int, "stereorect.invgridssrate", "Sub-sampling rate for epipolar grid inversion");
@@ -289,7 +289,7 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDefaultParameterInt("stereorect.invgridssrate",10);
      SetMinimumParameterIntValue("stereorect.invgridssrate",1);
      MandatoryOff("stereorect.invgridssrate");
-@@ -505,7 +505,7 @@
+@@ -505,7 +505,7 @@ private:
      DisableParameter("mask.right");
  
      AddParameter(ParameterType_Float,"mask.variancet","Discard pixels with low local variance");
@@ -298,9 +298,9 @@ Description: Fix some spelling errors to silence lintian enabling
      MandatoryOff("mask.variancet");
      SetDefaultParameterFloat("mask.variancet",50.);
      //DisableParameter("mask.variancet");
---- otb.orig/Applications/Hyperspectral/otbHyperspectralUnmixing.cxx
-+++ otb/Applications/Hyperspectral/otbHyperspectralUnmixing.cxx
-@@ -100,7 +100,7 @@
+--- a/Applications/Hyperspectral/otbHyperspectralUnmixing.cxx
++++ b/Applications/Hyperspectral/otbHyperspectralUnmixing.cxx
+@@ -97,7 +97,7 @@ private:
  
      // Documentation
      SetDocName("Hyperspectral data unmixing");
@@ -309,9 +309,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso("VertexComponentAnalysis");
---- otb.orig/Applications/FeatureExtraction/otbLineSegmentDetection.cxx
-+++ otb/Applications/FeatureExtraction/otbLineSegmentDetection.cxx
-@@ -59,7 +59,7 @@
+--- a/Applications/FeatureExtraction/otbLineSegmentDetection.cxx
++++ b/Applications/FeatureExtraction/otbLineSegmentDetection.cxx
+@@ -59,7 +59,7 @@ private:
  
      // Documentation
      SetDocName("Line segment detection");
@@ -320,9 +320,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso("On Line demonstration of the LSD algorithm is available here: http://www.ipol.im/pub/algo/gjmr_line_segment_detector/\n");
---- otb.orig/Applications/FeatureExtraction/otbSFSTextureExtraction.cxx
-+++ otb/Applications/FeatureExtraction/otbSFSTextureExtraction.cxx
-@@ -81,7 +81,7 @@
+--- a/Applications/FeatureExtraction/otbSFSTextureExtraction.cxx
++++ b/Applications/FeatureExtraction/otbSFSTextureExtraction.cxx
+@@ -81,7 +81,7 @@ SetMinimumParameterIntValue("channel", 1
  AddRAMParameter();
  
  AddParameter(ParameterType_Group, "parameters", "Texture feature parameters");
@@ -331,9 +331,9 @@ Description: Fix some spelling errors to silence lintian enabling
      The available texture features are SFS'Length, SFS'Width, SFS'PSI, SFS'W-Mean, SFS'Ratio and SFS'SD.\
      They are provided in this exact order in the output image.");
  
---- otb.orig/Applications/Utils/otbColorMapping.cxx
-+++ otb/Applications/Utils/otbColorMapping.cxx
-@@ -257,10 +257,10 @@
+--- a/Applications/Utils/otbColorMapping.cxx
++++ b/Applications/Utils/otbColorMapping.cxx
+@@ -257,10 +257,10 @@ private:
      SetDescription("Maps an input label image to 8-bits RGB using look-up tables.");
  
      SetDocName("Color Mapping");
@@ -347,9 +347,9 @@ Description: Fix some spelling errors to silence lintian enabling
                            "to a colored image using continuous look-up table, in order to enhance image interpretation. Several "
                            "look-up tables can been chosen with different color ranges.\n-The optimal method computes an optimal "
                            "look-up table. When processing a segmentation label image (label to color), the color difference between"
---- otb.orig/Applications/Utils/otbMultiResolutionPyramid.cxx
-+++ otb/Applications/Utils/otbMultiResolutionPyramid.cxx
-@@ -97,7 +97,7 @@
+--- a/Applications/Utils/otbMultiResolutionPyramid.cxx
++++ b/Applications/Utils/otbMultiResolutionPyramid.cxx
+@@ -97,7 +97,7 @@ private:
      // Boolean Fast scheme
      AddParameter(ParameterType_Empty, "fast", "Use Fast Scheme");
      std::ostringstream desc;
@@ -358,9 +358,9 @@ Description: Fix some spelling errors to silence lintian enabling
          <<" subsampling previous level of pyramid instead of processing the full input.";
      SetParameterDescription("fast", desc.str());
      MandatoryOff("fast");
---- otb.orig/Applications/ChangeDetection/otbMultivariateAlterationDetector.cxx
-+++ otb/Applications/ChangeDetection/otbMultivariateAlterationDetector.cxx
-@@ -75,7 +75,7 @@
+--- a/Applications/ChangeDetection/otbMultivariateAlterationDetector.cxx
++++ b/Applications/ChangeDetection/otbMultivariateAlterationDetector.cxx
+@@ -75,7 +75,7 @@ private:
                    " \n"
                    " The GetV1() and GetV2() methods allow to retrieve the linear "
                    " combinations used to generate the Mad change maps as a vnl_matrix of "
@@ -369,9 +369,9 @@ Description: Fix some spelling errors to silence lintian enabling
                    " associated to each Mad change maps as a vnl_vector. \n"
                    " \n"
                    " This filter has been implemented from the Matlab code kindly made "
---- otb.orig/Applications/DisparityMap/otbStereoRectificationGridGenerator.cxx
-+++ otb/Applications/DisparityMap/otbStereoRectificationGridGenerator.cxx
-@@ -112,7 +112,7 @@
+--- a/Applications/DisparityMap/otbStereoRectificationGridGenerator.cxx
++++ b/Applications/DisparityMap/otbStereoRectificationGridGenerator.cxx
+@@ -112,7 +112,7 @@ private:
      SetDocSeeAlso("otbGridBasedImageResampling");
  
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -380,7 +380,7 @@ Description: Fix some spelling errors to silence lintian enabling
      AddParameter(ParameterType_InputImage,"io.inleft","Left input image");
      SetParameterDescription("io.inleft","The left input image to resample");
  
-@@ -156,7 +156,7 @@
+@@ -156,7 +156,7 @@ private:
      DisableParameter("epi.elevation.avgdem.maxdisp");
  
      AddParameter(ParameterType_Float,"epi.scale","Scale of epipolar images");
@@ -389,7 +389,7 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDefaultParameterFloat("epi.scale",1.);
  
      AddParameter(ParameterType_Int,"epi.step","Step of the deformation grid (in nb. of pixels)");
-@@ -176,7 +176,7 @@
+@@ -176,7 +176,7 @@ private:
      SetParameterRole("epi.baseline", Role_Output);
  
      AddParameter(ParameterType_Group,"inverse","Write inverse fields");
@@ -398,7 +398,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_OutputImage, "inverse.outleft", "Left inverse deformation grid");
      SetParameterDescription("inverse.outleft","The output deformation grid to be used to resample the epipolar left image");
-@@ -187,7 +187,7 @@
+@@ -187,7 +187,7 @@ private:
      MandatoryOff("inverse.outright");
  
      AddParameter(ParameterType_Int, "inverse.ssrate", "Sub-sampling rate for inversion");
@@ -407,9 +407,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDefaultParameterInt("inverse.ssrate",16);
      SetMinimumParameterIntValue("inverse.ssrate",1);
  
---- otb.orig/Applications/FeatureExtraction/otbHaralickTextureExtraction.cxx
-+++ otb/Applications/FeatureExtraction/otbHaralickTextureExtraction.cxx
-@@ -92,7 +92,7 @@
+--- a/Applications/FeatureExtraction/otbHaralickTextureExtraction.cxx
++++ b/Applications/FeatureExtraction/otbHaralickTextureExtraction.cxx
+@@ -90,7 +90,7 @@ SetMinimumParameterIntValue("channel", 1
  AddRAMParameter();
  
  AddParameter(ParameterType_Group, "parameters", "Texture feature parameters");
@@ -418,9 +418,9 @@ Description: Fix some spelling errors to silence lintian enabling
  
  AddParameter(ParameterType_Int,"parameters.xrad","X Radius");
  SetParameterDescription("parameters.xrad", "X Radius");
---- otb.orig/Applications/FeatureExtraction/otbHomologousPointsExtraction.cxx
-+++ otb/Applications/FeatureExtraction/otbHomologousPointsExtraction.cxx
-@@ -85,18 +85,18 @@
+--- a/Applications/FeatureExtraction/otbHomologousPointsExtraction.cxx
++++ b/Applications/FeatureExtraction/otbHomologousPointsExtraction.cxx
+@@ -85,18 +85,18 @@ private:
      SetName("HomologousPointsExtraction");
      SetDocName("Homologous points extraction");
      SetDescription("Allows to compute homologous points between images using keypoints");
@@ -442,16 +442,7 @@ Description: Fix some spelling errors to silence lintian enabling
        " It can be useful to assess the precision of a registration for instance."
        " The vector file is always reprojected to EPSG:4326 to allow display in a GIS."
        " This is done via reprojection or by applying the image sensor models.");
-@@ -146,7 +146,7 @@
-     SetParameterDescription("mode.full","Extract and match all keypoints, loading both images entirely into memory");
- 
-     AddChoice("mode.geobins","Search keypoints in small spatial bins regularly spread accross first image");
--    SetParameterDescription("mode.geobins","This method allows to retrieve a set of tie points regulary spread accross image 1. Corresponding bins in image 2 are retrieved using sensor and geographical information if available.");
-+    SetParameterDescription("mode.geobins","This method allows one to retrieve a set of tie points regulary spread accross image 1. Corresponding bins in image 2 are retrieved using sensor and geographical information if available.");
-     AddParameter(ParameterType_Int,"mode.geobins.binsize","Size of bin");
-     SetParameterDescription("mode.geobins.binsize","Radius of the spatial bin in pixels");
-     SetDefaultParameterInt("mode.geobins.binsize",256);
-@@ -162,7 +162,7 @@
+@@ -178,7 +178,7 @@ private:
      SetDefaultParameterFloat("precision",0.);
  
      AddParameter(ParameterType_Empty,"mfilter","Filter points according to geographical or sensor based colocalisation");
@@ -460,9 +451,9 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_Empty,"2wgs84","If enabled, points from second image will be exported in WGS84");
  
---- otb.orig/Applications/Projections/otbGridBasedImageResampling.cxx
-+++ otb/Applications/Projections/otbGridBasedImageResampling.cxx
-@@ -107,7 +107,7 @@
+--- a/Applications/Projections/otbGridBasedImageResampling.cxx
++++ b/Applications/Projections/otbGridBasedImageResampling.cxx
+@@ -107,7 +107,7 @@ private:
      SetDescription("Resamples an image according to a resampling grid");
  
      SetDocName("Grid Based Image Resampling");
@@ -471,7 +462,7 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
  
-@@ -116,7 +116,7 @@
+@@ -116,7 +116,7 @@ private:
      SetDocSeeAlso("otbStereorecificationGridGeneration");
  
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -480,7 +471,7 @@ Description: Fix some spelling errors to silence lintian enabling
      AddParameter(ParameterType_InputImage,"io.in","Input image");
      SetParameterDescription("io.in","The input image to resample");
      AddParameter(ParameterType_OutputImage, "io.out", "Output Image");
-@@ -161,14 +161,14 @@
+@@ -161,14 +161,14 @@ private:
  
      // Interpolators
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
@@ -497,9 +488,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDefaultParameterInt("interpolator.bco.radius", 2);
      SetParameterString("interpolator","bco");
  
---- otb.orig/Applications/Projections/otbOrthoRectification.cxx
-+++ otb/Applications/Projections/otbOrthoRectification.cxx
-@@ -91,7 +91,7 @@
+--- a/Applications/Projections/otbOrthoRectification.cxx
++++ b/Applications/Projections/otbOrthoRectification.cxx
+@@ -91,7 +91,7 @@ private:
    {
      SetName("OrthoRectification");
      std::ostringstream oss;
@@ -508,7 +499,7 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDescription(oss.str());
      // Documentation
      SetDocName("Ortho-rectification");
-@@ -109,7 +109,7 @@
+@@ -109,7 +109,7 @@ private:
  
      // Set the parameters
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -517,7 +508,7 @@ Description: Fix some spelling errors to silence lintian enabling
      AddParameter(ParameterType_InputImage, "io.in", "Input Image");
      SetParameterDescription("io.in","The input image to ortho-rectify");
      AddParameter(ParameterType_OutputImage, "io.out", "Output Image");
-@@ -120,7 +120,7 @@
+@@ -120,7 +120,7 @@ private:
  
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "outputs", "Output Image Grid");
@@ -526,7 +517,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      // UserDefined values
      AddParameter(ParameterType_Choice, "outputs.mode", "Parameters estimation modes");
-@@ -196,26 +196,26 @@
+@@ -196,26 +196,26 @@ private:
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
      AddChoice("interpolator.bco",    "Bicubic interpolation");
      AddParameter(ParameterType_Radius, "interpolator.bco.radius", "Radius for bicubic interpolation");
@@ -558,9 +549,9 @@ Description: Fix some spelling errors to silence lintian enabling
  
      // Displacement Field Spacing
      AddParameter(ParameterType_Float, "opt.gridspacing", "Resampling grid spacing");
---- otb.orig/Applications/Projections/otbRefineSensorModel.cxx
-+++ otb/Applications/Projections/otbRefineSensorModel.cxx
-@@ -60,7 +60,7 @@
+--- a/Applications/Projections/otbRefineSensorModel.cxx
++++ b/Applications/Projections/otbRefineSensorModel.cxx
+@@ -60,7 +60,7 @@ private:
      SetDescription("Perform least-square fit of a sensor model to a set of tie points");
  
      SetDocName("Refine Sensor Model");
@@ -569,9 +560,9 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddDocTag(Tags::Geometry);
  
---- otb.orig/Applications/Projections/otbRigidTransformResample.cxx
-+++ otb/Applications/Projections/otbRigidTransformResample.cxx
-@@ -101,7 +101,7 @@
+--- a/Applications/Projections/otbRigidTransformResample.cxx
++++ b/Applications/Projections/otbRigidTransformResample.cxx
+@@ -101,7 +101,7 @@ private:
  
      //Transform
      AddParameter(ParameterType_Group,"transform","Transform parameters");
@@ -580,7 +571,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_Choice, "transform.type", "Type of transformation");
      SetParameterDescription("transform.type","Type of transformation. Available transformations are spatial scaling, translation and rotation with scaling factor");
-@@ -149,20 +149,20 @@
+@@ -149,20 +149,20 @@ private:
  
      // Interpolators
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
@@ -604,10 +595,10 @@ Description: Fix some spelling errors to silence lintian enabling
  
      // Doc example parameter settings
      SetDocExampleParameterValue("in", "qb_toulouse_sub.tif");
---- otb.orig/Applications/Projections/otbSuperimpose.cxx
-+++ otb/Applications/Projections/otbSuperimpose.cxx
-@@ -102,13 +102,13 @@
- 
+--- a/Applications/Projections/otbSuperimpose.cxx
++++ b/Applications/Projections/otbSuperimpose.cxx
+@@ -124,13 +124,13 @@ private:
+     
      // Interpolators
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
 -    SetParameterDescription("interpolator","This group of parameters allows to define how the input image will be interpolated during resampling.");
@@ -622,9 +613,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDefaultParameterInt("interpolator.bco.radius", 2);
  
      AddChoice("interpolator.nn",     "Nearest Neighbor interpolation");
---- otb.orig/Applications/Projections/otbVectorDataReprojection.cxx
-+++ otb/Applications/Projections/otbVectorDataReprojection.cxx
-@@ -62,13 +62,13 @@
+--- a/Applications/Projections/otbVectorDataReprojection.cxx
++++ b/Applications/Projections/otbVectorDataReprojection.cxx
+@@ -62,13 +62,13 @@ private:
    {
      SetName("VectorDataReprojection");
      std::ostringstream oss;
@@ -640,38 +631,9 @@ Description: Fix some spelling errors to silence lintian enabling
          ", or a user given map projection." << std::endl;
      oss <<" If given, image keywordlist can be added to reprojected vectordata.";
      SetDocLongDescription(oss.str());
---- otb.orig/Applications/Radiometry/otbOpticalCalibration.cxx
-+++ otb/Applications/Radiometry/otbOpticalCalibration.cxx
-@@ -101,7 +101,7 @@
-     SetDescription("Perform optical calibration TOA/TOC (Top Of Atmosphere/Top Of Canopy). Supported sensors: QuickBird, Ikonos, WorldView2, Formosat, Spot5, Pleiades");
-     // Documentation
-     SetDocName("Optical calibration");
--    SetDocLongDescription("The application allows to convert pixel values from DN (for Digital Numbers) to physically interpretable and comparable values. Calibrated values are called surface reflectivity and its values lie in the range [0, 1].\nThe first level is called Top Of Atmosphere (TOA) reflectivity. It takes into account the sensor gain, sensor spectral response and the solar illumination.\nThe second level is called Top Of Canopy (TOC) reflectivity. In addition to sensor gain and solar illumination, it takes into account the optical thickness of the atmosphere, the atmospheric pressure, the water vapor amount, the ozone amount, as well as the composition and amount of aerosol gasses.\nIt is also possible to indicate an AERONET file which contains atmospheric parameters (version 1 and version 2 of Aeronet file are supported.");
-+    SetDocLongDescription("The application allows one to convert pixel values from DN (for Digital Numbers) to physically interpretable and comparable values. Calibrated values are called surface reflectivity and its values lie in the range [0, 1].\nThe first level is called Top Of Atmosphere (TOA) reflectivity. It takes into account the sensor gain, sensor spectral response and the solar illumination.\nThe second level is called Top Of Canopy (TOC) reflectivity. In addition to sensor gain and solar illumination, it takes into account the optical thickness of the atmosphere, the atmospheric pressure, the water vapor amount, the ozone amount, as well as the composition and amount of aerosol gasses.\nIt is also possible to indicate an AERONET file which contains atmospheric parameters (version 1 and version 2 of Aeronet file are supported.");
-     SetDocLimitations("None");
-     SetDocAuthors("OTB-Team");
-     SetDocSeeAlso("The OTB CookBook");
-@@ -123,7 +123,7 @@
- 
-     AddParameter(ParameterType_Empty, "milli", "Convert to milli reflectance");
-     SetParameterDescription("milli", "Flag to use milli-reflectance instead of reflectance.\n"
--                            "This allows to save the image with integer pixel type (in the range [0, 1000]  instead of floating point in the range [0, 1]. In order to do that, use this option and set the output pixel type (-out filename uint16 for example)");
-+                            "This allows one to save the image with integer pixel type (in the range [0, 1000]  instead of floating point in the range [0, 1]. In order to do that, use this option and set the output pixel type (-out filename uint16 for example)");
-     DisableParameter("milli");
-     MandatoryOff("milli");
- 
-@@ -140,7 +140,7 @@
-     MandatoryOff("rsr");
- 
-     AddParameter(ParameterType_Group,"atmo","Atmospheric parameters");
--    SetParameterDescription("atmo","This group allows to set the atmospheric parameters.");
-+    SetParameterDescription("atmo","This group allows one to set the atmospheric parameters.");
-     AddParameter(ParameterType_Choice,   "atmo.aerosol", "Aerosol Model");
-     AddChoice("atmo.aerosol.noaersol",    "No Aerosol Model");
-     AddChoice("atmo.aerosol.continental", "Continental");
---- otb.orig/Applications/Segmentation/otbConnectedComponentSegmentation.cxx
-+++ otb/Applications/Segmentation/otbConnectedComponentSegmentation.cxx
-@@ -72,7 +72,7 @@
+--- a/Applications/Segmentation/otbConnectedComponentSegmentation.cxx
++++ b/Applications/Segmentation/otbConnectedComponentSegmentation.cxx
+@@ -72,7 +72,7 @@ private:
      SetName("ConnectedComponentSegmentation");
      SetDescription("Connected component segmentation and object based image filtering of the input image according to user-defined criterions.");
      SetDocName("Connected Component Segmentation");
@@ -680,9 +642,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDocLimitations("Due to the tiling scheme in case of large images, some segments can be arbitrarily split across multiple tiles.");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso(" ");
---- otb.orig/Applications/Segmentation/otbLSMSSegmentation.cxx
-+++ otb/Applications/Segmentation/otbLSMSSegmentation.cxx
-@@ -210,7 +210,7 @@
+--- a/Applications/Segmentation/otbLSMSSegmentation.cxx
++++ b/Applications/Segmentation/otbLSMSSegmentation.cxx
+@@ -210,7 +210,7 @@ private:
      SetDescription("Second step of the exact Large-Scale Mean-Shift segmentation workflow.");
  
      SetDocName("Exact Large-Scale Mean-Shift segmentation, step 2");
@@ -691,9 +653,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDocLimitations("This application is part of the Large-Scale Mean-Shift segmentation workflow (LSMS) and may not be suited for any other purpose.");
      SetDocAuthors("David Youssefi");
      SetDocSeeAlso("MeanShiftSmoothing, LSMSSmallRegionsMerging, LSMSVectorization");
---- otb.orig/Applications/Segmentation/otbSegmentation.cxx
-+++ otb/Applications/Segmentation/otbSegmentation.cxx
-@@ -150,7 +150,7 @@
+--- a/Applications/Segmentation/otbSegmentation.cxx
++++ b/Applications/Segmentation/otbSegmentation.cxx
+@@ -150,7 +150,7 @@ private:
  
      // Documentation
      SetDocName("Segmentation");
@@ -702,7 +664,7 @@ Description: Fix some spelling errors to silence lintian enabling
                            "Available segmentation algorithms are two different versions of Mean-Shift segmentation algorithm (one being multi-threaded),"
                            " simple pixel based connected components according to a user-defined criterion, and watershed from the gradient of the intensity"
                            " (norm of spectral bands vector). The application has two different modes that affects the nature of its output.\n\nIn raster mode,"
-@@ -159,8 +159,8 @@
+@@ -159,8 +159,8 @@ private:
                            " can not handle large images. \n\nTo segment large data, one can use the vector mode. In this case, the output of the application is a"
                            " vector file or database. The input image is split into tiles (whose size can be set using the tilesize parameter), and each tile is loaded, segmented"
                            " with the chosen algorithm, vectorized, and written into the output file or database. This piece-wise behavior ensure that memory will never get overloaded,"
@@ -713,7 +675,7 @@ Description: Fix some spelling errors to silence lintian enabling
                            " to segmented region that may have been split by the tiling scheme. ");
  
      SetDocLimitations("In raster mode, the application can not handle large input images. Stitching step of vector mode might become slow with very large input images."
-@@ -254,7 +254,7 @@
+@@ -254,7 +254,7 @@ private:
      SetParameterDescription("mode", "Choice of processing mode, either raster or large-scale.");
  
      AddChoice("mode.vector", "Tile-based large-scale segmentation with vector output");
@@ -722,7 +684,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddChoice("mode.raster", "Standard segmentation with labeled raster output");
      SetParameterDescription("mode.raster","In this mode, the application will output a standard labeled raster. This mode can not handle large data.");
-@@ -288,7 +288,7 @@
+@@ -288,7 +288,7 @@ private:
      SetParameterDescription("mode.vector.out", "The output vector file or database (name can be anything understood by OGR)");
  
      AddParameter(ParameterType_Choice,"mode.vector.outmode","Writing mode for the output vector file");
@@ -731,7 +693,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddChoice("mode.vector.outmode.ulco","Update output vector file, only allow to create new layers");
      SetParameterDescription("mode.vector.outmode.ulco","The output vector file is opened in update mode if existing. If the output layer already exists, the application stops, leaving it untouched.");
-@@ -328,7 +328,7 @@
+@@ -328,7 +328,7 @@ private:
  
      AddParameter(ParameterType_Float, "mode.vector.simplify", "Simplify polygons");
      SetParameterDescription("mode.vector.simplify",
@@ -740,9 +702,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDefaultParameterFloat("mode.vector.simplify",0.1);
      MandatoryOff("mode.vector.simplify");
      DisableParameter("mode.vector.simplify");
---- otb.orig/Applications/Utils/otbDownloadSRTMTiles.cxx
-+++ otb/Applications/Utils/otbDownloadSRTMTiles.cxx
-@@ -95,7 +95,7 @@
+--- a/Applications/Utils/otbDownloadSRTMTiles.cxx
++++ b/Applications/Utils/otbDownloadSRTMTiles.cxx
+@@ -95,7 +95,7 @@ private:
  
      // Documentation
      SetDocName("Download or list SRTM tiles related to a set of images");
@@ -751,9 +713,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso(" ");
---- otb.orig/Applications/Utils/otbReadImageInfo.cxx
-+++ otb/Applications/Utils/otbReadImageInfo.cxx
-@@ -70,7 +70,7 @@
+--- a/Applications/Utils/otbReadImageInfo.cxx
++++ b/Applications/Utils/otbReadImageInfo.cxx
+@@ -70,7 +70,7 @@ private:
      MandatoryOff("keywordlist");
  
      AddParameter(ParameterType_OutputFilename, "outkwl", "Write the OSSIM keywordlist to a geom file");
@@ -762,7 +724,7 @@ Description: Fix some spelling errors to silence lintian enabling
      MandatoryOff("outkwl");
  
      //Create output parameters to store image informations
-@@ -179,7 +179,7 @@
+@@ -179,7 +179,7 @@ private:
      EnableParameter("country");
  
      AddParameter(ParameterType_Group, "rgb", "Default RGB Display");
@@ -771,7 +733,7 @@ Description: Fix some spelling errors to silence lintian enabling
  
      AddParameter(ParameterType_Int, "rgb.r", "Red Band");
      SetParameterDescription("rgb.r","Red band Number");
-@@ -207,7 +207,7 @@
+@@ -207,7 +207,7 @@ private:
      EnableParameter("keyword");
  
      AddParameter(ParameterType_Group, "gcp", "Ground Control Points informations");
@@ -780,9 +742,9 @@ Description: Fix some spelling errors to silence lintian enabling
      SetParameterRole("gcp", Role_Output);
  
      AddParameter(ParameterType_Int, "gcp.count", "GCPs Number");
---- otb.orig/RELEASE_NOTES.txt
-+++ otb/RELEASE_NOTES.txt
-@@ -1673,7 +1673,7 @@
+--- a/RELEASE_NOTES.txt
++++ b/RELEASE_NOTES.txt
+@@ -1775,7 +1775,7 @@ OTB-v.2.6.0 - Changes since version 2.4.
  OTB-v.2.4.0 - Changes since version 2.2.0 (2008/07/24)
  --------------------------------------------------------
  
@@ -791,7 +753,7 @@ Description: Fix some spelling errors to silence lintian enabling
  	  not only examples testing
  	- Added OTB_USE_JPEG2000 : experimental support for jpeg2000
  	  files.
-@@ -2010,7 +2010,7 @@
+@@ -2112,7 +2112,7 @@ OTB-v.1.6.0 - Changes since version 1.4.
  
  	- Added a new tiling streaming mode.
  
@@ -800,7 +762,7 @@ Description: Fix some spelling errors to silence lintian enabling
  	  seamlessly
  	  the image geometry information.
  
-@@ -2094,7 +2094,7 @@
+@@ -2196,7 +2196,7 @@ OTB-v.1.6.0 - Changes since version 1.4.
  
  *Applications:
  
@@ -809,7 +771,7 @@ Description: Fix some spelling errors to silence lintian enabling
  	  open multiple images,
  	  configure viewers and link displays.
  
-@@ -2102,7 +2102,7 @@
+@@ -2204,7 +2204,7 @@ OTB-v.1.6.0 - Changes since version 1.4.
  	  extraction algorithm
  	  implemented in the FeatureExtraction module.
  
@@ -818,9 +780,9 @@ Description: Fix some spelling errors to silence lintian enabling
  	  ortho rectify images in
  	  command line using the brand new Projections module of the Orfeo
  	  ToolBox. Old rigid
---- otb.orig/Applications/Projections/otbGenerateRPCSensorModel.cxx
-+++ otb/Applications/Projections/otbGenerateRPCSensorModel.cxx
-@@ -62,7 +62,7 @@
+--- a/Applications/Projections/otbGenerateRPCSensorModel.cxx
++++ b/Applications/Projections/otbGenerateRPCSensorModel.cxx
+@@ -62,7 +62,7 @@ private:
      SetDescription("Generate a RPC sensor model from a list of Ground Control Points.");
  
      SetDocName("Generate a RPC sensor model");
