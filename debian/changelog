@@ -10,6 +10,8 @@ otb (4.2.1-1) UNRELEASED; urgency=medium
   * DEP5 compatible copyright file
   * debian/control: There is no point to have the package in contrib
   * delete unused post{inst,rm} files
+  * Build against Debian packaged libtinyxml (thanks for the hint to
+    Rashad M <mohammedrashadkm@gmail.com>)
 
   [ Paolo Cavallini ]
   * New upstream release.

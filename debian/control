@@ -26,7 +26,8 @@ Build-Depends: debhelper (>= 9),
                libmuparser-dev,
                libopencv-dev,
                libossim-dev,
-               libfftw3-dev
+               libfftw3-dev,
+               libtinyxml-dev
 Standards-Version: 3.9.6
 Vcs-Browser: https://anonscm.debian.org/cgit/pkg-grass/otb.git
 Vcs-Git: git://anonscm.debian.org/pkg-grass/otb.git
