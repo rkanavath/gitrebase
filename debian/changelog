@@ -11,7 +11,7 @@ otb (4.2.1-1) UNRELEASED; urgency=medium
   * debian/control: There is no point to have the package in contrib
   * delete unused post{inst,rm} files
 
-  [ root ]
+  [ Paolo Cavallini ]
   * New upstream release.
 
  -- Paolo Cavallini <cavallini@faunalia.it>  Mon, 06 Oct 2014 12:24:04 +0000
