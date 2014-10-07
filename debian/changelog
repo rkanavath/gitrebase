@@ -12,6 +12,8 @@ otb (4.2.1-1) UNRELEASED; urgency=medium
   * delete unused post{inst,rm} files
   * Build against Debian packaged libtinyxml (thanks for the hint to
     Rashad M <mohammedrashadkm@gmail.com>)
+  * Override lintian error about embedded-library openjpeg since currently
+    the available openjpeg versions in Debian are not compatible
 
   [ Paolo Cavallini ]
   * New upstream release.
