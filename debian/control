@@ -35,8 +35,7 @@ Homepage: http://www.orfeo-toolbox.org/
 Package: libotb
 Architecture: any
 Section: libs
-Depends: libinsighttoolkit4.5,
-         libgdal1h,
+Depends: libgdal1h,
          ${shlibs:Depends},
          ${misc:Depends}
 Suggests: libotb-dev
