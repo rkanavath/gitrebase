@@ -1,7 +1,7 @@
 # OTB libraries (symlinks)
-usr/lib/otb/libotb*.so
-usr/lib/otb/libOTB[A-V]*.so
-usr/lib/otb/libsiftfast.so
+usr/lib/otb/libotb*.so		usr/lib
+usr/lib/otb/libOTB[A-V]*.so	usr/lib
+usr/lib/otb/libsiftfast.so	usr/lib
 
 # OTB headers
 usr/include/otb
