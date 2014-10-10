@@ -1,7 +1,6 @@
+#! /usr/bin/dh-exec
 # OTB libraries (symlinks)
-usr/lib/otb/libotb*.so		usr/lib
-usr/lib/otb/libOTB[A-V]*.so	usr/lib
-usr/lib/otb/libsiftfast.so	usr/lib
+usr/lib/otb/lib*.so		usr/lib/${DEB_HOST_MULTIARCH}
 
 # OTB headers
 usr/include/otb
