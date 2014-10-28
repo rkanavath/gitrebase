@@ -4,6 +4,8 @@ Upstream-Contact: OTB Team <contact@orfeo-toolbox.org>
                   OTB developers <otb-developers@googlegroups.com> (closed group needing subscription)
 Source: http://sourceforge.net/projects/orfeo-toolbox/files/OTB/
         hg clone -r <version> http://hg.orfeo-toolbox.org/OTB
+Files-Excluded: Utilities/ITK/Modules/ThirdParty/Expat
+                Utilities/ITK/Modules/ThirdParty/ZLIB
 
 Files: * CMake/* Code/* Testing/* Application/* 
 Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
