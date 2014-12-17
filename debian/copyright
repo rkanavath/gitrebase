@@ -6,8 +6,23 @@ Source: http://sourceforge.net/projects/orfeo-toolbox/files/OTB/
         hg clone -r <version> http://hg.orfeo-toolbox.org/OTB
 Files-Excluded: Utilities/ITK/Modules/ThirdParty/Expat
                 Utilities/ITK/Modules/ThirdParty/ZLIB
+                Utilities/tinyXMLlib
+                Utilities/otbossim/include/ossim/
+                Utilities/otbexpat/lib
+                Utilities/ITK/Modules/ThirdParty/pygccxml
+                Utilities/otbmkl
+                Utilities/ITK/Modules/ThirdParty/DoubleConversion
 
-Files: * CMake/* Code/* Testing/* Application/* 
+Files: CMake/*
+       Code/*
+       Testing/*
+       Applications/* 
+       Utilities/otbexpat/*
+       Utilities/otbossim/*.txt
+       Utilities/otbopenthreads/CMakeLists.txt
+       Copyright/*
+       Examples/*
+
 Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
     Jordi Inglada (CNES) <jordi.inglada@orfeo-toolbox.org>
     Thomas Feuvrier (CS) <thomas.feuvrier@c-s.fr>
@@ -63,8 +78,126 @@ Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
     Stephane Albert (CS) <stephane.albert@c-s.fr>
 License: CeCILL
 
-Files: Utilities/BGL
+Files: Utilities/BGL/*
 License: BSL-1.0
+
+Files: Utilities/tinyXMLlib/*
+Copyright: 2000-2006 Lee Thomason
+License: zlib_tinyxml
+
+Files: Utilities/Dart/*
+License:todo
+
+Files: Utilities/otbsvm/*
+Copyright: Chih-Chung Chang and Chih-Jen Lin <cjlin@csie.ntu.edu.tw>
+Comment: this version has changes compared to the version packaged in debian
+License: BSD-3
+
+Files: Utilities/otbsiftfast/*
+Copyright: zerofrog
+License: LGPL-3
+Comment: LICENSE and AUTHOR file in directory
+
+Files: Utilities/otbossimplugins/*
+Comment: Refers to license file which does not exist
+License: LGPL-3
+
+Files: Utilities/otbossim/share/*
+Comment: we should check whether we have a right to distribute this files
+License:invalid
+
+Files: Utilities/otbossim/include/ossim/* Utilities/otbossim/src/ossim/*
+Comment: Excluded
+License:excluded
+
+Files: Utilities/otbopenthreads/OpenThreads/*
+Copyright:
+   Sean spicer
+   Jack Lees
+   Don Burns
+   Robert Osfiled
+   Boris Bralo
+Comment:AUTHORS.txt and COPYING.txt present in directory. 
+ Can this be replaced by libopenthreads in debian?
+License: wxwindows_librarylicense
+
+Files: Utilities/otbopenjpeg/*
+Comment: can this be replaced by libopenjpeg in debian?
+Copyright: © 2001-2003, David Janssens
+ © 2002-2003, Yannick Verschueren
+ © 2005, Herve Drolon, FreeImage Team
+ © 2003-2009, Francois-Olivier Devaux
+ © 2003-2012, Antonin Descampe
+ © 2002-2012, Professor Benoit Macq
+ © 2002-2012, Communications and Remote Sensing Laboratory, Universite catholique de Louvain (UCL), Belgium
+License: BSD-2
+
+Files: Utilities/otbmuparser/*
+Copyright: 2010 Ingo Berg
+License: muparser
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this
+ software and associated documentation files (the "Software"), to deal in the Software
+ without restriction, including without limitation the rights to use, copy, modify,
+ merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in all copies or
+ substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
+ NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+ DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Files:Utilities/otbmsinttypes/*
+Copyright: 2006-2008 Alexander Chemeris
+License: BSD-3
+
+Files: Utilities/otbkml/*
+Comment: can we use debian version? Pulls in more dependencies...
+License: excluded
+
+Files: Utilities/ITK/Modules/ThirdParty/VNL/*
+Copyright: 2000 TargetJr Consortium
+License: VXL
+
+Files: Utilities/ITK/Modules/ThirdParty/VNL/src/vxl/v3p/netlib/opt/lbfgsb.*
+Comment: non-free license
+License: lbfgsb 
+
+Files: Utilities/ITK/Modules/ThirdParty/MetaIO/src/MetaIO/*
+Copyright: 2000-2010 Insight Software Consortium
+License: BSD-3
+
+Files: Utilities/ITK/Modules/ThirdParty/KWSys/*
+Copyright: 2000-2009 Kitware, Inc., Insight Software Consortium
+License: BSD-3
+
+Files: Utilities/otbedison/*
+Comment:  http://www.caip.rutgers.edu/riul/ - can this be packaged seperately?
+License:edison
+
+Files: Utilities/otbconfigfile/*
+Copyright: 2004 Richard J. Wagner
+License: xmit
+
+Files: Utilities/otb6S/*
+Copyright:
+          Vermote E and Kotchenova.S.
+          Roger J.C..;               
+          Tanre D.; Deuze J.L; Herman M.;
+          Morcrette J.J..    
+License: 6S
+
+Files: Utilities/ITK/Wrapping/* Utilities/ITK/Utilities/* Utilities/ITK/Modules/Video/* Utilities/ITK/Modules/ThirdParty/VNLInstantiation/* Utilities/ITK/CMake/* Utilities/ITK/Modules/Core/* Utilities/ITK/Modules/Filtering/* Utilities/ITK/Modules/Segmentation/* Utilities/ITK/Modules/Remote/* Utilities/ITK/Modules/Registration/* Utilities/ITK/Modules/Numerics/*  
+
+Copyright: 1999-2011 Insight Software Consortium
+License: Apache2
+ On debian systems this license can be found at: /usr/share/common-licenses/Apache-2.0
+
+Files: Utilities/ITK/Modules/ThirdParty/pygccxml/* Utilities/ITK/Modules/ThirdParty/ZLIB/* Utilities/ITK/Modules/ThirdParty/VNL/src/vxl/v3p/netlib/* Utilities/ITK/Modules/ThirdParty/Netlib/* Utilities/ITK/Modules/ThirdParty/Expat/* Utilities/ITK/Modules/ThirdParty/DoubleConversion/*
+License: exclude
 
 Files: debian/*
 Copyright: 2010-2014 OTB Team <contact@orfeo-toolbox.org>
@@ -591,3 +724,181 @@ License: BSL-1.0
  The copyright notices in the Software and this entire statement, including the above license grant, this restriction and the following disclaimer, must be included in all copies of the Software, in whole or in part, and all derivative works of the Software, unless such copies or derivative works are solely in the form of machine-executable object code generated by a source language processor.
  .
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: zlib_tinyxml
+ This software is provided 'as-is', without any express or implied
+ warranty. In no event will the authors be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ . 
+ 1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ . 
+ 2. Altered source versions must be plainly marked as such, and must not
+    be misrepresented as being the original software.
+ . 
+ 3. This notice may not be removed or altered from any source
+    distribution.
+
+License: BSD-3
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions
+ are met:
+ . 
+ 1. Redistributions of source code must retain the above copyright
+ notice, this list of conditions and the following disclaimer.
+ . 
+ 2. Redistributions in binary form must reproduce the above copyright
+ notice, this list of conditions and the following disclaimer in the
+ documentation and/or other materials provided with the distribution.
+ . 
+ 3. Neither name of copyright holders nor the names of its contributors
+ may be used to endorse or promote products derived from this software
+ without specific prior written permission.
+ . 
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR
+ CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: BSD-2
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+ 1. Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+ . 
+ 2. Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution.
+ . 
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS `AS
+ IS' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+ TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+ TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: LGPL-3
+ See /usr/share/common-licenses/LGPL-3
+
+
+License: wxwindows_librarylicense
+                        WXWINDOWS LIBRARY LICENCE
+     TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+  .
+  This library is free software; you can redistribute it and/or modify it
+  under the terms of the GNU Library General Public Licence as published by
+  the Free Software Foundation; either version 2 of the Licence, or (at
+  your option) any later version.
+  .
+  This library is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Library
+  General Public Licence for more details.
+  .
+  You should have received a copy of the GNU Library General Public Licence
+  along with this software, usually in a file named COPYING.LIB.  If not,
+  write to the Free Software Foundation, Inc., 59 Temple Place, Suite 330,
+  Boston, MA 02111-1307 USA.
+  .
+  EXCEPTION NOTICE
+  .
+  1. As a special exception, the copyright holders of this library give
+  permission for additional uses of the text contained in this release of
+  the library as licenced under the wxWindows Library Licence, applying
+  either version 3 of the Licence, or (at your option) any later version of
+  the Licence as published by the copyright holders of version 3 of the
+  Licence document.
+  .
+  2. The exception is that you may use, copy, link, modify and distribute
+  under the user's own terms, binary object code versions of works based
+  on the Library.
+  .
+  3. If you copy code from files distributed under the terms of the GNU
+  General Public Licence or the GNU Library General Public Licence into a
+  copy of this library, as this licence permits, the exception does not
+  apply to the code that you add in this way.  To avoid misleading anyone as
+  to the status of such modified files, you must delete this exception
+  notice from such code and/or adjust the licensing conditions notice
+  accordingly.
+  .
+  4. If you write modifications of your own for this library, it is your
+  choice whether to permit this exception to apply to your modifications.
+  If you do not wish that, you must delete the exception notice from such
+  code and/or adjust the licensing conditions notice accordingly.
+  
+License: VXL
+ Permission to use, copy, modify, distribute, and sell this software
+ and its documentation for any purpose is hereby granted without fee,
+ provided that (i) the above copyright notice and this permission
+ notice appear in all copies of the software and related documentation,
+ (ii) the name TargetJr Consortium (represented by GE CRD), may not be
+ used in any advertising or publicity relating to the software without
+ the specific, prior written permission of GE CRD, and (iii) any
+ modifications are clearly marked and summarized in a change history
+ log.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY
+ WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.
+ IN NO EVENT SHALL THE TARGETJR CONSORTIUM BE LIABLE FOR ANY SPECIAL,
+ INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND OR ANY
+ DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
+ WHETHER OR NOT ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, OR ON
+ ANY THEORY OF LIABILITY ARISING OUT OF OR IN CONNECTION WITH THE
+ USE OR PERFORMANCE OF THIS SOFTWARE.
+
+License:lbfgsb
+    http://users.eecs.northwestern.edu/~nocedal/lbfgsb.html
+    .
+    This software is released under the BSD License
+    .
+    Condition for Use: This software is freely available, but we expect that
+    all publications describing  work using this software , or all
+    commercial products using it, quote at least one of the references given
+    below.
+    .
+    References
+    .
+    1. R. H. Byrd, P. Lu and J. Nocedal. A Limited Memory Algorithm for Bound Constrained Optimization, (1995), SIAM Journal on Scientific and Statistical Computing , 16, 5, pp. 1190-1208.
+    2. C. Zhu, R. H. Byrd and J. Nocedal. L-BFGS-B: Algorithm 778: L-BFGS-B, FORTRAN routines for large scale bound constrained optimization (1997), ACM Transactions on Mathematical Software, Vol 23, Num. 4, pp. 550 - 560.
+    3. J.L. Morales and J. Nocedal. L-BFGS-B: Remark on Algorithm 778: L-BFGS-B, FORTRAN routines for large scale bound constrained optimization (2011), to appear in ACM Transactions on Mathematical Software.
+
+License: xmit
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ .
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+
