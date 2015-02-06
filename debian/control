@@ -133,7 +133,7 @@ Depends: libotb (= ${binary:Version}),
          ${misc:Depends},
          otb-bin-common,
          python,
-         python-central
+         dh-python
 Description: ORFEO Toolbox Python API for applications
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
