@@ -25,7 +25,7 @@
 //  Software Guide : BeginLatex
 //
 //  This example shows the basic approach to perform object based analysis on a image.
-//  The input image is firstly segmented using the \doxygen{otb}{MeanShiftImageFilter}
+//  The input image is firstly segmented using the \doxygen{otb}{MeanShiftSegmentationFilter}
 //  Then each segmented region is converted to a Map of labeled objects.
 //  Afterwards the \doxygen{otb}{otbMultiChannelRAndNIRIndexImageFilter} computes
 //  radiometric attributes for each object. In this example the NDVI is computed.
@@ -38,23 +38,17 @@
 //
 //  Software Guide : EndLatex
 
-#include "otbImage.h"
-#include "otbVectorImage.h"
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
 
-#include "otbMeanShiftVectorImageFilter.h"
+#include "otbMeanShiftSegmentationFilter.h"
 #include "itkLabelImageToLabelMapFilter.h"
-#include "otbAttributesMapLabelObject.h"
-#include "itkLabelMap.h"
 #include "otbShapeAttributesLabelMapFilter.h"
-#include "otbStatisticsAttributesLabelMapFilter.h"
 #include "otbBandsStatisticsAttributesLabelMapFilter.h"
 #include "itkLabelMapToBinaryImageFilter.h"
 #include "otbMultiChannelExtractROI.h"
 #include "otbAttributesMapOpeningLabelMapFilter.h"
 #include "otbVectorRescaleIntensityImageFilter.h"
-#include "otbVegetationIndicesFunctor.h"
 #include "otbMultiChannelRAndNIRIndexImageFilter.h"
 #include "otbImageToVectorImageCastFilter.h"
 
@@ -85,7 +79,7 @@ int main(int argc, char * argv[])
   const unsigned int Dimension = 2;
 
   // Labeled image type
-  typedef unsigned short                              LabelType;
+  typedef unsigned int                                LabelType;
   typedef unsigned char                              MaskPixelType;
   typedef double                                      PixelType;
   typedef otb::Image<LabelType, Dimension>            LabeledImageType;
@@ -143,13 +137,14 @@ int main(int argc, char * argv[])
   //  Software Guide : EndLatex
 
   // Software Guide : BeginCodeSnippet
-  typedef otb::MeanShiftVectorImageFilter
-  <VectorImageType, VectorImageType, LabeledImageType> FilterType;
+  typedef otb::MeanShiftSegmentationFilter
+  <VectorImageType, LabeledImageType, VectorImageType> FilterType;
   FilterType::Pointer filter = FilterType::New();
-  filter->SetSpatialRadius(spatialRadius);
-  filter->SetRangeRadius(rangeRadius);
-  filter->SetMinimumRegionSize(minRegionSize);
-  filter->SetScale(scale);
+  filter->SetSpatialBandwidth(spatialRadius);
+  filter->SetRangeBandwidth(rangeRadius);
+  filter->SetMinRegionSize(minRegionSize);
+  filter->SetThreshold(0.1);
+  filter->SetMaxIterationNumber(100);
   // Software Guide : EndCodeSnippet
 
   // For non regression tests, set the number of threads to 1
@@ -158,7 +153,7 @@ int main(int argc, char * argv[])
 
   //  Software Guide : BeginLatex
   //
-  // The \doxygen{otb}{MeanShiftImageFilter} type is instantiated using the image
+  // The \doxygen{otb}{MeanShiftSegmentationFilter} type is instantiated using the image
   // types.
   //
   //  Software Guide : EndLatex
@@ -170,13 +165,13 @@ int main(int argc, char * argv[])
   //  Software Guide : BeginLatex
   //
   // The \doxygen{itk}{LabelImageToLabelMapFilter} type is instantiated using the output
-  // of the \doxygen{otb}{MeanShiftImageFilter}. This filter produces a labeled image
+  // of the \doxygen{otb}{MeanShiftSegmentationFilter}. This filter produces a labeled image
   // where each segmented region has a unique label.
   //
   //  Software Guide : EndLatex
   // Software Guide : BeginCodeSnippet
   LabelMapFilterType::Pointer labelMapFilter = LabelMapFilterType::New();
-  labelMapFilter->SetInput(filter->GetLabeledClusteredOutput());
+  labelMapFilter->SetInput(filter->GetLabelOutput());
   labelMapFilter->SetBackgroundValue(itk::NumericTraits<LabelType>::min());
 
   ShapeLabelMapFilterType::Pointer shapeLabelMapFilter =

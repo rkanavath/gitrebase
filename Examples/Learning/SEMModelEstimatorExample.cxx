@@ -40,9 +40,9 @@
 
 #include <iostream>
 
-#include "itkListSample.h"
 #include "itkVector.h"
 #include "itkVariableLengthVector.h"
+#include "itkUnaryFunctorImageFilter.h"
 #include "itkRescaleIntensityImageFilter.h"
 
 //  Software Guide : BeginCodeSnippet
@@ -64,7 +64,6 @@
 // Software Guide : EndLatex
 
 //  Software Guide : BeginCodeSnippet
-#include "otbGaussianModelComponent.h"
 #include "otbSEMClassifier.h"
 //  Software Guide : EndCodeSnippet
 

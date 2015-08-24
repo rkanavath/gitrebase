@@ -47,10 +47,9 @@
 // Software Guide : EndCodeSnippet
 
 
-#include "otbImage.h"
-#include "otbVectorImage.h"
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
+#include "itkUnaryFunctorImageFilter.h"
 #include "itkRescaleIntensityImageFilter.h"
 #include "itkPointSet.h"
 #include "otbMultiToMonoChannelExtractROI.h"

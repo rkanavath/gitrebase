@@ -54,6 +54,7 @@
 #include "itkComposeImageFilter.h"
 // Software Guide : EndCodeSnippet
 
+#include "itkUnaryFunctorImageFilter.h"
 #include "itkRescaleIntensityImageFilter.h"
 
 // Software Guide : BeginLatex
@@ -66,7 +67,6 @@
 #include "itkMRFImageFilter.h"
 #include "itkDistanceToCentroidMembershipFunction.h"
 #include "itkMinimumDecisionRule.h"
-#include "itkImageClassifierBase.h"
 // Software Guide : EndCodeSnippet
 
 int main(int argc, char * argv[])

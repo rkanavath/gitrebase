@@ -33,13 +33,14 @@
 //  edge detection since it is the optimal solution satisfying the constraints
 //  of good sensitivity, localization and noise robustness.
 //
-//  \index{itk::CannyEdgeDetectionImageFilter|textbf}
+//  \index{itk::CannyEdgeDetectionImageFilter}
 //
 //  Software Guide : EndLatex
 
 #include "otbImage.h"
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
+#include "itkUnaryFunctorImageFilter.h"
 #include "itkCastImageFilter.h"
 #include "itkRescaleIntensityImageFilter.h"
 
@@ -99,7 +100,7 @@ int main(int argc, char* argv[])
   //
   //  The \doxygen{itk}{CannyEdgeDetectionImageFilter} is instantiated using the float image type.
   //
-  //  \index{itk::CannyEdgeDetectionImageFilter|textbf}
+  //  \index{itk::CannyEdgeDetectionImageFilter}
   //
   //  Software Guide : EndLatex
 

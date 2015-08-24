@@ -29,7 +29,6 @@
 //  Software Guide : EndLatex
 
 // Software Guide : BeginCodeSnippet
-#include "otbVectorImage.h"
 // Software Guide : EndCodeSnippet
 
 //  Software Guide : BeginLatex
@@ -41,7 +40,6 @@
 //  Software Guide : EndLatex
 
 // Software Guide : BeginCodeSnippet
-#include "otbImage.h"
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
 #include "otbMultiToMonoChannelExtractROI.h"
@@ -81,7 +79,7 @@ int main(int argc, char * argv[])
   //
   //  Sometime, you need to process only one spectral band of the image. To get
   // only one of the spectral band we use the
-  // /doxygen{otb}{MultiToMonoChannelExtractROI}. The declaration is as usual:
+  // \doxygen{otb}{MultiToMonoChannelExtractROI}. The declaration is as usual:
   //
   //  Software Guide : EndLatex
 

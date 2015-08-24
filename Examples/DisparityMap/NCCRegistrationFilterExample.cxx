@@ -32,7 +32,6 @@
 //
 // Software Guide : EndLatex
 
-#include "otbImage.h"
 #include "otbImageFileWriter.h"
 #include "otbImageFileReader.h"
 #include "otbCommandLineArgumentParser.h"
@@ -44,6 +43,7 @@
 // Software Guide : EndCodeSnippet
 
 #include "otbImageOfVectorsToMonoChannelExtractROI.h"
+#include "itkUnaryFunctorImageFilter.h"
 #include "itkRescaleIntensityImageFilter.h"
 #include "itkCastImageFilter.h"
 

@@ -1,13 +1,10 @@
-$Id$
-
 OTB Examples Directory
 ----------------------
 
 This directory contains simple, companion examples to the ORFEO
 Toolbox (OTB). These examples are designed to demonstrate features of
 the system; they are not meant to be significant applications of the
-software (see the separate directory OTB-Applications for such
-applications).
+software.
 
 Specifically, the purpose of these examples is as follows:
 

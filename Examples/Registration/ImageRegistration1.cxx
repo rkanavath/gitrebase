@@ -48,10 +48,10 @@
 #include "itkImageRegistrationMethod.h"
 #include "itkTranslationTransform.h"
 #include "itkMeanSquaresImageToImageMetric.h"
-#include "itkLinearInterpolateImageFunction.h"
 #include "itkRegularStepGradientDescentOptimizer.h"
 #include "otbImage.h"
 // Software Guide : EndCodeSnippet
+#include "itkUnaryFunctorImageFilter.h"
 #include "itkMeanImageFilter.h"
 
 #include "otbImageFileReader.h"

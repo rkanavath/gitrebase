@@ -55,7 +55,7 @@
 //
 // Software Guide : EndLatex
 #include <iostream>
-
+#include "itkUnaryFunctorImageFilter.h"
 // Software Guide : BeginCodeSnippet
 #include "itkVectorGradientAnisotropicDiffusionImageFilter.h"
 #include "itkVectorGradientMagnitudeImageFilter.h"
@@ -66,7 +66,6 @@
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
 #include "itkVectorCastImageFilter.h"
-#include "itkUnaryFunctorImageFilter.h"
 #include "itkScalarToRGBPixelFunctor.h"
 
 int main(int argc, char *argv[])
