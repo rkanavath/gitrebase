@@ -11,6 +11,7 @@ Files: CMake/*
        Copyright/*
        Modules/*
        Examples/*
+       Utilities/*
 Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
     Jordi Inglada (CNES) <jordi.inglada@orfeo-toolbox.org>
     Thomas Feuvrier (CS) <thomas.feuvrier@c-s.fr>
@@ -89,9 +90,6 @@ License: Apache-2.0
 Files: CMake/PythonCompile.py
 Copyright: *No copyright*
 License: todo
-
-Files: Utilities/*
-License:todo
 
 Files: debian/*
 Copyright: 2010-2015 OTB Team <contact@orfeo-toolbox.org>
