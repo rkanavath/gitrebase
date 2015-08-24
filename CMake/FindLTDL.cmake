@@ -2,7 +2,7 @@
 # Find the native LTDL includes and library
 #
 #   LTDL_FOUND        - True if LTDL found.
-#   LTDL_INCLUDE_DIRS - where to find tinyxml.h, etc.
+#   LTDL_INCLUDE_DIRS - where to find ltdl.h, etc.
 #   LTDL_LIBRARIES    - List of libraries when using LTDL.
 #
 

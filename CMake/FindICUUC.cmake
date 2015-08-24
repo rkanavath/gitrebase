@@ -2,7 +2,7 @@
 # Find the native ICUUC includes and library
 #
 #   ICUUC_FOUND        - True if ICUUC found.
-#   ICUUC_INCLUDE_DIRS - where to find tinyxml.h, etc.
+#   ICUUC_INCLUDE_DIRS - where to find unicode/unistr.h, etc.
 #   ICUUC_LIBRARIES    - List of libraries when using ICUUC.
 #
 

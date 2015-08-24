@@ -1,6 +1,4 @@
 project(MeshExamples)
-include_regular_expression("^.*$")
-
 
 add_executable(Mesh1 Mesh1.cxx )
 target_link_libraries(Mesh1 ${ITK_LIBRARIES})
@@ -23,3 +21,6 @@ target_link_libraries(PointSet3 ${ITK_LIBRARIES})
 add_executable(PointSetWithVectors PointSetWithVectors.cxx )
 target_link_libraries(PointSetWithVectors ${ITK_LIBRARIES})
 
+if(BUILD_TESTING)
+  add_subdirectory(test)
+endif()

@@ -51,9 +51,6 @@
 // Software Guide : EndCodeSnippet
 
 #include "itkMacro.h"
-#include "otbImage.h"
-#include "otbVectorImage.h"
-#include "itkVariableLengthVector.h"
 
 #include "itkVectorExpandImageFilter.h"
 #include "itkVectorNearestNeighborInterpolateImageFunction.h"
@@ -71,7 +68,6 @@
 //  Software Guide : EndLatex
 
 // Software Guide : BeginCodeSnippet
-#include "itkEuclideanDistanceMetric.h"
 // Software Guide : EndCodeSnippet
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"

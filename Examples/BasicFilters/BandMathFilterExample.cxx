@@ -48,6 +48,7 @@
 #include "otbVectorImage.h"
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
+#include "itkUnaryFunctorImageFilter.h"
 #include "itkCastImageFilter.h"
 #include "otbVectorImageToImageListFilter.h"
 
@@ -158,6 +159,13 @@ int main( int argc, char* argv[])
 
 // Software Guide : BeginCodeSnippet
   filter->SetExpression("if((b4-b3)/(b4+b3) > 0.4, 255, 0)");
+  
+  #ifdef OTB_MUPARSER_HAS_CXX_LOGICAL_OPERATORS
+  filter->SetExpression("((b4-b3)/(b4+b3) > 0.4) ? 255 : 0");
+  #else
+  filter->SetExpression("if((b4-b3)/(b4+b3) > 0.4, 255, 0)");
+  #endif
+  
 // Software Guide : EndCodeSnippet
 
 //  Software Guide : BeginLatex

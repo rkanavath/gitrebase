@@ -36,8 +36,6 @@
 //
 // Software Guide : EndLatex
 
-#include "otbVectorImage.h"
-#include "otbImage.h"
 #include "otbImageFileWriter.h"
 #include "otbImageFileReader.h"
 #include "otbVectorDataFileReader.h"
@@ -47,17 +45,12 @@
 #include "itkOrImageFilter.h"
 
 // Software Guide : BeginCodeSnippet
-#include "otbProspectModel.h"
-#include "otbSailModel.h"
 #include "otbLeafParameters.h"
-#include "otbSatelliteRSR.h"
 #include "otbReduceSpectralResponse.h"
 #include "otbImageSimulationMethod.h"
 #include "otbSpatialisationFilter.h"
 #include "otbAttributesMapLabelObject.h"
-#include "otbSpectralResponse.h"
 #include "itkTernaryFunctorImageFilter.h"
-#include "otbVegetationIndicesFunctor.h"
 #include "otbRAndNIRIndexImageFilter.h"
 #include "otbVectorDataToLabelMapWithAttributesFilter.h"
 // Software Guide : EndCodeSnippet

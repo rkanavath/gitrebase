@@ -2,7 +2,7 @@
 # Find the native LibKML includes and library
 #
 #   LIBKML_FOUND       - True if LibKML found.
-#   LIBKML_INCLUDE_DIR - where to find tinyxml.h, etc.
+#   LIBKML_INCLUDE_DIR - where to find kml/dom.h, etc.
 #   LIBKML_LIBRARIES   - List of libraries when using LibKML.
 #
 
@@ -15,6 +15,8 @@ find_path( LIBKML_INCLUDE_DIR kml/dom.h )
 
 find_library( LIBKML_BASE_LIBRARY
               NAMES kmlbase )
+
+# TODO : add HINTS derived from path of LIBKML_BASE_LIBRARY
 find_library( LIBKML_CONVENIENCE_LIBRARY
               NAMES kmlconvenience )
 find_library( LIBKML_DOM_LIBRARY

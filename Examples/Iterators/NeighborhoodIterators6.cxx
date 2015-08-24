@@ -19,11 +19,11 @@
 #include "otbImage.h"
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
+#include "itkUnaryFunctorImageFilter.h"
 #include "itkRescaleIntensityImageFilter.h"
 #include "itkNeighborhoodIterator.h"
 #include "itkImageRegionIterator.h"
 #include "itkFastMarchingImageFilter.h"
-#include "itkNumericTraits.h"
 #include "itkAddImageFilter.h"
 
 //  Software Guide : BeginCommandLineArgs

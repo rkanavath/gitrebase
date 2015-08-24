@@ -40,10 +40,10 @@
 #include "itkImageRegionIteratorWithIndex.h"
 #include "otbImageFileReader.h"
 #include "otbImageFileWriter.h"
+#include "itkUnaryFunctorImageFilter.h"
 #include "itkRescaleIntensityImageFilter.h"
 
 // Software Guide : BeginCodeSnippet
-#include "itkCovariantVector.h"
 #include "itkGradientRecursiveGaussianImageFilter.h"
 // Software Guide : EndCodeSnippet
 
