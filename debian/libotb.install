@@ -1,6 +1,6 @@
 #! /usr/bin/dh-exec
 # OTB libraries (binaries and versioned symlinks)
-usr/lib/otb/lib*.so.*	usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/lib*.so.*	usr/lib/${DEB_HOST_MULTIARCH}
 
 # Executables
 usr/bin/otbTestDriver

@@ -2,5 +2,3 @@
 # packaged libopenjpeg.  The discussion thread about this starts
 # here:
 # https://lists.debian.org/debian-gis/2014/10/msg00066.html
-libotb: embedded-library usr/lib*libotbopenjpeg.so*: openjpeg
-

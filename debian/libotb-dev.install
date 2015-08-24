@@ -1,10 +1,12 @@
 #! /usr/bin/dh-exec
 # OTB libraries (symlinks)
-usr/lib/otb/lib*.so		usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/lib*.so		usr/lib/${DEB_HOST_MULTIARCH}
 
 # OTB headers
-usr/include/otb
+usr/include/OTB-${OTB_VERSION_SONAME}
 
 # CMake helper scripts
-usr/lib/otb/*.cmake
-usr/lib/otb/cmakemodules
+usr/lib/cmake/OTB-${OTB_VERSION_SONAME}
+
+#OTB libraries
+usr/lib/lib*.so
