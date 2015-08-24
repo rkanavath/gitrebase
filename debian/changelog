@@ -1,4 +1,4 @@
-otb (4.2.1-1) UNRELEASED; urgency=medium
+otb (5.0.0-1) UNRELEASED; urgency=medium
 
   [ Andreas Tille ]
   * Initial upload to Debian mirror (Closes: #764860)
@@ -18,7 +18,10 @@ otb (4.2.1-1) UNRELEASED; urgency=medium
   [ Paolo Cavallini ]
   * New upstream release.
 
- -- Paolo Cavallini <cavallini@faunalia.it>  Mon, 06 Oct 2014 12:24:04 +0000
+  [ otb ]
+  * New upstream release.
+
+ -- otb <otb@otb-debian-8.1>  Mon, 24 Aug 2015 10:45:17 +0200
 
 otb (4.0.0-1otb1~trusty2) trusty; urgency=low
 
