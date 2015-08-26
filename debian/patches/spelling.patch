@@ -5,11 +5,9 @@ Description: Fix some spelling errors to silence lintian enabling
  .
  Feel free to take over this s/allows to/allows one to/.
 
-diff --git a/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx b/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
-index 1d64388..3e6424b 100644
---- a/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
-+++ b/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
-@@ -75,7 +75,7 @@ private:
+--- otb.orig/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
++++ otb/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
+@@ -75,7 +75,7 @@
                    " \n"
                    " The GetV1() and GetV2() methods allow to retrieve the linear "
                    " combinations used to generate the Mad change maps as a vnl_matrix of "
@@ -18,11 +16,9 @@ index 1d64388..3e6424b 100644
                    " associated to each Mad change maps as a vnl_vector. \n"
                    " \n"
                    " This filter has been implemented from the Matlab code kindly made "
-diff --git a/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx b/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
-index 1ecd2c9..6bc90b1 100644
---- a/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
-+++ b/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
-@@ -71,7 +71,7 @@ private:
+--- otb.orig/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
++++ otb/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
+@@ -71,7 +71,7 @@
  
      /** GROUP IO CLASSIFICATION */
      AddParameter(ParameterType_Group,"io","Input and output images");
@@ -31,7 +27,7 @@ index 1ecd2c9..6bc90b1 100644
  
      AddParameter(ParameterType_InputImage, "io.in",  "Input classification image");
      SetParameterDescription( "io.in", "The input labeled image to regularize.");
-@@ -82,7 +82,7 @@ private:
+@@ -82,7 +82,7 @@
  
  
      AddParameter(ParameterType_Group,"ip","Regularization parameters");
@@ -40,11 +36,9 @@ index 1ecd2c9..6bc90b1 100644
  
      AddParameter(ParameterType_Int, "ip.radius", "Structuring element radius (in pixels)");
      SetParameterDescription("ip.radius", "The radius of the ball shaped structuring element (expressed in pixels). By default, 'ip.radius = 1 pixel'.");
-diff --git a/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx b/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
-index 848d41b..2912f70 100644
---- a/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
-+++ b/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
-@@ -95,7 +95,7 @@ private:
+--- otb.orig/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
++++ otb/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
+@@ -95,7 +95,7 @@
      SetName("FusionOfClassifications");
      SetDescription("Fuses several classifications maps of the same image on the basis of class labels.");
      SetDocName("Fusion of Classifications");
@@ -53,11 +47,9 @@ index 848d41b..2912f70 100644
          "Fusion is done either by mean of Majority Voting, or with the Dempster Shafer combination method on class labels.\n "
          "-MAJORITY VOTING: for each pixel, the class with the highest number of votes is selected.\n "
          "-DEMPSTER SHAFER: for each pixel, the class label for which the Belief Function is maximal is selected. This Belief Function is calculated "
-diff --git a/Modules/Applications/AppClassification/app/otbImageClassifier.cxx b/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
-index 07a8a35..0de79fd 100644
---- a/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
-+++ b/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
-@@ -80,7 +80,7 @@ private:
+--- otb.orig/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
++++ otb/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
+@@ -80,7 +80,7 @@
      SetParameterDescription( "in", "The input image to classify.");
  
      AddParameter(ParameterType_InputImage,  "mask",   "Input Mask");
@@ -66,11 +58,9 @@ index 07a8a35..0de79fd 100644
      MandatoryOff("mask");
  
      AddParameter(ParameterType_InputFilename, "model", "Model file");
-diff --git a/Modules/Applications/AppClassification/app/otbTrainBoost.cxx b/Modules/Applications/AppClassification/app/otbTrainBoost.cxx
-index c107f80..7ba8d83 100644
---- a/Modules/Applications/AppClassification/app/otbTrainBoost.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainBoost.cxx
-@@ -26,7 +26,7 @@ namespace Wrapper
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainBoost.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainBoost.cxx
+@@ -26,7 +26,7 @@
    void TrainImagesClassifier::InitBoostParams()
    {
      AddChoice("classifier.boost", "Boost classifier");
@@ -79,11 +69,9 @@ index c107f80..7ba8d83 100644
          "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/boosting.html}.");
      //BoostType
      AddParameter(ParameterType_Choice, "classifier.boost.t", "Boost Type");
-diff --git a/Modules/Applications/AppClassification/app/otbTrainDecisionTree.cxx b/Modules/Applications/AppClassification/app/otbTrainDecisionTree.cxx
-index 9f94a7f..253029d 100644
---- a/Modules/Applications/AppClassification/app/otbTrainDecisionTree.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainDecisionTree.cxx
-@@ -26,7 +26,7 @@ void TrainImagesClassifier::InitDecisionTreeParams()
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainDecisionTree.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainDecisionTree.cxx
+@@ -26,7 +26,7 @@
  {
    AddChoice("classifier.dt", "Decision Tree classifier");
    SetParameterDescription("classifier.dt",
@@ -92,11 +80,9 @@ index 9f94a7f..253029d 100644
                            "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/decision_trees.html}.");
    //MaxDepth
    AddParameter(ParameterType_Int, "classifier.dt.max", "Maximum depth of the tree");
-diff --git a/Modules/Applications/AppClassification/app/otbTrainGradientBoostedTree.cxx b/Modules/Applications/AppClassification/app/otbTrainGradientBoostedTree.cxx
-index c703ad4..6786ea2 100644
---- a/Modules/Applications/AppClassification/app/otbTrainGradientBoostedTree.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainGradientBoostedTree.cxx
-@@ -27,7 +27,7 @@ void TrainImagesClassifier::InitGradientBoostedTreeParams()
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainGradientBoostedTree.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainGradientBoostedTree.cxx
+@@ -27,7 +27,7 @@
    AddChoice("classifier.gbt", "Gradient Boosted Tree classifier");
    SetParameterDescription(
        "classifier.gbt",
@@ -105,11 +91,9 @@ index c703ad4..6786ea2 100644
        "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/gradient_boosted_trees.html}.");
    //LossFunctionType : not exposed, as only one type is used for Classification,
    // the other three are used for regression.
-diff --git a/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx b/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
-index 1b9358f..7d25681 100644
---- a/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
-@@ -35,7 +35,7 @@ void TrainImagesClassifier::DoInit()
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
+@@ -35,7 +35,7 @@
      "Samples are composed of pixel values in each band optionally centered and reduced using an XML statistics file produced by "
      "the ComputeImagesStatistics application.\n The training vector data must contain polygons with a positive integer field "
      "representing the class label. The name of this field can be set using the \"Class label field\" parameter. Training and validation "
@@ -118,7 +102,7 @@ index 1b9358f..7d25681 100644
      "between the number of samples in training and validation sets. Two parameters allow to manage the size of the training and "
      "validation sets per class and per image.\n Several classifier parameters can be set depending on the chosen classifier. In the "
      "validation process, the confusion matrix is organized the following way: rows = reference labels, columns = produced labels. "
-@@ -50,7 +50,7 @@ void TrainImagesClassifier::DoInit()
+@@ -50,7 +50,7 @@
  
    //Group IO
    AddParameter(ParameterType_Group, "io", "Input and output data");
@@ -127,7 +111,7 @@ index 1b9358f..7d25681 100644
    AddParameter(ParameterType_InputImageList, "io.il", "Input Image List");
    SetParameterDescription("io.il", "A list of input images.");
    AddParameter(ParameterType_InputVectorDataList, "io.vd", "Input Vector Data List");
-@@ -71,7 +71,7 @@ void TrainImagesClassifier::DoInit()
+@@ -71,7 +71,7 @@
    //Group Sample list
    AddParameter(ParameterType_Group, "sample", "Training and validation samples parameters");
    SetParameterDescription("sample",
@@ -136,7 +120,7 @@ index 1b9358f..7d25681 100644
  
    AddParameter(ParameterType_Int, "sample.mt", "Maximum training sample size per class");
    //MandatoryOff("mt");
-@@ -105,7 +105,7 @@ void TrainImagesClassifier::DoInit()
+@@ -105,7 +105,7 @@
    SetParameterDescription("classifier", "Choice of the classifier to use for the training.");
  
    //Group LibSVM
@@ -145,11 +129,9 @@ index 1b9358f..7d25681 100644
    InitLibSVMParams();
  #endif
  
-diff --git a/Modules/Applications/AppClassification/app/otbTrainKNN.cxx b/Modules/Applications/AppClassification/app/otbTrainKNN.cxx
-index bc31cd4..3392f46 100644
---- a/Modules/Applications/AppClassification/app/otbTrainKNN.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainKNN.cxx
-@@ -26,7 +26,7 @@ namespace Wrapper
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainKNN.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainKNN.cxx
+@@ -26,7 +26,7 @@
    void TrainImagesClassifier::InitKNNParams()
    {
      AddChoice("classifier.knn", "KNN classifier");
@@ -158,11 +140,9 @@ index bc31cd4..3392f46 100644
          "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/k_nearest_neighbors.html}.");
  
      //K parameter
-diff --git a/Modules/Applications/AppClassification/app/otbTrainLibSVM.cxx b/Modules/Applications/AppClassification/app/otbTrainLibSVM.cxx
-index 458e5b8..9e64f3e 100644
---- a/Modules/Applications/AppClassification/app/otbTrainLibSVM.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainLibSVM.cxx
-@@ -26,7 +26,7 @@ namespace Wrapper
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainLibSVM.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainLibSVM.cxx
+@@ -26,7 +26,7 @@
    void TrainImagesClassifier::InitLibSVMParams()
    {
      AddChoice("classifier.libsvm", "LibSVM classifier");
@@ -171,11 +151,9 @@ index 458e5b8..9e64f3e 100644
      AddParameter(ParameterType_Choice, "classifier.libsvm.k", "SVM Kernel Type");
      AddChoice("classifier.libsvm.k.linear", "Linear");
      AddChoice("classifier.libsvm.k.rbf", "Gaussian radial basis function");
-diff --git a/Modules/Applications/AppClassification/app/otbTrainNeuralNetwork.cxx b/Modules/Applications/AppClassification/app/otbTrainNeuralNetwork.cxx
-index 29b3657..2f6cfbe 100644
---- a/Modules/Applications/AppClassification/app/otbTrainNeuralNetwork.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainNeuralNetwork.cxx
-@@ -27,7 +27,7 @@ void TrainImagesClassifier::InitNeuralNetworkParams()
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainNeuralNetwork.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainNeuralNetwork.cxx
+@@ -27,7 +27,7 @@
  {
    AddChoice("classifier.ann", "Artificial Neural Network classifier");
    SetParameterDescription("classifier.ann",
@@ -184,11 +162,9 @@ index 29b3657..2f6cfbe 100644
                            "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/neural_networks.html}.");
  
    //TrainMethod
-diff --git a/Modules/Applications/AppClassification/app/otbTrainRandomForests.cxx b/Modules/Applications/AppClassification/app/otbTrainRandomForests.cxx
-index 1798b9d..94c3a36 100644
---- a/Modules/Applications/AppClassification/app/otbTrainRandomForests.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainRandomForests.cxx
-@@ -26,7 +26,7 @@ void TrainImagesClassifier::InitRandomForestsParams()
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainRandomForests.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainRandomForests.cxx
+@@ -26,7 +26,7 @@
  {
    AddChoice("classifier.rf", "Random forests classifier");
    SetParameterDescription("classifier.rf",
@@ -197,11 +173,9 @@ index 1798b9d..94c3a36 100644
                            "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/random_trees.html}.");
    //MaxDepth
    AddParameter(ParameterType_Int, "classifier.rf.max", "Maximum depth of the tree");
-diff --git a/Modules/Applications/AppClassification/app/otbTrainSVM.cxx b/Modules/Applications/AppClassification/app/otbTrainSVM.cxx
-index a41e103..b61e913 100644
---- a/Modules/Applications/AppClassification/app/otbTrainSVM.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainSVM.cxx
-@@ -26,7 +26,7 @@ namespace Wrapper
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainSVM.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainSVM.cxx
+@@ -26,7 +26,7 @@
    void TrainImagesClassifier::InitSVMParams()
    {
      AddChoice("classifier.svm", "SVM classifier (OpenCV)");
@@ -210,11 +184,9 @@ index a41e103..b61e913 100644
          "See complete documentation here \\url{http://docs.opencv.org/modules/ml/doc/support_vector_machines.html}.");
      AddParameter(ParameterType_Choice, "classifier.svm.m", "SVM Model Type");
      AddChoice("classifier.svm.m.csvc", "C support vector classification");
-diff --git a/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx b/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
-index 58be866..208c8cf 100644
---- a/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
-+++ b/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
-@@ -82,18 +82,18 @@ private:
+--- otb.orig/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
++++ otb/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
+@@ -82,18 +82,18 @@
      SetName("HomologousPointsExtraction");
      SetDocName("Homologous points extraction");
      SetDescription("Allows to compute homologous points between images using keypoints");
@@ -236,7 +208,7 @@ index 58be866..208c8cf 100644
        " It can be useful to assess the precision of a registration for instance."
        " The vector file is always reprojected to EPSG:4326 to allow display in a GIS."
        " This is done via reprojection or by applying the image sensor models.");
-@@ -144,7 +144,7 @@ private:
+@@ -144,7 +144,7 @@
  
      AddChoice("mode.geobins","Search keypoints in small spatial bins regularly spread accross first image");
      SetParameterDescription("mode.geobins","This method allows to retrieve a set of tie points regulary spread accross image 1. Corresponding bins in image 2 are retrieved using sensor and geographical information if available. The first bin position takes into account the margin parameter. Bins are cropped to the largest image region shrinked by the margin parameter for both in1 and in2 images.");
@@ -245,7 +217,7 @@ index 58be866..208c8cf 100644
      AddParameter(ParameterType_Int,"mode.geobins.binsize","Size of bin");
      SetParameterDescription("mode.geobins.binsize","Radius of the spatial bin in pixels");
      SetDefaultParameterInt("mode.geobins.binsize",256);
-@@ -154,7 +154,7 @@ private:
+@@ -154,7 +154,7 @@
      SetParameterDescription("mode.geobins.binsizey","Radius of the spatial bin in pixels (y direction). If not set, the mode.geobins.binsize value is used.");
      SetMinimumParameterIntValue("mode.geobins.binsizey",1);
      MandatoryOff("mode.geobins.binsizey");
@@ -254,7 +226,7 @@ index 58be866..208c8cf 100644
      AddParameter(ParameterType_Int,"mode.geobins.binstep","Steps between bins");
      SetParameterDescription("mode.geobins.binstep","Steps between bins in pixels");
      SetDefaultParameterInt("mode.geobins.binstep",256);
-@@ -175,7 +175,8 @@ private:
+@@ -175,7 +175,8 @@
      SetDefaultParameterFloat("precision",0.);
  
      AddParameter(ParameterType_Empty,"mfilter","Filter points according to geographical or sensor based colocalisation");
@@ -264,7 +236,7 @@ index 58be866..208c8cf 100644
  
      AddParameter(ParameterType_Empty,"2wgs84","If enabled, points from second image will be exported in WGS84");
  
-@@ -385,7 +386,7 @@ private:
+@@ -385,7 +386,7 @@
          {
          bin_size_y = GetParameterInt("mode.geobins.binsizey");
          }
@@ -273,7 +245,7 @@ index 58be866..208c8cf 100644
        unsigned int bin_step_x = GetParameterInt("mode.geobins.binstep");
        unsigned int bin_step_y = bin_step_x;
  
-@@ -393,7 +394,7 @@ private:
+@@ -393,7 +394,7 @@
          {
          bin_step_y = GetParameterInt("mode.geobins.binstepy");
          }
@@ -282,11 +254,9 @@ index 58be866..208c8cf 100644
        unsigned int nb_bins_x = static_cast<unsigned int>(vcl_ceil(static_cast<float>(size[0]-2*image_border_margin)/(bin_size_x + bin_step_x)));
        unsigned int nb_bins_y = static_cast<unsigned int>(vcl_ceil(static_cast<float>(size[1]-2*image_border_margin)/(bin_size_y + bin_step_y)));
  
-diff --git a/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx b/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
-index 03a3360..b0bda33 100644
---- a/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
-+++ b/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
-@@ -57,7 +57,7 @@ private:
+--- otb.orig/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
++++ otb/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
+@@ -57,7 +57,7 @@
  
      // Documentation
      SetDocName("Line segment detection");
@@ -295,11 +265,9 @@ index 03a3360..b0bda33 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso("On Line demonstration of the LSD algorithm is available here: http://www.ipol.im/pub/algo/gjmr_line_segment_detector/\n");
-diff --git a/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx b/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
-index 3d941c9..e97e41d 100644
---- a/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
-+++ b/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
-@@ -96,7 +96,7 @@ private:
+--- otb.orig/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
++++ otb/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
+@@ -96,7 +96,7 @@
  
      // Documentation
      SetDocName("Hyperspectral data unmixing");
@@ -308,11 +276,9 @@ index 3d941c9..e97e41d 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso("VertexComponentAnalysis");
-diff --git a/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx b/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
-index c20d69a..684a982 100644
---- a/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
-+++ b/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
-@@ -250,10 +250,10 @@ private:
+--- otb.orig/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
++++ otb/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
+@@ -250,10 +250,10 @@
      SetDescription("Maps an input label image to 8-bits RGB using look-up tables.");
  
      SetDocName("Color Mapping");
@@ -326,7 +292,7 @@ index c20d69a..684a982 100644
                            "to a colored image using continuous look-up table, in order to enhance image interpretation. Several "
                            "look-up tables can been chosen with different color ranges.\n-The optimal method computes an optimal "
                            "look-up table. When processing a segmentation label image (label to color), the color difference between"
-@@ -716,7 +716,7 @@ private:
+@@ -716,7 +716,7 @@
        streamingManager->PrepareStreaming(input, largestRegion);
  
        unsigned long numberOfStreamDivisions = streamingManager->GetNumberOfSplits();
@@ -335,11 +301,9 @@ index c20d69a..684a982 100644
        otbAppLogINFO("Number of divisions : "<<numberOfStreamDivisions);
  
        // iteration over stream divisions
-diff --git a/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx b/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
-index 449aebf..46ee37b 100644
---- a/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
-+++ b/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
-@@ -96,7 +96,7 @@ private:
+--- otb.orig/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
++++ otb/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
+@@ -96,7 +96,7 @@
  
      // Documentation
      SetDocName("Download or list SRTM tiles related to a set of images");
@@ -348,11 +312,9 @@ index 449aebf..46ee37b 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso(" ");
-diff --git a/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx b/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
-index 17b17c5..3a860c1 100644
---- a/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
-+++ b/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
-@@ -95,7 +95,7 @@ private:
+--- otb.orig/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
++++ otb/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
+@@ -95,7 +95,7 @@
      // Boolean Fast scheme
      AddParameter(ParameterType_Empty, "fast", "Use Fast Scheme");
      std::ostringstream desc;
@@ -361,11 +323,9 @@ index 17b17c5..3a860c1 100644
          <<" subsampling previous level of pyramid instead of processing the full input.";
      SetParameterDescription("fast", desc.str());
      MandatoryOff("fast");
-diff --git a/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx b/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
-index a1c1b49..e25b73b 100644
---- a/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
-+++ b/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
-@@ -70,7 +70,7 @@ private:
+--- otb.orig/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
++++ otb/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
+@@ -70,7 +70,7 @@
      MandatoryOff("keywordlist");
  
      AddParameter(ParameterType_OutputFilename, "outkwl", "Write the OSSIM keywordlist to a geom file");
@@ -374,7 +334,7 @@ index a1c1b49..e25b73b 100644
      MandatoryOff("outkwl");
  
      //Create output parameters to store image informations
-@@ -179,7 +179,7 @@ private:
+@@ -179,7 +179,7 @@
      EnableParameter("country");
  
      AddParameter(ParameterType_Group, "rgb", "Default RGB Display");
@@ -383,7 +343,7 @@ index a1c1b49..e25b73b 100644
  
      AddParameter(ParameterType_Int, "rgb.r", "Red Band");
      SetParameterDescription("rgb.r","Red band Number");
-@@ -207,7 +207,7 @@ private:
+@@ -207,7 +207,7 @@
      EnableParameter("keyword");
  
      AddParameter(ParameterType_Group, "gcp", "Ground Control Points informations");
@@ -392,11 +352,9 @@ index a1c1b49..e25b73b 100644
      SetParameterRole("gcp", Role_Output);
  
      AddParameter(ParameterType_Int, "gcp.count", "GCPs Number");
-diff --git a/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx b/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
-index f53308d..8a7ad38 100644
---- a/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
-+++ b/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
-@@ -60,7 +60,7 @@ private:
+--- otb.orig/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
++++ otb/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
+@@ -60,7 +60,7 @@
      SetDescription("Generate a RPC sensor model from a list of Ground Control Points.");
  
      SetDocName("Generate a RPC sensor model");
@@ -405,11 +363,9 @@ index f53308d..8a7ad38 100644
  
      AddDocTag(Tags::Geometry);
  
-diff --git a/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx b/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
-index a15227d..7f97164 100644
---- a/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
-+++ b/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
-@@ -107,7 +107,7 @@ private:
+--- otb.orig/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
++++ otb/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
+@@ -107,7 +107,7 @@
      SetDescription("Resamples an image according to a resampling grid");
  
      SetDocName("Grid Based Image Resampling");
@@ -418,7 +374,7 @@ index a15227d..7f97164 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
  
-@@ -116,7 +116,7 @@ private:
+@@ -116,7 +116,7 @@
      SetDocSeeAlso("otbStereorecificationGridGeneration");
  
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -427,7 +383,7 @@ index a15227d..7f97164 100644
      AddParameter(ParameterType_InputImage,"io.in","Input image");
      SetParameterDescription("io.in","The input image to resample");
      AddParameter(ParameterType_OutputImage, "io.out", "Output Image");
-@@ -161,14 +161,14 @@ private:
+@@ -161,14 +161,14 @@
  
      // Interpolators
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
@@ -444,11 +400,9 @@ index a15227d..7f97164 100644
      SetDefaultParameterInt("interpolator.bco.radius", 2);
      SetParameterString("interpolator","bco");
  
-diff --git a/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx b/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
-index 7c2c997..130fa07 100644
---- a/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
-+++ b/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
-@@ -88,7 +88,7 @@ private:
+--- otb.orig/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
++++ otb/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
+@@ -88,7 +88,7 @@
    {
      SetName("OrthoRectification");
      std::ostringstream oss;
@@ -457,7 +411,7 @@ index 7c2c997..130fa07 100644
      SetDescription(oss.str());
      // Documentation
      SetDocName("Ortho-rectification");
-@@ -106,7 +106,7 @@ private:
+@@ -106,7 +106,7 @@
  
      // Set the parameters
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -466,7 +420,7 @@ index 7c2c997..130fa07 100644
      AddParameter(ParameterType_InputImage, "io.in", "Input Image");
      SetParameterDescription("io.in","The input image to ortho-rectify");
      AddParameter(ParameterType_OutputImage, "io.out", "Output Image");
-@@ -117,7 +117,7 @@ private:
+@@ -117,7 +117,7 @@
  
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "outputs", "Output Image Grid");
@@ -475,7 +429,7 @@ index 7c2c997..130fa07 100644
  
      // UserDefined values
      AddParameter(ParameterType_Choice, "outputs.mode", "Parameters estimation modes");
-@@ -193,26 +193,26 @@ private:
+@@ -193,26 +193,26 @@
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
      AddChoice("interpolator.bco",    "Bicubic interpolation");
      AddParameter(ParameterType_Radius, "interpolator.bco.radius", "Radius for bicubic interpolation");
@@ -507,11 +461,9 @@ index 7c2c997..130fa07 100644
  
      // Displacement Field Spacing
      AddParameter(ParameterType_Float, "opt.gridspacing", "Resampling grid spacing");
-diff --git a/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx b/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
-index 08da67f..c296455 100644
---- a/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
-+++ b/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
-@@ -59,7 +59,7 @@ private:
+--- otb.orig/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
++++ otb/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
+@@ -59,7 +59,7 @@
      SetDescription("Perform least-square fit of a sensor model to a set of tie points");
  
      SetDocName("Refine Sensor Model");
@@ -520,11 +472,9 @@ index 08da67f..c296455 100644
  
      AddDocTag(Tags::Geometry);
  
-diff --git a/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx b/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
-index ff58fc1..8122fea 100644
---- a/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
-+++ b/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
-@@ -100,7 +100,7 @@ private:
+--- otb.orig/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
++++ otb/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
+@@ -100,7 +100,7 @@
  
      //Transform
      AddParameter(ParameterType_Group,"transform","Transform parameters");
@@ -533,7 +483,7 @@ index ff58fc1..8122fea 100644
  
      AddParameter(ParameterType_Choice, "transform.type", "Type of transformation");
      SetParameterDescription("transform.type","Type of transformation. Available transformations are spatial scaling, translation and rotation with scaling factor");
-@@ -148,20 +148,20 @@ private:
+@@ -148,20 +148,20 @@
  
      // Interpolators
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
@@ -557,11 +507,9 @@ index ff58fc1..8122fea 100644
  
      // Doc example parameter settings
      SetDocExampleParameterValue("in", "qb_toulouse_sub.tif");
-diff --git a/Modules/Applications/AppProjection/app/otbSuperimpose.cxx b/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
-index f78c135..06adda7 100644
---- a/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
-+++ b/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
-@@ -68,11 +68,11 @@ public:
+--- otb.orig/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
++++ otb/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
+@@ -68,11 +68,11 @@
                                              FloatVectorImageType>  ResamplerType;
  
    typedef itk::ScalableAffineTransform<double, 2>                 TransformType;
@@ -575,7 +523,7 @@ index f78c135..06adda7 100644
  private:
    void DoInit()
    {
-@@ -108,26 +108,26 @@ private:
+@@ -108,26 +108,26 @@
      // Superposition mode
      AddParameter(ParameterType_Choice,"mode", "Mode");
      SetParameterDescription("mode", "Superimposition mode");
@@ -607,7 +555,7 @@ index f78c135..06adda7 100644
      SetDefaultParameterInt("interpolator.bco.radius", 2);
  
      AddChoice("interpolator.nn",     "Nearest Neighbor interpolation");
-@@ -135,7 +135,7 @@ private:
+@@ -135,7 +135,7 @@
  
      AddChoice("interpolator.linear", "Linear interpolation");
      SetParameterDescription("interpolator.linear","Linear interpolation leads to average image quality but is quite fast");
@@ -616,7 +564,7 @@ index f78c135..06adda7 100644
      AddRAMParameter();
  
      // Doc example parameter settings
-@@ -162,7 +162,7 @@ private:
+@@ -162,7 +162,7 @@
  
      // Resample filter
      m_Resampler = ResamplerType::New();
@@ -625,7 +573,7 @@ index f78c135..06adda7 100644
      m_BasicResampler = BasicResamplerType::New();
  
      // Get Interpolator
-@@ -201,11 +201,11 @@ private:
+@@ -201,11 +201,11 @@
      FloatVectorImageType::IndexType   start   = refImage->GetLargestPossibleRegion().GetIndex();
      FloatVectorImageType::SizeType    size    = refImage->GetLargestPossibleRegion().GetSize();
      FloatVectorImageType::PointType   origin  = refImage->GetOrigin();
@@ -639,7 +587,7 @@ index f78c135..06adda7 100644
      if(GetParameterString("mode")=="default")
        {
        if(IsParameterEnabled("lms"))
-@@ -222,21 +222,21 @@ private:
+@@ -222,21 +222,21 @@
  
          m_Resampler->SetDisplacementFieldSpacing(defSpacing);
          }
@@ -666,7 +614,7 @@ index f78c135..06adda7 100644
        m_Resampler->SetEdgePaddingValue(defaultValue);
  
        // Set the output image
-@@ -245,20 +245,20 @@ private:
+@@ -245,20 +245,20 @@
      else if(GetParameterString("mode")=="phr")
        {
        otbAppLogINFO("Using the PHR mode");
@@ -691,7 +639,7 @@ index f78c135..06adda7 100644
        m_BasicResampler->SetEdgePaddingValue(defaultValue);
  
        // Set the output image
-@@ -269,16 +269,14 @@ private:
+@@ -269,16 +269,14 @@
        otbAppLogWARNING("Unknown mode");
        }
    }
@@ -711,11 +659,9 @@ index f78c135..06adda7 100644
  OTB_APPLICATION_EXPORT(otb::Wrapper::Superimpose)
 -
 -
-diff --git a/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx b/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
-index 7e7a7d8..454d53c 100644
---- a/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
-+++ b/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
-@@ -60,17 +60,10 @@ private:
+--- otb.orig/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
++++ otb/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
+@@ -60,17 +60,10 @@
    void DoInit()
    {
      SetName("VectorDataReprojection");
@@ -735,11 +681,9 @@ index 7e7a7d8..454d53c 100644
      SetDocLimitations(" ");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso(" ");
-diff --git a/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx b/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
-index fc6a15c..b3519f2 100644
---- a/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
-+++ b/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
-@@ -71,7 +71,7 @@ private:
+--- otb.orig/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
++++ otb/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
+@@ -71,7 +71,7 @@
      SetName("ConnectedComponentSegmentation");
      SetDescription("Connected component segmentation and object based image filtering of the input image according to user-defined criterions.");
      SetDocName("Connected Component Segmentation");
@@ -748,11 +692,9 @@ index fc6a15c..b3519f2 100644
      SetDocLimitations("Due to the tiling scheme in case of large images, some segments can be arbitrarily split across multiple tiles.");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso(" ");
-diff --git a/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx b/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
-index 1af6e23..a8291a6 100644
---- a/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
-+++ b/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
-@@ -210,7 +210,7 @@ private:
+--- otb.orig/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
++++ otb/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
+@@ -210,7 +210,7 @@
      SetDescription("Second step of the exact Large-Scale Mean-Shift segmentation workflow.");
  
      SetDocName("Exact Large-Scale Mean-Shift segmentation, step 2");
@@ -761,17 +703,15 @@ index 1af6e23..a8291a6 100644
      SetDocLimitations("This application is part of the Large-Scale Mean-Shift segmentation workflow (LSMS) and may not be suited for any other purpose.");
      SetDocAuthors("David Youssefi");
      SetDocSeeAlso("MeanShiftSmoothing, LSMSSmallRegionsMerging, LSMSVectorization");
-@@ -707,5 +707,3 @@ private:
+@@ -707,5 +707,3 @@
  }
  
  OTB_APPLICATION_EXPORT(otb::Wrapper::LSMSSegmentation)
 -
 -
-diff --git a/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx b/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
-index dfd43a4..d542cef 100644
---- a/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
-+++ b/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
-@@ -138,7 +138,7 @@ private:
+--- otb.orig/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
++++ otb/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
+@@ -138,7 +138,7 @@
  
      // Documentation
      SetDocName("Segmentation");
@@ -780,7 +720,7 @@ index dfd43a4..d542cef 100644
                            "Available segmentation algorithms are two different versions of Mean-Shift segmentation algorithm (one being multi-threaded),"
                            " simple pixel based connected components according to a user-defined criterion, and watershed from the gradient of the intensity"
                            " (norm of spectral bands vector). The application has two different modes that affects the nature of its output.\n\nIn raster mode,"
-@@ -147,8 +147,8 @@ private:
+@@ -147,8 +147,8 @@
                            " can not handle large images. \n\nTo segment large data, one can use the vector mode. In this case, the output of the application is a"
                            " vector file or database. The input image is split into tiles (whose size can be set using the tilesize parameter), and each tile is loaded, segmented"
                            " with the chosen algorithm, vectorized, and written into the output file or database. This piece-wise behavior ensure that memory will never get overloaded,"
@@ -791,7 +731,7 @@ index dfd43a4..d542cef 100644
                            " to segmented region that may have been split by the tiling scheme. ");
  
      SetDocLimitations("In raster mode, the application can not handle large input images. Stitching step of vector mode might become slow with very large input images."
-@@ -223,7 +223,7 @@ private:
+@@ -223,7 +223,7 @@
      SetParameterDescription("mode", "Choice of processing mode, either raster or large-scale.");
  
      AddChoice("mode.vector", "Tile-based large-scale segmentation with vector output");
@@ -800,7 +740,7 @@ index dfd43a4..d542cef 100644
  
      AddChoice("mode.raster", "Standard segmentation with labeled raster output");
      SetParameterDescription("mode.raster","In this mode, the application will output a standard labeled raster. This mode can not handle large data.");
-@@ -257,7 +257,8 @@ private:
+@@ -257,7 +257,8 @@
      SetParameterDescription("mode.vector.out", "The output vector file or database (name can be anything understood by OGR)");
  
      AddParameter(ParameterType_Choice,"mode.vector.outmode","Writing mode for the output vector file");
@@ -810,7 +750,7 @@ index dfd43a4..d542cef 100644
  
      AddChoice("mode.vector.outmode.ulco","Update output vector file, only allow to create new layers");
      SetParameterDescription("mode.vector.outmode.ulco","The output vector file is opened in update mode if existing. If the output layer already exists, the application stops, leaving it untouched.");
-@@ -297,7 +298,7 @@ private:
+@@ -297,7 +298,7 @@
  
      AddParameter(ParameterType_Float, "mode.vector.simplify", "Simplify polygons");
      SetParameterDescription("mode.vector.simplify",
@@ -819,11 +759,9 @@ index dfd43a4..d542cef 100644
      SetDefaultParameterFloat("mode.vector.simplify",0.1);
      MandatoryOff("mode.vector.simplify");
      DisableParameter("mode.vector.simplify");
-diff --git a/Modules/Applications/AppStereo/app/otbBlockMatching.cxx b/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
-index 51fcada..7422a49 100644
---- a/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
-+++ b/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
-@@ -127,11 +127,11 @@ private:
+--- otb.orig/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
++++ otb/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
+@@ -127,11 +127,11 @@
      SetDescription("Performs block-matching to estimate pixel-wise disparities between two images");
  
      SetDocName("Pixel-wise Block-Matching");
@@ -838,7 +776,7 @@ index 51fcada..7422a49 100644
        "investigate disparities that will not be reliable anyway. For efficiency reasons, if the optimal metric values"
        " image is desired, it will be concatenated to the output image (which will then have three bands : horizontal "
        "disparity, vertical disparity and metric value). One can split these images afterward.");
-@@ -142,7 +142,7 @@ private:
+@@ -142,7 +142,7 @@
      AddDocTag(Tags::Stereo);
  
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -847,7 +785,7 @@ index 51fcada..7422a49 100644
  
      AddParameter(ParameterType_InputImage,"io.inleft","Left input image");
      SetParameterDescription("io.inleft","The left input image (reference)");
-@@ -162,24 +162,25 @@ private:
+@@ -162,24 +162,25 @@
      SetParameterDescription("io.outmetric","If used, the output image will have a second component with metric optimal values");
  
      AddParameter(ParameterType_Group,"mask","Image masking parameters");
@@ -878,11 +816,9 @@ index 51fcada..7422a49 100644
      MandatoryOff("mask.variancet");
      SetDefaultParameterFloat("mask.variancet",100.);
      DisableParameter("mask.variancet");
-diff --git a/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx b/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
-index 76d6e67..1ce0bbb 100644
---- a/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
-+++ b/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
-@@ -76,7 +76,7 @@ private:
+--- otb.orig/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
++++ otb/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
+@@ -76,7 +76,7 @@
      AddDocTag(Tags::Stereo);
  
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -891,11 +827,9 @@ index 76d6e67..1ce0bbb 100644
  
      AddParameter(ParameterType_InputImage,"io.in","Input disparity map");
      SetParameterDescription("io.in","The input disparity map (horizontal disparity in first band, vertical in second)");
-diff --git a/Modules/Applications/AppStereo/app/otbStereoFramework.cxx b/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
-index 16f86b1..19e8c99 100644
---- a/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
-+++ b/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
-@@ -339,7 +339,7 @@ private:
+--- otb.orig/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
++++ otb/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
+@@ -339,7 +339,7 @@
  
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "input", "Input parameters");
@@ -904,7 +838,7 @@ index 16f86b1..19e8c99 100644
  
      AddParameter(ParameterType_InputImageList,  "input.il",   "Input images list");
      SetParameterDescription("input.il", "The list of images.");
-@@ -360,7 +360,7 @@ private:
+@@ -360,7 +360,7 @@
  
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "output", "Output parameters");
@@ -913,7 +847,7 @@ index 16f86b1..19e8c99 100644
  
      // // Build the Output Map Projection
      // for custom map projection
-@@ -378,7 +378,7 @@ private:
+@@ -378,7 +378,7 @@
  
      // UserDefined values
      AddParameter(ParameterType_Choice, "output.fusionmethod", "Method to fuse measures in each DSM cell");
@@ -922,7 +856,7 @@ index 16f86b1..19e8c99 100644
      AddChoice("output.fusionmethod.max", "The cell is filled with the maximum measured elevation values");
      AddChoice("output.fusionmethod.min", "The cell is filled with the minimum measured elevation values");
      AddChoice("output.fusionmethod.mean","The cell is filled with the mean of measured elevation values");
-@@ -417,7 +417,8 @@ private:
+@@ -417,7 +417,8 @@
  
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "stereorect", "Stereorectification Grid parameters");
@@ -932,7 +866,7 @@ index 16f86b1..19e8c99 100644
  
      AddParameter(ParameterType_Int,"stereorect.fwdgridstep","Step of the displacement grid (in pixels)");
      SetParameterDescription("stereorect.fwdgridstep","Stereo-rectification displacement grid only varies slowly. Therefore, it is recommended to use a coarser grid (higher step value) in case of large images");
-@@ -425,7 +426,7 @@ private:
+@@ -425,7 +426,7 @@
      MandatoryOff("stereorect.fwdgridstep");
  
      AddParameter(ParameterType_Int, "stereorect.invgridssrate", "Sub-sampling rate for epipolar grid inversion");
@@ -941,7 +875,7 @@ index 16f86b1..19e8c99 100644
      SetDefaultParameterInt("stereorect.invgridssrate",10);
      SetMinimumParameterIntValue("stereorect.invgridssrate",1);
      MandatoryOff("stereorect.invgridssrate");
-@@ -504,7 +505,7 @@ private:
+@@ -504,7 +505,7 @@
      DisableParameter("mask.right");
  
      AddParameter(ParameterType_Float,"mask.variancet","Discard pixels with low local variance");
@@ -950,11 +884,9 @@ index 16f86b1..19e8c99 100644
      MandatoryOff("mask.variancet");
      SetDefaultParameterFloat("mask.variancet",50.);
      //DisableParameter("mask.variancet");
-diff --git a/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx b/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
-index 69d51c3..f0d25d1 100644
---- a/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
-+++ b/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
-@@ -111,7 +111,7 @@ private:
+--- otb.orig/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
++++ otb/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
+@@ -111,7 +111,7 @@
      SetDocSeeAlso("otbGridBasedImageResampling");
  
      AddParameter(ParameterType_Group,"io","Input and output data");
@@ -963,7 +895,7 @@ index 69d51c3..f0d25d1 100644
      AddParameter(ParameterType_InputImage,"io.inleft","Left input image");
      SetParameterDescription("io.inleft","The left input image to resample");
  
-@@ -155,7 +155,7 @@ private:
+@@ -155,7 +155,7 @@
      DisableParameter("epi.elevation.avgdem.maxdisp");
  
      AddParameter(ParameterType_Float,"epi.scale","Scale of epipolar images");
@@ -972,7 +904,7 @@ index 69d51c3..f0d25d1 100644
      SetDefaultParameterFloat("epi.scale",1.);
  
      AddParameter(ParameterType_Int,"epi.step","Step of the deformation grid (in nb. of pixels)");
-@@ -175,7 +175,7 @@ private:
+@@ -175,7 +175,7 @@
      SetParameterRole("epi.baseline", Role_Output);
  
      AddParameter(ParameterType_Group,"inverse","Write inverse fields");
@@ -981,7 +913,7 @@ index 69d51c3..f0d25d1 100644
  
      AddParameter(ParameterType_OutputImage, "inverse.outleft", "Left inverse deformation grid");
      SetParameterDescription("inverse.outleft","The output deformation grid to be used to resample the epipolar left image");
-@@ -186,7 +186,7 @@ private:
+@@ -186,7 +186,7 @@
      MandatoryOff("inverse.outright");
  
      AddParameter(ParameterType_Int, "inverse.ssrate", "Sub-sampling rate for inversion");
@@ -990,7 +922,7 @@ index 69d51c3..f0d25d1 100644
      SetDefaultParameterInt("inverse.ssrate",16);
      SetMinimumParameterIntValue("inverse.ssrate",1);
  
-@@ -285,7 +285,7 @@ private:
+@@ -285,7 +285,7 @@
        FloatVectorImageType::PointType lorigin = GetParameterImage("io.inleft")->GetOrigin();
        FloatVectorImageType::SpacingType lspacing = GetParameterImage("io.inleft")->GetSpacing();
        FloatVectorImageType::SizeType lsize = GetParameterImage("io.inleft")->GetLargestPossibleRegion().GetSize();
@@ -999,11 +931,9 @@ index 69d51c3..f0d25d1 100644
        if (lsize[0]*lsize[1]>256*256)
          otbAppLogWARNING("Left image's size (" << lsize[0] << "x" << lsize[1] << ") may result in a too high computational demand. Please consider setting inverse.ssrate parameter correctly (actual value is " << GetParameterInt("inverse.ssrate") << ").");
  
-diff --git a/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx b/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
-index d7664f2..7695115 100644
---- a/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
-+++ b/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
-@@ -90,7 +90,7 @@ SetMinimumParameterIntValue("channel", 1);
+--- otb.orig/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
++++ otb/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
+@@ -90,7 +90,7 @@
  AddRAMParameter();
  
  AddParameter(ParameterType_Group, "parameters", "Texture feature parameters");
@@ -1012,11 +942,9 @@ index d7664f2..7695115 100644
  
  AddParameter(ParameterType_Int,"parameters.xrad","X Radius");
  SetParameterDescription("parameters.xrad", "X Radius");
-diff --git a/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx b/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
-index f987119..8369046 100644
---- a/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
-+++ b/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
-@@ -81,7 +81,7 @@ SetMinimumParameterIntValue("channel", 1);
+--- otb.orig/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
++++ otb/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
+@@ -81,7 +81,7 @@
  AddRAMParameter();
  
  AddParameter(ParameterType_Group, "parameters", "Texture feature parameters");
@@ -1025,11 +953,9 @@ index f987119..8369046 100644
      The available texture features are SFS'Length, SFS'Width, SFS'PSI, SFS'W-Mean, SFS'Ratio and SFS'SD.\
      They are provided in this exact order in the output image.");
  
-diff --git a/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx b/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
-index 8b66ad3..ade1ed9 100644
---- a/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
-+++ b/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
-@@ -63,7 +63,7 @@ private:
+--- otb.orig/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
++++ otb/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
+@@ -63,7 +63,7 @@
      SetDescription("Rasterize a vector dataset.");
  
      SetDocName("Rasterization");
@@ -1038,11 +964,9 @@ index 8b66ad3..ade1ed9 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso("For now, support of input dataset with multiple layers having different projection reference system is limited.");
-diff --git a/RELEASE_NOTES.txt b/RELEASE_NOTES.txt
-index de7cd26..406bc80 100644
---- a/RELEASE_NOTES.txt
-+++ b/RELEASE_NOTES.txt
-@@ -13,8 +13,8 @@ OTB-v.5.0.0 - Changes since version 4.4.0 (2015/05/28)
+--- otb.orig/RELEASE_NOTES.txt
++++ otb/RELEASE_NOTES.txt
+@@ -13,8 +13,8 @@
  
    * Remove deprecated code
       * MeanShiftVectorImageFilter  and MeanShiftImageFilter classes
@@ -1053,7 +977,7 @@ index de7cd26..406bc80 100644
    * ThirdParties
      * No more internal versions of most third parties (except 6S, siftfast, ossimplugins)
        * Removed openjpeg sources from OTB source
-@@ -30,7 +30,7 @@ OTB-v.5.0.0 - Changes since version 4.4.0 (2015/05/28)
+@@ -30,7 +30,7 @@
      * It allows to build all OTB dependencies from source, and then OTB (thus replaces the removed internal versions)
      * Sources are checked out at configuration time or can be downloaded beforehand
      * Allow to build a complete OTB with a handful of prerequisites (gcc, cmake, curl)
@@ -1062,7 +986,7 @@ index de7cd26..406bc80 100644
    * Doxygen
      * Classes are now organized by modules
      * Direct link to official ITK doxygen
-@@ -86,8 +86,8 @@ OTB-v.4.4.0 - Changes since version 4.2.1 (2015/02/13)
+@@ -86,8 +86,8 @@
  * Library:
  
    * Core:
@@ -1073,7 +997,7 @@ index de7cd26..406bc80 100644
      * Giving access to probability estimates mode in libSVMMachineLearningModel and RandomForestsMachineLearningModel
      * Clean and update the header include into OTB
      * Enhance p to xs registration formula
-@@ -97,34 +97,34 @@ OTB-v.4.4.0 - Changes since version 4.2.1 (2015/02/13)
+@@ -97,34 +97,34 @@
      * Add an option to limit the number of samples by class into otbListSampleGenerator
      * Fix BCO interpolation about coefficients normalization
      * Fix missing boost namespace
@@ -1117,7 +1041,7 @@ index de7cd26..406bc80 100644
      * Smoothing: keep the time step independant from the image spacing
      * HomologousPoint: proper computation of the opposite region
      * Rasterization: fix computation of output image extent
-@@ -137,8 +137,8 @@ OTB-v.4.4.0 - Changes since version 4.2.1 (2015/02/13)
+@@ -137,8 +137,8 @@
      * TrainImagesClassifier: add option to limit the min number of samples to the smallest class
      * MeanShiftSmoothing: add missing ram parameter
      * StereoRectificationGridGenerator: add warning message about image sizes when enabling inverse transformation estimations.
@@ -1128,7 +1052,7 @@ index de7cd26..406bc80 100644
    * OTB-lib:
      * 0001003: logical bug in IkonosImageMetadataInterface ::GetPhysicalGain(),resolved,fixed,"In IkonosImageMetadataInterface::GetPhysicalGain()
      * 0001005: build error with otbUtilitiesTests
-@@ -274,7 +274,7 @@ OTB-v.4.0.0 - Changes since version 3.20 (2014/03/13)
+@@ -274,7 +274,7 @@
      * Correct multibaseline support
      * Move test related to amplitude and phase functor from visualization to basic filters
  
@@ -1137,7 +1061,7 @@ index de7cd26..406bc80 100644
      * Use modern CMake style: no block-end arguments and all CMake command to lower case format
  
    * ThirdParties:
-@@ -294,7 +294,7 @@ OTB-v.4.0.0 - Changes since version 3.20 (2014/03/13)
+@@ -294,7 +294,7 @@
      * Convert : Adding gamma correction method the convert application
      * HomologousPointsExtraction : add mode.geobins.binsizey and mode.geobins.binstepy to allow for anisotropic geobins mode
      * HomologousPointsExtraction : new mode.geobins.margin parameter to only search inside image center.
@@ -1146,7 +1070,7 @@ index de7cd26..406bc80 100644
    * Core framework:
      * Improve the support of XML parameters input/output file
      * Improve the input VectorData/Image/Filename parameter to give access to m_Input attribute
-@@ -438,19 +438,19 @@ OTB-v.3.18.1 - Changes since version 3.18.0 (2013/07/22)
+@@ -438,19 +438,19 @@
  
    * Examples
      * Update HelloWorld example CMakeLists
@@ -1169,7 +1093,7 @@ index de7cd26..406bc80 100644
  the following main functionnalities :
   * Huge improvements in Stereo framework, to compute DEM from stereo pairs :
     check the StereoFramework application !
-@@ -459,7 +459,7 @@ the following main functionnalities :
+@@ -459,7 +459,7 @@
   * A classifiers fusion framework based on Dempster Shafer theory : check the FusionOfClassifications application !
  
  The full list of improvements comes here :
@@ -1178,7 +1102,7 @@ index de7cd26..406bc80 100644
  * Library
    * Core and Third Parties
      * Expose Curl timeout as parameter
-@@ -468,7 +468,7 @@ The full list of improvements comes here :
+@@ -468,7 +468,7 @@
      * Removal of old deprecated methods in all OTB classes
      * Fix mangling of internal OpenJPEG
      * Simpler and more automatic configuration and build on Windows based on OSGeo4W
@@ -1187,7 +1111,7 @@ index de7cd26..406bc80 100644
    * Basic filters
      * Add NoData value and flag for StreamingMinMaxVectorImageFilter
      * StreamingStatisticsImageFilter & StreamingStatisticsVectorImageFilter : support for skipping Nan and for a background value
-@@ -489,7 +489,7 @@ The full list of improvements comes here :
+@@ -489,7 +489,7 @@
    * IO
      * GDALImageIO : support reading overviews. "image.tif?&resol=3" is now supported as file name
      * Extended file names now supports the "box" key for writing only a subset of the image
@@ -1196,7 +1120,7 @@ index de7cd26..406bc80 100644
    * Learning
      * Generic framework of classification filters, integrating OpenCV classifiers and libSVM
        * New classes
-@@ -500,31 +500,31 @@ The full list of improvements comes here :
+@@ -500,31 +500,31 @@
              BoostMachineLearningModel DecisionTreeMachineLearningModel GradientBoostedTreeMachineLearningModel
              KNearestNeighborsMachineLearningModel NeuralNetworkMachineLearningModel
              NormalBayesMachineLearningModel RandomForestsMachineLearningModel SVMMachineLearningModel
@@ -1236,7 +1160,7 @@ index de7cd26..406bc80 100644
      * Updated applications
        * StereoFramework :
          * Handles several images in input by stereo couples
-@@ -549,9 +549,9 @@ The full list of improvements comes here :
+@@ -549,9 +549,9 @@
      * Core Framework
        * Manage UTF8 paths in GUI
        * Fix a crash in string list parameter widget in GUI
@@ -1248,7 +1172,7 @@ index de7cd26..406bc80 100644
  * Bug Fixes
    * OTB-lib
      * 0000707: Memory leaks in ApplicationWrappers
-@@ -622,7 +622,7 @@ OTB-v.3.16 - Changes since version 3.14.1 (2013/02/04)
+@@ -622,7 +622,7 @@
        * Made methods stick to what OSSIM does
      * Refactored RpcProjectionAdapter into RpcSolverAdapter
      * Updated ossim to r21971
@@ -1257,7 +1181,7 @@ index de7cd26..406bc80 100644
    * IO
      * Added support for GDAL driver creation options in GDALImageIO
      * Added support for external geom files in ImageFileReader
-@@ -631,16 +631,16 @@ OTB-v.3.16 - Changes since version 3.14.1 (2013/02/04)
+@@ -631,16 +631,16 @@
        * Added support for extended filenames in ImageFileReader
        * Added support for extended filenames in ImageFileWriter
      * Refactored StreamingImageFileWriter and ImageFileWriter
@@ -1278,7 +1202,7 @@ index de7cd26..406bc80 100644
    * Fusion
      * Added the LMVM fusion algorithm (kindly contributed by A. Tzotsos)
  
-@@ -658,12 +658,12 @@ OTB-v.3.16 - Changes since version 3.14.1 (2013/02/04)
+@@ -658,12 +658,12 @@
      * Added segmentation algorithm based on multiscale morphological structures classification
  
    * OBIA
@@ -1293,7 +1217,7 @@ index de7cd26..406bc80 100644
    * Applications
      * Framework
        * Modified the elevation parameters handling to be consistent with refactoring
-@@ -690,7 +690,7 @@ OTB-v.3.16 - Changes since version 3.14.1 (2013/02/04)
+@@ -690,7 +690,7 @@
        * Added support for large image in image mode of ColorMapping application
        * Added support for histogram clamping settings and mask input in Convert application
        * Added support for UTM zone and hemisphere estimation by default in OrthoRectification application
@@ -1302,7 +1226,7 @@ index de7cd26..406bc80 100644
  * Monteverdi
    * Refactored to fit the new elevation configuration method
    * Added Support for extended filenames
-@@ -726,7 +726,7 @@ OTB-v.3.14.1 - Changes since version 3.14.0 (2012/10/02)
+@@ -726,7 +726,7 @@
    * Improve Pleiades support :
      * TOA optical calibration available
      * Improve support of mega tiles products
@@ -1311,7 +1235,7 @@ index de7cd26..406bc80 100644
  
  * Monteverdi
    * Support of MacOSX 10.8
-@@ -956,7 +956,7 @@ OTB-v.3.14.0 - Changes since version 3.12.0 (2012/07/09)
+@@ -956,7 +956,7 @@
  
  * Bug fixes :
    * OTB-lib
@@ -1320,7 +1244,7 @@ index de7cd26..406bc80 100644
                 apTvClTrainSVMImagesClassifierQB456 test results
      * 0000568: Unable to compile OTB with a local version of the
                 FFTW library
-@@ -997,7 +997,7 @@ OTB-v.3.14.0 - Changes since version 3.12.0 (2012/07/09)
+@@ -997,7 +997,7 @@
                 are located in a directory with spaces in its name
  
    * OTB-Packaging
@@ -1329,7 +1253,7 @@ index de7cd26..406bc80 100644
                 applications on Mac OSX 10.6  (SL)
      * 0000525: Python not found during ubuntu package build
      * 0000526: Fix input of bfTvPolygonizationRasterization_WGS84
-@@ -1925,7 +1925,7 @@ OTB-v.2.6.0 - Changes since version 2.4.0 (2008/10/31)
+@@ -1925,7 +1925,7 @@
  OTB-v.2.4.0 - Changes since version 2.2.0 (2008/07/24)
  --------------------------------------------------------
  
@@ -1338,7 +1262,7 @@ index de7cd26..406bc80 100644
        not only examples testing
      - Added OTB_USE_JPEG2000 : experimental support for jpeg2000
        files.
-@@ -2262,7 +2262,7 @@ OTB-v.1.6.0 - Changes since version 1.4.0 (2007/10/25)
+@@ -2262,7 +2262,7 @@
  
      - Added a new tiling streaming mode.
  
@@ -1347,7 +1271,7 @@ index de7cd26..406bc80 100644
        seamlessly
        the image geometry information.
  
-@@ -2346,7 +2346,7 @@ OTB-v.1.6.0 - Changes since version 1.4.0 (2007/10/25)
+@@ -2346,7 +2346,7 @@
  
  *Applications:
  
@@ -1356,7 +1280,7 @@ index de7cd26..406bc80 100644
        open multiple images,
        configure viewers and link displays.
  
-@@ -2354,7 +2354,7 @@ OTB-v.1.6.0 - Changes since version 1.4.0 (2007/10/25)
+@@ -2354,7 +2354,7 @@
        extraction algorithm
        implemented in the FeatureExtraction module.
  
@@ -1365,10 +1289,8 @@ index de7cd26..406bc80 100644
        ortho rectify images in
        command line using the brand new Projections module of the Orfeo
        ToolBox. Old rigid
-diff --git a/debian/patches/series b/debian/patches/series
-index 5299247..7135749 100644
---- a/debian/patches/series
-+++ b/debian/patches/series
+--- otb.orig/debian/patches/series
++++ otb/debian/patches/series
 @@ -1 +1 @@
 -spelling.patch
 +spelling-5.0.patch
