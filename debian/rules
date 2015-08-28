@@ -61,7 +61,7 @@ mangui:=$(CURDIR)/debian/$(pkggui)/usr/share/man/man1
 
 # OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
 # rather use all libs since the installed libs are spread over several packages
-OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib/otb
+OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib
 
 %:
 	dh $@ --parallel
