@@ -1,13 +1,12 @@
+
 --- /dev/null
 +++ otb/spelling.patch
-@@ -0,0 +1,1367 @@
+@@ -0,0 +1,1360 @@
 +Author: Andreas Tille <tille@debian.org>
 +Last-Update: Wed, 26 Aug 2015 09:25:20 +0200
 +Description: Fix some spelling errors to silence lintian enabling
 + to concentrate on the real problem.
 +  .
-+   Feel free to take over this s/allows to/allows one to/.
-+   
 +diff --git a/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx b/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
 +index 1d64388..3e6424b 100644
 +--- a/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
