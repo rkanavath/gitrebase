@@ -1,6 +1,6 @@
 #! /usr/bin/dh-exec
 # OTB specific libraries (binaries and all symlinks)
-usr/lib/libOTBCommandLine*.so*	usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBCommandLine*.so.*	usr/lib/${DEB_HOST_MULTIARCH}
 
 # Executables
 usr/bin/otbApplicationLauncherCommandLine

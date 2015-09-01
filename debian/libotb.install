@@ -1,6 +1,29 @@
 #! /usr/bin/dh-exec
 # OTB libraries (binaries and versioned symlinks)
-usr/lib/lib*.so.*	usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libotb*.so.*                    usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBApplicationEngine*.so.* 	usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBCarto*.so.* 	            usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBCommon*.so.* 	            usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBEdge*.so.* 	              usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBExtendedFilename*.so.* 	  usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBFuzzy*.so.* 	            usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTB*Adapters*.so.*           usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBImage*.so.* 	            usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBIO*.so.* 	                usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBMath*.so.* 	              usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBMetadata*.so.*            usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBPolarimetry*.so.*         usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBProjection*.so.*          usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBRCC8*.so.*                usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBSimulation*.so.*          usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBStreaming*.so.*           usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBSupervised*.so.*          usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTB*Learning*.so.*           usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBTest*.so.*                usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBTransform*.so.*           usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBVector*.so.*              usr/lib/${DEB_HOST_MULTIARCH}
+usr/lib/libOTBWavelet*.so.*             usr/lib/${DEB_HOST_MULTIARCH}
+
 
 # Executables
 usr/bin/otbTestDriver
