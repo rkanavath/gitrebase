@@ -1,7 +1,7 @@
 Source: otb
 Maintainer: Debian GIS Project <pkg-grass-devel@lists.alioth.debian.org>
 Uploaders: Andreas Tille <tille@debian.org>,
-           Paolo Cavallini <cavallini@faunalia.it>
+           Paolo Cavallini <cavallini@faunalia.it>,
            Rashad Kanavath <rashad.kanavath@c-s.fr>
 Section: science
 Priority: optional
@@ -44,7 +44,7 @@ Depends: libgdal1h,
 Suggests: libotb-dev
 Conflicts: libotb3.16,
            libotb3.18,
-           libotb3.20
+           libotb3.20,
            libotb4.0
 Provides: libotb
 Description: Free library of image processing algorithms - runtime

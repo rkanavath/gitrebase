@@ -18,10 +18,10 @@ otb (5.0.0-1) UNRELEASED; urgency=medium
   [ Paolo Cavallini ]
   * New upstream release.
 
-  [ otb ]
+  [ Rashad Kanavath ]
   * New upstream release.
 
- -- otb <otb@otb-debian-8.1>  Mon, 24 Aug 2015 10:45:17 +0200
+ -- Rashad Kanavath <rashad.kanavath@c-s.fr>  Mon, 24 Aug 2015 10:45:17 +0200
 
 otb (4.0.0-1otb1~trusty2) trusty; urgency=low
 
