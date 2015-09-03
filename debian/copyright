@@ -72,19 +72,19 @@ Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
     Christophe Palmann (CS) <christophe.palmann@c-s.fr>
 License: CeCILL
 
-Files:  Modules/ThirdParty/OssimPlugins/src/ossim*
-Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
-            2005, David Burken <durken@comcast.net>
-            2000, ImageLinks Inc <durken@comcast.net>
+Files: Modules/ThirdParty/OssimPlugins/src/ossim*
+Copyright: 2004-2014, CNES (Centre National d'Etudes Spatiales)
+                2005, David Burken <durken@comcast.net>
+                2000, ImageLinks Inc <durken@comcast.net>
 License: LGPL-2
  On debian systems this license can be found at: /usr/share/common-licenses/LGPL-2
 
-Files:  Modules/ThirdParty/SiftFast/src/*
-Copyright: 2008-2009 zerofrog <zerofrog@gmail.com>
+Files: Modules/ThirdParty/SiftFast/src/*
+Copyright: 2008-2009, zerofrog <zerofrog@gmail.com>
 License: LGPL-3
  On debian systems this license can be found at: /usr/share/common-licenses/LGPL-3
 
-Files:  Modules/ThirdParty/ITK/include/*
+Files: Modules/ThirdParty/ITK/include/*
         Utilities/Maintenance/BuildHeaderTest.py
         Modules/Wrappers/QtWidget/src/itkQtProgressBar.cxx
         Modules/Wrappers/QtWidget/include/itkQtProgressBar.h
