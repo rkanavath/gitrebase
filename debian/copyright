@@ -94,7 +94,8 @@ License: Apache2.0
 
 Files: CMake/PythonCompile.py
 Copyright: (disclaimed) Simon Edwards <simon@simonzone.com>
-License: public_domain
+License: public-domain
+ This file is in the public domain.
 
 Files: debian/*
 Copyright: 2010-2015 OTB Team <contact@orfeo-toolbox.org>
