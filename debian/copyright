@@ -6,6 +6,7 @@ Source: http://sourceforge.net/projects/orfeo-toolbox/files/OTB/
         git clone -r <version> https://git@git.orfeo-toolbox.org/otb.git
 Files-Excluded: Modules/ThirdParty/6S/src/*
                 SuperBuild/*
+
 Files: CMake/*
        Copyright/*
        Modules/*
@@ -14,7 +15,6 @@ Files: CMake/*
        *.*
        LICENSE
        README
-
 Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
     Jordi Inglada (CNES) <jordi.inglada@orfeo-toolbox.org>
     Thomas Feuvrier (CS) <thomas.feuvrier@c-s.fr>
@@ -73,34 +73,29 @@ Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
 License: CeCILL
 
 Files:  Modules/ThirdParty/OssimPlugins/src/ossim*
-
 Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
             2005, David Burken <durken@comcast.net>
             2000, ImageLinks Inc <durken@comcast.net>
 License: LGPL-2
 
 Files:  Modules/ThirdParty/SiftFast/src/*
-
 Copyright: 2008-2009 zerofrog <zerofrog@gmail.com>
-License: LGPL-3
 Comment: LICENSE and AUTHOR file in directory. On debian systems this license can be found at: /usr/share/common-licenses/LGPL-3
+License: LGPL-3
 
 Files:  Modules/ThirdParty/ITK/include/*
         Utilities/Maintenance/BuildHeaderTest.py
         Modules/Wrappers/QtWidget/src/itkQtProgressBar.cxx
         Modules/Wrappers/QtWidget/include/itkQtProgressBar.h
-
 Copyright: Insight Software Consortium
-License: Apache2.0
 Comment: On debian systems this license can be found at: /usr/share/common-licenses/Apache-2.0
+License: Apache2.0
 
 Files: CMake/PythonCompile.py
-
 Copyright: Simon Edwards <simon@simonzone.com>
 License: public_domain
 
 Files: debian/*
-
 Copyright: 2010-2015 OTB Team <contact@orfeo-toolbox.org>
            2014 Andreas Tille <tille@debian.org>
            2015 Rashad Kanavath <rashad.kanavath@c-s.fr>
