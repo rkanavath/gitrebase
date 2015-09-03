@@ -1,4 +1,4 @@
-otb (5.0.0+dfsg-1) UNRELEASED; urgency=medium
+otb (5.0.0+dfsg-1) experimental; urgency=medium
 
   * Initial upload to Debian (Closes: #764860), new version and repackaged
     after previous reject
