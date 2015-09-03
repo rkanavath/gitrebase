@@ -77,22 +77,23 @@ Copyright: 2004-2014 CNES (Centre National d'Etudes Spatiales)
             2005, David Burken <durken@comcast.net>
             2000, ImageLinks Inc <durken@comcast.net>
 License: LGPL-2
+ On debian systems this license can be found at: /usr/share/common-licenses/LGPL-2
 
 Files:  Modules/ThirdParty/SiftFast/src/*
 Copyright: 2008-2009 zerofrog <zerofrog@gmail.com>
-Comment: LICENSE and AUTHOR file in directory. On debian systems this license can be found at: /usr/share/common-licenses/LGPL-3
 License: LGPL-3
+ On debian systems this license can be found at: /usr/share/common-licenses/LGPL-3
 
 Files:  Modules/ThirdParty/ITK/include/*
         Utilities/Maintenance/BuildHeaderTest.py
         Modules/Wrappers/QtWidget/src/itkQtProgressBar.cxx
         Modules/Wrappers/QtWidget/include/itkQtProgressBar.h
 Copyright: Insight Software Consortium
-Comment: On debian systems this license can be found at: /usr/share/common-licenses/Apache-2.0
 License: Apache2.0
+ On debian systems this license can be found at: /usr/share/common-licenses/Apache-2.0
 
 Files: CMake/PythonCompile.py
-Copyright: Simon Edwards <simon@simonzone.com>
+Copyright: (disclaimed) Simon Edwards <simon@simonzone.com>
 License: public_domain
 
 Files: debian/*
