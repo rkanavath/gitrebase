@@ -96,7 +96,8 @@ Description: Plugins for ORFEO Toolbox applications
 
 Package: otb-bin
 Architecture: any
-Depends: otb-bin-common (= ${binary:Version}),
+Depends: libotb (= ${binary:Version}),
+         otb-bin-common (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: ORFEO Toolbox command line applications
@@ -110,7 +111,8 @@ Description: ORFEO Toolbox command line applications
 
 Package: otb-bin-qt
 Architecture: any
-Depends: otb-bin-common (= ${binary:Version}),
+Depends: libotb (= ${binary:Version}),
+         otb-bin-common (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends},
          libqtcore4,
