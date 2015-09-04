@@ -71,7 +71,7 @@ override_dh_shlibdeps:
 	dh_shlibdeps -l$(OTB_LIB_DIRS)
 
 override_dh_install:
-	dh_install
+	dh_install --list-missing
 	rm -f $(CURDIR)/debian/$(pkglib)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 
