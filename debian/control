@@ -38,8 +38,7 @@ Homepage: http://www.orfeo-toolbox.org/
 Package: libotb
 Architecture: any
 Section: libs
-Depends: libgdal1h,
-         ${shlibs:Depends},
+Depends: ${shlibs:Depends},
          ${misc:Depends}
 Suggests: libotb-dev
 Conflicts: libotb3.16,
