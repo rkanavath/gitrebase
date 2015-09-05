@@ -1,0 +1,7 @@
+GMT for Debian
+--------------
+
+For the moment it is not possible to link against the Debian
+packaged libopenjpeg.  The discussion thread about this starts
+here: https://lists.debian.org/debian-gis/2014/10/msg00066.html
+
