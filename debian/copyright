@@ -85,7 +85,7 @@ Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Modules/Learning/SOM/include/otbSOMMap.h
 Copyright: Centre National d'Etudes Spatiales
            Institut Telecom; Telecom Bretagne
-Comment: Parts of the code have been developped by Gregoire Mercier from
+Comment: Parts of the code have been developed by Gregoire Mercier from
  Groupe des Ecoles des Telecommunications / Ecole Nationale Superieure
  des Telecommunications de Bretagne (GET/ENST Bretagne) during
  CNES R&T contrats funded by the French Centre National d'Etudes
