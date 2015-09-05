@@ -71,6 +71,9 @@ override_dh_install:
 	rm -f $(CURDIR)/debian/$(pkglib)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 
+override_dh_installchangelogs:
+	dh_installchangelogs RELEASE_NOTES.txt
+
 override_dh_installman:
 	mkdir -p $(mancli)
 	cp -a debian/otbcli.1 $(mancli)
@@ -86,3 +89,4 @@ override_dh_installman:
 	    basename $${bin} | sed 's/otbgui_//' >> $(mangui)/otbgui.1 ; \
 	    ln -sf otbgui.1 $(mangui)/`basename $${bin}`.1 ; \
 	done
+
