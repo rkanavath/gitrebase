@@ -7,6 +7,3 @@ usr/include/OTB-5.0
 
 # CMake helper scripts
 usr/lib/cmake/OTB-5.0
-
-#OTB libraries
-usr/lib/lib*.so
