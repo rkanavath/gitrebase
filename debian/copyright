@@ -83,34 +83,7 @@ Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Examples/Learning/SVMGenericKernelImageModelEstimatorExample.cxx
  Modules/Filtering/Projection/include/otbROIdataConversion.h
  Modules/Learning/SOM/include/otbSOMMap.h
-Copyright: Centre National d'Etudes Spatiales
-           Institut Telecom; Telecom Bretagne
-Comment: Parts of the code have been developed by Gregoire Mercier from
- Groupe des Ecoles des Telecommunications / Ecole Nationale Superieure
- des Telecommunications de Bretagne (GET/ENST Bretagne) during
- CNES R&T contrats funded by the French Centre National d'Etudes
- Spatiales, CNES.
- .
- Copyright (c) GET / ENST Bretagne
- .
- This code has been integrated into the ORFEO Toolbox (OTB) under
- the CeCILL licence version 2. See Licence_CeCILL_V2-en.txt or
- http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt for more
- details.
- .
- THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS ``AS IS''
- AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
- IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
- ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE FOR
- ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
- DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
- SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
- CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
- OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-License: CeCILL-2.0
-
-Files: Examples/ChangeDetection/KullbackLeiblerSupervizedDistanceChDet.cxx
+ Examples/ChangeDetection/KullbackLeiblerSupervizedDistanceChDet.cxx
  Examples/Learning/SOMExample.cxx
  Modules/Core/Common/include/otbDecimateImageFilter.h
  Modules/Core/Common/include/otbSubsampledImageRegionConstIterator.h
@@ -169,11 +142,33 @@ Files: Examples/ChangeDetection/KullbackLeiblerSupervizedDistanceChDet.cxx
  Modules/Segmentation/Conversion/test/otbPolygonizationRasterizationTest.cxx
  Modules/Segmentation/Conversion/test/otbVectorDataRasterizeFilter.cxx
  Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilter.cxx
- Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilterWithoutReader.cxx
+ Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilterWithoutReader.cxx 
 Copyright: Centre National d'Etudes Spatiales
            Institut Telecom; Telecom Bretagne
-Comment:
- FIXME (ITCopyright.txt not found)
+Comment: Parts of the code have been developed by Gregoire Mercier from
+ Groupe des Ecoles des Telecommunications / Ecole Nationale Superieure
+ des Telecommunications de Bretagne (GET/ENST Bretagne) during
+ CNES R&T contrats funded by the French Centre National d'Etudes
+ Spatiales, CNES. ITCopyright.txt as mentioned in some of file headers is
+ same as GETCopyright.txt
+ .
+ Copyright (c) GET / ENST Bretagne
+ .
+ This code has been integrated into the ORFEO Toolbox (OTB) under
+ the CeCILL licence version 2. See Licence_CeCILL_V2-en.txt or
+ http://www.cecill.info/licences/Licence_CeCILL_V2-en.txt for more
+ details.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDER AND CONTRIBUTORS ``AS IS''
+ AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+ ARE DISCLAIMED. IN NO EVENT SHALL THE AUTHORS OR CONTRIBUTORS BE LIABLE FOR
+ ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+ DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 License: CeCILL-2.0
 
 Files: Modules/Adapters/OSSIMAdapters/test/otbPlatformPositionAdapter.cxx
@@ -260,7 +255,14 @@ Files: Modules/Core/ImageBase/include/otbConvertPixelBuffer.h
  Modules/Wrappers/SWIG/src/itkPyCommand.h
  Utilities/Maintenance/BuildHeaderTest.py
 Copyright: 2002, Insight Software Consortium
+           2014, Centre National d'Etudes Spatiales.
 License: Apache-2.0
+Comment: The files in Modules/ThirdParty/ITK/include/ are pending patches
+ to ITK upstream which were rejected by ITK as the changes are
+ irrelevant in their point of view. Hence upstream source is repacked and
+ kept under the same ITK license from which these files are derived.
+ A full discussion on this action is detailed in otb jira task #635.
+ http://scrum.orfeo-toolbox.org/jira/browse/OTB-635
 
 Files: Modules/Wrappers/SWIG/src/otbApplicationLuaMain.cxx
 Copyright: 1994-2012 Lua.org, PUC-Rio
