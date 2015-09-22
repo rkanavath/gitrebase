@@ -142,7 +142,7 @@ Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Modules/Segmentation/Conversion/test/otbPolygonizationRasterizationTest.cxx
  Modules/Segmentation/Conversion/test/otbVectorDataRasterizeFilter.cxx
  Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilter.cxx
- Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilterWithoutReader.cxx 
+ Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilterWithoutReader.cxx
 Copyright: Centre National d'Etudes Spatiales
            Institut Telecom; Telecom Bretagne
 Comment: Parts of the code have been developed by Gregoire Mercier from
