@@ -60,8 +60,6 @@ Section: libdevel
 Depends: libotb (= ${binary:Version}),
          cmake (>= 2.8.3),
          libboost-graph-dev,
-         libexpat1-dev,
-         libfftw3-dev,
          libgdal-dev (>= 1.10.0),
          libgeotiff-dev,
          libinsighttoolkit4-dev,
@@ -71,7 +69,8 @@ Depends: libotb (= ${binary:Version}),
          libopenthreads-dev,
          libossim-dev,
          ${misc:Depends}
-Conflicts: libotb3-dev
+Conflicts: libotb3-dev,
+	   libotb4-dev
 Description: Free library of image processing algorithms - development
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -79,9 +78,9 @@ Description: Free library of image processing algorithms - development
  in general and for high spatial resolution images in particular.
  .
  This package contains the development files needed to build your own OTB
- applications.
+ applications and modules.
 
-Package: otb-bin-common
+Package: otb-apps
 Architecture: any
 Depends: libotb (= ${binary:Version}),
          ${shlibs:Depends},
@@ -92,12 +91,13 @@ Description: Plugins for ORFEO Toolbox applications
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains the application plugins used by otb-bin and otb-bin-qt
+ This package contains the application plugins used by otb-bin(commandline)
+ and otb-bin-qt(gui)
 
 Package: otb-bin
 Architecture: any
-Depends: libotb (= ${binary:Version}),
-         otb-bin-common (= ${binary:Version}),
+Depends: libotb-commandline  (= ${binary:Version}),
+         otb-apps (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: ORFEO Toolbox command line applications
@@ -106,13 +106,26 @@ Description: ORFEO Toolbox command line applications
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains the command line tools illustrating OTB features (using
- plugins provided by otb-bin-common package).
+ This package contains the command line application launcher than can run any OTB
+ application provided by otb-apps package.
 
-Package: otb-bin-qt
+Package: libotb-commandline
 Architecture: any
 Depends: libotb (= ${binary:Version}),
-         otb-bin-common (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox graphical user interface applications
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains the shared library files for OTB's command line launcher
+ provided by otb-bin package.
+
+Package: libotb-qt4
+Architecture: any
+Depends: libotb (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends},
          libqtcore4,
@@ -123,8 +136,23 @@ Description: ORFEO Toolbox graphical user interface applications
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains the GUI tools illustrating OTB features (using plugins
- provided by otb-bin-common package).
+ This package contains the shared library files for OTB's GUI application launcher
+ provided by otb-bin-qt package.
+
+Package: otb-bin-qt
+Architecture: any
+Depends: libotb-qt4 (= ${binary:Version}),
+         otb-apps (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox graphical user interface applications
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains the GUI launcher that can run any OTB application provided
+ by otb-apps package)
 
 Package: python-otb
 Architecture: any
@@ -132,7 +160,6 @@ Section: python
 Depends: libotb (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends},
-         otb-bin-common,
          python,
          dh-python
 Description: ORFEO Toolbox Python API for applications
@@ -141,5 +168,5 @@ Description: ORFEO Toolbox Python API for applications
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains the Python API for applications provided by the
- otb-bin-common package.
+ This package contains the Python API that can be used to create python version
+ of exisiting OTB applications provided by the otb-apps package.
