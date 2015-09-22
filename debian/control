@@ -106,8 +106,8 @@ Description: ORFEO Toolbox command line applications
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains the command line application launcher than can run any OTB
- application provided by otb-apps package.
+ This package contains the command line application launcher than can
+ run any OTB application provided by otb-apps package.
 
 Package: libotb-commandline
 Architecture: any
@@ -120,8 +120,8 @@ Description: ORFEO Toolbox graphical user interface applications
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains the shared library files for OTB's command line launcher
- provided by otb-bin package.
+ This package contains the shared library files for OTB's
+ command line launcher provided by otb-bin package.
 
 Package: libotb-qt4
 Architecture: any
