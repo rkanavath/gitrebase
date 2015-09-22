@@ -50,8 +50,8 @@ pkgcli:=$(DEBPKGNAME)-bin
 pkggui:=$(DEBPKGNAME)-bin-qt
 pkglib:=lib$(DEBPKGNAME)
 pkgdev:=$(pkglib)-dev
-mancli:=$(CURDIR)/debian/$(pkgcli)/usr/share/man/man1
-mangui:=$(CURDIR)/debian/$(pkggui)/usr/share/man/man1
+mancli:=$(CURDIR)/debian/$(pkgcli)/usr/share/man/man1/
+mangui:=$(CURDIR)/debian/$(pkggui)/usr/share/man/man1/
 
 # OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
 # rather use all libs since the installed libs are spread over several packages
@@ -70,23 +70,17 @@ override_dh_install:
 	dh_install --list-missing
 	rm -f $(CURDIR)/debian/$(pkglib)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
+	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/otb/python/*.pyc
 
 override_dh_installchangelogs:
 	dh_installchangelogs RELEASE_NOTES.txt
 
 override_dh_installman:
 	mkdir -p $(mancli)
-	cp -a debian/otbcli.1 $(mancli)
-	for bin in `ls $(CURDIR)/debian/$(pkgcli)/usr/bin/otbcli_*` ; do \
-	    echo '.IP' >> $(mancli)/otbcli.1 ; \
-	    basename $${bin} | sed 's/otbcli_//' >> $(mancli)/otbcli.1 ; \
-	    ln -sf otbcli.1 $(mancli)/`basename $${bin}`.1 ; \
-	done
+	cp -a debian/manpages/otbcli* $(mancli)
+	cp -a debian/manpages/otbApplicationLauncherCommandLine* $(mancli)
 	mkdir -p $(mangui)
-	cp -a debian/otbgui.1 $(mangui)
-	for bin in `ls $(CURDIR)/debian/$(pkggui)/usr/bin/otbgui_*` ; do \
-	    echo '.IP' >> $(mangui)/otbgui.1 ; \
-	    basename $${bin} | sed 's/otbgui_//' >> $(mangui)/otbgui.1 ; \
-	    ln -sf otbgui.1 $(mangui)/`basename $${bin}`.1 ; \
-	done
+	cp -a debian/manpages/otbgui* $(mangui)
+	cp -a debian/manpages/otbApplicationLauncherQt* $(mangui)
 
+	cp -a debian/manpages/otbTestDriver* $(CURDIR)/debian/libotb/usr/share/man/man1/
