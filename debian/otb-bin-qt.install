@@ -1,8 +1,3 @@
-#! /usr/bin/dh-exec
-
-# OTB specific libraries (binaries and all symlinks)
-usr/lib/libOTBQtWidget*.so.*	usr/lib/${DEB_HOST_MULTIARCH}
-
 # Executables
 usr/bin/otbApplicationLauncherQt
 usr/bin/otbgui_*

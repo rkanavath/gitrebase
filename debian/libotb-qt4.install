@@ -1,0 +1,3 @@
+#! /usr/bin/dh-exec
+# OTB Qt4 libraries (binaries and all symlinks)
+usr/lib/libOTBQtWidget*.so.*      usr/lib/${DEB_HOST_MULTIARCH}
