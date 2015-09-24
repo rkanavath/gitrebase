@@ -4,8 +4,14 @@ Upstream-Contact: OTB Team <contact@orfeo-toolbox.org>
                   OTB developers <otb-developers@googlegroups.com> (closed group needing subscription)
 Source: http://sourceforge.net/projects/orfeo-toolbox/files/OTB/
         git clone -r <version> https://git@git.orfeo-toolbox.org/otb.git
-Comment: 
- TODO (why are 6S & SuperBuild excluded)
+Comment:
+ SuperBuild is the new way of buildling OTB which download and install a dependency
+ if it doesn't exist. However debian package uses dependencies from official packages
+  The superbuild sources are excluded mainly because it contains some unpacked third party
+ sources (patched). They are unpacked from upstream, modified by OTB and kept
+ under superbuild/patches. This is due to limitation in patching via cmake ExternalProject.
+ 6S sources in OTB are converted from fortran to C code. There is no proper license text
+ attached with this library. Hence these sources are excluded from upstream.
 Files-Excluded: Modules/ThirdParty/6S/src/*
                 SuperBuild/*
 
@@ -142,7 +148,7 @@ Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Modules/Segmentation/Conversion/test/otbPolygonizationRasterizationTest.cxx
  Modules/Segmentation/Conversion/test/otbVectorDataRasterizeFilter.cxx
  Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilter.cxx
- Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilterWithoutReader.cxx 
+ Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilterWithoutReader.cxx
 Copyright: Centre National d'Etudes Spatiales
            Institut Telecom; Telecom Bretagne
 Comment: Parts of the code have been developed by Gregoire Mercier from
@@ -848,4 +854,3 @@ License: MIT
  CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
  TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
