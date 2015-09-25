@@ -80,7 +80,7 @@ Description: Free library of image processing algorithms - development
  This package contains the development files needed to build your own OTB
  applications and modules.
 
-Package: otb-apps
+Package: libotb-apps
 Architecture: any
 Depends: libotb (= ${binary:Version}),
          ${shlibs:Depends},
@@ -97,7 +97,7 @@ Description: Plugins for ORFEO Toolbox applications
 Package: otb-bin
 Architecture: any
 Depends: libotb-commandline  (= ${binary:Version}),
-         otb-apps (= ${binary:Version}),
+         libotb-apps (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: ORFEO Toolbox command line applications
@@ -107,7 +107,7 @@ Description: ORFEO Toolbox command line applications
  in general and for high spatial resolution images in particular.
  .
  This package contains the command line application launcher than can
- run any OTB application provided by otb-apps package.
+ run any OTB application provided by libotb-apps package.
 
 Package: libotb-commandline
 Architecture: any
@@ -142,7 +142,7 @@ Description: ORFEO Toolbox graphical user interface applications
 Package: otb-bin-qt
 Architecture: any
 Depends: libotb-qt4 (= ${binary:Version}),
-         otb-apps (= ${binary:Version}),
+         libotb-apps (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: ORFEO Toolbox graphical user interface applications
@@ -152,7 +152,7 @@ Description: ORFEO Toolbox graphical user interface applications
  in general and for high spatial resolution images in particular.
  .
  This package contains the GUI launcher that can run any OTB application provided
- by otb-apps package)
+ by libotb-apps package)
 
 Package: python-otb
 Architecture: any
@@ -169,4 +169,4 @@ Description: ORFEO Toolbox Python API for applications
  in general and for high spatial resolution images in particular.
  .
  This package contains the Python API that can be used to create python version
- of exisiting OTB applications provided by the otb-apps package.
+ of exisiting OTB applications provided by the libotb-apps package.
