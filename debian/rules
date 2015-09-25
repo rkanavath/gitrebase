@@ -71,16 +71,7 @@ override_dh_install:
 	rm -f $(CURDIR)/debian/$(pkglib)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/otb/python/*.pyc
+	cp -a debian/manpages/otbcli* $(CURDIR)/debian/
 
 override_dh_installchangelogs:
 	dh_installchangelogs RELEASE_NOTES.txt
-
-override_dh_installman:
-	mkdir -p $(mancli)
-	cp -a debian/manpages/otbcli* $(mancli)
-	cp -a debian/manpages/otbApplicationLauncherCommandLine* $(mancli)
-	mkdir -p $(mangui)
-	cp -a debian/manpages/otbgui* $(mangui)
-	cp -a debian/manpages/otbApplicationLauncherQt* $(mangui)
-
-	cp -a debian/manpages/otbTestDriver* $(CURDIR)/debian/libotb/usr/share/man/man1/
