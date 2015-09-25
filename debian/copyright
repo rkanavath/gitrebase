@@ -266,13 +266,13 @@ Files: Modules/Core/ImageBase/include/otbConvertPixelBuffer.h
  Utilities/Maintenance/BuildHeaderTest.py
 Copyright: 2002, Insight Software Consortium
            2014, Centre National d'Etudes Spatiales.
-License: Apache-2.0
 Comment: The files in Modules/ThirdParty/ITK/include/ are pending patches
  to ITK upstream which were rejected by ITK as the changes are
  irrelevant in their point of view. Hence upstream source is repacked and
  kept under the same ITK license from which these files are derived.
  A full discussion on this action is detailed in otb jira task #635.
  http://scrum.orfeo-toolbox.org/jira/browse/OTB-635
+License: Apache-2.0
 
 Files: Modules/Wrappers/SWIG/src/otbApplicationLuaMain.cxx
 Copyright: 1994-2012 Lua.org, PUC-Rio
