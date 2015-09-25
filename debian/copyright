@@ -84,10 +84,19 @@ Copyright: (disclaimed) Simon Edwards <simon@simonzone.com>
 License: public-domain
  This file is in the public domain.
 
+Files: Modules/Filtering/Projection/include/otbROIdataConversion.h
+ Modules/Filtering/Projection/include/otbROIdataConversion.txx
+ Modules/Segmentation/Conversion/test/otbVectorDataRasterizeFilter.cxx
+ Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilterWithoutReader.cxx
+ Modules/Segmentation/Conversion/test/otbPolygonizationRasterizationTest.cxx
+ Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilter.cxx
+ Modules/Segmentation/Conversion/test/otbOGRDataSourceToLabelImageFilter.cxx
+Copyright: Centre National d'Etudes Spatiales
+License: CeCILL-2.0
+
 Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Examples/Learning/SVMGenericKernelImageClassificationExample.cxx
  Examples/Learning/SVMGenericKernelImageModelEstimatorExample.cxx
- Modules/Filtering/Projection/include/otbROIdataConversion.h
  Modules/Learning/SOM/include/otbSOMMap.h
  Examples/ChangeDetection/KullbackLeiblerSupervizedDistanceChDet.cxx
  Examples/Learning/SOMExample.cxx
@@ -144,11 +153,6 @@ Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Modules/Learning/SOM/test/otbSOMWithMissingValueNew.cxx
  Modules/Learning/SOM/test/otbSOMbasedImageFilterNew.cxx
  Modules/Learning/SVMLearning/include/otbSVMImageClassificationWithRuleFilter.h
- Modules/Segmentation/Conversion/test/otbOGRDataSourceToLabelImageFilter.cxx
- Modules/Segmentation/Conversion/test/otbPolygonizationRasterizationTest.cxx
- Modules/Segmentation/Conversion/test/otbVectorDataRasterizeFilter.cxx
- Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilter.cxx
- Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilterWithoutReader.cxx
 Copyright: Centre National d'Etudes Spatiales
            Institut Telecom; Telecom Bretagne
 Comment: Parts of the code have been developed by Gregoire Mercier from
