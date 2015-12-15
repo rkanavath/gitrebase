@@ -1,0 +1,2 @@
+#! /usr/bin/dh-exec
+usr/lib/libOTBOSSIMAdapters-*.so.*                    usr/lib/${DEB_HOST_MULTIARCH}

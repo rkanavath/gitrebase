@@ -35,30 +35,10 @@ Vcs-Browser: https://anonscm.debian.org/cgit/pkg-grass/otb.git
 Vcs-Git: git://anonscm.debian.org/pkg-grass/otb.git
 Homepage: http://www.orfeo-toolbox.org/
 
-Package: libotb
-Architecture: any
-Section: libs
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
-Suggests: libotb-dev
-Conflicts: libotb3.16,
-           libotb3.18,
-           libotb3.20,
-           libotb4.0
-Description: Free library of image processing algorithms - runtime
- ORFEO Toolbox (OTB) is distributed as an open source library of image
- processing algorithms. OTB is based on the medical image processing library
- ITK and offers particular functionalities for remote sensing image processing
- in general and for high spatial resolution images in particular.
- .
- This package contains the shared libraries required by Monteverdi,
- Monteverdi2 and the OTB applications.
-
 Package: libotb-dev
 Architecture: any
 Section: libdevel
-Depends: libotb (= ${binary:Version}),
-         cmake (>= 2.8.3),
+Depends: cmake (>= 2.8.3),
          libboost-graph-dev,
          libgdal-dev (>= 1.10.0),
          libgeotiff-dev,
@@ -68,6 +48,49 @@ Depends: libotb (= ${binary:Version}),
          libopencv-dev,
          libopenthreads-dev,
          libossim-dev,
+         libotbcommandline-5.0-1 (= ${binary:Version}),
+         libotbcommandlineparser-5.0-1  (= ${binary:Version}),
+         libotbcommon-5.0-1 (= ${binary:Version}),
+         libotbcarto-5.0-1 (= ${binary:Version}),
+         libotbpolarimetry-5.0-1 (= ${binary:Version}),
+         libotbstreaming-5.0-1 (= ${binary:Version}),
+         libotbextendedfilename-5.0-1 (= ${binary:Version}),
+         libotbmathparser-5.0-1 (= ${binary:Version}),
+         libotbfuzzy-5.0-1 (= ${binary:Version}),
+         libotbmetadata-5.0-1 (= ${binary:Version}),
+         libotbprojection-5.0-1 (= ${binary:Version}),
+         libotbrcc8-5.0-1 (= ${binary:Version}),
+         libotbtestkernel-5.0-1 (= ${binary:Version}),
+         libotbtransform-5.0-1 (= ${binary:Version}),
+         libotbvectordatabase-5.0-1 (= ${binary:Version}),
+         libotbvectordataio-5.0-1 (= ${binary:Version}),
+         libotbwavelet-5.0-1 (= ${binary:Version}),
+         libotbsupervised-5.0-1 (= ${binary:Version}),
+         libotbqtwidget-5.0-1 (= ${binary:Version}),
+         libotbapplicationengine-5.0-1 (= ${binary:Version}),
+         otb-testdriver-5.0-1 (= ${binary:Version}),
+         libotbcurladapters-5.0-1 (= ${binary:Version}),
+         libotbedge-5.0-1 (= ${binary:Version}),
+         libotbgdaladapters-5.0-1 (= ${binary:Version}),
+         libotbimagebase-5.0-1 (= ${binary:Version}),
+         libotbimageio-5.0-1 (= ${binary:Version}),
+         libotbimagemanipulation-5.0-1 (= ${binary:Version}),
+         libotbiobsq-5.0-1 (= ${binary:Version}),
+         libotbiogdal-5.0-1 (= ${binary:Version}),
+         libotbiojpeg2000-5.0-1 (= ${binary:Version}),
+         libotbiokml-5.0-1 (= ${binary:Version}),
+         libotbiolum-5.0-1 (= ${binary:Version}),
+         libotbiomstar-5.0-1 (= ${binary:Version}),
+         libotbiomw-5.0-1 (= ${binary:Version}),
+         libotbioonera-5.0-1 (= ${binary:Version}),
+         libotbiorad-5.0-1 (= ${binary:Version}),
+         libotbiotilemap-5.0-1 (= ${binary:Version}),
+         libotbopenthreadsadapters-5.0-1 (= ${binary:Version}),
+         libotbossimadapters-5.0-1 (= ${binary:Version}),
+         libotbossimplugins-5.0-1 (= ${binary:Version}),
+         libotbprojection-5.0-1 (= ${binary:Version}),
+         libotbsiftfast-5.0-1 (= ${binary:Version}),
+         otb-testdriver (= ${binary:Version}),
          ${misc:Depends}
 Conflicts: libotb3-dev,
            libotb4-dev
@@ -80,9 +103,548 @@ Description: Free library of image processing algorithms - development
  This package contains the development files needed to build your own OTB
  applications and modules.
 
-Package: libotb-apps
+Package: otb-testdriver
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBTestDriver
+
+Package: libotbiojpeg2000-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIOJPEG2000
+
+Package: libotbiolum-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIOLUM
+
+
+Package: libotbiomstar-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIOMSTAR
+
+Package: libotbiomw-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIOMW
+
+Package: libotbioonera-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIOONERA
+
+Package: libotbiorad-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIORAD
+
+Package: libotbiotilemap-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIOTileMap
+
+Package: libotbiogdal-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIOGDAL
+
+Package: libotbiobsq-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIOBSQ
+
+Package: libotbcurladapters-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBCurlAdapters
+
+Package: libotbopenthreadsadapters-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBOpenThreadsAdapters
+
+Package: libotbossimadapters-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBOssimAdapters
+
+Package: libotbprojection-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBProjection
+
+Package: libotbsiftfast-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBSiftFast
+
+Package: libotbimagemanipulation-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBImageManipulation
+
+Package: libotbimageio-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBImageIO
+
+Package: libotbimagebase-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBImageBase
+
+Package: libotbgdaladapters-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBGdalAdapters
+
+Package: libotbedge-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBEdge
+
+Package: libotbcommandline-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBCommandLine
+
+Package: libotbcommandlineparser-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBCommandLinePaser
+
+Package: libotbcommon-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBCommon
+
+Package: libotbcarto-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBCarto
+
+Package: libotbpolarimetry-5.0-1
 Architecture: any
 Depends: libotb (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBPolarimetry
+
+Package: libotbstreaming-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBStreaming
+
+Package: libotbextendedfilename-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBExtendedFileName
+
+Package: libotbmathparser-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBMathParser
+
+Package: libotbfuzzy-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBFuzzy
+
+Package: libotbmetadata-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBMetadata
+
+Package: libotbprojection-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBProjection
+
+Package: libotbrcc8-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBRCC8
+
+Package: libotbtestkernel-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBTestKernel
+
+Package: libotbtransform-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBTransform
+
+Package: libotbvectordatabase-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBVectorDataBase
+
+Package: libotbvectordataio-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBVectorDataIO
+
+Package: libotbwavelet-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBWavelet
+
+Package: libotbsupervised-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBSupervised
+
+Package: libotbqtwidget-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBQtWidget
+
+Package: libotbapplicationengine-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBApplicationEngine
+
+Package: libotb-apps
+Architecture: any
+Depends: libotbcommon-5.0-1 (= ${binary:Version}),
+         libotbcarto-5.0-1 (= ${binary:Version}),
+         libotbpolarimetry-5.0-1 (= ${binary:Version}),
+         libotbstreaming-5.0-1 (= ${binary:Version}),
+         libotbextendedfilename-5.0-1 (= ${binary:Version}),
+         libotbmathparser-5.0-1 (= ${binary:Version}),
+         libotbfuzzy-5.0-1 (= ${binary:Version}),
+         libotbmetadata-5.0-1 (= ${binary:Version}),
+         libotbprojection-5.0-1 (= ${binary:Version}),
+         libotbrcc8-5.0-1 (= ${binary:Version}),
+         libotbtestkernel-5.0-1 (= ${binary:Version}),
+         libotbtransform-5.0-1 (= ${binary:Version}),
+         libotbvectordatabase-5.0-1 (= ${binary:Version}),
+         libotbvectordataio-5.0-1 (= ${binary:Version}),
+         libotbwavelet-5.0-1 (= ${binary:Version}),
+         libotbsupervised-5.0-1 (= ${binary:Version}),
+         libotbqtwidget-5.0-1 (= ${binary:Version}),
+         libotbapplicationengine-5.0-1 (= ${binary:Version}),
+         libotbcommandline-5.0-1 (= ${binary:Version}),
+         libotbcommandlineparser-5.0-1  (= ${binary:Version}),
+         libotbcommon-5.0-1 (= ${binary:Version}),
+         libotbcarto-5.0-1 (= ${binary:Version}),
+         libotbpolarimetry-5.0-1 (= ${binary:Version}),
+         libotbstreaming-5.0-1 (= ${binary:Version}),
+         libotbextendedfilename-5.0-1 (= ${binary:Version}),
+         libotbmathparser-5.0-1 (= ${binary:Version}),
+         libotbfuzzy-5.0-1 (= ${binary:Version}),
+         libotbmetadata-5.0-1 (= ${binary:Version}),
+         libotbprojection-5.0-1 (= ${binary:Version}),
+         libotbrcc8-5.0-1 (= ${binary:Version}),
+         libotbtestkernel-5.0-1 (= ${binary:Version}),
+         libotbtransform-5.0-1 (= ${binary:Version}),
+         libotbvectordatabase-5.0-1 (= ${binary:Version}),
+         libotbvectordataio-5.0-1 (= ${binary:Version}),
+         libotbwavelet-5.0-1 (= ${binary:Version}),
+         libotbsupervised-5.0-1 (= ${binary:Version}),
+         libotbapplicationengine-5.0-1 (= ${binary:Version}),
+         libotbcurladapters-5.0-1 (= ${binary:Version}),
+         libotbedge-5.0-1 (= ${binary:Version}),
+         libotbgdaladapters-5.0-1 (= ${binary:Version}),
+         libotbimagebase-5.0-1 (= ${binary:Version}),
+         libotbimageio-5.0-1 (= ${binary:Version}),
+         libotbimagemanipulation-5.0-1 (= ${binary:Version}),
+         libotbiobsq-5.0-1 (= ${binary:Version}),
+         libotbiogdal-5.0-1 (= ${binary:Version}),
+         libotbiojpeg2000-5.0-1 (= ${binary:Version}),
+         libotbiokml-5.0-1 (= ${binary:Version}),
+         libotbiolum-5.0-1 (= ${binary:Version}),
+         libotbiomstar-5.0-1 (= ${binary:Version}),
+         libotbiomw-5.0-1 (= ${binary:Version}),
+         libotbioonera-5.0-1 (= ${binary:Version}),
+         libotbiorad-5.0-1 (= ${binary:Version}),
+         libotbiotilemap-5.0-1 (= ${binary:Version}),
+         libotbopenthreadsadapters-5.0-1 (= ${binary:Version}),
+         libotbossimadapters-5.0-1 (= ${binary:Version}),
+         libotbossimplugins-5.0-1 (= ${binary:Version}),
+         libotbprojection-5.0-1 (= ${binary:Version}),
+         libotbsiftfast-5.0-1 (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: Plugins for ORFEO Toolbox applications
@@ -96,7 +658,8 @@ Description: Plugins for ORFEO Toolbox applications
 
 Package: otb-bin
 Architecture: any
-Depends: libotb-commandline  (= ${binary:Version}),
+Depends: libotbcommandline-5.0-1 (= ${binary:Version}),
+         libotbcommandlineparser-5.0-1  (= ${binary:Version}),
          libotb-apps (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
@@ -109,39 +672,9 @@ Description: ORFEO Toolbox command line applications
  This package contains the command line application launcher than can
  run any OTB application provided by libotb-apps package.
 
-Package: libotb-commandline
-Architecture: any
-Depends: libotb (= ${binary:Version}),
-         ${shlibs:Depends},
-         ${misc:Depends}
-Description: ORFEO Toolbox graphical user interface applications
- ORFEO Toolbox (OTB) is distributed as an open source library of image
- processing algorithms. OTB is based on the medical image processing library
- ITK and offers particular functionalities for remote sensing image processing
- in general and for high spatial resolution images in particular.
- .
- This package contains the shared library files for OTB's
- command line launcher provided by otb-bin package.
-
-Package: libotb-qt4
-Architecture: any
-Depends: libotb (= ${binary:Version}),
-         ${shlibs:Depends},
-         ${misc:Depends},
-         libqtcore4,
-         libqtgui4
-Description: ORFEO Toolbox graphical user interface applications
- ORFEO Toolbox (OTB) is distributed as an open source library of image
- processing algorithms. OTB is based on the medical image processing library
- ITK and offers particular functionalities for remote sensing image processing
- in general and for high spatial resolution images in particular.
- .
- This package contains the shared library files for OTB's GUI application launcher
- provided by otb-bin-qt package.
-
 Package: otb-bin-qt
 Architecture: any
-Depends: libotb-qt4 (= ${binary:Version}),
+Depends: libotbqtwidget-5.0-1 (= ${binary:Version}),
          libotb-apps (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
@@ -151,13 +684,13 @@ Description: ORFEO Toolbox graphical user interface applications
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains the GUI launcher that can run any OTB application provided
- by libotb-apps package)
+ This package contains the GUI launcher that can run any OTB application
+ provided by libotb-apps package
 
 Package: python-otb
 Architecture: any
 Section: python
-Depends: libotb (= ${binary:Version}),
+Depends: libotb-apps (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends},
          python,
