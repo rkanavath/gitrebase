@@ -15,6 +15,8 @@
 
 export DEB_LDFLAGS_MAINT_APPEND = "-Wl,--as-needed"
 
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
 ifndef PKGVERSION
     PKGVERSION=1
 endif

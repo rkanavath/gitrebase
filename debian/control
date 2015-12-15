@@ -77,7 +77,6 @@ Depends: cmake (>= 2.8.3),
          libotbimagemanipulation-5.0-1 (= ${binary:Version}),
          libotbiobsq-5.0-1 (= ${binary:Version}),
          libotbiogdal-5.0-1 (= ${binary:Version}),
-         libotbiojpeg2000-5.0-1 (= ${binary:Version}),
          libotbiokml-5.0-1 (= ${binary:Version}),
          libotbiolum-5.0-1 (= ${binary:Version}),
          libotbiomstar-5.0-1 (= ${binary:Version}),
@@ -114,18 +113,6 @@ Description: ORFEO Toolbox library
  .
  This package contains shared library for OTBTestDriver
 
-Package: libotbiojpeg2000-5.0-1
-Architecture: any
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
-Description: ORFEO Toolbox library
- ORFEO Toolbox (OTB) is distributed as an open source library of image
- processing algorithms. OTB is based on the medical image processing library
- ITK and offers particular functionalities for remote sensing image processing
- in general and for high spatial resolution images in particular.
- .
- This package contains shared library for OTBIOJPEG2000
-
 Package: libotbiolum-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
@@ -137,7 +124,6 @@ Description: ORFEO Toolbox library
  in general and for high spatial resolution images in particular.
  .
  This package contains shared library for OTBIOLUM
-
 
 Package: libotbiomstar-5.0-1
 Architecture: any
@@ -270,6 +256,18 @@ Description: ORFEO Toolbox library
  in general and for high spatial resolution images in particular.
  .
  This package contains shared library for OTBSiftFast
+
+Package: libotbossimplugins-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBOssimPlugins
 
 Package: libotbimagemanipulation-5.0-1
 Architecture: any
@@ -619,7 +617,6 @@ Depends: libotbcommon-5.0-1 (= ${binary:Version}),
          libotbimagemanipulation-5.0-1 (= ${binary:Version}),
          libotbiobsq-5.0-1 (= ${binary:Version}),
          libotbiogdal-5.0-1 (= ${binary:Version}),
-         libotbiojpeg2000-5.0-1 (= ${binary:Version}),
          libotbiokml-5.0-1 (= ${binary:Version}),
          libotbiolum-5.0-1 (= ${binary:Version}),
          libotbiomstar-5.0-1 (= ${binary:Version}),
