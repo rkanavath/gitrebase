@@ -88,7 +88,6 @@ Depends: cmake (>= 2.8.3),
          libotbopenthreadsadapters-5.0-1 (= ${binary:Version}),
          libotbossimadapters-5.0-1 (= ${binary:Version}),
          libotbossimplugins-5.0-1 (= ${binary:Version}),
-         libotbprojection-5.0-1 (= ${binary:Version}),
          libotbsiftfast-5.0-1 (= ${binary:Version}),
          otb-testdriver (= ${binary:Version}),
          ${misc:Depends}
@@ -259,18 +258,6 @@ Description: ORFEO Toolbox library
  in general and for high spatial resolution images in particular.
  .
  This package contains shared library for OTBOssimAdapters
-
-Package: libotbprojection-5.0-1
-Architecture: any
-Depends: ${shlibs:Depends},
-         ${misc:Depends}
-Description: ORFEO Toolbox library
- ORFEO Toolbox (OTB) is distributed as an open source library of image
- processing algorithms. OTB is based on the medical image processing library
- ITK and offers particular functionalities for remote sensing image processing
- in general and for high spatial resolution images in particular.
- .
- This package contains shared library for OTBProjection
 
 Package: libotbsiftfast-5.0-1
 Architecture: any
