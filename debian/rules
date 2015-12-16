@@ -21,11 +21,14 @@ ifndef PKGVERSION
     PKGVERSION=1
 endif
 
+TEMPLATES=$(wildcard debian/*.in)
+
 OTB_VERSION_MAJOR  = $(shell sed -ne 's/set(OTB_VERSION_MAJOR "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_MINOR  = $(shell sed -ne 's/set(OTB_VERSION_MINOR "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_PATCH  = $(shell sed -ne 's/set(OTB_VERSION_PATCH "\([0-9]*\)")/\1/p' CMakeLists.txt)
-OTB_VERSION_SONAME = "$(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR)"
+OTB_VERSION_SONAME = "$(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR)-1"
 OTB_VERSION_FULL   = "$(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR).$(OTB_VERSION_PATCH)"
+
 
 CMAKE_FLAGS = \
 	-DCMAKE_INSTALL_PREFIX=/usr \
@@ -52,8 +55,11 @@ pkgcli:=$(DEBPKGNAME)-bin
 pkggui:=$(DEBPKGNAME)-bin-qt
 pkglib:=lib$(DEBPKGNAME)
 pkgdev:=$(pkglib)-dev
-mancli:=$(CURDIR)/debian/$(pkgcli)/usr/share/man/man1/
-mangui:=$(CURDIR)/debian/$(pkggui)/usr/share/man/man1/
+
+templates:
+	for TEMPLATE in $(TEMPLATES) ; do \
+	    sed -e 's/@SOVERSION@/$(OTB_VERSION_SONAME)/g' $$TEMPLATE > `echo $$TEMPLATE | sed 's/.in$$//'` ; \
+	done
 
 # OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
 # rather use all libs since the installed libs are spread over several packages
@@ -73,7 +79,8 @@ override_dh_install:
 	rm -f $(CURDIR)/debian/$(pkglib)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/otb/python/*.pyc
-	#cp -a debian/manpages/otbcli* $(CURDIR)/debian/
 
 override_dh_installchangelogs:
 	dh_installchangelogs RELEASE_NOTES.txt
+
+.PHONY: templates
