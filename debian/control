@@ -68,7 +68,6 @@ Depends: cmake (>= 2.8.3),
          libotbsupervised-5.0-1 (= ${binary:Version}),
          libotbqtwidget-5.0-1 (= ${binary:Version}),
          libotbapplicationengine-5.0-1 (= ${binary:Version}),
-         otb-testdriver-5.0-1 (= ${binary:Version}),
          libotbcurladapters-5.0-1 (= ${binary:Version}),
          libotbedge-5.0-1 (= ${binary:Version}),
          libotbgdaladapters-5.0-1 (= ${binary:Version}),
@@ -117,6 +116,7 @@ Package: libotbiolum-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -129,6 +129,7 @@ Package: libotbiomstar-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -141,6 +142,7 @@ Package: libotbiomw-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -153,6 +155,7 @@ Package: libotbioonera-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -165,6 +168,7 @@ Package: libotbiorad-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -177,6 +181,7 @@ Package: libotbiotilemap-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -189,6 +194,7 @@ Package: libotbiogdal-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -201,6 +207,7 @@ Package: libotbiobsq-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -209,10 +216,24 @@ Description: ORFEO Toolbox library
  .
  This package contains shared library for OTBIOBSQ
 
+Package: libotbiokml-5.0-1
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Description: ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains shared library for OTBIOKML
+
 Package: libotbcurladapters-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -225,6 +246,7 @@ Package: libotbopenthreadsadapters-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -237,6 +259,7 @@ Package: libotbossimadapters-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -249,6 +272,7 @@ Package: libotbsiftfast-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -261,6 +285,7 @@ Package: libotbossimplugins-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -273,6 +298,7 @@ Package: libotbimagemanipulation-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -285,6 +311,7 @@ Package: libotbimageio-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -297,6 +324,7 @@ Package: libotbimagebase-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -309,6 +337,7 @@ Package: libotbgdaladapters-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -321,6 +350,7 @@ Package: libotbedge-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -333,6 +363,7 @@ Package: libotbcommandline-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -345,6 +376,7 @@ Package: libotbcommandlineparser-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -357,6 +389,7 @@ Package: libotbcommon-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -369,6 +402,7 @@ Package: libotbcarto-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -379,9 +413,9 @@ Description: ORFEO Toolbox library
 
 Package: libotbpolarimetry-5.0-1
 Architecture: any
-Depends: libotb (= ${binary:Version}),
-         ${shlibs:Depends},
+Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -394,6 +428,7 @@ Package: libotbstreaming-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -406,6 +441,7 @@ Package: libotbextendedfilename-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -418,6 +454,7 @@ Package: libotbmathparser-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -430,6 +467,7 @@ Package: libotbfuzzy-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -442,6 +480,7 @@ Package: libotbmetadata-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -454,6 +493,7 @@ Package: libotbprojection-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -466,6 +506,7 @@ Package: libotbrcc8-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -478,6 +519,7 @@ Package: libotbtestkernel-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -490,6 +532,7 @@ Package: libotbtransform-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -502,6 +545,7 @@ Package: libotbvectordatabase-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -514,6 +558,7 @@ Package: libotbvectordataio-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -526,6 +571,7 @@ Package: libotbwavelet-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -538,6 +584,7 @@ Package: libotbsupervised-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -550,6 +597,7 @@ Package: libotbqtwidget-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
@@ -562,6 +610,7 @@ Package: libotbapplicationengine-5.0-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
 Description: ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
