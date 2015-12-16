@@ -736,3 +736,72 @@ Description: ORFEO Toolbox Python API for applications
  .
  This package contains the Python API that can be used to create python version
  of exisiting OTB applications provided by the libotb-apps package.
+
+Package: libotb
+Architecture: any
+Depends: libotbcommon-5.0-1 (= ${binary:Version}),
+         libotbcarto-5.0-1 (= ${binary:Version}),
+         libotbpolarimetry-5.0-1 (= ${binary:Version}),
+         libotbstreaming-5.0-1 (= ${binary:Version}),
+         libotbextendedfilename-5.0-1 (= ${binary:Version}),
+         libotbmathparser-5.0-1 (= ${binary:Version}),
+         libotbfuzzy-5.0-1 (= ${binary:Version}),
+         libotbmetadata-5.0-1 (= ${binary:Version}),
+         libotbprojection-5.0-1 (= ${binary:Version}),
+         libotbrcc8-5.0-1 (= ${binary:Version}),
+         libotbtestkernel-5.0-1 (= ${binary:Version}),
+         libotbtransform-5.0-1 (= ${binary:Version}),
+         libotbvectordatabase-5.0-1 (= ${binary:Version}),
+         libotbvectordataio-5.0-1 (= ${binary:Version}),
+         libotbwavelet-5.0-1 (= ${binary:Version}),
+         libotbsupervised-5.0-1 (= ${binary:Version}),
+         libotbqtwidget-5.0-1 (= ${binary:Version}),
+         libotbapplicationengine-5.0-1 (= ${binary:Version}),
+         libotbcommandline-5.0-1 (= ${binary:Version}),
+         libotbcommandlineparser-5.0-1  (= ${binary:Version}),
+         libotbcommon-5.0-1 (= ${binary:Version}),
+         libotbcarto-5.0-1 (= ${binary:Version}),
+         libotbpolarimetry-5.0-1 (= ${binary:Version}),
+         libotbstreaming-5.0-1 (= ${binary:Version}),
+         libotbextendedfilename-5.0-1 (= ${binary:Version}),
+         libotbmathparser-5.0-1 (= ${binary:Version}),
+         libotbfuzzy-5.0-1 (= ${binary:Version}),
+         libotbmetadata-5.0-1 (= ${binary:Version}),
+         libotbprojection-5.0-1 (= ${binary:Version}),
+         libotbrcc8-5.0-1 (= ${binary:Version}),
+         libotbtestkernel-5.0-1 (= ${binary:Version}),
+         libotbtransform-5.0-1 (= ${binary:Version}),
+         libotbvectordatabase-5.0-1 (= ${binary:Version}),
+         libotbvectordataio-5.0-1 (= ${binary:Version}),
+         libotbwavelet-5.0-1 (= ${binary:Version}),
+         libotbsupervised-5.0-1 (= ${binary:Version}),
+         libotbapplicationengine-5.0-1 (= ${binary:Version}),
+         libotbcurladapters-5.0-1 (= ${binary:Version}),
+         libotbedge-5.0-1 (= ${binary:Version}),
+         libotbgdaladapters-5.0-1 (= ${binary:Version}),
+         libotbimagebase-5.0-1 (= ${binary:Version}),
+         libotbimageio-5.0-1 (= ${binary:Version}),
+         libotbimagemanipulation-5.0-1 (= ${binary:Version}),
+         libotbiobsq-5.0-1 (= ${binary:Version}),
+         libotbiogdal-5.0-1 (= ${binary:Version}),
+         libotbiokml-5.0-1 (= ${binary:Version}),
+         libotbiolum-5.0-1 (= ${binary:Version}),
+         libotbiomstar-5.0-1 (= ${binary:Version}),
+         libotbiomw-5.0-1 (= ${binary:Version}),
+         libotbioonera-5.0-1 (= ${binary:Version}),
+         libotbiorad-5.0-1 (= ${binary:Version}),
+         libotbiotilemap-5.0-1 (= ${binary:Version}),
+         libotbopenthreadsadapters-5.0-1 (= ${binary:Version}),
+         libotbossimadapters-5.0-1 (= ${binary:Version}),
+         libotbossimplugins-5.0-1 (= ${binary:Version}),
+         libotbprojection-5.0-1 (= ${binary:Version}),
+         libotbsiftfast-5.0-1 (= ${binary:Version}),
+         ${shlibs:Depends},
+         ${misc:Depends}
+Description: Plugins for ORFEO Toolbox library
+ ORFEO Toolbox (OTB) is distributed as an open source library of image
+ processing algorithms. OTB is based on the medical image processing library
+ ITK and offers particular functionalities for remote sensing image processing
+ in general and for high spatial resolution images in particular.
+ .
+ This package contains all shared libraries used by OTB
