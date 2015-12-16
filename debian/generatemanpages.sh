@@ -10,7 +10,7 @@ export PATH=$PATH:$BINDIR
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBDIR
 
 help2man $BINDIR/otbTestDriver --no-discard-stderr --version-string=$VERSION  -o $MANDIR/otbTestDriver.1
-for file in `ls $BINDIR/otbcli*` ; do
+for file in `ls $BINDIR/otbcli_*` ; do
     echo "Generating man pages $file"
     SCRIPTFILE=`basename $file`
     APPNAME=$(echo $SCRIPTFILE| cut -d'_' -f 2)
@@ -23,12 +23,18 @@ for file in $BINDIR/otbTestDriver `ls $BINDIR/otb*Launcher*` ; do
     help2man $SCRIPTFILE --no-discard-stderr --help-option=' ' --name="OTB $SCRIPTFILE " --version-string=$VERSION -o $MANDIR/$SCRIPTFILE.1
 done
 
+for file in $BINDIR/otbcli $BINDIR/otbgui ; do
+    echo "Generating man pages $file"
+    SCRIPTFILE=`basename $file`
+    help2man $SCRIPTFILE --no-discard-stderr --help-option='-help' --name="OTB $SCRIPTFILE application" --version-string=$VERSION -o $MANDIR/$SCRIPTFILE.1
+done
+
 for file in `ls $MANDIR/*1 ` ; do
     #echo "Fix man pages $file. This is because of the itk version < 4.7.2"
     sed -i 's/^Inconsistency.detected.by.ld.*_dl_close.*Assertion.*_init_called.*failed.//g' $file;
 done
 
-for file in `ls $BINDIR/otbgui*` ; do
+for file in `ls $BINDIR/otbgui_*` ; do
 #    echo "Generating man pages $file"
     SCRIPTFILE=`basename $file`
     APPNAME=$(echo $SCRIPTFILE| cut -d'_' -f 2)
