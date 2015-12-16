@@ -1,2 +1,2 @@
-#! /usr/bin/dh-exec
+# Executables
 usr/bin/otbTestDriver
