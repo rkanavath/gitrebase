@@ -11,9 +11,6 @@ Complete documentation: http://www.orfeo\-toolbox.org/Applications/ColorMapping.
 .TP
 \fB\-progress\fR
 <boolean>        Report progress
-.PP
-MISSING \fB\-in\fR                        <string>         Input Image  (mandatory)
-MISSING \fB\-out\fR                       <string> [pixel] Output Image  [pixel=uint8/uint16/int16/uint32/int32/float/double] (default value is float) (mandatory)
 .TP
 \fB\-ram\fR
 <int32>          Available RAM (Mb)  (optional, off by default, default value is 128)
@@ -26,11 +23,9 @@ MISSING \fB\-out\fR                       <string> [pixel] Output Image  [pixel=
 .TP
 \fB\-method\fR
 <string>         Color mapping method [custom/continuous/optimal/image] (mandatory, default value is custom)
-.PP
-MISSING \fB\-method\fR.custom.lut         <string>         Look\-up table file  (mandatory)
 .TP
 \fB\-method\fR.continuous.lut
-<string>         Look\-up tables [red/green/blue/grey/hot/cool/spring/summer/autumn/winter/copper/jet/hsv/overunder/relief] (mandatory, default value is red)
+<string> Look\-up tables [red\/green\/blue\/grey\/hot\/cool\/spring\/summer\/autumn\/winter\/copper\/jet\/hsv\/overunder\/relief] (mandatory, default value is red)
 .TP
 \fB\-method\fR.continuous.min
 <float>          Mapping range lower value  (mandatory, default value is 0)
