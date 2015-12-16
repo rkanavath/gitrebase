@@ -1,0 +1,26 @@
+ProxyChains-3.1 (http://proxychains.sf.net)
+diff --git a/CMake/FindLibKML.cmake b/CMake/FindLibKML.cmake
+index 6271236..b439088 100644
+--- a/CMake/FindLibKML.cmake
++++ b/CMake/FindLibKML.cmake
+@@ -57,7 +57,6 @@ if(LIBKML_FOUND)
+   set(LIBKML_INCLUDE_DIRS ${LIBKML_INCLUDE_DIR})
+   set(LIBKML_LIBRARIES ${LIBKML_BASE_LIBRARY}
+                        ${LIBKML_CONVENIENCE_LIBRARY}
+-                       ${LIBKML_DOM_LIBRARY}
+                        ${LIBKML_ENGINE_LIBRARY}
+                        ${LIBKML_REGIONATOR_LIBRARY}
+                        ${LIBKML_XSD_LIBRARY}
+diff --git a/CMake/FindOssim.cmake b/CMake/FindOssim.cmake
+index ca4bcd8..f59dc5c 100644
+--- a/CMake/FindOssim.cmake
++++ b/CMake/FindOssim.cmake
+@@ -38,5 +38,7 @@ FIND_PACKAGE_HANDLE_STANDARD_ARGS( Ossim DEFAULT_MSG OSSIM_LIBRARY OSSIM_INCLUDE
+ 
+ mark_as_advanced( OSSIM_INCLUDE_DIR OSSIM_LIBRARY )
+ 
+-set(OSSIM_LIBRARIES ${OSSIM_LIBRARY})
++message(WARNING "OPENTHREADS_LIBRARY=${OPENTHREADS_LIBRARY}")
++set(OSSIM_LIBRARIES "${OSSIM_LIBRARY};${OPENTHREADS_LIBRARY}")
++message(WARNING "OSSIM_LIBRARIES=${OSSIM_LIBRARIES}")
+ set(OSSIM_INCLUDE_DIRS ${OSSIM_INCLUDE_DIR})
