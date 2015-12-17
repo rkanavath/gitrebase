@@ -740,7 +740,8 @@ Description: ORFEO Toolbox Python API for applications
 
 Package: libotb
 Architecture: any
-Depends: libotbcommon-5.0-1 (= ${binary:Version}),
+Depends: ${misc:Depends},
+         libotbcommon-5.0-1 (= ${binary:Version}),
          libotbcarto-5.0-1 (= ${binary:Version}),
          libotbpolarimetry-5.0-1 (= ${binary:Version}),
          libotbstreaming-5.0-1 (= ${binary:Version}),
@@ -797,11 +798,11 @@ Depends: libotbcommon-5.0-1 (= ${binary:Version}),
          libotbossimplugins-5.0-1 (= ${binary:Version}),
          libotbprojection-5.0-1 (= ${binary:Version}),
          libotbsiftfast-5.0-1 (= ${binary:Version}),
-         ${misc:Depends}
-Description: Plugins for ORFEO Toolbox library
+Description: ORFEO Toolbox library metapackage
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains all shared libraries used by OTB
+ This metapackage provides all shared libraries used by OTB
+ .
