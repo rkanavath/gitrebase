@@ -1,0 +1,41 @@
+# SymbolsHelper-Confirmed: 5.0.0 amd64
+libOTBTransform-5.0.so.1 libotbtransform-5.0-1 #MINVER#
+ _ZN3otb24GeoInformationConversion14IsESRIValidWKTERKSs@Base 5.0.0
+ _ZN3otb24GeoInformationConversion5ToWKTERKSs@Base 5.0.0
+ _ZN3otb24GeoInformationConversion5ToWKTEi@Base 5.0.0
+ (optional=templinst)_ZN5boost15throw_exceptionINS_16bad_lexical_castEEEvRKT_@Base 5.0.0
+ _ZN5boost16bad_lexical_castD0Ev@Base 5.0.0
+ _ZN5boost16bad_lexical_castD1Ev@Base 5.0.0
+ _ZN5boost16bad_lexical_castD2Ev@Base 5.0.0
+ (optional=templinst)_ZN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEED0Ev@Base 5.0.0
+ (optional=templinst)_ZN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEED1Ev@Base 5.0.0
+ (optional=templinst)_ZN5boost16exception_detail12refcount_ptrINS0_20error_info_containerEE7releaseEv@Base 5.0.0
+ (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEED0Ev@Base 5.0.0
+ (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEED1Ev@Base 5.0.0
+ (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEED2Ev@Base 5.0.0
+ _ZNK5boost16bad_lexical_cast4whatEv@Base 5.0.0
+ (optional=templinst)_ZNK5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEE5cloneEv@Base 5.0.0
+ (optional=templinst)_ZNK5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEE7rethrowEv@Base 5.0.0
+ _ZTIN5boost16bad_lexical_castE@Base 5.0.0
+ _ZTIN5boost16exception_detail10clone_baseE@Base 5.0.0
+ _ZTIN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 5.0.0
+ _ZTIN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEE@Base 5.0.0
+ _ZTIN5boost9exceptionE@Base 5.0.0
+ _ZTISs@Base 5.0.0
+ _ZTSN5boost16bad_lexical_castE@Base 5.0.0
+ _ZTSN5boost16exception_detail10clone_baseE@Base 5.0.0
+ _ZTSN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 5.0.0
+ _ZTSN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEE@Base 5.0.0
+ _ZTSN5boost9exceptionE@Base 5.0.0
+ _ZTSSs@Base 5.0.0
+ _ZTTN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 5.0.0
+ _ZTVN5boost16bad_lexical_castE@Base 5.0.0
+ _ZTVN5boost16exception_detail10clone_baseE@Base 5.0.0
+ _ZTVN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 5.0.0
+ _ZTVN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEE@Base 5.0.0
+ _ZTVN5boost9exceptionE@Base 5.0.0
+ (c++)"non-virtual thunk to boost::exception_detail::clone_impl<boost::exception_detail::error_info_injector<boost::bad_lexical_cast> >::~clone_impl()@Base" 5.0.0
+ (c++)"non-virtual thunk to boost::exception_detail::error_info_injector<boost::bad_lexical_cast>::~error_info_injector()@Base" 5.0.0
+ (c++)"virtual thunk to boost::exception_detail::clone_impl<boost::exception_detail::error_info_injector<boost::bad_lexical_cast> >::clone() const@Base" 5.0.0
+ (c++)"virtual thunk to boost::exception_detail::clone_impl<boost::exception_detail::error_info_injector<boost::bad_lexical_cast> >::rethrow() const@Base" 5.0.0
+ (c++)"virtual thunk to boost::exception_detail::clone_impl<boost::exception_detail::error_info_injector<boost::bad_lexical_cast> >::~clone_impl()@Base" 5.0.0
