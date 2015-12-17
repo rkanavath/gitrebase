@@ -27,11 +27,12 @@ OTB_VERSION_MAJOR  = $(shell sed -ne 's/set(OTB_VERSION_MAJOR "\([0-9]*\)")/\1/p
 OTB_VERSION_MINOR  = $(shell sed -ne 's/set(OTB_VERSION_MINOR "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_PATCH  = $(shell sed -ne 's/set(OTB_VERSION_PATCH "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_SONAME = $(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR)-1
-OTB_VERSION_FULL   = "$(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR).$(OTB_VERSION_PATCH)"
+OTB_VERSION_FULL   = $(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR).$(OTB_VERSION_PATCH)
 
 
 CMAKE_FLAGS = \
 	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DOTB_INSTALL_PYTHON_DIR="lib/otb/python"
 	-DCMAKE_BUILD_TYPE:STRING=Release \
 	-DCMAKE_SKIP_RPATH:BOOL=ON \
 	-DOTB_USE_CURL:BOOL=ON \
@@ -68,8 +69,8 @@ OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib
 %:
 	dh $@ --with pkgkde_symbolshelper --parallel
 
-override_dh_auto_configure:
-	dh_auto_configure -- templates $(CMAKE_FLAGS)
+override_dh_auto_configure: templates
+	dh_auto_configure --  $(CMAKE_FLAGS)
 
 override_dh_makeshlibs:
 	dh_makeshlibs -- -c0 -v$(OTB_VERSION_FULL)
