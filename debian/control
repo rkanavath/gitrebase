@@ -8,6 +8,7 @@ Priority: optional
 Build-Depends: debhelper (>= 9),
                dpkg-dev (>= 1.16.1~),
                dh-exec,
+               pkg-kde-tools,
                cmake (>= 2.8.3),
                libboost-graph-dev,
                libcurl4-gnutls-dev,
@@ -796,7 +797,6 @@ Depends: libotbcommon-5.0-1 (= ${binary:Version}),
          libotbossimplugins-5.0-1 (= ${binary:Version}),
          libotbprojection-5.0-1 (= ${binary:Version}),
          libotbsiftfast-5.0-1 (= ${binary:Version}),
-         ${shlibs:Depends},
          ${misc:Depends}
 Description: Plugins for ORFEO Toolbox library
  ORFEO Toolbox (OTB) is distributed as an open source library of image
