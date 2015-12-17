@@ -26,7 +26,7 @@ TEMPLATES=$(wildcard debian/*.in)
 OTB_VERSION_MAJOR  = $(shell sed -ne 's/set(OTB_VERSION_MAJOR "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_MINOR  = $(shell sed -ne 's/set(OTB_VERSION_MINOR "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_PATCH  = $(shell sed -ne 's/set(OTB_VERSION_PATCH "\([0-9]*\)")/\1/p' CMakeLists.txt)
-OTB_VERSION_SONAME = "$(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR)-1"
+OTB_VERSION_SONAME = $(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR)-1
 OTB_VERSION_FULL   = "$(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR).$(OTB_VERSION_PATCH)"
 
 
@@ -69,7 +69,7 @@ OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib
 	dh $@ --with pkgkde_symbolshelper --parallel
 
 override_dh_auto_configure:
-	dh_auto_configure -- $(CMAKE_FLAGS)
+	dh_auto_configure -- templates $(CMAKE_FLAGS)
 
 override_dh_makeshlibs:
 	dh_makeshlibs -- -c0 -v$(OTB_VERSION_FULL)
@@ -81,7 +81,7 @@ override_dh_install:
 	dh_install --list-missing
 	rm -f $(CURDIR)/debian/$(pkglib)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
-	rm -f $(CURDIR)/debian/python-otb/usr/lib/otb/python/*.pyc
+	rm -f $(CURDIR)/debian/tmp/usr/lib/otb/python/*.pyc
 
 override_dh_installchangelogs:
 	dh_installchangelogs RELEASE_NOTES.txt
