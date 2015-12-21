@@ -1,6 +1,7 @@
+Description: Fix some spelling errors to silence lintian enabling to concentrate on the real problem.
 Author: Andreas Tille <tille@debian.org>, Rashad Kanavath<rashad.kanavath@c-s.fr>
-Last-Update: Tue, 1 Sep 2015 09:25:20 +0200
-Description: Fix some spelling errors to silence lintian enabling  to concentrate on the real problem.
+Last-Update: 2015-09-01
+
 --- a/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
 +++ b/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
 @@ -75,7 +75,7 @@ private:

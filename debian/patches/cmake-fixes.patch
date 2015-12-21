@@ -1,6 +1,7 @@
-Author: Rashad Kanavath<rashad.kanavath@c-s.fr>
-Last-Update: Thu, 17 Dec 2015 11:03:10 +0200
 Description: Fix dh_shlibs reports missing symbols
+Author: Rashad Kanavath <rashad.kanavath@c-s.fr>
+Last-Update: 2015-12-17
+
 --- a/CMake/FindOssim.cmake
 +++ b/CMake/FindOssim.cmake
 @@ -38,5 +38,5 @@ FIND_PACKAGE_HANDLE_STANDARD_ARGS( Ossim DEFAULT_MSG OSSIM_LIBRARY OSSIM_INCLUDE
