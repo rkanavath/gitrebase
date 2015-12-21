@@ -1,6 +1,4 @@
 ProxyChains-3.1 (http://proxychains.sf.net)
-diff --git a/Modules/ThirdParty/ITK/CMakeLists.txt b/Modules/ThirdParty/ITK/CMakeLists.txt
-index 55b0eb8..05c56fa 100644
 --- a/Modules/ThirdParty/ITK/CMakeLists.txt
 +++ b/Modules/ThirdParty/ITK/CMakeLists.txt
 @@ -2,7 +2,91 @@ project(OTBITK)
