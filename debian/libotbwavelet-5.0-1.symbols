@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.0.0 amd64
+# SymbolsHelper-Confirmed: 5.0.0 amd64 i386
 libOTBWavelet-5.0.so.1 libotbwavelet-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb16WaveletGeneratorILNS_7Wavelet7WaveletE0EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb16WaveletGeneratorILNS_7Wavelet7WaveletE0EEC1Ev@Base 5.0.0
@@ -109,6 +109,7 @@ libOTBWavelet-5.0.so.1 libotbwavelet-5.0-1 #MINVER#
  (optional=templinst)_ZNK3otb16WaveletGeneratorILNS_7Wavelet7WaveletE8EE27GetLowPassCoefficientVectorERSt6vectorIdSaIdEE@Base 5.0.0
  (optional=templinst)_ZNK3otb16WaveletGeneratorILNS_7Wavelet7WaveletE8EE28GetHighPassCoefficientVectorERSt6vectorIdSaIdEE@Base 5.0.0
  (optional=templinst)_ZNK3otb16WaveletGeneratorILNS_7Wavelet7WaveletE8EE5CloneEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEjRKd@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd@Base 5.0.0
  _ZTIN3otb16WaveletGeneratorILNS_7Wavelet7WaveletE0EEE@Base 5.0.0
  _ZTIN3otb16WaveletGeneratorILNS_7Wavelet7WaveletE1EEE@Base 5.0.0

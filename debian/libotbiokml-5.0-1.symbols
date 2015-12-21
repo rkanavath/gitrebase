@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.0.0 amd64
+# SymbolsHelper-Confirmed: 5.0.0 amd64 i386
 libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  _ZN3itk10DataObject15CopyInformationEPKS0_@Base 5.0.0
  _ZN3itk10DataObject16SetRealTimeStampENS_13RealTimeStampE@Base 5.0.0
@@ -10,7 +10,9 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  _ZN3itk10DataObject41SetRequestedRegionToLargestPossibleRegionEv@Base 5.0.0
  _ZN3itk10DataObject43RequestedRegionIsOutsideOfTheBufferedRegionEv@Base 5.0.0
  _ZN3itk10DataObject5GraftEPKS0_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk12SmartPointerIN3otb8DataNodeIdLj2EdEEEaSERKS4_@Base 5.0.0
  (optional=templinst)_ZN3itk12SmartPointerINS_8TreeNodeINS0_IN3otb8DataNodeIdLj2EdEEEEEEEaSEPS6_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk12SmartPointerINS_8TreeNodeINS0_IN3otb8DataNodeIdLj2EdEEEEEEEaSERKS7_@Base 5.0.0
  (optional=templinst)_ZN3itk12SmartPointerINS_9TransformIdLj2ELj2EEEEaSEPS2_@Base 5.0.0
  (optional=templinst)_ZN3itk12TreeAddEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk12TreeAddEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED1Ev@Base 5.0.0
@@ -23,12 +25,14 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  _ZN3itk13ProcessObject19AbortGenerateDataOnEv@Base 5.0.0
  _ZN3itk13ProcessObject20AbortGenerateDataOffEv@Base 5.0.0
  _ZN3itk13ProcessObject20SetAbortGenerateDataEb@Base 5.0.0
+ (arch=i386)_ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEj@Base 5.0.0
  _ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEm@Base 5.0.0
  _ZN3itk13ProcessObject28EnlargeOutputRequestedRegionEPNS_10DataObjectE@Base 5.0.0
  _ZN3itk13ProcessObject29ReleaseDataBeforeUpdateFlagOnEv@Base 5.0.0
  _ZN3itk13ProcessObject30ReleaseDataBeforeUpdateFlagOffEv@Base 5.0.0
  _ZN3itk13ProcessObject30SetReleaseDataBeforeUpdateFlagEb@Base 5.0.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE3AddES5_S5_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE5ClearEv@Base 5.0.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE6IsLeafES5_@Base 5.0.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE6IsRootES5_@Base 5.0.0
@@ -38,6 +42,9 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk14ExposeMetaDataIN3otb21VectorDataKeywordlistEEEbRKNS_18MetaDataDictionaryENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERT_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk14ExposeMetaDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_18MetaDataDictionaryES6_RT_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk14MetaDataObjectIN3otb16ImageKeywordlistEE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3itk14MetaDataObjectIN3otb16ImageKeywordlistEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk14MetaDataObjectIN3otb16ImageKeywordlistEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk14MetaDataObjectIN3otb16ImageKeywordlistEED2Ev@Base 5.0.0
@@ -54,6 +61,7 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk15TreeRemoveEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk15TreeRemoveEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk15TreeRemoveEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEE13InsertElementEjS2_@Base 5.0.0
  (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEED2Ev@Base 5.0.0
@@ -80,6 +88,7 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  _ZN3itk18LightProcessObject19AbortGenerateDataOnEv@Base 5.0.0
  _ZN3itk18LightProcessObject20AbortGenerateDataOffEv@Base 5.0.0
  _ZN3itk18LightProcessObject20SetAbortGenerateDataEb@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk19EncapsulateMetaDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
  (optional=templinst)_ZN3itk19EncapsulateMetaDataISsEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
  (optional=templinst)_ZN3itk19OptimizerParametersIdE15MoveDataPointerEPd@Base 5.0.0
  (optional=templinst)_ZN3itk19OptimizerParametersIdE19SetParametersObjectEPNS_11LightObjectE@Base 5.0.0
@@ -110,6 +119,7 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk25OptimizerParametersHelperIdED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25OptimizerParametersHelperIdED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25OptimizerParametersHelperIdED2Ev@Base 5.0.0
+ (arch=i386)_ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.0.0
  _ZN3itk8AnyEventD0Ev@Base 5.0.0
  _ZN3itk8AnyEventD1Ev@Base 5.0.0
@@ -120,10 +130,13 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE6RemoveEPS6_@Base 5.0.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE8AddChildEPS6_@Base 5.0.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE8AddChildElPS6_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE9SetParentEPS6_@Base 5.0.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk9TransformIdLj2ELj2EE16CopyInParametersEPKdS3_@Base 5.0.0
  (optional=templinst)_ZN3itk9TransformIdLj2ELj2EE20SetParametersByValueERKNS_19OptimizerParametersIdEE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk9TransformIdLj2ELj2EE21CopyInFixedParametersEPKdS3_@Base 5.0.0
  (optional=templinst)_ZN3itk9TransformIdLj2ELj2EE25UpdateTransformParametersERKNS_5ArrayIdEEd@Base 5.0.0
  (optional=templinst)_ZN3itk9TransformIdLj2ELj2EEC1Em@Base 5.0.0
  (optional=templinst)_ZN3itk9TransformIdLj2ELj2EEC2Em@Base 5.0.0
@@ -140,6 +153,7 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE10SetSpacingEPKf@Base 5.0.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE10SetSpacingERKN3itk6VectorIdLj2EEE@Base 5.0.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE11GetDataTreeEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb10VectorDataIdLj2EdE16SetProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE16SetProjectionRefERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE5ClearEv@Base 5.0.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE5GraftEPKN3itk10DataObjectE@Base 5.0.0
@@ -153,6 +167,7 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdED2Ev@Base 5.0.0
  _ZN3otb15KMLVectorDataIO11WalkFeatureERKN5boost13intrusive_ptrIN6kmldom7FeatureEEEN3itk12SmartPointerINS_8DataNodeIdLj2EdEEEE@Base 5.0.0
  _ZN3otb15KMLVectorDataIO12WalkGeometryERKN5boost13intrusive_ptrIN6kmldom8GeometryEEEN3itk12SmartPointerINS_8DataNodeIdLj2EdEEEE@Base 5.0.0
+ (arch=i386)_ZN3otb15KMLVectorDataIO13PrintIndentedERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi@Base 5.0.0
  _ZN3otb15KMLVectorDataIO13PrintIndentedERKSsi@Base 5.0.0
  _ZN3otb15KMLVectorDataIO13WalkContainerERKN5boost13intrusive_ptrIN6kmldom9ContainerEEEN3itk12SmartPointerINS_8DataNodeIdLj2EdEEEE@Base 5.0.0
  _ZN3otb15KMLVectorDataIO14GetRootFeatureERKN5boost13intrusive_ptrIN6kmldom7ElementEEE@Base 5.0.0
@@ -175,11 +190,13 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb15SensorModelBaseIdLj2ELj2EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb15SensorModelBaseIdLj2ELj2EED2Ev@Base 5.0.0
  _ZN3otb16VectorDataIOBase11SetFileNameEPKc@Base 5.0.0
+ (arch=i386)_ZN3otb16VectorDataIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb16VectorDataIOBase11SetFileNameERKSs@Base 5.0.0
  _ZN3otb16VectorDataIOBase12SetByteOrderENS0_9ByteOrderE@Base 5.0.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE11GraftOutputEPN3itk10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE14GraftNthOutputEjPN3itk10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE15AllocateOutputsEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE9GetOutputEj@Base 5.0.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE9GetOutputEm@Base 5.0.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE9GetOutputEv@Base 5.0.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEEC1Ev@Base 5.0.0
@@ -189,11 +206,13 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEED2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EE17SetFirstTransformEPS3_@Base 5.0.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EE18SetSecondTransformEPS3_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EEC1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EEC2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb18ForwardSensorModelIdLj2ELj2EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb18ForwardSensorModelIdLj2ELj2EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18ForwardSensorModelIdLj2ELj2EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18ForwardSensorModelIdLj2ELj2EED2Ev@Base 5.0.0
@@ -208,14 +227,18 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE20GetTransformAccuracyEv@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE20InstanciateTransformEv@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE21SetInputProjectionRefEPKc@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb18GenericRSTransformIdLj2ELj2EE21SetInputProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE21SetInputProjectionRefERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE22SetOutputProjectionRefEPKc@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb18GenericRSTransformIdLj2ELj2EE22SetOutputProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE22SetOutputProjectionRefERKSs@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb18GenericRSTransformIdLj2ELj2EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EEC1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EEC2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb18InverseSensorModelIdLj2ELj2EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb18InverseSensorModelIdLj2ELj2EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18InverseSensorModelIdLj2ELj2EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb18InverseSensorModelIdLj2ELj2EED2Ev@Base 5.0.0
@@ -223,7 +246,9 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb19RemoteSensingRegionIdED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb19RemoteSensingRegionIdED2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE21InstanciateProjectionEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE6GetWktEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE6SetWktERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE6SetWktERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EEC1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EEC2Ev@Base 5.0.0
@@ -231,7 +256,9 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EED2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE21InstanciateProjectionEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE6GetWktEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE6SetWktERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE6SetWktERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EEC1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EEC2Ev@Base 5.0.0
@@ -260,10 +287,13 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E20GetOutputKeywordListEv@Base 5.0.0
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E20InstanciateTransformEv@Base 5.0.0
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E21SetInputProjectionRefEPKc@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E21SetInputProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E21SetInputProjectionRefERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E22SetOutputProjectionRefEPKc@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E22SetOutputProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E22SetOutputProjectionRefERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E25GenerateOutputInformationEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_E3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_EC1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_EC2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb26VectorDataProjectionFilterINS_10VectorDataIdLj2EdEES2_ED0Ev@Base 5.0.0
@@ -290,6 +320,7 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb7PolygonIdED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb7PolygonIdED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb7PolygonIdED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb8DataNodeIdLj2EdE16SetFieldAsStringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES9_@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE16SetFieldAsStringERKSsS3_@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE22SetPolygonExteriorRingEPNS_7PolygonIdEE@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE23SetPolygonInteriorRingsEPNS_10ObjectListINS_7PolygonIdEEEE@Base 5.0.0
@@ -297,6 +328,7 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE8DataTypeD1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE8DataTypeD2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdEPKc@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdED1Ev@Base 5.0.0
@@ -411,6 +443,7 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZNK3itk4PathIdNS_15ContinuousIndexIdLj2EEELj2EE13GetZeroOffsetEv@Base 5.0.0
  (optional=templinst)_ZNK3itk4PathIdNS_15ContinuousIndexIdLj2EEELj2EE14GetNameOfClassEv@Base 5.0.0
  (optional=templinst)_ZNK3itk4PathIdNS_15ContinuousIndexIdLj2EEELj2EE9PrintSelfERSoNS_6IndentE@Base 5.0.0
+ (arch=i386)_ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.0.0
  _ZNK3itk6Object14GetNameOfClassEv@Base 5.0.0
  _ZNK3itk8AnyEvent10CheckEventEPKNS_11EventObjectE@Base 5.0.0
@@ -440,6 +473,7 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE24TransformCovariantVectorERKNS_15CovariantVectorIdLj2EEERKNS_5PointIdLj2EEE@Base 5.0.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE24TransformCovariantVectorERKNS_20VariableLengthVectorIdEE@Base 5.0.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE24TransformCovariantVectorERKNS_20VariableLengthVectorIdEERKNS_5PointIdLj2EEE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK3itk9TransformIdLj2ELj2EE26GetNumberOfFixedParametersEv@Base 5.0.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE26GetNumberOfLocalParametersEv@Base 5.0.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE26TransformDiffusionTensor3DERKNS_17DiffusionTensor3DIdEE@Base 5.0.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE26TransformDiffusionTensor3DERKNS_17DiffusionTensor3DIdEERKNS_5PointIdLj2EEE@Base 5.0.0
@@ -566,12 +600,14 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE11GetNodeTypeEv@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE13CreateAnotherEv@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE14GetNameOfClassEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK3otb8DataNodeIdLj2EdE16GetFieldAsStringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE16GetFieldAsStringERKSs@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE19GetNodeTypeAsStringEv@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE22GetPolygonExteriorRingEv@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE23GetPolygonInteriorRingsEv@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE7GetLineEv@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE8GetPointEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK3otb8DataNodeIdLj2EdE8HasFieldERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE8HasFieldERKSs@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE9GetNodeIdEv@Base 5.0.0
  (optional=templinst)_ZNK3otb8DataNodeIdLj2EdE9PrintSelfERSoN3itk6IndentE@Base 5.0.0
@@ -593,17 +629,21 @@ libOTBIOKML-5.0.so.1 libotbiokml-5.0-1 #MINVER#
  (optional=templinst)_ZNKSt5ctypeIcE8do_widenEc@Base 5.0.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk12SmartPointerIN3otb7PolygonIdEEEES8_EET0_T_SA_S9_@Base 5.0.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk12SmartPointerINS2_8TreeNodeINS3_IN3otb8DataNodeIdLj2EdEEEEEEEESB_EET0_T_SD_SC_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN5boost13intrusive_ptrIN6kmldom15InnerBoundaryIsEEES7_EET0_T_S9_S8_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerIN3otb7PolygonIdEEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS8_SA_EERKS8_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS8_SA_EEjRKS8_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS8_SA_EEmRKS8_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EEC1ERKSA_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EEC2ERKSA_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEjRKS2_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEmRKS2_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN5boost13intrusive_ptrIN6kmldom15InnerBoundaryIsEEESaIS4_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS4_S6_EERKS4_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN7kmlbase4Vec3ESaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN7kmlbase4Vec3ESaIS1_EE9push_backERKS1_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE8_M_eraseEPSt13_Rb_tree_nodeIS8_E@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E@Base 5.0.0
  _ZTI10vnl_vectorIdE@Base 5.0.0
  _ZTI7vnl_svdIdE@Base 5.0.0

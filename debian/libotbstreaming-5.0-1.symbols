@@ -1,6 +1,7 @@
-# SymbolsHelper-Confirmed: 5.0.0 amd64
+# SymbolsHelper-Confirmed: 5.0.0 amd64 i386
 libOTBStreaming-5.0.so.1 libotbstreaming-5.0-1 #MINVER#
  _ZN3itk10DataObject41SetRequestedRegionToLargestPossibleRegionEv@Base 5.0.0
+ (arch=i386)_ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.0.0
  _ZN3otb29PipelineMemoryPrintCalculator14ByteToMegabyteE@Base 5.0.0
  _ZN3otb29PipelineMemoryPrintCalculator14GetMemoryPrintEv@Base 5.0.0
@@ -10,6 +11,7 @@ libOTBStreaming-5.0.so.1 libotbstreaming-5.0-1 #MINVER#
  _ZN3otb29PipelineMemoryPrintCalculator23SetBiasCorrectionFactorEd@Base 5.0.0
  _ZN3otb29PipelineMemoryPrintCalculator35EvaluateProcessObjectPrintRecursiveEPN3itk13ProcessObjectE@Base 5.0.0
  _ZN3otb29PipelineMemoryPrintCalculator38EstimateOptimalNumberOfStreamDivisionsEmm@Base 5.0.0
+ (arch=i386)_ZN3otb29PipelineMemoryPrintCalculator38EstimateOptimalNumberOfStreamDivisionsEyy@Base 5.0.0
  _ZN3otb29PipelineMemoryPrintCalculator7ComputeEv@Base 5.0.0
  _ZN3otb29PipelineMemoryPrintCalculatorC1Ev@Base 5.0.0
  _ZN3otb29PipelineMemoryPrintCalculatorC2Ev@Base 5.0.0
@@ -23,6 +25,7 @@ libOTBStreaming-5.0.so.1 libotbstreaming-5.0-1 #MINVER#
  (optional=templinst)_ZNK3itk5ImageIcLj2EE29GetNumberOfComponentsPerPixelEv@Base 5.0.0
  (optional=templinst)_ZNK3itk5ImageIhLj2EE29GetNumberOfComponentsPerPixelEv@Base 5.0.0
  (optional=templinst)_ZNK3itk5ImageItLj2EE29GetNumberOfComponentsPerPixelEv@Base 5.0.0
+ (arch=i386)_ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.0.0
  (optional=templinst)_ZNK3itk9ImageBaseILj2EE18GetRequestedRegionEv@Base 5.0.0
  _ZNK3otb29PipelineMemoryPrintCalculator13CreateAnotherEv@Base 5.0.0

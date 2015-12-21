@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.0.0 amd64
+# SymbolsHelper-Confirmed: 5.0.0 amd64 i386
 libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN10QByteArrayD1Ev@Base 5.0.0
  _ZN10QByteArrayD2Ev@Base 5.0.0
@@ -37,6 +37,7 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN3itk13QtProgressBarD0Ev@Base 5.0.0
  _ZN3itk13QtProgressBarD1Ev@Base 5.0.0
  _ZN3itk13QtProgressBarD2Ev@Base 5.0.0
+ (arch=i386)_ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.0.0
  _ZN3itk8AnyEventD0Ev@Base 5.0.0
  _ZN3itk8AnyEventD1Ev@Base 5.0.0
@@ -46,6 +47,8 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN3otb11QtLogOutput13NewContentLogE7QString@Base 5.0.0
  _ZN3otb11QtLogOutput16staticMetaObjectE@Base 5.0.0
  _ZN3otb11QtLogOutput5FlushEv@Base 5.0.0
+ (arch=i386)_ZN3otb11QtLogOutput5WriteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ (arch=i386)_ZN3otb11QtLogOutput5WriteERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEd@Base 5.0.0
  _ZN3otb11QtLogOutput5WriteERKSs@Base 5.0.0
  _ZN3otb11QtLogOutput5WriteERKSsd@Base 5.0.0
  _ZN3otb11QtLogOutput5WriteEd@Base 5.0.0
@@ -92,11 +95,14 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN3otb7Wrapper13QtApplicationD0Ev@Base 5.0.0
  _ZN3otb7Wrapper13QtApplicationD1Ev@Base 5.0.0
  _ZN3otb7Wrapper13QtApplicationD2Ev@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper13QtWidgetModel11SendLogINFOERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModel11SendLogINFOERKSs@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModel11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModel11qt_metacastEPKc@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModel12NotifyUpdateEv@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper13QtWidgetModel12SendLogDEBUGERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModel12SendLogDEBUGERKSs@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper13QtWidgetModel14SendLogWARNINGERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModel14SendLogWARNINGERKSs@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModel15ExceptionRaisedE7QString@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModel16staticMetaObjectE@Base 5.0.0
@@ -111,7 +117,9 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN3otb7Wrapper13QtWidgetModelD0Ev@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModelD1Ev@Base 5.0.0
  _ZN3otb7Wrapper13QtWidgetModelD2Ev@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper18DirectoryParameter8GetValueB5cxx11Ev@Base 5.0.0
  _ZN3otb7Wrapper18DirectoryParameter8GetValueEv@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper18DirectoryParameter8SetValueENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb7Wrapper18DirectoryParameter8SetValueESs@Base 5.0.0
  (optional=templinst)_ZN3otb7Wrapper18NumericalParameterIfE15GetMaximumValueEv@Base 5.0.0
  (optional=templinst)_ZN3otb7Wrapper18NumericalParameterIfE15GetMinimumValueEv@Base 5.0.0
@@ -168,11 +176,14 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN3otb7Wrapper21QtWidgetParameterBaseD1Ev@Base 5.0.0
  _ZN3otb7Wrapper21QtWidgetParameterBaseD2Ev@Base 5.0.0
  _ZN3otb7Wrapper22AddProcessToWatchEvent10SetProcessEPN3itk13ProcessObjectE@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper22AddProcessToWatchEvent21SetProcessDescriptionENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb7Wrapper22AddProcessToWatchEvent21SetProcessDescriptionESs@Base 5.0.0
  _ZN3otb7Wrapper22AddProcessToWatchEventD0Ev@Base 5.0.0
  _ZN3otb7Wrapper22AddProcessToWatchEventD1Ev@Base 5.0.0
  _ZN3otb7Wrapper22AddProcessToWatchEventD2Ev@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper22InputFilenameParameter8GetValueB5cxx11Ev@Base 5.0.0
  _ZN3otb7Wrapper22InputFilenameParameter8GetValueEv@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper22InputFilenameParameter8SetValueENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb7Wrapper22InputFilenameParameter8SetValueESs@Base 5.0.0
  _ZN3otb7Wrapper22QtWidgetEmptyParameter11DoUpdateGUIEv@Base 5.0.0
  _ZN3otb7Wrapper22QtWidgetEmptyParameter11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.0.0
@@ -228,7 +239,9 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN3otb7Wrapper22QtWidgetProgressReportD0Ev@Base 5.0.0
  _ZN3otb7Wrapper22QtWidgetProgressReportD1Ev@Base 5.0.0
  _ZN3otb7Wrapper22QtWidgetProgressReportD2Ev@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper23OutputFilenameParameter8GetValueB5cxx11Ev@Base 5.0.0
  _ZN3otb7Wrapper23OutputFilenameParameter8GetValueEv@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper23OutputFilenameParameter8SetValueENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb7Wrapper23OutputFilenameParameter8SetValueESs@Base 5.0.0
  _ZN3otb7Wrapper23QtStringSelectionWidget11DoUpdateGUIEv@Base 5.0.0
  _ZN3otb7Wrapper23QtStringSelectionWidget11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.0.0
@@ -264,6 +277,7 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN3otb7Wrapper23QtWidgetStringParameterD0Ev@Base 5.0.0
  _ZN3otb7Wrapper23QtWidgetStringParameterD1Ev@Base 5.0.0
  _ZN3otb7Wrapper23QtWidgetStringParameterD2Ev@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper24InputProcessXMLParameter8SetValueENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb7Wrapper24InputProcessXMLParameter8SetValueESs@Base 5.0.0
  _ZN3otb7Wrapper24QtWidgetParameterFactory14CreateQtWidgetEPNS0_9ParameterEPNS0_13QtWidgetModelE@Base 5.0.0
  _ZN3otb7Wrapper24QtWidgetParameterFactoryC1Ev@Base 5.0.0
@@ -271,6 +285,7 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN3otb7Wrapper24QtWidgetParameterFactoryD0Ev@Base 5.0.0
  _ZN3otb7Wrapper24QtWidgetParameterFactoryD1Ev@Base 5.0.0
  _ZN3otb7Wrapper24QtWidgetParameterFactoryD2Ev@Base 5.0.0
+ (arch=i386)_ZN3otb7Wrapper25OutputProcessXMLParameter8SetValueENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb7Wrapper25OutputProcessXMLParameter8SetValueESs@Base 5.0.0
  _ZN3otb7Wrapper25QtWidgetListViewParameter11DoUpdateGUIEv@Base 5.0.0
  _ZN3otb7Wrapper25QtWidgetListViewParameter11qt_metacallEN11QMetaObject4CallEiPPv@Base 5.0.0
@@ -520,9 +535,12 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZN5boost12bad_any_castD0Ev@Base 5.0.0
  _ZN5boost12bad_any_castD1Ev@Base 5.0.0
  _ZN5boost12bad_any_castD2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost15throw_exceptionINS_12bad_any_castEEEvRKT_@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_12bad_any_castEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_12bad_any_castEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail12refcount_ptrINS0_20error_info_containerEE7releaseEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost16exception_detail19error_info_injectorINS_12bad_any_castEEC1ERKS3_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost16exception_detail19error_info_injectorINS_12bad_any_castEEC2ERKS3_@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_12bad_any_castEED0Ev@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_12bad_any_castEED1Ev@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_12bad_any_castEED2Ev@Base 5.0.0
@@ -535,6 +553,18 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  (optional=templinst)_ZN5boost3any6holderIKjED0Ev@Base 5.0.0
  (optional=templinst)_ZN5boost3any6holderIKjED1Ev@Base 5.0.0
  (optional=templinst)_ZN5boost3any6holderIKjED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost3any6holderIfED0Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost3any6holderIfED1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost3any6holderIfED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost3any6holderIiED0Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost3any6holderIiED1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost3any6holderIiED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost3any6holderIjED0Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost3any6holderIjED1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost3any6holderIjED2Ev@Base 5.0.0
+ (arch=i386)_ZN5boost9exceptionD0Ev@Base 5.0.0
+ (arch=i386)_ZN5boost9exceptionD1Ev@Base 5.0.0
+ (arch=i386)_ZN5boost9exceptionD2Ev@Base 5.0.0
  _ZN7QString6appendEPKc@Base 5.0.0
  _ZN7QStringD1Ev@Base 5.0.0
  _ZN7QStringD2Ev@Base 5.0.0
@@ -553,6 +583,7 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZNK3itk13ProgressEvent12GetEventNameEv@Base 5.0.0
  _ZNK3itk13QtProgressBar10metaObjectEv@Base 5.0.0
  _ZNK3itk13QtProgressBar16GetRedrawCommandEv@Base 5.0.0
+ (arch=i386)_ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.0.0
  _ZNK3itk6Object14GetNameOfClassEv@Base 5.0.0
  _ZNK3itk8AnyEvent10CheckEventEPKNS_11EventObjectE@Base 5.0.0
@@ -573,6 +604,7 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  (optional=templinst)_ZNK3otb7Wrapper18NumericalParameterIiE8HasValueEv@Base 5.0.0
  (optional=templinst)_ZNK3otb7Wrapper18NumericalParameterIjE8GetValueEv@Base 5.0.0
  (optional=templinst)_ZNK3otb7Wrapper18NumericalParameterIjE8HasValueEv@Base 5.0.0
+ (arch=i386)_ZNK3otb7Wrapper19InputImageParameter11GetFileNameB5cxx11Ev@Base 5.0.0
  _ZNK3otb7Wrapper19InputImageParameter11GetFileNameEv@Base 5.0.0
  _ZNK3otb7Wrapper20OutputImageParameter11GetFileNameEv@Base 5.0.0
  _ZNK3otb7Wrapper20QtWidgetIntParameter10metaObjectEv@Base 5.0.0
@@ -583,6 +615,7 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZNK3otb7Wrapper22AddProcessToWatchEvent10GetProcessEv@Base 5.0.0
  _ZNK3otb7Wrapper22AddProcessToWatchEvent10MakeObjectEv@Base 5.0.0
  _ZNK3otb7Wrapper22AddProcessToWatchEvent12GetEventNameEv@Base 5.0.0
+ (arch=i386)_ZNK3otb7Wrapper22AddProcessToWatchEvent21GetProcessDescriptionB5cxx11Ev@Base 5.0.0
  _ZNK3otb7Wrapper22AddProcessToWatchEvent21GetProcessDescriptionEv@Base 5.0.0
  _ZNK3otb7Wrapper22QtWidgetEmptyParameter10metaObjectEv@Base 5.0.0
  _ZNK3otb7Wrapper22QtWidgetFloatParameter10metaObjectEv@Base 5.0.0
@@ -593,12 +626,14 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZNK3otb7Wrapper23QtWidgetChoiceParameter10metaObjectEv@Base 5.0.0
  _ZNK3otb7Wrapper23QtWidgetStringParameter10metaObjectEv@Base 5.0.0
  _ZNK3otb7Wrapper24InputProcessXMLParameter11GetFileNameEv@Base 5.0.0
+ (arch=i386)_ZNK3otb7Wrapper24InputVectorDataParameter11GetFileNameB5cxx11Ev@Base 5.0.0
  _ZNK3otb7Wrapper24InputVectorDataParameter11GetFileNameEv@Base 5.0.0
  _ZNK3otb7Wrapper24QtWidgetParameterFactory13CreateAnotherEv@Base 5.0.0
  _ZNK3otb7Wrapper24QtWidgetParameterFactory14GetNameOfClassEv@Base 5.0.0
  _ZNK3otb7Wrapper25OutputProcessXMLParameter11GetFileNameEv@Base 5.0.0
  _ZNK3otb7Wrapper25OutputVectorDataParameter11GetFileNameEv@Base 5.0.0
  _ZNK3otb7Wrapper25QtWidgetListViewParameter10metaObjectEv@Base 5.0.0
+ (arch=i386)_ZNK3otb7Wrapper26ComplexInputImageParameter11GetFileNameB5cxx11Ev@Base 5.0.0
  _ZNK3otb7Wrapper26ComplexInputImageParameter11GetFileNameEv@Base 5.0.0
  _ZNK3otb7Wrapper26QtWidgetDirectoryParameter10metaObjectEv@Base 5.0.0
  _ZNK3otb7Wrapper27ComplexOutputImageParameter11GetFileNameEv@Base 5.0.0
@@ -637,12 +672,21 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  (optional=templinst)_ZNK5boost3any6holderIKiE5cloneEv@Base 5.0.0
  (optional=templinst)_ZNK5boost3any6holderIKjE4typeEv@Base 5.0.0
  (optional=templinst)_ZNK5boost3any6holderIKjE5cloneEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK5boost3any6holderIfE4typeEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK5boost3any6holderIfE5cloneEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK5boost3any6holderIiE4typeEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK5boost3any6holderIiE5cloneEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK5boost3any6holderIjE4typeEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK5boost3any6holderIjE5cloneEv@Base 5.0.0
  (optional=templinst)_ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_@Base 5.0.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerIN3otb7Wrapper9ParameterEEESaIS5_EED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerIN3otb7Wrapper9ParameterEEESaIS5_EED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIPN3otb7Wrapper21QtFileSelectionWidgetESaIS3_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS3_S5_EERKS3_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIPN3otb7Wrapper21QtFileSelectionWidgetESaIS3_EEaSERKS5_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIPN3otb7Wrapper21QtWidgetParameterBaseESaIS3_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS3_S5_EERKS3_@Base 5.0.0
@@ -653,8 +697,12 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  (optional=templinst)_ZNSt6vectorISsSaISsEED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIiSaIiEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPiS1_EERKi@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIiSaIiEEaSERKS1_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeIjSt4pairIKjjESt10_Select1stIS2_ESt4lessIjESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeIjSt4pairIKjjESt10_Select1stIS2_ESt4lessIjESaIS2_EE7_M_copyEPKSt13_Rb_tree_nodeIS2_EPSA_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt8_Rb_treeIjSt4pairIKjjESt10_Select1stIS2_ESt4lessIjESaIS2_EE7_M_copyINS8_11_Alloc_nodeEEEPSt13_Rb_tree_nodeIS2_EPKSC_SD_RT_@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeIjSt4pairIKjjESt10_Select1stIS2_ESt4lessIjESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E@Base 5.0.0
  _ZTIN3itk10Statistics26RandomVariateGeneratorBaseE@Base 5.0.0
  _ZTIN3itk10Statistics37MersenneTwisterRandomVariateGeneratorE@Base 5.0.0
@@ -721,6 +769,9 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZTIN5boost3any6holderIKfEE@Base 5.0.0
  _ZTIN5boost3any6holderIKiEE@Base 5.0.0
  _ZTIN5boost3any6holderIKjEE@Base 5.0.0
+ (arch=i386)_ZTIN5boost3any6holderIfEE@Base 5.0.0
+ (arch=i386)_ZTIN5boost3any6holderIiEE@Base 5.0.0
+ (arch=i386)_ZTIN5boost3any6holderIjEE@Base 5.0.0
  _ZTIN5boost9exceptionE@Base 5.0.0
  _ZTSN3itk10Statistics26RandomVariateGeneratorBaseE@Base 5.0.0
  _ZTSN3itk10Statistics37MersenneTwisterRandomVariateGeneratorE@Base 5.0.0
@@ -787,6 +838,9 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZTSN5boost3any6holderIKfEE@Base 5.0.0
  _ZTSN5boost3any6holderIKiEE@Base 5.0.0
  _ZTSN5boost3any6holderIKjEE@Base 5.0.0
+ (arch=i386)_ZTSN5boost3any6holderIfEE@Base 5.0.0
+ (arch=i386)_ZTSN5boost3any6holderIiEE@Base 5.0.0
+ (arch=i386)_ZTSN5boost3any6holderIjEE@Base 5.0.0
  _ZTSN5boost9exceptionE@Base 5.0.0
  _ZTTN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_12bad_any_castEEEEE@Base 5.0.0
  _ZTVN3itk10Statistics26RandomVariateGeneratorBaseE@Base 5.0.0
@@ -842,6 +896,9 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  _ZTVN5boost3any6holderIKfEE@Base 5.0.0
  _ZTVN5boost3any6holderIKiEE@Base 5.0.0
  _ZTVN5boost3any6holderIKjEE@Base 5.0.0
+ (arch=i386)_ZTVN5boost3any6holderIfEE@Base 5.0.0
+ (arch=i386)_ZTVN5boost3any6holderIiEE@Base 5.0.0
+ (arch=i386)_ZTVN5boost3any6holderIjEE@Base 5.0.0
  _ZTVN5boost9exceptionE@Base 5.0.0
  (c++)"non-virtual thunk to boost::exception_detail::clone_impl<boost::exception_detail::error_info_injector<boost::bad_any_cast> >::~clone_impl()@Base" 5.0.0
  (c++)"non-virtual thunk to boost::exception_detail::error_info_injector<boost::bad_any_cast>::~error_info_injector()@Base" 5.0.0
@@ -851,6 +908,8 @@ libOTBQtWidget-5.0.so.1 libotbqtwidget-5.0-1 #MINVER#
  (c++)"non-virtual thunk to otb::QtLogOutput::GetNameOfClass() const@Base" 5.0.0
  (c++)"non-virtual thunk to otb::QtLogOutput::PrintSelf(std::basic_ostream<char, std::char_traits<char> >&, itk::Indent) const@Base" 5.0.0
  (c++)"non-virtual thunk to otb::QtLogOutput::Write(double)@Base" 5.0.0
+ (c++|arch=i386)"non-virtual thunk to otb::QtLogOutput::Write(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)@Base" 5.0.0
+ (c++|arch=i386)"non-virtual thunk to otb::QtLogOutput::Write(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double)@Base" 5.0.0
  (c++)"non-virtual thunk to otb::QtLogOutput::Write(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)@Base" 5.0.0
  (c++)"non-virtual thunk to otb::QtLogOutput::Write(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, double)@Base" 5.0.0
  (c++)"non-virtual thunk to otb::QtLogOutput::~QtLogOutput()@Base" 5.0.0

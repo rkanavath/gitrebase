@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.0.0 amd64
+# SymbolsHelper-Confirmed: 5.0.0 amd64 i386
 libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN18vnl_matrix_inverseIdED0Ev@Base 5.0.0
  (optional=templinst)_ZN18vnl_matrix_inverseIdED1Ev@Base 5.0.0
@@ -21,15 +21,22 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk10Statistics10ListSampleINS_6VectorIdLj1EEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics10ListSampleINS_6VectorIdLj1EEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics10ListSampleINS_6VectorIdLj1EEEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk10Statistics23MeasurementVectorTraits6AssertIdLj1EEEjRKNS_10FixedArrayIT_XT0_EEEjPKc@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE10MakeOutputEj@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE10MakeOutputEm@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE11GraftOutputEPNS_10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE12GenerateDataEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE16SetHistogramSizeEPKNS_25SimpleDataObjectDecoratorINS_5ArrayImEEEE@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE16SetHistogramSizeERKNS_5ArrayImEE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE16SetMarginalScaleEPKNS_25SimpleDataObjectDecoratorIfEE@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE16SetMarginalScaleERKf@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE21SetAutoMinimumMaximumEPKNS_25SimpleDataObjectDecoratorIbEE@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE21SetAutoMinimumMaximumERKb@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE21SetHistogramSizeInputEPKNS_25SimpleDataObjectDecoratorINS_5ArrayImEEEE@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE21SetMarginalScaleInputEPKNS_25SimpleDataObjectDecoratorIfEE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE22SetHistogramBinMaximumEPKNS_25SimpleDataObjectDecoratorINS_5ArrayIfEEEE@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE22SetHistogramBinMaximumERKNS_5ArrayIfEE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE22SetHistogramBinMinimumEPKNS_25SimpleDataObjectDecoratorINS_5ArrayIfEEEE@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE22SetHistogramBinMinimumERKNS_5ArrayIfEE@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE26SetAutoMinimumMaximumInputEPKNS_25SimpleDataObjectDecoratorIbEE@Base 5.0.0
  (optional=templinst)_ZN3itk10Statistics23SampleToHistogramFilterINS0_10ListSampleINS_6VectorIdLj1EEEEENS0_9HistogramIfNS0_24DenseFrequencyContainer2EEEE27SetHistogramBinMaximumInputEPKNS_25SimpleDataObjectDecoratorINS_5ArrayIfEEEE@Base 5.0.0
@@ -62,8 +69,11 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk11ImageRegionILj6EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageRegionILj6EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageRegionILj6EED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEE10MakeOutputERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEE10MakeOutputEj@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEE10MakeOutputEm@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEE11GraftOutputEPNS_10DataObjectE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEE11GraftOutputERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPNS_10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEE11GraftOutputERKSsPNS_10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEE12GenerateDataEv@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEE14GraftNthOutputEjPNS_10DataObjectE@Base 5.0.0
@@ -78,8 +88,11 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIdLj2EEEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEE10MakeOutputERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEE10MakeOutputEj@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEE10MakeOutputEm@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEE11GraftOutputEPNS_10DataObjectE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEE11GraftOutputERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPNS_10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEE11GraftOutputERKSsPNS_10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEE12GenerateDataEv@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEE14GraftNthOutputEjPNS_10DataObjectE@Base 5.0.0
@@ -95,8 +108,11 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb11VectorImageIhLj2EEEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk11ImageSourceIN3otb5ImageIdLj6EEEE10MakeOutputERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk11ImageSourceIN3otb5ImageIdLj6EEEE10MakeOutputEj@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb5ImageIdLj6EEEE10MakeOutputEm@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb5ImageIdLj6EEEE11GraftOutputEPNS_10DataObjectE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk11ImageSourceIN3otb5ImageIdLj6EEEE11GraftOutputERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPNS_10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb5ImageIdLj6EEEE11GraftOutputERKSsPNS_10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb5ImageIdLj6EEEE12GenerateDataEv@Base 5.0.0
  (optional=templinst)_ZN3itk11ImageSourceIN3otb5ImageIdLj6EEEE14GraftNthOutputEjPNS_10DataObjectE@Base 5.0.0
@@ -151,10 +167,12 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk13MemberCommandIN3otb15ImageFileWriterINS1_11VectorImageIhLj2EEEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk13MemberCommandIN3otb15ImageFileWriterINS1_11VectorImageIhLj2EEEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk13MemberCommandIN3otb15ImageFileWriterINS1_11VectorImageIhLj2EEEEEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk13NumericTraitsINS_6VectorIdLj1EEEE9SetLengthERS2_j@Base 5.0.0
  _ZN3itk13ProcessObject18SetNumberOfThreadsEj@Base 5.0.0
  _ZN3itk13ProcessObject19AbortGenerateDataOnEv@Base 5.0.0
  _ZN3itk13ProcessObject20AbortGenerateDataOffEv@Base 5.0.0
  _ZN3itk13ProcessObject20SetAbortGenerateDataEb@Base 5.0.0
+ (arch=i386)_ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEj@Base 5.0.0
  _ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEm@Base 5.0.0
  _ZN3itk13ProcessObject28EnlargeOutputRequestedRegionEPNS_10DataObjectE@Base 5.0.0
  _ZN3itk13ProcessObject29ReleaseDataBeforeUpdateFlagOnEv@Base 5.0.0
@@ -164,7 +182,9 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  _ZN3itk13ProgressEventD0Ev@Base 5.0.0
  _ZN3itk13ProgressEventD1Ev@Base 5.0.0
  _ZN3itk13ProgressEventD2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk14ExposeMetaDataIN3otb16ImageKeywordlistEEEbRKNS_18MetaDataDictionaryENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERT_@Base 5.0.0
  (optional=templinst)_ZN3itk14ExposeMetaDataIN3otb16ImageKeywordlistEEEbRKNS_18MetaDataDictionaryESsRT_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk14ExposeMetaDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_18MetaDataDictionaryES6_RT_@Base 5.0.0
  (optional=templinst)_ZN3itk14ExposeMetaDataISsEEbRKNS_18MetaDataDictionaryESsRT_@Base 5.0.0
  (optional=templinst)_ZN3itk14ImageAlgorithm14DispatchedCopyIN3otb11VectorImageIhLj2EEES4_EEvPKT_PT0_RKNS5_10RegionTypeERKNS8_10RegionTypeENSt3tr117integral_constantIbLb0EEE@Base 5.0.0
  (optional=templinst)_ZN3itk14MetaDataObjectIN3otb16ImageKeywordlistEED0Ev@Base 5.0.0
@@ -173,21 +193,34 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  _ZN3itk14ProcessAbortedC1EPKcj@Base 5.0.0
  _ZN3itk14ProcessAbortedC2EPKcj@Base 5.0.0
  _ZN3itk16ProgressReporter14CompletedPixelEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferIcdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPciPdj@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferIcdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPciPdm@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferIddN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPdiS5_j@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferIddN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPdiS5_m@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferIfdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPfiPdj@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferIfdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPfiPdm@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferIhdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPhiPdj@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferIhdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPhiPdm@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferIidN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPiiPdj@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferIidN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPiiPdm@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferIjdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPjiPdj@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferIjdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPjiPdm@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferIldN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPliPdj@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferIldN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPliPdm@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferImdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPmiPdj@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferImdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPmiPdm@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferIsdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPsiPdj@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferIsdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPsiPdm@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ConvertPixelBufferItdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPtiPdj@Base 5.0.0
  (optional=templinst)_ZN3itk18ConvertPixelBufferItdN3otb25DefaultConvertPixelTraitsIdEEE7ConvertEPtiPdm@Base 5.0.0
  (optional=templinst)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_E12GenerateDataEv@Base 5.0.0
  (optional=templinst)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_E19SetExtractionRegionENS_11ImageRegionILj2EEE@Base 5.0.0
  (optional=templinst)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_E20ThreadedGenerateDataERKNS_11ImageRegionILj2EEEj@Base 5.0.0
  (optional=templinst)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_E25GenerateOutputInformationEv@Base 5.0.0
  (optional=templinst)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_E33CallCopyOutputRegionToInputRegionERNS_11ImageRegionILj2EEERKS6_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_E3NewEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_EC1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_EC2Ev@Base 5.0.0
  (optional=templinst)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_ED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_ED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_ED2Ev@Base 5.0.0
@@ -281,6 +314,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk18InPlaceImageFilterIN3otb11VectorImageIhLj2EEES3_ED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk18InPlaceImageFilterIN3otb11VectorImageIhLj2EEES3_ED2Ev@Base 5.0.0
  (optional=templinst)_ZN3itk19EncapsulateMetaDataIN3otb16ImageKeywordlistEEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk19EncapsulateMetaDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
  (optional=templinst)_ZN3itk19EncapsulateMetaDataISsEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
  (optional=templinst)_ZN3itk19EncapsulateMetaDataIjEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
  (optional=templinst)_ZN3itk19ImageRegionIteratorIN3otb11VectorImageIdLj2EEEED0Ev@Base 5.0.0
@@ -290,6 +324,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk19ImageRegionIteratorIN3otb11VectorImageIhLj2EEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk19ImageRegionIteratorIN3otb11VectorImageIhLj2EEEED2Ev@Base 5.0.0
  (optional=templinst)_ZN3itk19ImageRegionSplitterILj2EE17GetNumberOfSplitsERKNS_11ImageRegionILj2EEEj@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk19ImageRegionSplitterILj2EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3itk19ImageRegionSplitterILj2EE8GetSplitEjjRKNS_11ImageRegionILj2EEE@Base 5.0.0
  (optional=templinst)_ZN3itk19ImageRegionSplitterILj2EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk19ImageRegionSplitterILj2EED1Ev@Base 5.0.0
@@ -302,6 +337,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk20ImportImageContainerImdE23DeallocateManagedMemoryEv@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImdE24ContainerManageMemoryOffEv@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImdE24SetContainerManageMemoryEb@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk20ImportImageContainerImdE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImdE7ReserveEmb@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImdE7SetSizeEm@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImdED0Ev@Base 5.0.0
@@ -312,6 +348,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk20ImportImageContainerImhE23DeallocateManagedMemoryEv@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImhE24ContainerManageMemoryOffEv@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImhE24SetContainerManageMemoryEb@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk20ImportImageContainerImhE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImhE7SetSizeEm@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImhED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk20ImportImageContainerImhED1Ev@Base 5.0.0
@@ -387,21 +424,29 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_20VariableLengthVectorIhEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_20VariableLengthVectorIhEEED2Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayIfEEE3GetEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayIfEEE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayIfEEE3SetERKS2_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayIfEEEC1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayIfEEEC2Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayIfEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayIfEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayIfEEED2Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayImEEE3GetEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayImEEE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayImEEE3SetERKS2_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayImEEEC1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayImEEEC2Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayImEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayImEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorINS_5ArrayImEEED2Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorIbE3GetEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk25SimpleDataObjectDecoratorIbE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorIbE3SetERKb@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorIbED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorIbED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorIbED2Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorIfE3GetEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3itk25SimpleDataObjectDecoratorIfE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorIfE3SetERKf@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorIfED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk25SimpleDataObjectDecoratorIfED1Ev@Base 5.0.0
@@ -467,6 +512,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk5ImageIdLj6EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk5ImageIdLj6EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk5ImageIdLj6EED2Ev@Base 5.0.0
+ (arch=i386)_ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.0.0
  _ZN3itk8AnyEventD0Ev@Base 5.0.0
  _ZN3itk8AnyEventD1Ev@Base 5.0.0
@@ -552,25 +598,36 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  _ZN3otb10TestHelper15DumpOGRGeometryEP8_IO_FILEP11OGRGeometryPKcPPc@Base 5.0.0
  _ZN3otb10TestHelper15ReportErrorsOffEv@Base 5.0.0
  _ZN3otb10TestHelper15SetReportErrorsEb@Base 5.0.0
+ (arch=i386)_ZN3otb10TestHelper20RegressionTestAllOgrERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EESB_@Base 5.0.0
  _ZN3otb10TestHelper20RegressionTestAllOgrERKSt6vectorISsSaISsEES5_@Base 5.0.0
+ (arch=i386)_ZN3otb10TestHelper22RegressionTestAllAsciiERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EESB_SB_@Base 5.0.0
  _ZN3otb10TestHelper22RegressionTestAllAsciiERKSt6vectorISsSaISsEES5_S5_@Base 5.0.0
+ (arch=i386)_ZN3otb10TestHelper23RegressionTestAllBinaryERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EESB_@Base 5.0.0
  _ZN3otb10TestHelper23RegressionTestAllBinaryERKSt6vectorISsSaISsEES5_@Base 5.0.0
+ (arch=i386)_ZN3otb10TestHelper23RegressionTestAllImagesERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EESB_@Base 5.0.0
  _ZN3otb10TestHelper23RegressionTestAllImagesERKSt6vectorISsSaISsEES5_@Base 5.0.0
+ (arch=i386)_ZN3otb10TestHelper25RegressionTestAllMetaDataERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EESB_@Base 5.0.0
  _ZN3otb10TestHelper25RegressionTestAllMetaDataERKSt6vectorISsSaISsEES5_@Base 5.0.0
+ (arch=i386)_ZN3otb11GDALImageIO12SetIsComplexEb@Base 5.0.0
+ (arch=i386)_ZN3otb11GDALImageIO16SetIsVectorImageEb@Base 5.0.0
+ (arch=i386)_ZN3otb11GDALImageIO23SetOutputImagePixelTypeEbb@Base 5.0.0
  _ZN3otb11ImageIOBase11SetFileNameEPKc@Base 5.0.0
  _ZN3otb11ImageIOBase11SetIORegionEN3itk13ImageIORegionE@Base 5.0.0
  _ZN3otb11ImageIOBase13CanStreamReadEv@Base 5.0.0
  _ZN3otb11ImageIOBase17SetUseCompressionEb@Base 5.0.0
  _ZN3otb11ImageIOBase21SetNumberOfComponentsEj@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIdLj2EE15CopyInformationEPKN3itk10DataObjectE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb11VectorImageIdLj2EE16SetProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIdLj2EE16SetProjectionRefERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIdLj2EE19GetImageKeywordlistEv@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIdLj2EE19SetImageKeywordListERKNS_16ImageKeywordlistE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb11VectorImageIdLj2EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIdLj2EE7GetGCPsEj@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIdLj2EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIdLj2EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIdLj2EED2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIhLj2EE15CopyInformationEPKN3itk10DataObjectE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb11VectorImageIhLj2EE16SetProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIhLj2EE16SetProjectionRefERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIhLj2EE19GetImageKeywordlistEv@Base 5.0.0
  (optional=templinst)_ZN3otb11VectorImageIhLj2EE19SetImageKeywordListERKNS_16ImageKeywordlistE@Base 5.0.0
@@ -593,23 +650,29 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb14ExtractROIBaseINS_11VectorImageIdLj2EEES2_ED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb14ExtractROIBaseINS_11VectorImageIdLj2EEES2_ED2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE10GetImageIOEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE11SetFileNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE11SetFileNameEPKc@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE11SetFileNameESs@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE12GenerateDataEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE15DoConvertBufferEPvj@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE15DoConvertBufferEPvm@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE24GetGdalReadImageFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERSB_@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE24GetGdalReadImageFileNameERKSsRSs@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE25GenerateOutputInformationEv@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE28EnlargeOutputRequestedRegionEPN3itk10DataObjectE@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE31TestFileExistanceAndReadabilityEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEEC1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEEC2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_11VectorImageIdLj2EEENS_25DefaultConvertPixelTraitsIdEEED2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEE10GetImageIOEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEE11SetFileNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEE11SetFileNameEPKc@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEE11SetFileNameESs@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEE12GenerateDataEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEE15DoConvertBufferEPvj@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEE15DoConvertBufferEPvm@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEE24GetGdalReadImageFileNameERKSsRSs@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEE25GenerateOutputInformationEv@Base 5.0.0
@@ -623,6 +686,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb15ImageFileReaderINS_5ImageIdLj6EEENS_25DefaultConvertPixelTraitsIdEEED2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileWriterINS_11VectorImageIhLj2EEEE10GetImageIOEv@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileWriterINS_11VectorImageIhLj2EEEE10SetImageIOEPNS_11ImageIOBaseE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb15ImageFileWriterINS_11VectorImageIhLj2EEEE11SetFileNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileWriterINS_11VectorImageIhLj2EEEE11SetFileNameEPKc@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileWriterINS_11VectorImageIhLj2EEEE11SetFileNameESs@Base 5.0.0
  (optional=templinst)_ZN3otb15ImageFileWriterINS_11VectorImageIhLj2EEEE12GenerateDataEv@Base 5.0.0
@@ -651,6 +715,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb15ImageFileWriterINS_11VectorImageIhLj2EEEED2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb16StreamingManagerINS_11VectorImageIhLj2EEEE17GetNumberOfSplitsEv@Base 5.0.0
  (optional=templinst)_ZN3otb16StreamingManagerINS_11VectorImageIhLj2EEEE32EstimateOptimalNumberOfDivisionsEPN3itk10DataObjectERKNS4_11ImageRegionILj2EEEmd@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb16StreamingManagerINS_11VectorImageIhLj2EEEE32EstimateOptimalNumberOfDivisionsEPN3itk10DataObjectERKNS4_11ImageRegionILj2EEEyd@Base 5.0.0
  (optional=templinst)_ZN3otb16StreamingManagerINS_11VectorImageIhLj2EEEE8GetSplitEj@Base 5.0.0
  (optional=templinst)_ZN3otb20PrintableImageFilterINS_11VectorImageIdLj2EEENS_5ImageIhLj2EEEE10GetUseMaskEv@Base 5.0.0
  (optional=templinst)_ZN3otb20PrintableImageFilterINS_11VectorImageIdLj2EEENS_5ImageIhLj2EEEE10SetUseMaskEb@Base 5.0.0
@@ -684,6 +749,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb21DifferenceImageFilterINS_11VectorImageIdLj2EEES2_E25GenerateOutputInformationEv@Base 5.0.0
  (optional=templinst)_ZN3otb21DifferenceImageFilterINS_11VectorImageIdLj2EEES2_E26BeforeThreadedGenerateDataEv@Base 5.0.0
  (optional=templinst)_ZN3otb21DifferenceImageFilterINS_11VectorImageIdLj2EEES2_E32GetNumberOfPixelsWithDifferencesEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb21DifferenceImageFilterINS_11VectorImageIdLj2EEES2_E3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb21DifferenceImageFilterINS_11VectorImageIdLj2EEES2_EC1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb21DifferenceImageFilterINS_11VectorImageIdLj2EEES2_EC2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb21DifferenceImageFilterINS_11VectorImageIdLj2EEES2_ED0Ev@Base 5.0.0
@@ -693,6 +759,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb22MultiChannelExtractROIIddE20ThreadedGenerateDataERKN3itk11ImageRegionILj2EEEj@Base 5.0.0
  (optional=templinst)_ZN3otb22MultiChannelExtractROIIddE25GenerateOutputInformationEv@Base 5.0.0
  (optional=templinst)_ZN3otb22MultiChannelExtractROIIddE25SetChannelsWorkWithLimitsEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb22MultiChannelExtractROIIddE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb22MultiChannelExtractROIIddED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb22MultiChannelExtractROIIddED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb22MultiChannelExtractROIIddED2Ev@Base 5.0.0
@@ -748,6 +815,8 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb33VectorRescaleIntensityImageFilterINS_11VectorImageIdLj2EEENS1_IhLj2EEEE34GetAutomaticInputMinMaxComputationEv@Base 5.0.0
  (optional=templinst)_ZN3otb33VectorRescaleIntensityImageFilterINS_11VectorImageIdLj2EEENS1_IhLj2EEEE34SetAutomaticInputMinMaxComputationEb@Base 5.0.0
  (optional=templinst)_ZN3otb33VectorRescaleIntensityImageFilterINS_11VectorImageIdLj2EEENS1_IhLj2EEEE8SetGammaEd@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb33VectorRescaleIntensityImageFilterINS_11VectorImageIdLj2EEENS1_IhLj2EEEEC1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb33VectorRescaleIntensityImageFilterINS_11VectorImageIdLj2EEENS1_IhLj2EEEEC2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb33VectorRescaleIntensityImageFilterINS_11VectorImageIdLj2EEENS1_IhLj2EEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb33VectorRescaleIntensityImageFilterINS_11VectorImageIdLj2EEENS1_IhLj2EEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb33VectorRescaleIntensityImageFilterINS_11VectorImageIdLj2EEENS1_IhLj2EEEED2Ev@Base 5.0.0
@@ -782,9 +851,11 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb41NumberOfDivisionsStrippedStreamingManagerINS_11VectorImageIhLj2EEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb41NumberOfDivisionsStrippedStreamingManagerINS_11VectorImageIhLj2EEEED2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb5ImageIdLj6EE15CopyInformationEPKN3itk10DataObjectE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb5ImageIdLj6EE16SetProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb5ImageIdLj6EE16SetProjectionRefERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb5ImageIdLj6EE19GetImageKeywordlistEv@Base 5.0.0
  (optional=templinst)_ZN3otb5ImageIdLj6EE19SetImageKeywordListERKNS_16ImageKeywordlistE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN3otb5ImageIdLj6EE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb5ImageIdLj6EE7GetGCPsEj@Base 5.0.0
  (optional=templinst)_ZN3otb5ImageIdLj6EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb5ImageIdLj6EED1Ev@Base 5.0.0
@@ -792,8 +863,11 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb7Functor21VectorAffineTransformIN3itk20VariableLengthVectorIdEENS3_IhEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb7Functor21VectorAffineTransformIN3itk20VariableLengthVectorIdEENS3_IhEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb7Functor21VectorAffineTransformIN3itk20VariableLengthVectorIdEENS3_IhEEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost14char_separatorIcSt11char_traitsIcEEC1ERKS3_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost14char_separatorIcSt11char_traitsIcEEC2ERKS3_@Base 5.0.0
  (optional=templinst)_ZN5boost14char_separatorIcSt11char_traitsIcEED1Ev@Base 5.0.0
  (optional=templinst)_ZN5boost14char_separatorIcSt11char_traitsIcEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZN5boost14char_separatorIcSt11char_traitsIcEEclIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcS2_SaIcEEEEESC_EEbRT_SE_RT0_@Base 5.0.0
  (optional=templinst)_ZN5boost14char_separatorIcSt11char_traitsIcEEclIN9__gnu_cxx17__normal_iteratorIPKcSsEESsEEbRT_SA_RT0_@Base 5.0.0
  (optional=templinst)_ZN5boost14token_iteratorINS_14char_separatorIcSt11char_traitsIcEEEN9__gnu_cxx17__normal_iteratorIPKcSsEESsED1Ev@Base 5.0.0
  (optional=templinst)_ZN5boost14token_iteratorINS_14char_separatorIcSt11char_traitsIcEEEN9__gnu_cxx17__normal_iteratorIPKcSsEESsED2Ev@Base 5.0.0
@@ -868,8 +942,10 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZNK3itk11VectorImageIhLj2EE15GetVectorLengthEv@Base 5.0.0
  (optional=templinst)_ZNK3itk11VectorImageIhLj2EE29GetNumberOfComponentsPerPixelEv@Base 5.0.0
  (optional=templinst)_ZNK3itk11VectorImageIhLj2EE9PrintSelfERSoNS_6IndentE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK3itk12NeighborhoodINS_20VariableLengthVectorIdEELj2ENS_21NeighborhoodAllocatorIS2_EEE14GetNameOfClassEv@Base 5.0.0
  (optional=templinst)_ZNK3itk12NeighborhoodINS_20VariableLengthVectorIdEELj2ENS_21NeighborhoodAllocatorIS2_EEE20GetNeighborhoodIndexERKNS_6OffsetILj2EEE@Base 5.0.0
  (optional=templinst)_ZNK3itk12NeighborhoodINS_20VariableLengthVectorIdEELj2ENS_21NeighborhoodAllocatorIS2_EEE9PrintSelfERSoNS_6IndentE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK3itk12NeighborhoodIPdLj2ENS_21NeighborhoodAllocatorIS1_EEE14GetNameOfClassEv@Base 5.0.0
  (optional=templinst)_ZNK3itk12NeighborhoodIPdLj2ENS_21NeighborhoodAllocatorIS1_EEE20GetNeighborhoodIndexERKNS_6OffsetILj2EEE@Base 5.0.0
  (optional=templinst)_ZNK3itk12NeighborhoodIPdLj2ENS_21NeighborhoodAllocatorIS1_EEE9PrintSelfERSoNS_6IndentE@Base 5.0.0
  (optional=templinst)_ZNK3itk13MemberCommandIN3otb15ImageFileWriterINS1_11VectorImageIhLj2EEEEEE13CreateAnotherEv@Base 5.0.0
@@ -882,6 +958,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  _ZNK3itk13ProcessObject25GetNumberOfRequiredInputsEv@Base 5.0.0
  _ZNK3itk13ProcessObject26GetNumberOfRequiredOutputsEv@Base 5.0.0
  _ZNK3itk13ProcessObject30GetReleaseDataBeforeUpdateFlagEv@Base 5.0.0
+ (arch=i386)_ZNK3itk13ProcessObject8GetInputEj@Base 5.0.0
  _ZNK3itk13ProgressEvent10CheckEventEPKNS_11EventObjectE@Base 5.0.0
  _ZNK3itk13ProgressEvent10MakeObjectEv@Base 5.0.0
  _ZNK3itk13ProgressEvent12GetEventNameEv@Base 5.0.0
@@ -894,6 +971,9 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZNK3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_E14GetNameOfClassEv@Base 5.0.0
  (optional=templinst)_ZNK3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_E19GetExtractionRegionEv@Base 5.0.0
  (optional=templinst)_ZNK3itk18ExtractImageFilterIN3otb11VectorImageIhLj2EEES3_E9PrintSelfERSoNS_6IndentE@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK3itk18ImageConstIteratorIN3otb11VectorImageIdLj2EEEE14GetNameOfClassEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK3itk18ImageConstIteratorIN3otb11VectorImageIhLj2EEEE14GetNameOfClassEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNK3itk18ImageConstIteratorIN3otb5ImageIhLj2EEEE14GetNameOfClassEv@Base 5.0.0
  (optional=templinst)_ZNK3itk18ImageToImageFilterIN3otb11VectorImageIdLj2EEENS2_IhLj2EEEE14GetNameOfClassEv@Base 5.0.0
  (optional=templinst)_ZNK3itk18ImageToImageFilterIN3otb11VectorImageIdLj2EEENS2_IhLj2EEEE21GetDirectionToleranceEv@Base 5.0.0
  (optional=templinst)_ZNK3itk18ImageToImageFilterIN3otb11VectorImageIdLj2EEENS2_IhLj2EEEE22GetCoordinateToleranceEv@Base 5.0.0
@@ -1009,6 +1089,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZNK3itk5PointIdLj2EE12GetVnlVectorEv@Base 5.0.0
  (optional=templinst)_ZNK3itk6MatrixIdLj2ELj2EE10GetInverseEv@Base 5.0.0
  (optional=templinst)_ZNK3itk6MatrixIdLj6ELj6EE10GetInverseEv@Base 5.0.0
+ (arch=i386)_ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.0.0
  (optional=templinst)_ZNK3itk6VectorIdLj2EE12GetVnlVectorEv@Base 5.0.0
  _ZNK3itk8AnyEvent10CheckEventEPKNS_11EventObjectE@Base 5.0.0
@@ -1044,22 +1125,31 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZNK3otb10ObjectListIN3itk10Statistics10ListSampleINS1_6VectorIdLj1EEEEEE14GetNameOfClassEv@Base 5.0.0
  (optional=templinst)_ZNK3otb10ObjectListIN3itk10Statistics10ListSampleINS1_6VectorIdLj1EEEEEE9PrintSelfERSoNS1_6IndentE@Base 5.0.0
  _ZNK3otb10TestHelper11isMinusSignEi@Base 5.0.0
+ (arch=i386)_ZNK3otb10TestHelper12CompareLinesERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_RiRSt14basic_ofstreamIcS4_ES9_RSt6vectorIS6_SaIS6_EESG_d@Base 5.0.0
  _ZNK3otb10TestHelper12CompareLinesERKSsS2_RiRSt14basic_ofstreamIcSt11char_traitsIcEES3_RSt6vectorISsSaISsEESC_d@Base 5.0.0
  _ZNK3otb10TestHelper12isHexaNumberEi@Base 5.0.0
+ (arch=i386)_ZNK3otb10TestHelper13AddWhiteSpaceERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERS6_@Base 5.0.0
  _ZNK3otb10TestHelper13AddWhiteSpaceERKSsRSs@Base 5.0.0
+ (arch=i386)_ZNK3otb10TestHelper14VectorToStringB5cxx11ERKSt6vectorIdSaIdEE@Base 5.0.0
  _ZNK3otb10TestHelper14VectorToStringERKSt6vectorIdSaIdEE@Base 5.0.0
  _ZNK3otb10TestHelper16ogrReportOnLayerEP8OGRLayerPKcP11OGRGeometryS2_S4_S6_Ri@Base 5.0.0
  _ZNK3otb10TestHelper19RegressionTestImageEiPKcS2_d@Base 5.0.0
+ (arch=i386)_ZNK3otb10TestHelper19isScientificNumericERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb10TestHelper19isScientificNumericERKSs@Base 5.0.0
+ (arch=i386)_ZNK3otb10TestHelper20isHexaPointerAddressERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb10TestHelper20isHexaPointerAddressERKSs@Base 5.0.0
  _ZNK3otb10TestHelper21RegressionTestOgrFileEPKcS2_d@Base 5.0.0
  _ZNK3otb10TestHelper22RegressionTestMetaDataEPKcS2_d@Base 5.0.0
+ (arch=i386)_ZNK3otb10TestHelper23RegressionTestAsciiFileEPKcS2_dSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS9_EE@Base 5.0.0
  _ZNK3otb10TestHelper23RegressionTestAsciiFileEPKcS2_dSt6vectorISsSaISsEE@Base 5.0.0
+ (arch=i386)_ZNK3otb10TestHelper23RegressionTestBaselinesB5cxx11EPc@Base 5.0.0
  _ZNK3otb10TestHelper23RegressionTestBaselinesEPc@Base 5.0.0
  _ZNK3otb10TestHelper24RegressionTestBinaryFileEPKcS2_@Base 5.0.0
+ (arch=i386)_ZNK3otb10TestHelper29isToBeIgnoredForAnyComparisonERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb10TestHelper29isToBeIgnoredForAnyComparisonERKSs@Base 5.0.0
  _ZNK3otb10TestHelper7isPointEi@Base 5.0.0
  _ZNK3otb10TestHelper8isNumberEi@Base 5.0.0
+ (arch=i386)_ZNK3otb10TestHelper9isNumericERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb10TestHelper9isNumericERKSs@Base 5.0.0
  _ZNK3otb11ImageIOBase10GetSpacingEj@Base 5.0.0
  _ZNK3otb11ImageIOBase11GetIORegionEv@Base 5.0.0
@@ -1213,20 +1303,29 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk12SmartPointerINS2_10Statistics10ListSampleINS2_6VectorIdLj1EEEEEEESA_EET0_T_SC_SB_@Base 5.0.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk20VariableLengthVectorIdEES5_EET0_T_S7_S6_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_EET0_T_SA_S9_@Base 5.0.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPSt6vectorIfSaIfEES5_EET0_T_S7_S6_@Base 5.0.0
  (optional=templinst)_ZNSt3mapISsiSt4lessISsESaISt4pairIKSsiEEEixERS3_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk11ImageRegionILj2EEESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk11ImageRegionILj2EEESaIS2_EED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk11ImageRegionILj2EEESaIS2_EED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_10Statistics10ListSampleINS0_6VectorIdLj1EEEEEEESaIS7_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS7_S9_EERKS7_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk12SmartPointerINS0_10Statistics10ListSampleINS0_6VectorIdLj1EEEEEEESaIS7_EE7reserveEj@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_10Statistics10ListSampleINS0_6VectorIdLj1EEEEEEESaIS7_EE7reserveEm@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk20VariableLengthVectorIdEESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk20VariableLengthVectorIdEESaIS2_EE7reserveEj@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk20VariableLengthVectorIdEESaIS2_EE7reserveEm@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk20VariableLengthVectorIdEESaIS2_EED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk20VariableLengthVectorIdEESaIS2_EED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk6OffsetILj2EEESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk6VectorIdLj1EEESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk6VectorIdLj1EEESaIS2_EEaSERKS4_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE9push_backERKS5_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EEaSERKS7_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIS_IfSaIfEESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEjRKS1_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIS_IfSaIfEESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEmRKS1_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIS_IfSaIfEESaIS1_EED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIS_IfSaIfEESaIS1_EED2Ev@Base 5.0.0
@@ -1237,20 +1336,35 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  (optional=templinst)_ZNSt6vectorISsSaISsEED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorISsSaISsEEaSERKS1_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIdSaIdEEaSERKS1_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIfSaIfEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPfS1_EEjRKf@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIfSaIfEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPfS1_EEmRKf@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIfSaIfEEaSERKS1_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIjSaIjEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPjS1_EERKj@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIjSaIjEEaSERKS1_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt6vectorImSaImEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPmS1_EEjRKm@Base 5.0.0
  (optional=templinst)_ZNSt6vectorImSaImEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPmS1_EEmRKm@Base 5.0.0
  (optional=templinst)_ZNSt6vectorImSaImEEaSERKS1_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt7__cxx1110_List_baseIN3itk12SmartPointerINS1_11LightObjectEEESaIS4_EE8_M_clearEv@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_iESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE24_M_get_insert_unique_posERS7_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_iESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE8_M_eraseEPSt13_Rb_tree_nodeIS8_E@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS2_ERKS2_@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsiESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E@Base 5.0.0
+ (optional=templinst|arch=i386)_ZSt11__make_heapIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEENS0_5__ops15_Iter_less_iterEEvT_SF_T0_@Base 5.0.0
  (optional=templinst)_ZSt11__make_heapIN9__gnu_cxx17__normal_iteratorIPSsSt6vectorISsSaISsEEEENS0_5__ops15_Iter_less_iterEEvT_S9_T0_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZSt13__adjust_heapIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEEiS7_NS0_5__ops15_Iter_less_iterEEvT_T0_SG_T1_T2_@Base 5.0.0
  (optional=templinst)_ZSt13__adjust_heapIN9__gnu_cxx17__normal_iteratorIPSsSt6vectorISsSaISsEEEElSsNS0_5__ops15_Iter_less_iterEEvT_T0_SA_T1_T2_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZSt16__insertion_sortIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEENS0_5__ops15_Iter_less_iterEEvT_SF_T0_@Base 5.0.0
  (optional=templinst)_ZSt16__insertion_sortIN9__gnu_cxx17__normal_iteratorIPSsSt6vectorISsSaISsEEEENS0_5__ops15_Iter_less_iterEEvT_S9_T0_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZSt25__unguarded_linear_insertIN9__gnu_cxx17__normal_iteratorIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorIS7_SaIS7_EEEENS0_5__ops14_Val_less_iterEEvT_T0_@Base 5.0.0
  (optional=templinst)_ZSt25__unguarded_linear_insertIN9__gnu_cxx17__normal_iteratorIPSsSt6vectorISsSaISsEEEENS0_5__ops14_Val_less_iterEEvT_T0_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKNSt7__cxx1112basic_stringIS3_St11char_traitsIS3_ESaIS3_EEESE_@Base 5.0.0
  (optional=templinst)_ZSteqIcEN9__gnu_cxx11__enable_ifIXsrSt9__is_charIT_E7__valueEbE6__typeERKSbIS3_St11char_traitsIS3_ESaIS3_EESC_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZSteqIdSaIdEEbRKSt6vectorIT_T0_ES6_@Base 5.0.0
+ (optional=templinst|arch=i386)_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EEPKS5_RKS8_@Base 5.0.0
  (optional=templinst)_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_@Base 5.0.0
  (optional=templinst)_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_@Base 5.0.0
  _ZTI18vnl_matrix_inverseIdE@Base 5.0.0
@@ -1297,6 +1411,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  _ZTIN3itk24ImageFileWriterExceptionE@Base 5.0.0
  _ZTIN3itk24ImageRegionConstIteratorIN3otb11VectorImageIdLj2EEEEE@Base 5.0.0
  _ZTIN3itk24ImageRegionConstIteratorIN3otb11VectorImageIhLj2EEEEE@Base 5.0.0
+ (arch=i386)_ZTIN3itk24ImageToImageFilterCommonE@Base 5.0.0
  _ZTIN3itk25ConstNeighborhoodIteratorIN3otb11VectorImageIdLj2EEENS_32ZeroFluxNeumannBoundaryConditionIS3_S3_EEEE@Base 5.0.0
  _ZTIN3itk25MissingHistogramSizeInputE@Base 5.0.0
  _ZTIN3itk25SimpleDataObjectDecoratorINS_20VariableLengthVectorIhEEEE@Base 5.0.0
@@ -1394,6 +1509,7 @@ libOTBTestKernel-5.0.so.1 libotbtestkernel-5.0-1 #MINVER#
  _ZTSN3itk24ImageFileWriterExceptionE@Base 5.0.0
  _ZTSN3itk24ImageRegionConstIteratorIN3otb11VectorImageIdLj2EEEEE@Base 5.0.0
  _ZTSN3itk24ImageRegionConstIteratorIN3otb11VectorImageIhLj2EEEEE@Base 5.0.0
+ (arch=i386)_ZTSN3itk24ImageToImageFilterCommonE@Base 5.0.0
  _ZTSN3itk25ConstNeighborhoodIteratorIN3otb11VectorImageIdLj2EEENS_32ZeroFluxNeumannBoundaryConditionIS3_S3_EEEE@Base 5.0.0
  _ZTSN3itk25MissingHistogramSizeInputE@Base 5.0.0
  _ZTSN3itk25SimpleDataObjectDecoratorINS_20VariableLengthVectorIhEEEE@Base 5.0.0
