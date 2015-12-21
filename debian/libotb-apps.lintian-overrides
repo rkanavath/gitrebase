@@ -1,0 +1,3 @@
+# False positive, string not included in the source.
+libotb-apps: spelling-error-in-binary usr/lib/otb/applications/otbapp_TrainImagesClassifier.so algoritH algorithm
+
