@@ -10,7 +10,7 @@ libOTBPolarimetry-5.0.so.1 libotbpolarimetry-5.0-1 #MINVER#
  _ZN3itk10DataObject41SetRequestedRegionToLargestPossibleRegionEv@Base 5.0.0
  _ZN3itk10DataObject43RequestedRegionIsOutsideOfTheBufferedRegionEv@Base 5.0.0
  _ZN3itk10DataObject5GraftEPKS0_@Base 5.0.0
- (arch=i386)_ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.0.0
  _ZN3otb16PolarimetricData19GetArchitectureTypeEv@Base 5.0.0
  _ZN3otb16PolarimetricData19SetArchitectureTypeENS_16ArchitectureTypeE@Base 5.0.0
@@ -25,7 +25,7 @@ libOTBPolarimetry-5.0.so.1 libotbpolarimetry-5.0-1 #MINVER#
  _ZNK3itk10DataObject16GetRealTimeStampEv@Base 5.0.0
  _ZNK3itk10DataObject18GetReleaseDataFlagEv@Base 5.0.0
  _ZNK3itk11LightObject17GetReferenceCountEv@Base 5.0.0
- (arch=i386)_ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.0.0
  _ZNK3otb16PolarimetricData13CreateAnotherEv@Base 5.0.0
  _ZNK3otb16PolarimetricData14GetNameOfClassEv@Base 5.0.0

@@ -6,9 +6,9 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN14ossimEllipsoidD0Ev@Base 5.0.0
  _ZN14ossimEllipsoidD1Ev@Base 5.0.0
  _ZN14ossimEllipsoidD2Ev@Base 5.0.0
- (arch=i386)_ZN14ossimRpcSolverD0Ev@Base 5.0.0
- (arch=i386)_ZN14ossimRpcSolverD1Ev@Base 5.0.0
- (arch=i386)_ZN14ossimRpcSolverD2Ev@Base 5.0.0
+ _ZN14ossimRpcSolverD0Ev@Base 5.0.0
+ _ZN14ossimRpcSolverD1Ev@Base 5.0.0
+ _ZN14ossimRpcSolverD2Ev@Base 5.0.0
  _ZN17ossimOutputSource4openERK11ossimString@Base 5.0.0
  _ZN21ossimOgcWktTranslatorD1Ev@Base 5.0.0
  _ZN21ossimOgcWktTranslatorD2Ev@Base 5.0.0
@@ -24,14 +24,14 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3itk10DataObject5GraftEPKS0_@Base 5.0.0
  (optional=templinst)_ZN3itk12SmartPointerIN3otb10DEMHandlerEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk12SmartPointerIN3otb10DEMHandlerEED2Ev@Base 5.0.0
- (arch=i386)_ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.0.0
  _ZN3otb10DEMHandler11m_SingletonE@Base 5.0.0
  _ZN3otb10DEMHandler13OpenGeoidFileEPKc@Base 5.0.0
- (arch=i386)_ZN3otb10DEMHandler13OpenGeoidFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb10DEMHandler13OpenGeoidFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb10DEMHandler13OpenGeoidFileERKSs@Base 5.0.0
  _ZN3otb10DEMHandler16OpenDEMDirectoryEPKc@Base 5.0.0
- (arch=i386)_ZN3otb10DEMHandler16OpenDEMDirectoryERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb10DEMHandler16OpenDEMDirectoryERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb10DEMHandler16OpenDEMDirectoryERKSs@Base 5.0.0
  _ZN3otb10DEMHandler19IsValidDEMDirectoryEPKc@Base 5.0.0
  _ZN3otb10DEMHandler30SetDefaultHeightAboveEllipsoidEd@Base 5.0.0
@@ -41,11 +41,11 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb10DEMHandlerD0Ev@Base 5.0.0
  _ZN3otb10DEMHandlerD1Ev@Base 5.0.0
  _ZN3otb10DEMHandlerD2Ev@Base 5.0.0
- (arch=i386)_ZN3otb11MetaDataKey10GetKeyTypeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb11MetaDataKey10GetKeyTypeERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb11MetaDataKey10GetKeyTypeERKSs@Base 5.0.0
- (arch=i386)_ZN3otb11MetaDataKey10KeyTypeDefC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS0_7KeyTypeE@Base 5.0.0
+ _ZN3otb11MetaDataKey10KeyTypeDefC1ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS0_7KeyTypeE@Base 5.0.0
  _ZN3otb11MetaDataKey10KeyTypeDefC1ERKSsRKNS0_7KeyTypeE@Base 5.0.0
- (arch=i386)_ZN3otb11MetaDataKey10KeyTypeDefC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS0_7KeyTypeE@Base 5.0.0
+ _ZN3otb11MetaDataKey10KeyTypeDefC2ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKNS0_7KeyTypeE@Base 5.0.0
  _ZN3otb11MetaDataKey10KeyTypeDefC2ERKSsRKNS0_7KeyTypeE@Base 5.0.0
  _ZN3otb11MetaDataKey11GCPCountKeyE@Base 5.0.0
  _ZN3otb11MetaDataKey11MetadataKeyE@Base 5.0.0
@@ -72,11 +72,11 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb11MetaDataKey33VectorDataKeywordlistDelimiterKeyE@Base 5.0.0
  _ZN3otb11MetaDataKey9TileHintXE@Base 5.0.0
  _ZN3otb11MetaDataKey9TileHintYE@Base 5.0.0
- (arch=i386)_ZN3otb12ReadGeometryERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb12ReadGeometryERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb12ReadGeometryERKSs@Base 5.0.0
- (arch=i386)_ZN3otb13WriteGeometryERKNS_16ImageKeywordlistERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb13WriteGeometryERKNS_16ImageKeywordlistERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb13WriteGeometryERKNS_16ImageKeywordlistERKSs@Base 5.0.0
- (arch=i386)_ZN3otb15DateTimeAdapter14SetFromIso8601ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb15DateTimeAdapter14SetFromIso8601ERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb15DateTimeAdapter14SetFromIso8601ERKSs@Base 5.0.0
  _ZN3otb15DateTimeAdapter17GetDeltaInSecondsEPKS0_@Base 5.0.0
  _ZN3otb15DateTimeAdapter6GetDayEv@Base 5.0.0
@@ -95,9 +95,9 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb16EllipsoidAdapterD1Ev@Base 5.0.0
  _ZN3otb16EllipsoidAdapterD2Ev@Base 5.0.0
  _ZN3otb16ImageKeywordlist14SetKeywordlistERK16ossimKeywordlist@Base 5.0.0
- (arch=i386)_ZN3otb16ImageKeywordlist18ClearMetadataByKeyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb16ImageKeywordlist18ClearMetadataByKeyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb16ImageKeywordlist18ClearMetadataByKeyERKSs@Base 5.0.0
- (arch=i386)_ZN3otb16ImageKeywordlist6AddKeyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.0.0
+ _ZN3otb16ImageKeywordlist6AddKeyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.0.0
  _ZN3otb16ImageKeywordlist6AddKeyERKSsS2_@Base 5.0.0
  _ZN3otb16ImageKeywordlistC1ERKS0_@Base 5.0.0
  _ZN3otb16ImageKeywordlistC1Ev@Base 5.0.0
@@ -107,7 +107,7 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb16ImageKeywordlistD1Ev@Base 5.0.0
  _ZN3otb16ImageKeywordlistD2Ev@Base 5.0.0
  _ZN3otb16ImageKeywordlistaSERKS0_@Base 5.0.0
- (arch=i386)_ZN3otb16RPCSolverAdapter5SolveERKSt6vectorISt4pairIN3itk5PointIdLj2EEENS4_IdLj3EEEESaIS7_EERdRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb16RPCSolverAdapter5SolveERKSt6vectorISt4pairIN3itk5PointIdLj2EEENS4_IdLj3EEEESaIS7_EERdRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb16RPCSolverAdapter5SolveERKSt6vectorISt4pairIN3itk5PointIdLj2EEENS4_IdLj3EEEESaIS7_EERdRKSs@Base 5.0.0
  _ZN3otb16RPCSolverAdapter5SolveERKSt6vectorISt4pairIN3itk5PointIdLj2EEENS4_IdLj3EEEESaIS7_EERdRNS_16ImageKeywordlistE@Base 5.0.0
  _ZN3otb16RPCSolverAdapterC1Ev@Base 5.0.0
@@ -115,7 +115,7 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb16RPCSolverAdapterD0Ev@Base 5.0.0
  _ZN3otb16RPCSolverAdapterD1Ev@Base 5.0.0
  _ZN3otb16RPCSolverAdapterD2Ev@Base 5.0.0
- (arch=i386)_ZN3otb17DEMConvertAdapter7ConvertENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_@Base 5.0.0
+ _ZN3otb17DEMConvertAdapter7ConvertENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_@Base 5.0.0
  _ZN3otb17DEMConvertAdapter7ConvertESsSs@Base 5.0.0
  _ZN3otb17DEMConvertAdapterC1Ev@Base 5.0.0
  _ZN3otb17DEMConvertAdapterC2Ev@Base 5.0.0
@@ -124,9 +124,9 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb17DEMConvertAdapterD2Ev@Base 5.0.0
  _ZN3otb18SensorModelAdapter11AddTiePointEdddd@Base 5.0.0
  _ZN3otb18SensorModelAdapter11AddTiePointEddddd@Base 5.0.0
- (arch=i386)_ZN3otb18SensorModelAdapter12ReadGeomFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb18SensorModelAdapter12ReadGeomFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb18SensorModelAdapter12ReadGeomFileERKSs@Base 5.0.0
- (arch=i386)_ZN3otb18SensorModelAdapter13WriteGeomFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb18SensorModelAdapter13WriteGeomFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb18SensorModelAdapter13WriteGeomFileERKSs@Base 5.0.0
  _ZN3otb18SensorModelAdapter14ClearTiePointsEv@Base 5.0.0
  _ZN3otb18SensorModelAdapter16CreateProjectionERKNS_16ImageKeywordlistE@Base 5.0.0
@@ -148,14 +148,14 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb20FilterFunctionValuesD0Ev@Base 5.0.0
  _ZN3otb20FilterFunctionValuesD1Ev@Base 5.0.0
  _ZN3otb20FilterFunctionValuesD2Ev@Base 5.0.0
- (arch=i386)_ZN3otb20MapProjectionAdapter12SetParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.0.0
+ _ZN3otb20MapProjectionAdapter12SetParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.0.0
  _ZN3otb20MapProjectionAdapter12SetParameterERKSsS2_@Base 5.0.0
  _ZN3otb20MapProjectionAdapter16ForwardTransformEdddRdS1_S1_@Base 5.0.0
  _ZN3otb20MapProjectionAdapter16GetMapProjectionEv@Base 5.0.0
  _ZN3otb20MapProjectionAdapter16InverseTransformEdddRdS1_S1_@Base 5.0.0
  _ZN3otb20MapProjectionAdapter21InstanciateProjectionEv@Base 5.0.0
  _ZN3otb20MapProjectionAdapter27ApplyParametersToProjectionEv@Base 5.0.0
- (arch=i386)_ZN3otb20MapProjectionAdapter6SetWktERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb20MapProjectionAdapter6SetWktERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb20MapProjectionAdapter6SetWktERKSs@Base 5.0.0
  _ZN3otb20MapProjectionAdapterC1Ev@Base 5.0.0
  _ZN3otb20MapProjectionAdapterC2Ev@Base 5.0.0
@@ -169,9 +169,9 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb20RPCProjectionAdapterD0Ev@Base 5.0.0
  _ZN3otb20RPCProjectionAdapterD1Ev@Base 5.0.0
  _ZN3otb20RPCProjectionAdapterD2Ev@Base 5.0.0
- (arch=i386)_ZN3otb21ReadGeometryFromImageERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb@Base 5.0.0
+ _ZN3otb21ReadGeometryFromImageERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEb@Base 5.0.0
  _ZN3otb21ReadGeometryFromImageERKSsb@Base 5.0.0
- (arch=i386)_ZN3otb22ReadGeometryFromRPCTagERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb22ReadGeometryFromRPCTagERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb22ReadGeometryFromRPCTagERKSs@Base 5.0.0
  _ZN3otb23PlatformPositionAdapter17CreateSensorModelERKNS_16ImageKeywordlistE@Base 5.0.0
  _ZN3otb23PlatformPositionAdapter19GetPlatformPositionEdRSt6vectorIdSaIdEES4_@Base 5.0.0
@@ -181,7 +181,7 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb23PlatformPositionAdapterD0Ev@Base 5.0.0
  _ZN3otb23PlatformPositionAdapterD1Ev@Base 5.0.0
  _ZN3otb23PlatformPositionAdapterD2Ev@Base 5.0.0
- (arch=i386)_ZN3otb24ReadGeometryFromGEOMFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb24ReadGeometryFromGEOMFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb24ReadGeometryFromGEOMFileERKSs@Base 5.0.0
  _ZN3otb30GeometricSarSensorModelAdapter17CreateSensorModelERKNS_16ImageKeywordlistE@Base 5.0.0
  _ZN3otb30GeometricSarSensorModelAdapter25GetPlatformPositionAtLineEdRSt6vectorIdSaIdEES4_@Base 5.0.0
@@ -191,10 +191,10 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZN3otb30GeometricSarSensorModelAdapterD0Ev@Base 5.0.0
  _ZN3otb30GeometricSarSensorModelAdapterD1Ev@Base 5.0.0
  _ZN3otb30GeometricSarSensorModelAdapterD2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3otb5Utils15ConvertToStringI8ossimDptEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKT_@Base 5.0.0
+ (optional=templinst)_ZN3otb5Utils15ConvertToStringI8ossimDptEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKT_@Base 5.0.0
  (optional=templinst)_ZN3otb5Utils15ConvertToStringI8ossimDptEESsRKT_@Base 5.0.0
  (optional=templinst)_ZN3otb5Utils15ConvertToStringIcEESsRKT_@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3otb5Utils15ConvertToStringIdEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKT_@Base 5.0.0
+ (optional=templinst)_ZN3otb5Utils15ConvertToStringIdEENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERKT_@Base 5.0.0
  (optional=templinst)_ZN3otb5Utils15ConvertToStringIdEESsRKT_@Base 5.0.0
  (optional=templinst)_ZN3otb5Utils15ConvertToStringIiEESsRKT_@Base 5.0.0
  _ZN3otb5Utils19GetZoneFromGeoPointEdd@Base 5.0.0
@@ -215,12 +215,12 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZNK3itk10DataObject16GetRealTimeStampEv@Base 5.0.0
  _ZNK3itk10DataObject18GetReleaseDataFlagEv@Base 5.0.0
  _ZNK3itk11LightObject17GetReferenceCountEv@Base 5.0.0
- (arch=i386)_ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.0.0
- (arch=i386)_ZNK3otb10DEMHandler12GetGeoidFileB5cxx11Ev@Base 5.0.0
+ _ZNK3otb10DEMHandler12GetGeoidFileB5cxx11Ev@Base 5.0.0
  _ZNK3otb10DEMHandler12GetGeoidFileEv@Base 5.0.0
  _ZNK3otb10DEMHandler14GetNameOfClassEv@Base 5.0.0
- (arch=i386)_ZNK3otb10DEMHandler15GetDEMDirectoryB5cxx11Ej@Base 5.0.0
+ _ZNK3otb10DEMHandler15GetDEMDirectoryB5cxx11Ej@Base 5.0.0
  _ZNK3otb10DEMHandler15GetDEMDirectoryEj@Base 5.0.0
  _ZNK3otb10DEMHandler17GetHeightAboveMSLERKN3itk5PointIdLj2EEE@Base 5.0.0
  _ZNK3otb10DEMHandler17GetHeightAboveMSLEdd@Base 5.0.0
@@ -235,12 +235,12 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZNK3otb16EllipsoidAdapter14GetNameOfClassEv@Base 5.0.0
  _ZNK3otb16EllipsoidAdapter17LonLatHeightToXYZEdddRdS1_S1_@Base 5.0.0
  _ZNK3otb16EllipsoidAdapter17XYZToLonLatHeightEdddRdS1_S1_@Base 5.0.0
- (arch=i386)_ZNK3otb16ImageKeywordlist16GetMetadataByKeyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZNK3otb16ImageKeywordlist16GetMetadataByKeyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb16ImageKeywordlist16GetMetadataByKeyERKSs@Base 5.0.0
  _ZNK3otb16ImageKeywordlist16convertToGDALRPCER11GDALRPCInfo@Base 5.0.0
  _ZNK3otb16ImageKeywordlist25convertToOSSIMKeywordlistER16ossimKeywordlist@Base 5.0.0
  _ZNK3otb16ImageKeywordlist5PrintERSoN3itk6IndentE@Base 5.0.0
- (arch=i386)_ZNK3otb16ImageKeywordlist6HasKeyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZNK3otb16ImageKeywordlist6HasKeyERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb16ImageKeywordlist6HasKeyERKSs@Base 5.0.0
  _ZNK3otb16ImageKeywordlist9PrintSelfERSoN3itk6IndentE@Base 5.0.0
  _ZNK3otb16ImageKeywordlisteqERKS0_@Base 5.0.0
@@ -256,12 +256,12 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  _ZNK3otb20FilterFunctionValues14GetNameOfClassEv@Base 5.0.0
  _ZNK3otb20FilterFunctionValues22GetCenterSpectralValueEv@Base 5.0.0
  _ZNK3otb20FilterFunctionValues9PrintSelfERSoN3itk6IndentE@Base 5.0.0
- (arch=i386)_ZNK3otb20MapProjectionAdapter12GetParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZNK3otb20MapProjectionAdapter12GetParameterERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb20MapProjectionAdapter12GetParameterERKSs@Base 5.0.0
  _ZNK3otb20MapProjectionAdapter13CreateAnotherEv@Base 5.0.0
  _ZNK3otb20MapProjectionAdapter14GetNameOfClassEv@Base 5.0.0
  _ZNK3otb20MapProjectionAdapter16GetMapProjectionEv@Base 5.0.0
- (arch=i386)_ZNK3otb20MapProjectionAdapter6GetWktB5cxx11Ev@Base 5.0.0
+ _ZNK3otb20MapProjectionAdapter6GetWktB5cxx11Ev@Base 5.0.0
  _ZNK3otb20MapProjectionAdapter6GetWktEv@Base 5.0.0
  _ZNK3otb20MapProjectionAdapter8PrintMapEv@Base 5.0.0
  _ZNK3otb20RPCProjectionAdapter13CreateAnotherEv@Base 5.0.0
@@ -277,8 +277,8 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED1Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED2Ev@Base 5.0.0
+ (optional=templinst)_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED1Ev@Base 5.0.0
+ (optional=templinst)_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt4pairIKSsSsED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt4pairIKSsSsED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorI11ossimRefPtrI11ossimTieGptESaIS2_EED1Ev@Base 5.0.0
@@ -287,15 +287,16 @@ libOTBOSSIMAdapters-5.0.so.1 libotbossimadapters-5.0-1 #MINVER#
  (optional=templinst)_ZNSt6vectorI8ossimGptSaIS0_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS0_S2_EERKS0_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIP26ossimProjectionFactoryBaseSaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPdS1_EERKd@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE24_M_get_insert_unique_posERS7_@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE4findERS7_@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE7_M_copyINSE_11_Alloc_nodeEEEPSt13_Rb_tree_nodeIS8_EPKSI_SJ_RT_@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE7_M_copyINSE_20_Reuse_or_alloc_nodeEEEPSt13_Rb_tree_nodeIS8_EPKSI_SJ_RT_@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE8_M_eraseEPSt13_Rb_tree_nodeIS8_E@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EEaSERKSE_@Base 5.0.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE24_M_get_insert_unique_posERS7_@Base 5.0.0
+ (optional=templinst|arch=amd64)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS8_ERS7_@Base 5.0.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE4findERS7_@Base 5.0.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE7_M_copyINSE_11_Alloc_nodeEEEPSt13_Rb_tree_nodeIS8_EPKSI_SJ_RT_@Base 5.0.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE7_M_copyINSE_20_Reuse_or_alloc_nodeEEEPSt13_Rb_tree_nodeIS8_EPKSI_SJ_RT_@Base 5.0.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE8_M_eraseEPSt13_Rb_tree_nodeIS8_E@Base 5.0.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EEaSERKSE_@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS2_ERKS2_@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE24_M_get_insert_unique_posERS1_@Base 5.0.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_@Base 5.0.0

@@ -11,7 +11,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  _ZN3itk10DataObject41SetRequestedRegionToLargestPossibleRegionEv@Base 5.0.0
  _ZN3itk10DataObject43RequestedRegionIsOutsideOfTheBufferedRegionEv@Base 5.0.0
  _ZN3itk10DataObject5GraftEPKS0_@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3itk12SmartPointerINS_8TreeNodeINS0_IN3otb8DataNodeIdLj2EdEEEEEEEaSERKS7_@Base 5.0.0
+ (optional=templinst)_ZN3itk12SmartPointerINS_8TreeNodeINS0_IN3otb8DataNodeIdLj2EdEEEEEEEaSERKS7_@Base 5.0.0
  (optional=templinst)_ZN3itk12TreeAddEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk12TreeAddEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk12TreeAddEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED2Ev@Base 5.0.0
@@ -39,10 +39,10 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3itk14ExposeMetaDataIN3otb21VectorDataKeywordlistEEEbRKNS_18MetaDataDictionaryENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERT_@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3itk14ExposeMetaDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_18MetaDataDictionaryES6_RT_@Base 5.0.0
+ (optional=templinst)_ZN3itk14ExposeMetaDataIN3otb21VectorDataKeywordlistEEEbRKNS_18MetaDataDictionaryENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERT_@Base 5.0.0
+ (optional=templinst)_ZN3itk14ExposeMetaDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEbRKNS_18MetaDataDictionaryES6_RT_@Base 5.0.0
  (optional=templinst)_ZN3itk14ExposeMetaDataISsEEbRKNS_18MetaDataDictionaryESsRT_@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3itk14ExposeMetaDataIjEEbRKNS_18MetaDataDictionaryENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERT_@Base 5.0.0
+ (optional=templinst)_ZN3itk14ExposeMetaDataIjEEbRKNS_18MetaDataDictionaryENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERT_@Base 5.0.0
  (optional=templinst)_ZN3itk14ExposeMetaDataIjEEbRKNS_18MetaDataDictionaryESsRT_@Base 5.0.0
  (optional=templinst)_ZN3itk14MetaDataObjectIN3otb21VectorDataKeywordlistEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk14MetaDataObjectIN3otb21VectorDataKeywordlistEED1Ev@Base 5.0.0
@@ -60,7 +60,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk15TreeRemoveEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk15TreeRemoveEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk15TreeRemoveEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEE13InsertElementEjS2_@Base 5.0.0
+ (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEE13InsertElementEjS2_@Base 5.0.0
  (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEED2Ev@Base 5.0.0
@@ -82,7 +82,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  _ZN3itk18LightProcessObject20AbortGenerateDataOffEv@Base 5.0.0
  _ZN3itk18LightProcessObject20SetAbortGenerateDataEb@Base 5.0.0
  (optional=templinst)_ZN3itk19EncapsulateMetaDataIN3otb21VectorDataKeywordlistEEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3itk19EncapsulateMetaDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
+ (optional=templinst)_ZN3itk19EncapsulateMetaDataINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
  (optional=templinst)_ZN3itk19EncapsulateMetaDataISsEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
  (optional=templinst)_ZN3itk19EncapsulateMetaDataISt6vectorIdSaIdEEEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
  (optional=templinst)_ZN3itk19EncapsulateMetaDataIjEEvRNS_18MetaDataDictionaryEPKcRKT_@Base 5.0.0
@@ -107,7 +107,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk22PolyLineParametricPathILj2EED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk22PolyLineParametricPathILj2EED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk22PolyLineParametricPathILj2EED2Ev@Base 5.0.0
- (arch=i386)_ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.0.0
  _ZN3itk8AnyEventD0Ev@Base 5.0.0
  _ZN3itk8AnyEventD1Ev@Base 5.0.0
@@ -121,7 +121,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3otb10ObjectListINS_7PolygonIdEEE3NewEv@Base 5.0.0
+ (optional=templinst)_ZN3otb10ObjectListINS_7PolygonIdEEE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb10ObjectListINS_7PolygonIdEEE8PushBackEPS2_@Base 5.0.0
  (optional=templinst)_ZN3otb10ObjectListINS_7PolygonIdEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb10ObjectListINS_7PolygonIdEEED1Ev@Base 5.0.0
@@ -135,11 +135,11 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  _ZN3otb11GDALImageIO13CanStreamReadEv@Base 5.0.0
  _ZN3otb11GDALImageIO14CanStreamWriteEv@Base 5.0.0
  _ZN3otb11GDALImageIO16GetIsVectorImageEv@Base 5.0.0
- (arch=i386)_ZN3otb11GDALImageIO16GetOverviewsInfoB5cxx11Ev@Base 5.0.0
+ _ZN3otb11GDALImageIO16GetOverviewsInfoB5cxx11Ev@Base 5.0.0
  _ZN3otb11GDALImageIO16GetOverviewsInfoEv@Base 5.0.0
  _ZN3otb11GDALImageIO16SetIsVectorImageEb@Base 5.0.0
  _ZN3otb11GDALImageIO17GetOverviewsCountEv@Base 5.0.0
- (arch=i386)_ZN3otb11GDALImageIO17GetSubDatasetInfoERSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EESA_@Base 5.0.0
+ _ZN3otb11GDALImageIO17GetSubDatasetInfoERSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EESA_@Base 5.0.0
  _ZN3otb11GDALImageIO17GetSubDatasetInfoERSt6vectorISsSaISsEES4_@Base 5.0.0
  _ZN3otb11GDALImageIO19GetCompressionLevelEv@Base 5.0.0
  _ZN3otb11GDALImageIO19GetOriginFromGMLBoxERSt6vectorIdSaIdEE@Base 5.0.0
@@ -158,7 +158,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  _ZN3otb11GDALImageIOD1Ev@Base 5.0.0
  _ZN3otb11GDALImageIOD2Ev@Base 5.0.0
  _ZN3otb11ImageIOBase11SetFileNameEPKc@Base 5.0.0
- (arch=i386)_ZN3otb11ImageIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb11ImageIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb11ImageIOBase11SetFileNameERKSs@Base 5.0.0
  _ZN3otb11ImageIOBase11SetFileTypeENS0_8FileTypeE@Base 5.0.0
  _ZN3otb11ImageIOBase11SetIORegionEN3itk13ImageIORegionE@Base 5.0.0
@@ -191,7 +191,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  _ZN3otb15OGRVectorDataIOD1Ev@Base 5.0.0
  _ZN3otb15OGRVectorDataIOD2Ev@Base 5.0.0
  _ZN3otb16VectorDataIOBase11SetFileNameEPKc@Base 5.0.0
- (arch=i386)_ZN3otb16VectorDataIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb16VectorDataIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb16VectorDataIOBase11SetFileNameERKSs@Base 5.0.0
  _ZN3otb16VectorDataIOBase12SetByteOrderENS0_9ByteOrderE@Base 5.0.0
  _ZN3otb18GDALDatasetWrapperC1Ev@Base 5.0.0
@@ -207,7 +207,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb19RemoteSensingRegionIdED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb19RemoteSensingRegionIdED1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb19RemoteSensingRegionIdED2Ev@Base 5.0.0
- (arch=i386)_ZN3otb20GDALOverviewsBuilder23GetGDALResamplingMethodERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb20GDALOverviewsBuilder23GetGDALResamplingMethodERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb20GDALOverviewsBuilder23GetGDALResamplingMethodERSs@Base 5.0.0
  _ZN3otb20GDALOverviewsBuilder6UpdateEv@Base 5.0.0
  _ZN3otb20GDALOverviewsBuilderC1Ev@Base 5.0.0
@@ -235,7 +235,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  _ZN3otb35GDALImageIOFactoryRegister__PrivateEv@Base 5.0.0
  (optional=templinst)_ZN3otb7PolygonIdE10GetEpsilonEv@Base 5.0.0
  (optional=templinst)_ZN3otb7PolygonIdE10SetEpsilonEd@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3otb7PolygonIdE3NewEv@Base 5.0.0
+ (optional=templinst)_ZN3otb7PolygonIdE3NewEv@Base 5.0.0
  (optional=templinst)_ZN3otb7PolygonIdE9AddVertexERKN3itk15ContinuousIndexIdLj2EEE@Base 5.0.0
  (optional=templinst)_ZN3otb7PolygonIdED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb7PolygonIdED1Ev@Base 5.0.0
@@ -246,7 +246,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE8DataTypeD1Ev@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE8DataTypeD2Ev@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdEPKc@Base 5.0.0
- (optional=templinst|arch=i386)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ (optional=templinst)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdERKSs@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdED0Ev@Base 5.0.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdED1Ev@Base 5.0.0
@@ -339,7 +339,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZNK3itk4PathIdNS_15ContinuousIndexIdLj2EEELj2EE13GetZeroOffsetEv@Base 5.0.0
  (optional=templinst)_ZNK3itk4PathIdNS_15ContinuousIndexIdLj2EEELj2EE14GetNameOfClassEv@Base 5.0.0
  (optional=templinst)_ZNK3itk4PathIdNS_15ContinuousIndexIdLj2EEELj2EE9PrintSelfERSoNS_6IndentE@Base 5.0.0
- (arch=i386)_ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.0.0
  _ZNK3itk6Object14GetNameOfClassEv@Base 5.0.0
  _ZNK3itk8AnyEvent10CheckEventEPKNS_11EventObjectE@Base 5.0.0
@@ -355,11 +355,11 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  _ZNK3otb11GDALImageIO13CreateAnotherEv@Base 5.0.0
  _ZNK3otb11GDALImageIO14GetNameOfClassEv@Base 5.0.0
  _ZNK3otb11GDALImageIO20GDALInfoReportCornerEPKcddRdS3_@Base 5.0.0
- (arch=i386)_ZNK3otb11GDALImageIO22CreationOptionContainsENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZNK3otb11GDALImageIO22CreationOptionContainsENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb11GDALImageIO22CreationOptionContainsESs@Base 5.0.0
- (arch=i386)_ZNK3otb11GDALImageIO25GetGdalWriteImageFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.0.0
+ _ZNK3otb11GDALImageIO25GetGdalWriteImageFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.0.0
  _ZNK3otb11GDALImageIO25GetGdalWriteImageFileNameERKSsS2_@Base 5.0.0
- (arch=i386)_ZNK3otb11GDALImageIO29FilenameToGdalDriverShortNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZNK3otb11GDALImageIO29FilenameToGdalDriverShortNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb11GDALImageIO29FilenameToGdalDriverShortNameERKSs@Base 5.0.0
  _ZNK3otb11GDALImageIO9PrintSelfERSoN3itk6IndentE@Base 5.0.0
  _ZNK3otb11ImageIOBase10GetSpacingEj@Base 5.0.0
@@ -387,7 +387,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  _ZNK3otb15OGRVectorDataIO12CanWriteFileEPKc@Base 5.0.0
  _ZNK3otb15OGRVectorDataIO13CreateAnotherEv@Base 5.0.0
  _ZNK3otb15OGRVectorDataIO14GetNameOfClassEv@Base 5.0.0
- (arch=i386)_ZNK3otb15OGRVectorDataIO16GetOGRDriverNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZNK3otb15OGRVectorDataIO16GetOGRDriverNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb15OGRVectorDataIO16GetOGRDriverNameESs@Base 5.0.0
  _ZNK3otb15OGRVectorDataIO9PrintSelfERSoN3itk6IndentE@Base 5.0.0
  _ZNK3otb16VectorDataIOBase11GetFileNameEv@Base 5.0.0
@@ -411,11 +411,11 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  _ZNK3otb22OGRVectorDataIOFactory14GetDescriptionEv@Base 5.0.0
  _ZNK3otb22OGRVectorDataIOFactory14GetNameOfClassEv@Base 5.0.0
  _ZNK3otb22OGRVectorDataIOFactory19GetITKSourceVersionEv@Base 5.0.0
- (arch=i386)_ZNK3otb24GDALDriverManagerWrapper15GetDriverByNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZNK3otb24GDALDriverManagerWrapper15GetDriverByNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb24GDALDriverManagerWrapper15GetDriverByNameESs@Base 5.0.0
- (arch=i386)_ZNK3otb24GDALDriverManagerWrapper4OpenENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZNK3otb24GDALDriverManagerWrapper4OpenENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZNK3otb24GDALDriverManagerWrapper4OpenESs@Base 5.0.0
- (arch=i386)_ZNK3otb24GDALDriverManagerWrapper6CreateENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iii12GDALDataTypePPc@Base 5.0.0
+ _ZNK3otb24GDALDriverManagerWrapper6CreateENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iii12GDALDataTypePPc@Base 5.0.0
  _ZNK3otb24GDALDriverManagerWrapper6CreateESsSsiii12GDALDataTypePPc@Base 5.0.0
  (optional=templinst)_ZNK3otb31PolyLineParametricPathWithValueIdLj2EE13ComputeLengthEv@Base 5.0.0
  (optional=templinst)_ZNK3otb31PolyLineParametricPathWithValueIdLj2EE13CreateAnotherEv@Base 5.0.0
@@ -449,7 +449,7 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk12SmartPointerINS2_8TreeNodeINS3_IN3otb8DataNodeIdLj2EdEEEEEEEESB_EET0_T_SD_SC_@Base 5.0.0
+ (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk12SmartPointerINS2_8TreeNodeINS3_IN3otb8DataNodeIdLj2EdEEEEEEEESB_EET0_T_SD_SC_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerIN3otb7PolygonIdEEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS8_SA_EERKS8_@Base 5.0.0
  (optional=templinst|arch=i386)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS8_SA_EEjRKS8_@Base 5.0.0
@@ -461,9 +461,9 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZNSt6vectorIN6itksys6StringESaIS1_EED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN6itksys6StringESaIS1_EED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIN6itksys6StringESaIS1_EEaSERKS3_@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED1Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED2Ev@Base 5.0.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.0.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED1Ev@Base 5.0.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIP8OGRLayerSaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIPKcSaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.0.0
  (optional=templinst)_ZNSt6vectorISsSaISsEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPSsS1_EERKSs@Base 5.0.0
@@ -473,9 +473,9 @@ libOTBIOGDAL-5.0.so.1 libotbiogdal-5.0-1 #MINVER#
  (optional=templinst)_ZNSt6vectorIdSaIdEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPdS1_EERKd@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIiSaIiEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPiS1_EERKi@Base 5.0.0
  (optional=templinst)_ZNSt6vectorIjSaIjEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPjS1_EERKj@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
  _ZTIN3itk12TreeAddEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEEE@Base 5.0.0
  _ZTIN3itk13ModifiedEventE@Base 5.0.0
  _ZTIN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEE@Base 5.0.0

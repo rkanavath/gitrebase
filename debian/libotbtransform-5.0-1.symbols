@@ -1,9 +1,9 @@
 # SymbolsHelper-Confirmed: 5.0.0 amd64 i386
 libOTBTransform-5.0.so.1 libotbtransform-5.0-1 #MINVER#
- (arch=i386)_ZN3otb24GeoInformationConversion14IsESRIValidWKTERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb24GeoInformationConversion14IsESRIValidWKTERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb24GeoInformationConversion14IsESRIValidWKTERKSs@Base 5.0.0
- (arch=i386)_ZN3otb24GeoInformationConversion5ToWKTB5cxx11Ei@Base 5.0.0
- (arch=i386)_ZN3otb24GeoInformationConversion5ToWKTERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb24GeoInformationConversion5ToWKTB5cxx11Ei@Base 5.0.0
+ _ZN3otb24GeoInformationConversion5ToWKTERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb24GeoInformationConversion5ToWKTERKSs@Base 5.0.0
  _ZN3otb24GeoInformationConversion5ToWKTEi@Base 5.0.0
  (optional=templinst)_ZN5boost15throw_exceptionINS_16bad_lexical_castEEEvRKT_@Base 5.0.0
@@ -13,14 +13,14 @@ libOTBTransform-5.0.so.1 libotbtransform-5.0-1 #MINVER#
  (optional=templinst)_ZN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEED0Ev@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEED1Ev@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail12refcount_ptrINS0_20error_info_containerEE7releaseEv@Base 5.0.0
- (optional=templinst|arch=i386)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEC1ERKS3_@Base 5.0.0
- (optional=templinst|arch=i386)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEC2ERKS3_@Base 5.0.0
+ (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEC1ERKS3_@Base 5.0.0
+ (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEC2ERKS3_@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEED0Ev@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEED1Ev@Base 5.0.0
  (optional=templinst)_ZN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEED2Ev@Base 5.0.0
- (arch=i386)_ZN5boost9exceptionD0Ev@Base 5.0.0
- (arch=i386)_ZN5boost9exceptionD1Ev@Base 5.0.0
- (arch=i386)_ZN5boost9exceptionD2Ev@Base 5.0.0
+ _ZN5boost9exceptionD0Ev@Base 5.0.0
+ _ZN5boost9exceptionD1Ev@Base 5.0.0
+ _ZN5boost9exceptionD2Ev@Base 5.0.0
  _ZNK5boost16bad_lexical_cast4whatEv@Base 5.0.0
  (optional=templinst)_ZNK5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEE5cloneEv@Base 5.0.0
  (optional=templinst)_ZNK5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEE7rethrowEv@Base 5.0.0
@@ -29,14 +29,14 @@ libOTBTransform-5.0.so.1 libotbtransform-5.0-1 #MINVER#
  _ZTIN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 5.0.0
  _ZTIN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEE@Base 5.0.0
  _ZTIN5boost9exceptionE@Base 5.0.0
- (arch=i386)_ZTINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZTINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZTISs@Base 5.0.0
  _ZTSN5boost16bad_lexical_castE@Base 5.0.0
  _ZTSN5boost16exception_detail10clone_baseE@Base 5.0.0
  _ZTSN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 5.0.0
  _ZTSN5boost16exception_detail19error_info_injectorINS_16bad_lexical_castEEE@Base 5.0.0
  _ZTSN5boost9exceptionE@Base 5.0.0
- (arch=i386)_ZTSNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZTSNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZTSSs@Base 5.0.0
  _ZTTN5boost16exception_detail10clone_implINS0_19error_info_injectorINS_16bad_lexical_castEEEEE@Base 5.0.0
  _ZTVN5boost16bad_lexical_castE@Base 5.0.0

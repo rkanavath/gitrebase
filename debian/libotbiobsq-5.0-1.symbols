@@ -1,5 +1,6 @@
 # SymbolsHelper-Confirmed: 5.0.0 amd64 i386
 libOTBIOBSQ-5.0.so.1 libotbiobsq-5.0-1 #MINVER#
+ (optional=templinst|arch=amd64)_ZN3itk11ByteSwapperIdE10Swap8RangeEPvm@Base 5.0.0
  _ZN3itk18LightProcessObject11SetProgressEf@Base 5.0.0
  _ZN3itk18LightProcessObject12GenerateDataEv@Base 5.0.0
  _ZN3itk18LightProcessObject19AbortGenerateDataOnEv@Base 5.0.0
@@ -9,20 +10,20 @@ libOTBIOBSQ-5.0.so.1 libotbiobsq-5.0-1 #MINVER#
  (optional=templinst)_ZN3itk20CreateObjectFunctionIN3otb10BSQImageIOEED0Ev@Base 5.0.0
  (optional=templinst)_ZN3itk20CreateObjectFunctionIN3otb10BSQImageIOEED1Ev@Base 5.0.0
  (optional=templinst)_ZN3itk20CreateObjectFunctionIN3otb10BSQImageIOEED2Ev@Base 5.0.0
- (arch=i386)_ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.0.0
  _ZN3otb10BSQImageIO10ReadVolumeEPv@Base 5.0.0
  _ZN3otb10BSQImageIO11CanReadFileEPKc@Base 5.0.0
  _ZN3otb10BSQImageIO12CanWriteFileEPKc@Base 5.0.0
  _ZN3otb10BSQImageIO13CanStreamReadEv@Base 5.0.0
  _ZN3otb10BSQImageIO14CanStreamWriteEv@Base 5.0.0
- (arch=i386)_ZN3otb10BSQImageIO16GetOverviewsInfoB5cxx11Ev@Base 5.0.0
+ _ZN3otb10BSQImageIO16GetOverviewsInfoB5cxx11Ev@Base 5.0.0
  _ZN3otb10BSQImageIO16GetOverviewsInfoEv@Base 5.0.0
  _ZN3otb10BSQImageIO17GetOverviewsCountEv@Base 5.0.0
  _ZN3otb10BSQImageIO20ReadImageInformationEv@Base 5.0.0
  _ZN3otb10BSQImageIO21WriteImageInformationEv@Base 5.0.0
  _ZN3otb10BSQImageIO23SetOutputImagePixelTypeEbb@Base 5.0.0
- (arch=i386)_ZN3otb10BSQImageIO29InternalReadHeaderInformationERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERSt13basic_fstreamIcS4_Eb@Base 5.0.0
+ _ZN3otb10BSQImageIO29InternalReadHeaderInformationERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERSt13basic_fstreamIcS4_Eb@Base 5.0.0
  _ZN3otb10BSQImageIO29InternalReadHeaderInformationERKSsRSt13basic_fstreamIcSt11char_traitsIcEEb@Base 5.0.0
  _ZN3otb10BSQImageIO4ReadEPv@Base 5.0.0
  _ZN3otb10BSQImageIO5WriteEPKv@Base 5.0.0
@@ -32,7 +33,7 @@ libOTBIOBSQ-5.0.so.1 libotbiobsq-5.0-1 #MINVER#
  _ZN3otb10BSQImageIOD1Ev@Base 5.0.0
  _ZN3otb10BSQImageIOD2Ev@Base 5.0.0
  _ZN3otb11ImageIOBase11SetFileNameEPKc@Base 5.0.0
- (arch=i386)_ZN3otb11ImageIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
+ _ZN3otb11ImageIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.0.0
  _ZN3otb11ImageIOBase11SetFileNameERKSs@Base 5.0.0
  _ZN3otb11ImageIOBase11SetFileTypeENS0_8FileTypeE@Base 5.0.0
  _ZN3otb11ImageIOBase11SetIORegionEN3itk13ImageIORegionE@Base 5.0.0
@@ -60,7 +61,7 @@ libOTBIOBSQ-5.0.so.1 libotbiobsq-5.0-1 #MINVER#
  _ZNK3itk18LightProcessObject11GetProgressEv@Base 5.0.0
  _ZNK3itk18LightProcessObject20GetAbortGenerateDataEv@Base 5.0.0
  (optional=templinst)_ZNK3itk20CreateObjectFunctionIN3otb10BSQImageIOEE13CreateAnotherEv@Base 5.0.0
- (arch=i386)_ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.0.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.0.0
  _ZNK3itk6Object14GetNameOfClassEv@Base 5.0.0
  _ZNK3otb10BSQImageIO13CreateAnotherEv@Base 5.0.0
@@ -90,16 +91,16 @@ libOTBIOBSQ-5.0.so.1 libotbiobsq-5.0-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED1Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED2Ev@Base 5.0.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.0.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED1Ev@Base 5.0.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED2Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorISsSaISsEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPSsS1_EERKSs@Base 5.0.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED1Ev@Base 5.0.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
- (optional=templinst|arch=i386)_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EERKS8_SA_@Base 5.0.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.0.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.0.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.0.0
+ (optional=templinst)_ZStplIcSt11char_traitsIcESaIcEENSt7__cxx1112basic_stringIT_T0_T1_EERKS8_SA_@Base 5.0.0
  _ZTIN3itk20CreateObjectFunctionIN3otb10BSQImageIOEEE@Base 5.0.0
  _ZTIN3itk24CreateObjectFunctionBaseE@Base 5.0.0
  _ZTIN3otb10BSQImageIOE@Base 5.0.0
