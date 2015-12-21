@@ -111,7 +111,7 @@ Description: ORFEO Toolbox library - OTBTestDriver
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBTestDriver
+ This package contains the OTBTestDriver application.
 
 Package: libotbiolum-@SOVERSION@
 Architecture: any
@@ -124,7 +124,7 @@ Description: ORFEO Toolbox library - OTBIOLUM
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBIOLUM
+ This package contains the OTBIOLUM shared library.
 
 Package: libotbiomstar-@SOVERSION@
 Architecture: any
@@ -137,7 +137,7 @@ Description: ORFEO Toolbox library - OTBIOMSTAR
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBIOMSTAR
+ This package contains the OTBIOMSTAR shared library.
 
 Package: libotbiomw-@SOVERSION@
 Architecture: any
@@ -150,7 +150,7 @@ Description: ORFEO Toolbox library - OTBIOMW
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBIOMW
+ This package contains the OTBIOMW shared library.
 
 Package: libotbioonera-@SOVERSION@
 Architecture: any
@@ -163,7 +163,7 @@ Description: ORFEO Toolbox library - OTBIOONERA
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBIOONERA
+ This package contains the OTBIOONERA shared library.
 
 Package: libotbiorad-@SOVERSION@
 Architecture: any
@@ -176,7 +176,7 @@ Description: ORFEO Toolbox library - OTBIORAD
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBIORAD
+ This package contains the OTBIORAD shared library.
 
 Package: libotbiotilemap-@SOVERSION@
 Architecture: any
@@ -189,7 +189,7 @@ Description: ORFEO Toolbox library - OTBIOTileMap
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBIOTileMap
+ This package contains the OTBIOTileMap shared library.
 
 Package: libotbiogdal-@SOVERSION@
 Architecture: any
@@ -202,7 +202,7 @@ Description: ORFEO Toolbox library - OTBIOGDAL
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBIOGDAL
+ This package contains the OTBIOGDAL shared library.
 
 Package: libotbiobsq-@SOVERSION@
 Architecture: any
@@ -215,7 +215,7 @@ Description: ORFEO Toolbox library - OTBIOBSQ
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBIOBSQ
+ This package contains the OTBIOBSQ shared library.
 
 Package: libotbiokml-@SOVERSION@
 Architecture: any
@@ -228,7 +228,7 @@ Description: ORFEO Toolbox library - OTBIOKML
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBIOKML
+ This package contains the OTBIOKML shared library.
 
 Package: libotbcurladapters-@SOVERSION@
 Architecture: any
@@ -241,7 +241,7 @@ Description: ORFEO Toolbox library - OTBCurlAdapters
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBCurlAdapters
+ This package contains the OTBCurlAdapters shared library.
 
 Package: libotbopenthreadsadapters-@SOVERSION@
 Architecture: any
@@ -254,7 +254,7 @@ Description: ORFEO Toolbox library - OTBOpenThreadsAdapters
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBOpenThreadsAdapters
+ This package contains the OTBOpenThreadsAdapters shared library.
 
 Package: libotbossimadapters-@SOVERSION@
 Architecture: any
@@ -267,7 +267,7 @@ Description: ORFEO Toolbox library - OTBOssimAdapters
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBOssimAdapters
+ This package contains the OTBOssimAdapters shared library.
 
 Package: libotbsiftfast-@SOVERSION@
 Architecture: any
@@ -280,7 +280,7 @@ Description: ORFEO Toolbox library - OTBSiftFast
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBSiftFast
+ This package contains the OTBSiftFast shared library.
 
 Package: libotbossimplugins-@SOVERSION@
 Architecture: any
@@ -293,7 +293,7 @@ Description: ORFEO Toolbox library - OTBOssimPlugins
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBOssimPlugins
+ This package contains the OTBOssimPlugins shared library.
 
 Package: libotbimagemanipulation-@SOVERSION@
 Architecture: any
@@ -306,7 +306,7 @@ Description: ORFEO Toolbox library - OTBImageManipulation
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBImageManipulation
+ This package contains the OTBImageManipulation shared library.
 
 Package: libotbimageio-@SOVERSION@
 Architecture: any
@@ -319,7 +319,7 @@ Description: ORFEO Toolbox library - OTBImageIO
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBImageIO
+ This package contains the OTBImageIO shared library.
 
 Package: libotbimagebase-@SOVERSION@
 Architecture: any
@@ -332,7 +332,7 @@ Description: ORFEO Toolbox library - OTBImageBase
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBImageBase
+ This package contains the OTBImageBase shared library.
 
 Package: libotbgdaladapters-@SOVERSION@
 Architecture: any
@@ -345,7 +345,7 @@ Description: ORFEO Toolbox library - OTBGdalAdapters
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBGdalAdapters
+ This package contains the OTBGdalAdapters shared library.
 
 Package: libotbedge-@SOVERSION@
 Architecture: any
@@ -358,7 +358,7 @@ Description: ORFEO Toolbox library - OTBEdge
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBEdge
+ This package contains the OTBEdge shared library.
 
 Package: libotbcommandline-@SOVERSION@
 Architecture: any
@@ -371,7 +371,7 @@ Description: ORFEO Toolbox library - OTBCommandLine
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBCommandLine
+ This package contains the OTBCommandLine shared library.
 
 Package: libotbcommandlineparser-@SOVERSION@
 Architecture: any
@@ -384,7 +384,7 @@ Description: ORFEO Toolbox library - OTBCommandLinePaser
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBCommandLinePaser
+ This package contains the OTBCommandLinePaser shared library.
 
 Package: libotbcommon-@SOVERSION@
 Architecture: any
@@ -397,7 +397,7 @@ Description: ORFEO Toolbox library - OTBCommon
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBCommon
+ This package contains the OTBCommon shared library.
 
 Package: libotbcarto-@SOVERSION@
 Architecture: any
@@ -410,7 +410,7 @@ Description: ORFEO Toolbox library - OTBCarto
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBCarto
+ This package contains the OTBCarto shared library.
 
 Package: libotbpolarimetry-@SOVERSION@
 Architecture: any
@@ -423,7 +423,7 @@ Description: ORFEO Toolbox library - OTBPolarimetry
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBPolarimetry
+ This package contains the OTBPolarimetry shared library.
 
 Package: libotbstreaming-@SOVERSION@
 Architecture: any
@@ -436,7 +436,7 @@ Description: ORFEO Toolbox library - OTBStreaming
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBStreaming
+ This package contains the OTBStreaming shared library.
 
 Package: libotbextendedfilename-@SOVERSION@
 Architecture: any
@@ -449,7 +449,7 @@ Description: ORFEO Toolbox library - OTBExtendedFileName
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBExtendedFileName
+ This package contains the OTBExtendedFileName shared library.
 
 Package: libotbmathparser-@SOVERSION@
 Architecture: any
@@ -462,7 +462,7 @@ Description: ORFEO Toolbox library - OTBMathParser
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBMathParser
+ This package contains the OTBMathParser shared library.
 
 Package: libotbfuzzy-@SOVERSION@
 Architecture: any
@@ -475,7 +475,7 @@ Description: ORFEO Toolbox library - OTBFuzzy
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBFuzzy
+ This package contains the OTBFuzzy shared library.
 
 Package: libotbmetadata-@SOVERSION@
 Architecture: any
@@ -488,7 +488,7 @@ Description: ORFEO Toolbox library - OTBMetadata
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBMetadata
+ This package contains the OTBMetadata shared library.
 
 Package: libotbprojection-@SOVERSION@
 Architecture: any
@@ -501,7 +501,7 @@ Description: ORFEO Toolbox library - OTBProjection
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBProjection
+ This package contains the OTBProjection shared library.
 
 Package: libotbrcc8-@SOVERSION@
 Architecture: any
@@ -514,7 +514,7 @@ Description: ORFEO Toolbox library - OTBRCC8
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBRCC8
+ This package contains the OTBRCC8 shared library.
 
 Package: libotbtestkernel-@SOVERSION@
 Architecture: any
@@ -527,7 +527,7 @@ Description: ORFEO Toolbox library - OTBTestKernel
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBTestKernel
+ This package contains the OTBTestKernel shared library.
 
 Package: libotbtransform-@SOVERSION@
 Architecture: any
@@ -540,7 +540,7 @@ Description: ORFEO Toolbox library - OTBTransform
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBTransform
+ This package contains the OTBTransform shared library.
 
 Package: libotbvectordatabase-@SOVERSION@
 Architecture: any
@@ -553,7 +553,7 @@ Description: ORFEO Toolbox library - OTBVectorDataBase
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBVectorDataBase
+ This package contains the OTBVectorDataBase shared library.
 
 Package: libotbvectordataio-@SOVERSION@
 Architecture: any
@@ -566,7 +566,7 @@ Description: ORFEO Toolbox library - OTBVectorDataIO
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBVectorDataIO
+ This package contains the OTBVectorDataIO shared library.
 
 Package: libotbwavelet-@SOVERSION@
 Architecture: any
@@ -579,7 +579,7 @@ Description: ORFEO Toolbox library - OTBWavelet
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBWavelet
+ This package contains the OTBWavelet shared library.
 
 Package: libotbsupervised-@SOVERSION@
 Architecture: any
@@ -592,7 +592,7 @@ Description: ORFEO Toolbox library - OTBSupervised
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBSupervised
+ This package contains the OTBSupervised shared library.
 
 Package: libotbqtwidget-@SOVERSION@
 Architecture: any
@@ -605,7 +605,7 @@ Description: ORFEO Toolbox library - OTBQtWidget
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBQtWidget
+ This package contains the OTBQtWidget shared library.
 
 Package: libotbapplicationengine-@SOVERSION@
 Architecture: any
@@ -618,7 +618,7 @@ Description: ORFEO Toolbox library - OTBApplicationEngine
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains shared library for OTBApplicationEngine
+ This package contains the OTBApplicationEngine shared library.
 
 Package: libotb-apps
 Architecture: any
@@ -670,7 +670,7 @@ Description: Plugins for ORFEO Toolbox applications
  in general and for high spatial resolution images in particular.
  .
  This package contains the application plugins used by otb-bin(commandline)
- and otb-bin-qt(gui)
+ and otb-bin-qt(gui).
 
 Package: otb-bin
 Architecture: any
@@ -701,7 +701,7 @@ Description: ORFEO Toolbox graphical user interface applications
  in general and for high spatial resolution images in particular.
  .
  This package contains the GUI launcher that can run any OTB application
- provided by libotb-apps package
+ provided by libotb-apps package.
 
 Package: python-otb
 Architecture: any
@@ -717,8 +717,8 @@ Description: ORFEO Toolbox Python API for applications
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This package contains the Python API that can be used to create python version
- of exisiting OTB applications provided by the libotb-apps package.
+ This package contains the Python API that can be used to create Python
+ versions of exisiting OTB applications provided by the libotb-apps package.
 
 Package: libotb
 Architecture: any
@@ -768,5 +768,5 @@ Description: ORFEO Toolbox library metapackage
  ITK and offers particular functionalities for remote sensing image processing
  in general and for high spatial resolution images in particular.
  .
- This metapackage provides all shared libraries used by OTB
- .
+ This metapackage provides all shared libraries used by OTB.
+
