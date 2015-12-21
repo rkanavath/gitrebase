@@ -105,7 +105,7 @@ Package: otb-testdriver
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBTestDriver
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -118,7 +118,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBIOLUM
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -131,7 +131,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBIOMSTAR
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -144,7 +144,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBIOMW
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -157,7 +157,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBIOONERA
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -170,7 +170,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBIORAD
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -183,7 +183,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBIOTileMap
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -196,7 +196,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBIOGDAL
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -209,7 +209,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBIOBSQ
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -222,7 +222,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBIOKML
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -235,7 +235,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBCurlAdapters
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -248,7 +248,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBOpenThreadsAdapters
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -261,7 +261,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBOssimAdapters
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -274,7 +274,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBSiftFast
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -287,7 +287,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBOssimPlugins
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -300,7 +300,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBImageManipulation
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -313,7 +313,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBImageIO
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -326,7 +326,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBImageBase
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -339,7 +339,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBGdalAdapters
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -352,7 +352,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBEdge
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -365,7 +365,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBCommandLine
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -378,7 +378,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBCommandLinePaser
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -391,7 +391,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBCommon
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -404,7 +404,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBCarto
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -417,7 +417,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBPolarimetry
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -430,7 +430,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBStreaming
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -443,7 +443,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBExtendedFileName
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -456,7 +456,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBMathParser
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -469,7 +469,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBFuzzy
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -482,7 +482,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBMetadata
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -495,7 +495,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBProjection
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -508,7 +508,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBRCC8
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -521,7 +521,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBTestKernel
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -534,7 +534,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBTransform
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -547,7 +547,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBVectorDataBase
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -560,7 +560,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBVectorDataIO
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -573,7 +573,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBWavelet
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -586,7 +586,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBSupervised
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -599,7 +599,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBQtWidget
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
@@ -612,7 +612,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
-Description: ORFEO Toolbox library
+Description: ORFEO Toolbox library - OTBApplicationEngine
  ORFEO Toolbox (OTB) is distributed as an open source library of image
  processing algorithms. OTB is based on the medical image processing library
  ITK and offers particular functionalities for remote sensing image processing
