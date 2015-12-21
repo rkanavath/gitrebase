@@ -78,6 +78,8 @@ override_dh_shlibdeps:
 	dh_shlibdeps -l$(OTB_LIB_DIRS)
 
 override_dh_install:
+	rm -f $(CURDIR)/debian/tmp/usr/share/doc/OTB-5.0/LICENSE
+	rm -f $(CURDIR)/usr/lib/otb/python/otbApplication.pyc
 	dh_install --list-missing
 	rm -f $(CURDIR)/debian/$(pkglib)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
 	rm -f $(CURDIR)/debian/$(pkgdev)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*
