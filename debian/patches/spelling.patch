@@ -2,11 +2,9 @@ Description: Fix some spelling errors to silence lintian enabling to concentrate
 Author: Andreas Tille <tille@debian.org>, Rashad Kanavath<rashad.kanavath@c-s.fr>
 Last-Update: 2015-12-22
 
-diff --git a/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx b/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
-index 1d64388..3e6424b 100644
---- a/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
-+++ b/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
-@@ -75,7 +75,7 @@ private:
+--- otb.orig/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
++++ otb/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
+@@ -75,7 +75,7 @@
                    " \n"
                    " The GetV1() and GetV2() methods allow to retrieve the linear "
                    " combinations used to generate the Mad change maps as a vnl_matrix of "
@@ -15,33 +13,29 @@ index 1d64388..3e6424b 100644
                    " associated to each Mad change maps as a vnl_vector. \n"
                    " \n"
                    " This filter has been implemented from the Matlab code kindly made "
-diff --git a/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx b/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
-index 4e000cd..05f3e25 100644
---- a/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
-+++ b/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
-@@ -71,7 +71,7 @@ private:
-
+--- otb.orig/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
++++ otb/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
+@@ -71,7 +71,7 @@
+ 
      /** GROUP IO CLASSIFICATION */
      AddParameter(ParameterType_Group,"io","Input and output images");
 -    SetParameterDescription("io","This group of parameters allows to set input and output images for classification map regularization by Majority Voting.");
 +    SetParameterDescription("io","This group of parameters allows one to set input and output images for classification map regularization by Majority Voting.");
-
+ 
      AddParameter(ParameterType_InputImage, "io.in",  "Input classification image");
      SetParameterDescription( "io.in", "The input labeled image to regularize.");
-@@ -82,7 +82,7 @@ private:
-
-
+@@ -82,7 +82,7 @@
+ 
+ 
      AddParameter(ParameterType_Group,"ip","Regularization parameters");
 -    SetParameterDescription("ip","This group allows to set parameters for classification map regularization by Majority Voting.");
 +    SetParameterDescription("ip","This group allows one to set parameters for classification map regularization by Majority Voting.");
-
+ 
      AddParameter(ParameterType_Int, "ip.radius", "Structuring element radius (in pixels)");
      SetParameterDescription("ip.radius", "The radius of the ball shaped structuring element (expressed in pixels). By default, 'ip.radius = 1 pixel'.");
-diff --git a/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx b/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
-index f518994..2a30621 100644
---- a/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
-+++ b/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
-@@ -95,7 +95,7 @@ private:
+--- otb.orig/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
++++ otb/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
+@@ -95,7 +95,7 @@
      SetName("FusionOfClassifications");
      SetDescription("Fuses several classifications maps of the same image on the basis of class labels.");
      SetDocName("Fusion of Classifications");
@@ -50,37 +44,31 @@ index f518994..2a30621 100644
          "Fusion is done either by mean of Majority Voting, or with the Dempster Shafer combination method on class labels.\n "
          "-MAJORITY VOTING: for each pixel, the class with the highest number of votes is selected.\n "
          "-DEMPSTER SHAFER: for each pixel, the class label for which the Belief Function is maximal is selected. This Belief Function is calculated "
-diff --git a/Modules/Applications/AppClassification/app/otbImageClassifier.cxx b/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
-index ba23a0d..b3d5255 100644
---- a/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
-+++ b/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
-@@ -81,7 +81,7 @@ private:
+--- otb.orig/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
++++ otb/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
+@@ -81,7 +81,7 @@
      SetParameterDescription( "in", "The input image to classify.");
-
+ 
      AddParameter(ParameterType_InputImage,  "mask",   "Input Mask");
 -    SetParameterDescription( "mask", "The mask allows to restrict classification of the input image to the area where mask pixel values are greater than 0.");
 +    SetParameterDescription( "mask", "The mask allows one to restrict classification of the input image to the area where mask pixel values are greater than 0.");
      MandatoryOff("mask");
-
+ 
      AddParameter(ParameterType_InputFilename, "model", "Model file");
-diff --git a/Modules/Applications/AppClassification/app/otbPredictRegression.cxx b/Modules/Applications/AppClassification/app/otbPredictRegression.cxx
-index 413d70f..c108153 100644
---- a/Modules/Applications/AppClassification/app/otbPredictRegression.cxx
-+++ b/Modules/Applications/AppClassification/app/otbPredictRegression.cxx
-@@ -141,7 +141,7 @@ private:
+--- otb.orig/Modules/Applications/AppClassification/app/otbPredictRegression.cxx
++++ otb/Modules/Applications/AppClassification/app/otbPredictRegression.cxx
+@@ -141,7 +141,7 @@
      // TODO : use CSV input/output ?
-
+ 
      AddParameter(ParameterType_InputImage,  "mask",   "Input Mask");
 -    SetParameterDescription( "mask", "The mask allows to restrict "
 +    SetParameterDescription( "mask", "The mask allows one to restrict "
        "classification of the input image to the area where mask pixel values "
        "are greater than 0.");
      MandatoryOff("mask");
-diff --git a/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx b/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
-index de1520d..6fa1146 100644
---- a/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
-@@ -115,7 +115,7 @@ void DoInit()
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
+@@ -115,7 +115,7 @@
      "Samples are composed of pixel values in each band optionally centered and reduced using an XML statistics file produced by "
      "the ComputeImagesStatistics application.\n The training vector data must contain polygons with a positive integer field "
      "representing the class label. The name of this field can be set using the \"Class label field\" parameter. Training and validation "
@@ -89,8 +77,8 @@ index de1520d..6fa1146 100644
      "between the number of samples in training and validation sets. Two parameters allow to manage the size of the training and "
      "validation sets per class and per image.\n Several classifier parameters can be set depending on the chosen classifier. In the "
      "validation process, the confusion matrix is organized the following way: rows = reference labels, columns = produced labels. "
-@@ -128,7 +128,7 @@ void DoInit()
-
+@@ -128,7 +128,7 @@
+ 
    //Group IO
    AddParameter(ParameterType_Group, "io", "Input and output data");
 -  SetParameterDescription("io", "This group of parameters allows to set input and output data.");
@@ -98,21 +86,19 @@ index de1520d..6fa1146 100644
    AddParameter(ParameterType_InputImageList, "io.il", "Input Image List");
    SetParameterDescription("io.il", "A list of input images.");
    AddParameter(ParameterType_InputVectorDataList, "io.vd", "Input Vector Data List");
-@@ -149,7 +149,7 @@ void DoInit()
+@@ -149,7 +149,7 @@
    //Group Sample list
    AddParameter(ParameterType_Group, "sample", "Training and validation samples parameters");
    SetParameterDescription("sample",
 -                          "This group of parameters allows to set training and validation sample lists parameters.");
 +                          "This group of parameters allows one to set training and validation sample lists parameters.");
-
+ 
    AddParameter(ParameterType_Int, "sample.mt", "Maximum training sample size per class");
    //MandatoryOff("mt");
-diff --git a/Modules/Applications/AppClassification/app/otbTrainRegression.cxx b/Modules/Applications/AppClassification/app/otbTrainRegression.cxx
-index a7852ef..a0d3771 100644
---- a/Modules/Applications/AppClassification/app/otbTrainRegression.cxx
-+++ b/Modules/Applications/AppClassification/app/otbTrainRegression.cxx
-@@ -122,7 +122,7 @@ void DoInit()
-
+--- otb.orig/Modules/Applications/AppClassification/app/otbTrainRegression.cxx
++++ otb/Modules/Applications/AppClassification/app/otbTrainRegression.cxx
+@@ -122,7 +122,7 @@
+ 
    //Group IO
    AddParameter(ParameterType_Group, "io", "Input and output data");
 -  SetParameterDescription("io", "This group of parameters allows to set input and output data.");
@@ -120,65 +106,19 @@ index a7852ef..a0d3771 100644
    AddParameter(ParameterType_InputImageList, "io.il", "Input Image List");
    SetParameterDescription("io.il", "A list of input images. First (n-1) bands should contain the predictor. The last band should contain the output value to predict.");
    AddParameter(ParameterType_InputFilename, "io.csv", "Input CSV file");
-@@ -144,7 +144,7 @@ void DoInit()
+@@ -144,7 +144,7 @@
    //Group Sample list
    AddParameter(ParameterType_Group, "sample", "Training and validation samples parameters");
    SetParameterDescription("sample",
 -                          "This group of parameters allows to set training and validation sample lists parameters.");
 +                          "This group of parameters allows one to set training and validation sample lists parameters.");
-
+ 
    AddParameter(ParameterType_Int, "sample.mt", "Maximum training predictors");
    //MandatoryOff("mt");
-diff --git a/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx b/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
-index 58be866..ad9d1a7 100644
---- a/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
-+++ b/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
-@@ -82,18 +82,18 @@ private:
-     SetName("HomologousPointsExtraction");
-     SetDocName("Homologous points extraction");
-     SetDescription("Allows to compute homologous points between images using keypoints");
--    SetDocLongDescription("This application allows to compute homologous points between images using keypoints. "
-+    SetDocLongDescription("This application allows one to compute homologous points between images using keypoints. "
-       " SIFT or SURF keypoints can be used and the band on which keypoints are computed can be set independantly for both images."
-       " The application offers two modes :"
-       " the first is the full mode where keypoints are extracted from the full extent of both images"
-       " (please note that in this mode large image file are not supported). "
--      "The second mode, called geobins, allows to set-up spatial binning to get fewer points"
-+      "The second mode, called geobins, allows one to set-up spatial binning to get fewer points"
-       " spread accross the entire image. "
-       "In this mode, the corresponding spatial bin in the second image is estimated using geographical"
-       " transform or sensor modelling, and is padded according to the user defined precision. Last, in"
-       " both modes the application can filter matches whose colocalisation in first image exceed this precision. "
-       "The elevation parameters are to deal more precisely with sensor modelling in case of sensor geometry data. "
--      "The outvector option allows to create a vector file with segments corresponding to the localisation error between the matches."
-+      "The outvector option allows one to create a vector file with segments corresponding to the localisation error between the matches."
-       " It can be useful to assess the precision of a registration for instance."
-       " The vector file is always reprojected to EPSG:4326 to allow display in a GIS."
-       " This is done via reprojection or by applying the image sensor models.");
-@@ -143,7 +143,7 @@ private:
-     SetParameterDescription("mode.full","Extract and match all keypoints, loading both images entirely into memory");
-
-     AddChoice("mode.geobins","Search keypoints in small spatial bins regularly spread accross first image");
--    SetParameterDescription("mode.geobins","This method allows to retrieve a set of tie points regulary spread accross image 1. Corresponding bins in image 2 are retrieved using sensor and geographical information if available. The first bin position takes into account the margin parameter. Bins are cropped to the largest image region shrinked by the margin parameter for both in1 and in2 images.");
-+    SetParameterDescription("mode.geobins","This method allows one to retrieve a set of tie points regulary spread accross image 1. Corresponding bins in image 2 are retrieved using sensor and geographical information if available. The first bin position takes into account the margin parameter. Bins are cropped to the largest image region shrinked by the margin parameter for both in1 and in2 images.");
-
-     AddParameter(ParameterType_Int,"mode.geobins.binsize","Size of bin");
-     SetParameterDescription("mode.geobins.binsize","Radius of the spatial bin in pixels");
-@@ -175,7 +175,7 @@ private:
-     SetDefaultParameterFloat("precision",0.);
-
-     AddParameter(ParameterType_Empty,"mfilter","Filter points according to geographical or sensor based colocalisation");
--    SetParameterDescription("mfilter","If enabled, this option allows to filter matches according to colocalisation from sensor or geographical information, using the given tolerancy expressed in pixels");
-+    SetParameterDescription("mfilter","If enabled, this option allows one to filter matches according to colocalisation from sensor or geographical information, using the given tolerancy expressed in pixels");
-
-     AddParameter(ParameterType_Empty,"2wgs84","If enabled, points from second image will be exported in WGS84");
-
-diff --git a/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx b/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
-index 03a3360..b0bda33 100644
---- a/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
-+++ b/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
-@@ -57,7 +57,7 @@ private:
-
+--- otb.orig/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
++++ otb/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
+@@ -57,7 +57,7 @@
+ 
      // Documentation
      SetDocName("Line segment detection");
 -    SetDocLongDescription("This application detects locally straight contours in a image. It is based on Burns, Hanson, and Riseman method and use an a contrario validation approach (Desolneux, Moisan, and Morel). The algorithm was published by Rafael Gromponevon Gioi, Jérémie Jakubowicz, Jean-Michel Morel and Gregory Randall.\n The given approach computes gradient and level lines of the image and detects aligned points in line support region. The application allows to export the detected lines in a vector data.");
@@ -186,12 +126,10 @@ index 03a3360..b0bda33 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso("On Line demonstration of the LSD algorithm is available here: http://www.ipol.im/pub/algo/gjmr_line_segment_detector/\n");
-diff --git a/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx b/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
-index 3d941c9..e97e41d 100644
---- a/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
-+++ b/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
-@@ -96,7 +96,7 @@ private:
-
+--- otb.orig/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
++++ otb/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
+@@ -96,7 +96,7 @@
+ 
      // Documentation
      SetDocName("Hyperspectral data unmixing");
 -    SetDocLongDescription("The application applies a linear unmixing algorithm to an hyperspectral data cube. This method supposes that the mixture between materials in the scene is macroscopic and simulates a linear mixing model of spectra.\nThe Linear Mixing Model (LMM) acknowledges that reflectance spectrum associated with each pixel is a linear combination of pure materials in the recovery area, commonly known as endmembers. Endmembers can be estimated using the VertexComponentAnalysis application.\nThe application allows to estimate the abundance maps with several algorithms : Unconstrained Least Square (ucls), Fully Constrained Least Square (fcls), Image Space Reconstruction Algorithm (isra) and Non-negative constrained Least Square (ncls) and Minimum Dispertion Constrained Non Negative Matrix Factorization (MDMDNMF).\n");
@@ -199,13 +137,11 @@ index 3d941c9..e97e41d 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso("VertexComponentAnalysis");
-diff --git a/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx b/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
-index 432ba75..b76e96b 100644
---- a/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
-+++ b/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
-@@ -250,10 +250,10 @@ private:
+--- otb.orig/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
++++ otb/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
+@@ -250,10 +250,10 @@
      SetDescription("Maps an input label image to 8-bits RGB using look-up tables.");
-
+ 
      SetDocName("Color Mapping");
 -    SetDocLongDescription("This application allows to map a label image to a 8-bits RGB image (in both ways) using different methods.\n"
 -                          " -The custom method allows to use a custom look-up table. The look-up table is loaded "
@@ -217,12 +153,10 @@ index 432ba75..b76e96b 100644
                            "to a colored image using continuous look-up table, in order to enhance image interpretation. Several "
                            "look-up tables can been chosen with different color ranges.\n-The optimal method computes an optimal "
                            "look-up table. When processing a segmentation label image (label to color), the color difference between"
-diff --git a/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx b/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
-index 449aebf..46ee37b 100644
---- a/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
-+++ b/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
-@@ -96,7 +96,7 @@ private:
-
+--- otb.orig/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
++++ otb/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
+@@ -96,7 +96,7 @@
+ 
      // Documentation
      SetDocName("Download or list SRTM tiles related to a set of images");
 -    SetDocLongDescription("This application allows to select the appropriate SRTM tiles that covers a list of images. It builds a list of the required tiles. Two modes are available: the first one download those tiles from the USGS SRTM3 website (http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/), the second one list those tiles in a local directory. In both cases, you need to indicate the directory in which directory  tiles will be download or the location of local SRTM files.");
@@ -230,11 +164,9 @@ index 449aebf..46ee37b 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso(" ");
-diff --git a/Modules/Applications/AppImageUtils/app/otbManageNoData.cxx b/Modules/Applications/AppImageUtils/app/otbManageNoData.cxx
-index fa327c4..78aa52f 100644
---- a/Modules/Applications/AppImageUtils/app/otbManageNoData.cxx
-+++ b/Modules/Applications/AppImageUtils/app/otbManageNoData.cxx
-@@ -61,7 +61,7 @@ private:
+--- otb.orig/Modules/Applications/AppImageUtils/app/otbManageNoData.cxx
++++ otb/Modules/Applications/AppImageUtils/app/otbManageNoData.cxx
+@@ -61,7 +61,7 @@
      SetDescription("Manage No-Data");
      // Documentation
      SetDocName("No Data management");
@@ -243,11 +175,9 @@ index fa327c4..78aa52f 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso("BanMath");
-diff --git a/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx b/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
-index 17b17c5..3a860c1 100644
---- a/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
-+++ b/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
-@@ -95,7 +95,7 @@ private:
+--- otb.orig/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
++++ otb/Modules/Applications/AppImageUtils/app/otbMultiResolutionPyramid.cxx
+@@ -95,7 +95,7 @@
      // Boolean Fast scheme
      AddParameter(ParameterType_Empty, "fast", "Use Fast Scheme");
      std::ostringstream desc;
@@ -256,42 +186,38 @@ index 17b17c5..3a860c1 100644
          <<" subsampling previous level of pyramid instead of processing the full input.";
      SetParameterDescription("fast", desc.str());
      MandatoryOff("fast");
-diff --git a/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx b/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
-index 973103c..e49030d 100644
---- a/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
-+++ b/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
-@@ -70,7 +70,7 @@ private:
+--- otb.orig/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
++++ otb/Modules/Applications/AppImageUtils/app/otbReadImageInfo.cxx
+@@ -70,7 +70,7 @@
      MandatoryOff("keywordlist");
-
+ 
      AddParameter(ParameterType_OutputFilename, "outkwl", "Write the OSSIM keywordlist to a geom file");
 -    SetParameterDescription("outkwl", "This option allows to extract the OSSIM keywordlist of the image into a geom file.");
 +    SetParameterDescription("outkwl", "This option allows one to extract the OSSIM keywordlist of the image into a geom file.");
      MandatoryOff("outkwl");
-
+ 
      //Create output parameters to store image informations
-@@ -179,7 +179,7 @@ private:
+@@ -179,7 +179,7 @@
      EnableParameter("country");
-
+ 
      AddParameter(ParameterType_Group, "rgb", "Default RGB Display");
 -    SetParameterDescription("rgb","This group of parameters allows to access to the default rgb composition.");
 +    SetParameterDescription("rgb","This group of parameters allows one to access to the default rgb composition.");
-
+ 
      AddParameter(ParameterType_Int, "rgb.r", "Red Band");
      SetParameterDescription("rgb.r","Red band Number");
-@@ -207,7 +207,7 @@ private:
+@@ -207,7 +207,7 @@
      EnableParameter("keyword");
-
+ 
      AddParameter(ParameterType_Group, "gcp", "Ground Control Points information");
 -    SetParameterDescription("gcp","This group of parameters allows to access to the GCPs information.");
 +    SetParameterDescription("gcp","This group of parameters allows one to access to the GCPs information.");
      SetParameterRole("gcp", Role_Output);
-
+ 
      AddParameter(ParameterType_Int, "gcp.count", "GCPs Number");
-diff --git a/Modules/Applications/AppMathParserX/app/otbBandMathX.cxx b/Modules/Applications/AppMathParserX/app/otbBandMathX.cxx
-index 3f4884e..5eef4cb 100644
---- a/Modules/Applications/AppMathParserX/app/otbBandMathX.cxx
-+++ b/Modules/Applications/AppMathParserX/app/otbBandMathX.cxx
-@@ -108,7 +108,7 @@ private:
+--- otb.orig/Modules/Applications/AppMathParserX/app/otbBandMathX.cxx
++++ otb/Modules/Applications/AppMathParserX/app/otbBandMathX.cxx
+@@ -108,7 +108,7 @@
        "matrices (for instance cos, sin, ...). These new operators/ functions keep the original names to which we added the prefix 'v' for vector (vcos, vsin, ...).\n"
        "- mult, div and pow operators, that perform element-wise multiplication, division or exponentiation of vector/matrices (for instance im1 div im2)\n"
        "- mlt, dv and pw operators, that perform multiplication, division or exponentiation of vector/matrices by a scalar (for instance im1 dv 2.0)\n"
@@ -300,7 +226,7 @@ index 3f4884e..5eef4cb 100644
        "for instance bands(im1,{1,2,1,1}) produces a vector of 4 components made of band 1, band 2, band 1 and band 1 values from the first input.\n"
        "Note that curly brackets must be used in order to select the desired band indices.\n"
        "... and so on.\n"
-@@ -126,7 +126,7 @@ private:
+@@ -126,7 +126,7 @@
        "In the latter case, elements of a row must be separated by commas, and rows must be separated by semicolons.\n"
        "It is also possible to define expressions within the same txt file, with the pattern #E expr. For instance (two expressions; see also limitations section below):\n\n"
        "#E $dotpr(kernel1,im1b1N3x5); im2b1^expo$\n"
@@ -309,11 +235,9 @@ index 3f4884e..5eef4cb 100644
        "- Setting the output image can be done with the 'out' parameter (multi-outputs is not implemented yet).\n"
        "\n\n"
        "Finally, we strongly recommend that the reader takes a look at the cookbook, where additional information can be found (http://www.orfeo-toolbox.org/packages/OTBCookBook.pdf).\n"
-diff --git a/Modules/Applications/AppOpticalCalibration/app/otbOpticalCalibration.cxx b/Modules/Applications/AppOpticalCalibration/app/otbOpticalCalibration.cxx
-index af2b478..a6c37db 100644
---- a/Modules/Applications/AppOpticalCalibration/app/otbOpticalCalibration.cxx
-+++ b/Modules/Applications/AppOpticalCalibration/app/otbOpticalCalibration.cxx
-@@ -124,10 +124,10 @@ private:
+--- otb.orig/Modules/Applications/AppOpticalCalibration/app/otbOpticalCalibration.cxx
++++ otb/Modules/Applications/AppOpticalCalibration/app/otbOpticalCalibration.cxx
+@@ -124,10 +124,10 @@
    void DoInit()
    {
      SetName("OpticalCalibration");
@@ -326,17 +250,17 @@ index af2b478..a6c37db 100644
  "\n--------------------------\n\n"
  "If the sensor is not supported by the metadata interface factory of OTB, users still have the possibility to give the needed parameters to the application.\n"
  "For TOA conversion, these parameters are : \n"
-@@ -198,7 +198,7 @@ private:
-
+@@ -198,7 +198,7 @@
+ 
      AddParameter(ParameterType_Empty, "milli", "Convert to milli reflectance");
      SetParameterDescription("milli", "Flag to use milli-reflectance instead of reflectance.\n"
 -                            "This allows to save the image with integer pixel type (in the range [0, 1000]  instead of floating point in the range [0, 1]. In order to do that, use this option and set the output pixel type (-out filename double for example)");
 +                            "This allows one to save the image with integer pixel type (in the range [0, 1000]  instead of floating point in the range [0, 1]. In order to do that, use this option and set the output pixel type (-out filename double for example)");
      DisableParameter("milli");
      MandatoryOff("milli");
-
-@@ -209,7 +209,7 @@ private:
-
+ 
+@@ -209,7 +209,7 @@
+ 
      //Acquisition parameters
      AddParameter(ParameterType_Group,"acqui","Acquisition parameters");
 -    SetParameterDescription("acqui","This group allows to set the parameters related to the acquisition conditions.");
@@ -344,8 +268,8 @@ index af2b478..a6c37db 100644
      //Minute
      AddParameter(ParameterType_Int, "acqui.minute",   "Minute");
      SetParameterDescription("acqui.minute", "Minute (0-59)");
-@@ -285,7 +285,7 @@ private:
-
+@@ -285,7 +285,7 @@
+ 
      //Atmospheric parameters (TOC)
      AddParameter(ParameterType_Group,"atmo","Atmospheric parameters (for TOC)");
 -    SetParameterDescription("atmo","This group allows to set the atmospheric parameters.");
@@ -353,43 +277,39 @@ index af2b478..a6c37db 100644
      AddParameter(ParameterType_Choice,   "atmo.aerosol", "Aerosol Model");
      AddChoice("atmo.aerosol.noaersol",    "No Aerosol Model");
      AddChoice("atmo.aerosol.continental", "Continental");
-diff --git a/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx b/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
-index f53308d..8a7ad38 100644
---- a/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
-+++ b/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
-@@ -60,7 +60,7 @@ private:
+--- otb.orig/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
++++ otb/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
+@@ -60,7 +60,7 @@
      SetDescription("Generate a RPC sensor model from a list of Ground Control Points.");
-
+ 
      SetDocName("Generate a RPC sensor model");
 -    SetDocLongDescription("This application generates a RPC sensor model from a list of Ground Control Points. At least 20 points are required for estimation wihtout elevation support, and 40 points for estimation with elevation support. Elevation support will be automatically deactivated if an insufficient amount of points is provided. The application can optionnaly output a file containing accuracy statistics for each point, and a vector file containing segments represening points residues. The map projection parameter allows to define a map projection in which the accuracy is evaluated.");
 +    SetDocLongDescription("This application generates a RPC sensor model from a list of Ground Control Points. At least 20 points are required for estimation wihtout elevation support, and 40 points for estimation with elevation support. Elevation support will be automatically deactivated if an insufficient amount of points is provided. The application can optionnaly output a file containing accuracy statistics for each point, and a vector file containing segments represening points residues. The map projection parameter allows one to define a map projection in which the accuracy is evaluated.");
-
+ 
      AddDocTag(Tags::Geometry);
-
-diff --git a/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx b/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
-index a15227d..7f97164 100644
---- a/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
-+++ b/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
-@@ -107,7 +107,7 @@ private:
+ 
+--- otb.orig/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
++++ otb/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
+@@ -107,7 +107,7 @@
      SetDescription("Resamples an image according to a resampling grid");
-
+ 
      SetDocName("Grid Based Image Resampling");
 -    SetDocLongDescription("This application allows to perform image resampling from an input resampling grid.");
 +    SetDocLongDescription("This application allows one to perform image resampling from an input resampling grid.");
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
-
-@@ -116,7 +116,7 @@ private:
+ 
+@@ -116,7 +116,7 @@
      SetDocSeeAlso("otbStereorecificationGridGeneration");
-
+ 
      AddParameter(ParameterType_Group,"io","Input and output data");
 -    SetParameterDescription("io","This group of parameters allows to set the input and output images.");
 +    SetParameterDescription("io","This group of parameters allows one to set the input and output images.");
      AddParameter(ParameterType_InputImage,"io.in","Input image");
      SetParameterDescription("io.in","The input image to resample");
      AddParameter(ParameterType_OutputImage, "io.out", "Output Image");
-@@ -161,14 +161,14 @@ private:
-
+@@ -161,14 +161,14 @@
+ 
      // Interpolators
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
 -    SetParameterDescription("interpolator","This group of parameters allows to define how the input image will be interpolated during resampling.");
@@ -404,12 +324,10 @@ index a15227d..7f97164 100644
 +    SetParameterDescription("interpolator.bco.radius","This parameter allows one to control the size of the bicubic interpolation filter. If the target pixel size is higher than the input pixel size, increasing this parameter will reduce aliasing artefacts.");
      SetDefaultParameterInt("interpolator.bco.radius", 2);
      SetParameterString("interpolator","bco");
-
-diff --git a/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx b/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
-index 7c2c997..130fa07 100644
---- a/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
-+++ b/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
-@@ -88,7 +88,7 @@ private:
+ 
+--- otb.orig/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
++++ otb/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
+@@ -88,7 +88,7 @@
    {
      SetName("OrthoRectification");
      std::ostringstream oss;
@@ -418,8 +336,8 @@ index 7c2c997..130fa07 100644
      SetDescription(oss.str());
      // Documentation
      SetDocName("Ortho-rectification");
-@@ -106,7 +106,7 @@ private:
-
+@@ -106,7 +106,7 @@
+ 
      // Set the parameters
      AddParameter(ParameterType_Group,"io","Input and output data");
 -    SetParameterDescription("io","This group of parameters allows to set the input and output images.");
@@ -427,16 +345,16 @@ index 7c2c997..130fa07 100644
      AddParameter(ParameterType_InputImage, "io.in", "Input Image");
      SetParameterDescription("io.in","The input image to ortho-rectify");
      AddParameter(ParameterType_OutputImage, "io.out", "Output Image");
-@@ -117,7 +117,7 @@ private:
-
+@@ -117,7 +117,7 @@
+ 
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "outputs", "Output Image Grid");
 -    SetParameterDescription("outputs","This group of parameters allows to define the grid on which the input image will be resampled.");
 +    SetParameterDescription("outputs","This group of parameters allows one to define the grid on which the input image will be resampled.");
-
+ 
      // UserDefined values
      AddParameter(ParameterType_Choice, "outputs.mode", "Parameters estimation modes");
-@@ -193,26 +193,26 @@ private:
+@@ -193,26 +193,26 @@
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
      AddChoice("interpolator.bco",    "Bicubic interpolation");
      AddParameter(ParameterType_Radius, "interpolator.bco.radius", "Radius for bicubic interpolation");
@@ -452,7 +370,7 @@ index 7c2c997..130fa07 100644
      AddParameter(ParameterType_Group,"opt","Speed optimization parameters");
 -    SetParameterDescription("opt","This group of parameters allows to optimize processing time.");
 +    SetParameterDescription("opt","This group of parameters allows one to optimize processing time.");
-
+ 
      // Estimate a RPC model (for spot image for instance)
      AddParameter(ParameterType_Int, "opt.rpc", "RPC modeling (points per axis)");
      SetDefaultParameterInt("opt.rpc", 10);
@@ -460,42 +378,38 @@ index 7c2c997..130fa07 100644
 +    SetParameterDescription("opt.rpc","Enabling RPC modeling allows one to speed-up SPOT5 ortho-rectification. Value is the number of control points per axis for RPC estimation");
      DisableParameter("opt.rpc");
      MandatoryOff("opt.rpc");
-
+ 
      // RAM available
      AddRAMParameter("opt.ram");
 -    SetParameterDescription("opt.ram","This allows to set the maximum amount of RAM available for processing. As the writing task is time consuming, it is better to write large pieces of data, which can be achieved by increasing this parameter (pay attention to your system capabilities)");
 +    SetParameterDescription("opt.ram","This allows one to set the maximum amount of RAM available for processing. As the writing task is time consuming, it is better to write large pieces of data, which can be achieved by increasing this parameter (pay attention to your system capabilities)");
-
+ 
      // Displacement Field Spacing
      AddParameter(ParameterType_Float, "opt.gridspacing", "Resampling grid spacing");
-diff --git a/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx b/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
-index 08da67f..c296455 100644
---- a/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
-+++ b/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
-@@ -59,7 +59,7 @@ private:
+--- otb.orig/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
++++ otb/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
+@@ -59,7 +59,7 @@
      SetDescription("Perform least-square fit of a sensor model to a set of tie points");
-
+ 
      SetDocName("Refine Sensor Model");
 -    SetDocLongDescription("This application reads a geom file containing a sensor model and a text file containing a list of ground control point, and performs a least-square fit of the sensor model adjustable parameters to these tie points. It produces an updated geom file as output, as well as an optional ground control points based statistics file and a vector file containing residues. The output geom file can then be used to ortho-rectify the data more accurately. Plaease note that for a proper use of the application, elevation must be correctly set (including DEM and geoid file). The map parameters allows to choose a map projection in which the accuracy will be estimated in meters.");
 +    SetDocLongDescription("This application reads a geom file containing a sensor model and a text file containing a list of ground control point, and performs a least-square fit of the sensor model adjustable parameters to these tie points. It produces an updated geom file as output, as well as an optional ground control points based statistics file and a vector file containing residues. The output geom file can then be used to ortho-rectify the data more accurately. Plaease note that for a proper use of the application, elevation must be correctly set (including DEM and geoid file). The map parameters allows one to choose a map projection in which the accuracy will be estimated in meters.");
-
+ 
      AddDocTag(Tags::Geometry);
-
-diff --git a/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx b/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
-index ff58fc1..8122fea 100644
---- a/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
-+++ b/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
-@@ -100,7 +100,7 @@ private:
-
+ 
+--- otb.orig/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
++++ otb/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
+@@ -100,7 +100,7 @@
+ 
      //Transform
      AddParameter(ParameterType_Group,"transform","Transform parameters");
 -    SetParameterDescription("transform","This group of parameters allows to set the transformation to apply.");
 +    SetParameterDescription("transform","This group of parameters allows one to set the transformation to apply.");
-
+ 
      AddParameter(ParameterType_Choice, "transform.type", "Type of transformation");
      SetParameterDescription("transform.type","Type of transformation. Available transformations are spatial scaling, translation and rotation with scaling factor");
-@@ -148,20 +148,20 @@ private:
-
+@@ -148,20 +148,20 @@
+ 
      // Interpolators
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
 -    SetParameterDescription("interpolator","This group of parameters allows to define how the input image will be interpolated during resampling.");
@@ -510,39 +424,17 @@ index ff58fc1..8122fea 100644
 +    SetParameterDescription("interpolator.bco.radius","This parameter allows one to control the size of the bicubic interpolation filter. If the target pixel size is higher than the input pixel size, increasing this parameter will reduce aliasing artefacts.");
      SetDefaultParameterInt("interpolator.bco.radius", 2);
      SetParameterString("interpolator","bco");
-
+ 
      // RAM available
      AddRAMParameter("ram");
 -    SetParameterDescription("ram","This allows to set the maximum amount of RAM available for processing. As the writing task is time consuming, it is better to write large pieces of data, which can be achieved by increasing this parameter (pay attention to your system capabilities)");
 +    SetParameterDescription("ram","This allows one to set the maximum amount of RAM available for processing. As the writing task is time consuming, it is better to write large pieces of data, which can be achieved by increasing this parameter (pay attention to your system capabilities)");
-
+ 
      // Doc example parameter settings
      SetDocExampleParameterValue("in", "qb_toulouse_sub.tif");
-diff --git a/Modules/Applications/AppProjection/app/otbSuperimpose.cxx b/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
-index f78c135..01f83a8 100644
---- a/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
-+++ b/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
-@@ -121,13 +121,13 @@ private:
-
-     // Interpolators
-     AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
--    SetParameterDescription("interpolator","This group of parameters allows to define how the input image will be interpolated during resampling.");
-+    SetParameterDescription("interpolator","This group of parameters allows one to define how the input image will be interpolated during resampling.");
-
-     AddChoice("interpolator.bco",    "Bicubic interpolation");
-     SetParameterDescription("interpolator.bco", "Bicubic interpolation leads to very good image quality but is slow.");
-
-     AddParameter(ParameterType_Radius, "interpolator.bco.radius", "Radius for bicubic interpolation");
--    SetParameterDescription("interpolator.bco.radius","This parameter allows to control the size of the bicubic interpolation filter. If the target pixel size is higher than the input pixel size, increasing this parameter will reduce aliasing artefacts.");
-+    SetParameterDescription("interpolator.bco.radius","This parameter allows one to control the size of the bicubic interpolation filter. If the target pixel size is higher than the input pixel size, increasing this parameter will reduce aliasing artefacts.");
-     SetDefaultParameterInt("interpolator.bco.radius", 2);
-
-     AddChoice("interpolator.nn",     "Nearest Neighbor interpolation");
-diff --git a/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx b/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
-index 7e7a7d8..547720f 100644
---- a/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
-+++ b/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
-@@ -61,13 +61,13 @@ private:
+--- otb.orig/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
++++ otb/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
+@@ -61,13 +61,13 @@
    {
      SetName("VectorDataReprojection");
      std::ostringstream oss;
@@ -558,12 +450,10 @@ index 7e7a7d8..547720f 100644
          ", or a user given map projection." << std::endl;
      oss <<" If given, image keywordlist can be added to reprojected vectordata.";
      SetDocLongDescription(oss.str());
-diff --git a/Modules/Applications/AppSARCalibration/app/otbSarRadiometricCalibration.cxx b/Modules/Applications/AppSARCalibration/app/otbSarRadiometricCalibration.cxx
-index 3aa03c2..6aa9f7d 100644
---- a/Modules/Applications/AppSARCalibration/app/otbSarRadiometricCalibration.cxx
-+++ b/Modules/Applications/AppSARCalibration/app/otbSarRadiometricCalibration.cxx
-@@ -49,7 +49,7 @@ private:
-
+--- otb.orig/Modules/Applications/AppSARCalibration/app/otbSarRadiometricCalibration.cxx
++++ otb/Modules/Applications/AppSARCalibration/app/otbSarRadiometricCalibration.cxx
+@@ -49,7 +49,7 @@
+ 
      // Documentation
      SetDocName("SAR Radiometric calibration");
 -    SetDocLongDescription("The objective of SAR calibration is to provide imagery in which the pixel values can be directly related to the radar backscatter of the scene. This application allows to compute Sigma Naught (Radiometric Calibration) for TerraSAR-X, Sentinel1 L1 and Radarsat-2 sensors. Metadata are automatically retrieved from image products.The application supports complex and non-complex images (SLC or detected products).\n");
@@ -571,24 +461,9 @@ index 3aa03c2..6aa9f7d 100644
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso(" ");
-diff --git a/Modules/Applications/AppSARDecompositions/app/otbSARDecompositions.cxx b/Modules/Applications/AppSARDecompositions/app/otbSARDecompositions.cxx
-index a159356..d8b0674 100644
---- a/Modules/Applications/AppSARDecompositions/app/otbSARDecompositions.cxx
-+++ b/Modules/Applications/AppSARDecompositions/app/otbSARDecompositions.cxx
-@@ -111,7 +111,7 @@ private:
-     SetParameterDescription("decomp.haa","H-alpha-A decomposition");
-
-     AddParameter(ParameterType_Group,"inco","Incoherent decompositions");
--    SetParameterDescription("inco","This group allows to set parameters related to the incoherent decompositions.");
-+    SetParameterDescription("inco","This group allows one to set parameters related to the incoherent decompositions.");
-
-     AddParameter(ParameterType_Int, "inco.kernelsize",   "Kernel size for spatial incoherent averaging.");
-     SetParameterDescription("inco.kernelsize", "Minute (0-59)");
-diff --git a/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx b/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
-index fc6a15c..b3519f2 100644
---- a/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
-+++ b/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
-@@ -71,7 +71,7 @@ private:
+--- otb.orig/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
++++ otb/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
+@@ -71,7 +71,7 @@
      SetName("ConnectedComponentSegmentation");
      SetDescription("Connected component segmentation and object based image filtering of the input image according to user-defined criterions.");
      SetDocName("Connected Component Segmentation");
@@ -597,25 +472,21 @@ index fc6a15c..b3519f2 100644
      SetDocLimitations("Due to the tiling scheme in case of large images, some segments can be arbitrarily split across multiple tiles.");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso(" ");
-diff --git a/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx b/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
-index 0f50064..0a0b47c 100644
---- a/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
-+++ b/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
-@@ -217,7 +217,7 @@ private:
+--- otb.orig/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
++++ otb/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
+@@ -217,7 +217,7 @@
      SetDescription("Second step of the exact Large-Scale Mean-Shift segmentation workflow.");
-
+ 
      SetDocName("Exact Large-Scale Mean-Shift segmentation, step 2");
 -    SetDocLongDescription("This application performs the second step of the exact Large-Scale Mean-Shift segmentation workflow (LSMS). Filtered range image and spatial image should be created with the MeanShiftSmoothing application, with modesearch parameter disabled. If spatial image is not set, the application will only process the range image and spatial radius parameter will not be taken into account. This application will produce a labeled image where neighbor pixels whose range distance is below range radius (and optionally spatial distance below spatial radius) will be grouped together into the same cluster. For large images one can use the nbtilesx and nbtilesy parameters for tile-wise processing, with the guarantees of identical results. Please note that this application will generate a lot of temporary files (as many as the number of tiles), and will therefore require twice the size of the final result in term of disk space. The cleanup option (activated by default) allows to remove all temporary file as soon as they are not needed anymore (if cleanup is activated, tmpdir set and tmpdir does not exists before running the application, it will be removed as well during cleanup). The tmpdir option allows to define a directory where to write the temporary files. Please also note that the output image type should be set to uint32 to ensure that there are enough labels available.");
 +    SetDocLongDescription("This application performs the second step of the exact Large-Scale Mean-Shift segmentation workflow (LSMS). Filtered range image and spatial image should be created with the MeanShiftSmoothing application, with modesearch parameter disabled. If spatial image is not set, the application will only process the range image and spatial radius parameter will not be taken into account. This application will produce a labeled image where neighbor pixels whose range distance is below range radius (and optionally spatial distance below spatial radius) will be grouped together into the same cluster. For large images one can use the nbtilesx and nbtilesy parameters for tile-wise processing, with the guarantees of identical results. Please note that this application will generate a lot of temporary files (as many as the number of tiles), and will therefore require twice the size of the final result in term of disk space. The cleanup option (activated by default) allows one to remove all temporary file as soon as they are not needed anymore (if cleanup is activated, tmpdir set and tmpdir does not exists before running the application, it will be removed as well during cleanup). The tmpdir option allows one to define a directory where to write the temporary files. Please also note that the output image type should be set to uint32 to ensure that there are enough labels available.");
      SetDocLimitations("This application is part of the Large-Scale Mean-Shift segmentation workflow (LSMS) and may not be suited for any other purpose.");
      SetDocAuthors("David Youssefi");
      SetDocSeeAlso("MeanShiftSmoothing, LSMSSmallRegionsMerging, LSMSVectorization");
-diff --git a/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx b/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
-index 00515af..b5cd3a4 100644
---- a/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
-+++ b/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
-@@ -138,7 +138,7 @@ private:
-
+--- otb.orig/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
++++ otb/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
+@@ -138,7 +138,7 @@
+ 
      // Documentation
      SetDocName("Segmentation");
 -    SetDocLongDescription("This application allows to perform various segmentation algorithms on a multispectral image."
@@ -623,7 +494,7 @@ index 00515af..b5cd3a4 100644
                            "Available segmentation algorithms are two different versions of Mean-Shift segmentation algorithm (one being multi-threaded),"
                            " simple pixel based connected components according to a user-defined criterion, and watershed from the gradient of the intensity"
                            " (norm of spectral bands vector). The application has two different modes that affects the nature of its output.\n\nIn raster mode,"
-@@ -147,8 +147,8 @@ private:
+@@ -147,8 +147,8 @@
                            " can not handle large images. \n\nTo segment large data, one can use the vector mode. In this case, the output of the application is a"
                            " vector file or database. The input image is split into tiles (whose size can be set using the tilesize parameter), and each tile is loaded, segmented"
                            " with the chosen algorithm, vectorized, and written into the output file or database. This piece-wise behavior ensure that memory will never get overloaded,"
@@ -632,28 +503,28 @@ index 00515af..b5cd3a4 100644
 +                          " and that images of any size can be processed. There are few more options in the vector mode. The simplify option allows one to simplify the geometry"
 +                          " (i.e. remove nodes in polygons) according to a user-defined tolerance. The stitch option allows one to application to try to stitch together polygons corresponding"
                            " to segmented region that may have been split by the tiling scheme. ");
-
+ 
      SetDocLimitations("In raster mode, the application can not handle large input images. Stitching step of vector mode might become slow with very large input images."
-@@ -223,7 +223,7 @@ private:
+@@ -223,7 +223,7 @@
      SetParameterDescription("mode", "Choice of processing mode, either raster or large-scale.");
-
+ 
      AddChoice("mode.vector", "Tile-based large-scale segmentation with vector output");
 -    SetParameterDescription("mode.vector","In this mode, the application will output a vector file or database, and process the input image piecewise. This allows to perform segmentation of very large images.");
 +    SetParameterDescription("mode.vector","In this mode, the application will output a vector file or database, and process the input image piecewise. This allows one to perform segmentation of very large images.");
-
+ 
      AddChoice("mode.raster", "Standard segmentation with labeled raster output");
      SetParameterDescription("mode.raster","In this mode, the application will output a standard labeled raster. This mode can not handle large data.");
-@@ -258,7 +258,7 @@ private:
+@@ -258,7 +258,7 @@
      SetParameterDescription("mode.vector.out", "The output vector file or database (name can be anything understood by OGR)");
-
+ 
      AddParameter(ParameterType_Choice,"mode.vector.outmode","Writing mode for the output vector file");
 -    SetParameterDescription("mode.vector.outmode","This allows to set the writing behaviour for the output vector file. Please note that the actual behaviour depends on the file format.");
 +    SetParameterDescription("mode.vector.outmode","This allows one to set the writing behaviour for the output vector file. Please note that the actual behaviour depends on the file format.");
-
+ 
      AddChoice("mode.vector.outmode.ulco","Update output vector file, only allow to create new layers");
      SetParameterDescription("mode.vector.outmode.ulco","The output vector file is opened in update mode if existing. If the output layer already exists, the application stops, leaving it untouched.");
-@@ -298,7 +298,7 @@ private:
-
+@@ -298,7 +298,7 @@
+ 
      AddParameter(ParameterType_Float, "mode.vector.simplify", "Simplify polygons");
      SetParameterDescription("mode.vector.simplify",
 -                            "Simplify polygons according to a given tolerance (in pixel). This option allows to reduce the size of the output file or database.");
@@ -661,13 +532,11 @@ index 00515af..b5cd3a4 100644
      SetDefaultParameterFloat("mode.vector.simplify",0.1);
      MandatoryOff("mode.vector.simplify");
      DisableParameter("mode.vector.simplify");
-diff --git a/Modules/Applications/AppStereo/app/otbBlockMatching.cxx b/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
-index 246fef0..1a7f74a 100644
---- a/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
-+++ b/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
-@@ -127,11 +127,11 @@ private:
+--- otb.orig/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
++++ otb/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
+@@ -127,11 +127,11 @@
      SetDescription("Performs block-matching to estimate pixel-wise disparities between two images");
-
+ 
      SetDocName("Pixel-wise Block-Matching");
 -    SetDocLongDescription("This application allows to performs block-matching to estimate pixel-wise disparities "
 -      "between two images. The application allows to choose the block-matching method to use. It also allows to input"
@@ -680,82 +549,78 @@ index 246fef0..1a7f74a 100644
        "investigate disparities that will not be reliable anyway. For efficiency reasons, if the optimal metric values"
        " image is desired, it will be concatenated to the output image (which will then have three bands : horizontal "
        "disparity, vertical disparity and metric value). One can split these images afterward.");
-@@ -142,7 +142,7 @@ private:
+@@ -142,7 +142,7 @@
      AddDocTag(Tags::Stereo);
-
+ 
      AddParameter(ParameterType_Group,"io","Input and output data");
 -    SetParameterDescription("io","This group of parameters allows to set the input and output images.");
 +    SetParameterDescription("io","This group of parameters allows one to set the input and output images.");
-
+ 
      AddParameter(ParameterType_InputImage,"io.inleft","Left input image");
      SetParameterDescription("io.inleft","The left input image (reference)");
-@@ -163,24 +163,24 @@ private:
+@@ -163,24 +163,24 @@
      SetParameterDescription("io.outmetric","If used, the output image will have a second component with metric optimal values");
-
+ 
      AddParameter(ParameterType_Group,"mask","Image masking parameters");
 -    SetParameterDescription("mask","This group of parameters allows to determine the masking parameters to prevent disparities estimation for some pixels of the left image");
 +    SetParameterDescription("mask","This group of parameters allows one to determine the masking parameters to prevent disparities estimation for some pixels of the left image");
-
+ 
      AddParameter(ParameterType_InputImage,"mask.inleft","Discard left pixels from mask image");
 -    SetParameterDescription("mask.inleft","This parameter allows to provide a custom mask for the left image.Block matching will be only perform on pixels inside the mask.");
 +    SetParameterDescription("mask.inleft","This parameter allows one to provide a custom mask for the left image.Block matching will be only perform on pixels inside the mask.");
      MandatoryOff("mask.inleft");
-
+ 
      AddParameter(ParameterType_InputImage,"mask.inright","Discard right pixels from mask image");
 -    SetParameterDescription("mask.inright","This parameter allows to provide a custom mask for the right image.Block matching will be perform only on pixels inside the mask.");
 +    SetParameterDescription("mask.inright","This parameter allows one to provide a custom mask for the right image.Block matching will be perform only on pixels inside the mask.");
      MandatoryOff("mask.inright");
-
+ 
      AddParameter(ParameterType_Float,"mask.nodata","Discard pixels with no-data value");
 -    SetParameterDescription("mask.nodata","This parameter allows to discard pixels whose value is equal to the user-defined no-data value.");
 +    SetParameterDescription("mask.nodata","This parameter allows one to discard pixels whose value is equal to the user-defined no-data value.");
      MandatoryOff("mask.nodata");
      SetDefaultParameterFloat("mask.nodata",0.);
      DisableParameter("mask.nodata");
-
+ 
      AddParameter(ParameterType_Float,"mask.variancet","Discard pixels with low local variance");
 -    SetParameterDescription("mask.variancet","This parameter allows to discard pixels whose local variance is too small (the size of the neighborhood is given by the radius parameter)");
 +    SetParameterDescription("mask.variancet","This parameter allows one to discard pixels whose local variance is too small (the size of the neighborhood is given by the radius parameter)");
      MandatoryOff("mask.variancet");
      SetDefaultParameterFloat("mask.variancet",100.);
      DisableParameter("mask.variancet");
-diff --git a/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx b/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
-index 76d6e67..1ce0bbb 100644
---- a/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
-+++ b/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
-@@ -76,7 +76,7 @@ private:
+--- otb.orig/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
++++ otb/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
+@@ -76,7 +76,7 @@
      AddDocTag(Tags::Stereo);
-
+ 
      AddParameter(ParameterType_Group,"io","Input and output data");
 -    SetParameterDescription("io","This group of parameters allows to set the input and output images and grids.");
 +    SetParameterDescription("io","This group of parameters allows one to set the input and output images and grids.");
-
+ 
      AddParameter(ParameterType_InputImage,"io.in","Input disparity map");
      SetParameterDescription("io.in","The input disparity map (horizontal disparity in first band, vertical in second)");
-diff --git a/Modules/Applications/AppStereo/app/otbStereoFramework.cxx b/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
-index bd9677a..5083726 100644
---- a/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
-+++ b/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
-@@ -341,7 +341,7 @@ private:
-
+--- otb.orig/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
++++ otb/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
+@@ -341,7 +341,7 @@
+ 
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "input", "Input parameters");
 -    SetParameterDescription("input","This group of parameters allows to parametrize input data.");
 +    SetParameterDescription("input","This group of parameters allows one to parametrize input data.");
-
+ 
      AddParameter(ParameterType_InputImageList,  "input.il",   "Input images list");
      SetParameterDescription("input.il", "The list of images.");
-@@ -362,7 +362,7 @@ private:
-
+@@ -362,7 +362,7 @@
+ 
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "output", "Output parameters");
 -    SetParameterDescription("output","This group of parameters allows to choose the DSM resolution, nodata value, and projection parameters.");
 +    SetParameterDescription("output","This group of parameters allows one to choose the DSM resolution, nodata value, and projection parameters.");
-
+ 
      // // Build the Output Map Projection
      // for custom map projection
-@@ -380,7 +380,7 @@ private:
-
+@@ -380,7 +380,7 @@
+ 
      // UserDefined values
      AddParameter(ParameterType_Choice, "output.fusionmethod", "Method to fuse measures in each DSM cell");
 -    SetParameterDescription("output.fusionmethod","This parameter allows to choose the method used to fuse elevation measurements in each output DSM cell");
@@ -763,106 +628,98 @@ index bd9677a..5083726 100644
      AddChoice("output.fusionmethod.max", "The cell is filled with the maximum measured elevation values");
      AddChoice("output.fusionmethod.min", "The cell is filled with the minimum measured elevation values");
      AddChoice("output.fusionmethod.mean","The cell is filled with the mean of measured elevation values");
-@@ -419,7 +419,7 @@ private:
-
+@@ -419,7 +419,7 @@
+ 
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "stereorect", "Stereorectification Grid parameters");
 -    SetParameterDescription("stereorect","This group of parameters allows to choose direct and inverse grid subsampling. These parameters are very useful to tune time and memory consumption.");
 +    SetParameterDescription("stereorect","This group of parameters allows one to choose direct and inverse grid subsampling. These parameters are very useful to tune time and memory consumption.");
-
+ 
      AddParameter(ParameterType_Int,"stereorect.fwdgridstep","Step of the displacement grid (in pixels)");
      SetParameterDescription("stereorect.fwdgridstep","Stereo-rectification displacement grid only varies slowly. Therefore, it is recommended to use a coarser grid (higher step value) in case of large images");
-@@ -427,7 +427,7 @@ private:
+@@ -427,7 +427,7 @@
      MandatoryOff("stereorect.fwdgridstep");
-
+ 
      AddParameter(ParameterType_Int, "stereorect.invgridssrate", "Sub-sampling rate for epipolar grid inversion");
 -    SetParameterDescription("stereorect.invgridssrate","Grid inversion is an heavy process that implies spline regression on control points. To avoid eating to much memory, this parameter allows to first sub-sample the field to invert.");
 +    SetParameterDescription("stereorect.invgridssrate","Grid inversion is an heavy process that implies spline regression on control points. To avoid eating to much memory, this parameter allows one to first sub-sample the field to invert.");
      SetDefaultParameterInt("stereorect.invgridssrate",10);
      SetMinimumParameterIntValue("stereorect.invgridssrate",1);
      MandatoryOff("stereorect.invgridssrate");
-@@ -506,7 +506,7 @@ private:
+@@ -506,7 +506,7 @@
      DisableParameter("mask.right");
-
+ 
      AddParameter(ParameterType_Float,"mask.variancet","Discard pixels with low local variance");
 -    SetParameterDescription("mask.variancet","This parameter allows to discard pixels whose local variance is too small (the size of the neighborhood is given by the radius parameter)");
 +    SetParameterDescription("mask.variancet","This parameter allows one to discard pixels whose local variance is too small (the size of the neighborhood is given by the radius parameter)");
      MandatoryOff("mask.variancet");
      SetDefaultParameterFloat("mask.variancet",50.);
      //DisableParameter("mask.variancet");
-diff --git a/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx b/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
-index 69d51c3..8075540 100644
---- a/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
-+++ b/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
-@@ -111,7 +111,7 @@ private:
+--- otb.orig/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
++++ otb/Modules/Applications/AppStereo/app/otbStereoRectificationGridGenerator.cxx
+@@ -111,7 +111,7 @@
      SetDocSeeAlso("otbGridBasedImageResampling");
-
+ 
      AddParameter(ParameterType_Group,"io","Input and output data");
 -    SetParameterDescription("io","This group of parameters allows to set the input and output images.");
 +    SetParameterDescription("io","This group of parameters allows one to set the input and output images.");
      AddParameter(ParameterType_InputImage,"io.inleft","Left input image");
      SetParameterDescription("io.inleft","The left input image to resample");
-
-@@ -155,7 +155,7 @@ private:
+ 
+@@ -155,7 +155,7 @@
      DisableParameter("epi.elevation.avgdem.maxdisp");
-
+ 
      AddParameter(ParameterType_Float,"epi.scale","Scale of epipolar images");
 -    SetParameterDescription("epi.scale","The scale parameter allows to generated zoomed-in (scale < 1) or zoomed-out (scale > 1) epipolar images.");
 +    SetParameterDescription("epi.scale","The scale parameter allows one to generated zoomed-in (scale < 1) or zoomed-out (scale > 1) epipolar images.");
      SetDefaultParameterFloat("epi.scale",1.);
-
+ 
      AddParameter(ParameterType_Int,"epi.step","Step of the deformation grid (in nb. of pixels)");
-@@ -175,7 +175,7 @@ private:
+@@ -175,7 +175,7 @@
      SetParameterRole("epi.baseline", Role_Output);
-
+ 
      AddParameter(ParameterType_Group,"inverse","Write inverse fields");
 -    SetParameterDescription("inverse","This group of parameter allows to generate the inverse fields as well");
 +    SetParameterDescription("inverse","This group of parameter allows one to generate the inverse fields as well");
-
+ 
      AddParameter(ParameterType_OutputImage, "inverse.outleft", "Left inverse deformation grid");
      SetParameterDescription("inverse.outleft","The output deformation grid to be used to resample the epipolar left image");
-@@ -186,7 +186,7 @@ private:
+@@ -186,7 +186,7 @@
      MandatoryOff("inverse.outright");
-
+ 
      AddParameter(ParameterType_Int, "inverse.ssrate", "Sub-sampling rate for inversion");
 -    SetParameterDescription("inverse.ssrate","Grid inversion is an heavy process that implies spline regression on control points. To avoid eating to much memory, this parameter allows to first sub-sample the field to invert.");
 +    SetParameterDescription("inverse.ssrate","Grid inversion is an heavy process that implies spline regression on control points. To avoid eating to much memory, this parameter allows one to first sub-sample the field to invert.");
      SetDefaultParameterInt("inverse.ssrate",16);
      SetMinimumParameterIntValue("inverse.ssrate",1);
-
-diff --git a/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx b/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
-index d7664f2..7695115 100644
---- a/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
-+++ b/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
-@@ -90,7 +90,7 @@ SetMinimumParameterIntValue("channel", 1);
+ 
+--- otb.orig/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
++++ otb/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
+@@ -90,7 +90,7 @@
  AddRAMParameter();
-
+ 
  AddParameter(ParameterType_Group, "parameters", "Texture feature parameters");
 -SetParameterDescription("parameters","This group of parameters allows to define texture parameters.");
 +SetParameterDescription("parameters","This group of parameters allows one to define texture parameters.");
-
+ 
  AddParameter(ParameterType_Int,"parameters.xrad","X Radius");
  SetParameterDescription("parameters.xrad", "X Radius");
-diff --git a/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx b/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
-index f987119..8369046 100644
---- a/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
-+++ b/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
-@@ -81,7 +81,7 @@ SetMinimumParameterIntValue("channel", 1);
+--- otb.orig/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
++++ otb/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
+@@ -81,7 +81,7 @@
  AddRAMParameter();
-
+ 
  AddParameter(ParameterType_Group, "parameters", "Texture feature parameters");
 -SetParameterDescription("parameters","This group of parameters allows to define SFS texture parameters.\
 +SetParameterDescription("parameters","This group of parameters allows one to define SFS texture parameters.\
      The available texture features are SFS'Length, SFS'Width, SFS'PSI, SFS'W-Mean, SFS'Ratio and SFS'SD.\
      They are provided in this exact order in the output image.");
-
-diff --git a/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx b/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
-index 588940d..c4e8873 100644
---- a/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
-+++ b/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
-@@ -63,7 +63,7 @@ private:
+ 
+--- otb.orig/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
++++ otb/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
+@@ -63,7 +63,7 @@
      SetDescription("Rasterize a vector dataset.");
-
+ 
      SetDocName("Rasterization");
 -    SetDocLongDescription("This application allows to reproject and rasterize a vector dataset. The grid of the rasterized output can be set by using a reference image, or by setting all parmeters (origin, size, spacing) by hand. In the latter case, at least the spacing (ground sampling distance) is needed (other parameters are computed automatically). The rasterized output can also be in a different projection reference system than the input dataset.\n There are two rasterize mode available in the application. The first is the binary mode: it allows to render all pixels belonging to a geometry of the input dataset in the foreground color, while rendering the other in background color. The second one allows to render pixels belonging to a geometry woth respect to an attribute of this geometry. The field of the attribute to render can be set by the user. In the second mode, the background value is still used for unassociated pixels.");
 +    SetDocLongDescription("This application allows one to reproject and rasterize a vector dataset. The grid of the rasterized output can be set by using a reference image, or by setting all parmeters (origin, size, spacing) by hand. In the latter case, at least the spacing (ground sampling distance) is needed (other parameters are computed automatically). The rasterized output can also be in a different projection reference system than the input dataset.\n There are two rasterize mode available in the application. The first is the binary mode: it allows one to render all pixels belonging to a geometry of the input dataset in the foreground color, while rendering the other in background color. The second one allows one to render pixels belonging to a geometry woth respect to an attribute of this geometry. The field of the attribute to render can be set by the user. In the second mode, the background value is still used for unassociated pixels.");
