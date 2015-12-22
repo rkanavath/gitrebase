@@ -49,45 +49,45 @@ Depends: cmake (>= 2.8.3),
          libopencv-dev,
          libopenthreads-dev,
          libossim-dev,
-         libotbapplicationengine-5.0-1 (= ${binary:Version}),
-         libotbcarto-5.0-1 (= ${binary:Version}),
-         libotbcommandline-5.0-1 (= ${binary:Version}),
-         libotbcommandlineparser-5.0-1 (= ${binary:Version}),
-         libotbcommon-5.0-1 (= ${binary:Version}),
-         libotbcurladapters-5.0-1 (= ${binary:Version}),
-         libotbedge-5.0-1 (= ${binary:Version}),
-         libotbextendedfilename-5.0-1 (= ${binary:Version}),
-         libotbfuzzy-5.0-1 (= ${binary:Version}),
-         libotbgdaladapters-5.0-1 (= ${binary:Version}),
-         libotbimagebase-5.0-1 (= ${binary:Version}),
-         libotbimageio-5.0-1 (= ${binary:Version}),
-         libotbimagemanipulation-5.0-1 (= ${binary:Version}),
-         libotbiobsq-5.0-1 (= ${binary:Version}),
-         libotbiogdal-5.0-1 (= ${binary:Version}),
-         libotbiokml-5.0-1 (= ${binary:Version}),
-         libotbiolum-5.0-1 (= ${binary:Version}),
-         libotbiomstar-5.0-1 (= ${binary:Version}),
-         libotbiomw-5.0-1 (= ${binary:Version}),
-         libotbioonera-5.0-1 (= ${binary:Version}),
-         libotbiorad-5.0-1 (= ${binary:Version}),
-         libotbiotilemap-5.0-1 (= ${binary:Version}),
-         libotbmathparser-5.0-1 (= ${binary:Version}),
-         libotbmetadata-5.0-1 (= ${binary:Version}),
-         libotbopenthreadsadapters-5.0-1 (= ${binary:Version}),
-         libotbossimadapters-5.0-1 (= ${binary:Version}),
-         libotbossimplugins-5.0-1 (= ${binary:Version}),
-         libotbpolarimetry-5.0-1 (= ${binary:Version}),
-         libotbprojection-5.0-1 (= ${binary:Version}),
-         libotbqtwidget-5.0-1 (= ${binary:Version}),
-         libotbrcc8-5.0-1 (= ${binary:Version}),
-         libotbsiftfast-5.0-1 (= ${binary:Version}),
-         libotbstreaming-5.0-1 (= ${binary:Version}),
-         libotbsupervised-5.0-1 (= ${binary:Version}),
-         libotbtestkernel-5.0-1 (= ${binary:Version}),
-         libotbtransform-5.0-1 (= ${binary:Version}),
-         libotbvectordatabase-5.0-1 (= ${binary:Version}),
-         libotbvectordataio-5.0-1 (= ${binary:Version}),
-         libotbwavelet-5.0-1 (= ${binary:Version}),
+         libotbapplicationengine-5.2-1 (= ${binary:Version}),
+         libotbcarto-5.2-1 (= ${binary:Version}),
+         libotbcommandline-5.2-1 (= ${binary:Version}),
+         libotbcommandlineparser-5.2-1 (= ${binary:Version}),
+         libotbcommon-5.2-1 (= ${binary:Version}),
+         libotbcurladapters-5.2-1 (= ${binary:Version}),
+         libotbedge-5.2-1 (= ${binary:Version}),
+         libotbextendedfilename-5.2-1 (= ${binary:Version}),
+         libotbfuzzy-5.2-1 (= ${binary:Version}),
+         libotbgdaladapters-5.2-1 (= ${binary:Version}),
+         libotbimagebase-5.2-1 (= ${binary:Version}),
+         libotbimageio-5.2-1 (= ${binary:Version}),
+         libotbimagemanipulation-5.2-1 (= ${binary:Version}),
+         libotbiobsq-5.2-1 (= ${binary:Version}),
+         libotbiogdal-5.2-1 (= ${binary:Version}),
+         libotbiokml-5.2-1 (= ${binary:Version}),
+         libotbiolum-5.2-1 (= ${binary:Version}),
+         libotbiomstar-5.2-1 (= ${binary:Version}),
+         libotbiomw-5.2-1 (= ${binary:Version}),
+         libotbioonera-5.2-1 (= ${binary:Version}),
+         libotbiorad-5.2-1 (= ${binary:Version}),
+         libotbiotilemap-5.2-1 (= ${binary:Version}),
+         libotbmathparser-5.2-1 (= ${binary:Version}),
+         libotbmetadata-5.2-1 (= ${binary:Version}),
+         libotbopenthreadsadapters-5.2-1 (= ${binary:Version}),
+         libotbossimadapters-5.2-1 (= ${binary:Version}),
+         libotbossimplugins-5.2-1 (= ${binary:Version}),
+         libotbpolarimetry-5.2-1 (= ${binary:Version}),
+         libotbprojection-5.2-1 (= ${binary:Version}),
+         libotbqtwidget-5.2-1 (= ${binary:Version}),
+         libotbrcc8-5.2-1 (= ${binary:Version}),
+         libotbsiftfast-5.2-1 (= ${binary:Version}),
+         libotbstreaming-5.2-1 (= ${binary:Version}),
+         libotbsupervised-5.2-1 (= ${binary:Version}),
+         libotbtestkernel-5.2-1 (= ${binary:Version}),
+         libotbtransform-5.2-1 (= ${binary:Version}),
+         libotbvectordatabase-5.2-1 (= ${binary:Version}),
+         libotbvectordataio-5.2-1 (= ${binary:Version}),
+         libotbwavelet-5.2-1 (= ${binary:Version}),
          otb-testdriver (= ${binary:Version}),
          ${misc:Depends}
 Conflicts: libotb3-dev,
@@ -113,7 +113,7 @@ Description: ORFEO Toolbox library - OTBTestDriver
  .
  This package contains the OTBTestDriver application.
 
-Package: libotbiolum-5.0-1
+Package: libotbiolum-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -126,7 +126,7 @@ Description: ORFEO Toolbox library - OTBIOLUM
  .
  This package contains the OTBIOLUM shared library.
 
-Package: libotbiomstar-5.0-1
+Package: libotbiomstar-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -139,7 +139,7 @@ Description: ORFEO Toolbox library - OTBIOMSTAR
  .
  This package contains the OTBIOMSTAR shared library.
 
-Package: libotbiomw-5.0-1
+Package: libotbiomw-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -152,7 +152,7 @@ Description: ORFEO Toolbox library - OTBIOMW
  .
  This package contains the OTBIOMW shared library.
 
-Package: libotbioonera-5.0-1
+Package: libotbioonera-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -165,7 +165,7 @@ Description: ORFEO Toolbox library - OTBIOONERA
  .
  This package contains the OTBIOONERA shared library.
 
-Package: libotbiorad-5.0-1
+Package: libotbiorad-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -178,7 +178,7 @@ Description: ORFEO Toolbox library - OTBIORAD
  .
  This package contains the OTBIORAD shared library.
 
-Package: libotbiotilemap-5.0-1
+Package: libotbiotilemap-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -191,7 +191,7 @@ Description: ORFEO Toolbox library - OTBIOTileMap
  .
  This package contains the OTBIOTileMap shared library.
 
-Package: libotbiogdal-5.0-1
+Package: libotbiogdal-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -204,7 +204,7 @@ Description: ORFEO Toolbox library - OTBIOGDAL
  .
  This package contains the OTBIOGDAL shared library.
 
-Package: libotbiobsq-5.0-1
+Package: libotbiobsq-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -217,7 +217,7 @@ Description: ORFEO Toolbox library - OTBIOBSQ
  .
  This package contains the OTBIOBSQ shared library.
 
-Package: libotbiokml-5.0-1
+Package: libotbiokml-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -230,7 +230,7 @@ Description: ORFEO Toolbox library - OTBIOKML
  .
  This package contains the OTBIOKML shared library.
 
-Package: libotbcurladapters-5.0-1
+Package: libotbcurladapters-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -243,7 +243,7 @@ Description: ORFEO Toolbox library - OTBCurlAdapters
  .
  This package contains the OTBCurlAdapters shared library.
 
-Package: libotbopenthreadsadapters-5.0-1
+Package: libotbopenthreadsadapters-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -256,7 +256,7 @@ Description: ORFEO Toolbox library - OTBOpenThreadsAdapters
  .
  This package contains the OTBOpenThreadsAdapters shared library.
 
-Package: libotbossimadapters-5.0-1
+Package: libotbossimadapters-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -269,7 +269,7 @@ Description: ORFEO Toolbox library - OTBOssimAdapters
  .
  This package contains the OTBOssimAdapters shared library.
 
-Package: libotbsiftfast-5.0-1
+Package: libotbsiftfast-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -282,7 +282,7 @@ Description: ORFEO Toolbox library - OTBSiftFast
  .
  This package contains the OTBSiftFast shared library.
 
-Package: libotbossimplugins-5.0-1
+Package: libotbossimplugins-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -295,7 +295,7 @@ Description: ORFEO Toolbox library - OTBOssimPlugins
  .
  This package contains the OTBOssimPlugins shared library.
 
-Package: libotbimagemanipulation-5.0-1
+Package: libotbimagemanipulation-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -308,7 +308,7 @@ Description: ORFEO Toolbox library - OTBImageManipulation
  .
  This package contains the OTBImageManipulation shared library.
 
-Package: libotbimageio-5.0-1
+Package: libotbimageio-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -321,7 +321,7 @@ Description: ORFEO Toolbox library - OTBImageIO
  .
  This package contains the OTBImageIO shared library.
 
-Package: libotbimagebase-5.0-1
+Package: libotbimagebase-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -334,7 +334,7 @@ Description: ORFEO Toolbox library - OTBImageBase
  .
  This package contains the OTBImageBase shared library.
 
-Package: libotbgdaladapters-5.0-1
+Package: libotbgdaladapters-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -347,7 +347,7 @@ Description: ORFEO Toolbox library - OTBGdalAdapters
  .
  This package contains the OTBGdalAdapters shared library.
 
-Package: libotbedge-5.0-1
+Package: libotbedge-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -360,7 +360,7 @@ Description: ORFEO Toolbox library - OTBEdge
  .
  This package contains the OTBEdge shared library.
 
-Package: libotbcommandline-5.0-1
+Package: libotbcommandline-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -373,7 +373,7 @@ Description: ORFEO Toolbox library - OTBCommandLine
  .
  This package contains the OTBCommandLine shared library.
 
-Package: libotbcommandlineparser-5.0-1
+Package: libotbcommandlineparser-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -386,7 +386,7 @@ Description: ORFEO Toolbox library - OTBCommandLinePaser
  .
  This package contains the OTBCommandLinePaser shared library.
 
-Package: libotbcommon-5.0-1
+Package: libotbcommon-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -399,7 +399,7 @@ Description: ORFEO Toolbox library - OTBCommon
  .
  This package contains the OTBCommon shared library.
 
-Package: libotbcarto-5.0-1
+Package: libotbcarto-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -412,7 +412,7 @@ Description: ORFEO Toolbox library - OTBCarto
  .
  This package contains the OTBCarto shared library.
 
-Package: libotbpolarimetry-5.0-1
+Package: libotbpolarimetry-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -425,7 +425,7 @@ Description: ORFEO Toolbox library - OTBPolarimetry
  .
  This package contains the OTBPolarimetry shared library.
 
-Package: libotbstreaming-5.0-1
+Package: libotbstreaming-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -438,7 +438,7 @@ Description: ORFEO Toolbox library - OTBStreaming
  .
  This package contains the OTBStreaming shared library.
 
-Package: libotbextendedfilename-5.0-1
+Package: libotbextendedfilename-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -451,7 +451,7 @@ Description: ORFEO Toolbox library - OTBExtendedFileName
  .
  This package contains the OTBExtendedFileName shared library.
 
-Package: libotbmathparser-5.0-1
+Package: libotbmathparser-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -464,7 +464,7 @@ Description: ORFEO Toolbox library - OTBMathParser
  .
  This package contains the OTBMathParser shared library.
 
-Package: libotbfuzzy-5.0-1
+Package: libotbfuzzy-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -477,7 +477,7 @@ Description: ORFEO Toolbox library - OTBFuzzy
  .
  This package contains the OTBFuzzy shared library.
 
-Package: libotbmetadata-5.0-1
+Package: libotbmetadata-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -490,7 +490,7 @@ Description: ORFEO Toolbox library - OTBMetadata
  .
  This package contains the OTBMetadata shared library.
 
-Package: libotbprojection-5.0-1
+Package: libotbprojection-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -503,7 +503,7 @@ Description: ORFEO Toolbox library - OTBProjection
  .
  This package contains the OTBProjection shared library.
 
-Package: libotbrcc8-5.0-1
+Package: libotbrcc8-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -516,7 +516,7 @@ Description: ORFEO Toolbox library - OTBRCC8
  .
  This package contains the OTBRCC8 shared library.
 
-Package: libotbtestkernel-5.0-1
+Package: libotbtestkernel-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -529,7 +529,7 @@ Description: ORFEO Toolbox library - OTBTestKernel
  .
  This package contains the OTBTestKernel shared library.
 
-Package: libotbtransform-5.0-1
+Package: libotbtransform-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -542,7 +542,7 @@ Description: ORFEO Toolbox library - OTBTransform
  .
  This package contains the OTBTransform shared library.
 
-Package: libotbvectordatabase-5.0-1
+Package: libotbvectordatabase-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -555,7 +555,7 @@ Description: ORFEO Toolbox library - OTBVectorDataBase
  .
  This package contains the OTBVectorDataBase shared library.
 
-Package: libotbvectordataio-5.0-1
+Package: libotbvectordataio-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -568,7 +568,7 @@ Description: ORFEO Toolbox library - OTBVectorDataIO
  .
  This package contains the OTBVectorDataIO shared library.
 
-Package: libotbwavelet-5.0-1
+Package: libotbwavelet-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -581,7 +581,7 @@ Description: ORFEO Toolbox library - OTBWavelet
  .
  This package contains the OTBWavelet shared library.
 
-Package: libotbsupervised-5.0-1
+Package: libotbsupervised-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -594,7 +594,7 @@ Description: ORFEO Toolbox library - OTBSupervised
  .
  This package contains the OTBSupervised shared library.
 
-Package: libotbqtwidget-5.0-1
+Package: libotbqtwidget-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -607,7 +607,7 @@ Description: ORFEO Toolbox library - OTBQtWidget
  .
  This package contains the OTBQtWidget shared library.
 
-Package: libotbapplicationengine-5.0-1
+Package: libotbapplicationengine-5.2-1
 Architecture: any
 Depends: ${shlibs:Depends},
          ${misc:Depends}
@@ -622,45 +622,45 @@ Description: ORFEO Toolbox library - OTBApplicationEngine
 
 Package: libotb-apps
 Architecture: any
-Depends: libotbapplicationengine-5.0-1 (= ${binary:Version}),
-         libotbcarto-5.0-1 (= ${binary:Version}),
-         libotbcommandline-5.0-1 (= ${binary:Version}),
-         libotbcommandlineparser-5.0-1 (= ${binary:Version}),
-         libotbcommon-5.0-1 (= ${binary:Version}),
-         libotbcurladapters-5.0-1 (= ${binary:Version}),
-         libotbedge-5.0-1 (= ${binary:Version}),
-         libotbextendedfilename-5.0-1 (= ${binary:Version}),
-         libotbfuzzy-5.0-1 (= ${binary:Version}),
-         libotbgdaladapters-5.0-1 (= ${binary:Version}),
-         libotbimagebase-5.0-1 (= ${binary:Version}),
-         libotbimageio-5.0-1 (= ${binary:Version}),
-         libotbimagemanipulation-5.0-1 (= ${binary:Version}),
-         libotbiobsq-5.0-1 (= ${binary:Version}),
-         libotbiogdal-5.0-1 (= ${binary:Version}),
-         libotbiokml-5.0-1 (= ${binary:Version}),
-         libotbiolum-5.0-1 (= ${binary:Version}),
-         libotbiomstar-5.0-1 (= ${binary:Version}),
-         libotbiomw-5.0-1 (= ${binary:Version}),
-         libotbioonera-5.0-1 (= ${binary:Version}),
-         libotbiorad-5.0-1 (= ${binary:Version}),
-         libotbiotilemap-5.0-1 (= ${binary:Version}),
-         libotbmathparser-5.0-1 (= ${binary:Version}),
-         libotbmetadata-5.0-1 (= ${binary:Version}),
-         libotbopenthreadsadapters-5.0-1 (= ${binary:Version}),
-         libotbossimadapters-5.0-1 (= ${binary:Version}),
-         libotbossimplugins-5.0-1 (= ${binary:Version}),
-         libotbpolarimetry-5.0-1 (= ${binary:Version}),
-         libotbprojection-5.0-1 (= ${binary:Version}),
-         libotbqtwidget-5.0-1 (= ${binary:Version}),
-         libotbrcc8-5.0-1 (= ${binary:Version}),
-         libotbsiftfast-5.0-1 (= ${binary:Version}),
-         libotbstreaming-5.0-1 (= ${binary:Version}),
-         libotbsupervised-5.0-1 (= ${binary:Version}),
-         libotbtestkernel-5.0-1 (= ${binary:Version}),
-         libotbtransform-5.0-1 (= ${binary:Version}),
-         libotbvectordatabase-5.0-1 (= ${binary:Version}),
-         libotbvectordataio-5.0-1 (= ${binary:Version}),
-         libotbwavelet-5.0-1 (= ${binary:Version}),
+Depends: libotbapplicationengine-5.2-1 (= ${binary:Version}),
+         libotbcarto-5.2-1 (= ${binary:Version}),
+         libotbcommandline-5.2-1 (= ${binary:Version}),
+         libotbcommandlineparser-5.2-1 (= ${binary:Version}),
+         libotbcommon-5.2-1 (= ${binary:Version}),
+         libotbcurladapters-5.2-1 (= ${binary:Version}),
+         libotbedge-5.2-1 (= ${binary:Version}),
+         libotbextendedfilename-5.2-1 (= ${binary:Version}),
+         libotbfuzzy-5.2-1 (= ${binary:Version}),
+         libotbgdaladapters-5.2-1 (= ${binary:Version}),
+         libotbimagebase-5.2-1 (= ${binary:Version}),
+         libotbimageio-5.2-1 (= ${binary:Version}),
+         libotbimagemanipulation-5.2-1 (= ${binary:Version}),
+         libotbiobsq-5.2-1 (= ${binary:Version}),
+         libotbiogdal-5.2-1 (= ${binary:Version}),
+         libotbiokml-5.2-1 (= ${binary:Version}),
+         libotbiolum-5.2-1 (= ${binary:Version}),
+         libotbiomstar-5.2-1 (= ${binary:Version}),
+         libotbiomw-5.2-1 (= ${binary:Version}),
+         libotbioonera-5.2-1 (= ${binary:Version}),
+         libotbiorad-5.2-1 (= ${binary:Version}),
+         libotbiotilemap-5.2-1 (= ${binary:Version}),
+         libotbmathparser-5.2-1 (= ${binary:Version}),
+         libotbmetadata-5.2-1 (= ${binary:Version}),
+         libotbopenthreadsadapters-5.2-1 (= ${binary:Version}),
+         libotbossimadapters-5.2-1 (= ${binary:Version}),
+         libotbossimplugins-5.2-1 (= ${binary:Version}),
+         libotbpolarimetry-5.2-1 (= ${binary:Version}),
+         libotbprojection-5.2-1 (= ${binary:Version}),
+         libotbqtwidget-5.2-1 (= ${binary:Version}),
+         libotbrcc8-5.2-1 (= ${binary:Version}),
+         libotbsiftfast-5.2-1 (= ${binary:Version}),
+         libotbstreaming-5.2-1 (= ${binary:Version}),
+         libotbsupervised-5.2-1 (= ${binary:Version}),
+         libotbtestkernel-5.2-1 (= ${binary:Version}),
+         libotbtransform-5.2-1 (= ${binary:Version}),
+         libotbvectordatabase-5.2-1 (= ${binary:Version}),
+         libotbvectordataio-5.2-1 (= ${binary:Version}),
+         libotbwavelet-5.2-1 (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: Plugins for ORFEO Toolbox applications
@@ -674,8 +674,8 @@ Description: Plugins for ORFEO Toolbox applications
 
 Package: otb-bin
 Architecture: any
-Depends: libotbcommandline-5.0-1 (= ${binary:Version}),
-         libotbcommandlineparser-5.0-1 (= ${binary:Version}),
+Depends: libotbcommandline-5.2-1 (= ${binary:Version}),
+         libotbcommandlineparser-5.2-1 (= ${binary:Version}),
          libotb-apps (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
@@ -690,7 +690,7 @@ Description: ORFEO Toolbox command line applications
 
 Package: otb-bin-qt
 Architecture: any
-Depends: libotbqtwidget-5.0-1 (= ${binary:Version}),
+Depends: libotbqtwidget-5.2-1 (= ${binary:Version}),
          libotb-apps (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
@@ -722,45 +722,45 @@ Description: ORFEO Toolbox Python API for applications
 
 Package: libotb
 Architecture: any
-Depends: libotbapplicationengine-5.0-1 (= ${binary:Version}),
-         libotbcarto-5.0-1 (= ${binary:Version}),
-         libotbcommandline-5.0-1 (= ${binary:Version}),
-         libotbcommandlineparser-5.0-1 (= ${binary:Version}),
-         libotbcommon-5.0-1 (= ${binary:Version}),
-         libotbcurladapters-5.0-1 (= ${binary:Version}),
-         libotbedge-5.0-1 (= ${binary:Version}),
-         libotbextendedfilename-5.0-1 (= ${binary:Version}),
-         libotbfuzzy-5.0-1 (= ${binary:Version}),
-         libotbgdaladapters-5.0-1 (= ${binary:Version}),
-         libotbimagebase-5.0-1 (= ${binary:Version}),
-         libotbimageio-5.0-1 (= ${binary:Version}),
-         libotbimagemanipulation-5.0-1 (= ${binary:Version}),
-         libotbiobsq-5.0-1 (= ${binary:Version}),
-         libotbiogdal-5.0-1 (= ${binary:Version}),
-         libotbiokml-5.0-1 (= ${binary:Version}),
-         libotbiolum-5.0-1 (= ${binary:Version}),
-         libotbiomstar-5.0-1 (= ${binary:Version}),
-         libotbiomw-5.0-1 (= ${binary:Version}),
-         libotbioonera-5.0-1 (= ${binary:Version}),
-         libotbiorad-5.0-1 (= ${binary:Version}),
-         libotbiotilemap-5.0-1 (= ${binary:Version}),
-         libotbmathparser-5.0-1 (= ${binary:Version}),
-         libotbmetadata-5.0-1 (= ${binary:Version}),
-         libotbopenthreadsadapters-5.0-1 (= ${binary:Version}),
-         libotbossimadapters-5.0-1 (= ${binary:Version}),
-         libotbossimplugins-5.0-1 (= ${binary:Version}),
-         libotbpolarimetry-5.0-1 (= ${binary:Version}),
-         libotbprojection-5.0-1 (= ${binary:Version}),
-         libotbqtwidget-5.0-1 (= ${binary:Version}),
-         libotbrcc8-5.0-1 (= ${binary:Version}),
-         libotbsiftfast-5.0-1 (= ${binary:Version}),
-         libotbstreaming-5.0-1 (= ${binary:Version}),
-         libotbsupervised-5.0-1 (= ${binary:Version}),
-         libotbtestkernel-5.0-1 (= ${binary:Version}),
-         libotbtransform-5.0-1 (= ${binary:Version}),
-         libotbvectordatabase-5.0-1 (= ${binary:Version}),
-         libotbvectordataio-5.0-1 (= ${binary:Version}),
-         libotbwavelet-5.0-1 (= ${binary:Version}),
+Depends: libotbapplicationengine-5.2-1 (= ${binary:Version}),
+         libotbcarto-5.2-1 (= ${binary:Version}),
+         libotbcommandline-5.2-1 (= ${binary:Version}),
+         libotbcommandlineparser-5.2-1 (= ${binary:Version}),
+         libotbcommon-5.2-1 (= ${binary:Version}),
+         libotbcurladapters-5.2-1 (= ${binary:Version}),
+         libotbedge-5.2-1 (= ${binary:Version}),
+         libotbextendedfilename-5.2-1 (= ${binary:Version}),
+         libotbfuzzy-5.2-1 (= ${binary:Version}),
+         libotbgdaladapters-5.2-1 (= ${binary:Version}),
+         libotbimagebase-5.2-1 (= ${binary:Version}),
+         libotbimageio-5.2-1 (= ${binary:Version}),
+         libotbimagemanipulation-5.2-1 (= ${binary:Version}),
+         libotbiobsq-5.2-1 (= ${binary:Version}),
+         libotbiogdal-5.2-1 (= ${binary:Version}),
+         libotbiokml-5.2-1 (= ${binary:Version}),
+         libotbiolum-5.2-1 (= ${binary:Version}),
+         libotbiomstar-5.2-1 (= ${binary:Version}),
+         libotbiomw-5.2-1 (= ${binary:Version}),
+         libotbioonera-5.2-1 (= ${binary:Version}),
+         libotbiorad-5.2-1 (= ${binary:Version}),
+         libotbiotilemap-5.2-1 (= ${binary:Version}),
+         libotbmathparser-5.2-1 (= ${binary:Version}),
+         libotbmetadata-5.2-1 (= ${binary:Version}),
+         libotbopenthreadsadapters-5.2-1 (= ${binary:Version}),
+         libotbossimadapters-5.2-1 (= ${binary:Version}),
+         libotbossimplugins-5.2-1 (= ${binary:Version}),
+         libotbpolarimetry-5.2-1 (= ${binary:Version}),
+         libotbprojection-5.2-1 (= ${binary:Version}),
+         libotbqtwidget-5.2-1 (= ${binary:Version}),
+         libotbrcc8-5.2-1 (= ${binary:Version}),
+         libotbsiftfast-5.2-1 (= ${binary:Version}),
+         libotbstreaming-5.2-1 (= ${binary:Version}),
+         libotbsupervised-5.2-1 (= ${binary:Version}),
+         libotbtestkernel-5.2-1 (= ${binary:Version}),
+         libotbtransform-5.2-1 (= ${binary:Version}),
+         libotbvectordatabase-5.2-1 (= ${binary:Version}),
+         libotbvectordataio-5.2-1 (= ${binary:Version}),
+         libotbwavelet-5.2-1 (= ${binary:Version}),
          ${misc:Depends}
 Description: ORFEO Toolbox library metapackage
  ORFEO Toolbox (OTB) is distributed as an open source library of image
