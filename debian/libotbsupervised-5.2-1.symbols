@@ -1,0 +1,3 @@
+# SymbolsHelper-Confirmed: 5.0.0 amd64
+libOTBSupervised-5.0.so.1 libotbsupervised-5.0-1 #MINVER#
+ _ZN3otb31MachineLearningModelFactoryBase5mutexE@Base 5.0.0
