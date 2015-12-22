@@ -21,14 +21,11 @@ ifndef PKGVERSION
     PKGVERSION=1
 endif
 
-TEMPLATES=$(wildcard debian/*.in)
-
 OTB_VERSION_MAJOR  = $(shell sed -ne 's/set(OTB_VERSION_MAJOR "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_MINOR  = $(shell sed -ne 's/set(OTB_VERSION_MINOR "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_PATCH  = $(shell sed -ne 's/set(OTB_VERSION_PATCH "\([0-9]*\)")/\1/p' CMakeLists.txt)
-OTB_VERSION_SONAME = $(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR)-1
+OTB_VERSION_SONAME = $(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR)
 OTB_VERSION_FULL   = $(OTB_VERSION_MAJOR).$(OTB_VERSION_MINOR).$(OTB_VERSION_PATCH)
-
 
 CMAKE_FLAGS = \
 	-DCMAKE_INSTALL_PREFIX=/usr \
@@ -57,11 +54,9 @@ pkglib:=lib$(DEBPKGNAME)
 pkgdev:=$(pkglib)-dev
 
 templates:
-	for TEMPLATE in $(TEMPLATES) ; do \
-	    sed -e 's/@SOVERSION@/$(OTB_VERSION_SONAME)/g' $$TEMPLATE > `echo $$TEMPLATE | sed 's/.in$$//'` ; \
-	done
+	 sed -e 's/@SOVERSION@/$(OTB_VERSION_SONAME)-1/g' debian/control.in > debian/control
+	 sed -e 's/@SOVERSION@/$(OTB_VERSION_SONAME)/g' debian/libotb-dev.install.in > debian/libotb-dev.install
 
-# OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)
 # rather use all libs since the installed libs are spread over several packages
 OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib
 
@@ -78,7 +73,7 @@ override_dh_shlibdeps:
 	dh_shlibdeps -l$(OTB_LIB_DIRS)
 
 override_dh_install:
-	rm -f $(CURDIR)/debian/tmp/usr/share/doc/OTB-5.0/LICENSE
+	rm -f $(CURDIR)/debian/tmp/usr/share/doc/OTB-$(OTB_VERSION_SONAME)/LICENSE
 	rm -f $(CURDIR)/usr/lib/otb/python/otbApplication.pyc
 	dh_install --list-missing
 	rm -f $(CURDIR)/debian/$(pkglib)/usr/lib/$(DEB_HOST_MULTIARCH)/libOTBWrapper*

@@ -3,7 +3,7 @@
 usr/lib/lib*.so		usr/lib/${DEB_HOST_MULTIARCH}
 
 # OTB headers
-usr/include/OTB-5.0
+usr/include/OTB-5.2
 
 # CMake helper scripts
-usr/lib/cmake/OTB-5.0
+usr/lib/cmake/OTB-5.2
