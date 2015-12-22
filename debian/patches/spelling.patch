@@ -1,7 +1,4 @@
-Description: Fix some spelling errors to silence lintian enabling to concentrate on the real problem.
-Author: Andreas Tille <tille@debian.org>, Rashad Kanavath<rashad.kanavath@c-s.fr>
-Last-Update: 2015-12-22
-
+ProxyChains-3.1 (http://proxychains.sf.net)
 --- otb.orig/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
 +++ otb/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
 @@ -75,7 +75,7 @@
@@ -115,6 +112,48 @@ Last-Update: 2015-12-22
  
    AddParameter(ParameterType_Int, "sample.mt", "Maximum training predictors");
    //MandatoryOff("mt");
+--- otb.orig/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
++++ otb/Modules/Applications/AppDescriptors/app/otbHomologousPointsExtraction.cxx
+@@ -82,18 +82,18 @@
+     SetName("HomologousPointsExtraction");
+     SetDocName("Homologous points extraction");
+     SetDescription("Allows to compute homologous points between images using keypoints");
+-    SetDocLongDescription("This application allows to compute homologous points between images using keypoints. "
++    SetDocLongDescription("This application allows one to compute homologous points between images using keypoints. "
+       " SIFT or SURF keypoints can be used and the band on which keypoints are computed can be set independantly for both images."
+       " The application offers two modes :"
+       " the first is the full mode where keypoints are extracted from the full extent of both images"
+       " (please note that in this mode large image file are not supported). "
+-      "The second mode, called geobins, allows to set-up spatial binning to get fewer points"
++      "The second mode, called geobins, allows one to set-up spatial binning to get fewer points"
+       " spread accross the entire image. "
+       "In this mode, the corresponding spatial bin in the second image is estimated using geographical"
+       " transform or sensor modelling, and is padded according to the user defined precision. Last, in"
+       " both modes the application can filter matches whose colocalisation in first image exceed this precision. "
+       "The elevation parameters are to deal more precisely with sensor modelling in case of sensor geometry data. "
+-      "The outvector option allows to create a vector file with segments corresponding to the localisation error between the matches."
++      "The outvector option allows one to create a vector file with segments corresponding to the localisation error between the matches."
+       " It can be useful to assess the precision of a registration for instance."
+       " The vector file is always reprojected to EPSG:4326 to allow display in a GIS."
+       " This is done via reprojection or by applying the image sensor models.");
+@@ -143,7 +143,7 @@
+     SetParameterDescription("mode.full","Extract and match all keypoints, loading both images entirely into memory");
+ 
+     AddChoice("mode.geobins","Search keypoints in small spatial bins regularly spread accross first image");
+-    SetParameterDescription("mode.geobins","This method allows to retrieve a set of tie points regulary spread accross image 1. Corresponding bins in image 2 are retrieved using sensor and geographical information if available. The first bin position takes into account the margin parameter. Bins are cropped to the largest image region shrinked by the margin parameter for both in1 and in2 images.");
++    SetParameterDescription("mode.geobins","This method allows one to retrieve a set of tie points regulary spread accross image 1. Corresponding bins in image 2 are retrieved using sensor and geographical information if available. The first bin position takes into account the margin parameter. Bins are cropped to the largest image region shrinked by the margin parameter for both in1 and in2 images.");
+     
+     AddParameter(ParameterType_Int,"mode.geobins.binsize","Size of bin");
+     SetParameterDescription("mode.geobins.binsize","Radius of the spatial bin in pixels");
+@@ -175,7 +175,7 @@
+     SetDefaultParameterFloat("precision",0.);
+ 
+     AddParameter(ParameterType_Empty,"mfilter","Filter points according to geographical or sensor based colocalisation");
+-    SetParameterDescription("mfilter","If enabled, this option allows to filter matches according to colocalisation from sensor or geographical information, using the given tolerancy expressed in pixels");
++    SetParameterDescription("mfilter","If enabled, this option allows one to filter matches according to colocalisation from sensor or geographical information, using the given tolerancy expressed in pixels");
+ 
+     AddParameter(ParameterType_Empty,"2wgs84","If enabled, points from second image will be exported in WGS84");
+ 
 --- otb.orig/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
 +++ otb/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
 @@ -57,7 +57,7 @@
@@ -432,6 +471,24 @@ Last-Update: 2015-12-22
  
      // Doc example parameter settings
      SetDocExampleParameterValue("in", "qb_toulouse_sub.tif");
+--- otb.orig/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
++++ otb/Modules/Applications/AppProjection/app/otbSuperimpose.cxx
+@@ -121,13 +121,13 @@
+     
+     // Interpolators
+     AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
+-    SetParameterDescription("interpolator","This group of parameters allows to define how the input image will be interpolated during resampling.");
++    SetParameterDescription("interpolator","This group of parameters allows one to define how the input image will be interpolated during resampling.");
+ 
+     AddChoice("interpolator.bco",    "Bicubic interpolation");
+     SetParameterDescription("interpolator.bco", "Bicubic interpolation leads to very good image quality but is slow.");
+ 
+     AddParameter(ParameterType_Radius, "interpolator.bco.radius", "Radius for bicubic interpolation");
+-    SetParameterDescription("interpolator.bco.radius","This parameter allows to control the size of the bicubic interpolation filter. If the target pixel size is higher than the input pixel size, increasing this parameter will reduce aliasing artefacts.");
++    SetParameterDescription("interpolator.bco.radius","This parameter allows one to control the size of the bicubic interpolation filter. If the target pixel size is higher than the input pixel size, increasing this parameter will reduce aliasing artefacts.");
+     SetDefaultParameterInt("interpolator.bco.radius", 2);
+ 
+     AddChoice("interpolator.nn",     "Nearest Neighbor interpolation");
 --- otb.orig/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
 +++ otb/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
 @@ -61,13 +61,13 @@
@@ -461,6 +518,17 @@ Last-Update: 2015-12-22
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
      SetDocSeeAlso(" ");
+--- otb.orig/Modules/Applications/AppSARDecompositions/app/otbSARDecompositions.cxx
++++ otb/Modules/Applications/AppSARDecompositions/app/otbSARDecompositions.cxx
+@@ -111,7 +111,7 @@
+     SetParameterDescription("decomp.haa","H-alpha-A decomposition");
+     
+     AddParameter(ParameterType_Group,"inco","Incoherent decompositions");
+-    SetParameterDescription("inco","This group allows to set parameters related to the incoherent decompositions.");
++    SetParameterDescription("inco","This group allows one to set parameters related to the incoherent decompositions.");
+     
+     AddParameter(ParameterType_Int, "inco.kernelsize",   "Kernel size for spatial incoherent averaging.");
+     SetParameterDescription("inco.kernelsize", "Minute (0-59)");
 --- otb.orig/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
 +++ otb/Modules/Applications/AppSegmentation/app/otbConnectedComponentSegmentation.cxx
 @@ -71,7 +71,7 @@
