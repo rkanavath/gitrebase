@@ -1,4 +1,0 @@
-# SymbolsHelper-Confirmed: 5.0.0 amd64
-libOTBVectorDataIO-5.0.so.1 libotbvectordataio-5.0-1 #MINVER#
- _ZN3otb19VectorDataIOFactory18CreateVectorDataIOEPKcNS0_12FileModeTypeE@Base 5.0.0
- _ZN3otb19VectorDataIOFactory24RegisterBuiltInFactoriesEv@Base 5.0.0
