@@ -1,4 +1,7 @@
-ProxyChains-3.1 (http://proxychains.sf.net)
+Description: Fix find_package(ITK) with only required COMPONENTS list
+Author: Rashad Kanavath <rashad.kanavath@c-s.fr>
+Last-Update: 2015-12-22
+
 --- a/Modules/ThirdParty/ITK/CMakeLists.txt
 +++ b/Modules/ThirdParty/ITK/CMakeLists.txt
 @@ -2,7 +2,91 @@ project(OTBITK)
