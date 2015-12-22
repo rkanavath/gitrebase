@@ -2,14 +2,15 @@ Description: Fix find_package(ITK) with only required COMPONENTS list
 Author: Rashad Kanavath <rashad.kanavath@c-s.fr>
 Last-Update: 2015-12-22
 
---- otb.orig/Modules/ThirdParty/ITK/CMakeLists.txt
-+++ otb/Modules/ThirdParty/ITK/CMakeLists.txt
-@@ -2,5 +2,89 @@
+diff --git a/Modules/ThirdParty/ITK/CMakeLists.txt b/Modules/ThirdParty/ITK/CMakeLists.txt
+index 55b0eb8..8b41866 100644
+--- a/Modules/ThirdParty/ITK/CMakeLists.txt
++++ b/Modules/ThirdParty/ITK/CMakeLists.txt
+@@ -2,7 +2,80 @@ project(OTBITK)
 
  set(OTBITK_SYSTEM_INCLUDE_DIRS ${ITK_INCLUDE_DIRS})
  set(OTBITK_LIBRARIES "${ITK_LIBRARIES}")
 -set(OTBITK_EXPORT_CODE_BUILD "find_package(ITK REQUIRED HINTS ${ITK_DIR})")
-+
 +set(OTBITK_ITK_REQUIRED_MODULE_LIST
 +    ITKCommon
 +    ITKFiniteDifference
@@ -20,9 +21,7 @@ Last-Update: 2015-12-22
 +    ITKMesh
 +    ITKQuadEdgeMesh
 +    ITKSpatialObjects
-+    #ITKTestKernel
 +    ITKTransform
-+
 +    ITKAnisotropicSmoothing
 +    ITKAntiAlias
 +    ITKBiasCorrection
@@ -32,7 +31,6 @@ Last-Update: 2015-12-22
 +    ITKCurvatureFlow
 +    ITKDeconvolution
 +    ITKDenoising
-+    #ITKDiffusionTensorImage
 +    ITKDisplacementField
 +    ITKDistanceMap
 +    ITKFastMarching
@@ -59,25 +57,19 @@ Last-Update: 2015-12-22
 +    ITKSmoothing
 +    ITKSpatialFunction
 +    ITKThresholding
-+
 +    ITKEigen
-+    #ITKFEM
 +    ITKNarrowBand
 +    ITKNeuralNetworks
 +    ITKOptimizers
 +    ITKOptimizersv4
 +    ITKPolynomials
 +    ITKStatistics
-+
 +    ITKRegistrationCommon
-+    #ITKFEMRegistration
 +    ITKGPURegistrationCommon
 +    ITKGPUPDEDeformableRegistration
 +    ITKMetricsv4
 +    ITKPDEDeformableRegistration
 +    ITKRegistrationMethodsv4
-+
-+    #ITKBioCell
 +    ITKClassifiers
 +    ITKConnectedComponents
 +    ITKDeformableMesh
@@ -85,7 +77,6 @@ Last-Update: 2015-12-22
 +    ITKLabelVoting
 +    ITKLevelSets
 +    ITKLevelSetsv4
-+    #ITKLevelSetsv4Visualization
 +    ITKMarkovRandomFieldsClassifiers
 +    ITKRegionGrowing
 +    ITKSignedDistanceFunction
