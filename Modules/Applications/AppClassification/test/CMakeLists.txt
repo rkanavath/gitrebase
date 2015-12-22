@@ -1,6 +1,14 @@
 otb_module_test()
 #----------- ComputeOGRLayersFeaturesStatistics TESTS ----------------
-
+otb_test_application(NAME apTvClComputeOGRLayersFeaturesStatistics
+                     APP  ComputeOGRLayersFeaturesStatistics
+                     OPTIONS -inshp ${INPUTDATA}/Classification/apTvClLabeledVector.shp
+                             -feat meanB0 meanB1 meanB2 meanB3 varB0 varB1 varB2 varB3
+                             -outstats ${TEMP}/apTvClComputeOGRLayersFeaturesStatistics.xml
+                     VALID   --compare-ascii ${NOTOL}
+                             ${OTBAPP_BASELINE_FILES}/apTvClComputeOGRLayersFeaturesStatistics.xml
+                             ${TEMP}/apTvClComputeOGRLayersFeaturesStatistics.xml)
+                             
 #----------- SOMClassification TESTS ----------------
 otb_test_application(NAME apTvClSOMClassificationSmall
                      APP  SOMClassification
@@ -69,8 +77,8 @@ set(rf_output_format ".rf")
 set(knn_output_format ".knn")
 
 # Training algorithms parameters
-set(libsvm_parameters "-classifier.libsvm.opt" "true")
-set(svm_parameters "-classifier.svm.opt" "true")
+set(libsvm_parameters "-classifier.libsvm.opt" "true" "-classifier.libsvm.prob" "true")
+#set(svm_parameters "-classifier.svm.opt" "true")
 set(boost_parameters "")
 set(dt_parameters "")
 set(gbt_parameters "")
@@ -82,6 +90,7 @@ set(knn_parameters "")
 # Validation depending on mode
 set(ascii_comparison --compare-ascii ${NOTOL})
 set(raster_comparison --compare-image ${NOTOL})
+set(raster_comparison_two --compare-n-images ${NOTOL} 2)
 
 # Reference ffiles depending on modes
 set(ascii_ref_path ${OTBAPP_BASELINE_FILES})
@@ -92,8 +101,10 @@ if(OTB_USE_LIBSVM)
   list(APPEND classifierList "LIBSVM")
 endif()
 if(OTB_USE_OPENCV)
-  list(APPEND classifierList "SVM" "BOOST" "DT" "GBT" "ANN" "BAYES" "RF" "KNN")
+  #list(APPEND classifierList "SVM" "BOOST" "DT" "GBT" "ANN" "BAYES" "RF" "KNN")
+  list(APPEND classifierList "BOOST" "DT" "GBT" "ANN" "BAYES" "RF" "KNN")
 endif()
+set(classifier_with_confmap "LIBSVM" "BOOST" "KNN" "ANN" "RF")
 
 # Loop on classifiers
 foreach(classifier ${classifierList})
@@ -102,13 +113,14 @@ foreach(classifier ${classifierList})
   # Derive output file name
   set(OUTMODELFILE cl${classifier}_ModelQB1${${lclassifier}_output_format})
   set(OUTRASTER cl${classifier}LabeledImageQB1${raster_output_format})
+  set(OUTCONFMAP cl${classifier}ConfidenceMapQB1${raster_output_format})
 
   otb_test_application(
                        NAME     apTvClTrainMethod${classifier}ImagesClassifierQB1
                        APP      TrainImagesClassifier
                        OPTIONS  -io.il ${INPUTDATA}/Classification/QB_1_ortho${raster_input_format}
                                 -io.vd ${INPUTDATA}/Classification/VectorData_${${lclassifier}_input}QB1${vector_input_format}
-                                -io.imstat ${ascii_ref_path}/clImageStatisticsQB1${stat_input_format}
+                                -io.imstat ${INPUTDATA}/Classification/clImageStatisticsQB1${stat_input_format}
                                 -classifier ${lclassifier}
                                 ${${lclassifier}_parameters}
                                 -io.out ${TEMP}/${OUTMODELFILE}
@@ -124,7 +136,7 @@ foreach(classifier ${classifierList})
                        APP      TrainImagesClassifier
                        OPTIONS  -io.il ${INPUTDATA}/Classification/QB_1_ortho${raster_input_format}
                                 -io.vd ${INPUTDATA}/Classification/VectorData_${${lclassifier}_input}QB1${vector_input_format}
-                                -io.imstat ${ascii_ref_path}/clImageStatisticsQB1${stat_input_format}
+                                -io.imstat ${INPUTDATA}/Classification/clImageStatisticsQB1${stat_input_format}
                                 -classifier ${lclassifier}
                                 ${${lclassifier}_parameters}
                                 -io.out ${TEMP}/OutXML1_${OUTMODELFILE}
@@ -142,7 +154,7 @@ foreach(classifier ${classifierList})
                        OPTIONS  -inxml ${INPUTDATA}/cl${classifier}_OutXML1.xml
                                 -io.il ${INPUTDATA}/Classification/QB_1_ortho${raster_input_format}
                                 -io.vd ${INPUTDATA}/Classification/VectorData_${${lclassifier}_input}QB1${vector_input_format}
-                                -io.imstat ${ascii_ref_path}/clImageStatisticsQB1${stat_input_format}
+                                -io.imstat ${INPUTDATA}/Classification/clImageStatisticsQB1${stat_input_format}
                                 -io.out ${TEMP}/OutXML2_${OUTMODELFILE}
 
                        VALID    ${ascii_comparison}
@@ -152,156 +164,166 @@ foreach(classifier ${classifierList})
 
                      #set_tests_properties(apTvClTrainMethod${classifier}ImagesClassifierQB1_InXML1 PROPERTIES DEPENDS apTvClTrainMethod${classifier}ImagesClassifierQB1_OutXML1)
 
-  otb_test_application(
+  list(FIND classifier_with_confmap ${classifier} _classifier_has_confmap)
+  if(${_classifier_has_confmap} EQUAL -1)
+    otb_test_application(
                        NAME     apTvClMethod${classifier}ImageClassifierQB1
                        APP      ImageClassifier
                        OPTIONS  -in ${INPUTDATA}/Classification/QB_1_ortho${raster_input_format}
-                                -model ${ascii_ref_path}/${OUTMODELFILE}
-                                -imstat ${ascii_ref_path}/clImageStatisticsQB1${stat_input_format}
+                                -model ${INPUTDATA}/Classification/${OUTMODELFILE}
+                                -imstat ${INPUTDATA}/Classification/clImageStatisticsQB1${stat_input_format}
                                 -out ${TEMP}/${OUTRASTER} ${raster_output_option}
 
                        VALID    ${raster_comparison}
                                 ${raster_ref_path}/${OUTRASTER}
                                 ${TEMP}/${OUTRASTER}
                        )
+  else()
+    otb_test_application(
+                       NAME     apTvClMethod${classifier}ImageClassifierQB1
+                       APP      ImageClassifier
+                       OPTIONS  -in ${INPUTDATA}/Classification/QB_1_ortho${raster_input_format}
+                                -model ${INPUTDATA}/Classification/${OUTMODELFILE}
+                                -imstat ${INPUTDATA}/Classification/clImageStatisticsQB1${stat_input_format}
+                                -out ${TEMP}/${OUTRASTER} ${raster_output_option}
+                                -confmap ${TEMP}/${OUTCONFMAP}
+
+                       VALID    ${raster_comparison_two}
+                                ${raster_ref_path}/${OUTRASTER}
+                                ${TEMP}/${OUTRASTER}
+                                ${raster_ref_path}/${OUTCONFMAP}
+                                ${TEMP}/${OUTCONFMAP}
+                       )
+  endif()
 
 endforeach()
 
 if(OTB_USE_LIBSVM)
-otb_test_application(NAME apTvClImageSVMClassifierQB2
+  otb_test_application(NAME apTvClImageSVMClassifierQB2
                       APP  ImageClassifier
                       OPTIONS -in      ${INPUTDATA}/Classification/QB_2_ortho.tif
-                              -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB1.xml
-                              -model   ${TEMP}/clsvmModelQB1.svm
+                              -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB1.xml
+                              -model   ${INPUTDATA}/Classification/clsvmModelQB1.svm
                               -out     ${TEMP}/clLabeledImageQB2.tif
                       VALID   --compare-image ${NOTOL}
                               ${OTBAPP_BASELINE}/clLabeledImageQB2.tif
                               ${TEMP}/clLabeledImageQB2.tif)
 
-set_tests_properties(apTvClImageSVMClassifierQB2 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB1)
-
-otb_test_application(NAME apTvClImageSVMClassifierQB3
+  otb_test_application(NAME apTvClImageSVMClassifierQB3
                       APP  ImageClassifier
                       OPTIONS -in      ${INPUTDATA}/Classification/QB_3_ortho.tif
-                              -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB1.xml
-                              -model   ${TEMP}/clsvmModelQB1.svm
+                              -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB1.xml
+                              -model   ${INPUTDATA}/Classification/clsvmModelQB1.svm
                               -out     ${TEMP}/clLabeledImageQB3.tif
                       VALID   --compare-image ${NOTOL}
                               ${OTBAPP_BASELINE}/clLabeledImageQB3.tif
                               ${TEMP}/clLabeledImageQB3.tif)
 
-set_tests_properties(apTvClImageSVMClassifierQB3 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB1)
-
-otb_test_application(NAME apTvClImageSVMClassifierQB1
+  otb_test_application(NAME apTvClImageSVMClassifierQB1
                       APP  ImageClassifier
                       OPTIONS -in      ${INPUTDATA}/Classification/QB_1_ortho.tif
-                              -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB1.xml
-                              -model   ${TEMP}/clsvmModelQB1.svm
+                              -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB1.xml
+                              -model   ${INPUTDATA}/Classification/clsvmModelQB1.svm
                               -out     ${TEMP}/clLabeledImageQB1.tif
                       VALID   --compare-image ${NOTOL}
                               ${OTBAPP_BASELINE}/clLabeledImageQB1.tif
                               ${TEMP}/clLabeledImageQB1.tif)
 
-set_tests_properties(apTvClImageSVMClassifierQB1 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB1)
-
   otb_test_application(NAME apTvClImageSVMClassifierQB456_6
                        APP  ImageClassifier
                        OPTIONS -in      ${INPUTDATA}/Classification/QB_6_extract.tif
                                -mask    ${INPUTDATA}/Classification/QB_6_mask.tif
-                               -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB456.xml
-                               -model   ${TEMP}/clsvmModelQB456.svm
+                               -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB456.xml
+                               -model   ${INPUTDATA}/Classification/clsvmModelQB456.svm
                                -out     ${TEMP}/clLabeledImageQB456_6.tif
                        VALID   --compare-image ${NOTOL}
                                ${OTBAPP_BASELINE}/clLabeledImageQB456_6.tif
                                ${TEMP}/clLabeledImageQB456_6.tif)
 
- set_tests_properties(apTvClImageSVMClassifierQB456_6 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB456)
-
   otb_test_application(NAME apTvClImageSVMClassifierQB456_4
                        APP  ImageClassifier
                        OPTIONS -in      ${INPUTDATA}/Classification/QB_4_extract.tif
-                               -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB456.xml
-                               -model   ${TEMP}/clsvmModelQB456.svm
+                               -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB456.xml
+                               -model   ${INPUTDATA}/Classification/clsvmModelQB456.svm
                                -out     ${TEMP}/clLabeledImageQB456_4.tif
                        VALID   --compare-image ${NOTOL}
                                ${OTBAPP_BASELINE}/clLabeledImageQB456_4.tif
                                ${TEMP}/clLabeledImageQB456_4.tif)
 
-set_tests_properties(apTvClImageSVMClassifierQB456_4 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB456)
-
   otb_test_application(NAME apTvClImageSVMClassifierQB456_5
                        APP  ImageClassifier
                        OPTIONS -in      ${INPUTDATA}/Classification/QB_5_extract.tif
-                               -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB456.xml
-                               -model   ${TEMP}/clsvmModelQB456.svm
+                               -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB456.xml
+                               -model   ${INPUTDATA}/Classification/clsvmModelQB456.svm
                                -out     ${TEMP}/clLabeledImageQB456_5.tif
                        VALID   --compare-image ${NOTOL}
                                ${OTBAPP_BASELINE}/clLabeledImageQB456_5.tif
                                ${TEMP}/clLabeledImageQB456_5.tif)
 
-set_tests_properties(apTvClImageSVMClassifierQB456_5 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB456)
-
   otb_test_application(NAME apTvClImageSVMClassifierQB123_6
                        APP  ImageClassifier
                        OPTIONS -in      ${INPUTDATA}/Classification/QB_6_extract.tif
-                               -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB123.xml
-                               -model   ${TEMP}/clsvmModelQB123.svm
+                               -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB123.xml
+                               -model   ${INPUTDATA}/Classification/clsvmModelQB123.svm
                                -out     ${TEMP}/clLabeledImageQB123_6.tif
                        VALID   --compare-image ${NOTOL}
                                ${OTBAPP_BASELINE}/clLabeledImageQB123_6.tif
                                ${TEMP}/clLabeledImageQB123_6.tif)
 
-  set_tests_properties(apTvClImageSVMClassifierQB123_6 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB123)
-
   otb_test_application(NAME apTvClImageSVMClassifierQB456_1
                        APP  ImageClassifier
                        OPTIONS -in      ${INPUTDATA}/Classification/QB_1_ortho.tif
-                               -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB456.xml
-                               -model   ${TEMP}/clsvmModelQB456.svm
+                               -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB456.xml
+                               -model   ${INPUTDATA}/Classification/clsvmModelQB456.svm
                                -out     ${TEMP}/clLabeledImageQB456_1.tif
                        VALID   --compare-image ${NOTOL}
                                ${OTBAPP_BASELINE}/clLabeledImageQB456_1.tif
                                ${TEMP}/clLabeledImageQB456_1.tif)
 
-set_tests_properties(apTvClImageSVMClassifierQB456_1 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB456)
-
   otb_test_application(NAME apTvClImageSVMClassifierQB123_3
                        APP  ImageClassifier
                        OPTIONS -in      ${INPUTDATA}/Classification/QB_3_ortho.tif
-                               -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB123.xml
-                               -model   ${TEMP}/clsvmModelQB123.svm
+                               -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB123.xml
+                               -model   ${INPUTDATA}/Classification/clsvmModelQB123.svm
                                -out     ${TEMP}/clLabeledImageQB123_3.tif
                        VALID   --compare-image ${NOTOL}
                                ${OTBAPP_BASELINE}/clLabeledImageQB123_3.tif
                                ${TEMP}/clLabeledImageQB123_3.tif)
 
-  set_tests_properties(apTvClImageSVMClassifierQB123_3 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB123)
-
   otb_test_application(NAME apTvClImageSVMClassifierQB123_2
                        APP  ImageClassifier
                        OPTIONS -in      ${INPUTDATA}/Classification/QB_2_ortho.tif
-                               -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB123.xml
-                               -model   ${TEMP}/clsvmModelQB123.svm
+                               -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB123.xml
+                               -model   ${INPUTDATA}/Classification/clsvmModelQB123.svm
                                -out     ${TEMP}/clLabeledImageQB123_2.tif
                        VALID   --compare-image ${NOTOL}
                                ${OTBAPP_BASELINE}/clLabeledImageQB123_2.tif
                                ${TEMP}/clLabeledImageQB123_2.tif)
 
-  set_tests_properties(apTvClImageSVMClassifierQB123_2 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB123)
   otb_test_application(NAME apTvClImageSVMClassifierQB123_1
                        APP  ImageClassifier
                        OPTIONS -in      ${INPUTDATA}/Classification/QB_1_ortho.tif
-                               -imstat  ${TEMP}/apTvClEstimateImageStatisticsQB123.xml
-                               -model   ${TEMP}/clsvmModelQB123.svm
+                               -imstat  ${INPUTDATA}/Classification/clImageStatisticsQB123.xml
+                               -model   ${INPUTDATA}/Classification/clsvmModelQB123.svm
                                -out     ${TEMP}/clLabeledImageQB123_1.tif
                        VALID   --compare-image ${NOTOL}
                                ${OTBAPP_BASELINE}/clLabeledImageQB123_1.tif
                                ${TEMP}/clLabeledImageQB123_1.tif)
 
-set_tests_properties(apTvClImageSVMClassifierQB123_1 PROPERTIES DEPENDS apTvClTrainSVMImagesClassifierQB123)
 endif()
 
 #----------- TrainOGRLayersClassifier TESTS ----------------
+otb_test_application(NAME apTvClTrainOGRLayersClassifier
+                     APP  TrainOGRLayersClassifier
+                     OPTIONS -inshp ${INPUTDATA}/Classification/apTvClLabeledVector.shp
+                             -feat meanB0 meanB1 meanB2 meanB3 varB0 varB1 varB2 varB3
+                             -instats ${TEMP}/apTvClComputeOGRLayersFeaturesStatistics.xml
+                             -outsvm ${TEMP}/apTvClModel.svm
+                     VALID   --compare-ascii ${NOTOL}
+                             ${OTBAPP_BASELINE_FILES}/apTvClModel.svm
+                             ${TEMP}/apTvClModel.svm)
+
+set_tests_properties(apTvClTrainOGRLayersClassifier PROPERTIES DEPENDS apTvClComputeOGRLayersFeaturesStatistics) 
 
 #----------- ComputeConfusionMatrix TESTS ----------------
 otb_test_application(NAME apTvComputeConfusionMatrixV
@@ -386,9 +408,9 @@ otb_test_application(NAME apTvFusionOfClassificationsDSPrecision6Inputs
 
 otb_test_application(NAME apTvFusionOfClassificationsMV3Inputs
                      APP  FusionOfClassifications
-                     OPTIONS -il ${OTBAPP_BASELINE}/clLabeledImageQB123_1.tif
-                                 ${OTBAPP_BASELINE}/clLabeledImageQB456_1.tif
-                                 ${OTBAPP_BASELINE}/clLabeledImageQB1.tif
+                     OPTIONS -il ${INPUTDATA}/Classification/clLabeledImageQB123_1.tif
+                                 ${INPUTDATA}/Classification/clLabeledImageQB456_1.tif
+                                 ${INPUTDATA}/Classification/clLabeledImageQB1.tif
                              -method majorityvoting
                              -undecidedlabel 100
                              -out ${TEMP}/apTvFusionOfClassificationsMV3InputsOutput.tif uint16
@@ -467,8 +489,8 @@ otb_test_application(NAME apTvFusionOfClassificationsDSAccuracy6Inputs
 
 otb_test_application(NAME apTvFusionOfClassificationsMV2Inputs
                      APP  FusionOfClassifications
-                     OPTIONS -il ${OTBAPP_BASELINE}/clLabeledImageQB123_1.tif
-                                 ${OTBAPP_BASELINE}/clLabeledImageQB456_1.tif
+                     OPTIONS -il ${INPUTDATA}/Classification/clLabeledImageQB123_1.tif
+                                 ${INPUTDATA}/Classification/clLabeledImageQB456_1.tif
                              -method majorityvoting
                              -undecidedlabel 100
                              -out ${TEMP}/apTvFusionOfClassificationsMV2InputsOutput.tif uint16
@@ -481,95 +503,95 @@ otb_test_application(NAME apTvFusionOfClassificationsMV2Inputs
 otb_test_application(NAME apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_wr
                      APP  ComputePolylineFeatureFromImage
                      OPTIONS -in LARGEINPUT{DEMPSTER-SHAFER/NDVI.TIF}
-                			 -vd LARGEINPUT{DEMPSTER-SHAFER/wrongroads.shp}
-                			 -expr  "(b1 > 0.4)"
-  						     -field "NONDVI"
-                			 -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_wr.shp)
+                             -vd LARGEINPUT{DEMPSTER-SHAFER/wrongroads.shp}
+                             -expr  "(b1 > 0.4)"
+                             -field "NONDVI"
+                             -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_wr.shp)
 
 # FIXME cascade dependencies to largeinput repository
 if(OTB_DATA_USE_LARGEINPUT)
 otb_test_application(NAME apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_RoadExtractionApplication
                      APP  ComputePolylineFeatureFromImage
                      OPTIONS -in LARGEINPUT{DEMPSTER-SHAFER/SpectralAngleRoad.TIF}
-                			 -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_RoadExtractionApplication.shp
-                			 -expr  "(b1 > 0.25)"
-  						     -field "ROADSA"
-                			 -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_RoadExtractionApplication.shp)
+                             -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_RoadExtractionApplication.shp
+                             -expr  "(b1 > 0.25)"
+                             -field "ROADSA"
+                             -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_RoadExtractionApplication.shp)
 
 set_tests_properties(apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_RoadExtractionApplication PROPERTIES DEPENDS apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_RoadExtractionApplication)
 
 otb_test_application(NAME apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_wr
                      APP  ComputePolylineFeatureFromImage
                      OPTIONS -in LARGEINPUT{DEMPSTER-SHAFER/SpectralAngleRoad.TIF}
-                			 -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_wr.shp
-                			 -expr  "(b1 > 0.25)"
-  						     -field "ROADSA"
-                			 -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_wr.shp)
+                             -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_wr.shp
+                             -expr  "(b1 > 0.25)"
+                             -field "ROADSA"
+                             -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_wr.shp)
 
 set_tests_properties(apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_wr PROPERTIES DEPENDS apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_wr)
 
 otb_test_application(NAME apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_wr
                      APP  ComputePolylineFeatureFromImage
                      OPTIONS -in LARGEINPUT{DEMPSTER-SHAFER/BUILDINGS.TIF}
-                			 -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_wr.shp
-                			 -expr  "(b1 == 0)"
-  						     -field "NOBUIL"
-                			 -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp
-                     VALID	 --compare-ogr 0.0
-                     		 ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp
-                   			 ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp)
+                             -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_wr.shp
+                             -expr  "(b1 == 0)"
+                             -field "NOBUIL"
+                             -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp
+                     VALID   --compare-ogr 0.0
+                             ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp
+                             ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp)
 
 set_tests_properties(apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_wr PROPERTIES DEPENDS apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_wr)
 
 otb_test_application(NAME apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_RoadExtractionApplication
                      APP  ComputePolylineFeatureFromImage
                      OPTIONS -in LARGEINPUT{DEMPSTER-SHAFER/NDVI.TIF}
-                			 -vd LARGEINPUT{DEMPSTER-SHAFER/road_extraction.shp}
-                			 -expr  "(b1 > 0.4)"
-  						     -field "NONDVI"
-                			 -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_RoadExtractionApplication.shp)
+                             -vd LARGEINPUT{DEMPSTER-SHAFER/road_extraction.shp}
+                             -expr  "(b1 > 0.4)"
+                             -field "NONDVI"
+                             -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_RoadExtractionApplication.shp)
 
 otb_test_application(NAME apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_gt
                      APP  ComputePolylineFeatureFromImage
                      OPTIONS -in LARGEINPUT{DEMPSTER-SHAFER/NDVI.TIF}
-                			 -vd LARGEINPUT{DEMPSTER-SHAFER/roads_ground_truth.shp}
-                			 -expr  "(b1 > 0.4)"
-  						     -field NONDVI
-                			 -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage.shp)
+                             -vd LARGEINPUT{DEMPSTER-SHAFER/roads_ground_truth.shp}
+                             -expr  "(b1 > 0.4)"
+                             -field NONDVI
+                             -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage.shp)
 
 otb_test_application(NAME apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_gt
                      APP  ComputePolylineFeatureFromImage
                      OPTIONS -in LARGEINPUT{DEMPSTER-SHAFER/SpectralAngleRoad.TIF}
-                			 -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage.shp
-                			 -expr  "(b1 > 0.25)"
-  						     -field "ROADSA"
-                			 -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_gt.shp)
+                             -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage.shp
+                             -expr  "(b1 > 0.25)"
+                             -field "ROADSA"
+                             -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_gt.shp)
 
 set_tests_properties(apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_gt PROPERTIES DEPENDS apTvCdbComputePolylineFeatureFromImage_LI_NONDVI_gt)
 
 otb_test_application(NAME apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_gt
                      APP  ComputePolylineFeatureFromImage
                      OPTIONS -in LARGEINPUT{DEMPSTER-SHAFER/BUILDINGS.TIF}
-                			 -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_gt.shp
-                			 -expr  "(b1 == 0)"
-  						     -field "NOBUIL"
-                			 -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_gt.shp
-                     VALID	 --compare-ogr 0.0
-                     		 ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_gt.shp
-                   			 ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_gt.shp)
+                             -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_gt.shp
+                             -expr  "(b1 == 0)"
+                             -field "NOBUIL"
+                             -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_gt.shp
+                     VALID   --compare-ogr 0.0
+                             ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_gt.shp
+                             ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_gt.shp)
 
 set_tests_properties(apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_gt PROPERTIES DEPENDS apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_gt) 
 
 otb_test_application(NAME apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_RoadExtractionApplication
                      APP  ComputePolylineFeatureFromImage
                      OPTIONS -in LARGEINPUT{DEMPSTER-SHAFER/BUILDINGS.TIF}
-                			 -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_RoadExtractionApplication.shp
-                			 -expr  "(b1 == 0)"
-  						     -field "NOBUIL"
-                			 -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_RoadExtractionApplication.shp
-                     VALID	 --compare-ogr 0.0
-                     		 ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_RoadExtractionApplication.shp
-                   			 ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_RoadExtractionApplication.shp)
+                             -vd ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_RoadExtractionApplication.shp
+                             -expr  "(b1 == 0)"
+                             -field "NOBUIL"
+                             -out ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_RoadExtractionApplication.shp
+                     VALID   --compare-ogr 0.0
+                             ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_RoadExtractionApplication.shp
+                             ${TEMP}/apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_RoadExtractionApplication.shp)
 
 set_tests_properties(apTvCdbComputePolylineFeatureFromImage_LI_NOBUIL_RoadExtractionApplication PROPERTIES DEPENDS apTvCdbComputePolylineFeatureFromImage_LI_ROADSA_RoadExtractionApplication) 
 endif()
@@ -598,7 +620,7 @@ otb_test_application(NAME apTvClTrainSVMImagesClassifierQB1_allOpt_InXML
                               -inxml ${INPUTDATA}/clsvmModelQB1_OutXML.xml
                               -io.il ${INPUTDATA}/Classification/QB_1_ortho.tif
                               -io.vd ${INPUTDATA}/Classification/VectorData_QB1.shp
-                              -io.imstat ${OTBAPP_BASELINE_FILES}/clImageStatisticsQB1.xml
+                              -io.imstat ${INPUTDATA}/Classification/clImageStatisticsQB1.xml
                               -sample.mv 100
                               -sample.mt 100
                               -sample.vtr 0.5
@@ -609,13 +631,11 @@ otb_test_application(NAME apTvClTrainSVMImagesClassifierQB1_allOpt_InXML
                               ${OTBAPP_BASELINE_FILES}/clsvmModelQB1.svm
                               ${TEMP}/clsvmModelQB1_allOpt_InXML.svm)
 
-set_tests_properties(apTvClTrainSVMImagesClassifierQB1_allOpt_InXML PROPERTIES DEPENDS apTvClComputeImagesStatisticsQB1) 
-
 otb_test_application(NAME apTvClTrainSVMImagesClassifierQB1_OutXML
                       APP  TrainImagesClassifier
                       OPTIONS -io.il ${INPUTDATA}/Classification/QB_1_ortho.tif
                               -io.vd ${INPUTDATA}/Classification/VectorData_QB1.shp
-                              -io.imstat ${OTBAPP_BASELINE_FILES}/clImageStatisticsQB1.xml
+                              -io.imstat ${INPUTDATA}/Classification/clImageStatisticsQB1.xml
                               -classifier libsvm
                               -classifier.libsvm.opt true
                               -io.out ${TEMP}/clsvmModelQB1_OutXML.svm
@@ -625,8 +645,6 @@ otb_test_application(NAME apTvClTrainSVMImagesClassifierQB1_OutXML
                               ${OTBAPP_BASELINE_FILES}/clsvmModelQB1.svm
                               ${TEMP}/clsvmModelQB1_OutXML.svm)
 
-set_tests_properties(apTvClTrainSVMImagesClassifierQB1_OutXML PROPERTIES DEPENDS apTvClComputeImagesStatisticsQB1) 
-
   otb_test_application(NAME apTvClTrainSVMImagesClassifierQB123
                        APP  TrainImagesClassifier
                        OPTIONS -io.il ${INPUTDATA}/Classification/QB_1_ortho.tif
@@ -635,7 +653,7 @@ set_tests_properties(apTvClTrainSVMImagesClassifierQB1_OutXML PROPERTIES DEPENDS
                                -io.vd ${INPUTDATA}/Classification/VectorData_QB1.shp
                                       ${INPUTDATA}/Classification/VectorData_QB2.shp
                                       ${INPUTDATA}/Classification/VectorData_QB3.shp
-                               -io.imstat ${TEMP}/apTvClEstimateImageStatisticsQB123.xml
+                               -io.imstat ${INPUTDATA}/Classification/clImageStatisticsQB123.xml
                                -classifier libsvm
                                -classifier.libsvm.opt true
                                -io.out ${TEMP}/clsvmModelQB123.svm
@@ -644,13 +662,11 @@ set_tests_properties(apTvClTrainSVMImagesClassifierQB1_OutXML PROPERTIES DEPENDS
                                ${OTBAPP_BASELINE_FILES}/clsvmModelQB123.svm
                                ${TEMP}/clsvmModelQB123.svm)
 
-set_tests_properties(apTvClTrainSVMImagesClassifierQB123 PROPERTIES DEPENDS apTvClComputeImagesStatisticsQB123) 
-
 otb_test_application(NAME apTvClTrainSVMImagesClassifierQB1
                       APP  TrainImagesClassifier
                       OPTIONS -io.il ${INPUTDATA}/Classification/QB_1_ortho.tif
                               -io.vd ${INPUTDATA}/Classification/VectorData_QB1.shp
-                              -io.imstat ${TEMP}/apTvClEstimateImageStatisticsQB1.xml
+                              -io.imstat ${INPUTDATA}/Classification/clImageStatisticsQB1.xml
                               -classifier libsvm
                               -classifier.libsvm.opt true
                               -io.out ${TEMP}/clsvmModelQB1.svm
@@ -658,8 +674,6 @@ otb_test_application(NAME apTvClTrainSVMImagesClassifierQB1
                       VALID   --compare-ascii ${NOTOL}
                               ${OTBAPP_BASELINE_FILES}/clsvmModelQB1.svm
                               ${TEMP}/clsvmModelQB1.svm)
-
-set_tests_properties(apTvClTrainSVMImagesClassifierQB1 PROPERTIES DEPENDS apTvClComputeImagesStatisticsQB1) 
 
   otb_test_application(NAME apTvClTrainSVMImagesClassifierQB456
                        APP  TrainImagesClassifier
@@ -669,7 +683,7 @@ set_tests_properties(apTvClTrainSVMImagesClassifierQB1 PROPERTIES DEPENDS apTvCl
                                -io.vd ${INPUTDATA}/Classification/VectorData_QB4.shp
                                       ${INPUTDATA}/Classification/VectorData_QB5.shp
                                       ${INPUTDATA}/Classification/VectorData_QB6.shp
-                               -io.imstat ${TEMP}/apTvClEstimateImageStatisticsQB456.xml
+                               -io.imstat ${INPUTDATA}/Classification/clImageStatisticsQB456.xml
                                -classifier libsvm
                                -classifier.libsvm.opt true
                                -io.out ${TEMP}/clsvmModelQB456.svm
@@ -678,13 +692,11 @@ set_tests_properties(apTvClTrainSVMImagesClassifierQB1 PROPERTIES DEPENDS apTvCl
                                ${OTBAPP_BASELINE_FILES}/clsvmModelQB456.svm
                                ${TEMP}/clsvmModelQB456.svm)
 
-set_tests_properties(apTvClTrainSVMImagesClassifierQB456 PROPERTIES DEPENDS apTvClComputeImagesStatisticsQB456)
-
 otb_test_application(NAME apTvClTrainSVMImagesClassifierQB1_allOpt
                       APP  TrainImagesClassifier
                       OPTIONS -io.il ${INPUTDATA}/Classification/QB_1_ortho.tif
                               -io.vd ${INPUTDATA}/Classification/VectorData_QB1.shp
-                              -io.imstat ${OTBAPP_BASELINE_FILES}/clImageStatisticsQB1.xml
+                              -io.imstat ${INPUTDATA}/Classification/clImageStatisticsQB1.xml
                               -classifier libsvm
                               -sample.mv 100
                               -sample.mt 100
@@ -695,32 +707,30 @@ otb_test_application(NAME apTvClTrainSVMImagesClassifierQB1_allOpt
                       VALID   --compare-ascii ${NOTOL}
                               ${OTBAPP_BASELINE_FILES}/clsvmModelQB1.svm
                               ${TEMP}/clsvmModelQB1_allOpt.svm)
-
-set_tests_properties(apTvClTrainSVMImagesClassifierQB1_allOpt PROPERTIES DEPENDS apTvClComputeImagesStatisticsQB1)
 endif()
 
 #----------- DSFuzzyModelEstimation TESTS ----------------
 otb_test_application(NAME apTvCdbDSFuzzyModelEstimation_LI_autoInit
                      APP  DSFuzzyModelEstimation
                      OPTIONS -psin ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_gt.shp
-                		     -nsin ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp
-                		     -belsup "ROADSA"
-                		     -plasup "NONDVI" "ROADSA" "NOBUIL"
-                		     -desclist "NONDVI" "ROADSA" "NOBUIL"
-                		     -maxnbit 4
-                		     -optobs true
-                		     -out ${TEMP}/apTvCdbDSFuzzyModelEstimatorOutput_LI_autoInit.xml)
+                             -nsin ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp
+                             -belsup "ROADSA"
+                             -plasup "NONDVI" "ROADSA" "NOBUIL"
+                             -desclist "NONDVI" "ROADSA" "NOBUIL"
+                             -maxnbit 4
+                             -optobs true
+                             -out ${TEMP}/apTvCdbDSFuzzyModelEstimatorOutput_LI_autoInit.xml)
 
 otb_test_application(NAME apTvCdbDSFuzzyModelEstimation_LI
                      APP  DSFuzzyModelEstimation
                      OPTIONS -psin ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_gt.shp
-                		     -nsin ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp
-                		     -belsup "ROADSA"
-                		     -plasup "NONDVI" "ROADSA" "NOBUIL"
-                		     -initmod ${OTB_DATA_ROOT}/Input/Dempster-Shafer/DSFuzzyModel_Init.xml
-                		     -maxnbit 4
-                		     -optobs true
-                		     -out ${TEMP}/apTvCdbDSFuzzyModelEstimatorOutput_LI.xml)
+                             -nsin ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp
+                             -belsup "ROADSA"
+                             -plasup "NONDVI" "ROADSA" "NOBUIL"
+                             -initmod ${OTB_DATA_ROOT}/Input/Dempster-Shafer/DSFuzzyModel_Init.xml
+                             -maxnbit 4
+                             -optobs true
+                             -out ${TEMP}/apTvCdbDSFuzzyModelEstimatorOutput_LI.xml)
 
 
 #----------- ClassificationMapRegularization TESTS ----------------
@@ -773,30 +783,63 @@ otb_test_application(NAME apTvClComputeImagesStatisticsQB123
 otb_test_application(NAME cdbTvVectorDataDSValidationGroundTruth_LI
                      APP  VectorDataDSValidation
                      OPTIONS -in ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_gt.shp
-                		     -belsup "ROADSA"
-                		     -plasup "NONDVI" "ROADSA" "NOBUIL"
-                		     -descmod ${OTB_DATA_ROOT}/Input/Dempster-Shafer/DSFuzzyModel.xml
-                		     -out ${TEMP}/cdbTvVectorDataDSValidationOutpout_LI_gt.shp
-					VALID	 --compare-ogr 0.0
-							 ${OTBAPP_BASELINE_FILES}/cdbTvVectorDataDSValidationOutpout_LI_gt.shp
-							 ${TEMP}/cdbTvVectorDataDSValidationOutpout_LI_gt.shp)
+                             -belsup "ROADSA"
+                             -plasup "NONDVI" "ROADSA" "NOBUIL"
+                             -descmod ${OTB_DATA_ROOT}/Input/Dempster-Shafer/DSFuzzyModel.xml
+                             -out ${TEMP}/cdbTvVectorDataDSValidationOutpout_LI_gt.shp
+                    VALID    --compare-ogr 0.0
+                             ${OTBAPP_BASELINE_FILES}/cdbTvVectorDataDSValidationOutpout_LI_gt.shp
+                             ${TEMP}/cdbTvVectorDataDSValidationOutpout_LI_gt.shp)
 
 otb_test_application(NAME apTvCdbVectorDataDSValidationRoadExtractionApplication_LI
                      APP  VectorDataDSValidation
                      OPTIONS -in ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_RoadExtractionApplication.shp
-                		     -belsup "ROADSA"
-                		     -plasup "NONDVI" "ROADSA" "NOBUIL"
-                		     -descmod ${OTB_DATA_ROOT}/Input/Dempster-Shafer/DSFuzzyModel.xml
-                		     -out ${TEMP}/apTvCdbVectorDataDSValidationOutpout_LI_RoadExtractionApplication.shp)
+                             -belsup "ROADSA"
+                             -plasup "NONDVI" "ROADSA" "NOBUIL"
+                             -descmod ${OTB_DATA_ROOT}/Input/Dempster-Shafer/DSFuzzyModel.xml
+                             -out ${TEMP}/apTvCdbVectorDataDSValidationOutpout_LI_RoadExtractionApplication.shp)
 
 otb_test_application(NAME cdbTvVectorDataDSValidationWrongRoads_LI
                      APP  VectorDataDSValidation
                      OPTIONS -in ${OTBAPP_BASELINE_FILES}/cdbTvComputePolylineFeatureFromImage_LI_NOBUIL_wr.shp
-                		     -belsup "ROADSA"
-                		     -plasup "NONDVI" "ROADSA" "NOBUIL"
-                		     -descmod ${OTB_DATA_ROOT}/Input/Dempster-Shafer/DSFuzzyModel.xml
-                		     -out ${TEMP}/cdbTvVectorDataDSValidationOutpout_LI_wr.shp
-					VALID	 --compare-ogr 0.0
-							 ${OTBAPP_BASELINE_FILES}/cdbTvVectorDataDSValidationOutpout_LI_wr.shp
-							 ${TEMP}/cdbTvVectorDataDSValidationOutpout_LI_wr.shp)
+                             -belsup "ROADSA"
+                             -plasup "NONDVI" "ROADSA" "NOBUIL"
+                             -descmod ${OTB_DATA_ROOT}/Input/Dempster-Shafer/DSFuzzyModel.xml
+                             -out ${TEMP}/cdbTvVectorDataDSValidationOutpout_LI_wr.shp
+                    VALID    --compare-ogr 0.0
+                             ${OTBAPP_BASELINE_FILES}/cdbTvVectorDataDSValidationOutpout_LI_wr.shp
+                             ${TEMP}/cdbTvVectorDataDSValidationOutpout_LI_wr.shp)
+
+if(OTB_USE_OPENCV)
+#----------- TrainRegression TESTS ----------------
+# y = 0.01*x^2 + 1.5*x - 300
+otb_test_application(NAME apTvClTrainRegressionTest_monovar
+                     APP  TrainRegression
+                     OPTIONS -io.il ${INPUTDATA}/QB_Toulouse_Ortho_regression.tif
+                             -io.imstat ${INPUTDATA}/QB_Toulouse_Ortho_regression.xml
+                             -io.out ${TEMP}/apTvClTrainRegressionTest_monovar.rf
+                             -sample.mt 20000
+                             -sample.mv 20000
+                             -sample.vtr 0.5
+                             -rand 121212
+                             -classifier rf
+                             -classifier.rf.ra 0.0001
+                             -classifier.rf.max 6
+                             -classifier.rf.acc 0.0005
+                    VALID    --compare-ascii ${NOTOL}
+                             ${OTBAPP_BASELINE_FILES}/apTvClTrainRegressionTest_monovar.rf
+                             ${TEMP}/apTvClTrainRegressionTest_monovar.rf)
+
+#----------- PredictRegression TESTS ----------------
+otb_test_application(NAME apTvClPredictRegressionTest_monovar
+                     APP PredictRegression
+                     OPTIONS -in ${INPUTDATA}/QB_Toulouse_Ortho_PAN.tif
+                             -model ${OTBAPP_BASELINE_FILES}/apTvClTrainRegressionTest_monovar.rf
+                             -imstat ${INPUTDATA}/QB_Toulouse_Ortho_regression.xml
+                             -out ${TEMP}/apTvClPredictRegressionTest_monovar.tif
+                    VALID    --compare-image 1
+                             ${OTBAPP_BASELINE}/apTvClPredictRegressionTest_monovar.tif
+                             ${TEMP}/apTvClPredictRegressionTest_monovar.tif)
+
+endif()
 

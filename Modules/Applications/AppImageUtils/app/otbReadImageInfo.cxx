@@ -65,7 +65,7 @@ private:
     SetParameterDescription("in", "Input image to analyse");
 
     AddParameter(ParameterType_Empty, "keywordlist", "Display the OSSIM keywordlist");
-    SetParameterDescription("keywordlist", "Output the OSSIM keyword list. It contains metadata information (sensor model, geometry ). Informations are stored in keyword list (pairs of key/value)");
+    SetParameterDescription("keywordlist", "Output the OSSIM keyword list. It contains metadata information (sensor model, geometry ). Information is stored in keyword list (pairs of key/value)");
     DisableParameter("keywordlist");
     MandatoryOff("keywordlist");
 
@@ -206,8 +206,8 @@ private:
     SetParameterRole("keyword", Role_Output);
     EnableParameter("keyword");
 
-    AddParameter(ParameterType_Group, "gcp", "Ground Control Points informations");
-    SetParameterDescription("gcp","This group of parameters allows to access to the GCPs informations.");
+    AddParameter(ParameterType_Group, "gcp", "Ground Control Points information");
+    SetParameterDescription("gcp","This group of parameters allows to access to the GCPs information.");
     SetParameterRole("gcp", Role_Output);
 
     AddParameter(ParameterType_Int, "gcp.count", "GCPs Number");
@@ -255,7 +255,7 @@ private:
     std::ostringstream ossOutput;
     FloatVectorImageType::Pointer inImage = GetParameterImage("in");
 
-    ossOutput << std::endl << "Image general informations:" << std::endl;
+    ossOutput << std::endl << "Image general information:" << std::endl;
 
     // Read informations
     typedef otb::ImageMetadataInterfaceBase ImageMetadataInterfaceType;
@@ -264,12 +264,39 @@ private:
     //Get number of bands
     SetParameterInt("numberbands", inImage->GetNumberOfComponentsPerPixel());
     ossOutput << "\tNumber of bands : " << GetParameterInt("numberbands") << std::endl;
+    std::vector<bool> noDataValueAvailable;
+    bool ret = itk::ExposeMetaData<std::vector<bool> >(inImage->GetMetaDataDictionary(),MetaDataKey::NoDataValueAvailable,noDataValueAvailable);
+
+    std::vector<double> noDataValues;
+    itk::ExposeMetaData<std::vector<double> >(inImage->GetMetaDataDictionary(),MetaDataKey::NoDataValue,noDataValues);
+
+
+      ossOutput<<"\tNo data flags :";
+
+      if(ret)
+        {
+    
+        for(unsigned int b = 0;b< inImage->GetNumberOfComponentsPerPixel();++b)
+          {
+          ossOutput<<"\n\t\tBand "<<b+1<<": ";
+
+          if(noDataValueAvailable[b])
+            ossOutput<<noDataValues[b];
+          else
+            ossOutput<<"No";  
+          }
+        }
+      else
+        {
+        ossOutput<<" Not found";
+        }
+      ossOutput<<std::endl;
 
     //Get image size
     SetParameterInt("indexx", inImage->GetLargestPossibleRegion().GetIndex()[0]);
     SetParameterInt("indexy", inImage->GetLargestPossibleRegion().GetIndex()[1]);
 
-    ossOutput << "\tStart index :  [" << GetParameterInt("indexx") << "," << GetParameterInt("indexy") << "]" << std::endl;
+        ossOutput << "\tStart index :  [" << GetParameterInt("indexx") << "," << GetParameterInt("indexy") << "]" << std::endl;
 
     //Get image size
     SetParameterInt("sizex", inImage->GetLargestPossibleRegion().GetSize()[0]);
@@ -309,7 +336,7 @@ private:
 
     ossOutput << "\tEstimated ground spacing (in meters): [" << GetParameterFloat("estimatedgroundspacingx") << "," << GetParameterFloat("estimatedgroundspacingy") << "]" << std::endl;
 
-    ossOutput << std::endl << "Image acquisition informations:" << std::endl;
+    ossOutput << std::endl << "Image acquisition information:" << std::endl;
 
     SetParameterString("sensor", metadataInterface->GetSensorID());
     ossOutput << "\tSensor : ";
@@ -433,7 +460,7 @@ private:
     for(int gcpIdx = 0; gcpIdx  < GetParameterInt("gcp.count"); ++ gcpIdx)
       {
       if (gcpIdx == 0)
-        ossOutput << "\tGCP individual informations:" << std::endl;
+        ossOutput << "\tGCP individual information:" << std::endl;
 
       gcp_ids.push_back(metadataInterface->GetGCPId(gcpIdx));
       gcp_infos.push_back(metadataInterface->GetGCPInfo(gcpIdx));

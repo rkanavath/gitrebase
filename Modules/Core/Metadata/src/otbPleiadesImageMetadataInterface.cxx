@@ -18,13 +18,12 @@
 
 #include "otbPleiadesImageMetadataInterface.h"
 
-#include <boost/algorithm/string.hpp>
 #include "otbMacro.h"
 #include "itkMetaDataObject.h"
 #include "otbImageKeywordlist.h"
-#include <boost/lexical_cast.hpp>
+#include "otbStringUtils.h"
 
-//uyseful constants
+//useful constants
 #include <otbMath.h>
 
 namespace otb
