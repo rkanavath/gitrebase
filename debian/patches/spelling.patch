@@ -1,6 +1,6 @@
 Description: Fix dh_shlibs reports missing symbols
-Author: Rashad Kanavath <rashad.kanavath@c-s.fr>
-Last-Update: 2015-12-17
+Author: Rashad Kanavath <rashad.kanavath@c-s.fr>, Bas Couwenberg <sebastic@xs4all.nl>
+Last-Update: 2015-12-22
 
 --- otb.orig/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
 +++ otb/Modules/Applications/AppChangeDetection/app/otbMultivariateAlterationDetector.cxx
