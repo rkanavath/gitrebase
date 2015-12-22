@@ -151,7 +151,7 @@ private:
 "- L(b) is the spectral radiance for band b \n"
 "- pi is the famous mathematical constant (3.14159...) \n"
 "- d is the earth-sun distance (in astronomical units) and depends on the acquisition's day and month \n"
-"- ESUN(b) is the mean TOA solar irradiance (or solar illumination) in W/m²/micrometers\n"
+"- ESUN(b) is the mean TOA solar irradiance (or solar illumination) in W/m2/micrometers\n"
 "- θ is the solar zenith angle in degrees. \n"
 "Note that the application asks for the solar elevation angle, and will perfom the conversion to the zenith angle itself (ze. angle = 90° - el. angle).\n"
 "Note also that ESUN(b) not only depends on the band b, but also on the spectral sensitivity of the sensor in this particular band. "
@@ -322,7 +322,7 @@ private:
     AddParameter(ParameterType_InputFilename, "atmo.rsr", "Relative Spectral Response File");
     std::ostringstream oss;
     oss << "Sensor relative spectral response file"<<std::endl;
-    oss << "By default the application gets these informations in the metadata";
+    oss << "By default the application gets this information in the metadata";
     SetParameterDescription("atmo.rsr", oss.str());
     MandatoryOff("atmo.rsr");
 

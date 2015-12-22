@@ -66,7 +66,7 @@ void dotpr::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_
       int nbrows = m1.GetRows();
       int nbcols = m1.GetCols();
 
-      mup::matrix_type res(1,a_iArgc-1,0);
+      mup::matrix_type res(1,a_iArgc-1,0.);
 
       for (int k=1; k<a_iArgc; ++k)
       {
@@ -360,7 +360,7 @@ void cat::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_iA
       }
 
       // The return value is passed by writing it to the reference ret
-      mup::matrix_type res(1,vect.size(),0);
+      mup::matrix_type res(1,vect.size(),0.);
       for (unsigned int j=0; j<vect.size(); j++)
             res.At(0,j) = vect[j];
       *ret = res;
@@ -410,7 +410,7 @@ void mean::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_i
       }
 
       // The return value is passed by writing it to the reference ret
-      mup::matrix_type res(1,vect.size(),0);
+      mup::matrix_type res(1,vect.size(),0.);
       for (unsigned int j=0; j<vect.size(); j++)
             res.At(0,j) = vect[j];
       *ret = res;
@@ -467,9 +467,9 @@ void var::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_iA
       }
 
       // The return value is passed by writing it to the reference ret
-      mup::matrix_type res(1,vect.size(),0);
+      mup::matrix_type res(1,vect.size(),0.);
       for (unsigned int j=0; j<vect.size(); j++)
-            res.At(0,j) = vect[j];
+        res.At(0,j) = static_cast<mup::float_type>(vect[j]);
       *ret = res;
     }
 
@@ -567,9 +567,9 @@ void median::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a
       }
 
       // The return value is passed by writing it to the reference ret
-      mup::matrix_type res(1,vect.size(),0);
+      mup::matrix_type res(1,vect.size(),0.);
       for (unsigned int j=0; j<vect.size(); j++)
-            res.At(0,j) = vect[j];
+        res.At(0,j) = static_cast<mup::float_type>(vect[j]);
       *ret = res;
     }
 
@@ -634,9 +634,9 @@ void maj::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_iA
       }
 
       // The return value is passed by writing it to the reference ret
-      mup::matrix_type res(1,vect.size(),0);
+      mup::matrix_type res(1,vect.size(),0.);
       for (unsigned int j=0; j<vect.size(); j++)
-            res.At(0,j) = vect[j];
+        res.At(0,j) = static_cast<mup::float_type>(vect[j]);
       *ret = res;
     }
 
@@ -734,6 +734,29 @@ void vmax::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_i
     }
 
 
+void vect2scal::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_iArgc)
+    {
+      if(a_iArgc != 1)
+        return;
+
+      assert(a_pArg[0]->GetType()=='m');
+
+      // Get the argument from the argument input vector
+      const mup::matrix_type a = a_pArg[0]->GetArray();
+
+      assert(a.GetRows() == 1);
+      assert(a.GetCols() == 1);
+
+      mup::float_type res;
+
+      res = a.At(0,0).GetFloat();
+          
+
+      // The return value is passed by writing it to the reference ret
+      *ret = res;
+    }
+
+
 void vcos::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_iArgc)
     {
       if(a_iArgc != 1)
@@ -753,6 +776,32 @@ void vcos::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_i
       for (int k=0; k<nbcols; ++k)
         for (int p=0; p<nbrows; ++p)
           res.At(p,k) = vcl_cos(a.At(p,k).GetFloat());
+          
+
+      // The return value is passed by writing it to the reference ret
+      *ret = res;
+    }
+    
+    
+void vacos::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_iArgc)
+    {
+      if(a_iArgc != 1)
+        return;
+
+      assert(a_pArg[0]->GetType()=='m');
+
+      // Get the argument from the argument input vector
+      const mup::matrix_type a = a_pArg[0]->GetArray();
+
+
+      int nbrows = a.GetRows();
+      int nbcols = a.GetCols();
+
+      mup::matrix_type res(nbrows,nbcols,0.);
+
+      for (int k=0; k<nbcols; ++k)
+        for (int p=0; p<nbrows; ++p)
+          res.At(p,k) = vcl_acos(a.At(p,k).GetFloat());
           
 
       // The return value is passed by writing it to the reference ret
@@ -784,6 +833,32 @@ void vsin::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_i
     }
 
 
+void vasin::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_iArgc)
+    {
+      if(a_iArgc != 1)
+        return;
+
+      assert(a_pArg[0]->GetType()=='m');
+
+      // Get the argument from the argument input vector
+      const mup::matrix_type a = a_pArg[0]->GetArray();
+
+
+      int nbrows = a.GetRows();
+      int nbcols = a.GetCols();
+
+      mup::matrix_type res(nbrows,nbcols,0.);
+
+      for (int k=0; k<nbcols; ++k)
+        for (int p=0; p<nbrows; ++p)
+          res.At(p,k) = vcl_asin(a.At(p,k).GetFloat());
+          
+
+      // The return value is passed by writing it to the reference ret
+      *ret = res;
+    }
+
+
 void vtan::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_iArgc)
     {
       if(a_iArgc != 1)
@@ -802,6 +877,30 @@ void vtan::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_i
       for (int k=0; k<nbcols; ++k)
         for (int p=0; p<nbrows; ++p)
           res.At(p,k) = vcl_tan(a.At(p,k).GetFloat());
+
+      // The return value is passed by writing it to the reference ret
+      *ret = res;
+    }
+
+
+void vatan::Eval(mup::ptr_val_type &ret, const mup::ptr_val_type *a_pArg, int a_iArgc)
+    {
+      if(a_iArgc != 1)
+        return;
+
+      assert(a_pArg[0]->GetType()=='m');
+
+      // Get the argument from the argument input vector
+      const mup::matrix_type a = a_pArg[0]->GetArray();
+
+      int nbrows = a.GetRows();
+      int nbcols = a.GetCols();
+
+      mup::matrix_type res(nbrows,nbcols,0.);
+
+      for (int k=0; k<nbcols; ++k)
+        for (int p=0; p<nbrows; ++p)
+          res.At(p,k) = vcl_atan(a.At(p,k).GetFloat());
 
       // The return value is passed by writing it to the reference ret
       *ret = res;

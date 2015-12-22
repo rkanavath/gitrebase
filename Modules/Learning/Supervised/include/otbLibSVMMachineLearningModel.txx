@@ -20,10 +20,6 @@
 
 #include <fstream>
 #include "otbLibSVMMachineLearningModel.h"
-//#include "otbOpenCVUtils.h"
-
-// SVM estimator
-//#include "otbSVMSampleListModelEstimator.h"
 
 namespace otb
 {
@@ -32,15 +28,14 @@ template <class TInputValue, class TOutputValue>
 LibSVMMachineLearningModel<TInputValue,TOutputValue>
 ::LibSVMMachineLearningModel()
 {
-  // m_SVMModel = new CvSVM;
-  // m_SVMType = CvSVM::C_SVC;
-  m_KernelType = LINEAR;
-  // m_TermCriteriaType = CV_TERMCRIT_ITER;
-  m_C = 1.0;
-  // m_Epsilon = 1e-6;
-  m_ParameterOptimization = false;
-  m_DoProbabilityEstimates = false;
   m_SVMestimator = SVMEstimatorType::New();
+  m_SVMestimator->SetSVMType(C_SVC);
+  m_SVMestimator->SetC(1.0);
+  m_SVMestimator->SetKernelType(LINEAR);
+  m_SVMestimator->SetParametersOptimization(false);
+  m_SVMestimator->DoProbabilityEstimates(false);
+  //m_SVMestimator->SetEpsilon(1e-6);
+  this->m_IsRegressionSupported = true;
 }
 
 
@@ -64,31 +59,50 @@ LibSVMMachineLearningModel<TInputValue,TOutputValue>
   // params.term_crit   = cvTermCriteria(m_TermCriteriaType, m_MaxIter, m_Epsilon);
 
   // // Train the SVM
-
-  m_SVMestimator->SetC(m_C);
-  m_SVMestimator->SetKernelType(m_KernelType);
-  m_SVMestimator->SetParametersOptimization(m_ParameterOptimization);
-  m_SVMestimator->DoProbabilityEstimates(m_DoProbabilityEstimates);
-
   m_SVMestimator->SetInputSampleList(this->GetInputListSample());
   m_SVMestimator->SetTrainingSampleList(this->GetTargetListSample());
 
   m_SVMestimator->Update();
+
+  this->m_ConfidenceIndex = this->GetDoProbabilityEstimates();
 }
 
 template <class TInputValue, class TOutputValue>
 typename LibSVMMachineLearningModel<TInputValue,TOutputValue>
 ::TargetSampleType
 LibSVMMachineLearningModel<TInputValue,TOutputValue>
-::Predict(const InputSampleType & input) const
+::Predict(const InputSampleType & input, ConfidenceValueType *quality) const
 {
   TargetSampleType target;
-
-  otbMsgDevMacro(<< "Starting iterations ");
 
   MeasurementVectorFunctorType mfunctor;
 
   target = m_SVMestimator->GetModel()->EvaluateLabel(mfunctor(input));
+
+  if (quality != NULL)
+    {
+    if (!this->m_ConfidenceIndex)
+      {
+      itkExceptionMacro("Confidence index not available for this classifier !");
+      }
+    typename SVMEstimatorType::ModelType::ProbabilitiesVectorType probaVector =
+        m_SVMestimator->GetModel()->EvaluateProbabilities(mfunctor(input));
+    double maxProb = 0.0;
+    double secProb = 0.0;
+    for (unsigned int i=0 ; i<probaVector.Size() ; ++i)
+      {
+      if (maxProb < probaVector[i])
+        {
+          secProb = maxProb;
+          maxProb = probaVector[i];
+        }
+      else if (secProb < probaVector[i])
+        {
+          secProb = probaVector[i];
+        }
+      }
+    (*quality) = static_cast<ConfidenceValueType>(maxProb - secProb);
+    }
 
   return target;
 }
@@ -107,6 +121,8 @@ LibSVMMachineLearningModel<TInputValue,TOutputValue>
 ::Load(const std::string & filename, const std::string & itkNotUsed(name))
 {
   m_SVMestimator->GetModel()->LoadModel(filename.c_str());
+
+  this->m_ConfidenceIndex = m_SVMestimator->GetModel()->HasProbabilities();
 }
 
 template <class TInputValue, class TOutputValue>
@@ -114,28 +130,28 @@ bool
 LibSVMMachineLearningModel<TInputValue,TOutputValue>
 ::CanReadFile(const std::string & file)
 {
-   //TODO: Rework.
-   std::ifstream ifs;
-   ifs.open(file.c_str());
+  //TODO: Rework.
+  std::ifstream ifs;
+  ifs.open(file.c_str());
 
-   if(!ifs)
-   {
-      std::cerr<<"Could not read file "<<file<<std::endl;
-      return false;
-   }
+  if(!ifs)
+    {
+    std::cerr<<"Could not read file "<<file<<std::endl;
+    return false;
+    }
 
-   //Read only the first line.
-   std::string line;
-   std::getline(ifs, line);
+  //Read only the first line.
+  std::string line;
+  std::getline(ifs, line);
 
-   //if (line.find(m_SVMModel->getName()) != std::string::npos)
-   if (line.find("svm_type") != std::string::npos)
-   {
-      //std::cout<<"Reading a libSVM model"<<std::endl;
-      return true;
-   }
-   ifs.close();
-   return false;
+  //if (line.find(m_SVMModel->getName()) != std::string::npos)
+  if (line.find("svm_type") != std::string::npos)
+    {
+    //std::cout<<"Reading a libSVM model"<<std::endl;
+    return true;
+    }
+  ifs.close();
+  return false;
 }
 
 template <class TInputValue, class TOutputValue>
