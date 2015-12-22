@@ -1,0 +1,9 @@
+#! /usr/bin/dh-exec
+# OTB libraries (symlinks)
+usr/lib/lib*.so		usr/lib/${DEB_HOST_MULTIARCH}
+
+# OTB headers
+usr/include/OTB-@SOVERSION@
+
+# CMake helper scripts
+usr/lib/cmake/OTB-@SOVERSION@
