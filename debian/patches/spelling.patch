@@ -3197,3 +3197,14 @@ Last-Update: 2015-12-22
      
      AddParameter(ParameterType_Int, "inco.kernelsize",   "Kernel size for spatial incoherent averaging.");
      SetParameterDescription("inco.kernelsize", "Minute (0-59)");
+--- otb.orig/Modules/Wrappers/SWIG/src/numpy.i
++++ otb/Modules/Wrappers/SWIG/src/numpy.i
+@@ -123,7 +123,7 @@
+     if (PyInstance_Check(py_obj)) return "instance"    ;
+ %#endif
+ 
+-    return "unkown type";
++    return "unknown type";
+   }
+ 
+   /* Given a NumPy typecode, return a string describing the type.
