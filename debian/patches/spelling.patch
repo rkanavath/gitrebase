@@ -19,21 +19,21 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
 +++ otb/Modules/Applications/AppClassification/app/otbClassificationMapRegularization.cxx
 @@ -71,7 +71,7 @@
- 
+
      /** GROUP IO CLASSIFICATION */
      AddParameter(ParameterType_Group,"io","Input and output images");
 -    SetParameterDescription("io","This group of parameters allows to set input and output images for classification map regularization by Majority Voting.");
 +    SetParameterDescription("io","This group of parameters allows one to set input and output images for classification map regularization by Majority Voting.");
- 
+
      AddParameter(ParameterType_InputImage, "io.in",  "Input classification image");
      SetParameterDescription( "io.in", "The input labeled image to regularize.");
 @@ -82,7 +82,7 @@
- 
- 
+
+
      AddParameter(ParameterType_Group,"ip","Regularization parameters");
 -    SetParameterDescription("ip","This group allows to set parameters for classification map regularization by Majority Voting.");
 +    SetParameterDescription("ip","This group allows one to set parameters for classification map regularization by Majority Voting.");
- 
+
      AddParameter(ParameterType_Int, "ip.radius", "Structuring element radius (in pixels)");
      SetParameterDescription("ip.radius", "The radius of the ball shaped structuring element (expressed in pixels). By default, 'ip.radius = 1 pixel'.");
 --- otb.orig/Modules/Applications/AppClassification/app/otbFusionOfClassifications.cxx
@@ -49,7 +49,7 @@ Last-Update: 2015-09-01
          "-DEMPSTER SHAFER: for each pixel, the class label for which the Belief Function is maximal is selected. This Belief Function is calculated "
 @@ -346,7 +346,7 @@
          std::vector<std::string> confusionMatricesFilenameList = GetParameterStringList("method.dempstershafer.cmfl");
- 
+
          MassOfBeliefDefinitionMethod massOfBeliefDefMethod;
 -        //setting default to supress warning
 +        //setting default to suppress warning
@@ -60,12 +60,12 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Applications/AppClassification/app/otbImageClassifier.cxx
 @@ -81,7 +81,7 @@
      SetParameterDescription( "in", "The input image to classify.");
- 
+
      AddParameter(ParameterType_InputImage,  "mask",   "Input Mask");
 -    SetParameterDescription( "mask", "The mask allows to restrict classification of the input image to the area where mask pixel values are greater than 0.");
 +    SetParameterDescription( "mask", "The mask allows one to restrict classification of the input image to the area where mask pixel values are greater than 0.");
      MandatoryOff("mask");
- 
+
      AddParameter(ParameterType_InputFilename, "model", "Model file");
 --- otb.orig/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
 +++ otb/Modules/Applications/AppClassification/app/otbTrainImagesClassifier.cxx
@@ -81,7 +81,7 @@ Last-Update: 2015-09-01
      "validation process, the confusion matrix is organized the following way: rows = reference labels, columns = produced labels. "
      "In the header of the optional confusion matrix output file, the validation (reference) and predicted (produced) class labels"
 @@ -128,7 +128,7 @@
- 
+
    //Group IO
    AddParameter(ParameterType_Group, "io", "Input and output data");
 -  SetParameterDescription("io", "This group of parameters allows to set input and output data.");
@@ -95,13 +95,13 @@ Last-Update: 2015-09-01
    SetParameterDescription("sample",
 -                          "This group of parameters allows to set training and validation sample lists parameters.");
 +                          "This group of parameters allows one to set training and validation sample lists parameters.");
- 
+
    AddParameter(ParameterType_Int, "sample.mt", "Maximum training sample size per class");
    //MandatoryOff("mt");
 --- otb.orig/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
 +++ otb/Modules/Applications/AppEdge/app/otbLineSegmentDetection.cxx
 @@ -57,7 +57,7 @@
- 
+
      // Documentation
      SetDocName("Line segment detection");
 -    SetDocLongDescription("This application detects locally straight contours in a image. It is based on Burns, Hanson, and Riseman method and use an a contrario validation approach (Desolneux, Moisan, and Morel). The algorithm was published by Rafael Gromponevon Gioi, Jérémie Jakubowicz, Jean-Michel Morel and Gregory Randall.\n The given approach computes gradient and level lines of the image and detects aligned points in line support region. The application allows to export the detected lines in a vector data.");
@@ -112,7 +112,7 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
 +++ otb/Modules/Applications/AppHyperspectral/app/otbHyperspectralUnmixing.cxx
 @@ -96,7 +96,7 @@
- 
+
      // Documentation
      SetDocName("Hyperspectral data unmixing");
 -    SetDocLongDescription("The application applies a linear unmixing algorithm to an hyperspectral data cube. This method supposes that the mixture between materials in the scene is macroscopic and simulates a linear mixing model of spectra.\nThe Linear Mixing Model (LMM) acknowledges that reflectance spectrum associated with each pixel is a linear combination of pure materials in the recovery area, commonly known as endmembers. Endmembers can be estimated using the VertexComponentAnalysis application.\nThe application allows to estimate the abundance maps with several algorithms : Unconstrained Least Square (ucls), Fully Constrained Least Square (fcls), Image Space Reconstruction Algorithm (isra) and Non-negative constrained Least Square (ncls) and Minimum Dispertion Constrained Non Negative Matrix Factorization (MDMDNMF).\n");
@@ -122,7 +122,7 @@ Last-Update: 2015-09-01
      SetDocSeeAlso("VertexComponentAnalysis");
 @@ -128,7 +128,7 @@
      SetParameterDescription("ua.isra", "Image Space Reconstruction Algorithm");
- 
+
      AddChoice("ua.mdmdnmf", "MDMDNMF");
 -    SetParameterDescription("ua.mdmdnmf", "Minimum Dispertion Constrained Non Negative Matrix Factorization");
 +    SetParameterDescription("ua.mdmdnmf", "Minimum Dispersion Constrained Non Negative Matrix Factorization");
@@ -132,7 +132,7 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
 +++ otb/Modules/Applications/AppImageUtils/app/otbDownloadSRTMTiles.cxx
 @@ -96,7 +96,7 @@
- 
+
      // Documentation
      SetDocName("Download or list SRTM tiles related to a set of images");
 -    SetDocLongDescription("This application allows to select the appropriate SRTM tiles that covers a list of images. It builds a list of the required tiles. Two modes are available: the first one download those tiles from the USGS SRTM3 website (http://dds.cr.usgs.gov/srtm/version2_1/SRTM3/), the second one list those tiles in a local directory. In both cases, you need to indicate the directory in which directory  tiles will be download or the location of local SRTM files.");
@@ -173,7 +173,7 @@ Last-Update: 2015-09-01
        "Finally, we strongly recommend that the reader takes a look at the cookbook, where additional information can be found (http://www.orfeo-toolbox.org/packages/OTBCookBook.pdf).\n"
 @@ -234,5 +234,3 @@
  } // namespace otb
- 
+
  OTB_APPLICATION_EXPORT(otb::Wrapper::BandMathX)
 -
 -
@@ -181,27 +181,27 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Applications/AppProjection/app/otbGenerateRPCSensorModel.cxx
 @@ -60,7 +60,7 @@
      SetDescription("Generate a RPC sensor model from a list of Ground Control Points.");
- 
+
      SetDocName("Generate a RPC sensor model");
 -    SetDocLongDescription("This application generates a RPC sensor model from a list of Ground Control Points. At least 20 points are required for estimation wihtout elevation support, and 40 points for estimation with elevation support. Elevation support will be automatically deactivated if an insufficient amount of points is provided. The application can optionnaly output a file containing accuracy statistics for each point, and a vector file containing segments represening points residues. The map projection parameter allows to define a map projection in which the accuracy is evaluated.");
 +    SetDocLongDescription("This application generates a RPC sensor model from a list of Ground Control Points. At least 20 points are required for estimation wihtout elevation support, and 40 points for estimation with elevation support. Elevation support will be automatically deactivated if an insufficient amount of points is provided. The application can optionnaly output a file containing accuracy statistics for each point, and a vector file containing segments represening points residues. The map projection parameter allows one to define a map projection in which the accuracy is evaluated.");
- 
+
      AddDocTag(Tags::Geometry);
- 
+
 --- otb.orig/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
 +++ otb/Modules/Applications/AppProjection/app/otbGridBasedImageResampling.cxx
 @@ -107,7 +107,7 @@
      SetDescription("Resamples an image according to a resampling grid");
- 
+
      SetDocName("Grid Based Image Resampling");
 -    SetDocLongDescription("This application allows to perform image resampling from an input resampling grid.");
 +    SetDocLongDescription("This application allows one to perform image resampling from an input resampling grid.");
      SetDocLimitations("None");
      SetDocAuthors("OTB-Team");
- 
+
 @@ -116,7 +116,7 @@
      SetDocSeeAlso("otbStereorecificationGridGeneration");
- 
+
      AddParameter(ParameterType_Group,"io","Input and output data");
 -    SetParameterDescription("io","This group of parameters allows to set the input and output images.");
 +    SetParameterDescription("io","This group of parameters allows one to set the input and output images.");
@@ -218,7 +218,7 @@ Last-Update: 2015-09-01
      SetParameterDescription("grid.type.def","A deformation grid contains at each grid position the offset to apply to this position in order to get to the corresponding point in the input image to resample");
      AddChoice("grid.type.loc","Localisation grid: $G(x_out,y_out) = (x_in, y_in)$");
 @@ -161,14 +161,14 @@
- 
+
      // Interpolators
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
 -    SetParameterDescription("interpolator","This group of parameters allows to define how the input image will be interpolated during resampling.");
@@ -233,7 +233,7 @@ Last-Update: 2015-09-01
 +    SetParameterDescription("interpolator.bco.radius","This parameter allows one to control the size of the bicubic interpolation filter. If the target pixel size is higher than the input pixel size, increasing this parameter will reduce aliasing artefacts.");
      SetDefaultParameterInt("interpolator.bco.radius", 2);
      SetParameterString("interpolator","bco");
- 
+
 --- otb.orig/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
 +++ otb/Modules/Applications/AppProjection/app/otbOrthoRectification.cxx
 @@ -88,7 +88,7 @@
@@ -246,7 +246,7 @@ Last-Update: 2015-09-01
      // Documentation
      SetDocName("Ortho-rectification");
 @@ -106,7 +106,7 @@
- 
+
      // Set the parameters
      AddParameter(ParameterType_Group,"io","Input and output data");
 -    SetParameterDescription("io","This group of parameters allows to set the input and output images.");
@@ -255,12 +255,12 @@ Last-Update: 2015-09-01
      SetParameterDescription("io.in","The input image to ortho-rectify");
      AddParameter(ParameterType_OutputImage, "io.out", "Output Image");
 @@ -117,7 +117,7 @@
- 
+
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "outputs", "Output Image Grid");
 -    SetParameterDescription("outputs","This group of parameters allows to define the grid on which the input image will be resampled.");
 +    SetParameterDescription("outputs","This group of parameters allows one to define the grid on which the input image will be resampled.");
- 
+
      // UserDefined values
      AddParameter(ParameterType_Choice, "outputs.mode", "Parameters estimation modes");
 @@ -177,7 +177,7 @@
@@ -271,7 +271,7 @@ Last-Update: 2015-09-01
 +    isotropOss << "Values overridden by user are not affected by this option.";
      SetParameterDescription("outputs.isotropic", isotropOss.str());
      EnableParameter("outputs.isotropic");
- 
+
 @@ -193,26 +193,26 @@
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
      AddChoice("interpolator.bco",    "Bicubic interpolation");
@@ -288,7 +288,7 @@ Last-Update: 2015-09-01
      AddParameter(ParameterType_Group,"opt","Speed optimization parameters");
 -    SetParameterDescription("opt","This group of parameters allows to optimize processing time.");
 +    SetParameterDescription("opt","This group of parameters allows one to optimize processing time.");
- 
+
      // Estimate a RPC model (for spot image for instance)
      AddParameter(ParameterType_Int, "opt.rpc", "RPC modeling (points per axis)");
      SetDefaultParameterInt("opt.rpc", 10);
@@ -296,38 +296,38 @@ Last-Update: 2015-09-01
 +    SetParameterDescription("opt.rpc","Enabling RPC modeling allows one to speed-up SPOT5 ortho-rectification. Value is the number of control points per axis for RPC estimation");
      DisableParameter("opt.rpc");
      MandatoryOff("opt.rpc");
- 
+
      // RAM available
      AddRAMParameter("opt.ram");
 -    SetParameterDescription("opt.ram","This allows to set the maximum amount of RAM available for processing. As the writing task is time consuming, it is better to write large pieces of data, which can be achieved by increasing this parameter (pay attention to your system capabilities)");
 +    SetParameterDescription("opt.ram","This allows one to set the maximum amount of RAM available for processing. As the writing task is time consuming, it is better to write large pieces of data, which can be achieved by increasing this parameter (pay attention to your system capabilities)");
- 
+
      // Displacement Field Spacing
      AddParameter(ParameterType_Float, "opt.gridspacing", "Resampling grid spacing");
 --- otb.orig/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
 +++ otb/Modules/Applications/AppProjection/app/otbRefineSensorModel.cxx
 @@ -59,7 +59,7 @@
      SetDescription("Perform least-square fit of a sensor model to a set of tie points");
- 
+
      SetDocName("Refine Sensor Model");
 -    SetDocLongDescription("This application reads a geom file containing a sensor model and a text file containing a list of ground control point, and performs a least-square fit of the sensor model adjustable parameters to these tie points. It produces an updated geom file as output, as well as an optional ground control points based statistics file and a vector file containing residues. The output geom file can then be used to ortho-rectify the data more accurately. Plaease note that for a proper use of the application, elevation must be correctly set (including DEM and geoid file). The map parameters allows to choose a map projection in which the accuracy will be estimated in meters.");
 +    SetDocLongDescription("This application reads a geom file containing a sensor model and a text file containing a list of ground control point, and performs a least-square fit of the sensor model adjustable parameters to these tie points. It produces an updated geom file as output, as well as an optional ground control points based statistics file and a vector file containing residues. The output geom file can then be used to ortho-rectify the data more accurately. Plaease note that for a proper use of the application, elevation must be correctly set (including DEM and geoid file). The map parameters allows one to choose a map projection in which the accuracy will be estimated in meters.");
- 
+
      AddDocTag(Tags::Geometry);
- 
+
 --- otb.orig/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
 +++ otb/Modules/Applications/AppProjection/app/otbRigidTransformResample.cxx
 @@ -100,7 +100,7 @@
- 
+
      //Transform
      AddParameter(ParameterType_Group,"transform","Transform parameters");
 -    SetParameterDescription("transform","This group of parameters allows to set the transformation to apply.");
 +    SetParameterDescription("transform","This group of parameters allows one to set the transformation to apply.");
- 
+
      AddParameter(ParameterType_Choice, "transform.type", "Type of transformation");
      SetParameterDescription("transform.type","Type of transformation. Available transformations are spatial scaling, translation and rotation with scaling factor");
 @@ -148,20 +148,20 @@
- 
+
      // Interpolators
      AddParameter(ParameterType_Choice,   "interpolator", "Interpolation");
 -    SetParameterDescription("interpolator","This group of parameters allows to define how the input image will be interpolated during resampling.");
@@ -342,12 +342,12 @@ Last-Update: 2015-09-01
 +    SetParameterDescription("interpolator.bco.radius","This parameter allows one to control the size of the bicubic interpolation filter. If the target pixel size is higher than the input pixel size, increasing this parameter will reduce aliasing artefacts.");
      SetDefaultParameterInt("interpolator.bco.radius", 2);
      SetParameterString("interpolator","bco");
- 
+
      // RAM available
      AddRAMParameter("ram");
 -    SetParameterDescription("ram","This allows to set the maximum amount of RAM available for processing. As the writing task is time consuming, it is better to write large pieces of data, which can be achieved by increasing this parameter (pay attention to your system capabilities)");
 +    SetParameterDescription("ram","This allows one to set the maximum amount of RAM available for processing. As the writing task is time consuming, it is better to write large pieces of data, which can be achieved by increasing this parameter (pay attention to your system capabilities)");
- 
+
      // Doc example parameter settings
      SetDocExampleParameterValue("in", "qb_toulouse_sub.tif");
 --- otb.orig/Modules/Applications/AppProjection/app/otbVectorDataReprojection.cxx
@@ -383,7 +383,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Applications/AppSegmentation/app/otbLSMSSegmentation.cxx
 @@ -217,7 +217,7 @@
      SetDescription("Second step of the exact Large-Scale Mean-Shift segmentation workflow.");
- 
+
      SetDocName("Exact Large-Scale Mean-Shift segmentation, step 2");
 -    SetDocLongDescription("This application performs the second step of the exact Large-Scale Mean-Shift segmentation workflow (LSMS). Filtered range image and spatial image should be created with the MeanShiftSmoothing application, with modesearch parameter disabled. If spatial image is not set, the application will only process the range image and spatial radius parameter will not be taken into account. This application will produce a labeled image where neighbor pixels whose range distance is below range radius (and optionally spatial distance below spatial radius) will be grouped together into the same cluster. For large images one can use the nbtilesx and nbtilesy parameters for tile-wise processing, with the guarantees of identical results. Please note that this application will generate a lot of temporary files (as many as the number of tiles), and will therefore require twice the size of the final result in term of disk space. The cleanup option (activated by default) allows to remove all temporary file as soon as they are not needed anymore (if cleanup is activated, tmpdir set and tmpdir does not exists before running the application, it will be removed as well during cleanup). The tmpdir option allows to define a directory where to write the temporary files. Please also note that the output image type should be set to uint32 to ensure that there are enough labels available.");
 +    SetDocLongDescription("This application performs the second step of the exact Large-Scale Mean-Shift segmentation workflow (LSMS). Filtered range image and spatial image should be created with the MeanShiftSmoothing application, with modesearch parameter disabled. If spatial image is not set, the application will only process the range image and spatial radius parameter will not be taken into account. This application will produce a labeled image where neighbor pixels whose range distance is below range radius (and optionally spatial distance below spatial radius) will be grouped together into the same cluster. For large images one can use the nbtilesx and nbtilesy parameters for tile-wise processing, with the guarantees of identical results. Please note that this application will generate a lot of temporary files (as many as the number of tiles), and will therefore require twice the size of the final result in term of disk space. The cleanup option (activated by default) allows one to remove all temporary file as soon as they are not needed anymore (if cleanup is activated, tmpdir set and tmpdir does not exists before running the application, it will be removed as well during cleanup). The tmpdir option allows one to define a directory where to write the temporary files. Please also note that the output image type should be set to uint32 to ensure that there are enough labels available.");
@@ -392,14 +392,14 @@ Last-Update: 2015-09-01
      SetDocSeeAlso("MeanShiftSmoothing, LSMSSmallRegionsMerging, LSMSVectorization");
 @@ -713,5 +713,3 @@
  }
- 
+
  OTB_APPLICATION_EXPORT(otb::Wrapper::LSMSSegmentation)
 -
 -
 --- otb.orig/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
 +++ otb/Modules/Applications/AppSegmentation/app/otbSegmentation.cxx
 @@ -138,7 +138,7 @@
- 
+
      // Documentation
      SetDocName("Segmentation");
 -    SetDocLongDescription("This application allows to perform various segmentation algorithms on a multispectral image."
@@ -416,31 +416,31 @@ Last-Update: 2015-09-01
 +                          " and that images of any size can be processed. There are few more options in the vector mode. The simplify option allows one to simplify the geometry"
 +                          " (i.e. remove nodes in polygons) according to a user-defined tolerance. The stitch option allows one to application to try to stitch together polygons corresponding"
                            " to segmented region that may have been split by the tiling scheme. ");
- 
+
      SetDocLimitations("In raster mode, the application can not handle large input images. Stitching step of vector mode might become slow with very large input images."
 @@ -223,7 +223,7 @@
      SetParameterDescription("mode", "Choice of processing mode, either raster or large-scale.");
- 
+
      AddChoice("mode.vector", "Tile-based large-scale segmentation with vector output");
 -    SetParameterDescription("mode.vector","In this mode, the application will output a vector file or database, and process the input image piecewise. This allows to perform segmentation of very large images.");
 +    SetParameterDescription("mode.vector","In this mode, the application will output a vector file or database, and process the input image piecewise. This allows one to perform segmentation of very large images.");
- 
+
      AddChoice("mode.raster", "Standard segmentation with labeled raster output");
      SetParameterDescription("mode.raster","In this mode, the application will output a standard labeled raster. This mode can not handle large data.");
 @@ -258,9 +258,9 @@
      SetParameterDescription("mode.vector.out", "The output vector file or database (name can be anything understood by OGR)");
- 
+
      AddParameter(ParameterType_Choice,"mode.vector.outmode","Writing mode for the output vector file");
 -    SetParameterDescription("mode.vector.outmode","This allows to set the writing behaviour for the output vector file. Please note that the actual behaviour depends on the file format.");
 +    SetParameterDescription("mode.vector.outmode","This allows one to set the writing behaviour for the output vector file. Please note that the actual behaviour depends on the file format.");
- 
+
 -    AddChoice("mode.vector.outmode.ulco","Update output vector file, only allow to create new layers");
 +    AddChoice("mode.vector.outmode.ulco","Update output vector file, only allow creating new layers");
      SetParameterDescription("mode.vector.outmode.ulco","The output vector file is opened in update mode if existing. If the output layer already exists, the application stops, leaving it untouched.");
- 
+
      AddChoice("mode.vector.outmode.ovw","Overwrite output vector file if existing.");
 @@ -298,7 +298,7 @@
- 
+
      AddParameter(ParameterType_Float, "mode.vector.simplify", "Simplify polygons");
      SetParameterDescription("mode.vector.simplify",
 -                            "Simplify polygons according to a given tolerance (in pixel). This option allows to reduce the size of the output file or database.");
@@ -452,7 +452,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Applications/AppStereo/app/otbBlockMatching.cxx
 @@ -127,11 +127,11 @@
      SetDescription("Performs block-matching to estimate pixel-wise disparities between two images");
- 
+
      SetDocName("Pixel-wise Block-Matching");
 -    SetDocLongDescription("This application allows to performs block-matching to estimate pixel-wise disparities "
 -      "between two images. The application allows to choose the block-matching method to use. It also allows to input"
@@ -467,83 +467,83 @@ Last-Update: 2015-09-01
        "disparity, vertical disparity and metric value). One can split these images afterward.");
 @@ -142,7 +142,7 @@
      AddDocTag(Tags::Stereo);
- 
+
      AddParameter(ParameterType_Group,"io","Input and output data");
 -    SetParameterDescription("io","This group of parameters allows to set the input and output images.");
 +    SetParameterDescription("io","This group of parameters allows one to set the input and output images.");
- 
+
      AddParameter(ParameterType_InputImage,"io.inleft","Left input image");
      SetParameterDescription("io.inleft","The left input image (reference)");
 @@ -163,30 +163,30 @@
      SetParameterDescription("io.outmetric","If used, the output image will have a second component with metric optimal values");
- 
+
      AddParameter(ParameterType_Group,"mask","Image masking parameters");
 -    SetParameterDescription("mask","This group of parameters allows to determine the masking parameters to prevent disparities estimation for some pixels of the left image");
 +    SetParameterDescription("mask","This group of parameters allows one to determine the masking parameters to prevent disparities estimation for some pixels of the left image");
- 
+
      AddParameter(ParameterType_InputImage,"mask.inleft","Discard left pixels from mask image");
 -    SetParameterDescription("mask.inleft","This parameter allows to provide a custom mask for the left image.Block matching will be only perform on pixels inside the mask.");
 +    SetParameterDescription("mask.inleft","This parameter allows one to provide a custom mask for the left image.Block matching will be only perform on pixels inside the mask.");
      MandatoryOff("mask.inleft");
- 
+
      AddParameter(ParameterType_InputImage,"mask.inright","Discard right pixels from mask image");
 -    SetParameterDescription("mask.inright","This parameter allows to provide a custom mask for the right image.Block matching will be perform only on pixels inside the mask.");
 +    SetParameterDescription("mask.inright","This parameter allows one to provide a custom mask for the right image.Block matching will be perform only on pixels inside the mask.");
      MandatoryOff("mask.inright");
- 
+
      AddParameter(ParameterType_Float,"mask.nodata","Discard pixels with no-data value");
 -    SetParameterDescription("mask.nodata","This parameter allows to discard pixels whose value is equal to the user-defined no-data value.");
 +    SetParameterDescription("mask.nodata","This parameter allows one to discard pixels whose value is equal to the user-defined no-data value.");
      MandatoryOff("mask.nodata");
      SetDefaultParameterFloat("mask.nodata",0.);
      DisableParameter("mask.nodata");
- 
+
      AddParameter(ParameterType_Float,"mask.variancet","Discard pixels with low local variance");
 -    SetParameterDescription("mask.variancet","This parameter allows to discard pixels whose local variance is too small (the size of the neighborhood is given by the radius parameter)");
 +    SetParameterDescription("mask.variancet","This parameter allows one to discard pixels whose local variance is too small (the size of the neighborhood is given by the radius parameter)");
      MandatoryOff("mask.variancet");
      SetDefaultParameterFloat("mask.variancet",100.);
      DisableParameter("mask.variancet");
- 
+
      AddParameter(ParameterType_Group,"bm","Block matching parameters");
 -    SetParameterDescription("bm","This group of parameters allow to tune the block-matching behaviour");
 +    SetParameterDescription("bm","This group of parameters allow tuning the block-matching behaviour");
- 
+
      AddParameter(ParameterType_Choice,   "bm.metric", "Block-matching metric");
      AddChoice("bm.metric.ssd","Sum of Squared Distances");
 --- otb.orig/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
 +++ otb/Modules/Applications/AppStereo/app/otbDisparityMapToElevationMap.cxx
 @@ -76,7 +76,7 @@
      AddDocTag(Tags::Stereo);
- 
+
      AddParameter(ParameterType_Group,"io","Input and output data");
 -    SetParameterDescription("io","This group of parameters allows to set the input and output images and grids.");
 +    SetParameterDescription("io","This group of parameters allows one to set the input and output images and grids.");
- 
+
      AddParameter(ParameterType_InputImage,"io.in","Input disparity map");
      SetParameterDescription("io.in","The input disparity map (horizontal disparity in first band, vertical in second)");
 --- otb.orig/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
 +++ otb/Modules/Applications/AppStereo/app/otbStereoFramework.cxx
 @@ -341,7 +341,7 @@
- 
+
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "input", "Input parameters");
 -    SetParameterDescription("input","This group of parameters allows to parametrize input data.");
 +    SetParameterDescription("input","This group of parameters allows one to parametrize input data.");
- 
+
      AddParameter(ParameterType_InputImageList,  "input.il",   "Input images list");
      SetParameterDescription("input.il", "The list of images.");
 @@ -362,7 +362,7 @@
- 
+
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "output", "Output parameters");
 -    SetParameterDescription("output","This group of parameters allows to choose the DSM resolution, nodata value, and projection parameters.");
 +    SetParameterDescription("output","This group of parameters allows one to choose the DSM resolution, nodata value, and projection parameters.");
- 
+
      // // Build the Output Map Projection
      // for custom map projection
 @@ -380,7 +380,7 @@
- 
+
      // UserDefined values
      AddParameter(ParameterType_Choice, "output.fusionmethod", "Method to fuse measures in each DSM cell");
 -    SetParameterDescription("output.fusionmethod","This parameter allows to choose the method used to fuse elevation measurements in each output DSM cell");
@@ -552,33 +552,33 @@ Last-Update: 2015-09-01
      AddChoice("output.fusionmethod.min", "The cell is filled with the minimum measured elevation values");
      AddChoice("output.fusionmethod.mean","The cell is filled with the mean of measured elevation values");
 @@ -419,7 +419,7 @@
- 
+
      // Add the output paramters in a group
      AddParameter(ParameterType_Group, "stereorect", "Stereorectification Grid parameters");
 -    SetParameterDescription("stereorect","This group of parameters allows to choose direct and inverse grid subsampling. These parameters are very useful to tune time and memory consumption.");
 +    SetParameterDescription("stereorect","This group of parameters allows one to choose direct and inverse grid subsampling. These parameters are very useful to tune time and memory consumption.");
- 
+
      AddParameter(ParameterType_Int,"stereorect.fwdgridstep","Step of the displacement grid (in pixels)");
      SetParameterDescription("stereorect.fwdgridstep","Stereo-rectification displacement grid only varies slowly. Therefore, it is recommended to use a coarser grid (higher step value) in case of large images");
 @@ -427,13 +427,13 @@
      MandatoryOff("stereorect.fwdgridstep");
- 
+
      AddParameter(ParameterType_Int, "stereorect.invgridssrate", "Sub-sampling rate for epipolar grid inversion");
 -    SetParameterDescription("stereorect.invgridssrate","Grid inversion is an heavy process that implies spline regression on control points. To avoid eating to much memory, this parameter allows to first sub-sample the field to invert.");
 +    SetParameterDescription("stereorect.invgridssrate","Grid inversion is an heavy process that implies spline regression on control points. To avoid eating to much memory, this parameter allows one to first sub-sample the field to invert.");
      SetDefaultParameterInt("stereorect.invgridssrate",10);
      SetMinimumParameterIntValue("stereorect.invgridssrate",1);
      MandatoryOff("stereorect.invgridssrate");
- 
+
      AddParameter(ParameterType_Group,"bm","Block matching parameters");
 -    SetParameterDescription("bm","This group of parameters allow to tune the block-matching behavior");
 +    SetParameterDescription("bm","This group of parameters allow tuning the block-matching behavior");
- 
+
      AddParameter(ParameterType_Choice,   "bm.metric", "Block-matching metric");
      //SetDefaultParameterInt("bm.metric",3);
 @@ -506,7 +506,7 @@
      DisableParameter("mask.right");
- 
+
      AddParameter(ParameterType_Float,"mask.variancet","Discard pixels with low local variance");
 -    SetParameterDescription("mask.variancet","This parameter allows to discard pixels whose local variance is too small (the size of the neighborhood is given by the radius parameter)");
 +    SetParameterDescription("mask.variancet","This parameter allows one to discard pixels whose local variance is too small (the size of the neighborhood is given by the radius parameter)");
@@ -589,29 +589,29 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Applications/AppTextures/app/otbHaralickTextureExtraction.cxx
 @@ -90,7 +90,7 @@
  AddRAMParameter();
- 
+
  AddParameter(ParameterType_Group, "parameters", "Texture feature parameters");
 -SetParameterDescription("parameters","This group of parameters allows to define texture parameters.");
 +SetParameterDescription("parameters","This group of parameters allows one to define texture parameters.");
- 
+
  AddParameter(ParameterType_Int,"parameters.xrad","X Radius");
  SetParameterDescription("parameters.xrad", "X Radius");
 --- otb.orig/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
 +++ otb/Modules/Applications/AppTextures/app/otbSFSTextureExtraction.cxx
 @@ -81,7 +81,7 @@
  AddRAMParameter();
- 
+
  AddParameter(ParameterType_Group, "parameters", "Texture feature parameters");
 -SetParameterDescription("parameters","This group of parameters allows to define SFS texture parameters.\
 +SetParameterDescription("parameters","This group of parameters allows one to define SFS texture parameters.\
      The available texture features are SFS'Length, SFS'Width, SFS'PSI, SFS'W-Mean, SFS'Ratio and SFS'SD.\
      They are provided in this exact order in the output image.");
- 
+
 --- otb.orig/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
 +++ otb/Modules/Applications/AppVectorDataTranslation/app/otbRasterization.cxx
 @@ -63,7 +63,7 @@
      SetDescription("Rasterize a vector dataset.");
- 
+
      SetDocName("Rasterization");
 -    SetDocLongDescription("This application allows to reproject and rasterize a vector dataset. The grid of the rasterized output can be set by using a reference image, or by setting all parmeters (origin, size, spacing) by hand. In the latter case, at least the spacing (ground sampling distance) is needed (other parameters are computed automatically). The rasterized output can also be in a different projection reference system than the input dataset.\n There are two rasterize mode available in the application. The first is the binary mode: it allows to render all pixels belonging to a geometry of the input dataset in the foreground color, while rendering the other in background color. The second one allows to render pixels belonging to a geometry woth respect to an attribute of this geometry. The field of the attribute to render can be set by the user. In the second mode, the background value is still used for unassociated pixels.");
 +    SetDocLongDescription("This application allows one to reproject and rasterize a vector dataset. The grid of the rasterized output can be set by using a reference image, or by setting all parmeters (origin, size, spacing) by hand. In the latter case, at least the spacing (ground sampling distance) is needed (other parameters are computed automatically). The rasterized output can also be in a different projection reference system than the input dataset.\n There are two rasterize mode available in the application. The first is the binary mode: it allows one to render all pixels belonging to a geometry of the input dataset in the foreground color, while rendering the other in background color. The second one allows one to render pixels belonging to a geometry woth respect to an attribute of this geometry. The field of the attribute to render can be set by the user. In the second mode, the background value is still used for unassociated pixels.");
@@ -631,13 +631,13 @@ Last-Update: 2015-09-01
  //
 @@ -91,7 +91,7 @@
    image->SetRegions(region);
- 
+
    // Software Guide : BeginLatex
 -  // Since the pixel dimensionality is choosen at runtime, one has to
 +  // Since the pixel dimensionality is chosen at runtime, one has to
    // pass this parameter to the image before memory allocation.
    // Software Guide : EndLatex
- 
+
 --- otb.orig/Modules/Applications/AppClassification/app/otbComputePolylineFeatureFromImage.cxx
 +++ otb/Modules/Applications/AppClassification/app/otbComputePolylineFeatureFromImage.cxx
 @@ -76,10 +76,10 @@
@@ -646,7 +646,7 @@ Last-Update: 2015-09-01
      SetName("ComputePolylineFeatureFromImage");
 -    SetDescription("This application compute for each studied polyline, contained in the input VectorData, the choosen descriptors.");
 +    SetDescription("This application compute for each studied polyline, contained in the input VectorData, the chosen descriptors.");
- 
+
      SetDocName("Compute Polyline Feature From Image");
 -    SetDocLongDescription("The first step in the classifier fusion based validation is to compute, for each studied polyline, the choosen descriptors. ");
 +    SetDocLongDescription("The first step in the classifier fusion based validation is to compute, for each studied polyline, the chosen descriptors. ");
@@ -673,7 +673,7 @@ Last-Update: 2015-09-01
 -  // First clear previous file choosen
 +  // First clear previous file chosen
    this->ClearValue();
- 
+
    // No file existence is done here :
 --- otb.orig/Modules/Wrappers/ApplicationEngine/src/otbWrapperInputImageListParameter.cxx
 +++ otb/Modules/Wrappers/ApplicationEngine/src/otbWrapperInputImageListParameter.cxx
@@ -684,7 +684,7 @@ Last-Update: 2015-09-01
 -  // First clear previous file choosen
 +  // First clear previous file chosen
    this->ClearValue();
- 
+
    bool isOk = true;
 --- otb.orig/Modules/Wrappers/ApplicationEngine/src/otbWrapperInputImageParameter.cxx
 +++ otb/Modules/Wrappers/ApplicationEngine/src/otbWrapperInputImageParameter.cxx
@@ -695,7 +695,7 @@ Last-Update: 2015-09-01
 -  // First clear previous file choosen
 +  // First clear previous file chosen
    this->ClearValue();
- 
+
    // No file existence is done here :
 --- otb.orig/Modules/Wrappers/ApplicationEngine/src/otbWrapperInputVectorDataListParameter.cxx
 +++ otb/Modules/Wrappers/ApplicationEngine/src/otbWrapperInputVectorDataListParameter.cxx
@@ -706,7 +706,7 @@ Last-Update: 2015-09-01
 -  // First clear previous file choosen
 +  // First clear previous file chosen
    this->ClearValue();
- 
+
    bool isOk = true;
 --- otb.orig/Modules/Wrappers/ApplicationEngine/src/otbWrapperInputVectorDataParameter.cxx
 +++ otb/Modules/Wrappers/ApplicationEngine/src/otbWrapperInputVectorDataParameter.cxx
@@ -717,7 +717,7 @@ Last-Update: 2015-09-01
 -  // First clear previous file choosen
 +  // First clear previous file chosen
    this->ClearValue();
- 
+
    // TODO : when the logger will be available, redirect the exception
 --- otb.orig/Examples/DataRepresentation/Mesh/PointSetWithVectors.cxx
 +++ otb/Examples/DataRepresentation/Mesh/PointSetWithVectors.cxx
@@ -742,7 +742,7 @@ Last-Update: 2015-09-01
  //
  // The first step toward the use of these filters is to include the proper header files.
 @@ -87,9 +87,9 @@
- 
+
  // Software Guide : BeginLatex
  //
 -// You can access to subdatasets' informations available in the HDF file using
@@ -811,12 +811,12 @@ Last-Update: 2015-09-01
 -  //  More informations and data about leaf properties can be found at \emph{St\'{e}phane Jacquemoud} \href{http://teledetection.ipgp.jussieu.fr/opticleaf/}{OPTICLEAF} website.
 +  //  More information and data about leaf properties can be found at \emph{St\'{e}phane Jacquemoud} \href{http://teledetection.ipgp.jussieu.fr/opticleaf/}{OPTICLEAF} website.
    //  Software Guide : EndLatex
- 
+
    return EXIT_SUCCESS;
 --- otb.orig/Modules/Adapters/GdalAdapters/include/otbOGRLayerWrapper.h
 +++ otb/Modules/Adapters/GdalAdapters/include/otbOGRLayerWrapper.h
 @@ -522,7 +522,7 @@
- 
+
  #if 0
    /** Related DataSource.
 -   * Needed to acces OTB meta informations.
@@ -828,19 +828,19 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Adapters/OSSIMAdapters/include/otbImageKeywordlist.h
 @@ -137,7 +137,7 @@
    virtual void PrintSelf(std::ostream& os, itk::Indent indent) const;
- 
+
  private:
 -  /** Geo informations are in this map */
 +  /** Geo information are in this map */
    KeywordlistMap m_Keywordlist;
- 
+
  //  char m_Delimiter;
 --- otb.orig/Modules/Applications/AppFusion/app/otbBundleToPerfectSensor.cxx
 +++ otb/Modules/Applications/AppFusion/app/otbBundleToPerfectSensor.cxx
 @@ -154,7 +154,7 @@
      // Setup the DEM Handler
      otb::Wrapper::ElevationParametersHandler::SetupDEMHandlerFromElevationParameters(this,"elev");
- 
+
 -    // Set up output image informations
 +    // Set up output image information
      FloatVectorImageType::SpacingType spacing = panchro->GetSpacing();
@@ -849,30 +849,30 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Applications/AppImageUtils/app/otbPixelValue.cxx
 +++ otb/Modules/Applications/AppImageUtils/app/otbPixelValue.cxx
 @@ -148,7 +148,7 @@
- 
+
      SetParameterString("value", oss.str());
- 
+
 -    //Display image informations in the dedicated logger
 +    //Display image information in the dedicated logger
      otbAppLogINFO( << oss.str() );
    }
- 
+
 --- otb.orig/Modules/Core/ObjectList/include/otbImageListToVectorImageFilter.h
 +++ otb/Modules/Core/ObjectList/include/otbImageListToVectorImageFilter.h
 @@ -68,7 +68,7 @@
- 
+
    /** GenerateOutputInformation
     * Set the number of bands of the output.
 -   * Copy informations from the first image of the list if existing.
 +   * Copy information from the first image of the list if existing.
     **/
    virtual void GenerateOutputInformation(void);
- 
+
 --- otb.orig/Modules/Core/Transform/include/otbGenericRSTransform.txx
 +++ otb/Modules/Core/Transform/include/otbGenericRSTransform.txx
 @@ -65,7 +65,7 @@
  }
- 
+
  /**
 - * Instanciate the transformation according to informations
 + * Instanciate the transformation according to information
@@ -882,14 +882,14 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Filtering/DimensionalityReduction/include/otbEstimateInnerProductPCAImageFilter.h
 +++ otb/Modules/Filtering/DimensionalityReduction/include/otbEstimateInnerProductPCAImageFilter.h
 @@ -79,7 +79,7 @@
- 
+
    /** GenerateOutputInformation
     * Set the number of bands of the output.
 -   * Copy informations from the first image of the list if existing.
 +   * Copy information from the first image of the list if existing.
     **/
    virtual void GenerateOutputInformation(void);
- 
+
 --- otb.orig/Modules/Filtering/ImageManipulation/include/otbUnaryImageFunctorWithVectorImageFilter.txx
 +++ otb/Modules/Filtering/ImageManipulation/include/otbUnaryImageFunctorWithVectorImageFilter.txx
 @@ -103,7 +103,7 @@
@@ -916,7 +916,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Filtering/Projection/include/otbVectorDataProjectionFilter.txx
 @@ -262,7 +262,7 @@
  }
- 
+
  /**
 - * Instanciate the transformation according to informations
 + * Instanciate the transformation according to information
@@ -926,49 +926,49 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Filtering/Wavelet/include/otbWaveletFilterBank.h
 +++ otb/Modules/Filtering/Wavelet/include/otbWaveletFilterBank.h
 @@ -216,7 +216,7 @@
- 
+
    /** GenerateOutputInformation
      * Set the size of the output image depending on the decimation factor
 -    * Copy informations from the input image if existing.
 +    * Copy information from the input image if existing.
      **/
    virtual void GenerateOutputInformation();
- 
+
 @@ -401,7 +401,7 @@
- 
+
    /** GenerateOutputInformation
      * Set the size of the output image depending on the decimation factor
 -    * Copy informations from the input image if existing.
 +    * Copy information from the input image if existing.
      **/
    virtual void GenerateOutputInformation();
- 
+
 --- otb.orig/Modules/Filtering/Wavelet/include/otbWaveletPacketTransform.h
 +++ otb/Modules/Filtering/Wavelet/include/otbWaveletPacketTransform.h
 @@ -325,7 +325,7 @@
- 
+
    /** GenerateOutputInformation
      * Set the size of the output image depending on the decimation factor
 -    * Copy informations from the input image if existing.
 +    * Copy information from the input image if existing.
      **/
    virtual void GenerateOutputInformation();
- 
+
 --- otb.orig/Modules/Filtering/Wavelet/include/otbWaveletTransform.h
 +++ otb/Modules/Filtering/Wavelet/include/otbWaveletTransform.h
 @@ -308,7 +308,7 @@
- 
+
    /** GenerateOutputInformation
      * Set the size of the output image depending on the decimation factor
 -    * Copy informations from the input image if existing.
 +    * Copy information from the input image if existing.
      **/
    virtual void GenerateOutputInformation();
- 
+
 --- otb.orig/Modules/IO/Carto/include/otbWorldFile.h
 +++ otb/Modules/IO/Carto/include/otbWorldFile.h
 @@ -28,7 +28,7 @@
- 
+
  /**
   * \class WorldFile
 - * \brief Handles the world file that associates geographic informations to png, jpg
@@ -981,12 +981,12 @@ Last-Update: 2015-09-01
 @@ -193,7 +193,7 @@
            // Get the value of the key
            std::string resultValue = currentTag->Attribute("v");
- 
+
 -          // Fill the element informations
 +          // Fill the element information
            elementPair.first  = result;
            elementPair.second = resultValue;
- 
+
 --- otb.orig/Modules/IO/ExtendedFilename/include/otbExtendedFilenameToReaderOptions.h
 +++ otb/Modules/IO/ExtendedFilename/include/otbExtendedFilenameToReaderOptions.h
 @@ -30,8 +30,8 @@
@@ -1005,11 +1005,11 @@ Last-Update: 2015-09-01
 @@ -139,7 +139,7 @@
    BSQImageIO(const Self &); //purposely not implemented
    void operator =(const Self&); //purposely not implemented
- 
+
 -  /** Internal method to read header informations */
 +  /** Internal method to read header information */
    bool InternalReadHeaderInformation(const std::string& file_name, std::fstream& file, const bool reportError);
- 
+
  #define otbSwappFileOrderToSystemOrderMacro(StrongType, buffer, buffer_size) \
 --- otb.orig/Modules/IO/IOBSQ/src/otbBSQImageIO.cxx
 +++ otb/Modules/IO/IOBSQ/src/otbBSQImageIO.cxx
@@ -1025,16 +1025,16 @@ Last-Update: 2015-09-01
 @@ -231,7 +231,7 @@
      itkExceptionMacro(<< "BSQImageIO::ReadImageInformation() failed header open ! ");
      }
- 
+
 -  //Read header informations
 +  //Read header information
    InternalReadHeaderInformation(m_FileName, m_HeaderFile, true);
- 
+
    otbMsgDebugMacro(<< "Driver to read: BSQ");
 @@ -375,7 +375,7 @@
      }
    file >> m_Dimensions[0];
- 
+
 -  //Read "BITS PER PIXEL" informations
 +  //Read "BITS PER PIXEL" information
    file >> lString;
@@ -1043,7 +1043,7 @@ Last-Update: 2015-09-01
 @@ -397,7 +397,7 @@
    int lNbBitsPerPixels;
    file >> lNbBitsPerPixels;
- 
+
 -  //Read "SENSCODAGE" informations (optionnal)
 +  //Read "SENSCODAGE" information (optionnal)
    file >> lString;
@@ -1052,12 +1052,12 @@ Last-Update: 2015-09-01
 @@ -616,11 +616,11 @@
    m_HeaderFile <<  "COLUMNS" << std::endl;
    m_HeaderFile << m_Dimensions[0] << std::endl;
- 
+
 -  //Write "BITS PER PIXEL" informations
 +  //Write "BITS PER PIXEL" information
    m_HeaderFile <<  "BITS PER PIXEL" << std::endl;
    m_HeaderFile << this->GetComponentSize() * 8 << std::endl;
- 
+
 -  //Write "SENSCODAGE" informations
 +  //Write "SENSCODAGE" information
    m_HeaderFile <<  "SENSCODAGE" << std::endl;
@@ -1067,22 +1067,22 @@ Last-Update: 2015-09-01
 +++ otb/Modules/IO/IOGDAL/test/otbGDALImageIOTestWriteMetadata.cxx
 @@ -564,7 +564,7 @@
                      abyRaster, 128, 128, GDT_Byte, 0, 0 );
- 
- 
+
+
 -  // Get some informations from dataset
 +  // Get some information from dataset
    infoDatasetCreate->m_Name = "Create";
    infoDatasetCreate->m_ProjRef = static_cast<std::string>(poDstDS->GetProjectionRef());
- 
+
 @@ -593,7 +593,7 @@
    if( poDataset == NULL )
       return false;
- 
+
 -  // Get some informations from file
 +  // Get some information from file
    infoDatasetWR->m_Name = "WR";
    infoDatasetWR->m_ProjRef = static_cast<std::string>(poDataset->GetProjectionRef());
- 
+
 --- otb.orig/Modules/IO/IOGDAL/test/otbGDALReadPxlComplex.cxx
 +++ otb/Modules/IO/IOGDAL/test/otbGDALReadPxlComplex.cxx
 @@ -38,7 +38,7 @@
@@ -1097,18 +1097,18 @@ Last-Update: 2015-09-01
 @@ -56,7 +56,7 @@
    if( poDataset == NULL )
       return EXIT_FAILURE;
- 
+
 -  // Get some informations from file
 +  // Get some information from file
    int nbBand = poDataset->GetRasterCount();
- 
+
    GDALDataType pxlTypeInFile = poDataset->GetRasterBand(1)->GetRasterDataType();
 --- otb.orig/Modules/IO/IOLUM/include/otbLUMImageIO.h
 +++ otb/Modules/IO/IOLUM/include/otbLUMImageIO.h
 @@ -137,7 +137,7 @@
    LUMImageIO(const Self &); //purposely not implemented
    void operator =(const Self&); //purposely not implemented
- 
+
 -  /** Internal method to read header informations */
 +  /** Internal method to read header information */
    bool InternalReadHeaderInformation(std::fstream& file, const bool reportError);
@@ -1119,7 +1119,7 @@ Last-Update: 2015-09-01
 @@ -106,7 +106,7 @@
      return false;
      }
- 
+
 -  //Read header informations
 +  //Read header information
    bool lResult = InternalReadHeaderInformation(header_file, false);
@@ -1128,11 +1128,11 @@ Last-Update: 2015-09-01
 @@ -195,7 +195,7 @@
      itkExceptionMacro(<< "LUMImageIO::ReadImageInformation() failed header open ! ");
      }
- 
+
 -  //Read header informations
 +  //Read header information
    InternalReadHeaderInformation(m_File, true);
- 
+
    otbMsgDebugMacro(<< "Driver to read: LUM");
 @@ -227,7 +227,7 @@
      {
@@ -1146,7 +1146,7 @@ Last-Update: 2015-09-01
 @@ -300,7 +300,7 @@
    otbSwappFileOrderToSystemOrderMacro(int, &NbCol, 1);
    otbSwappFileOrderToSystemOrderMacro(int, &NbLig, 1);
- 
+
 -  //Initialization of image informations
 +  //Initialization of image information
    m_Dimensions[0] = NbCol;
@@ -1155,9 +1155,9 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/IO/IOMW/include/otbMWImageIO.h
 +++ otb/Modules/IO/IOMW/include/otbMWImageIO.h
 @@ -141,7 +141,7 @@
- 
+
    std::string GetExtension(const std::string& filename);
- 
+
 -  /** Internal method to read header informations */
 +  /** Internal method to read header information */
    bool InternalReadHeaderInformation(std::fstream& file, const bool reportError);
@@ -1168,7 +1168,7 @@ Last-Update: 2015-09-01
 @@ -91,7 +91,7 @@
      return false;
      }
- 
+
 -  //Read header informations
 +  //Read header information
    bool lResult = InternalReadHeaderInformation(header_file, false);
@@ -1177,16 +1177,16 @@ Last-Update: 2015-09-01
 @@ -172,7 +172,7 @@
      itkExceptionMacro(<< "MWImageIO::ReadImageInformation() failed header open ! ");
      }
- 
+
 -  //Read header informations
 +  //Read header information
    InternalReadHeaderInformation(m_File, true);
- 
+
    otbMsgDebugMacro(<< "Driver to read: MW");
 @@ -227,7 +227,7 @@
- 
+
    SetComponentType(FLOAT);
- 
+
 -  //Initialization of image informations
 +  //Initialization of image information
    m_Dimensions[0] = NbCol;
@@ -1197,18 +1197,18 @@ Last-Update: 2015-09-01
 @@ -139,7 +139,7 @@
    RADImageIO(const Self &); //purposely not implemented
    void operator =(const Self&); //purposely not implemented
- 
+
 -  /** Internal method to read header informations */
 +  /** Internal method to read header information */
    bool InternalReadHeaderInformation(const std::string& file_name, std::fstream& file, const bool reportError);
- 
+
  #define otbSwappFileOrderToSystemOrderMacro(StrongType, buffer, buffer_size) \
 --- otb.orig/Modules/IO/IORAD/src/otbRADImageIO.cxx
 +++ otb/Modules/IO/IORAD/src/otbRADImageIO.cxx
 @@ -112,7 +112,7 @@
      return false;
      }
- 
+
 -  //Read header informations
 +  //Read header information
    bool lResult = InternalReadHeaderInformation(lFileName, header_file, false);
@@ -1217,16 +1217,16 @@ Last-Update: 2015-09-01
 @@ -236,7 +236,7 @@
      itkExceptionMacro(<< "RADImageIO::ReadImageInformation() failed header open ! ");
      }
- 
+
 -  //Read header informations
 +  //Read header information
    InternalReadHeaderInformation(m_FileName, m_HeaderFile, true);
- 
+
    otbMsgDebugMacro(<< "Driver to read: RAD");
 @@ -416,7 +416,7 @@
        }
      }
- 
+
 -  // Read "SENSCODAGE" informations (optionnal)
 +  // Read "SENSCODAGE" information (optionnal)
    file >> lString;
@@ -1235,7 +1235,7 @@ Last-Update: 2015-09-01
 @@ -704,7 +704,7 @@
      }
    m_HeaderFile << m_TypeRAD << std::endl;
- 
+
 -  //Write "SENSCODAGE" informations
 +  //Write "SENSCODAGE" information
    m_HeaderFile <<  "SENSCODAGE "; // << std::endl;
@@ -1246,7 +1246,7 @@ Last-Update: 2015-09-01
 @@ -209,7 +209,7 @@
    std::ostringstream filename;
    BuildFileName(quad2, filename);
- 
+
 -  // Build tile informations
 +  // Build tile information
    TileNameAndCoordType lTileInfos;
@@ -1255,56 +1255,56 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/IO/ImageIO/include/otbImageSeriesFileReader.h
 +++ otb/Modules/IO/ImageIO/include/otbImageSeriesFileReader.h
 @@ -57,7 +57,7 @@
- 
+
    /** Creation through object factory macro */
    itkNewMacro(Self);
 -  /** Runtime informations macro */
 +  /** Runtime information macro */
    itkTypeMacro(ImageSeriesFileReader, ImageSeriesFileReaderBase);
- 
+
    typedef typename Superclass::OutputImageType        OutputImageType;
 @@ -170,7 +170,7 @@
- 
+
    /** Creation through object factory macro */
    itkNewMacro(Self);
 -  /** Runtime informations macro */
 +  /** Runtime information macro */
    itkTypeMacro(ImageSeriesFileReader, ImageSeriesFileReaderBase);
- 
+
    typedef typename Superclass::OutputImageType        OutputImageType;
 @@ -276,7 +276,7 @@
- 
+
    /** Creation through object factory macro */
    itkNewMacro(Self);
 -  /** Runtime informations macro */
 +  /** Runtime information macro */
    itkTypeMacro(ImageSeriesFileReader, ImageSeriesFileReaderBase);
- 
+
    typedef typename Superclass::OutputImageType        OutputImageType;
 @@ -383,7 +383,7 @@
- 
+
    /** Creation through object factory macro */
    itkNewMacro(Self);
 -  /** Runtime informations macro */
 +  /** Runtime information macro */
    itkTypeMacro(ImageSeriesFileReader, ImageSeriesFileReaderBase);
- 
+
    typedef typename Superclass::OutputImageType        OutputImageType;
 --- otb.orig/Modules/IO/ImageIO/include/otbImageSeriesFileReaderBase.h
 +++ otb/Modules/IO/ImageIO/include/otbImageSeriesFileReaderBase.h
 @@ -71,7 +71,7 @@
- 
+
    /** Creation through object factory macro */
    itkNewMacro(Self);
 -  /** Runtime informations macro */
 +  /** Runtime information macro */
    itkTypeMacro(ImageSeriesFileReaderBase, ImageListSource);
- 
+
    typedef TImage                                      OutputImageType;
 --- otb.orig/Modules/IO/KMZWriter/include/otbKmzProductWriter.h
 +++ otb/Modules/IO/KMZWriter/include/otbKmzProductWriter.h
 @@ -44,7 +44,7 @@
- 
+
  /** \class KmzProductWriter
   * \brief This class generate a Kmz from one or several input
 - * images. The inputs must have a non empty metadata informations.
@@ -1315,46 +1315,46 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/IO/KMZWriter/include/otbKmzProductWriter.txx
 +++ otb/Modules/IO/KMZWriter/include/otbKmzProductWriter.txx
 @@ -117,7 +117,7 @@
- 
+
    if(emptyProjRef &&  emptyKWL)
      {
 -    itkExceptionMacro(<<"The input image have empty keyword list, please use an image with metadata informations");
 +    itkExceptionMacro(<<"The input image have empty keyword list, please use an image with metadata information");
      }
- 
+
    // Continue processing
 --- otb.orig/Modules/Learning/LearningBase/include/otbDecisionTree.h
 +++ otb/Modules/Learning/LearningBase/include/otbDecisionTree.h
 @@ -68,7 +68,7 @@
- 
+
    /** Creation through object factory macro */
    itkNewMacro(Self);
 -  /** Runtime informations macro */
 +  /** Runtime information macro */
    itkTypeMacro(DecisionTree, DataObject);
- 
+
    typedef typename std::pair< AttributeValueType, DecisionTreeTestType > KeyType;
 --- otb.orig/Modules/Learning/SOM/include/otbPeriodicSOM.h
 +++ otb/Modules/Learning/SOM/include/otbPeriodicSOM.h
 @@ -72,7 +72,7 @@
    /** Creation through object factory macro */
    itkNewMacro(Self);
- 
+
 -  /** Runtime informations macro */
 +  /** Runtime information macro */
    itkTypeMacro(PeriodicSOM, SOM);
- 
+
    typedef TListSample                      ListSampleType;
 --- otb.orig/Modules/Learning/SOM/include/otbSOM.h
 +++ otb/Modules/Learning/SOM/include/otbSOM.h
 @@ -68,7 +68,7 @@
- 
+
    /** Creation through object factory macro */
    itkNewMacro(Self);
 -  /** Runtime informations macro */
 +  /** Runtime information macro */
    itkTypeMacro(SOM, ImageSource);
- 
+
    typedef TListSample                      ListSampleType;
 --- otb.orig/Modules/Learning/SOM/include/otbSOMMap.h
 +++ otb/Modules/Learning/SOM/include/otbSOMMap.h
@@ -1370,25 +1370,25 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Learning/SOM/include/otbSOMWithMissingValue.h
 +++ otb/Modules/Learning/SOM/include/otbSOMWithMissingValue.h
 @@ -72,7 +72,7 @@
- 
+
    /** Creation through object factory macro */
    itkNewMacro(Self);
 -  /** Runtime informations macro */
 +  /** Runtime information macro */
    itkTypeMacro(SOMWithMissingValue, PeriodicSOM);
- 
+
  protected:
 --- otb.orig/Modules/Learning/SVMLearning/include/otbSVMImageClassificationWithRuleFilter.h
 +++ otb/Modules/Learning/SVMLearning/include/otbSVMImageClassificationWithRuleFilter.h
 @@ -95,7 +95,7 @@
- 
+
    /** GenerateOutputInformation
          * Set the number of bands of the output rule image.
 -        * Copy informations from the input image if existing.
 +        * Copy information from the input image if existing.
          **/
    virtual void GenerateOutputInformation();
- 
+
 --- otb.orig/Modules/OBIA/RCC8/include/otbRCC8GraphFileReader.h
 +++ otb/Modules/OBIA/RCC8/include/otbRCC8GraphFileReader.h
 @@ -71,7 +71,7 @@
@@ -1444,14 +1444,14 @@ Last-Update: 2015-09-01
 -  /** Runtime type informations */
 +  /** Runtime type information */
    itkTypeMacro(AeronetFileReader, itk::ProcessObject);
- 
+
    /** Overiding of the GetOutput() method */
 --- otb.orig/Modules/Radiometry/OpticalCalibration/src/otbAeronetFileReader.cxx
 +++ otb/Modules/Radiometry/OpticalCalibration/src/otbAeronetFileReader.cxx
 @@ -237,7 +237,7 @@
      return;
      }
- 
+
 -  // Read informations lines (5 lines)
 +  // Read information lines (5 lines)
    std::getline(fin, line);
@@ -1461,13 +1461,13 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Radiometry/Simulation/include/otbSpectralResponse.txx
 @@ -49,7 +49,7 @@
      }
- 
+
    int NumLigne = 26; // Go to the line 27
 -  //Ignore first 26th lines which are metadatas informations
 +  //Ignore first 26th lines which are metadatas information
    for (int i = 0; i < NumLigne; ++i)
      fin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
- 
+
 --- otb.orig/Modules/Segmentation/Conversion/include/otbOGRDataSourceToLabelImageFilter.h
 +++ otb/Modules/Segmentation/Conversion/include/otbOGRDataSourceToLabelImageFilter.h
 @@ -43,7 +43,7 @@
@@ -1515,14 +1515,14 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Segmentation/MorphologicalProfiles/include/otbProfileDerivativeToMultiScaleCharacteristicsFilter.h
 +++ otb/Modules/Segmentation/MorphologicalProfiles/include/otbProfileDerivativeToMultiScaleCharacteristicsFilter.h
 @@ -87,7 +87,7 @@
- 
+
    /** GenerateOutputInformation
     * Set the number of bands of the output.
 -   * Copy informations from the first image of the list if existing.
 +   * Copy information from the first image of the list if existing.
     **/
    virtual void GenerateOutputInformation(void);
- 
+
 --- otb.orig/Modules/Applications/AppDimensionalityReduction/app/otbDimensionalityReduction.cxx
 +++ otb/Modules/Applications/AppDimensionalityReduction/app/otbDimensionalityReduction.cxx
 @@ -139,7 +139,7 @@
@@ -1554,7 +1554,7 @@ Last-Update: 2015-09-01
 -Noise Fraction (MNF), Fast Independant Component Analysis (FICA), Maximum
 +Noise Fraction (MNF), Fast Independent Component Analysis (FICA), Maximum
  Autocorrelation Factor (MAF), and so on.")
- 
+
  otb_module(OTBDimensionalityReduction
 --- otb.orig/Examples/BasicFilters/BandMathFilterExample.cxx
 +++ otb/Examples/BasicFilters/BandMathFilterExample.cxx
@@ -1605,7 +1605,7 @@ Last-Update: 2015-09-01
 --- otb.orig/Examples/Filtering/RasterizationExample.cxx
 +++ otb/Examples/Filtering/RasterizationExample.cxx
 @@ -24,7 +24,7 @@
- 
+
  // Software Guide : BeginLatex
  //
 -// The \doxygen{otb}{VectorDataToMapFilter} allows to perform
@@ -1616,7 +1616,7 @@ Last-Update: 2015-09-01
 --- otb.orig/Examples/IO/DEMHandlerExample.cxx
 +++ otb/Examples/IO/DEMHandlerExample.cxx
 @@ -68,9 +68,9 @@
- 
+
  // Software Guide : BeginLatex
  //
 -// It allows to configure a directory containing DEM tiles (DTED or SRTM
@@ -1661,7 +1661,7 @@ Last-Update: 2015-09-01
 +  // This type of label object allows storing generic attributes. Each region can store
    // a set of attributes: in this case, Hoover instances and metrics will be stored.
    // Software Guide : EndLatex
- 
+
 --- otb.orig/Modules/Adapters/OSSIMAdapters/include/otbDEMHandler.h
 +++ otb/Modules/Adapters/OSSIMAdapters/include/otbDEMHandler.h
 @@ -46,13 +46,13 @@
@@ -1682,19 +1682,19 @@ Last-Update: 2015-09-01
   *
   * Here is the complete description of both methods output depending
 @@ -169,11 +169,11 @@
- 
+
    void PrintSelf(std::ostream& os, itk::Indent indent) const;
- 
+
 -  // Ossim does not allow to retrieve the geoid file path
 +  // Ossim does not allow retrieving the geoid file path
    // We therefore must keep it on our side
    std::string m_GeoidFile;
- 
+
 -  // Ossim does not allow to retrieve the default height above
 +  // Ossim does not allow retrieving the default height above
    // ellipsoid We therefore must keep it on our side
    double m_DefaultHeightAboveEllipsoid;
- 
+
 --- otb.orig/Modules/Core/Common/include/otbModelComponentBase.txx
 +++ otb/Modules/Core/Common/include/otbModelComponentBase.txx
 @@ -187,7 +187,7 @@
@@ -1711,7 +1711,7 @@ Last-Update: 2015-09-01
 @@ -71,7 +71,7 @@
     * it needs to be redone here for this subclass to compile properly with gcc. */
    typedef typename Superclass::ImageType ImageType;
- 
+
 -  /** Offset typedef support. This explicit redefinition allows to Set/Get
 +  /** Offset typedef support. This explicit redefinition allows Setting/Getting
     * the location of the iterator. */
@@ -1754,7 +1754,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Core/LabelMap/include/otbAttributesMapLabelObject.h
 @@ -37,7 +37,7 @@
  {
- 
+
  /** \class AttributesMapLabelObjectAccessor
 - *  \brief Allows to acces a given field of an AttributesMapLabelObject
 + *  \brief Allows accessing a given field of an AttributesMapLabelObject
@@ -1762,8 +1762,8 @@ Last-Update: 2015-09-01
   * The name of the attribute to retrieve can be set by using the
   * SetAttributeName method.
 @@ -88,9 +88,9 @@
- 
- 
+
+
  /** \class AttributesMapMeasurementFunctor
 -*   \brief This class allows to build a measurement vector from an AttributesMapLabelObject
 +*   \brief This class allows building a measurement vector from an AttributesMapLabelObject
@@ -1903,7 +1903,7 @@ Last-Update: 2015-09-01
   * \ingroup OTBStreaming
 @@ -88,7 +88,7 @@
    itkGetMacro(MemoryPrint, MemoryPrintType);
- 
+
    /** Set/Get the bias correction factor which will weight the
 -   * estimated memory print (allows to compensate bias between
 +   * estimated memory print (allows compensating bias between
@@ -1979,7 +1979,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Filtering/Convolution/include/otbGaborFilterGenerator.h
 @@ -31,7 +31,7 @@
  {
- 
+
  /** \class GaborFilterGenerator
 - * This class allows to generate gabor filter convolution mask. The mask is stored
 + * This class allows generating a gabor filter convolution mask. The mask is stored
@@ -2071,7 +2071,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Filtering/Polarimetry/include/otbPolarimetricData.h
 @@ -39,7 +39,7 @@
    } ArchitectureType;
- 
+
  /** \class PolarimetricData
 -*  \brief This class allows to determine the type of architecture we get.
 +*  \brief This class allows determining the type of architecture we get.
@@ -2125,18 +2125,18 @@ Last-Update: 2015-09-01
 @@ -544,7 +544,7 @@
    itkGetConstReferenceMacro(BucketOptimization, bool);
  #endif
- 
+
 -  /** Global shift allows to tackle down numerical instabilities by
 +  /** Global shift allows tackling down numerical instabilities by
    aligning pixel indices when performing tile processing */
    itkSetMacro(GlobalShift,InputIndexType);
- 
+
 --- otb.orig/Modules/Filtering/Statistics/include/otbStreamingCompareImageFilter.h
 +++ otb/Modules/Filtering/Statistics/include/otbStreamingCompareImageFilter.h
 @@ -150,7 +150,7 @@
                               outputRegionForThread,
                               itk::ThreadIdType threadId);
- 
+
 -  /** Allows to skip the verification of physical space between
 +  /** Allows skipping the verification of physical space between
     *  the two input images (see flag m_PhysicalSpaceCheck)
@@ -2243,13 +2243,13 @@ Last-Update: 2015-09-01
 +++ otb/Modules/IO/ImageIO/include/otbImageFileWriter.txx
 @@ -682,7 +682,7 @@
    this->ReleaseInputs();
- 
+
    //Reset global shift on input region (box parameter)
 -  //It allows to call multiple update over the writer
 +  //It allows calling multiple update over the writer
    m_ShiftOutputIndex.Fill(0);
  }
- 
+
 --- otb.orig/Modules/Learning/DempsterShafer/include/otbMassOfBelief.h
 +++ otb/Modules/Learning/DempsterShafer/include/otbMassOfBelief.h
 @@ -57,26 +57,26 @@
@@ -2415,13 +2415,13 @@ Last-Update: 2015-09-01
   *  smoothly. When working with large images, a coarse grid-step will
 @@ -107,7 +107,7 @@
    typedef typename OutputImageType::RegionType      RegionType;
- 
+
    // 3D RS transform
 -  // TODO: Allow to tune precision (i.e. double or float)
 +  // TODO: Allow tuning precision (i.e. double or float)
    typedef otb::GenericRSTransform<double,3,3>       RSTransformType;
    typedef typename RSTransformType::Pointer         RSTransformPointerType;
- 
+
 --- otb.orig/Modules/Segmentation/OGRProcessing/include/otbOGRLayerStreamStitchingFilter.h
 +++ otb/Modules/Segmentation/OGRProcessing/include/otbOGRLayerStreamStitchingFilter.h
 @@ -39,7 +39,7 @@
@@ -2461,7 +2461,7 @@ Last-Update: 2015-09-01
    app->SetParameterDescription(key,
 -                               "This group of parameters allows to manage elevation values. Supported formats are SRTM, DTED or any geotiff. DownloadSRTMTiles application could be a useful tool to list/download tiles related to a product.");
 +                               "This group of parameters allows managing elevation values. Supported formats are SRTM, DTED or any geotiff. DownloadSRTMTiles application could be a useful tool to list/download tiles related to a product.");
- 
+
    // DEM directory
    std::ostringstream oss;
    oss << key<<".dem";
@@ -2470,7 +2470,7 @@ Last-Update: 2015-09-01
 -                               "This parameter allows to select a directory containing Digital Elevation Model tiles");
 +                               "This parameter allows selecting a directory containing Digital Elevation Model tiles");
    app->MandatoryOff(oss.str());
- 
+
    std::string demDirFromConfig = otb::ConfigurationManager::GetDEMDirectory();
 @@ -73,7 +73,7 @@
    oss.str("");
@@ -2479,39 +2479,39 @@ Last-Update: 2015-09-01
 -  app->SetParameterDescription(oss.str(),"This parameter allows to set the default height above ellipsoid when there is no DEM available, no coverage for some points or pixels with no_data in the DEM tiles, and no geoid file has been set. This is also used by some application as an average elevation value.");
 +  app->SetParameterDescription(oss.str(),"This parameter allows setting the default height above ellipsoid when there is no DEM available, no coverage for some points or pixels with no_data in the DEM tiles, and no geoid file has been set. This is also used by some application as an average elevation value.");
    app->SetDefaultParameterFloat(oss.str(), 0.);
- 
+
   // TODO : not implemented yet
 --- otb.orig/Modules/Wrappers/ApplicationEngine/src/otbWrapperMapProjectionParametersHandler.cxx
 +++ otb/Modules/Wrappers/ApplicationEngine/src/otbWrapperMapProjectionParametersHandler.cxx
 @@ -41,7 +41,7 @@
- 
+
    oss << ".zone";
    app->AddParameter(ParameterType_Int, oss.str(), "Zone number");
 -  app->SetParameterDescription(oss.str(),"The zone number ranges from 1 to 60 and allows to define the transverse mercator projection (along with the hemisphere)");
 +  app->SetParameterDescription(oss.str(),"The zone number ranges from 1 to 60 and allows defining the transverse mercator projection (along with the hemisphere)");
    app->SetMinimumParameterIntValue(oss.str(), 1);
    app->SetDefaultParameterInt(oss.str(), 31);
- 
+
 @@ -99,7 +99,7 @@
    oss<<key<<".epsg";
    app->AddChoice(oss.str(),"EPSG Code");
    app->SetParameterDescription(oss.str(),
 -                               "This code is a generic way of identifying map projections, and allows to specify a large amount of them. See www.spatialreference.org to find which EPSG code is associated to your projection;");
 +                               "This code is a generic way of identifying map projections, and allows specifying a large amount of them. See www.spatialreference.org to find which EPSG code is associated to your projection;");
- 
+
    oss <<".code";
    app->AddParameter(ParameterType_Int, oss.str(), "EPSG Code");
 --- otb.orig/Utilities/Doxygen/OTB/ImageSimilarityMetrics.dox
 +++ otb/Utilities/Doxygen/OTB/ImageSimilarityMetrics.dox
 @@ -37,7 +37,7 @@
  Metrics are depend on the objects they compare. The toolkit currently offers <em> Image To Image </em> and <em> PointSet to Image </em> metrics as follows:
- 
+
  \li <b> Mean Squares </b> Sum of squared differences between intensity values. It requires the two objects to have intensity values in the same range.
 -\li <b> Normalized Correlation </b> Correlation between intensity values divided by the square rooted autocorrelation of both target and reference objects: \f$ \frac{\sum_i^n{a_i * b_i }}{\sum_i^n{a_i^2}\sum_i^n{b_i^2}} \f$. This metric allows to register objects whose intensity values are related by a linear transformation.
 +\li <b> Normalized Correlation </b> Correlation between intensity values divided by the square rooted autocorrelation of both target and reference objects: \f$ \frac{\sum_i^n{a_i * b_i }}{\sum_i^n{a_i^2}\sum_i^n{b_i^2}} \f$. This metric allows registering objects whose intensity values are related by a linear transformation.
  \li <b> Pattern Intensity </b> Squared differences between intensity values transformed by a function of type  \f$ \frac{1}{1+x} \f$  and summed them up. This metric has the advantage of increase simultaneously when more samples are available and when intensity values are close.
  \li <b> Mutual Information </b> Mutual information is based in an information theory concept. Mutual information between two sets measures how much can be known from one set if only the other set is known. Given a set of values \f$ A=\{a_i\} \f$. Its entropy \f$ H(A) \f$  is defined by \f$ H(A) = \sum_i^n{- p(a_i) \log({p(a_i)})} \f$ where \f$ p(a_i) \f$ are the probabilities of the values in the set.  Entropy can be interpreted as a measure of the mean uncertainty reduction that is obtained when one of the particular values is found during sampling. Given two sets \f$ A=\{a_i\} \f$ and \f$ B=\{b_i\} \f$ its joint entropy is given by the joint probabilities \f$ p_(a_i,b_i) \f$ as \f$ H(A,B) = \sum_i^n{-p(a_i,b_i) * log( p(a_i, b_i) )} \f$. Mutual information is obtained by subtracting the entropy of both sets from the joint entropy, as : \f$ H(A,B)-H(A)-H(B) \f$, and indicates how much uncertainty about one set is reduced by the knowledge of the second set. Mutual information is the metric of choice when image from different modalities need to be registered.
- 
+
 --- otb.orig/Utilities/Doxygen/OTB/Registration.dox
 +++ otb/Utilities/Doxygen/OTB/Registration.dox
 @@ -10,7 +10,7 @@
@@ -2522,16 +2522,16 @@ Last-Update: 2015-09-01
 +A registration procedure would allow taking both images and find
  a spatial transformation to find the corresponding pixel from one
  image into the other.
- 
+
 @@ -75,7 +75,7 @@
  Metrics are depend on the objects they compare. The toolkit currently offers <em> Image To Image </em> and <em> PointSet to Image </em> metrics as follows:
- 
+
  \li <b> Mean Squares </b> Sum of squared differences between intensity values. It requires the two objects to have intensity values in the same range.
 -\li <b> Normalized Correlation </b> Correlation between intensity values divided by the square rooted autocorrelation of both target and reference objects: \f$ \frac{\sum_i^n{a_i * b_i }}{\sum_i^n{a_i^2}\sum_i^n{b_i^2}} \f$. This metric allows to register objects whose intensity values are related by a linear transformation.
 +\li <b> Normalized Correlation </b> Correlation between intensity values divided by the square rooted autocorrelation of both target and reference objects: \f$ \frac{\sum_i^n{a_i * b_i }}{\sum_i^n{a_i^2}\sum_i^n{b_i^2}} \f$. This metric allows registering objects whose intensity values are related by a linear transformation.
  \li <b> Pattern Intensity </b> Squared differences between intensity values transformed by a function of type  \f$ \frac{1}{1+x} \f$  and summed them up. This metric has the advantage of increase simultaneously when more samples are available and when intensity values are close.
  \li <b> Mutual Information </b> Mutual information is based in an information theory concept. Mutual information between two sets measures how much can be known from one set if only the other set is known. Given a set of values \f$ A=\{a_i\} \f$. Its entropy \f$ H(A) \f$  is defined by \f$ H(A) = \sum_i^n{- p(a_i) \log({p(a_i)})} \f$ where \f$ p(a_i) \f$ are the probabilities of the values in the set.  Entropy can be interpreted as a measure of the mean uncertainty reduction that is obtained when one of the particular values is found during sampling. Given two sets \f$ A=\{a_i\} \f$ and \f$ B=\{b_i\} \f$ its joint entropy is given by the joint probabilities \f$ p_(a_i,b_i) \f$ as \f$ H(A,B) = \sum_i^n{-p(a_i,b_i) * log( p(a_i, b_i) )} \f$. Mutual information is obtained by subtracting the entropy of both sets from the joint entropy, as : \f$ H(A,B)-H(A)-H(B) \f$, and indicates how much uncertainty about one set is reduced by the knowledge of the second set. Mutual information is the metric of choice when image from different modalities need to be registered.
- 
+
 --- otb.orig/Examples/Projections/GeometriesProjectionExample.cxx
 +++ otb/Examples/Projections/GeometriesProjectionExample.cxx
 @@ -140,7 +140,7 @@
@@ -2559,7 +2559,7 @@ Last-Update: 2015-09-01
 @@ -81,7 +81,7 @@
    spacing[0] = 0.6;
    spacing[1] = -0.6;
- 
+
 -  // Build the ouput projection ref : UTM ref
 +  // Build the output projection ref : UTM ref
    OGRSpatialReference    oSRS;
@@ -2615,7 +2615,7 @@ Last-Update: 2015-09-01
  typedef MorphologicalProfilesSegmentationFilter Self;
 -typedef itk::ImageToImageFilter<TInputImage, TOuputImage> Superclass;
 +typedef itk::ImageToImageFilter<TInputImage, TOutputImage> Superclass;
- 
+
  typedef itk::SmartPointer<Self>       Pointer;
  typedef itk::SmartPointer<const Self> ConstPointer;
 @@ -69,7 +69,7 @@
@@ -2625,14 +2625,14 @@ Last-Update: 2015-09-01
 -typedef TOuputImage                        OutputImageType;
 +typedef TOutputImage                       OutputImageType;
  typedef otb::Image<TInternalPrecision>     InternalImageType;
- 
+
  typedef TStructuringElement                StructuringElementType;
 --- otb.orig/Modules/Segmentation/MorphologicalProfiles/include/otbMorphologicalProfilesSegmentationFilter.txx
 +++ otb/Modules/Segmentation/MorphologicalProfiles/include/otbMorphologicalProfilesSegmentationFilter.txx
 @@ -23,8 +23,8 @@
  namespace otb
  {
- 
+
 -template <class TInputImage,  class TOuputImage, class TInternalPrecision, class TStructuringElement>
 -MorphologicalProfilesSegmentationFilter<TInputImage,TOuputImage,TInternalPrecision,TStructuringElement>
 +template <class TInputImage,  class TOutputImage, class TInternalPrecision, class TStructuringElement>
@@ -2641,16 +2641,16 @@ Last-Update: 2015-09-01
  {
    m_ProfileSize = 5;
 @@ -54,14 +54,14 @@
- 
+
  }
- 
+
 -template <class TInputImage,  class TOuputImage, class TInternalPrecision, class TStructuringElement>
 -MorphologicalProfilesSegmentationFilter<TInputImage,TOuputImage,TInternalPrecision,TStructuringElement>
 +template <class TInputImage,  class TOutputImage, class TInternalPrecision, class TStructuringElement>
 +MorphologicalProfilesSegmentationFilter<TInputImage,TOutputImage,TInternalPrecision,TStructuringElement>
  ::~MorphologicalProfilesSegmentationFilter()
  {}
- 
+
 -template <class TInputImage,  class TOuputImage, class TInternalPrecision, class TStructuringElement>
 +template <class TInputImage,  class TOutputImage, class TInternalPrecision, class TStructuringElement>
  void
@@ -2663,11 +2663,11 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Wrappers/CommandLine/src/CMakeLists.txt
 @@ -16,7 +16,7 @@
  otb_module_target(otbApplicationLauncherCommandLine)
- 
+
  # Where we will install the script in the build tree
 -get_target_property(CLI_OUPUT_DIR otbApplicationLauncherCommandLine RUNTIME_OUTPUT_DIRECTORY)
 +get_target_property(CLI_OUTPUT_DIR otbApplicationLauncherCommandLine RUNTIME_OUTPUT_DIRECTORY)
- 
+
  # Generate a script in the build dir, next to the cli launcher
  # Need a two-step process since configure_file don't support permissions
 @@ -27,11 +27,11 @@
@@ -2677,13 +2677,13 @@ Last-Update: 2015-09-01
 -     DESTINATION ${CLI_OUPUT_DIR}
 +     DESTINATION ${CLI_OUTPUT_DIR}
       FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
- 
+
  # TODO : test if NO_INSTALL is set
 -install(PROGRAMS ${CLI_OUPUT_DIR}/otbcli.bat
 +install(PROGRAMS ${CLI_OUTPUT_DIR}/otbcli.bat
          DESTINATION ${OTBCommandLine_INSTALL_RUNTIME_DIR}
          COMPONENT Runtime)
- 
+
 @@ -40,11 +40,11 @@
                  ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/Scripts/otbcli
                  @ONLY )
@@ -2691,22 +2691,22 @@ Last-Update: 2015-09-01
 -     DESTINATION ${CLI_OUPUT_DIR}
 +     DESTINATION ${CLI_OUTPUT_DIR}
       FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
- 
+
  # TODO : test if NO_INSTALL is set
 -install(PROGRAMS ${CLI_OUPUT_DIR}/otbcli
 +install(PROGRAMS ${CLI_OUTPUT_DIR}/otbcli
          DESTINATION ${OTBCommandLine_INSTALL_RUNTIME_DIR}
          COMPONENT Runtime)
- 
+
 --- otb.orig/Modules/Wrappers/QtWidget/src/CMakeLists.txt
 +++ otb/Modules/Wrappers/QtWidget/src/CMakeLists.txt
 @@ -91,7 +91,7 @@
  otb_module_target(otbApplicationLauncherQt)
- 
+
  # Where we will install the script in the build tree
 -get_target_property(GUI_OUPUT_DIR otbApplicationLauncherQt RUNTIME_OUTPUT_DIRECTORY)
 +get_target_property(GUI_OUTPUT_DIR otbApplicationLauncherQt RUNTIME_OUTPUT_DIRECTORY)
- 
+
  # Generate a script in the build dir, next to the gui launcher
  # Need a two-step process since configure_file don't support permissions
 @@ -103,11 +103,11 @@
@@ -2716,13 +2716,13 @@ Last-Update: 2015-09-01
 -     DESTINATION ${GUI_OUPUT_DIR}
 +     DESTINATION ${GUI_OUTPUT_DIR}
       FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
- 
+
  # TODO : test if NO_INSTALL is set
 -install(PROGRAMS ${GUI_OUPUT_DIR}/otbgui.bat
 +install(PROGRAMS ${GUI_OUTPUT_DIR}/otbgui.bat
          DESTINATION ${OTBQtWidget_INSTALL_RUNTIME_DIR}
          COMPONENT Runtime)
- 
+
 @@ -116,11 +116,11 @@
                  ${CMAKE_BINARY_DIR}${CMAKE_FILES_DIRECTORY}/Scripts/otbgui
                  @ONLY )
@@ -2730,13 +2730,13 @@ Last-Update: 2015-09-01
 -     DESTINATION ${GUI_OUPUT_DIR}
 +     DESTINATION ${GUI_OUTPUT_DIR}
       FILE_PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE GROUP_READ GROUP_EXECUTE WORLD_READ WORLD_EXECUTE)
- 
+
  # TODO : test if NO_INSTALL is set
 -install(PROGRAMS ${GUI_OUPUT_DIR}/otbgui
 +install(PROGRAMS ${GUI_OUTPUT_DIR}/otbgui
          DESTINATION ${OTBQtWidget_INSTALL_RUNTIME_DIR}
          COMPONENT Runtime)
- 
+
 --- otb.orig/Modules/Detection/RoadExtraction/include/otbRemoveWrongDirectionFilter.h
 +++ otb/Modules/Detection/RoadExtraction/include/otbRemoveWrongDirectionFilter.h
 @@ -63,7 +63,7 @@
@@ -2773,7 +2773,7 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Learning/DempsterShafer/include/otbDSFusionOfClassifiersImageFilter.txx
 +++ otb/Modules/Learning/DempsterShafer/include/otbDSFusionOfClassifiersImageFilter.txx
 @@ -307,7 +307,7 @@
- 
+
    // Calculation of the four constants A, B, C and K
    MassType A = 0, B = 1, C = 1, K;
 -  K = 0; //supress warning. not sure about default value ??
@@ -2784,18 +2784,18 @@ Last-Update: 2015-09-01
 --- otb.orig/Modules/Wrappers/ApplicationEngine/src/otbWrapperDocExampleStructure.cxx
 +++ otb/Modules/Wrappers/ApplicationEngine/src/otbWrapperDocExampleStructure.cxx
 @@ -145,7 +145,7 @@
- 
+
    res = oss.str();
- 
+
 -  // Supress last added space
 +  // Suppress last added space
    res.erase( res.size()-1, 1);
- 
+
    return res.c_str();
 --- otb.orig/Modules/Wrappers/CommandLine/src/otbWrapperCommandLineParser.cxx
 +++ otb/Modules/Wrappers/CommandLine/src/otbWrapperCommandLineParser.cxx
 @@ -496,7 +496,7 @@
- 
+
    while( found != std::string::npos )
      {
 -    // Supress everything before the key
@@ -2813,7 +2813,7 @@ Last-Update: 2015-09-01
 +  virtual void SuppressFile();
    virtual void EraseFile();
    virtual void UpdateFilenameList();
- 
+
 --- otb.orig/Modules/Wrappers/QtWidget/include/otbWrapperQtWidgetInputImageListParameter.h
 +++ otb/Modules/Wrappers/QtWidget/include/otbWrapperQtWidgetInputImageListParameter.h
 @@ -51,7 +51,7 @@
@@ -2824,7 +2824,7 @@ Last-Update: 2015-09-01
 +  virtual void SuppressFile();
    virtual void EraseFile();
    virtual void UpdateImageList();
- 
+
 --- otb.orig/Modules/Wrappers/QtWidget/include/otbWrapperQtWidgetInputVectorDataListParameter.h
 +++ otb/Modules/Wrappers/QtWidget/include/otbWrapperQtWidgetInputVectorDataListParameter.h
 @@ -52,7 +52,7 @@
@@ -2835,7 +2835,7 @@ Last-Update: 2015-09-01
 +  virtual void SuppressFile();
    virtual void EraseFile();
    virtual void UpdateVectorDataList();
- 
+
 --- otb.orig/Modules/Wrappers/QtWidget/include/otbWrapperQtWidgetStringListParameter.h
 +++ otb/Modules/Wrappers/QtWidget/include/otbWrapperQtWidgetStringListParameter.h
 @@ -46,7 +46,7 @@
@@ -2845,14 +2845,14 @@ Last-Update: 2015-09-01
 -  virtual void SupressString();
 +  virtual void SuppressString();
    virtual void UpdateStringList();
- 
+
  private:
 --- otb.orig/Modules/Wrappers/QtWidget/src/otbWrapperQtWidgetInputFilenameListParameter.cxx
 +++ otb/Modules/Wrappers/QtWidget/src/otbWrapperQtWidgetInputFilenameListParameter.cxx
 @@ -87,12 +87,12 @@
    connect(addButton, SIGNAL(clicked()), this, SLOT(AddFile()));
    addSupLayout->addWidget(addButton);
- 
+
 -  // Supress file button
 +  // Suppress file button
    QPushButton * supButton = new QPushButton;
@@ -2864,10 +2864,10 @@ Last-Update: 2015-09-01
 +  connect(supButton, SIGNAL(clicked()), this, SLOT(SuppressFile()));
    addSupLayout->addWidget(supButton);
    buttonLayout->addLayout(addSupLayout);
- 
+
 @@ -312,7 +312,7 @@
  }
- 
+
  void
 -QtWidgetInputFilenameListParameter::SupressFile()
 +QtWidgetInputFilenameListParameter::SuppressFile()
@@ -2879,7 +2879,7 @@ Last-Update: 2015-09-01
 @@ -89,12 +89,12 @@
    connect(addButton, SIGNAL(clicked()), this, SLOT(AddFile()));
    addSupLayout->addWidget(addButton);
- 
+
 -  // Supress file button
 +  // Suppress file button
    QPushButton * supButton = new QPushButton;
@@ -2891,10 +2891,10 @@ Last-Update: 2015-09-01
 +  connect(supButton, SIGNAL(clicked()), this, SLOT(SuppressFile()));
    addSupLayout->addWidget(supButton);
    buttonLayout->addLayout(addSupLayout);
- 
+
 @@ -332,7 +332,7 @@
  }
- 
+
  void
 -QtWidgetInputImageListParameter::SupressFile()
 +QtWidgetInputImageListParameter::SuppressFile()
@@ -2906,7 +2906,7 @@ Last-Update: 2015-09-01
 @@ -86,12 +86,12 @@
    connect(addButton, SIGNAL(clicked()), this, SLOT(AddFile()));
    addSupLayout->addWidget(addButton);
- 
+
 -  // Supress file button
 +  // Suppress file button
    QPushButton * supButton = new QPushButton;
@@ -2918,10 +2918,10 @@ Last-Update: 2015-09-01
 +  connect(supButton, SIGNAL(clicked()), this, SLOT(SuppressFile()));
    addSupLayout->addWidget(supButton);
    buttonLayout->addLayout(addSupLayout);
- 
+
 @@ -311,7 +311,7 @@
  }
- 
+
  void
 -QtWidgetInputVectorDataListParameter::SupressFile()
 +QtWidgetInputVectorDataListParameter::SuppressFile()
@@ -2933,7 +2933,7 @@ Last-Update: 2015-09-01
 @@ -88,12 +88,12 @@
      connect( addButton, SIGNAL(clicked()), this, SLOT(AddString()) );
      addSupLayout->addWidget(addButton);
- 
+
 -    // Supress file button
 +    // Suppress file button
      QPushButton * supButton = new QPushButton;
@@ -2945,10 +2945,10 @@ Last-Update: 2015-09-01
 +    connect( supButton, SIGNAL(clicked()), this, SLOT(SuppressString()) );
      addSupLayout->addWidget(supButton);
      buttonLayout->addLayout(addSupLayout);
- 
+
 @@ -177,7 +177,7 @@
- 
- 
+
+
  void
 -QtWidgetStringListParameter::SupressString()
 +QtWidgetStringListParameter::SuppressString()
@@ -2959,7 +2959,7 @@ Last-Update: 2015-09-01
 +++ otb/Copyright/ITKCopyright.txt
 @@ -17,7 +17,7 @@
  copyrighted accordingly (see VTKCopyright.txt and VXLCopyright.txt).
- 
+
  The copyright of most of the files in the "Utilities" subdirectory is held by
 -third parties who allow to distribute this material under a license compatible
 +third parties who allow distributing this material under a license compatible
@@ -3044,7 +3044,7 @@ Last-Update: 2015-09-01
 +  // does not allow generating a full segmentation based only on color.
    //
    //  Software Guide : EndLatex
- 
+
 --- otb.orig/Examples/Tutorials/Multispectral.cxx
 +++ otb/Examples/Tutorials/Multispectral.cxx
 @@ -91,7 +91,7 @@
@@ -3075,7 +3075,7 @@ Last-Update: 2015-09-01
 +  // Ossim does not allow retrieving the default height above
    // ellipsoid We therefore must keep it on our side
    m_DefaultHeightAboveEllipsoid = h;
- 
+
 @@ -257,7 +257,7 @@
  DEMHandler
  ::GetDefaultHeightAboveEllipsoid() const
@@ -3086,7 +3086,7 @@ Last-Update: 2015-09-01
    return m_DefaultHeightAboveEllipsoid;
  }
 @@ -286,7 +286,7 @@
- 
+
  std::string DEMHandler::GetGeoidFile() const
  {
 -  // Ossim does not allow to retrieve the geoid file path
@@ -3098,7 +3098,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Core/ImageBase/include/otbImage.h
 @@ -67,7 +67,7 @@
    typedef typename Superclass::ValueType ValueType;
- 
+
    /** Internal Pixel representation. Used to maintain a uniform API
 -   * with Image Adaptors and allow to keep a particular internal
 +   * with Image Adaptors and allow keeping a particular internal
@@ -3109,7 +3109,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Core/ImageBase/include/otbRemoteSensingRegion.h
 @@ -116,7 +116,7 @@
    }
- 
+
    /** This method provides explicit conversion to itk::ImageRegion<2>,
 -   * so as to allow to use RemoteSensingRegion to specify requested
 +   * so as to allow using RemoteSensingRegion to specify requested
@@ -3120,7 +3120,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Core/ImageBase/include/otbVectorImage.h
 @@ -66,7 +66,7 @@
    typedef typename Superclass::ValueType ValueType;
- 
+
    /** Internal Pixel representation. Used to maintain a uniform API
 -   * with Image Adaptors and allow to keep a particular internal
 +   * with Image Adaptors and allow keeping a particular internal
@@ -3136,7 +3136,7 @@ Last-Update: 2015-09-01
 -    //Got orientation and incidences angle which allow to compute satellite
 +    //Got orientation and incidences angle which allow computing satellite
      // azimuthal angle
- 
+
      // MSD: for the moment take only topCenter value
 --- otb.orig/Modules/Core/Transform/include/otbImageToGenericRSOutputParameters.h
 +++ otb/Modules/Core/Transform/include/otbImageToGenericRSOutputParameters.h
@@ -3175,7 +3175,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Learning/SOM/include/otbPeriodicSOM.txx
 @@ -58,7 +58,7 @@
    NeighborhoodIteratorType it(radius, map, mapRegion);
- 
+
    // Here, the periodic update is achieved 'by hand' since
 -  // PeriodicBoundaryCondition does not allow to modifiy
 +  // PeriodicBoundaryCondition does not allow modifying
@@ -3186,7 +3186,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Learning/SOM/include/otbSOMWithMissingValue.txx
 @@ -70,7 +70,7 @@
    NeighborhoodIteratorType it(radius, map, mapRegion);
- 
+
    // Here, the periodic update is achieved 'by hand' since
 -  // PeriodicBoundaryCondition does not allow to modifiy
 +  // PeriodicBoundaryCondition does not allow modifying
@@ -3197,7 +3197,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Learning/Supervised/include/otbDecisionTreeMachineLearningModel.h
 @@ -81,7 +81,7 @@
    itkSetMacro(RegressionAccuracy, double);
- 
+
    /** If true then surrogate splits will be built.
 -   * These splits allow to work with missing data and compute variable importance correctly.
 +   * These splits allow working with missing data and compute variable importance correctly.
@@ -3208,7 +3208,7 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Learning/Supervised/include/otbGradientBoostedTreeMachineLearningModel.h
 @@ -93,7 +93,7 @@
    itkSetMacro(MaxDepth, int);
- 
+
    /** If true then surrogate splits will be built.
 -   * These splits allow to work with missing data and compute variable importance correctly.
 +   * These splits allow working with missing data and compute variable importance correctly.
@@ -3219,29 +3219,29 @@ Last-Update: 2015-09-01
 +++ otb/Modules/Registration/DisparityMap/include/otbDisparityMapTo3DFilter.h
 @@ -74,7 +74,7 @@
    typedef typename OutputImageType::PixelType          DEMPixelType;
- 
+
    // 3D RS transform
 -  // TODO: Allow to tune precision (i.e. double or float)
 +  // TODO: Allow tuning precision (i.e. double or float)
    typedef double                                      PrecisionType;
    typedef otb::GenericRSTransform<PrecisionType,3,3>  RSTransformType;
- 
+
 --- otb.orig/Modules/Registration/DisparityMap/include/otbDisparityMapToDEMFilter.h
 +++ otb/Modules/Registration/DisparityMap/include/otbDisparityMapToDEMFilter.h
 @@ -88,7 +88,7 @@
    typedef itk::ImageRegionSplitter<2>   SplitterType;
- 
+
    // 3D RS transform
 -  // TODO: Allow to tune precision (i.e. double or float)
 +  // TODO: Allow tuning precision (i.e. double or float)
    typedef otb::GenericRSTransform<double,3,3>       RSTransformType;
    //typedef typename RSTransformType::Pointer         RSTransformPointerType;
- 
+
 --- otb.orig/Modules/Registration/DisparityMap/include/otbMultiDisparityMapTo3DFilter.h
 +++ otb/Modules/Registration/DisparityMap/include/otbMultiDisparityMapTo3DFilter.h
 @@ -81,7 +81,7 @@
    typedef typename OutputImageType::PixelType          DEMPixelType;
- 
+
    // 3D RS transform
 -  // TODO: Allow to tune precision (i.e. double or float)
 +  // TODO: Allow tuning precision (i.e. double or float)
@@ -3268,5 +3268,30 @@ Last-Update: 2015-09-01
 -They allow to define paths and directions along which the data should be walked through.
 +They allow defining paths and directions along which the data should be walked through.
  */
- 
+
  /**
+--- a/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
++++ b/Modules/Applications/AppImageUtils/app/otbColorMapping.cxx
+@@ -250,10 +250,10 @@ private:
+     SetDescription("Maps an input label image to 8-bits RGB using look-up tables.");
+
+     SetDocName("Color Mapping");
+-    SetDocLongDescription("This application allows to map a label image to a 8-bits RGB image (in both ways) using different methods.\n"
+-                          " -The custom method allows to use a custom look-up table. The look-up table is loaded "
++    SetDocLongDescription("This application allows one to map a label image to a 8-bits RGB image (in both ways) using different methods.\n"
++                          " -The custom method allows one to use a custom look-up table. The look-up table is loaded "
+                           "from a text file where each line describes an entry. The typical use of this method is to colorise a "
+-                          "classification map.\n -The continuous method allows to map a range of values in a scalar input image "
++                          "classification map.\n -The continuous method allows one to map a range of values in a scalar input image "
+                           "to a colored image using continuous look-up table, in order to enhance image interpretation. Several "
+                           "look-up tables can been chosen with different color ranges.\n-The optimal method computes an optimal "
+                           "look-up table. When processing a segmentation label image (label to color), the color difference between"
+@@ -716,7 +716,7 @@ private:
+       streamingManager->PrepareStreaming(input, largestRegion);
+
+       unsigned long numberOfStreamDivisions = streamingManager->GetNumberOfSplits();
+-
++
+       otbAppLogINFO("Number of divisions : "<<numberOfStreamDivisions);
+
+       // iteration over stream divisions
