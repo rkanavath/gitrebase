@@ -78,4 +78,10 @@ debian/manpages/otbcli_VectorDataReprojection.1
 debian/manpages/otbcli_VectorDataSetField.1
 debian/manpages/otbcli_VectorDataTransform.1
 debian/manpages/otbcli_VertexComponentAnalysis.1
+debian/manpages/otbcli_ManageNoData.1
+debian/manpages/otbcli_PredictRegression.1
+debian/manpages/otbcli_SARDecompositions.1
+debian/manpages/otbcli_SARPolarMatrixConvert.1
+debian/manpages/otbcli_SARPolarSynth.1
+debian/manpages/otbcli_TrainRegression.1
 debian/manpages/otbApplicationLauncherCommandLine.1
