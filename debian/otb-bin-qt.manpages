@@ -78,4 +78,10 @@ debian/manpages/otbgui_VectorDataReprojection.1
 debian/manpages/otbgui_VectorDataSetField.1
 debian/manpages/otbgui_VectorDataTransform.1
 debian/manpages/otbgui_VertexComponentAnalysis.1
+debian/manpages/otbgui_ManageNoData.1
+debian/manpages/otbgui_PredictRegression.1
+debian/manpages/otbgui_SARDecompositions.1
+debian/manpages/otbgui_SARPolarMatrixConvert.1
+debian/manpages/otbgui_SARPolarSynth.1
+debian/manpages/otbgui_TrainRegression.1
 debian/manpages/otbApplicationLauncherQt.1
