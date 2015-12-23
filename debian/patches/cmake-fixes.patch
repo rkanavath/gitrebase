@@ -1,13 +1,37 @@
 Description: Fix dh_shlibs reports missing symbols
 Author: Rashad Kanavath <rashad.kanavath@c-s.fr>
-Last-Update: 2015-12-17
+Last-Update: 2015-12-22
 
 --- otb.orig/CMake/FindOssim.cmake
 +++ otb/CMake/FindOssim.cmake
-@@ -55,5 +55,5 @@
- 
+@@ -28,21 +28,8 @@
+   endif()
+ endif()
+
+-# Parse a certain header to check if SVN revision is 23537
+-if(EXISTS "${OSSIM_INCLUDE_DIR}/ossim/imaging/ossimImageRenderer.h")
+-  file(STRINGS "${OSSIM_INCLUDE_DIR}/ossim/imaging/ossimImageRenderer.h" _ossim_image_renderer_h_CONTENTS REGEX "^// \\$Id: ossimImageRenderer\\.h [0-9.]+ ")
+-  string(REGEX REPLACE ".*ossimImageRenderer\\.h ([0-9.]+) .*" "\\1" _ossim_svn_revision_hint "${_ossim_image_renderer_h_CONTENTS}")
+-  if(NOT "${_ossim_svn_revision_hint}" STREQUAL "23537")
+-    message(WARNING "The OSSIM version found doesn't correspond to SVN revision 23537 (the recommended revision for OTB)."
+-                      "There are known issues with version 1.8.16 (bugs in Sentinel1 "
+-                      "calibration) and with official archive 1.8.20-1 (RpcModel returns "
+-                      "nans outside the image extent)")
+-  endif()
+-  #message(STATUS "OSSIM SVN rev. hint : ${_ossim_svn_revision_hint}")
+-else()
+-  if(NOT Ossim_FIND_QUIETLY)
+-    message(WARNING "ossimImageRenderer.h not found !")
+-  endif()
++if(NOT EXISTS "${OSSIM_INCLUDE_DIR}/ossim/base/ossimObject.h")
++    message(WARNING "ossimObject.h not found !")
+ endif()
+
+ find_library(OSSIM_LIBRARY
+@@ -55,5 +42,5 @@
+
  mark_as_advanced( OSSIM_INCLUDE_DIR OSSIM_LIBRARY )
- 
+
 -set(OSSIM_LIBRARIES ${OSSIM_LIBRARY})
 +set(OSSIM_LIBRARIES "${OSSIM_LIBRARY};${OPENTHREADS_LIBRARY}")
  set(OSSIM_INCLUDE_DIRS ${OSSIM_INCLUDE_DIR})
