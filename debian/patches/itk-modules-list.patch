@@ -2,12 +2,10 @@ Description: Fix find_package(ITK) with only required COMPONENTS list
 Author: Rashad Kanavath <rashad.kanavath@c-s.fr>
 Last-Update: 2015-12-22
 
-diff --git a/Modules/ThirdParty/ITK/CMakeLists.txt b/Modules/ThirdParty/ITK/CMakeLists.txt
-index 55b0eb8..8b41866 100644
---- a/Modules/ThirdParty/ITK/CMakeLists.txt
-+++ b/Modules/ThirdParty/ITK/CMakeLists.txt
-@@ -2,7 +2,80 @@ project(OTBITK)
-
+--- otb.orig/Modules/ThirdParty/ITK/CMakeLists.txt
++++ otb/Modules/ThirdParty/ITK/CMakeLists.txt
+@@ -2,7 +2,80 @@
+ 
  set(OTBITK_SYSTEM_INCLUDE_DIRS ${ITK_INCLUDE_DIRS})
  set(OTBITK_LIBRARIES "${ITK_LIBRARIES}")
 -set(OTBITK_EXPORT_CODE_BUILD "find_package(ITK REQUIRED HINTS ${ITK_DIR})")
@@ -86,5 +84,5 @@ index 55b0eb8..8b41866 100644
 +set(OTBITK_EXPORT_CODE_BUILD "find_package(ITK REQUIRED COMPONENTS ${OTBITK_ITK_REQUIRED_MODULE_LIST} HINTS ${ITK_DIR})")
 +
  set(OTBITK_EXPORT_CODE_INSTALL ${OTBITK_EXPORT_CODE_BUILD})
-
+ 
  otb_module_impl()
