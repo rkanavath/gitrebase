@@ -1,5 +1,5 @@
-# SymbolsHelper-Confirmed: 5.0.0 amd64
-libOTBImageIO-5.0.so.1 libotbimageio-5.0-1 #MINVER#
- _ZN3otb14ImageIOFactory13CreateImageIOEPKcNS0_12FileModeTypeE@Base 5.0.0
- _ZN3otb14ImageIOFactory24RegisterBuiltInFactoriesEv@Base 5.0.0
- (optional=templinst)_ZNKSt5ctypeIcE8do_widenEc@Base 5.0.0
+# SymbolsHelper-Confirmed: 5.2.0 amd64
+libOTBImageIO-5.2.so.1 libotbimageio-5.2-1 #MINVER#
+ _ZN3otb14ImageIOFactory13CreateImageIOEPKcNS0_12FileModeTypeE@Base 5.2.0
+ _ZN3otb14ImageIOFactory24RegisterBuiltInFactoriesEv@Base 5.2.0
+ (optional=templinst)_ZNKSt5ctypeIcE8do_widenEc@Base 5.2.0

@@ -1,3 +1,17 @@
-# SymbolsHelper-Confirmed: 5.0.0 amd64
-libOTBSupervised-5.0.so.1 libotbsupervised-5.0-1 #MINVER#
- _ZN3otb31MachineLearningModelFactoryBase5mutexE@Base 5.0.0
+# SymbolsHelper-Confirmed: 5.2.0 amd64
+libOTBSupervised-5.2.so.1 libotbsupervised-5.2-1 #MINVER#
+ _ZN3otb15CvRTreesWrapperC1Ev@Base 5.2.0
+ _ZN3otb15CvRTreesWrapperC2Ev@Base 5.2.0
+ _ZN3otb15CvRTreesWrapperD0Ev@Base 5.2.0
+ _ZN3otb15CvRTreesWrapperD1Ev@Base 5.2.0
+ _ZN3otb15CvRTreesWrapperD2Ev@Base 5.2.0
+ _ZN3otb31MachineLearningModelFactoryBase5mutexE@Base 5.2.0
+ _ZNK3otb15CvRTreesWrapper14predict_marginERKN2cv3MatES4_@Base 5.2.0
+ _ZNK3otb15CvRTreesWrapper18predict_confidenceERKN2cv3MatES4_@Base 5.2.0
+ _ZNK3otb15CvRTreesWrapper9get_votesERKN2cv3MatES4_RSt6vectorIjSaIjEE@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorIjSaIjEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPjS1_EEmRKj@Base 5.2.0
+ (optional=templinst)_ZSt13__adjust_heapIN9__gnu_cxx17__normal_iteratorIPjSt6vectorIjSaIjEEEEljNS0_5__ops15_Iter_comp_iterISt7greaterIjEEEEvT_T0_SD_T1_T2_@Base 5.2.0
+ (optional=templinst)_ZSt13__introselectIN9__gnu_cxx17__normal_iteratorIPjSt6vectorIjSaIjEEEElNS0_5__ops15_Iter_comp_iterISt7greaterIjEEEEvT_SC_SC_T0_T1_@Base 5.2.0
+ _ZTIN3otb15CvRTreesWrapperE@Base 5.2.0
+ _ZTSN3otb15CvRTreesWrapperE@Base 5.2.0
+ _ZTVN3otb15CvRTreesWrapperE@Base 5.2.0
