@@ -3,5 +3,4 @@
 #         unprotected: memmove
 #         unprotected: fread
 #         unprotected: memcpy
-libotbiomstar-5.0-1: hardening-no-fortify-functions usr/lib/*/libOTBIOMSTAR-*
-
+libotbiomstar-5.2-1: hardening-no-fortify-functions usr/lib/*/libOTBIOMSTAR-*

@@ -2,5 +2,4 @@
 #  Fortify Source functions: no, only unprotected functions found!
 #         unprotected: strcpy
 #         unprotected: memcpy
-libotbvectordatabase-5.0-1: hardening-no-fortify-functions usr/lib/*/libOTBVectorDataBase-*
-
+libotbvectordatabase-5.2-1: hardening-no-fortify-functions usr/lib/*/libOTBVectorDataBase-*
