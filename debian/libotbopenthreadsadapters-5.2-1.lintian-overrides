@@ -1,2 +1,2 @@
 # Empty library with no code. Lintian reports library not linked against libc/
-libotbopenthreadsadapters-5.0-1: library-not-linked-against-libc usr/lib/*/libOTBOpenThreadsAdapters-*.so.*
+libotbopenthreadsadapters-5.2-1: library-not-linked-against-libc usr/lib/*/libOTBOpenThreadsAdapters-*.so.*
