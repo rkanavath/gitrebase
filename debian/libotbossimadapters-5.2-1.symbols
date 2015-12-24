@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libOTBOSSIMAdapters-5.2.so.1 libotbossimadapters-5.2-1 #MINVER#
  _ZN11ossimTieGptD0Ev@Base 5.2.0
  _ZN11ossimTieGptD1Ev@Base 5.2.0
@@ -267,6 +267,7 @@ libOTBOSSIMAdapters-5.2.so.1 libotbossimadapters-5.2-1 #MINVER#
  _ZNK3otb30GeometricSarSensorModelAdapter14GetNameOfClassEv@Base 5.2.0
  _ZNK3otb7OTB_GCP5PrintERSo@Base 5.2.0
  (optional=templinst)_ZNKSt5ctypeIcE8do_widenEc@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNKSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE4findERS7_@Base 5.2.0
  (optional=templinst)_ZNKSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE4findERS1_@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0

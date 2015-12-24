@@ -1,11 +1,14 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libOTBCurlAdapters-5.2.so.1 libotbcurladapters-5.2-1 #MINVER#
  _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
  _ZN3otb10CurlHelper10GetTimeoutEv@Base 5.2.0
  _ZN3otb10CurlHelper10SetTimeoutEl@Base 5.2.0
+ (arch=i386)_ZN3otb10CurlHelper22CallbackWriteDataDummyEPvjjS1_@Base 5.2.0
  _ZN3otb10CurlHelper22CallbackWriteDataDummyEPvmmS1_@Base 5.2.0
+ (arch=i386)_ZN3otb10CurlHelper23CallbackWriteDataToFileEPvjjS1_@Base 5.2.0
  _ZN3otb10CurlHelper23CallbackWriteDataToFileEPvmmS1_@Base 5.2.0
+ (arch=i386)_ZN3otb10CurlHelper31CallbackWriteDataToStringStreamEPvjjS1_@Base 5.2.0
  _ZN3otb10CurlHelper31CallbackWriteDataToStringStreamEPvmmS1_@Base 5.2.0
  _ZN3otb10CurlHelperD0Ev@Base 5.2.0
  _ZN3otb10CurlHelperD1Ev@Base 5.2.0

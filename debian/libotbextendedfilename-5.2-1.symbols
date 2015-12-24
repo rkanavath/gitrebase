@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libOTBExtendedFilename-5.2.so.1 libotbextendedfilename-5.2-1 #MINVER#
  _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
@@ -130,6 +130,7 @@ libOTBExtendedFilename-5.2.so.1 libotbextendedfilename-5.2-1 #MINVER#
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE7_M_copyEPKSt13_Rb_tree_nodeIS2_EPSA_@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E@Base 5.2.0
+ (optional=templinst|arch=i386)_ZSt13__adjust_heapIPcicN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_@Base 5.2.0
  (optional=templinst)_ZSt13__adjust_heapIPclcN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_@Base 5.2.0
  (optional=templinst)_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops10_Iter_predIN5boost9algorithm6detail10is_any_ofFIcEEEEET_SJ_SJ_T0_St26random_access_iterator_tag@Base 5.2.0
  (optional=templinst)_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPKcSsEENS0_5__ops10_Iter_predIN5boost9algorithm6detail10is_any_ofFIcEEEEET_SD_SD_T0_St26random_access_iterator_tag@Base 5.2.0

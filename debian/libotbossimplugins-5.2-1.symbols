@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  (optional=templinst)_ZN11ossimRefPtrI15ossimProjectionEaSEPS0_@Base 5.2.0
  (optional=templinst)_ZN11ossimRefPtrI16ossimXmlDocumentEC1ERKS1_@Base 5.2.0
@@ -2089,11 +2089,13 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  (optional=templinst)_ZNSt4pairISsSsED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt4pairISsSsED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI10ossimDpt3dSaIS0_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS0_S2_EERKS0_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorI10ossimDpt3dSaIS0_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS0_S2_EEjRKS0_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI10ossimDpt3dSaIS0_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS0_S2_EEmRKS0_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimRefPtrI12ossimXmlNodeESaIS2_EE5clearEv@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimRefPtrI12ossimXmlNodeESaIS2_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimRefPtrI12ossimXmlNodeESaIS2_EED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimStringSaIS0_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS0_S2_EERKS0_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorI11ossimStringSaIS0_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS0_S2_EEjRKS0_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimStringSaIS0_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS0_S2_EEmRKS0_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimStringSaIS0_EE9push_backERKS0_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimStringSaIS0_EED1Ev@Base 5.2.0
@@ -2115,6 +2117,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  (optional=templinst)_ZNSt6vectorIN12ossimplugins18InfoIncidenceAngleESaIS1_EEaSERKS3_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN12ossimplugins19RadarSat2NoiseLevelESaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN12ossimplugins3dsdESaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN12ossimplugins5NoiseESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEjRKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN12ossimplugins5NoiseESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEmRKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN12ossimplugins5NoiseESaIS1_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN12ossimplugins5NoiseESaIS1_EED2Ev@Base 5.2.0
@@ -2122,23 +2125,30 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  (optional=templinst)_ZNSt6vectorIP28ossimImageHandlerFactoryBaseSaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIPN12ossimplugins9EphemerisESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIS_IdSaIdEESaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIS_IdSaIdEESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEjRKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIS_IdSaIdEESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEmRKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIS_IdSaIdEESaIS1_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIS_IdSaIdEESaIS1_EED2Ev@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIcSaIcEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPcS1_EEjRKc@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIcSaIcEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPcS1_EEmRKc@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPdS1_EERKd@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIdSaIdEE14_M_fill_assignEjRKd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE14_M_fill_assignEmRKd@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEjRKd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIdSaIdEE6resizeEjd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE6resizeEmd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE9push_backERKd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEEC1ERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEEC2ERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEEaSERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIiSaIiEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPiS1_EERKi@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIiSaIiEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPiS1_EEjRKi@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIiSaIiEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPiS1_EEmRKi@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt7__cxx114listI8ossimDptSaIS1_EEaSERKS3_@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx114listI8ossimGptSaIS1_EEaSERKS3_@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN12ossimplugins17EnvisatAsarRecordEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE24_M_get_insert_unique_posERS7_@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN12ossimplugins17EnvisatAsarRecordEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_M_eraseEPSt13_Rb_tree_nodeISB_E@Base 5.2.0
