@@ -5,8 +5,10 @@ libOTBVectorDataBase-5.2.so.1 libotbvectordatabase-5.2-1 #MINVER#
  _ZN3itk18LightProcessObject19AbortGenerateDataOnEv@Base 5.2.0
  _ZN3itk18LightProcessObject20AbortGenerateDataOffEv@Base 5.2.0
  _ZN3itk18LightProcessObject20SetAbortGenerateDataEb@Base 5.2.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
  _ZN3otb16VectorDataIOBase11SetFileNameEPKc@Base 5.2.0
+ _ZN3otb16VectorDataIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb16VectorDataIOBase11SetFileNameERKSs@Base 5.2.0
  _ZN3otb16VectorDataIOBase12SetByteOrderENS0_9ByteOrderE@Base 5.2.0
  _ZN3otb16VectorDataIOBase5ResetEb@Base 5.2.0
@@ -17,10 +19,14 @@ libOTBVectorDataBase-5.2.so.1 libotbvectordatabase-5.2-1 #MINVER#
  _ZN3otb16VectorDataIOBaseD2Ev@Base 5.2.0
  _ZN3otb21VectorDataKeywordlist12CopyOgrFieldESt4pairIP12OGRFieldDefn8OGRFieldE@Base 5.2.0
  _ZN3otb21VectorDataKeywordlist13CopyFieldListERKS0_@Base 5.2.0
+ _ZN3otb21VectorDataKeywordlist13SetFieldAsIntERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi@Base 5.2.0
  _ZN3otb21VectorDataKeywordlist13SetFieldAsIntERKSsi@Base 5.2.0
+ _ZN3otb21VectorDataKeywordlist16SetFieldAsDoubleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEd@Base 5.2.0
  _ZN3otb21VectorDataKeywordlist16SetFieldAsDoubleERKSsd@Base 5.2.0
+ _ZN3otb21VectorDataKeywordlist16SetFieldAsStringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.2.0
  _ZN3otb21VectorDataKeywordlist16SetFieldAsStringERKSsS2_@Base 5.2.0
  _ZN3otb21VectorDataKeywordlist8AddFieldEP12OGRFieldDefnP8OGRField@Base 5.2.0
+ _ZN3otb21VectorDataKeywordlist8AddFieldERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.2.0
  _ZN3otb21VectorDataKeywordlist8AddFieldERKSsS2_@Base 5.2.0
  _ZN3otb21VectorDataKeywordlistC1ERKS0_@Base 5.2.0
  _ZN3otb21VectorDataKeywordlistC1Ev@Base 5.2.0
@@ -34,23 +40,31 @@ libOTBVectorDataBase-5.2.so.1 libotbvectordatabase-5.2-1 #MINVER#
  _ZNK3itk18LightProcessObject11GetProgressEv@Base 5.2.0
  _ZNK3itk18LightProcessObject13CreateAnotherEv@Base 5.2.0
  _ZNK3itk18LightProcessObject20GetAbortGenerateDataEv@Base 5.2.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.2.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.2.0
  _ZNK3otb16VectorDataIOBase11GetFileNameEv@Base 5.2.0
  _ZNK3otb16VectorDataIOBase12GetByteOrderEv@Base 5.2.0
  _ZNK3otb16VectorDataIOBase13CanStreamReadEv@Base 5.2.0
  _ZNK3otb16VectorDataIOBase14CanStreamWriteEv@Base 5.2.0
  _ZNK3otb16VectorDataIOBase14GetNameOfClassEv@Base 5.2.0
+ _ZNK3otb16VectorDataIOBase20GetByteOrderAsStringB5cxx11ENS0_9ByteOrderE@Base 5.2.0
  _ZNK3otb16VectorDataIOBase20GetByteOrderAsStringENS0_9ByteOrderE@Base 5.2.0
  _ZNK3otb16VectorDataIOBase9PrintSelfERSoN3itk6IndentE@Base 5.2.0
+ _ZNK3otb21VectorDataKeywordlist10PrintFieldB5cxx11ESt4pairIP12OGRFieldDefn8OGRFieldE@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist10PrintFieldESt4pairIP12OGRFieldDefn8OGRFieldE@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist11GetNthFieldEj@Base 5.2.0
+ _ZNK3otb21VectorDataKeywordlist12GetFieldListB5cxx11Ev@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist12GetFieldListEv@Base 5.2.0
+ _ZNK3otb21VectorDataKeywordlist13GetFieldAsIntERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist13GetFieldAsIntERKSs@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist14GetNameOfClassEv@Base 5.2.0
+ _ZNK3otb21VectorDataKeywordlist16GetFieldAsDoubleERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist16GetFieldAsDoubleERKSs@Base 5.2.0
+ _ZNK3otb21VectorDataKeywordlist16GetFieldAsStringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist16GetFieldAsStringERKSs@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist17GetNumberOfFieldsEv@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist5PrintERSoN3itk6IndentE@Base 5.2.0
+ _ZNK3otb21VectorDataKeywordlist8HasFieldERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist8HasFieldERKSs@Base 5.2.0
  _ZNK3otb21VectorDataKeywordlist9PrintSelfERSoN3itk6IndentE@Base 5.2.0
  (optional=templinst)_ZNKSt5ctypeIcE8do_widenEc@Base 5.2.0
@@ -59,8 +73,12 @@ libOTBVectorDataBase-5.2.so.1 libotbvectordatabase-5.2-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPSsS1_EERKSs@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISt4pairIP12OGRFieldDefn8OGRFieldESaIS4_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS4_S6_EERKS4_@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
  _ZTIN3otb16VectorDataIOBaseE@Base 5.2.0
  _ZTIN3otb21VectorDataKeywordlistE@Base 5.2.0
  _ZTSN3otb16VectorDataIOBaseE@Base 5.2.0

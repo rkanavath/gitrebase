@@ -1,5 +1,6 @@
 # SymbolsHelper-Confirmed: 5.2.0 amd64
 libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
+ _Z16DeleteDataSourceRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _Z16DeleteDataSourceRKSs@Base 5.2.0
  _ZN3itk10DataObject15CopyInformationEPKS0_@Base 5.2.0
  _ZN3itk10DataObject16SetRealTimeStampENS_13RealTimeStampE@Base 5.2.0
@@ -21,6 +22,7 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZN3itk13ProcessObject29ReleaseDataBeforeUpdateFlagOnEv@Base 5.2.0
  _ZN3itk13ProcessObject30ReleaseDataBeforeUpdateFlagOffEv@Base 5.2.0
  _ZN3itk13ProcessObject30SetReleaseDataBeforeUpdateFlagEb@Base 5.2.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
  _ZN3otb13GeometriesSet3NewEN3itk12SmartPointerINS_3ogr10DataSourceEEE@Base 5.2.0
  _ZN3otb13GeometriesSet3NewENS_3ogr5LayerE@Base 5.2.0
@@ -56,22 +58,29 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZN3otb28GeometriesToGeometriesFilterD0Ev@Base 5.2.0
  _ZN3otb28GeometriesToGeometriesFilterD1Ev@Base 5.2.0
  _ZN3otb28GeometriesToGeometriesFilterD2Ev@Base 5.2.0
+ _ZN3otb3ogr10DataSource10ExecuteSQLERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEP11OGRGeometryPKc@Base 5.2.0
  _ZN3otb3ogr10DataSource10ExecuteSQLERKSsP11OGRGeometryPKc@Base 5.2.0
  _ZN3otb3ogr10DataSource10SyncToDiskEv@Base 5.2.0
+ _ZN3otb3ogr10DataSource11CreateLayerERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEP19OGRSpatialReference18OGRwkbGeometryTypeRKSt6vectorIS7_SaIS7_EE@Base 5.2.0
  _ZN3otb3ogr10DataSource11CreateLayerERKSsP19OGRSpatialReference18OGRwkbGeometryTypeRKSt6vectorISsSaISsEE@Base 5.2.0
  _ZN3otb3ogr10DataSource11DeleteLayerEm@Base 5.2.0
+ _ZN3otb3ogr10DataSource14OpenDataSourceERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS1_5Modes4typeE@Base 5.2.0
  _ZN3otb3ogr10DataSource14OpenDataSourceERKSsNS1_5Modes4typeE@Base 5.2.0
+ _ZN3otb3ogr10DataSource15GetLayerCheckedERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb3ogr10DataSource15GetLayerCheckedERKSs@Base 5.2.0
  _ZN3otb3ogr10DataSource15GetLayerCheckedEm@Base 5.2.0
  _ZN3otb3ogr10DataSource17GetLayerUncheckedEm@Base 5.2.0
  _ZN3otb3ogr10DataSource3NewEP13OGRDataSourceNS1_5Modes4typeE@Base 5.2.0
+ _ZN3otb3ogr10DataSource3NewERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS1_5Modes4typeE@Base 5.2.0
  _ZN3otb3ogr10DataSource3NewERKSsNS1_5Modes4typeE@Base 5.2.0
  _ZN3otb3ogr10DataSource3endEv@Base 5.2.0
  _ZN3otb3ogr10DataSource5ClearEv@Base 5.2.0
  _ZN3otb3ogr10DataSource5GraftEPKN3itk10DataObjectE@Base 5.2.0
  _ZN3otb3ogr10DataSource5ResetEP13OGRDataSource@Base 5.2.0
  _ZN3otb3ogr10DataSource5beginEv@Base 5.2.0
+ _ZN3otb3ogr10DataSource8GetLayerERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb3ogr10DataSource8GetLayerERKSs@Base 5.2.0
+ _ZN3otb3ogr10DataSource9CopyLayerERNS0_5LayerERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPPc@Base 5.2.0
  _ZN3otb3ogr10DataSource9CopyLayerERNS0_5LayerERKSsPPc@Base 5.2.0
  _ZN3otb3ogr10DataSourceC1EP13OGRDataSourceNS1_5Modes4typeE@Base 5.2.0
  _ZN3otb3ogr10DataSourceC1Ev@Base 5.2.0
@@ -87,10 +96,15 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZN3otb3ogr13UnionCascadedERK11OGRGeometry@Base 5.2.0
  _ZN3otb3ogr13version_proxy10SyncToDiskEP13OGRDataSource@Base 5.2.0
  _ZN3otb3ogr13version_proxy15GetDriverByNameEPKc@Base 5.2.0
+ _ZN3otb3ogr13version_proxy18GetDriverClassNameB5cxx11Ev@Base 5.2.0
  _ZN3otb3ogr13version_proxy18GetDriverClassNameEv@Base 5.2.0
+ _ZN3otb3ogr13version_proxy19GetDatasetClassNameB5cxx11Ev@Base 5.2.0
  _ZN3otb3ogr13version_proxy19GetDatasetClassNameEv@Base 5.2.0
+ _ZN3otb3ogr13version_proxy25GetFileListAsStringVectorB5cxx11EP13OGRDataSource@Base 5.2.0
  _ZN3otb3ogr13version_proxy25GetFileListAsStringVectorEP13OGRDataSource@Base 5.2.0
+ _ZN3otb3ogr13version_proxy27GetDriverNameFromDataSourceB5cxx11EPK13OGRDataSource@Base 5.2.0
  _ZN3otb3ogr13version_proxy27GetDriverNameFromDataSourceEPK13OGRDataSource@Base 5.2.0
+ _ZN3otb3ogr13version_proxy33GetAvailableDriversAsStringVectorB5cxx11Ev@Base 5.2.0
  _ZN3otb3ogr13version_proxy33GetAvailableDriversAsStringVectorEv@Base 5.2.0
  _ZN3otb3ogr13version_proxy4OpenEPKcb@Base 5.2.0
  _ZN3otb3ogr13version_proxy5CloseEP13OGRDataSource@Base 5.2.0
@@ -134,11 +148,13 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZN3otb3ogr7Feature15UncheckedSetFIDEl@Base 5.2.0
  _ZN3otb3ogr7Feature16UncheckedSetFromERKS1_Pib@Base 5.2.0
  _ZN3otb3ogr7Feature16UncheckedSetFromERKS1_b@Base 5.2.0
+ _ZN3otb3ogr7Feature19UncheckedGetElementERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb3ogr7Feature19UncheckedGetElementERKSs@Base 5.2.0
  _ZN3otb3ogr7Feature19UncheckedGetElementEi@Base 5.2.0
  _ZN3otb3ogr7Feature20UncheckedSetGeometryEPK11OGRGeometry@Base 5.2.0
  _ZN3otb3ogr7Feature22UncheckedStealGeometryEv@Base 5.2.0
  _ZN3otb3ogr7Feature28UncheckedSetGeometryDirectlyEN5boost12interprocess10unique_ptrI11OGRGeometryNS0_8internal15GeometryDeleterEEE@Base 5.2.0
+ _ZN3otb3ogr7Feature28UncheckedSetGeometryDirectlyEN5boost7movelib10unique_ptrI11OGRGeometryNS0_8internal15GeometryDeleterEEE@Base 5.2.0
  _ZN3otb3ogr7FeatureC1EP10OGRFeature@Base 5.2.0
  _ZN3otb3ogr7FeatureC1ER14OGRFeatureDefn@Base 5.2.0
  _ZN3otb3ogr7FeatureC2EP10OGRFeature@Base 5.2.0
@@ -155,6 +171,8 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZN3otb3ogreqERKNS0_5LayerES3_@Base 5.2.0
  _ZN3otb3ogreqERKNS0_7FeatureES3_@Base 5.2.0
  _ZN3otb3ogrlsERSoRKNS0_9FieldDefnE@Base 5.2.0
+ (optional=templinst)_ZN5boost15foreach_detail_14simple_variantIN3otb3ogr5LayerEED1Ev@Base 5.2.0
+ (optional=templinst)_ZN5boost15foreach_detail_14simple_variantIN3otb3ogr5LayerEED2Ev@Base 5.2.0
  _ZN5boost6detail12shared_countD1Ev@Base 5.2.0
  _ZN5boost6detail12shared_countD2Ev@Base 5.2.0
  _ZN5boost6detail15sp_counted_base7destroyEv@Base 5.2.0
@@ -170,6 +188,10 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  (optional=templinst)_ZN5boost6detail18sp_counted_impl_pdIP8OGRLayerNS_3_bi6bind_tIvNS_4_mfi3mf1Iv13OGRDataSourceS3_EENS4_5list2INS_17reference_wrapperIS8_EENS_3argILi1EEEEEEEED0Ev@Base 5.2.0
  (optional=templinst)_ZN5boost6detail18sp_counted_impl_pdIP8OGRLayerNS_3_bi6bind_tIvNS_4_mfi3mf1Iv13OGRDataSourceS3_EENS4_5list2INS_17reference_wrapperIS8_EENS_3argILi1EEEEEEEED1Ev@Base 5.2.0
  (optional=templinst)_ZN5boost6detail18sp_counted_impl_pdIP8OGRLayerNS_3_bi6bind_tIvNS_4_mfi3mf1Iv13OGRDataSourceS3_EENS4_5list2INS_17reference_wrapperIS8_EENS_3argILi1EEEEEEEED2Ev@Base 5.2.0
+ (optional=templinst)_ZN5boost6detail7variant13backup_holderIN3itk12SmartPointerIN3otb3ogr10DataSourceEEEED1Ev@Base 5.2.0
+ (optional=templinst)_ZN5boost6detail7variant13backup_holderIN3itk12SmartPointerIN3otb3ogr10DataSourceEEEED2Ev@Base 5.2.0
+ (optional=templinst)_ZN5boost6detail7variant13backup_holderIN3otb3ogr5LayerEED1Ev@Base 5.2.0
+ (optional=templinst)_ZN5boost6detail7variant13backup_holderIN3otb3ogr5LayerEED2Ev@Base 5.2.0
  (optional=templinst)_ZN5boost6detail7variant15backup_assignerINS_7variantIN3itk12SmartPointerIN3otb3ogr10DataSourceEEENS7_5LayerENS1_5void_ESB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_EEE14construct_implINS1_13backup_holderIS9_EEEEvPvPKv@Base 5.2.0
  (optional=templinst)_ZN5boost6detail7variant15backup_assignerINS_7variantIN3itk12SmartPointerIN3otb3ogr10DataSourceEEENS7_5LayerENS1_5void_ESB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_EEE14construct_implINS1_13backup_holderISA_EEEEvPvPKv@Base 5.2.0
  (optional=templinst)_ZN5boost6detail7variant15backup_assignerINS_7variantIN3itk12SmartPointerIN3otb3ogr10DataSourceEEENS7_5LayerENS1_5void_ESB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_SB_EEE14construct_implIS9_EEvPvPKv@Base 5.2.0
@@ -188,6 +210,7 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZNK3itk13ProcessObject25GetNumberOfRequiredInputsEv@Base 5.2.0
  _ZNK3itk13ProcessObject26GetNumberOfRequiredOutputsEv@Base 5.2.0
  _ZNK3itk13ProcessObject30GetReleaseDataBeforeUpdateFlagEv@Base 5.2.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.2.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.2.0
  _ZNK3otb13GeometriesSet13CreateAnotherEv@Base 5.2.0
  _ZNK3otb13GeometriesSet14GetNameOfClassEv@Base 5.2.0
@@ -198,19 +221,27 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZNK3otb23FieldCopyTransformation12DefineFieldsERKNS_3ogr5LayerERS2_@Base 5.2.0
  _ZNK3otb23FieldCopyTransformation15fieldsTransformERKNS_3ogr7FeatureERS2_@Base 5.2.0
  _ZNK3otb28GeometriesToGeometriesFilter14GetNameOfClassEv@Base 5.2.0
+ _ZNK3otb28GeometriesToGeometriesFilter23DoDefineNewLayerOptionsB5cxx11ERKNS_3ogr5LayerE@Base 5.2.0
  _ZNK3otb28GeometriesToGeometriesFilter23DoDefineNewLayerOptionsERKNS_3ogr5LayerE@Base 5.2.0
  _ZNK3otb28GeometriesToGeometriesFilter28DoDefineNewLayerGeometryTypeERKNS_3ogr5LayerE@Base 5.2.0
  _ZNK3otb28GeometriesToGeometriesFilter32DoDefineNewLayerSpatialReferenceERKNS_3ogr5LayerE@Base 5.2.0
+ _ZNK3otb3ogr10DataSource10GetLayerIDERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb3ogr10DataSource10GetLayerIDERKSs@Base 5.2.0
  _ZNK3otb3ogr10DataSource13CreateAnotherEv@Base 5.2.0
+ _ZNK3otb3ogr10DataSource13HasCapabilityERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb3ogr10DataSource13HasCapabilityERKSs@Base 5.2.0
  _ZNK3otb3ogr10DataSource14GetLayersCountEv@Base 5.2.0
  _ZNK3otb3ogr10DataSource14GetNameOfClassEv@Base 5.2.0
+ _ZNK3otb3ogr10DataSource15GetGlobalExtentB5cxx11ERdS2_S2_S2_b@Base 5.2.0
  _ZNK3otb3ogr10DataSource15GetGlobalExtentERdS2_S2_S2_b@Base 5.2.0
+ _ZNK3otb3ogr10DataSource15GetGlobalExtentEbPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb3ogr10DataSource15GetGlobalExtentEbPSs@Base 5.2.0
+ _ZNK3otb3ogr10DataSource17IsLayerModifiableERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb3ogr10DataSource17IsLayerModifiableERKSs@Base 5.2.0
  _ZNK3otb3ogr10DataSource17IsLayerModifiableEm@Base 5.2.0
+ _ZNK3otb3ogr10DataSource19GetLayerIDUncheckedERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb3ogr10DataSource19GetLayerIDUncheckedERKSs@Base 5.2.0
+ _ZNK3otb3ogr10DataSource21GetDatasetDescriptionB5cxx11Ev@Base 5.2.0
  _ZNK3otb3ogr10DataSource21GetDatasetDescriptionEv@Base 5.2.0
  _ZNK3otb3ogr10DataSource4SizeEb@Base 5.2.0
  _ZNK3otb3ogr10DataSource4cendEv@Base 5.2.0
@@ -225,9 +256,11 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZNK3otb3ogr5Layer12GetLayerDefnEv@Base 5.2.0
  _ZNK3otb3ogr5Layer13GetSpatialRefEv@Base 5.2.0
  _ZNK3otb3ogr5Layer15GetFeatureCountEb@Base 5.2.0
+ _ZNK3otb3ogr5Layer16GetProjectionRefB5cxx11Ev@Base 5.2.0
  _ZNK3otb3ogr5Layer16GetProjectionRefEv@Base 5.2.0
  _ZNK3otb3ogr5Layer16GetSpatialFilterEv@Base 5.2.0
  _ZNK3otb3ogr5Layer6cbeginEv@Base 5.2.0
+ _ZNK3otb3ogr5Layer7GetNameB5cxx11Ev@Base 5.2.0
  _ZNK3otb3ogr5Layer7GetNameEv@Base 5.2.0
  _ZNK3otb3ogr5Layer9GetExtentERdS2_S2_S2_b@Base 5.2.0
  _ZNK3otb3ogr5Layer9GetExtentEb@Base 5.2.0
@@ -238,10 +271,13 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZNK3otb3ogr7Feature16UncheckedGetDefnEv@Base 5.2.0
  _ZNK3otb3ogr7Feature18UncheckedPrintSelfERSoN3itk6IndentE@Base 5.2.0
  _ZNK3otb3ogr7Feature20UncheckedGetGeometryEv@Base 5.2.0
+ _ZNK3otb3ogr7Feature21UncheckedGetFieldDefnERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb3ogr7Feature21UncheckedGetFieldDefnERKSs@Base 5.2.0
  _ZNK3otb3ogr7Feature21UncheckedGetFieldDefnEi@Base 5.2.0
+ _ZNK3otb3ogr7Feature22UncheckedGetFieldIndexERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb3ogr7Feature22UncheckedGetFieldIndexERKSs@Base 5.2.0
  _ZNK3otb3ogr7Feature7GetSizeEv@Base 5.2.0
+ _ZNK3otb3ogr9FieldDefn7GetNameB5cxx11Ev@Base 5.2.0
  _ZNK3otb3ogr9FieldDefn7GetNameEv@Base 5.2.0
  _ZNK3otb3ogr9FieldDefn7GetTypeEv@Base 5.2.0
  (optional=templinst)_ZNK3otb8internal14ProcessVisitorclIN3itk12SmartPointerINS_3ogr10DataSourceEEENS5_5LayerEEEvRKT_RT0_@Base 5.2.0
@@ -250,10 +286,16 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIPKcSaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPSsS1_EERKSs@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS2_ERS1_@Base 5.2.0
  _ZTIN3otb13GeometriesSetE@Base 5.2.0
  _ZTIN3otb16GeometriesSourceE@Base 5.2.0

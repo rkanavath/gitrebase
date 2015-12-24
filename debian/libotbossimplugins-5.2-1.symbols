@@ -1,8 +1,11 @@
 # SymbolsHelper-Confirmed: 5.2.0 amd64
 libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  (optional=templinst)_ZN11ossimRefPtrI15ossimProjectionEaSEPS0_@Base 5.2.0
+ (optional=templinst)_ZN11ossimRefPtrI16ossimXmlDocumentEC1ERKS1_@Base 5.2.0
+ (optional=templinst)_ZN11ossimRefPtrI16ossimXmlDocumentEC2ERKS1_@Base 5.2.0
  _ZN11ossimStringD1Ev@Base 5.2.0
  _ZN11ossimStringD2Ev@Base 5.2.0
+ _ZN11ossimStringaSEPKc@Base 5.2.0
  _ZN12ossimplugins10Coordinate15set_coordinatesEddd@Base 5.2.0
  _ZN12ossimplugins10CoordinateC1ERKS0_@Base 5.2.0
  _ZN12ossimplugins10CoordinateC1Eddd@Base 5.2.0
@@ -133,8 +136,10 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins12ErsSarLeaderD1Ev@Base 5.2.0
  _ZN12ossimplugins12ErsSarLeaderD2Ev@Base 5.2.0
  _ZN12ossimplugins12ErsSarLeaderaSERKS0_@Base 5.2.0
+ _ZN12ossimplugins12ErsSarRecordC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN12ossimplugins12ErsSarRecordC1ERKS0_@Base 5.2.0
  _ZN12ossimplugins12ErsSarRecordC1ESs@Base 5.2.0
+ _ZN12ossimplugins12ErsSarRecordC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN12ossimplugins12ErsSarRecordC2ERKS0_@Base 5.2.0
  _ZN12ossimplugins12ErsSarRecordC2ESs@Base 5.2.0
  _ZN12ossimplugins12ErsSarRecordD0Ev@Base 5.2.0
@@ -232,8 +237,10 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins14InfoSceneCoordD1Ev@Base 5.2.0
  _ZN12ossimplugins14InfoSceneCoordD2Ev@Base 5.2.0
  _ZN12ossimplugins14InfoSceneCoordaSERKS0_@Base 5.2.0
+ _ZN12ossimplugins14RadarSatRecordC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN12ossimplugins14RadarSatRecordC1ERKS0_@Base 5.2.0
  _ZN12ossimplugins14RadarSatRecordC1ESs@Base 5.2.0
+ _ZN12ossimplugins14RadarSatRecordC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN12ossimplugins14RadarSatRecordC2ERKS0_@Base 5.2.0
  _ZN12ossimplugins14RadarSatRecordC2ESs@Base 5.2.0
  _ZN12ossimplugins14RadarSatRecordD0Ev@Base 5.2.0
@@ -333,8 +340,10 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins16AlosPalsarLeaderD1Ev@Base 5.2.0
  _ZN12ossimplugins16AlosPalsarLeaderD2Ev@Base 5.2.0
  _ZN12ossimplugins16AlosPalsarLeaderaSERKS0_@Base 5.2.0
+ _ZN12ossimplugins16AlosPalsarRecordC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN12ossimplugins16AlosPalsarRecordC1ERKS0_@Base 5.2.0
  _ZN12ossimplugins16AlosPalsarRecordC1ESs@Base 5.2.0
+ _ZN12ossimplugins16AlosPalsarRecordC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN12ossimplugins16AlosPalsarRecordC2ERKS0_@Base 5.2.0
  _ZN12ossimplugins16AlosPalsarRecordC2ESs@Base 5.2.0
  _ZN12ossimplugins16AlosPalsarRecordD0Ev@Base 5.2.0
@@ -373,8 +382,10 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins16ossimErsSarModelD0Ev@Base 5.2.0
  _ZN12ossimplugins16ossimErsSarModelD1Ev@Base 5.2.0
  _ZN12ossimplugins16ossimErsSarModelD2Ev@Base 5.2.0
+ _ZN12ossimplugins17EnvisatAsarRecordC1ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN12ossimplugins17EnvisatAsarRecordC1ERKS0_@Base 5.2.0
  _ZN12ossimplugins17EnvisatAsarRecordC1ESs@Base 5.2.0
+ _ZN12ossimplugins17EnvisatAsarRecordC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN12ossimplugins17EnvisatAsarRecordC2ERKS0_@Base 5.2.0
  _ZN12ossimplugins17EnvisatAsarRecordC2ESs@Base 5.2.0
  _ZN12ossimplugins17EnvisatAsarRecordD0Ev@Base 5.2.0
@@ -615,6 +626,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins19ossimRadarSat2Model12initRefPointEPK16ossimXmlDocumentRKNS_24ossimRadarSat2ProductDocE@Base 5.2.0
  _ZN12ossimplugins19ossimRadarSat2Model16InitSensorParamsERK16ossimKeywordlistPKc@Base 5.2.0
  _ZN12ossimplugins19ossimRadarSat2Model16initSensorParamsEPK16ossimXmlDocumentRKNS_24ossimRadarSat2ProductDocE@Base 5.2.0
+ _ZN12ossimplugins19ossimRadarSat2Model16setModelRefPointERKNSt7__cxx114listI8ossimGptSaIS3_EEERKNS2_I8ossimDptSaIS8_EEE@Base 5.2.0
  _ZN12ossimplugins19ossimRadarSat2Model16setModelRefPointERKSt4listI8ossimGptSaIS2_EERKS1_I8ossimDptSaIS7_EE@Base 5.2.0
  _ZN12ossimplugins19ossimRadarSat2Model17InitRefNoiseLevelEPK16ossimXmlDocument@Base 5.2.0
  _ZN12ossimplugins19ossimRadarSat2Model20InitPlatformPositionERK16ossimKeywordlistPKc@Base 5.2.0
@@ -786,6 +798,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins21ossimCosmoSkymedModel12InitRefPointERK16ossimKeywordlistPKc@Base 5.2.0
  _ZN12ossimplugins21ossimCosmoSkymedModel16InitSensorParamsERK16ossimKeywordlistPKc@Base 5.2.0
  _ZN12ossimplugins21ossimCosmoSkymedModel20InitPlatformPositionERK16ossimKeywordlistPKc@Base 5.2.0
+ _ZN12ossimplugins21ossimCosmoSkymedModel28UtcDateTimeStringToCivilDateERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERNS_13CivilDateTimeE@Base 5.2.0
  _ZN12ossimplugins21ossimCosmoSkymedModel28UtcDateTimeStringToCivilDateERKSsRNS_13CivilDateTimeE@Base 5.2.0
  _ZN12ossimplugins21ossimCosmoSkymedModel8InitSRGRERK16ossimKeywordlistPKc@Base 5.2.0
  _ZN12ossimplugins21ossimCosmoSkymedModel8RTTI_objE@Base 5.2.0
@@ -954,7 +967,9 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins24AntennaElevationPatternsD1Ev@Base 5.2.0
  _ZN12ossimplugins24AntennaElevationPatternsD2Ev@Base 5.2.0
  _ZN12ossimplugins24AntennaElevationPatternsaSERKS0_@Base 5.2.0
+ _ZN12ossimplugins24EnvisatAsarRecordFactory11InstanciateENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN12ossimplugins24EnvisatAsarRecordFactory11InstanciateESs@Base 5.2.0
+ _ZN12ossimplugins24EnvisatAsarRecordFactory14RegisterRecordENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEPNS_17EnvisatAsarRecordE@Base 5.2.0
  _ZN12ossimplugins24EnvisatAsarRecordFactory14RegisterRecordESsPNS_17EnvisatAsarRecordE@Base 5.2.0
  _ZN12ossimplugins24EnvisatAsarRecordFactoryC1Ev@Base 5.2.0
  _ZN12ossimplugins24EnvisatAsarRecordFactoryC2Ev@Base 5.2.0
@@ -1176,9 +1191,11 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins28AlosPalsarDataFileDescriptorD2Ev@Base 5.2.0
  _ZN12ossimplugins28AlosPalsarDataFileDescriptoraSERKS0_@Base 5.2.0
  _ZN12ossimplugins28ossimGeometricSarSensorModel10RTTI_scastEiPv@Base 5.2.0
+ _ZN12ossimplugins28ossimGeometricSarSensorModel10getGCPlistERNSt7__cxx114listI8ossimGptSaIS3_EEERNS2_I8ossimDptSaIS7_EEE@Base 5.2.0
  _ZN12ossimplugins28ossimGeometricSarSensorModel10getGCPlistERSt4listI8ossimGptSaIS2_EERS1_I8ossimDptSaIS6_EE@Base 5.2.0
  _ZN12ossimplugins28ossimGeometricSarSensorModel12clearGCPlistEv@Base 5.2.0
  _ZN12ossimplugins28ossimGeometricSarSensorModel12set_refPointEPNS_8RefPointE@Base 5.2.0
+ _ZN12ossimplugins28ossimGeometricSarSensorModel13optimizeModelERKNSt7__cxx114listI8ossimGptSaIS3_EEERKNS2_I8ossimDptSaIS8_EEE@Base 5.2.0
  _ZN12ossimplugins28ossimGeometricSarSensorModel13optimizeModelERKSt4listI8ossimGptSaIS2_EERKS1_I8ossimDptSaIS7_EE@Base 5.2.0
  _ZN12ossimplugins28ossimGeometricSarSensorModel16set_sensorParamsEPNS_12SensorParamsE@Base 5.2.0
  _ZN12ossimplugins28ossimGeometricSarSensorModel18CREATE_OCG_PREF_KWE@Base 5.2.0
@@ -1314,6 +1331,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins5fnintEd@Base 5.2.0
  _ZN12ossimplugins5inintEd@Base 5.2.0
  _ZN12ossimplugins5ossim13findFirstNodeERK11ossimString11ossimRefPtrI12ossimXmlNodeERS1_@Base 5.2.0
+ _ZN12ossimplugins5ossim28iso8601TimeStringToCivilDateERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERNS_13CivilDateTimeE@Base 5.2.0
  _ZN12ossimplugins5ossim28iso8601TimeStringToCivilDateERKSsRNS_13CivilDateTimeE@Base 5.2.0
  _ZN12ossimplugins5ossim7getPathERK11ossimStringPK16ossimXmlDocumentRS1_@Base 5.2.0
  _ZN12ossimplugins5ossim7getPathERK11ossimStringPK16ossimXmlDocumentRSt6vectorIS1_SaIS1_EE@Base 5.2.0
@@ -1429,8 +1447,10 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins8RefPointD1Ev@Base 5.2.0
  _ZN12ossimplugins8RefPointD2Ev@Base 5.2.0
  _ZN12ossimplugins8RefPointaSERKS0_@Base 5.2.0
+ _ZN12ossimplugins8_ds_nameB5cxx11E@Base 5.2.0
  _ZN12ossimplugins8_ds_nameE@Base 5.2.0
  _ZN12ossimplugins8_ds_sizeE@Base 5.2.0
+ _ZN12ossimplugins8_ds_typeB5cxx11E@Base 5.2.0
  _ZN12ossimplugins8_ds_typeE@Base 5.2.0
  _ZN12ossimplugins8_num_dsrE@Base 5.2.0
  _ZN12ossimplugins9Ephemeris5CloneEv@Base 5.2.0
@@ -1469,6 +1489,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN12ossimplugins9VolumeDirD2Ev@Base 5.2.0
  _ZN12ossimplugins9VolumeDiraSERKS0_@Base 5.2.0
  _ZN12ossimplugins9_dsr_sizeE@Base 5.2.0
+ _ZN12ossimplugins9_filenameB5cxx11E@Base 5.2.0
  _ZN12ossimplugins9_filenameE@Base 5.2.0
  _ZN12ossimpluginslsERSoRKNS_10TextRecordE@Base 5.2.0
  _ZN12ossimpluginslsERSoRKNS_11DataQualityE@Base 5.2.0
@@ -1629,11 +1650,13 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZN29ossimFormosatDimapSupportDataD2Ev@Base 5.2.0
  _ZN8RPCModelD1Ev@Base 5.2.0
  _ZN8RPCModelD2Ev@Base 5.2.0
+ _ZN8ossimGptaSERKS_@Base 5.2.0
  _ZNK10ossimDatum4codeEv@Base 5.2.0
  _ZNK11ossimObject10RTTI_vinfoEv@Base 5.2.0
  _ZNK11ossimStringeqEPKc@Base 5.2.0
  _ZNK11ossimStringneEPKc@Base 5.2.0
  _ZNK11ossimStringplEPKc@Base 5.2.0
+ _ZNK11ossimStringplERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK11ossimStringplERKS_@Base 5.2.0
  _ZNK12ossimplugins10ImageNoise9saveStateER16ossimKeywordlistPKc@Base 5.2.0
  _ZNK12ossimplugins10SceneCoord5printERSo@Base 5.2.0
@@ -1773,6 +1796,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZNK12ossimplugins23ossimTerraSarProductDoc13getProjectionEPK16ossimXmlDocumentR11ossimString@Base 5.2.0
  _ZNK12ossimplugins23ossimTerraSarProductDoc13getRowSpacingEPK16ossimXmlDocumentR11ossimString@Base 5.2.0
  _ZNK12ossimplugins23ossimTerraSarProductDoc13initImageSizeEPK16ossimXmlDocumentR8ossimIpt@Base 5.2.0
+ _ZNK12ossimplugins23ossimTerraSarProductDoc13initTiePointsEPK16ossimXmlDocumentRNSt7__cxx114listI8ossimGptSaIS6_EEERNS5_I8ossimDptSaISA_EEE@Base 5.2.0
  _ZNK12ossimplugins23ossimTerraSarProductDoc13initTiePointsEPK16ossimXmlDocumentRSt4listI8ossimGptSaIS5_EERS4_I8ossimDptSaIS9_EE@Base 5.2.0
  _ZNK12ossimplugins23ossimTerraSarProductDoc14getImagingModeEPK16ossimXmlDocumentR11ossimString@Base 5.2.0
  _ZNK12ossimplugins23ossimTerraSarProductDoc14getProductTypeEPK16ossimXmlDocumentR11ossimString@Base 5.2.0
@@ -1839,6 +1863,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZNK12ossimplugins24ossimRadarSat2ProductDoc12getSatelliteEPK16ossimXmlDocumentR11ossimString@Base 5.2.0
  _ZNK12ossimplugins24ossimRadarSat2ProductDoc13getNominalPrfEPK16ossimXmlDocumentRd@Base 5.2.0
  _ZNK12ossimplugins24ossimRadarSat2ProductDoc13initImageSizeEPK16ossimXmlDocumentR8ossimIpt@Base 5.2.0
+ _ZNK12ossimplugins24ossimRadarSat2ProductDoc13initTiePointsEPK16ossimXmlDocumentRNSt7__cxx114listI8ossimGptSaIS6_EEERNS5_I8ossimDptSaISA_EEE@Base 5.2.0
  _ZNK12ossimplugins24ossimRadarSat2ProductDoc13initTiePointsEPK16ossimXmlDocumentRSt4listI8ossimGptSaIS5_EERS4_I8ossimDptSaIS9_EE@Base 5.2.0
  _ZNK12ossimplugins24ossimRadarSat2ProductDoc14getProductTypeEPK16ossimXmlDocumentR11ossimString@Base 5.2.0
  _ZNK12ossimplugins24ossimRadarSat2ProductDoc16getNumberOfLinesEPK16ossimXmlDocumentR11ossimString@Base 5.2.0
@@ -1973,6 +1998,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  _ZNK15ossimReferenced5unrefEv@Base 5.2.0
  _ZNK16ossimImageSource9getObjectEv@Base 5.2.0
  _ZNK16ossimSensorModel11insideImageERK8ossimDpt@Base 5.2.0
+ _ZNK16ossimSensorModel16getImageGeometryERK11ossimStringS2_R16ossimKeywordlist@Base 5.2.0
  _ZNK16ossimSensorModel17getMetersPerPixelEv@Base 5.2.0
  _ZNK16ossimSensorModel17needsInitialStateEv@Base 5.2.0
  _ZNK16ossimSensorModel18getNominalPosErrorEv@Base 5.2.0
@@ -2049,13 +2075,22 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIP11ossimStringS3_EET0_T_S5_S4_@Base 5.2.0
+ (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN12ossimplugins5NoiseES4_EET0_T_S6_S5_@Base 5.2.0
  (optional=templinst)_ZNSt4listI8ossimGptSaIS0_EEaSERKS2_@Base 5.2.0
+ (optional=templinst)_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_EC1IS5_S5_EERKS_IT_T0_E@Base 5.2.0
+ (optional=templinst)_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_EC2IS5_S5_EERKS_IT_T0_E@Base 5.2.0
+ (optional=templinst)_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt4pairIKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt4pairIKSsSsED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt4pairIKSsSsED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt4pairISsSsED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt4pairISsSsED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI10ossimDpt3dSaIS0_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS0_S2_EERKS0_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI10ossimDpt3dSaIS0_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS0_S2_EEmRKS0_@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorI11ossimRefPtrI12ossimXmlNodeESaIS2_EE5clearEv@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimRefPtrI12ossimXmlNodeESaIS2_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimRefPtrI12ossimXmlNodeESaIS2_EED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorI11ossimStringSaIS0_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS0_S2_EERKS0_@Base 5.2.0
@@ -2095,9 +2130,20 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  (optional=templinst)_ZNSt6vectorIdSaIdEE14_M_fill_assignEmRKd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE6resizeEmd@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorIdSaIdEE9push_backERKd@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorIdSaIdEEC1ERKS1_@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorIdSaIdEEC2ERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEEaSERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIiSaIiEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPiS1_EERKi@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIiSaIiEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPiS1_EEmRKi@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx114listI8ossimGptSaIS1_EEaSERKS3_@Base 5.2.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN12ossimplugins17EnvisatAsarRecordEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE24_M_get_insert_unique_posERS7_@Base 5.2.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_PN12ossimplugins17EnvisatAsarRecordEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_M_eraseEPSt13_Rb_tree_nodeISB_E@Base 5.2.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE16_M_insert_uniqueERKS8_@Base 5.2.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE8_M_eraseEPSt13_Rb_tree_nodeIS8_E@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsPN12ossimplugins17EnvisatAsarRecordEESt10_Select1stIS5_ESt4lessISsESaIS5_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS5_ERKS5_@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsPN12ossimplugins17EnvisatAsarRecordEESt10_Select1stIS5_ESt4lessISsESaIS5_EE24_M_get_insert_unique_posERS1_@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsPN12ossimplugins17EnvisatAsarRecordEESt10_Select1stIS5_ESt4lessISsESaIS5_EE8_M_eraseEPSt13_Rb_tree_nodeIS5_E@Base 5.2.0
@@ -2379,6 +2425,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  (c++)"non-virtual thunk to ossimSarModel::useForward() const@Base" 5.2.0
  (c++)"non-virtual thunk to ossimSensorModel::adjustableParametersChanged()@Base" 5.2.0
  (c++)"non-virtual thunk to ossimSensorModel::needsInitialState() const@Base" 5.2.0
+ (c++)"non-virtual thunk to ossimSensorModel::updateModel()@Base" 5.2.0
  (c++)"non-virtual thunk to ossimplugins::ossimAlosPalsarModel::RTTI_cast(RTTItypeid) const@Base" 5.2.0
  (c++)"non-virtual thunk to ossimplugins::ossimAlosPalsarModel::RTTI_cast(RTTItypeid)@Base" 5.2.0
  (c++)"non-virtual thunk to ossimplugins::ossimAlosPalsarModel::RTTI_vinfo() const@Base" 5.2.0
@@ -2402,6 +2449,7 @@ libotbossimplugins-5.2.so.1 libotbossimplugins-5.2-1 #MINVER#
  (c++)"non-virtual thunk to ossimplugins::ossimFormosatModel::initAdjustableParameters()@Base" 5.2.0
  (c++)"non-virtual thunk to ossimplugins::ossimFormosatModel::print(std::basic_ostream<char, std::char_traits<char> >&) const@Base" 5.2.0
  (c++)"non-virtual thunk to ossimplugins::ossimFormosatModel::setupOptimizer(ossimString const&)@Base" 5.2.0
+ (c++)"non-virtual thunk to ossimplugins::ossimFormosatModel::updateModel()@Base" 5.2.0
  (c++)"non-virtual thunk to ossimplugins::ossimFormosatModel::useForward() const@Base" 5.2.0
  (c++)"non-virtual thunk to ossimplugins::ossimFormosatModel::~ossimFormosatModel()@Base" 5.2.0
  (c++)"non-virtual thunk to ossimplugins::ossimGeometricSarSensorModel::RTTI_cast(RTTItypeid) const@Base" 5.2.0
