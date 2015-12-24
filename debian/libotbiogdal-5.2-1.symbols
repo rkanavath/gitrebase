@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libOTBIOGDAL-5.2.so.1 libotbiogdal-5.2-1 #MINVER#
  _ZGVZN3otb24GDALDriverManagerWrapper11GetInstanceEvE17theUniqueInstance@Base 5.2.0
  _ZN3itk10DataObject15CopyInformationEPKS0_@Base 5.2.0
@@ -23,6 +23,7 @@ libOTBIOGDAL-5.2.so.1 libotbiogdal-5.2-1 #MINVER#
  _ZN3itk13ProcessObject19AbortGenerateDataOnEv@Base 5.2.0
  _ZN3itk13ProcessObject20AbortGenerateDataOffEv@Base 5.2.0
  _ZN3itk13ProcessObject20SetAbortGenerateDataEb@Base 5.2.0
+ (arch=i386)_ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEj@Base 5.2.0
  _ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEm@Base 5.2.0
  _ZN3itk13ProcessObject28EnlargeOutputRequestedRegionEPNS_10DataObjectE@Base 5.2.0
  _ZN3itk13ProcessObject29ReleaseDataBeforeUpdateFlagOnEv@Base 5.2.0
@@ -466,9 +467,11 @@ libOTBIOGDAL-5.2.so.1 libotbiogdal-5.2-1 #MINVER#
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_EET0_T_SA_S9_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerIN3otb7PolygonIdEEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS8_SA_EERKS8_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS8_SA_EEjRKS8_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS8_SA_EEmRKS8_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EED2Ev@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEjRKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEmRKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN6itksys6StringESaIS1_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN6itksys6StringESaIS1_EED2Ev@Base 5.2.0

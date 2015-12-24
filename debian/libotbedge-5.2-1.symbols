@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libOTBEdge-5.2.so.1 libotbedge-5.2-1 #MINVER#
  (optional=templinst)_ZN18vnl_matrix_inverseIdED0Ev@Base 5.2.0
  (optional=templinst)_ZN18vnl_matrix_inverseIdED1Ev@Base 5.2.0
@@ -27,6 +27,7 @@ libOTBEdge-5.2.so.1 libotbedge-5.2-1 #MINVER#
  _ZN3itk13ProcessObject19AbortGenerateDataOnEv@Base 5.2.0
  _ZN3itk13ProcessObject20AbortGenerateDataOffEv@Base 5.2.0
  _ZN3itk13ProcessObject20SetAbortGenerateDataEb@Base 5.2.0
+ (arch=i386)_ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEj@Base 5.2.0
  _ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEm@Base 5.2.0
  _ZN3itk13ProcessObject28EnlargeOutputRequestedRegionEPNS_10DataObjectE@Base 5.2.0
  _ZN3itk13ProcessObject29ReleaseDataBeforeUpdateFlagOnEv@Base 5.2.0
@@ -392,7 +393,9 @@ libOTBEdge-5.2.so.1 libotbedge-5.2-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk12SmartPointerINS2_8TreeNodeIPNS2_13SpatialObjectILj2EEEEEEESA_EET0_T_SC_SB_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk22LineSpatialObjectPointILj2EEES5_EET0_T_S7_S6_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeIPNS0_13SpatialObjectILj2EEEEEEESaIS7_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS7_S9_EERKS7_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeIPNS0_13SpatialObjectILj2EEEEEEESaIS7_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS7_S9_EEjRKS7_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeIPNS0_13SpatialObjectILj2EEEEEEESaIS7_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS7_S9_EEmRKS7_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeIPNS0_13SpatialObjectILj2EEEEEEESaIS7_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeIPNS0_13SpatialObjectILj2EEEEEEESaIS7_EED2Ev@Base 5.2.0
@@ -400,6 +403,7 @@ libOTBEdge-5.2.so.1 libotbedge-5.2-1 #MINVER#
  (optional=templinst)_ZNSt6vectorIN3itk22LineSpatialObjectPointILj2EEESaIS2_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk22LineSpatialObjectPointILj2EEESaIS2_EED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk22LineSpatialObjectPointILj2EEESaIS2_EEaSERKS4_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk5PointIdLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEjRKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk5PointIdLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEmRKS2_@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx1110_List_baseIN3itk12SmartPointerINS1_17LineSpatialObjectILj2EEEEESaIS5_EE8_M_clearEv@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0

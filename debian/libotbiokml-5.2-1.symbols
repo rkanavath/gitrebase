@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libOTBIOKML-5.2.so.1 libotbiokml-5.2-1 #MINVER#
  _ZN3itk10DataObject15CopyInformationEPKS0_@Base 5.2.0
  _ZN3itk10DataObject16SetRealTimeStampENS_13RealTimeStampE@Base 5.2.0
@@ -25,6 +25,7 @@ libOTBIOKML-5.2.so.1 libotbiokml-5.2-1 #MINVER#
  _ZN3itk13ProcessObject19AbortGenerateDataOnEv@Base 5.2.0
  _ZN3itk13ProcessObject20AbortGenerateDataOffEv@Base 5.2.0
  _ZN3itk13ProcessObject20SetAbortGenerateDataEb@Base 5.2.0
+ (arch=i386)_ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEj@Base 5.2.0
  _ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEm@Base 5.2.0
  _ZN3itk13ProcessObject28EnlargeOutputRequestedRegionEPNS_10DataObjectE@Base 5.2.0
  _ZN3itk13ProcessObject29ReleaseDataBeforeUpdateFlagOnEv@Base 5.2.0
@@ -195,6 +196,7 @@ libOTBIOKML-5.2.so.1 libotbiokml-5.2-1 #MINVER#
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE11GraftOutputEPN3itk10DataObjectE@Base 5.2.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE14GraftNthOutputEjPN3itk10DataObjectE@Base 5.2.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE15AllocateOutputsEv@Base 5.2.0
+ (optional=templinst|arch=i386)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE9GetOutputEj@Base 5.2.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE9GetOutputEm@Base 5.2.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE9GetOutputEv@Base 5.2.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEEC1Ev@Base 5.2.0
@@ -631,11 +633,13 @@ libOTBIOKML-5.2.so.1 libotbiokml-5.2-1 #MINVER#
  (optional=templinst)_ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPN3itk12SmartPointerINS2_8TreeNodeINS3_IN3otb8DataNodeIdLj2EdEEEEEEEEmSA_EET_SC_T0_RKT1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerIN3otb7PolygonIdEEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS8_SA_EERKS8_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS8_SA_EEjRKS8_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS8_SA_EEmRKS8_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EEC1ERKSA_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EEC2ERKSA_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerINS0_8TreeNodeINS1_IN3otb8DataNodeIdLj2EdEEEEEEEESaIS8_EED2Ev@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEjRKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEmRKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN5boost13intrusive_ptrIN6kmldom15InnerBoundaryIsEEESaIS4_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS4_S6_EERKS4_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN7kmlbase4Vec3ESaIS1_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS1_S3_EERKS1_@Base 5.2.0

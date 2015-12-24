@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libOTBMetadata-5.2.so.1 libotbmetadata-5.2-1 #MINVER#
  _ZN3itk10DataObject15CopyInformationEPKS0_@Base 5.2.0
  _ZN3itk10DataObject16SetRealTimeStampENS_13RealTimeStampE@Base 5.2.0
@@ -94,6 +94,7 @@ libOTBMetadata-5.2.so.1 libotbmetadata-5.2-1 #MINVER#
  (optional=templinst)_ZN3itk8PointSetIdLj2ENS_23DefaultStaticMeshTraitsIdLj2ELj2EffdEEED0Ev@Base 5.2.0
  (optional=templinst)_ZN3itk8PointSetIdLj2ENS_23DefaultStaticMeshTraitsIdLj2ELj2EffdEEED1Ev@Base 5.2.0
  (optional=templinst)_ZN3itk8PointSetIdLj2ENS_23DefaultStaticMeshTraitsIdLj2ELj2EffdEEED2Ev@Base 5.2.0
+ (optional=templinst|arch=i386)_ZN3itklsIdEERSoS1_RKNS_20VariableLengthVectorIT_EE@Base 5.2.0
  (optional=templinst)_ZN3otb10ObjectListINS_20FilterFunctionValuesEE3NewEv@Base 5.2.0
  (optional=templinst)_ZN3otb10ObjectListINS_20FilterFunctionValuesEE8PushBackEPS1_@Base 5.2.0
  (optional=templinst)_ZN3otb10ObjectListINS_20FilterFunctionValuesEED0Ev@Base 5.2.0
@@ -307,8 +308,10 @@ libOTBMetadata-5.2.so.1 libotbmetadata-5.2-1 #MINVER#
  _ZN5boost17bad_function_callD2Ev@Base 5.2.0
  (optional=templinst)_ZN5boost6detail13parse_inf_nanIcdEEbPKT_S4_RT0_@Base 5.2.0
  (optional=templinst)_ZN5boost6detail13parse_inf_nanIcfEEbPKT_S4_RT0_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZN5boost6detail16basic_pointerbufIcSt15basic_streambufIcSt11char_traitsIcEEE6setbufEPci@Base 5.2.0
  (optional=templinst)_ZN5boost6detail16basic_pointerbufIcSt15basic_streambufIcSt11char_traitsIcEEE6setbufEPcl@Base 5.2.0
  (optional=templinst)_ZN5boost6detail16basic_pointerbufIcSt15basic_streambufIcSt11char_traitsIcEEE7seekoffElSt12_Ios_SeekdirSt13_Ios_Openmode@Base 5.2.0
+ (optional=templinst|arch=i386)_ZN5boost6detail16basic_pointerbufIcSt15basic_streambufIcSt11char_traitsIcEEE7seekoffExSt12_Ios_SeekdirSt13_Ios_Openmode@Base 5.2.0
  (optional=templinst)_ZN5boost6detail16basic_pointerbufIcSt15basic_streambufIcSt11char_traitsIcEEE7seekposESt4fposI11__mbstate_tESt13_Ios_Openmode@Base 5.2.0
  (optional=templinst)_ZN5boost6detail16basic_pointerbufIcSt15basic_streambufIcSt11char_traitsIcEEED0Ev@Base 5.2.0
  (optional=templinst)_ZN5boost6detail16basic_pointerbufIcSt15basic_streambufIcSt11char_traitsIcEEED1Ev@Base 5.2.0
@@ -836,12 +839,14 @@ libOTBMetadata-5.2.so.1 libotbmetadata-5.2-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt16istream_iteratorIdcSt11char_traitsIcEiE7_M_readEv@Base 5.2.0
  (optional=templinst)_ZNSt16istream_iteratorIdcSt11char_traitsIcElE7_M_readEv@Base 5.2.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk12SmartPointerIN3otb20FilterFunctionValuesEEES7_EET0_T_S9_S8_@Base 5.2.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_EET0_T_SA_S9_@Base 5.2.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPSt6vectorIdSaIdEES5_EET0_T_S7_S6_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk12SmartPointerIN3otb20FilterFunctionValuesEEESaIS4_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS4_S6_EERKS4_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk5IndexILj2EEESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIN3itk5PointIfLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEjRKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk5PointIfLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEmRKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3otb26Sentinel1CalibrationStructESaIS1_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3otb26Sentinel1CalibrationStructESaIS1_EED2Ev@Base 5.2.0
@@ -858,9 +863,12 @@ libOTBMetadata-5.2.so.1 libotbmetadata-5.2-1 #MINVER#
  (optional=templinst)_ZNSt6vectorISsSaISsEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPdS1_EERKd@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEjRKd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE9push_backERKd@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIdSaIdEEC1ISt16istream_iteratorIdcSt11char_traitsIcEiEEET_S7_RKS0_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEEC1ISt16istream_iteratorIdcSt11char_traitsIcElEEET_S7_RKS0_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIdSaIdEEC2ISt16istream_iteratorIdcSt11char_traitsIcEiEEET_S7_RKS0_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEEC2ISt16istream_iteratorIdcSt11char_traitsIcElEEET_S7_RKS0_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEEaSERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIfSaIfEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPfS1_EERKf@Base 5.2.0
@@ -875,6 +883,7 @@ libOTBMetadata-5.2.so.1 libotbmetadata-5.2-1 #MINVER#
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx114listISt6vectorIfSaIfEESaIS3_EE9push_backERKS3_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZSt13__adjust_heapIPcicN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_@Base 5.2.0
  (optional=templinst)_ZSt13__adjust_heapIPclcN9__gnu_cxx5__ops15_Iter_less_iterEEvT_T0_S5_T1_T2_@Base 5.2.0
  (optional=templinst)_ZSt13__copy_move_aILb0EPKcSt16ostream_iteratorIccSt11char_traitsIcEEET1_T0_S7_S6_@Base 5.2.0
  (optional=templinst)_ZSt9__find_ifIN9__gnu_cxx17__normal_iteratorIPKcNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEENS0_5__ops10_Iter_predIN5boost9algorithm6detail10is_any_ofFIcEEEEET_SJ_SJ_T0_St26random_access_iterator_tag@Base 5.2.0

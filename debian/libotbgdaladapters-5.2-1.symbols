@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _Z16DeleteDataSourceRKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _Z16DeleteDataSourceRKSs@Base 5.2.0
@@ -17,6 +17,7 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZN3itk13ProcessObject19AbortGenerateDataOnEv@Base 5.2.0
  _ZN3itk13ProcessObject20AbortGenerateDataOffEv@Base 5.2.0
  _ZN3itk13ProcessObject20SetAbortGenerateDataEb@Base 5.2.0
+ (arch=i386)_ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEj@Base 5.2.0
  _ZN3itk13ProcessObject26SetNumberOfRequiredOutputsEm@Base 5.2.0
  _ZN3itk13ProcessObject28EnlargeOutputRequestedRegionEPNS_10DataObjectE@Base 5.2.0
  _ZN3itk13ProcessObject29ReleaseDataBeforeUpdateFlagOnEv@Base 5.2.0
@@ -39,8 +40,10 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZN3otb13GeometriesSetD2Ev@Base 5.2.0
  _ZN3otb16GeometriesSource14PrepareOutputsEv@Base 5.2.0
  _ZN3otb16GeometriesSource17DoAllocateOutputsEv@Base 5.2.0
+ (arch=i386)_ZN3otb16GeometriesSource9GetOutputEj@Base 5.2.0
  _ZN3otb16GeometriesSource9GetOutputEm@Base 5.2.0
  _ZN3otb16GeometriesSource9GetOutputEv@Base 5.2.0
+ (arch=i386)_ZN3otb16GeometriesSource9SetOutputEPNS_13GeometriesSetEj@Base 5.2.0
  _ZN3otb16GeometriesSource9SetOutputEPNS_13GeometriesSetEm@Base 5.2.0
  _ZN3otb16GeometriesSourceC1Ev@Base 5.2.0
  _ZN3otb16GeometriesSourceC2Ev@Base 5.2.0
@@ -63,12 +66,15 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZN3otb3ogr10DataSource10SyncToDiskEv@Base 5.2.0
  _ZN3otb3ogr10DataSource11CreateLayerERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEP19OGRSpatialReference18OGRwkbGeometryTypeRKSt6vectorIS7_SaIS7_EE@Base 5.2.0
  _ZN3otb3ogr10DataSource11CreateLayerERKSsP19OGRSpatialReference18OGRwkbGeometryTypeRKSt6vectorISsSaISsEE@Base 5.2.0
+ (arch=i386)_ZN3otb3ogr10DataSource11DeleteLayerEj@Base 5.2.0
  _ZN3otb3ogr10DataSource11DeleteLayerEm@Base 5.2.0
  _ZN3otb3ogr10DataSource14OpenDataSourceERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS1_5Modes4typeE@Base 5.2.0
  _ZN3otb3ogr10DataSource14OpenDataSourceERKSsNS1_5Modes4typeE@Base 5.2.0
  _ZN3otb3ogr10DataSource15GetLayerCheckedERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb3ogr10DataSource15GetLayerCheckedERKSs@Base 5.2.0
+ (arch=i386)_ZN3otb3ogr10DataSource15GetLayerCheckedEj@Base 5.2.0
  _ZN3otb3ogr10DataSource15GetLayerCheckedEm@Base 5.2.0
+ (arch=i386)_ZN3otb3ogr10DataSource17GetLayerUncheckedEj@Base 5.2.0
  _ZN3otb3ogr10DataSource17GetLayerUncheckedEm@Base 5.2.0
  _ZN3otb3ogr10DataSource3NewEP13OGRDataSourceNS1_5Modes4typeE@Base 5.2.0
  _ZN3otb3ogr10DataSource3NewERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEENS1_5Modes4typeE@Base 5.2.0
@@ -120,10 +126,12 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZN3otb3ogr5Layer10SetFeatureENS0_7FeatureE@Base 5.2.0
  _ZN3otb3ogr5Layer11CreateFieldERKNS0_9FieldDefnEb@Base 5.2.0
  _ZN3otb3ogr5Layer11DeleteFieldEi@Base 5.2.0
+ (arch=i386)_ZN3otb3ogr5Layer12ReorderFieldEjj@Base 5.2.0
  _ZN3otb3ogr5Layer12ReorderFieldEmm@Base 5.2.0
  _ZN3otb3ogr5Layer13CreateFeatureENS0_7FeatureE@Base 5.2.0
  _ZN3otb3ogr5Layer13DeleteFeatureEl@Base 5.2.0
  _ZN3otb3ogr5Layer13ReorderFieldsEPi@Base 5.2.0
+ (arch=i386)_ZN3otb3ogr5Layer14AlterFieldDefnEjRKNS0_9FieldDefnEi@Base 5.2.0
  _ZN3otb3ogr5Layer14AlterFieldDefnEmRKNS0_9FieldDefnEi@Base 5.2.0
  _ZN3otb3ogr5Layer14GetNextFeatureEv@Base 5.2.0
  _ZN3otb3ogr5Layer16SetIgnoredFieldsEPPKc@Base 5.2.0
@@ -238,6 +246,7 @@ libOTBGdalAdapters-5.2.so.1 libotbgdaladapters-5.2-1 #MINVER#
  _ZNK3otb3ogr10DataSource15GetGlobalExtentEbPSs@Base 5.2.0
  _ZNK3otb3ogr10DataSource17IsLayerModifiableERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb3ogr10DataSource17IsLayerModifiableERKSs@Base 5.2.0
+ (arch=i386)_ZNK3otb3ogr10DataSource17IsLayerModifiableEj@Base 5.2.0
  _ZNK3otb3ogr10DataSource17IsLayerModifiableEm@Base 5.2.0
  _ZNK3otb3ogr10DataSource19GetLayerIDUncheckedERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb3ogr10DataSource19GetLayerIDUncheckedERKSs@Base 5.2.0

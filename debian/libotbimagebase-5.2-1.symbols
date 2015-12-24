@@ -1,4 +1,4 @@
-# SymbolsHelper-Confirmed: 5.2.0 amd64
+# SymbolsHelper-Confirmed: 5.2.0 amd64 i386
 libOTBImageBase-5.2.so.1 libotbimagebase-5.2-1 #MINVER#
  _ZN3itk18LightProcessObject11SetProgressEf@Base 5.2.0
  _ZN3itk18LightProcessObject12GenerateDataEv@Base 5.2.0
@@ -7,6 +7,7 @@ libOTBImageBase-5.2.so.1 libotbimagebase-5.2-1 #MINVER#
  _ZN3itk18LightProcessObject20SetAbortGenerateDataEb@Base 5.2.0
  _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
+ (optional=templinst|arch=i386)_ZN3otb10ReadBufferISt7complexIiEEEvRSiPT_x@Base 5.2.0
  _ZN3otb11ImageIOBase10SetSpacingEjd@Base 5.2.0
  _ZN3otb11ImageIOBase11SetFileNameEPKc@Base 5.2.0
  _ZN3otb11ImageIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
@@ -25,11 +26,14 @@ libOTBImageBase-5.2.so.1 libotbimagebase-5.2-1 #MINVER#
  _ZN3otb11ImageIOBase16SetPixelTypeInfoERKSt9type_info@Base 5.2.0
  _ZN3otb11ImageIOBase16UseCompressionOnEv@Base 5.2.0
  _ZN3otb11ImageIOBase17ReadBufferAsASCIIERSiPvNS0_15IOComponentTypeEl@Base 5.2.0
+ (arch=i386)_ZN3otb11ImageIOBase17ReadBufferAsASCIIERSiPvNS0_15IOComponentTypeEx@Base 5.2.0
  _ZN3otb11ImageIOBase17SetUseCompressionEb@Base 5.2.0
  _ZN3otb11ImageIOBase17SupportsDimensionEm@Base 5.2.0
  _ZN3otb11ImageIOBase17UseCompressionOffEv@Base 5.2.0
  _ZN3otb11ImageIOBase18ReadBufferAsBinaryERSiPvl@Base 5.2.0
+ (arch=i386)_ZN3otb11ImageIOBase18ReadBufferAsBinaryERSiPvx@Base 5.2.0
  _ZN3otb11ImageIOBase18WriteBufferAsASCIIERSoPKvNS0_15IOComponentTypeEl@Base 5.2.0
+ (arch=i386)_ZN3otb11ImageIOBase18WriteBufferAsASCIIERSoPKvNS0_15IOComponentTypeEx@Base 5.2.0
  _ZN3otb11ImageIOBase20UseStreamedReadingOnEv@Base 5.2.0
  _ZN3otb11ImageIOBase20UseStreamedWritingOnEv@Base 5.2.0
  _ZN3otb11ImageIOBase21SetNumberOfComponentsEj@Base 5.2.0
@@ -121,16 +125,20 @@ libOTBImageBase-5.2.so.1 libotbimagebase-5.2-1 #MINVER#
  (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED2Ev@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIS_IdSaIdEESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEjRKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIS_IdSaIdEESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEmRKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPSsS1_EERKSs@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED2Ev@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEjRKd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPdS1_EEmRKd@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIdSaIdEEaSERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIlSaIlEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPlS1_EEmRKl@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIlSaIlEEaSERKS1_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorImSaImEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPmS1_EEjRKm@Base 5.2.0
  (optional=templinst)_ZNSt6vectorImSaImEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPmS1_EEmRKm@Base 5.2.0
  (optional=templinst)_ZNSt6vectorImSaImEEaSERKS1_@Base 5.2.0
+ (optional=templinst|arch=i386)_ZNSt6vectorIxSaIxEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPxS1_EEjRKx@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
