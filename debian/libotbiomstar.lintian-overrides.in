@@ -1,0 +1,6 @@
+# Build uses -D_FORTIFY_SOURCE=2, but hardening-check reports:
+#  Fortify Source functions: no, only unprotected functions found!
+#         unprotected: memmove
+#         unprotected: fread
+#         unprotected: memcpy
+libotbiomstar-@SOVERSION@: hardening-no-fortify-functions usr/lib/*/libOTBIOMSTAR-*

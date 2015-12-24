@@ -1,0 +1,2 @@
+# False positive, string not included in the source.
+libotbossimplugins-@SOVERSION@: spelling-error-in-binary usr/lib/*/libotbossimplugins-* TeH The

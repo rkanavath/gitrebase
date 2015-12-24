@@ -21,6 +21,8 @@ ifndef PKGVERSION
     PKGVERSION=1
 endif
 
+TEMPLATES=$(wildcard debian/*lintian-overrides.in)
+
 OTB_VERSION_MAJOR  = $(shell sed -ne 's/set(OTB_VERSION_MAJOR "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_MINOR  = $(shell sed -ne 's/set(OTB_VERSION_MINOR "\([0-9]*\)")/\1/p' CMakeLists.txt)
 OTB_VERSION_PATCH  = $(shell sed -ne 's/set(OTB_VERSION_PATCH "\([0-9]*\)")/\1/p' CMakeLists.txt)
@@ -54,8 +56,12 @@ pkglib:=lib$(DEBPKGNAME)
 pkgdev:=$(pkglib)-dev
 
 templates:
-	 sed -e 's/@SOVERSION@/$(OTB_VERSION_SONAME)-1/g' debian/control.in > debian/control
-	 sed -e 's/@SOVERSION@/$(OTB_VERSION_SONAME)/g' debian/libotb-dev.install.in > debian/libotb-dev.install
+
+	for TEMPLATE in $(TEMPLATES) ; do \
+		sed -e 's/@SOVERSION@/$(OTB_VERSION_SONAME)-1/g' $$TEMPLATE > `echo $$TEMPLATE | sed 's/.lintian-overrides.in$$/-$(OTB_VERSION_SONAME)-1.lintian-overrides/'` ; \
+  done
+	sed -e 's/@SOVERSION@/$(OTB_VERSION_SONAME)-1/g' debian/control.in > debian/control
+	sed -e 's/@SOVERSION@/$(OTB_VERSION_SONAME)/g' debian/libotb-dev.install.in > debian/libotb-dev.install
 
 # rather use all libs since the installed libs are spread over several packages
 OTB_LIB_DIRS = $(CURDIR)/debian/tmp/usr/lib
