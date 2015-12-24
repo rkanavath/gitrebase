@@ -25,6 +25,7 @@ if ( OTB_WRAP_PYTHON )
   check_PIC_flag ( Python )
   find_package ( PythonLibs REQUIRED )
   find_package ( PythonInterp REQUIRED )
+  find_package ( Numpy )
 endif()
 
 #
@@ -34,4 +35,5 @@ if ( OTB_WRAP_JAVA )
   check_PIC_flag ( Java )
   find_package ( Java REQUIRED )
   find_package ( JNI REQUIRED )
+  mark_as_advanced( JAVA_HOME )
 endif()

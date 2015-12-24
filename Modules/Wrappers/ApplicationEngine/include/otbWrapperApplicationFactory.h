@@ -18,6 +18,7 @@
 #ifndef __otbWrapperApplicationFactory_h
 #define __otbWrapperApplicationFactory_h
 
+#include "otbWrapperApplicationFactoryBase.h"
 #include "itkVersion.h"
 
 namespace otb
@@ -26,12 +27,12 @@ namespace Wrapper
 {
 
 template < class TApplication >
-class ITK_ABI_EXPORT ApplicationFactory : public itk::ObjectFactoryBase
+class ITK_ABI_EXPORT ApplicationFactory : public ApplicationFactoryBase
 {
 public:
   /** Standard class typedefs. */
   typedef ApplicationFactory            Self;
-  typedef itk::ObjectFactoryBase        Superclass;
+  typedef ApplicationFactoryBase        Superclass;
   typedef itk::SmartPointer<Self>       Pointer;
   typedef itk::SmartPointer<const Self> ConstPointer;
 
@@ -50,7 +51,19 @@ public:
   itkFactorylessNewMacro(Self);
 
   /** Run-time type information (and related methods). */
-  itkTypeMacro(ApplicationFactory, itk::ObjectFactoryBase);
+  itkTypeMacro(ApplicationFactory, ApplicationFactoryBase);
+  
+  void SetClassName(const char* name)
+  {
+    // remove namespace, only keep class name
+    std::string tmpName(name);
+    std::string::size_type pos = tmpName.rfind("::");
+    if (pos != std::string::npos)
+      {
+      tmpName = tmpName.substr(pos+2);
+      }
+    m_ClassName.assign(tmpName);
+  }
 
 protected:
   ApplicationFactory()
@@ -68,9 +81,8 @@ protected:
    * is not supported by the factory implementation. */
   virtual LightObject::Pointer CreateObject(const char* itkclassname )
   {
-    const std::string classname("otbWrapperApplication");
     LightObject::Pointer ret;
-    if ( classname == itkclassname )
+    if ( m_ClassName == itkclassname)
       ret = TApplication::New().GetPointer();
 
     return ret;
@@ -82,9 +94,10 @@ protected:
   virtual std::list<LightObject::Pointer>
   CreateAllObject(const char* itkclassname)
   {
-    const std::string classname("otbWrapperApplication");
+    const std::string applicationClass("otbWrapperApplication");
     std::list<LightObject::Pointer> list;
-    if ( classname == itkclassname )
+    if ( m_ClassName == itkclassname ||
+         applicationClass == itkclassname )
       list.push_back(TApplication::New().GetPointer());
 
     return list;
@@ -93,6 +106,8 @@ protected:
 private:
   ApplicationFactory(const Self &); //purposely not implemented
   void operator =(const Self&); //purposely not implemented
+  
+  std::string m_ClassName;
 };
 
 } // end namespace Wrapper
@@ -112,6 +127,7 @@ private:
     OTB_APP_EXPORT itk::ObjectFactoryBase* itkLoad()                                   \
     {                                                                                  \
       staticFactory = ApplicationFactoryType::New();                                   \
+      staticFactory->SetClassName(#ApplicationType);                                   \
       return staticFactory;                                                            \
     }                                                                                  \
   }

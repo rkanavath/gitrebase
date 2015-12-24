@@ -28,6 +28,14 @@ class CvSVM;
 
 namespace otb
 {
+/** 
+* \brief OpenCV implementation of SVM algorithm.
+* 
+* This machine learning model uses the OpenCV implementation of the
+* SVM algorithm. Since this implementation is buggy in the linear
+* case, we recommend users to use the LibSVM implementation instead,
+* through the otb::LibSVMMachineLearningModel.
+*/ 
 template <class TInputValue, class TTargetValue>
 class ITK_EXPORT SVMMachineLearningModel
   : public MachineLearningModel <TInputValue, TTargetValue>
@@ -39,15 +47,13 @@ public:
   typedef itk::SmartPointer<Self>                         Pointer;
   typedef itk::SmartPointer<const Self>                   ConstPointer;
 
-  // Input related typedefs
-  typedef TInputValue                                     InputValueType;
-  typedef itk::VariableLengthVector<InputValueType>       InputSampleType;
-  typedef itk::Statistics::ListSample<InputSampleType>    InputListSampleType;
-
-  // Target related typedefs
-  typedef TTargetValue                                    TargetValueType;
-  typedef itk::FixedArray<TargetValueType,1>              TargetSampleType;
-  typedef itk::Statistics::ListSample<TargetSampleType>   TargetListSampleType;
+  typedef typename Superclass::InputValueType             InputValueType;
+  typedef typename Superclass::InputSampleType            InputSampleType;
+  typedef typename Superclass::InputListSampleType        InputListSampleType;
+  typedef typename Superclass::TargetValueType            TargetValueType;
+  typedef typename Superclass::TargetSampleType           TargetSampleType;
+  typedef typename Superclass::TargetListSampleType       TargetListSampleType;
+  typedef typename Superclass::ConfidenceValueType        ConfidenceValueType;
 
   /** Run-time type information (and related methods). */
   itkNewMacro(Self);
@@ -55,9 +61,8 @@ public:
 
   /** Train the machine learning model */
   virtual void Train();
-
   /** Predict values using the model */
-  virtual TargetSampleType Predict(const InputSampleType & input) const;
+  virtual TargetSampleType Predict(const InputSampleType& input, ConfidenceValueType *quality=NULL) const;
 
   /** Save the model to file */
   virtual void Save(const std::string & filename, const std::string & name="");
