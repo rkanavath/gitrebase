@@ -44,6 +44,7 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED0Ev@Base 5.2.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED1Ev@Base 5.2.0
  (optional=templinst)_ZN3itk13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED2Ev@Base 5.2.0
+ (optional=templinst)_ZN3itk14ExposeMetaDataIN3otb21VectorDataKeywordlistEEEbRKNS_18MetaDataDictionaryENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERT_@Base 5.2.0
  (optional=templinst)_ZN3itk14MetaDataObjectIN3otb21VectorDataKeywordlistEED0Ev@Base 5.2.0
  (optional=templinst)_ZN3itk14MetaDataObjectIN3otb21VectorDataKeywordlistEED1Ev@Base 5.2.0
  (optional=templinst)_ZN3itk14MetaDataObjectIN3otb21VectorDataKeywordlistEED2Ev@Base 5.2.0
@@ -57,6 +58,8 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZN3itk15TreeRemoveEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED0Ev@Base 5.2.0
  (optional=templinst)_ZN3itk15TreeRemoveEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED1Ev@Base 5.2.0
  (optional=templinst)_ZN3itk15TreeRemoveEventINS_13TreeContainerINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEEEED2Ev@Base 5.2.0
+ (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEE13InsertElementEjS2_@Base 5.2.0
+ (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEE3NewEv@Base 5.2.0
  (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEED0Ev@Base 5.2.0
  (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEED1Ev@Base 5.2.0
  (optional=templinst)_ZN3itk15VectorContainerIjNS_15ContinuousIndexIdLj2EEEED2Ev@Base 5.2.0
@@ -85,6 +88,7 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZN3itk22PolyLineParametricPathILj2EED0Ev@Base 5.2.0
  (optional=templinst)_ZN3itk22PolyLineParametricPathILj2EED1Ev@Base 5.2.0
  (optional=templinst)_ZN3itk22PolyLineParametricPathILj2EED2Ev@Base 5.2.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
  _ZN3itk8AnyEventD0Ev@Base 5.2.0
  _ZN3itk8AnyEventD1Ev@Base 5.2.0
@@ -95,10 +99,13 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE6RemoveEPS6_@Base 5.2.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE8AddChildEPS6_@Base 5.2.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE8AddChildElPS6_@Base 5.2.0
+ (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEE9SetParentEPS6_@Base 5.2.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED0Ev@Base 5.2.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED1Ev@Base 5.2.0
  (optional=templinst)_ZN3itk8TreeNodeINS_12SmartPointerIN3otb8DataNodeIdLj2EdEEEEED2Ev@Base 5.2.0
  (optional=templinst)_ZN3itklsIdLj2EEERSoS1_RKNS_5PointIT_XT0_EEE@Base 5.2.0
+ _ZN3otb10CurlHelper3NewEv@Base 5.2.0
+ (optional=templinst)_ZN3otb10ObjectListINS_7PolygonIdEEE3NewEv@Base 5.2.0
  (optional=templinst)_ZN3otb10ObjectListINS_7PolygonIdEEED0Ev@Base 5.2.0
  (optional=templinst)_ZN3otb10ObjectListINS_7PolygonIdEEED1Ev@Base 5.2.0
  (optional=templinst)_ZN3otb10ObjectListINS_7PolygonIdEEED2Ev@Base 5.2.0
@@ -106,6 +113,7 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE10SetSpacingEPKf@Base 5.2.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE10SetSpacingERKN3itk6VectorIdLj2EEE@Base 5.2.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE11GetDataTreeEv@Base 5.2.0
+ (optional=templinst)_ZN3otb10VectorDataIdLj2EdE16SetProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE16SetProjectionRefERKSs@Base 5.2.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE3NewEv@Base 5.2.0
  (optional=templinst)_ZN3otb10VectorDataIdLj2EdE5ClearEv@Base 5.2.0
@@ -145,8 +153,11 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEED0Ev@Base 5.2.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEED1Ev@Base 5.2.0
  (optional=templinst)_ZN3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEED2Ev@Base 5.2.0
+ _ZN3otb17PlaceNameToLonLat11RetrieveXMLERKNSt7__cxx1119basic_ostringstreamIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb17PlaceNameToLonLat11RetrieveXMLERKSt19basic_ostringstreamIcSt11char_traitsIcESaIcEE@Base 5.2.0
+ _ZN3otb17PlaceNameToLonLat12GetPlaceNameB5cxx11Ev@Base 5.2.0
  _ZN3otb17PlaceNameToLonLat12GetPlaceNameEv@Base 5.2.0
+ _ZN3otb17PlaceNameToLonLat12SetPlaceNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb17PlaceNameToLonLat12SetPlaceNameESs@Base 5.2.0
  _ZN3otb17PlaceNameToLonLat13ParseXMLYahooEv@Base 5.2.0
  _ZN3otb17PlaceNameToLonLat14ParseXMLGoogleEv@Base 5.2.0
@@ -162,15 +173,22 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZN3otb19RemoteSensingRegionIdED0Ev@Base 5.2.0
  (optional=templinst)_ZN3otb19RemoteSensingRegionIdED1Ev@Base 5.2.0
  (optional=templinst)_ZN3otb19RemoteSensingRegionIdED2Ev@Base 5.2.0
+ _ZN3otb28OSMDataToVectorDataGenerator11SetClassKeyENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator11SetClassKeyESs@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator11SetFileNameEPKc@Base 5.2.0
+ _ZN3otb28OSMDataToVectorDataGenerator11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator11SetFileNameERKSs@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator12GenerateDataEv@Base 5.2.0
+ _ZN3otb28OSMDataToVectorDataGenerator12IsKeyPresentERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator12IsKeyPresentERKSs@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator12ParseXmlFileEv@Base 5.2.0
+ _ZN3otb28OSMDataToVectorDataGenerator15AddKeyTypeToMapERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator15AddKeyTypeToMapERKSsS2_@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator16SetClassKeyValueEi@Base 5.2.0
+ _ZN3otb28OSMDataToVectorDataGenerator17ProcessVectorDataERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator17ProcessVectorDataERKSsS2_@Base 5.2.0
+ _ZN3otb28OSMDataToVectorDataGenerator19GetVectorDataByNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
+ _ZN3otb28OSMDataToVectorDataGenerator19GetVectorDataByNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator19GetVectorDataByNameERKSs@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator19GetVectorDataByNameERKSsS2_@Base 5.2.0
  _ZN3otb28OSMDataToVectorDataGenerator7GetEastEv@Base 5.2.0
@@ -203,12 +221,14 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZN3otb7PolygonIdED1Ev@Base 5.2.0
  (optional=templinst)_ZN3otb7PolygonIdED2Ev@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE13SetFieldAsIntERKSsi@Base 5.2.0
+ (optional=templinst)_ZN3otb8DataNodeIdLj2EdE16SetFieldAsStringERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES9_@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE16SetFieldAsStringERKSsS3_@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE22SetPolygonExteriorRingEPNS_7PolygonIdEE@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE3NewEv@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE8DataTypeD1Ev@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE8DataTypeD2Ev@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdEPKc@Base 5.2.0
+ (optional=templinst)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdE9SetNodeIdERKSs@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdED0Ev@Base 5.2.0
  (optional=templinst)_ZN3otb8DataNodeIdLj2EdED1Ev@Base 5.2.0
@@ -290,6 +310,7 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZNK3itk4PathIdNS_15ContinuousIndexIdLj2EEELj2EE13GetZeroOffsetEv@Base 5.2.0
  (optional=templinst)_ZNK3itk4PathIdNS_15ContinuousIndexIdLj2EEELj2EE14GetNameOfClassEv@Base 5.2.0
  (optional=templinst)_ZNK3itk4PathIdNS_15ContinuousIndexIdLj2EEELj2EE9PrintSelfERSoNS_6IndentE@Base 5.2.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.2.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.2.0
  _ZNK3itk8AnyEvent10CheckEventEPKNS_11EventObjectE@Base 5.2.0
  _ZNK3itk8AnyEvent10MakeObjectEv@Base 5.2.0
@@ -310,6 +331,7 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZNK3otb10VectorDataIdLj2EdE9PrintSelfERSoN3itk6IndentE@Base 5.2.0
  _ZNK3otb16CoordinateToName13CreateAnotherEv@Base 5.2.0
  _ZNK3otb16CoordinateToName14GetNameOfClassEv@Base 5.2.0
+ _ZNK3otb16CoordinateToName16ParseXMLGeonamesERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_@Base 5.2.0
  _ZNK3otb16CoordinateToName16ParseXMLGeonamesERSsS1_@Base 5.2.0
  _ZNK3otb16CoordinateToName9PrintSelfERSoN3itk6IndentE@Base 5.2.0
  (optional=templinst)_ZNK3otb16VectorDataSourceINS_10VectorDataIdLj2EdEEE13CreateAnotherEv@Base 5.2.0
@@ -322,6 +344,7 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZNK3otb19RemoteSensingRegionIdE13GetRegionTypeEv@Base 5.2.0
  (optional=templinst)_ZNK3otb19RemoteSensingRegionIdE14GetNameOfClassEv@Base 5.2.0
  (optional=templinst)_ZNK3otb19RemoteSensingRegionIdE9PrintSelfERSoN3itk6IndentE@Base 5.2.0
+ _ZNK3otb28OSMDataToVectorDataGenerator11GetClassKeyB5cxx11Ev@Base 5.2.0
  _ZNK3otb28OSMDataToVectorDataGenerator11GetClassKeyEv@Base 5.2.0
  _ZNK3otb28OSMDataToVectorDataGenerator11GetFileNameEv@Base 5.2.0
  _ZNK3otb28OSMDataToVectorDataGenerator13CreateAnotherEv@Base 5.2.0
@@ -354,10 +377,19 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZNKSt5ctypeIcE8do_widenEc@Base 5.2.0
  (optional=templinst)_ZNSt12_Destroy_auxILb0EE9__destroyIPSsEEvT_S3_@Base 5.2.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPN3itk12SmartPointerINS2_8TreeNodeINS3_IN3otb8DataNodeIdLj2EdEEEEEEEESB_EET0_T_SD_SC_@Base 5.2.0
+ (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_EET0_T_SA_S9_@Base 5.2.0
+ (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPSt4pairIS2_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES8_ESt6vectorIN3itk15ContinuousIndexIdLj2EEESaISD_EEESH_EET0_T_SJ_SI_@Base 5.2.0
  (optional=templinst)_ZNSt20__uninitialized_copyILb0EE13__uninit_copyIPSt4pairIS2_ISsSsESt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS7_EEESB_EET0_T_SD_SC_@Base 5.2.0
+ (optional=templinst)_ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPN3itk12SmartPointerINS2_8TreeNodeINS3_IN3otb8DataNodeIdLj2EdEEEEEEEEmSA_EET_SC_T0_RKT1_@Base 5.2.0
  (optional=templinst)_ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIPN3itk12SmartPointerINS2_8TreeNodeINS3_IN3otb8DataNodeIdLj2EdEEEEEEEEmSA_EEvT_T0_RKT1_@Base 5.2.0
  (optional=templinst)_ZNSt4pairIKSsSt6vectorISsSaISsEEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt4pairIKSsSt6vectorISsSaISsEEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt4pairINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt4pairIS_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ESt6vectorIN3itk15ContinuousIndexIdLj2EEESaISA_EEEC1ERKSD_@Base 5.2.0
+ (optional=templinst)_ZNSt4pairIS_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ESt6vectorIN3itk15ContinuousIndexIdLj2EEESaISA_EEEC2ERKSD_@Base 5.2.0
+ (optional=templinst)_ZNSt4pairIS_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ESt6vectorIN3itk15ContinuousIndexIdLj2EEESaISA_EEED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt4pairIS_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_ESt6vectorIN3itk15ContinuousIndexIdLj2EEESaISA_EEED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt4pairIS_ISsSsESt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS4_EEEC1ERKS7_@Base 5.2.0
  (optional=templinst)_ZNSt4pairIS_ISsSsESt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS4_EEEC2ERKS7_@Base 5.2.0
  (optional=templinst)_ZNSt4pairIS_ISsSsESt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS4_EEED1Ev@Base 5.2.0
@@ -371,15 +403,20 @@ libOTBCarto-5.2.so.1 libotbcarto-5.2-1 #MINVER#
  (optional=templinst)_ZNSt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS2_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS2_S4_EEmRKS2_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIN3itk15ContinuousIndexIdLj2EEESaIS2_EEaSERKS4_@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE9push_backERKS5_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPSsS1_EERKSs@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEE9push_backERKSs@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEEC1ERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEEC2ERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorISt4pairIS0_INSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_ES_IN3itk15ContinuousIndexIdLj2EEESaISA_EEESaISD_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPSD_SF_EERKSD_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISt4pairIS0_ISsSsES_IN3itk15ContinuousIndexIdLj2EEESaIS4_EEESaIS7_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS7_S9_EERKS7_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISt4pairIS0_ISsSsES_IN3itk15ContinuousIndexIdLj2EEESaIS4_EEESaIS7_EED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISt4pairIS0_ISsSsES_IN3itk15ContinuousIndexIdLj2EEESaIS4_EEESaIS7_EED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE16_M_insert_uniqueERKSB_@Base 5.2.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_St6vectorIS5_SaIS5_EEESt10_Select1stISB_ESt4lessIS5_ESaISB_EE8_M_eraseEPSt13_Rb_tree_nodeISB_E@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSt6vectorISsSaISsEEESt10_Select1stIS5_ESt4lessISsESaIS5_EE16_M_insert_uniqueERKS5_@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSt6vectorISsSaISsEEESt10_Select1stIS5_ESt4lessISsESaIS5_EE8_M_eraseEPSt13_Rb_tree_nodeIS5_E@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKiN3itk15ContinuousIndexIdLj2EEEESt10_Select1stIS5_ESt4lessIiESaIS5_EE16_M_insert_uniqueERKS5_@Base 5.2.0

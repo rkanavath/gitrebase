@@ -60,8 +60,11 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  (optional=templinst)_ZN3itk25OptimizerParametersHelperIdED0Ev@Base 5.2.0
  (optional=templinst)_ZN3itk25OptimizerParametersHelperIdED1Ev@Base 5.2.0
  (optional=templinst)_ZN3itk25OptimizerParametersHelperIdED2Ev@Base 5.2.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
+ (optional=templinst)_ZN3itk9TransformIdLj2ELj2EE16CopyInParametersEPKdS3_@Base 5.2.0
  (optional=templinst)_ZN3itk9TransformIdLj2ELj2EE20SetParametersByValueERKNS_19OptimizerParametersIdEE@Base 5.2.0
+ (optional=templinst)_ZN3itk9TransformIdLj2ELj2EE21CopyInFixedParametersEPKdS3_@Base 5.2.0
  (optional=templinst)_ZN3itk9TransformIdLj2ELj2EE25UpdateTransformParametersERKNS_5ArrayIdEEd@Base 5.2.0
  (optional=templinst)_ZN3itk9TransformIdLj2ELj2EEC1Em@Base 5.2.0
  (optional=templinst)_ZN3itk9TransformIdLj2ELj2EEC2Em@Base 5.2.0
@@ -76,6 +79,7 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  (optional=templinst)_ZN3otb15SensorModelBaseIdLj2ELj2EED2Ev@Base 5.2.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EE17SetFirstTransformEPS3_@Base 5.2.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EE18SetSecondTransformEPS3_@Base 5.2.0
+ (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EE3NewEv@Base 5.2.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EEC1Ev@Base 5.2.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EEC2Ev@Base 5.2.0
  (optional=templinst)_ZN3otb18CompositeTransformIN3itk9TransformIdLj2ELj2EEES3_dLj2ELj2EED0Ev@Base 5.2.0
@@ -96,8 +100,10 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE20GetTransformAccuracyEv@Base 5.2.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE20InstanciateTransformEv@Base 5.2.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE21SetInputProjectionRefEPKc@Base 5.2.0
+ (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE21SetInputProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE21SetInputProjectionRefERKSs@Base 5.2.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE22SetOutputProjectionRefEPKc@Base 5.2.0
+ (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE22SetOutputProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE22SetOutputProjectionRefERKSs@Base 5.2.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EE3NewEv@Base 5.2.0
  (optional=templinst)_ZN3otb18GenericRSTransformIdLj2ELj2EEC1Ev@Base 5.2.0
@@ -112,6 +118,7 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE21InstanciateProjectionEv@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE3NewEv@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE6GetWktEv@Base 5.2.0
+ (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE6SetWktERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EE6SetWktERKSs@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EEC1Ev@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE0EdLj2ELj2EEC2Ev@Base 5.2.0
@@ -121,15 +128,18 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE21InstanciateProjectionEv@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE3NewEv@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE6GetWktEv@Base 5.2.0
+ (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE6SetWktERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EE6SetWktERKSs@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EEC1Ev@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EEC2Ev@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EED0Ev@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EED1Ev@Base 5.2.0
  (optional=templinst)_ZN3otb20GenericMapProjectionILNS_18TransformDirection23TransformationDirectionE1EdLj2ELj2EED2Ev@Base 5.2.0
+ _ZN3otb20MapProjectionAdapter3NewEv@Base 5.2.0
  _ZN3otb26GeometriesProjectionFilter19GetInputKeywordListEv@Base 5.2.0
  _ZN3otb26GeometriesProjectionFilter20GetOutputKeywordListEv@Base 5.2.0
  _ZN3otb26GeometriesProjectionFilter22SetOutputProjectionRefEPKc@Base 5.2.0
+ _ZN3otb26GeometriesProjectionFilter22SetOutputProjectionRefERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb26GeometriesProjectionFilter22SetOutputProjectionRefERKSs@Base 5.2.0
  _ZN3otb26GeometriesProjectionFilter24DoFinalizeInitialisationEv@Base 5.2.0
  _ZN3otb26GeometriesProjectionFilter25GenerateOutputInformationEv@Base 5.2.0
@@ -144,6 +154,7 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  _ZN3otb38PleiadesPToXSAffineTransformCalculator7ComputeEPKN3itk9ImageBaseILj2EEES5_@Base 5.2.0
  (optional=templinst)_ZN3otb3ogr14ImageReferenceIdE9SetOriginEN3itk5PointIdLj2EEE@Base 5.2.0
  (optional=templinst)_ZN3otb3ogr5applyIN5boost12interprocess10unique_ptrI11OGRGeometryNS0_8internal15GeometryDeleterEEEKS5_NS_8internal30ReprojectTransformationFunctor6ByCopyEEET_PT0_T1_@Base 5.2.0
+ (optional=templinst)_ZN3otb3ogr5applyIN5boost7movelib10unique_ptrI11OGRGeometryNS0_8internal15GeometryDeleterEEEKS5_NS_8internal30ReprojectTransformationFunctor6ByCopyEEET_PT0_T1_@Base 5.2.0
  (optional=templinst)_ZN3otb3ogr5applyIv11OGRGeometryNS_8internal30ReprojectTransformationFunctor7InPlaceEEET_PT0_T1_@Base 5.2.0
  (optional=templinst)_ZN3otb9TransformIdLj2ELj2EE13SetParametersERKN3itk19OptimizerParametersIdEE@Base 5.2.0
  (optional=templinst)_ZN3otb9TransformIdLj2ELj2EE18SetFixedParametersERKN3itk19OptimizerParametersIdEE@Base 5.2.0
@@ -201,6 +212,7 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  (optional=templinst)_ZNK3itk25MatrixOffsetTransformBaseIdLj2ELj2EE15TransformVectorERK16vnl_vector_fixedIdLj2EE@Base 5.2.0
  (optional=templinst)_ZNK3itk25MatrixOffsetTransformBaseIdLj2ELj2EE15TransformVectorERKNS_20VariableLengthVectorIdEE@Base 5.2.0
  (optional=templinst)_ZNK3itk25MatrixOffsetTransformBaseIdLj2ELj2EE15TransformVectorERKNS_6VectorIdLj2EEE@Base 5.2.0
+ (optional=templinst)_ZNK3itk25MatrixOffsetTransformBaseIdLj2ELj2EE16GetInverseMatrixEv@Base 5.2.0
  (optional=templinst)_ZNK3itk25MatrixOffsetTransformBaseIdLj2ELj2EE18GetFixedParametersEv@Base 5.2.0
  (optional=templinst)_ZNK3itk25MatrixOffsetTransformBaseIdLj2ELj2EE19GetInverseTransformEv@Base 5.2.0
  (optional=templinst)_ZNK3itk25MatrixOffsetTransformBaseIdLj2ELj2EE20GetTransformCategoryEv@Base 5.2.0
@@ -217,6 +229,7 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  (optional=templinst)_ZNK3itk25MatrixOffsetTransformBaseIdLj2ELj2EE9GetMatrixEv@Base 5.2.0
  (optional=templinst)_ZNK3itk25MatrixOffsetTransformBaseIdLj2ELj2EE9PrintSelfERSoNS_6IndentE@Base 5.2.0
  (optional=templinst)_ZNK3itk6MatrixIdLj2ELj2EE10GetInverseEv@Base 5.2.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.2.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.2.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE11GetJacobianERKNS_5PointIdLj2EEE@Base 5.2.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE13GetParametersEv@Base 5.2.0
@@ -239,6 +252,7 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE24TransformCovariantVectorERKNS_15CovariantVectorIdLj2EEERKNS_5PointIdLj2EEE@Base 5.2.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE24TransformCovariantVectorERKNS_20VariableLengthVectorIdEE@Base 5.2.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE24TransformCovariantVectorERKNS_20VariableLengthVectorIdEERKNS_5PointIdLj2EEE@Base 5.2.0
+ (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE26GetNumberOfFixedParametersEv@Base 5.2.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE26GetNumberOfLocalParametersEv@Base 5.2.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE26TransformDiffusionTensor3DERKNS_17DiffusionTensor3DIdEE@Base 5.2.0
  (optional=templinst)_ZNK3itk9TransformIdLj2ELj2EE26TransformDiffusionTensor3DERKNS_17DiffusionTensor3DIdEERKNS_5PointIdLj2EEE@Base 5.2.0
@@ -329,6 +343,7 @@ libOTBProjection-5.2.so.1 libotbprojection-5.2-1 #MINVER#
  (optional=templinst)_ZNK3otb9TransformIdLj2ELj2EE38ComputeJacobianWithRespectToParametersERKN3itk5PointIdLj2EEERNS2_7Array2DIdEE@Base 5.2.0
  (optional=templinst)_ZNK3otb9TransformIdLj2ELj2EE9PrintSelfERSoN3itk6IndentE@Base 5.2.0
  (optional=templinst)_ZNKSt5ctypeIcE8do_widenEc@Base 5.2.0
+ (optional=templinst)_ZNSt8_Rb_treeINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt4pairIKS5_S5_ESt10_Select1stIS8_ESt4lessIS5_ESaIS8_EE8_M_eraseEPSt13_Rb_tree_nodeIS8_E@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeISsSt4pairIKSsSsESt10_Select1stIS2_ESt4lessISsESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E@Base 5.2.0
  (optional=templinst)_ZNSt8_Rb_treeIiSt4pairIKiiESt10_Select1stIS2_ESt4lessIiESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E@Base 5.2.0
  _ZTI10vnl_vectorIdE@Base 5.2.0

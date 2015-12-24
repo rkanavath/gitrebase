@@ -1,5 +1,6 @@
 # SymbolsHelper-Confirmed: 5.2.0 amd64
 libOTBCurlAdapters-5.2.so.1 libotbcurladapters-5.2-1 #MINVER#
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
  _ZN3otb10CurlHelper10GetTimeoutEv@Base 5.2.0
  _ZN3otb10CurlHelper10SetTimeoutEl@Base 5.2.0
@@ -24,23 +25,35 @@ libOTBCurlAdapters-5.2.so.1 libotbcurladapters-5.2-1 #MINVER#
  _ZN3otb26CurlFileDescriptorResourceD1Ev@Base 5.2.0
  _ZN3otb26CurlFileDescriptorResourceD2Ev@Base 5.2.0
  _ZNK3itk11LightObject17GetReferenceCountEv@Base 5.2.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.2.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.2.0
+ _ZNK3otb10CurlHelper12RetrieveFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_@Base 5.2.0
+ _ZNK3otb10CurlHelper12RetrieveFileERKNSt7__cxx1119basic_ostringstreamIcSt11char_traitsIcESaIcEEENS1_12basic_stringIcS4_S5_EE@Base 5.2.0
  _ZNK3otb10CurlHelper12RetrieveFileERKSsSs@Base 5.2.0
  _ZNK3otb10CurlHelper12RetrieveFileERKSt19basic_ostringstreamIcSt11char_traitsIcESaIcEESs@Base 5.2.0
  _ZNK3otb10CurlHelper13CreateAnotherEv@Base 5.2.0
  _ZNK3otb10CurlHelper14GetNameOfClassEv@Base 5.2.0
+ _ZNK3otb10CurlHelper17RetrieveFileMultiERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EESB_i@Base 5.2.0
  _ZNK3otb10CurlHelper17RetrieveFileMultiERKSt6vectorISsSaISsEES5_i@Base 5.2.0
+ _ZNK3otb10CurlHelper19RetrieveUrlInMemoryERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERS6_@Base 5.2.0
  _ZNK3otb10CurlHelper19RetrieveUrlInMemoryERKSsRSs@Base 5.2.0
+ _ZNK3otb10CurlHelper19TestUrlAvailabilityERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb10CurlHelper19TestUrlAvailabilityERKSs@Base 5.2.0
+ _ZNK3otb10CurlHelper21IsCurlReturnHttpErrorERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb10CurlHelper21IsCurlReturnHttpErrorERKSs@Base 5.2.0
  _ZNK3otb12CurlResource13CreateAnotherEv@Base 5.2.0
  _ZNK3otb12CurlResource14GetNameOfClassEv@Base 5.2.0
+ _ZNK3otb14CurlHelperStub12RetrieveFileERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_@Base 5.2.0
+ _ZNK3otb14CurlHelperStub12RetrieveFileERKNSt7__cxx1119basic_ostringstreamIcSt11char_traitsIcESaIcEEENS1_12basic_stringIcS4_S5_EE@Base 5.2.0
  _ZNK3otb14CurlHelperStub12RetrieveFileERKSsSs@Base 5.2.0
  _ZNK3otb14CurlHelperStub12RetrieveFileERKSt19basic_ostringstreamIcSt11char_traitsIcESaIcEESs@Base 5.2.0
  _ZNK3otb14CurlHelperStub13CreateAnotherEv@Base 5.2.0
  _ZNK3otb14CurlHelperStub14GetNameOfClassEv@Base 5.2.0
+ _ZNK3otb14CurlHelperStub17RetrieveFileMultiERKSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS7_EESB_i@Base 5.2.0
  _ZNK3otb14CurlHelperStub17RetrieveFileMultiERKSt6vectorISsSaISsEES5_i@Base 5.2.0
+ _ZNK3otb14CurlHelperStub19RetrieveUrlInMemoryERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERS6_@Base 5.2.0
  _ZNK3otb14CurlHelperStub19RetrieveUrlInMemoryERKSsRSs@Base 5.2.0
+ _ZNK3otb14CurlHelperStub19TestUrlAvailabilityERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZNK3otb14CurlHelperStub19TestUrlAvailabilityERKSs@Base 5.2.0
  _ZNK3otb19CurlHelperInterface14GetNameOfClassEv@Base 5.2.0
  _ZNK3otb26CurlFileDescriptorResource13CreateAnotherEv@Base 5.2.0
@@ -48,6 +61,9 @@ libOTBCurlAdapters-5.2.so.1 libotbcurladapters-5.2-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
  _ZTIN3otb10CurlHelperE@Base 5.2.0
  _ZTIN3otb12CurlResourceE@Base 5.2.0
  _ZTIN3otb14CurlHelperStubE@Base 5.2.0

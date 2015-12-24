@@ -5,9 +5,11 @@ libOTBImageBase-5.2.so.1 libotbimagebase-5.2-1 #MINVER#
  _ZN3itk18LightProcessObject19AbortGenerateDataOnEv@Base 5.2.0
  _ZN3itk18LightProcessObject20AbortGenerateDataOffEv@Base 5.2.0
  _ZN3itk18LightProcessObject20SetAbortGenerateDataEb@Base 5.2.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
  _ZN3otb11ImageIOBase10SetSpacingEjd@Base 5.2.0
  _ZN3otb11ImageIOBase11SetFileNameEPKc@Base 5.2.0
+ _ZN3otb11ImageIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb11ImageIOBase11SetFileNameERKSs@Base 5.2.0
  _ZN3otb11ImageIOBase11SetFileTypeENS0_8FileTypeE@Base 5.2.0
  _ZN3otb11ImageIOBase11SetIORegionEN3itk13ImageIORegionE@Base 5.2.0
@@ -66,6 +68,7 @@ libOTBImageBase-5.2.so.1 libotbimagebase-5.2-1 #MINVER#
  _ZNK3itk18LightProcessObject11GetProgressEv@Base 5.2.0
  _ZNK3itk18LightProcessObject13CreateAnotherEv@Base 5.2.0
  _ZNK3itk18LightProcessObject20GetAbortGenerateDataEv@Base 5.2.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.2.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.2.0
  _ZNK3otb11ImageIOBase10GetSpacingEj@Base 5.2.0
  _ZNK3otb11ImageIOBase11GetFileNameEv@Base 5.2.0
@@ -85,19 +88,25 @@ libOTBImageBase-5.2.so.1 libotbimagebase-5.2-1 #MINVER#
  _ZNK3otb11ImageIOBase17GetUseCompressionEv@Base 5.2.0
  _ZNK3otb11ImageIOBase18GetComponentStrideEv@Base 5.2.0
  _ZNK3otb11ImageIOBase19GetDefaultDirectionEj@Base 5.2.0
+ _ZNK3otb11ImageIOBase19GetFileTypeAsStringB5cxx11ENS0_8FileTypeE@Base 5.2.0
  _ZNK3otb11ImageIOBase19GetFileTypeAsStringENS0_8FileTypeE@Base 5.2.0
  _ZNK3otb11ImageIOBase19GetImageSizeInBytesEv@Base 5.2.0
+ _ZNK3otb11ImageIOBase20GetByteOrderAsStringB5cxx11ENS0_9ByteOrderE@Base 5.2.0
  _ZNK3otb11ImageIOBase20GetByteOrderAsStringENS0_9ByteOrderE@Base 5.2.0
  _ZNK3otb11ImageIOBase20GetComponentTypeInfoEv@Base 5.2.0
  _ZNK3otb11ImageIOBase20GetImageSizeInPixelsEv@Base 5.2.0
+ _ZNK3otb11ImageIOBase20GetPixelTypeAsStringB5cxx11ENS0_11IOPixelTypeE@Base 5.2.0
  _ZNK3otb11ImageIOBase20GetPixelTypeAsStringENS0_11IOPixelTypeE@Base 5.2.0
  _ZNK3otb11ImageIOBase21GetNumberOfComponentsEv@Base 5.2.0
  _ZNK3otb11ImageIOBase21GetNumberOfDimensionsEv@Base 5.2.0
  _ZNK3otb11ImageIOBase21GetUseStreamedReadingEv@Base 5.2.0
  _ZNK3otb11ImageIOBase21GetUseStreamedWritingEv@Base 5.2.0
+ _ZNK3otb11ImageIOBase24GetComponentTypeAsStringB5cxx11ENS0_15IOComponentTypeE@Base 5.2.0
  _ZNK3otb11ImageIOBase24GetComponentTypeAsStringENS0_15IOComponentTypeE@Base 5.2.0
  _ZNK3otb11ImageIOBase24GetImageSizeInComponentsEv@Base 5.2.0
+ _ZNK3otb11ImageIOBase26GetSupportedReadExtensionsB5cxx11Ev@Base 5.2.0
  _ZNK3otb11ImageIOBase26GetSupportedReadExtensionsEv@Base 5.2.0
+ _ZNK3otb11ImageIOBase27GetSupportedWriteExtensionsB5cxx11Ev@Base 5.2.0
  _ZNK3otb11ImageIOBase27GetSupportedWriteExtensionsEv@Base 5.2.0
  _ZNK3otb11ImageIOBase38GetSplitRegionForWritingCanStreamWriteEjjRKN3itk13ImageIORegionE@Base 5.2.0
  _ZNK3otb11ImageIOBase47GenerateStreamableReadRegionFromRequestedRegionERKN3itk13ImageIORegionE@Base 5.2.0
@@ -109,6 +118,9 @@ libOTBImageBase-5.2.so.1 libotbimagebase-5.2-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS5_S7_EERKS5_@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS5_EED2Ev@Base 5.2.0
  (optional=templinst)_ZNSt6vectorIS_IdSaIdEESaIS1_EE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPS1_S3_EEmRKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPSsS1_EERKSs@Base 5.2.0
  (optional=templinst)_ZNSt6vectorISsSaISsEED1Ev@Base 5.2.0
@@ -119,6 +131,9 @@ libOTBImageBase-5.2.so.1 libotbimagebase-5.2-1 #MINVER#
  (optional=templinst)_ZNSt6vectorIlSaIlEEaSERKS1_@Base 5.2.0
  (optional=templinst)_ZNSt6vectorImSaImEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPmS1_EEmRKm@Base 5.2.0
  (optional=templinst)_ZNSt6vectorImSaImEEaSERKS1_@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
  (optional=templinst)_ZStlsIicSt11char_traitsIcEERSt13basic_ostreamIT0_T1_ES6_RKSt7complexIT_E@Base 5.2.0
  (optional=templinst)_ZStlsIscSt11char_traitsIcEERSt13basic_ostreamIT0_T1_ES6_RKSt7complexIT_E@Base 5.2.0
  (optional=templinst)_ZStrsIicSt11char_traitsIcEERSt13basic_istreamIT0_T1_ES6_RSt7complexIT_E@Base 5.2.0

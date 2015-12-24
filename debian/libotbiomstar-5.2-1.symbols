@@ -9,8 +9,10 @@ libOTBIOMSTAR-5.2.so.1 libotbiomstar-5.2-1 #MINVER#
  (optional=templinst)_ZN3itk20CreateObjectFunctionIN3otb12MSTARImageIOEED0Ev@Base 5.2.0
  (optional=templinst)_ZN3itk20CreateObjectFunctionIN3otb12MSTARImageIOEED1Ev@Base 5.2.0
  (optional=templinst)_ZN3itk20CreateObjectFunctionIN3otb12MSTARImageIOEED2Ev@Base 5.2.0
+ _ZN3itk6Object13SetObjectNameENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3itk6Object13SetObjectNameESs@Base 5.2.0
  _ZN3otb11ImageIOBase11SetFileNameEPKc@Base 5.2.0
+ _ZN3otb11ImageIOBase11SetFileNameERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE@Base 5.2.0
  _ZN3otb11ImageIOBase11SetFileNameERKSs@Base 5.2.0
  _ZN3otb11ImageIOBase11SetFileTypeENS0_8FileTypeE@Base 5.2.0
  _ZN3otb11ImageIOBase11SetIORegionEN3itk13ImageIORegionE@Base 5.2.0
@@ -34,6 +36,7 @@ libOTBIOMSTAR-5.2.so.1 libotbiomstar-5.2-1 #MINVER#
  _ZN3otb12MSTARImageIO14CanStreamWriteEv@Base 5.2.0
  _ZN3otb12MSTARImageIO14CheckByteOrderEv@Base 5.2.0
  _ZN3otb12MSTARImageIO14byteswap_SR_IREPh@Base 5.2.0
+ _ZN3otb12MSTARImageIO16GetOverviewsInfoB5cxx11Ev@Base 5.2.0
  _ZN3otb12MSTARImageIO16GetOverviewsInfoEv@Base 5.2.0
  _ZN3otb12MSTARImageIO16byteswap_SUS_IUSEPh@Base 5.2.0
  _ZN3otb12MSTARImageIO17GetOverviewsCountEv@Base 5.2.0
@@ -57,6 +60,7 @@ libOTBIOMSTAR-5.2.so.1 libotbiomstar-5.2-1 #MINVER#
  _ZNK3itk18LightProcessObject11GetProgressEv@Base 5.2.0
  _ZNK3itk18LightProcessObject20GetAbortGenerateDataEv@Base 5.2.0
  (optional=templinst)_ZNK3itk20CreateObjectFunctionIN3otb12MSTARImageIOEE13CreateAnotherEv@Base 5.2.0
+ _ZNK3itk6Object13GetObjectNameB5cxx11Ev@Base 5.2.0
  _ZNK3itk6Object13GetObjectNameEv@Base 5.2.0
  _ZNK3itk6Object14GetNameOfClassEv@Base 5.2.0
  _ZNK3otb11ImageIOBase10GetSpacingEj@Base 5.2.0
@@ -84,6 +88,9 @@ libOTBIOMSTAR-5.2.so.1 libotbiomstar-5.2-1 #MINVER#
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
  (optional=templinst)_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED0Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED1Ev@Base 5.2.0
+ (optional=templinst)_ZNSt7__cxx1115basic_stringbufIcSt11char_traitsIcESaIcEED2Ev@Base 5.2.0
  _ZTIN3itk20CreateObjectFunctionIN3otb12MSTARImageIOEEE@Base 5.2.0
  _ZTIN3itk24CreateObjectFunctionBaseE@Base 5.2.0
  _ZTIN3otb12MSTARImageIOE@Base 5.2.0
