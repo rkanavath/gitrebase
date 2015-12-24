@@ -115,6 +115,7 @@ Description: ORFEO Toolbox library - OTBTestDriver
 
 Package: libotbiolum-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -128,6 +129,7 @@ Description: ORFEO Toolbox library - OTBIOLUM
 
 Package: libotbiomstar-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -141,6 +143,7 @@ Description: ORFEO Toolbox library - OTBIOMSTAR
 
 Package: libotbiomw-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -154,6 +157,7 @@ Description: ORFEO Toolbox library - OTBIOMW
 
 Package: libotbioonera-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -167,6 +171,7 @@ Description: ORFEO Toolbox library - OTBIOONERA
 
 Package: libotbiorad-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -180,6 +185,7 @@ Description: ORFEO Toolbox library - OTBIORAD
 
 Package: libotbiotilemap-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -193,6 +199,7 @@ Description: ORFEO Toolbox library - OTBIOTileMap
 
 Package: libotbiogdal-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -206,6 +213,7 @@ Description: ORFEO Toolbox library - OTBIOGDAL
 
 Package: libotbiobsq-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -219,6 +227,7 @@ Description: ORFEO Toolbox library - OTBIOBSQ
 
 Package: libotbiokml-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -232,6 +241,7 @@ Description: ORFEO Toolbox library - OTBIOKML
 
 Package: libotbcurladapters-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -245,6 +255,7 @@ Description: ORFEO Toolbox library - OTBCurlAdapters
 
 Package: libotbopenthreadsadapters-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -258,6 +269,7 @@ Description: ORFEO Toolbox library - OTBOpenThreadsAdapters
 
 Package: libotbossimadapters-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -271,6 +283,7 @@ Description: ORFEO Toolbox library - OTBOssimAdapters
 
 Package: libotbsiftfast-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -284,6 +297,7 @@ Description: ORFEO Toolbox library - OTBSiftFast
 
 Package: libotbossimplugins-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -297,6 +311,7 @@ Description: ORFEO Toolbox library - OTBOssimPlugins
 
 Package: libotbimagemanipulation-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -310,6 +325,7 @@ Description: ORFEO Toolbox library - OTBImageManipulation
 
 Package: libotbimageio-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -323,6 +339,7 @@ Description: ORFEO Toolbox library - OTBImageIO
 
 Package: libotbimagebase-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -336,6 +353,7 @@ Description: ORFEO Toolbox library - OTBImageBase
 
 Package: libotbgdaladapters-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -349,6 +367,7 @@ Description: ORFEO Toolbox library - OTBGdalAdapters
 
 Package: libotbedge-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -362,6 +381,7 @@ Description: ORFEO Toolbox library - OTBEdge
 
 Package: libotbcommandline-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -375,6 +395,7 @@ Description: ORFEO Toolbox library - OTBCommandLine
 
 Package: libotbcommandlineparser-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -388,6 +409,7 @@ Description: ORFEO Toolbox library - OTBCommandLinePaser
 
 Package: libotbcommon-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -401,6 +423,7 @@ Description: ORFEO Toolbox library - OTBCommon
 
 Package: libotbcarto-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -414,6 +437,7 @@ Description: ORFEO Toolbox library - OTBCarto
 
 Package: libotbpolarimetry-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -427,6 +451,7 @@ Description: ORFEO Toolbox library - OTBPolarimetry
 
 Package: libotbstreaming-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -440,6 +465,7 @@ Description: ORFEO Toolbox library - OTBStreaming
 
 Package: libotbextendedfilename-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -453,6 +479,7 @@ Description: ORFEO Toolbox library - OTBExtendedFileName
 
 Package: libotbmathparser-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -466,6 +493,7 @@ Description: ORFEO Toolbox library - OTBMathParser
 
 Package: libotbfuzzy-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -479,6 +507,7 @@ Description: ORFEO Toolbox library - OTBFuzzy
 
 Package: libotbmetadata-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -492,6 +521,7 @@ Description: ORFEO Toolbox library - OTBMetadata
 
 Package: libotbprojection-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -505,6 +535,7 @@ Description: ORFEO Toolbox library - OTBProjection
 
 Package: libotbrcc8-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -518,6 +549,7 @@ Description: ORFEO Toolbox library - OTBRCC8
 
 Package: libotbtestkernel-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -531,6 +563,7 @@ Description: ORFEO Toolbox library - OTBTestKernel
 
 Package: libotbtransform-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -544,6 +577,7 @@ Description: ORFEO Toolbox library - OTBTransform
 
 Package: libotbvectordatabase-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -557,6 +591,7 @@ Description: ORFEO Toolbox library - OTBVectorDataBase
 
 Package: libotbvectordataio-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -570,6 +605,7 @@ Description: ORFEO Toolbox library - OTBVectorDataIO
 
 Package: libotbwavelet-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -583,6 +619,7 @@ Description: ORFEO Toolbox library - OTBWavelet
 
 Package: libotbsupervised-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -596,6 +633,7 @@ Description: ORFEO Toolbox library - OTBSupervised
 
 Package: libotbqtwidget-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -609,6 +647,7 @@ Description: ORFEO Toolbox library - OTBQtWidget
 
 Package: libotbapplicationengine-@SOVERSION@
 Architecture: any
+Section: libs
 Depends: ${shlibs:Depends},
          ${misc:Depends}
 Pre-Depends: ${misc:Pre-Depends}
@@ -769,4 +808,3 @@ Description: ORFEO Toolbox library metapackage
  in general and for high spatial resolution images in particular.
  .
  This metapackage provides all shared libraries used by OTB.
-
