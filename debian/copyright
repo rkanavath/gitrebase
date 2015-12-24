@@ -5,18 +5,21 @@ Upstream-Contact: OTB Team <contact@orfeo-toolbox.org>
 Source: http://sourceforge.net/projects/orfeo-toolbox/files/OTB/
         git clone -r <version> https://git@git.orfeo-toolbox.org/otb.git
 Comment:
- SuperBuild is the new way of buildling OTB which download and install a dependency
- if it doesn't exist. However debian package uses dependencies from official packages
-  The superbuild sources are excluded mainly because it contains some unpacked third party
- sources (patched). They are unpacked from upstream, modified by OTB and kept
- under superbuild/patches. This is due to limitation in patching via cmake ExternalProject.
- 6S sources in OTB are converted from fortran to C code. There is no proper license text
- attached with this library. Hence these sources are excluded from upstream.
+ SuperBuild is the cmake feature that helps buildling OTB. It downloads and install a dependent
+ package if it doesn't exist. Debian packaging uses dependencies from official packages. if
+ one of them found missing, it shouldn't be downloaded and build during dpkg-buildpackage.
+ The SuperBuild/patches/ directory contains some unpacked third party sources with
+ patches from OTB.  This is to make the compilation working on all
+ platforms (Windows, OSX and Linux).  SuperBuild is not used and due to patches sources inside
+ they are removed from the upstream source.  6S is an external library used in optical calibration
+ module. There is no proper license text attached with this library and was not possible to
+ include them inside debian sources until an exception is granted from 6S developers regarding
+ its current usage in OTB.
 Files-Excluded: Modules/ThirdParty/6S/src/*
                 SuperBuild/*
 
 Files: *
-Copyright: 2004-2014, CNES (Centre National d'Etudes Spatiales)
+Copyright: 2004-2015, CNES (Centre National d'Etudes Spatiales)
                       Jordi Inglada (CNES) <jordi.inglada@orfeo-toolbox.org>
                       Thomas Feuvrier (CS) <thomas.feuvrier@c-s.fr>
                       Julien Michel (CS then CNES) <julien.michel@orfeo-toolbox.org>
@@ -84,16 +87,6 @@ Copyright: (disclaimed) Simon Edwards <simon@simonzone.com>
 License: public-domain
  This file is in the public domain.
 
-Files: Modules/Filtering/Projection/include/otbROIdataConversion.h
- Modules/Filtering/Projection/include/otbROIdataConversion.txx
- Modules/Segmentation/Conversion/test/otbVectorDataRasterizeFilter.cxx
- Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilterWithoutReader.cxx
- Modules/Segmentation/Conversion/test/otbPolygonizationRasterizationTest.cxx
- Modules/Segmentation/Conversion/test/otbVectorDataToLabelImageFilter.cxx
- Modules/Segmentation/Conversion/test/otbOGRDataSourceToLabelImageFilter.cxx
-Copyright: Centre National d'Etudes Spatiales
-License: CeCILL-2.0
-
 Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Examples/Learning/SVMGenericKernelImageClassificationExample.cxx
  Examples/Learning/SVMGenericKernelImageModelEstimatorExample.cxx
@@ -101,7 +94,11 @@ Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Examples/ChangeDetection/KullbackLeiblerSupervizedDistanceChDet.cxx
  Examples/Learning/SOMExample.cxx
  Modules/Core/Common/include/otbDecimateImageFilter.h
+ Modules/Core/Common/include/otbDecimateImageFilter.txx
+ Modules/Core/Common/include/otbModelComponentBase.h
+ Modules/Core/Common/include/otbModelComponentBase.txx
  Modules/Core/Common/include/otbSubsampledImageRegionConstIterator.h
+ Modules/Core/Common/include/otbSubsampledImageRegionConstIterator.txx
  Modules/Core/Common/include/otbSubsampledImageRegionIterator.h
  Modules/Core/ImageBase/test/otbFlexibleDistanceWithMissingValue.cxx
  Modules/Core/ImageBase/test/otbFlexibleDistanceWithMissingValueNew.cxx
@@ -109,27 +106,39 @@ Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Modules/Feature/Edge/test/otbSobelVectorImageFilter.cxx
  Modules/Feature/Edge/test/otbVerticalSobelVectorImageFilter.cxx
  Modules/Filtering/ChangeDetection/include/otbKullbackLeiblerDistanceImageFilter.h
+ Modules/Filtering/ChangeDetection/include/otbKullbackLeiblerDistanceImageFilter.txx
+ Modules/Filtering/ChangeDetection/include/otbKullbackLeiblerProfileImageFilter.h
+ Modules/Filtering/ChangeDetection/include/otbKullbackLeiblerProfileImageFilter.txx
  Modules/Filtering/ChangeDetection/include/otbKullbackLeiblerSupervizedDistanceImageFilter.h
+ Modules/Filtering/ChangeDetection/include/otbKullbackLeiblerSupervizedDistanceImageFilter.txx
  Modules/Filtering/ImageManipulation/include/otbBoxAndWhiskerImageFilter.h
+ Modules/Filtering/ImageManipulation/include/otbBoxAndWhiskerImageFilter.txx
  Modules/Filtering/DimensionalityReduction/test/otbAngularProjectionBinaryImageFilter.cxx
  Modules/Filtering/DimensionalityReduction/test/otbLocalActivityVectorImageFilter.cxx
  Modules/Filtering/ImageManipulation/include/otbEuclideanDistanceMetricWithMissingValue.h
  Modules/Filtering/ImageManipulation/include/otbEuclideanDistanceMetricWithMissingValuePow2.h
+ Modules/Filtering/ImageManipulation/include/otbEuclideanDistanceMetricWithMissingValuePow2.txx
  Modules/Filtering/ImageManipulation/include/otbFlexibleDistanceWithMissingValue.h
+ Modules/Filtering/ImageManipulation/include/otbFlexibleDistanceWithMissingValue.txx
  Modules/Filtering/ImageManipulation/test/otbBoxAndWhiskerImageFilterNew.cxx
  Modules/Filtering/ImageManipulation/test/otbEuclideanDistanceMetricWithMissingValue.cxx
  Modules/Filtering/ImageManipulation/test/otbEuclideanDistanceMetricWithMissingValueNew.cxx
  Modules/Filtering/ImageManipulation/test/otbLocalGradientVectorImageFilter.cxx
  Modules/Filtering/Wavelet/include/otbSubsampleImageFilter.h
+ Modules/Filtering/Wavelet/include/otbSubsampleImageFilter.txx
  Modules/Filtering/Wavelet/include/otbWaveletFilterBank.h
+ Modules/Filtering/Wavelet/include/otbWaveletFilterBank.txx
  Modules/Filtering/Wavelet/include/otbWaveletGenerator.h
  Modules/Filtering/Wavelet/include/otbWaveletHighPassOperator.h
  Modules/Filtering/Wavelet/include/otbWaveletLowPassOperator.h
  Modules/Filtering/Wavelet/include/otbWaveletOperator.h
  Modules/Filtering/Wavelet/include/otbWaveletOperatorBase.h
+ Modules/Filtering/Wavelet/include/otbWaveletOperatorBase.txx
  Modules/Filtering/Wavelet/include/otbWaveletPacketDecompositionCosts.h
  Modules/Filtering/Wavelet/include/otbWaveletPacketTransform.h
+ Modules/Filtering/Wavelet/include/otbWaveletPacketTransform.txx
  Modules/Filtering/Wavelet/include/otbWaveletTransform.h
+ Modules/Filtering/Wavelet/include/otbWaveletTransform.txx
  Modules/Filtering/Wavelet/src/otbWaveletGenerator.cxx
  Modules/Filtering/Wavelet/test/otbSubsampleImageFilter.cxx
  Modules/Filtering/Wavelet/test/otbSubsampleImageFilterNew.cxx
@@ -141,28 +150,33 @@ Files: Examples/Learning/SEMModelEstimatorExample.cxx
  Modules/Filtering/Wavelet/test/otbWaveletPacketTransform.cxx
  Modules/Filtering/Wavelet/test/otbWaveletTransform.cxx
  Modules/IO/ImageIO/include/otbImageSeriesFileReader.h
+ Modules/IO/ImageIO/include/otbImageSeriesFileReader.txx
  Modules/IO/ImageIO/include/otbImageSeriesFileReaderBase.h
+ Modules/IO/ImageIO/include/otbImageSeriesFileReaderBase.txx
  Modules/IO/ImageIO/test/otbImageSeriesFileReader.cxx
  Modules/Learning/SOM/include/otbCzihoSOMLearningBehaviorFunctor.h
  Modules/Learning/SOM/include/otbCzihoSOMNeighborhoodBehaviorFunctor.h
  Modules/Learning/SOM/include/otbPeriodicSOM.h
+ Modules/Learning/SOM/include/otbPeriodicSOM.txx
  Modules/Learning/SOM/include/otbSOM.h
+ Modules/Learning/SOM/include/otbSOM.txx
  Modules/Learning/SOM/include/otbSOMLearningBehaviorFunctor.h
+ Modules/Learning/SOM/include/otbSOMMap.h
+ Modules/Learning/SOM/include/otbSOMMap.txx
  Modules/Learning/SOM/include/otbSOMWithMissingValue.h
+ Modules/Learning/SOM/include/otbSOMWithMissingValue.txx
  Modules/Learning/SOM/include/otbSOMbasedImageFilter.h
+ Modules/Learning/SOM/include/otbSOMbasedImageFilter.txx
  Modules/Learning/SOM/test/otbSOMWithMissingValueNew.cxx
  Modules/Learning/SOM/test/otbSOMbasedImageFilterNew.cxx
  Modules/Learning/SVMLearning/include/otbSVMImageClassificationWithRuleFilter.h
-Copyright: Centre National d'Etudes Spatiales
-           Institut Telecom; Telecom Bretagne
-Comment: Parts of the code have been developed by Gregoire Mercier from
- Groupe des Ecoles des Telecommunications / Ecole Nationale Superieure
- des Telecommunications de Bretagne (GET/ENST Bretagne) during
- CNES R&T contrats funded by the French Centre National d'Etudes
- Spatiales, CNES. ITCopyright.txt as mentioned in some of file headers is
- same as GETCopyright.txt
+Copyright: Institut Mines-Telecom
+           Centre National d'Etudes Spatiales
+Comment: Parts of the code have been developped by Gregoire Mercier from
+ Institut Mines-Telecom / Telecom Bretagne during CNES R&T contrats
+ funded by the French Centre National d'Etudes Spatiales, CNES.
  .
- Copyright (c) GET / ENST Bretagne
+ Copyright (c) Institut Mines-Telecom
  .
  This code has been integrated into the ORFEO Toolbox (OTB) under
  the CeCILL licence version 2. See Licence_CeCILL_V2-en.txt or
@@ -229,7 +243,11 @@ License: CeCILL-2.0
 Files: Modules/ThirdParty/OssimPlugins/src/ossim*
  Modules/ThirdParty/OssimPlugins/src/gdal/ossimOgcWktTranslator.cpp
  Modules/ThirdParty/OssimPlugins/src/gdal/ossimOgcWktTranslator.h
-Copyright: 2004-2014, CNES (Centre National d'Etudes Spatiales)
+ Modules/ThirdParty/OssimPlugins/src/ossim/ossimSentinel1Model.cpp
+ Modules/ThirdParty/OssimPlugins/src/ossim/ossimSentinel1Model.h
+ Modules/ThirdParty/OssimPlugins/src/ossim/ossimSentinel1ProductDoc.cpp
+ Modules/ThirdParty/OssimPlugins/src/ossim/ossimSentinel1ProductDoc.h
+Copyright: 2004-2015, CNES (Centre National d'Etudes Spatiales)
                 2005, David Burken <durken@comcast.net>
                 2000, ImageLinks Inc <durken@comcast.net>
                       Centre for Remote Imaging, Sensing and Processing
